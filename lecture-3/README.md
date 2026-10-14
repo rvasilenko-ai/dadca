@@ -54,7 +54,7 @@ Slides without a link do not exist yet.
 13. [Beyond files: the same methods on other evidence](slides/13-beyond-files-same-methods.md) (the comparison table cut from Lecture 1 on 2026-10-11; extend with process trees, command lines, scripts, memory regions, flows, authentication and cloud audit events, and why these datasets are rarely public)
 14. [Three scales of security analysis](slides/14-three-scales.md)
 15. [Capability does not imply suitability](slides/15-capability-not-suitability.md)
-16. Project Ire as a worked workflow: selected artifact, structural triage, tool calls, evidence chain, validation, assessment (per the 2026-08-05 rebalance spec)
+16. Project Ire as a worked workflow: selected artifact, structural triage, tool calls, evidence chain, validation, assessment
 17. Capability depends on the extraction ecosystem: native and managed-code decompilers, Go and Rust recovery, parsers, sandboxes as analyst tools, provenance, uncertainty
 18. [Selecting what deserves investigation](slides/18-selecting-investigations.md)
 19. Synthesis: one table comparing every method by input, extraction loss, scale, verification, and the attacks from Lecture 1 it would never receive

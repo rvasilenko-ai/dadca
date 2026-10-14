@@ -2,4 +2,3 @@
 *.swp
 .venv/
 __pycache__/
-docs/superpowers/

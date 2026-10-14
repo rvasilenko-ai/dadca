@@ -90,6 +90,7 @@ Kept from the lecture's implementation plan; they govern every revision of the s
 - Reverse-engineering a selected sample is not fleet-scale detection; say so wherever Project Ire or a comparable system appears.
 - Frame autonomous response as scoped, authorized, evidence-based and reversible, with explicit escalation.
 - Cite primary sources for the Hugging Face timeline, the OpenAI account, MITRE mappings and Project Ire; present recovered action and cluster counts as reconstructed figures.
+- Verify ATT&CK and ATLAS names and identifiers against the live MITRE sites whenever they are edited; SearchLeak appears only as a brief corroborating example, not as a third case.
 
 ## Delivery guidance
 
