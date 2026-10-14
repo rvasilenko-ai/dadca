@@ -2,11 +2,11 @@
 
 Three related 90-minute lectures on how malware and malicious capabilities evolved, how the pipelines that detect them had to evolve with them, and what changes when the attacker is an agent and the detector is a model. Students may attend any lecture independently.
 
-Hosted at <https://rvasilenko-ai.github.io/malware_and_ai_lectures/>.
+Hosted at <https://rvasilenko-ai.github.io/malware-and-ai/>.
 
 | Lecture | Title | Audience | Status |
 | --- | --- | --- | --- |
-| 1 | [From Malware Files to Adversarial Capabilities](lecture-1/README.md) | Undergraduate and Master's | Slides, notes and an interactive deck ([open](https://rvasilenko-ai.github.io/malware_and_ai_lectures/lecture-1/deck/)) |
+| 1 | [From Malware Files to Adversarial Capabilities](lecture-1/README.md) | Undergraduate and Master's | Slides, notes and an interactive deck ([open](https://rvasilenko-ai.github.io/malware-and-ai/lecture-1/deck/)) |
 | 2 | [When the Attacker Is an Agent](lecture-2/README.md) | Master's and PhD | Slides and notes in markdown; deck not yet built |
 | 3 | [Machine Learning for Malware Detection](lecture-3/README.md) | Master's and PhD | Seed: fourteen slides written, six outlined |
 
