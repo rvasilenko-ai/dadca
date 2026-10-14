@@ -13,12 +13,6 @@
 
 > Better reasoning cannot recover evidence that was never observed or was destroyed during representation.
 
-Research prompts:
-
-- What should we collect?
-- What should we preserve?
-- Where does the sensor have to move next?
-
 ## Speaker notes
 
 Close the loop with the opening vote in one sentence before the conclusions: all five situations were malicious capability in use; they differed in the artifact, in who controlled it and whose objective it served, and in which sensor could see it, which is why the room disagreed and why the lecture spent its time on evidence rather than on a definition.
@@ -31,4 +25,4 @@ Preview the other two lectures without requiring them. Lecture 3 covers the dete
 
 ## Transition
 
-End of Lecture 1. Invite questions using the three research prompts rather than asking only “Any questions?”
+End of Lecture 1. Open the discussion with the callout, not with “Any questions?”: ask the room what the next sensor will have to see.
