@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Malware and AI lectures</title>
+<meta name="description" content="A three-lecture series on malware, malicious capabilities and the detection pipelines built against them, by Roman Vasilenko. Slides, speaker notes and sources.">
+<style>
+  :root {
+    --bg: #fcfcfb; --bg-2: #f1f0ec; --ink: #141414; --ink-2: #4a4a4a; --ink-3: #8a8a8a;
+    --line: #e4e2dc; --accent: #2a78d6; --focus: rgba(42, 120, 214, 0.14);
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg: #1b1b1b; --bg-2: #262626; --ink: #f0efea; --ink-2: #c3c1ba; --ink-3: #8c8a84; --line: #333; --accent: #3987e5; --focus: rgba(57, 135, 229, 0.22); }
+  }
+  :root[data-theme="dark"] { --bg: #1b1b1b; --bg-2: #262626; --ink: #f0efea; --ink-2: #c3c1ba; --ink-3: #8c8a84; --line: #333; --accent: #3987e5; --focus: rgba(57, 135, 229, 0.22); }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.5 var(--sans); }
+  main { max-width: 980px; margin: 0 auto; padding: 48px 16px 64px; }
+  header h1 { font-size: clamp(30px, 5vw, 46px); line-height: 1.1; letter-spacing: -0.01em; margin: 0 0 10px; }
+  header p.lead { font-size: 1.15em; color: var(--ink-2); margin: 0 0 6px; max-width: 46em; }
+  header p.by { color: var(--ink-3); margin: 0 0 36px; }
+  h2 { font-size: 1.25em; margin: 40px 0 14px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+  .card { background: var(--bg-2); border-radius: 12px; border-top: 4px solid var(--accent); padding: 18px 20px 20px; display: flex; flex-direction: column; }
+  .card h3 { margin: 0 0 4px; font-size: 1.1em; line-height: 1.25; }
+  .card .k { color: var(--ink-3); font-size: 0.82em; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+  .card p { margin: 0 0 10px; color: var(--ink-2); font-size: 0.95em; }
+  .card .q { font-style: italic; }
+  .card .status { font-size: 0.85em; color: var(--ink-3); margin-top: auto; padding-top: 8px; }
+  .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .links a { display: inline-block; padding: 7px 12px; border-radius: 8px; border: 1px solid var(--accent); color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.92em; }
+  .links a.primary { background: var(--accent); color: #fff; }
+  .links a:hover { background: var(--focus); }
+  .links a.primary:hover { filter: brightness(1.08); }
+  table { border-collapse: collapse; font-size: 0.95em; }
+  td, th { text-align: left; padding: 6px 14px 6px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  kbd { font: 0.9em var(--mono); background: var(--bg-2); border: 1px solid var(--line); border-radius: 5px; padding: 1px 6px; }
+  footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--ink-3); font-size: 0.88em; }
+  footer p { margin: 0 0 6px; }
+  a { color: var(--accent); }
+  .theme { position: fixed; top: 14px; right: 14px; font: 600 13px var(--sans); color: var(--accent); background: var(--bg); border: 1px dashed var(--accent); border-radius: 6px; padding: 4px 9px; cursor: pointer; }
+</style>
+</head>
+<body>
+<button class="theme" type="button" id="theme" aria-label="Toggle light and dark theme">theme</button>
+<main>
+  <header>
+    <h1>Malware and AI</h1>
+    <p class="lead">A three-lecture series on how malware and malicious capabilities evolved, how the pipelines that detect them had to evolve with them, and what changes when the attacker is an agent and the detector is a model.</p>
+    <p class="by">Roman Vasilenko · slides, speaker notes and sources · <a href="https://github.com/rvasilenko-ai/malware_and_ai_lectures">source repository</a></p>
+  </header>
+
+  <section class="cards" aria-label="Lectures">
+    <article class="card">
+      <div class="k">Lecture 1 · undergraduate and Master's · 90 minutes</div>
+      <h3>From Malware Files to Adversarial Capabilities</h3>
+      <p class="q">How did malware and malicious capabilities evolve, and how did detection pipelines have to evolve with them?</p>
+      <p>Four periods from 2000 to 2026 across motive, attackers, operating system, internet and products; ATT&amp;CK as a language for behavior; the detection pipeline, the options at each stage, and the host and network lineages rebuilt generation by generation; six misses to diagnose.</p>
+      <div class="links">
+        <a class="primary" href="lecture-1/deck/">Open the slides</a>
+        <a href="lecture-1/deck/?print-pdf">Print to PDF</a>
+        <a href="https://github.com/rvasilenko-ai/malware_and_ai_lectures/blob/main/lecture-1/README.md">Outline and notes</a>
+      </div>
+      <div class="status">29 slides, 80 minutes plus questions. Interactive deck; works offline from a clone.</div>
+    </article>
+    <article class="card">
+      <div class="k">Lecture 2 · Master's and PhD · 90 minutes</div>
+      <h3>When the Attacker Is an Agent</h3>
+      <p class="q">What changes when reasoning, tool use, and persistent trial-and-error become cheap?</p>
+      <p>Agents as operators and as targets: tools, feedback, persistence and delegated authority in an adversarial environment, and what the defender's telemetry has to become.</p>
+      <div class="links">
+        <a class="primary" href="https://github.com/rvasilenko-ai/malware_and_ai_lectures/blob/main/lecture-2/README.md">Outline and slides (markdown)</a>
+      </div>
+      <div class="status">33 slides in markdown with speaker notes. Deck not yet built.</div>
+    </article>
+    <article class="card">
+      <div class="k">Lecture 3 · Master's and PhD · 90 minutes</div>
+      <h3>Machine Learning for Malware Detection</h3>
+      <p class="q">What does each detector actually receive, and what did the extraction discard before it arrived?</p>
+      <p>Signatures, engineered features, similarity, raw-byte and code models, the file-centric benchmarks and what they hide, the same methods beyond files, and the LLM as analyst.</p>
+      <div class="links">
+        <a class="primary" href="https://github.com/rvasilenko-ai/malware_and_ai_lectures/blob/main/lecture-3/README.md">Outline and slides (markdown)</a>
+      </div>
+      <div class="status">Seed: fourteen slides written, six outlined.</div>
+    </article>
+  </section>
+
+  <h2>Using the Lecture 1 deck</h2>
+  <table>
+    <tr><td><kbd>→</kbd> <kbd>Space</kbd></td><td>next step, then next slide; <kbd>←</kbd> back. Many slides step through their content before moving on.</td></tr>
+    <tr><td><kbd>S</kbd></td><td>speaker view with notes, planned minutes and a timer</td></tr>
+    <tr><td><kbd>F</kbd></td><td>fullscreen; <kbd>Esc</kbd> overview of all slides</td></tr>
+    <tr><td><kbd>T</kbd></td><td>light or dark theme; <kbd>?</kbd> keyboard help</td></tr>
+    <tr><td>Print</td><td>open the deck with <code>?print-pdf</code> and print to PDF, landscape, no margins</td></tr>
+  </table>
+  <p>The deck is generated from the markdown slides in the repository; the markdown is the source of truth and carries the speaker notes, the timing of every slide and the sources behind each number. Dates and figures were checked against primary sources in October 2026.</p>
+
+  <h2>Series plan</h2>
+  <p>The <a href="https://github.com/rvasilenko-ai/malware_and_ai_lectures/blob/main/2026-07-31-malware-and-ai-lecture-series-plan.md">series plan</a> describes all three lectures, their audiences and how they connect; the <a href="https://github.com/rvasilenko-ai/malware_and_ai_lectures/tree/main/docs/superpowers/specs">design records</a> keep the reasoning behind each revision.</p>
+
+  <footer>
+    <p>© Roman Vasilenko. Slides and notes are the author's; errors are the author's too, and corrections are welcome through the repository.</p>
+    <p>The deck uses <a href="https://revealjs.com/">reveal.js</a> (MIT License, vendored). The schematic ATT&amp;CK matrix uses content from <a href="https://attack.mitre.org/">MITRE ATT&amp;CK</a>, © The MITRE Corporation, used under the <a href="https://attack.mitre.org/resources/legal-and-branding/terms-of-use/">ATT&amp;CK terms of use</a>; ATT&amp;CK is a registered trademark of The MITRE Corporation. HTTPS adoption figures come from Mozilla telemetry and the Google Transparency Report.</p>
+  </footer>
+</main>
+<script>
+  (function () {
+    var root = document.documentElement, key = "deck-theme";
+    try { var saved = localStorage.getItem(key); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
+    document.getElementById("theme").addEventListener("click", function () {
+      var cur = root.getAttribute("data-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      var next = cur === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem(key, next); } catch (e) {}
+    });
+  })();
+</script>
+</body>
+</html>
