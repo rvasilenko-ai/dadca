@@ -80,6 +80,17 @@ ForcedLeak was a disclosed and demonstrated vulnerability chain in Salesforce Ag
 32. [Bounded autonomous response](slides/32-bounded-autonomous-response.md)
 33. [A map of work still to be done](slides/33-research-map-and-close.md)
 
+## Editorial constraints
+
+Kept from the lecture's implementation plan; they govern every revision of the slides.
+
+- Explain the agent's success as model capability plus harness, tools, feedback, state, access and delegated authority, never as capability alone, and do not assign an artificial numerical split between code reasoning and operational orchestration.
+- Treat "the model cannot distinguish good from bad" and "stealth is impossible to train" as overstatements. Use optimization and evaluation language: program semantics do not encode legitimate intent, the same capability serves either side, an agent optimizes the task and feedback it is given subject to the controls around it, and stealth is a harder verifier problem rather than an impossibility.
+- Keep the three threat models distinct: noisy autonomous exploration, AI-assisted human operations, deliberately stealthy manual or agentic campaigns.
+- Reverse-engineering a selected sample is not fleet-scale detection; say so wherever Project Ire or a comparable system appears.
+- Frame autonomous response as scoped, authorized, evidence-based and reversible, with explicit escalation.
+- Cite primary sources for the Hugging Face timeline, the OpenAI account, MITRE mappings and Project Ire; present recovered action and cluster counts as reconstructed figures.
+
 ## Delivery guidance
 
 - Introduce the incident as a mystery before revealing the attack path.

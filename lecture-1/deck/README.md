@@ -49,3 +49,25 @@ Open `index.html?print-pdf` in Chrome and print to PDF (landscape, no margins). 
 - `components.js` — timeline, chips, pipeline, vote, chart, theme toggle.
 - `templates/<slug>.html` — hand-designed bodies for slides that need more than the auto conversion, named after the slide file without its number so renumbering never touches them; `{{auto}}` injects the converted markdown.
 - `vendor/reveal/` — reveal.js 5.1.0 (MIT), reset and base CSS, notes plugin.
+
+## Slide file format
+
+Each slide is one markdown file, `slides/NN-slug.md`, numbered in presentation order. The build keys templates and styles on the slug, so renumbering never touches them. A file has:
+
+- `# Slide N — Title` as its first line;
+- `**Timing:** a–b minutes` and `**Module:** …` as the next two lines;
+- `## On-slide content` (a markdown subset: headings, lists, tables, `>` callouts, fenced text blocks);
+- `## Speaker notes`, optionally `## Interaction`, then `## Transition` (the sentence that hands over to the next slide) and `## Sources` when the slide makes source-dependent claims.
+
+The era slides use a `| Track | Headline |` table plus a `### Detail` table; the lineage slides a `| Stage | … |` table; the options slide a `| Stage | Option | What it captures | What it misses |` table. The build turns each into its interactive layout.
+
+## Checks before a commit
+
+```bash
+python3 lecture-1/deck/build.py                                  # numbering must be contiguous
+grep -c '^[0-9]*\. \[' lecture-1/README.md                        # index entries = slide files
+! grep -rn 'TBD\|TODO\|FIXME\|PLACEHOLDER' lecture-1/slides       # no placeholders
+! grep -rn 'Invoke-Shellcode\|VirtualAlloc(\|CreateThread(\|FromBase64String(' lecture-1   # no payloads
+```
+
+Timings must be contiguous from minute 0 and end where the README's schedule says; the README's index links must resolve; `osascript -l JavaScript` or `node --check` should accept the deck scripts. Render a changed slide in both themes before committing (a headless Chrome driver lives in `tools/screenshot.py`).
