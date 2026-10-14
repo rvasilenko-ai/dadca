@@ -1,0 +1,859 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>From Malware Files to Adversarial Capabilities</title>
+<meta name="description" content="Lecture 1 of the Malware and AI series: how malware and malicious capabilities evolved, and how detection pipelines evolved with them.">
+<link rel="stylesheet" href="vendor/reveal/reset.css">
+<link rel="stylesheet" href="vendor/reveal/reveal.css">
+<link rel="stylesheet" href="theme.css">
+<script>
+  // Apply the saved theme before first paint so there is no flash.
+  try { var t = localStorage.getItem('deck-theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+<section class="slide s1 k-title m1" data-slide="1" data-module="Where is the malware?" data-timing="0–1 minutes">
+
+<div class="body">
+<h1 class="display">From Malware Files to Adversarial Capabilities</h1>
+<p class="kicker">How malware and malicious capabilities evolved, and how detection pipelines evolved with them</p>
+<p class="series">Malware and AI · Lecture 1 of 3</p>
+
+</div>
+<footer class="chrome"><span class="module">Where is the malware?</span><span class="timing">min 0–1</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 0–1 minutes</strong> · Where is the malware?</p>
+<p>Title only; the opening question is asked on slide 3 with the vote. One sentence on what the lecture does: it follows the malicious capability as it moved out of the executable file over twenty-five years, and follows the defensive sensor as it was forced to move after it. One sentence on what it does not do: the detectors themselves, the machine learning and the LLM analyst, are Lecture 3; the agent as attacker is Lecture 2. Then move to the vote.</p>
+<h4>Transition</h4><p>“First, who is talking.”</p></aside>
+</section>
+
+<section class="slide s2 k-about-me m1" data-slide="2" data-module="Where is the malware?" data-timing="1–2 minutes">
+
+<div class="body">
+<h1 class="display">Roman Vasilenko</h1>
+<p class="kicker">Principal Engineer, Cisco Talos</p>
+<table>
+<thead><tr><th>Years</th><th>Where</th><th>What</th></tr></thead>
+<tbody>
+<tr><td>2007–2012</td><td>Doctor Web, then Kaspersky Lab</td><td>Virus analyst, then detection research: unpacking, polymorphic viruses, new and reputation-based detection algorithms</td></tr>
+<tr><td>2012–2020</td><td>Lastline</td><td>Built the anti-malware sandbox (full-system emulation plus hypervisor) and the machine-learning and binary-similarity detection pipeline</td></tr>
+<tr><td>2020–2023</td><td>VMware, after it acquired Lastline</td><td>Detection and threat-hunting pipelines for NSX Advanced Threat Prevention and NDR</td></tr>
+<tr><td>2023–2025</td><td>Google Cloud, Mandiant Security Validation</td><td>Attack simulation engine: does the control actually detect?</td></tr>
+<tr><td>2025–</td><td>Cisco Talos</td><td>Applying current AI to threat detection and prevention</td></tr>
+</tbody>
+</table>
+<p class="foot">Publications: SCRUTINIZER (code reuse in malware via decompilation and machine learning), DEEPCAPA (malicious capabilities in Windows malware). Five patents in threat and malware detection technology.<br>ITMO University, Information Security, 2005–2011. Taught “Introduction to Malware Research” at Saint Petersburg State University, 2011–2012.</p>
+
+</div>
+<footer class="chrome"><span class="module">Where is the malware?</span><span class="timing">min 1–2</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 1–2 minutes</strong> · Where is the malware?</p>
+<p>One minute. The table is the lecture's own periods read as a career, and that is the only point to make. The 2007–2012 row is the file era from inside two antivirus engines: unpacking, polymorphic viruses, and the reputation-based detection that server-side polymorphism forced on the industry (slide 10). The Lastline row is the sandbox era from inside the sandbox: the product this lecture says peaked around 2016 and was starved by 2020 (slides 11 and 24). The VMware row is the network side of the same story, NDR built for a world where payload inspection had stopped working (slide 26). The Mandiant row is assume-breach made into a product: simulate the attack and check whether the control sees it. The Talos row is Lectures 2 and 3.</p>
+<p>Say explicitly that the claims about what worked and what stopped working are a practitioner's claims, and that students should weigh them with that in mind, in both directions.</p>
+<p>Do not read the publications line; it is there for students who want to look them up.</p>
+<h4>Transition</h4><p>“Now classify five situations before we agree on any terminology.”</p></aside>
+</section>
+
+<section class="slide s3 k-five-suspicious-situations m1" data-slide="3" data-module="Where is the malware?" data-timing="2–5 minutes">
+
+<div class="body">
+<h2 class="title">Five suspicious situations</h2>
+<blockquote class="callout"><p>Where is the malware?</p></blockquote>
+<div class="vote" data-component="vote">
+<table>
+<thead><tr><th>Vote for each</th><th>Definitely malware</th><th>Possibly malware</th><th>Not malware, but part of an attack</th></tr></thead>
+<tbody>
+<tr><td>1. A Trojan executable is written to disk.</td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td></tr>
+<tr><td>2. PowerShell downloads and runs code.</td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td></tr>
+<tr><td>3. A PE image exists only in process memory.</td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td></tr>
+<tr><td>4. An attacker controls a legitimate remote-management tool.</td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td></tr>
+<tr><td>5. Repository instructions cause a coding agent to exfiltrate secrets.</td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td></tr>
+</tbody>
+</table>
+<button class="reset" type="button">Reset tally</button>
+</div>
+
+</div>
+<footer class="chrome"><span class="module">Where is the malware?</span><span class="timing">min 2–5</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 2–5 minutes</strong> · Where is the malware?</p>
+<p>Collect quick votes and disagreements. Do not resolve them. The purpose is to reveal that students are classifying different things: artifacts, behaviors, intent, or entire systems.</p>
+<h4>Interaction</h4><p>Ask two students who disagreed to explain which property determined their answer.</p>
+<h4>Transition</h4><p>“Hold on to that disagreement; it comes back when we reach detection. First, the route.”</p></aside>
+</section>
+
+<section class="slide s4 k-where-we-are-going m1" data-slide="4" data-module="Where is the malware?" data-timing="5–6 minutes">
+
+<div class="body">
+<h2 class="title">Where we are going</h2>
+<div class="parts">
+<div class="part">
+<h3>Part 1 <span class="min">6–45 min</span></h3>
+<p class="q">How did malware and malicious capabilities evolve?</p>
+<ul>
+<li>Why malware came to mean a file, and four periods, 2000 to 2026, in which the capability left it</li>
+<li>What broke the file-centric model, and when</li>
+<li>ATT&amp;CK: behavior without a family name, capabilities delivered through benign files, an attack with no malware file</li>
+</ul>
+</div>
+<div class="part">
+<h3>Part 2 <span class="min">45–80 min</span></h3>
+<p class="q">How are detection pipelines designed, and how did they evolve?</p>
+<ul>
+<li>One word, five questions; the detection pipeline and the options at each stage</li>
+<li>Where each change broke the pipeline; the host-and-file and network lineages, stage by stage</li>
+<li>Six misses to diagnose; five conclusions</li>
+</ul>
+</div>
+</div>
+<p class="foot">One attack recurs throughout: a stolen administrator account, an inline PowerShell command, shellcode in memory, documents out over HTTPS. It is situation 2 from the vote. The detectors themselves, machine learning and the LLM analyst, are Lecture 3.</p>
+
+</div>
+<footer class="chrome"><span class="module">Where is the malware?</span><span class="timing">min 5–6</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 5–6 minutes</strong> · Where is the malware?</p>
+<p>Now that the ambiguity has been felt, make the route explicit with the two questions, one per column. Part 1 is history: malware came to mean a file for good reasons, and over twenty-five years the attacker moved the capability out of it; ATT&amp;CK is how we describe what remains when there is no family name. Part 2 is the defender's side of the same years, organised around the detection pipeline: what each stage can choose from, which stage each attacker change broke, and how the host and the network pipelines were rebuilt in response; then six misses to diagnose and the conclusions.</p>
+<p>Point at the columns without reading them. Say that the detectors themselves, the machine learning and the LLM analyst, are deliberately thin here and get their own lecture, so that this one can spend its time on what the detector is allowed to see.</p>
+<p>Name the recurring scenario once so it is recognised when it returns.</p>
+<h4>Transition</h4><p>“Why did malware become so strongly associated with files in the first place?”</p></aside>
+</section>
+
+<section class="slide s5 k-part-1 m2" data-slide="5" data-module="From malicious programs to adversarial capabilities" data-timing="6–7 minutes">
+
+<div class="body">
+<div class="divider">
+<p class="part-kicker">Part 1</p>
+<h1 class="display">How the malicious capability left the file</h1>
+<p class="part-q">How did malware and malicious capabilities evolve?</p>
+<table>
+<tbody>
+<tr><td>7–32</td><td>From malicious programs to adversarial capabilities: four periods, 2000 to 2026</td></tr>
+<tr><td>32–45</td><td>ATT&amp;CK as a language for behavior</td></tr>
+</tbody>
+</table>
+<p class="part-lead">Why malware came to mean a file. Then the whole span and four periods, each read across five tracks: motive and money, attackers, the operating system, the internet, and the security products of the same years. Then ATT&amp;CK, a vocabulary for behavior, because the file stopped being the unit.</p>
+</div>
+
+</div>
+<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 6–7</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 6–7 minutes</strong> · From malicious programs to adversarial capabilities</p>
+<p>One sentence. Part 1 is about the attacker's side: what was delivered, why, and what changed around it. Keep the defensive products in their track on the period slides but do not open them up yet; Part 2 is where each product class gets its own treatment.</p>
+<h4>Transition</h4><p>“Start with the model everything else grew from.”</p></aside>
+</section>
+
+<section class="slide s6 k-original-mental-model m2" data-slide="6" data-module="From malicious programs to adversarial capabilities" data-timing="7–8 minutes">
+<h2 class="title">The original mental model</h2>
+<div class="body">
+<pre class="ascii"><code>malicious executable
+    -&gt; user or system executes it
+    -&gt; malicious behavior occurs</code></pre>
+<p>The suspicious object is persistent, transferable, and available for analysis.</p>
+</div>
+<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 7–8</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 7–8 minutes</strong> · From malicious programs to adversarial capabilities</p>
+<p>Present this as a useful simplification, not an ignorant historical mistake. When a stable file carries the capability, defenders can intercept it before execution, retain it, hash it, label it, and share it.</p>
+<h4>Transition</h4><p>“The familiar malware taxonomy grew around this object-centric model.”</p></aside>
+</section>
+
+<section class="slide s7 k-classical-taxonomy m2" data-slide="7" data-module="From malicious programs to adversarial capabilities" data-timing="8–10 minutes">
+<h2 class="title">The classical taxonomy</h2>
+<div class="body">
+<table><thead><tr><th>Term</th><th>Defining property</th></tr></thead><tbody><tr><td>Virus</td><td>Attaches to a host and replicates</td></tr><tr><td>Worm</td><td>Self-propagates between systems</td></tr><tr><td>Trojan</td><td>Appears legitimate but performs hidden actions</td></tr><tr><td>Backdoor</td><td>Provides unauthorized access</td></tr><tr><td>Spyware</td><td>Collects information</td></tr><tr><td>Rootkit</td><td>Conceals or preserves privileged access</td></tr></tbody></table>
+</div>
+<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 8–10</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 8–10 minutes</strong> · From malicious programs to adversarial capabilities</p>
+<p>The categories describe different dimensions. “Trojan” concerns presentation, “worm” propagation, “backdoor” capability, and “rootkit” concealment. A single specimen can occupy several categories simultaneously.</p>
+<h4>Interaction</h4><p>Ask whether ransomware belongs in the table as an artifact type, propagation mechanism, capability, or objective.</p>
+<h4>Transition</h4><p>“These categories became operational because files were convenient security objects.”</p></aside>
+</section>
+
+<section class="slide s8 k-files-as-unit-of-detection m2" data-slide="8" data-module="From malicious programs to adversarial capabilities" data-timing="10–12 minutes">
+<h2 class="title">Why files became the unit of detection</h2>
+<div class="body">
+<table><thead><tr><th>Because attackers used them (2000 to the mid-2010s)</th><th>Because defenders could use them</th></tr></thead><tbody><tr><td>Executable attachments, then macro documents</td><td>Files cross trust boundaries</td></tr><tr><td>Drive-by downloads dropping an EXE</td><td>Files persist</td></tr><tr><td>Worms and autorun media carrying their own binary</td><td>Files can be hashed and compared</td></tr><tr><td>Banking trojans and bots installed as programs</td><td>Files can be scanned before execution</td></tr><tr><td>Victim hosts had little built-in tooling to abuse</td><td>Samples can be retained, shared, and labeled</td></tr></tbody></table>
+<blockquote class="callout"><p>The file was the attack. The defense followed it.</p></blockquote>
+</div>
+<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 10–12</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 10–12 minutes</strong> · From malicious programs to adversarial capabilities</p>
+<p>Start with the left column. It is the first two periods on slides 10 and 11: the file era proper, and then the period in which the file diversified into documents, scripts and exploit objects but remained the deliverable. For roughly fifteen years the attacker's problem was to get their own code onto the victim's machine and run it, because the victim's machine offered little else to work with. PowerShell did not ship by default until Windows 7 in 2009, remote-management tooling was not ubiquitous, and business data lived on the host rather than behind cloud APIs. Email attachments, drive-by downloads, removable media, worms, and bundled installers all delivered a program. The program was the capability, so the program was the right thing to catch.</p>
+<p>The right column is why the industry could build on that. Files cross the boundary the defender controls, persist long enough to inspect, hash identically everywhere, and can be scanned before they run. Samples flow between vendors, signature databases grow, sandboxes detonate them, and supervised datasets are built from them. Connect this to antivirus hooks, sample exchanges, and later the public PE datasets covered in Lecture 3.</p>
+<p>Stop here. Do not preview how the model breaks; the next four slides show it period by period, and slide 14 draws the list. The only forward-looking sentence this slide needs is that the model held for about fifteen years.</p>
+<h4>Interaction</h4><p>Ask the class what a 2005 attacker had to put on the victim's machine to steal documents, and what a 2025 attacker has to put there. The two answers are slide 10 and slide 13; the gap between them is the rest of the lecture.</p>
+<h4>Transition</h4><p>“That model held for about fifteen years and then broke in stages. First the whole span: four periods across five tracks, motive and money, attackers, the operating system, the internet, and security products.”</p></aside>
+</section>
+
+<section class="slide s9 k-four-periods m2" data-slide="9" data-module="From malicious programs to adversarial capabilities" data-timing="12–14 minutes">
+
+<div class="body">
+<h2 class="title">Four periods, 2000–2026</h2>
+<div class="tl" data-component="timeline" data-mode="full" data-breaks="0" aria-label="Timeline 2000 to 2026: four periods across five tracks, with a few anchor events labelled"></div>
+<div class="cards">
+<div class="card"><b>2000–2009</b><i>the file era</i>An executable, mass-mailed to an administrator over plaintext. Antivirus, mail gateways and IDS inspected files and payloads.</div>
+<div class="card"><b>2010–2016</b><i>APT, exploit kits, files of every kind</i>Campaigns and exploit kits; the deliverable is still a file, no longer only an executable. The sandbox is the premium control.</div>
+<div class="card"><b>2017–2022</b><i>the access economy</i>Access is bought, stolen through identities and injected through trusted vendors. EDR goes mainstream and gets attacked.</div>
+<div class="card"><b>2023–2026</b><i>hands-on hacking, edge devices, agents</i>Intrusion by hand through help desks and stolen sessions, edge devices that run no EDR, then agents acting on planted instructions.</div>
+</div>
+<blockquote class="callout"><p>In each period the attacker moved the capability to where the current sensor was not looking, and the money moved with it.</p></blockquote>
+
+</div>
+<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 12–14</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 12–14 minutes</strong> · From malicious programs to adversarial capabilities</p>
+<p>Two minutes, and the purpose is the shape, not the content. Point at the five lanes and name them, starting with motive and money because it explains the other four. Then read the four period names left to right and say one sentence per period from the cards. Do not read the labelled dots; they are anchors some students will recognise (Windows XP, Storm, Stuxnet, CryptoLocker, NotPetya, SolarWinds, Volt Typhoon) and they are there so the zoomed slides that follow have a reference.</p>
+<p>Say explicitly that the next four slides zoom into one period each: the same five lanes, the period's own key events labelled, and one claim per track. The recap after the four periods returns to this timeline and draws the breaks on it.</p>
+<p>The periods are the periods of the attacker's dominant tradecraft, not of famous incidents, and the boundaries are soft by a year or two. 2010 opens with Aurora and Stuxnet; 2017 opens with the Shadow Brokers leak and the ransomware economy it fed; 2023 opens with the Volt Typhoon advisory and the casino intrusions, campaigns with no malware file at all. Say "no file", not "no malware": by this lecture's definition the hands-on intrusion, the built-in tools and the exploits are the malicious capability, so the malware is still there and only its carrier is gone.</p>
+<h4>Transition</h4><p>“Zoom into the first period.”</p></aside>
+</section>
+
+<section class="slide s10 k-era-2000-2009-file-era m2" data-slide="10" data-module="From malicious programs to adversarial capabilities" data-timing="14–18 minutes">
+<h2 class="title">2000–2009: the file era</h2>
+<div class="body">
+<div class="period zoomed" data-period="p1">
+<div class="tl" data-component="timeline" data-mode="zoom" data-focus="p1" aria-label="Timeline of 2000–2009 across five tracks; key events labelled"></div>
+<div class="headlines">
+<div class="hl" data-track="money"><span class="track-name">Motive and money</span><span class="hl-text">Notoriety gives way to fraud: the victim's machine and what it types become the product.</span></div>
+<div class="hl" data-track="attackers"><span class="track-name">Attackers</span><span class="hl-text">An executable file, mass-mailed to an administrator, then hidden by packers, rootkits and server-side polymorphism.</span></div>
+<div class="hl" data-track="os"><span class="track-name">Operating system</span><span class="hl-text">Windows XP runs everyone as administrator with autorun on; SP2 and Vista start closing the host.</span></div>
+<div class="hl" data-track="internet"><span class="track-name">Internet</span><span class="hl-text">Broadband and plaintext HTTP; email is the delivery channel and the browser is full of plug-ins.</span></div>
+<div class="hl" data-track="products"><span class="track-name">Security products</span><span class="hl-text">Signature antivirus learns emulation and reputation, mail gateways block executables, IDS reads plaintext payloads.</span></div>
+<button type="button" class="details-toggle" aria-pressed="false">details</button>
+</div>
+<div class="tracks detail">
+<div class="track" data-track="money"><div class="track-name">Motive and money</div><ul class="chips"><li class="chip">From notoriety to fraud: adware and pay-per-install, spam botnets, click fraud, banking trojans, fake antivirus, carding</li><li class="chip">The victim's machine and credentials are the product</li></ul></div>
+<div class="track" data-track="attackers"><div class="track-name">Attackers</div><ul class="chips"><li class="chip">Mass-mailing worms, executable attachments, and the tail of the first macro and script wave (VBScript worms, 2000–2001)</li><li class="chip">Packers and commercial protectors (UPX, ASPack, Armadillo, Themida)</li><li class="chip">Windows XP rootkits (Hacker Defender, Sony BMG 2005, Rustock) and MBR bootkits (2007–08)</li><li class="chip">Botnets and pay-per-install (Storm, Zeus, Conficker)</li><li class="chip">Server-side polymorphism and fake antivirus from about 2007</li></ul></div>
+<div class="track" data-track="os"><div class="track-name">Operating system</div><ul class="chips"><li class="chip">Windows XP (2001): users run as administrator, autorun on, firewall present but off by default until SP2 (2004) turns it on and adds DEP</li><li class="chip">Vista (2007): UAC, mandatory 64-bit driver signing, ASLR; kernel-patch protection carried over from 64-bit XP and Server 2003 SP1 (2005)</li><li class="chip">Windows 7 (2009) ships PowerShell by default</li></ul></div>
+<div class="track" data-track="internet"><div class="track-name">Internet</div><ul class="chips"><li class="chip">Broadband replaces dial-up</li><li class="chip">IE6, ActiveX, Flash, Java and Acrobat plugins</li><li class="chip">HTTP in plaintext; HTTPS only for login and payment</li><li class="chip">Email is the delivery channel</li></ul></div>
+<div class="track" data-track="products"><div class="track-name">Security products</div><ul class="chips"><li class="chip">Signature antivirus, then heuristics and emulation to see through packers</li><li class="chip">Outlook and mail gateways block executable attachments; Office macro security ends the first script wave</li><li class="chip">Personal firewalls and HIPS</li><li class="chip">Anti-spam gateways</li><li class="chip">Network IDS/IPS on plaintext traffic</li><li class="chip">Cloud reputation and file prevalence arrive at the end of the decade</li></ul></div>
+</div>
+<blockquote class="callout period-callout"><p>The attack was a file delivered to an administrator over plaintext. Every product that mattered inspected files or payloads.</p></blockquote>
+</div>
+</div>
+<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 14–18</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 14–18 minutes</strong> · From malicious programs to adversarial capabilities</p>
+<p>The timeline is zoomed to this period: the labelled dots are the key events, the small dots are the rest and show their date on hover. Say the five headlines, then tell two or three of the labelled events as one story. The detail chips are behind the details button, which swaps the timeline out for them; they are for questions, not for reading aloud.</p>
+<p>Read the five tracks as one system, starting with the money. The attacker's unit was the executable because the victim ran as administrator on a machine with no built-in tooling worth abusing, received email and browsed with plug-in-heavy browsers, and the network carried everything in the clear. The defenses that mattered were exactly those built on that unit: file scanners, payload signatures, spam filters.</p>
+<p><strong>Motive explains the volume.</strong> The decade opens with worm authors seeking notoriety and closes with a criminal market. Adware and pay-per-install paid per infected machine, spam botnets rented out capacity, click fraud monetized browsers, banking trojans and carding monetized credentials. Once an infection was worth a few cents to a few dollars, the attacker's problem became scale, and scale is what produced botnets and server-side polymorphism. The product was the victim's machine and what it typed.</p>
+<p>Within the decade the attacker moved three times inside the file:</p>
+<ul><li><strong>Packers and protectors</strong> made the bytes on disk stop matching the code that ran. Antivirus added emulation and generic unpacking: the scanner ran the file a little to see it.</li><li><strong>Rootkits and bootkits</strong> made the live system lie about which files and processes existed. The Sony BMG case in 2005 made the technique public. Defenders inspected raw disk and memory from outside the lying layer, and Microsoft's 64-bit kernel-patch protection (2005) and Vista's mandatory driver signing (2007) were in part a response.</li><li><strong>Botnets and server-side polymorphism</strong> turned the host into a rented commodity and gave every victim a unique binary. The asset was the command-and-control infrastructure; the binary was disposable. This broke hash and byte signatures operationally and produced reputation and prevalence systems (McAfee Artemis in 2008, Symantec Quorum and Insight in 2009–2010), cloud lookups, generic detections, and pushed machine learning on file features from research (first papers in 2001) toward products (from about 2012). Lecture 3 picks that up.</li></ul>
+<p>The operating-system row explains why so much was possible: administrator by default, autorun, and no exploit mitigations until SP2 and Vista. Vista's UAC and driver signing were unpopular precisely because they took privileges away from the model attackers had been enjoying.</p>
+<h4>Transition</h4><p>“The next period starts with a different kind of adversary. The file stays, but it stops being an executable.”</p>
+<h4>Sources</h4><ul><li><a href="https://techcommunity.microsoft.com/t5/windows-blog-archive/sony-rootkits-and-digital-rights-management-gone-too-far/ba-p/723442" target="_blank" rel="noopener">Mark Russinovich: Sony, rootkits and digital rights management gone too far (2005)</a></li><li><a href="https://www.confickerworkinggroup.org/" target="_blank" rel="noopener">Conficker Working Group: lessons learned</a></li><li><a href="https://attack.mitre.org/techniques/T1027/002/" target="_blank" rel="noopener">MITRE ATT&amp;CK: Obfuscated Files or Information: Software Packing (T1027.002)</a></li><li><a href="https://attack.mitre.org/techniques/T1542/003/" target="_blank" rel="noopener">MITRE ATT&amp;CK: Bootkit (T1542.003)</a></li><li><a href="https://learn.microsoft.com/en-us/archive/blogs/windowsvistasecurity/an-introduction-to-kernel-patch-protection" target="_blank" rel="noopener">Microsoft: An introduction to Kernel Patch Protection (first shipped 2005 on x64)</a></li><li><a href="https://learn.microsoft.com/en-us/previous-versions/bb877964(v=technet.10" target="_blank" rel="noopener">Microsoft: Windows XP SP2 firewall enabled by default</a>)</li></ul></aside>
+</section>
+
+<section class="slide s11 k-era-2010-2016-apt-and-exploit-kits m2" data-slide="11" data-module="From malicious programs to adversarial capabilities" data-timing="18–22 minutes">
+<h2 class="title">2010–2016: APT, exploit kits, and files of every kind</h2>
+<div class="body">
+<div class="period zoomed" data-period="p2">
+<div class="tl" data-component="timeline" data-mode="zoom" data-focus="p2" aria-label="Timeline of 2010–2016 across five tracks; key events labelled"></div>
+<div class="headlines">
+<div class="hl" data-track="money"><span class="track-name">Motive and money</span><span class="hl-text">Crime industrializes and states arrive; Bitcoin makes extortion payable at scale.</span></div>
+<div class="hl" data-track="attackers"><span class="track-name">Attackers</span><span class="hl-text">Nation-state campaigns and exploit kits; the deliverable is still a file, now of every kind.</span></div>
+<div class="hl" data-track="os"><span class="track-name">Operating system</span><span class="hl-text">Windows 7 puts PowerShell on every machine; Windows 10 answers with AMSI and script logging.</span></div>
+<div class="hl" data-track="internet"><span class="track-name">Internet</span><span class="hl-text">HTTPS grows from a minority to half of page loads; plug-ins decline; work moves to Office 365 and phones.</span></div>
+<div class="hl" data-track="products"><span class="track-name">Security products</span><span class="hl-text">The sandbox is the premium control; kill chain, ATT&amp;CK and EDR give defenders a vocabulary for behavior.</span></div>
+<button type="button" class="details-toggle" aria-pressed="false">details</button>
+</div>
+<div class="tracks detail">
+<div class="track" data-track="money"><div class="track-name">Motive and money</div><ul class="chips"><li class="chip">Crime industrializes: exploit-kit rental, pay-per-install markets, point-of-sale breaches (Target 2013)</li><li class="chip">Bitcoin makes extortion payable at scale; ransomware begins</li><li class="chip">States enter for espionage, intellectual property and sabotage; North Korea adds theft (Bangladesh Bank 2016)</li></ul></div>
+<div class="track" data-track="attackers"><div class="track-name">Attackers</div><ul class="chips"><li class="chip">APT era: Aurora (2010), Stuxnet (2010), APT1 report (2013)</li><li class="chip">Exploit kits at scale through Flash, Java and IE (Blackhole, Angler) dropping executables</li><li class="chip">File types diversify once mail blocks executables: archives, exploit documents, macros again (2014), script downloaders, JARs</li><li class="chip">Ransomware begins (CryptoLocker 2013, Locky 2016)</li><li class="chip">Credential theft with Mimikatz and pass-the-hash</li><li class="chip">At the end of the period: PowerSploit, Empire, Cobalt Strike, registry-resident malware (Poweliks, Kovter)</li></ul></div>
+<div class="track" data-track="os"><div class="track-name">Operating system</div><ul class="chips"><li class="chip">Windows 7 dominant, 64-bit mainstream, PowerShell built in</li><li class="chip">XP end of life (2014)</li><li class="chip">Windows 8: Secure Boot</li><li class="chip">Windows 10 (2015): AMSI, script block logging, Device Guard and Credential Guard (Enterprise editions)</li></ul></div>
+<div class="track" data-track="internet"><div class="track-name">Internet</div><ul class="chips"><li class="chip">HTTPS grows from a minority to about half of page loads; Let's Encrypt (2015)</li><li class="chip">Flash and the Java plugin decline</li><li class="chip">Office 365 (2011) and cloud services; smartphones and BYOD</li></ul></div>
+<div class="track" data-track="products"><div class="track-name">Security products</div><ul class="chips"><li class="chip">Sandboxes become the premium control (WildFire 2011, FireEye IPO 2013, Cuckoo)</li><li class="chip">Next-generation firewalls with application identification</li><li class="chip">Kill chain (2011), threat intelligence, ATT&amp;CK (2015)</li><li class="chip">EDR named (2013), Sysmon (2014)</li><li class="chip">Machine learning on PE features marketed as next-generation antivirus</li></ul></div>
+</div>
+<blockquote class="callout period-callout"><p>The adversary became a campaign. The deliverable was still a file, but no longer only an executable: exploits, documents, scripts and loaders, with the first memory-only frameworks appearing at the very end.</p></blockquote>
+</div>
+</div>
+<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 18–22</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 18–22 minutes</strong> · From malicious programs to adversarial capabilities</p>
+<p>The timeline is zoomed to this period: the labelled dots are the key events, the small dots are the rest and show their date on hover. Say the five headlines, then tell two or three of the labelled events as one story. The detail chips are behind the details button, which swaps the timeline out for them; they are for questions, not for reading aloud.</p>
+<p><strong>Two kinds of payoff now coexist.</strong> Crime industrializes into a service economy: exploit kits are licensed by the year or rented by the day, installs are bought and sold, and point-of-sale malware turns retail breaches into card data. Bitcoin, usable at scale from about 2013, is the enabler that ransomware had been waiting for: CryptoLocker is the first campaign in which the victim pays the attacker directly rather than the attacker monetizing the victim's machine through a third party. At the same time the APT era brings an adversary whose payoff is strategic, not financial: espionage, intellectual property, sabotage. The same tradecraft serves both, which is one reason a file verdict cannot tell you what you are dealing with. North Korea's Bangladesh Bank heist in 2016 shows a state using the APT toolkit for money.</p>
+<p>Three more shifts happen in this period and they interact.</p>
+<p><strong>The adversary changed.</strong> Operation Aurora in January 2010, Stuxnet that June and the APT1 report in 2013 made the funded, persistent, mission-driven team the reference adversary. Multi-stage tooling, zero-days, stolen signing certificates, months of dwell. A file verdict says nothing about who is behind it or what they want. The kill chain paper in 2011, threat intelligence as a discipline, and ATT&amp;CK in 2015 are the defensive response: the campaign, not the file, becomes the unit of analysis. That is the next module.</p>
+<p><strong>The file diversified; it did not disappear.</strong> Be careful not to overstate this period. The main deliverable was still a file. What changed was the kind of file and the channel, and the cause was defensive. Outlook had blocked dangerous attachment types since 2000 and mail gateways followed, so by the late 2000s an executable attachment rarely reached a user. Attackers diversified the container instead: archives wrapping executables, PDF and Office exploit documents, macro documents again from 2014, JavaScript, VBScript and HTA downloaders, shortcut files, and the browser through exploit kits. This was itself a second wave; macro viruses from 1995 and the VBScript worms of 2000–2001 had shown that a document or script could carry the capability before Office macro security and attachment blocking pushed attackers back to executables for a decade. Exploit kits delivered through Flash, Java and Internet Explorer and then dropped an executable, so the first artifact was an exploit object rather than an attachment. Malicious PDFs and Office exploits, then macro documents from 2014 when plug-ins declined, carried the capability in a document. Scripts, archives and JARs replaced the bare executable in email. Ransomware arrived as a file. A sandbox that detonated documents, archives, scripts and the executables they dropped was therefore the right control for this period, which is why it became the premium control around 2013 to 2016.</p>
+<p><strong>The exit from the file begins at the end.</strong> Windows 7 had put PowerShell on every machine. PowerSploit in 2012, Cobalt Strike the same year and Empire in 2015 made reflective loading and memory-only payloads a framework feature, Poweliks and Kovter persisted in the registry with no executable on disk, and Mimikatz made stolen credentials cheaper than exploits. The term "living off the land" was coined in 2013. In this period these were the tradecraft of advanced operators and red teams. They become standard in the next period, and that is when the sandbox is starved. Slide 25 covers the mechanism.</p>
+<p>Microsoft's AMSI and script block logging in 2015 are the operating system moving the sensor to where the capability went. EDR and Sysmon are the product market doing the same, but note the premise: EDR was named in 2013 because defenders had accepted that antivirus would not stop a determined adversary and that breaches had to be detected and investigated after the fact. It is a different control, not a next-gen antivirus. Slide 25 develops this.</p>
+<h4>Transition</h4><p>“The third period starts with a leak and ends with access itself as the commodity.”</p>
+<h4>Sources</h4><ul><li><a href="https://www.mandiant.com/resources/reports/apt1-exposing-one-of-chinas-cyber-espionage-units" target="_blank" rel="noopener">Mandiant: APT1, exposing one of China's cyber espionage units (2013)</a></li><li><a href="https://www.lockheedmartin.com/content/dam/lockheed-martin/rms/documents/cyber/LM-White-Paper-Intel-Driven-Defense.pdf" target="_blank" rel="noopener">Lockheed Martin: Intelligence-driven computer network defense (the kill chain paper, 2011)</a></li><li><a href="https://attack.mitre.org/software/S0363/" target="_blank" rel="noopener">MITRE ATT&amp;CK: PowerShell Empire software entry</a></li><li><a href="https://attack.mitre.org/techniques/T1620/" target="_blank" rel="noopener">MITRE ATT&amp;CK: Reflective Code Loading (T1620)</a></li><li><a href="https://learn.microsoft.com/en-us/powershell/scripting/security/security-features" target="_blank" rel="noopener">Microsoft: PowerShell security features (AMSI, script block logging)</a></li><li><a href="https://security.googleblog.com/2016/10/https-encryption-on-web.html" target="_blank" rel="noopener">Google Security Blog: HTTPS encryption on the web (2016)</a></li></ul></aside>
+</section>
+
+<section class="slide s12 k-era-2017-2022-access-economy m2" data-slide="12" data-module="From malicious programs to adversarial capabilities" data-timing="22–26 minutes">
+<h2 class="title">2017–2022: the access economy, identity, and the supply chain</h2>
+<div class="body">
+<div class="period zoomed" data-period="p3">
+<div class="tl" data-component="timeline" data-mode="zoom" data-focus="p3" aria-label="Timeline of 2017–2022 across five tracks; key events labelled"></div>
+<div class="headlines">
+<div class="hl" data-track="money"><span class="track-name">Motive and money</span><span class="hl-text">The organization pays directly: big-game ransomware, affiliates, double extortion and access brokers.</span></div>
+<div class="hl" data-track="attackers"><span class="track-name">Attackers</span><span class="hl-text">Living off the land is standard; access is bought, stolen through identities, injected via vendors.</span></div>
+<div class="hl" data-track="os"><span class="track-name">Operating system</span><span class="hl-text">Windows closes the easy paths: Defender built in, internet macros blocked, TPM 2.0 required, VBS on by default.</span></div>
+<div class="hl" data-track="internet"><span class="track-name">Internet</span><span class="hl-text">HTTPS passes 90 percent and TLS 1.3 and DoH hide the rest; the identity provider becomes the perimeter.</span></div>
+<div class="hl" data-track="products"><span class="track-name">Security products</span><span class="hl-text">EDR goes mainstream, then XDR; the network falls back to metadata; the sandbox becomes a commodity.</span></div>
+<button type="button" class="details-toggle" aria-pressed="false">details</button>
+</div>
+<div class="tracks detail">
+<div class="track" data-track="money"><div class="track-name">Motive and money</div><ul class="chips"><li class="chip">The organization pays directly: big-game ransomware, affiliates on revenue share, double extortion, initial-access brokers, infostealer log markets, cryptojacking, business email compromise the largest reported loss category through 2021, state cryptocurrency heists</li></ul></div>
+<div class="track" data-track="attackers"><div class="track-name">Attackers</div><ul class="chips"><li class="chip">Shadow Brokers leak (April 2017), then WannaCry and NotPetya</li><li class="chip">Emotet, TrickBot, Ryuk: big-game ransomware</li><li class="chip">Ransomware-as-a-service, affiliates, double extortion (2019), initial-access brokers, infostealers</li><li class="chip">Fileless and living-off-the-land tradecraft becomes standard: PowerShell, WMI, LOLBins, Cobalt Strike, DLL side-loading, memory-only implants</li><li class="chip">Supply chain: CCleaner, NotPetya via M.E.Doc, SolarWinds (2020), Kaseya, Log4Shell (2021)</li><li class="chip">Mass exploitation of edge services (ProxyLogon 2021)</li><li class="chip">Identity: MFA fatigue, help-desk social engineering, token theft (LAPSUS$ 2022)</li><li class="chip">BYOVD and EDR killers</li></ul></div>
+<div class="track" data-track="os"><div class="track-name">Operating system</div><ul class="chips"><li class="chip">Windows 10 mainstream, Windows 7 end of life (2020)</li><li class="chip">Defender built in with attack surface reduction rules, Credential Guard, tamper protection</li><li class="chip">Windows 11 (2021) requires TPM 2.0 and Secure Boot; virtualization-based security is on by default for new installs</li><li class="chip">Internet macros blocked by default (2022)</li><li class="chip">Vulnerable-driver blocklist (2022)</li></ul></div>
+<div class="track" data-track="internet"><div class="track-name">Internet</div><ul class="chips"><li class="chip">HTTPS passes 90 percent of page loads for US Firefox users (2020) and for Chrome on Windows (2021)</li><li class="chip">TLS 1.3 (2018), DNS over HTTPS (2018 onward)</li><li class="chip">Cloud-first; remote work (2020)</li><li class="chip">The identity provider is the perimeter; OAuth tokens and SaaS everywhere</li><li class="chip">MFA mainstream but phishable</li></ul></div>
+<div class="track" data-track="products"><div class="track-name">Security products</div><ul class="chips"><li class="chip">EDR mainstream, then XDR and managed detection</li><li class="chip">NDR and TLS fingerprinting (JA3, 2017)</li><li class="chip">TLS inspection, SASE and zero trust (NIST SP 800-207, 2020)</li><li class="chip">Sandboxes bundled and commoditized</li><li class="chip">Cloud SIEM, CASB</li><li class="chip">Identity threat detection emerges</li></ul></div>
+</div>
+<blockquote class="callout period-callout"><p>Access itself became the traded commodity. The capability moved into identities, tokens and trusted vendor channels, and attackers began attacking the EDR.</p></blockquote>
+</div>
+</div>
+<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 22–26</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 22–26 minutes</strong> · From malicious programs to adversarial capabilities</p>
+<p>The timeline is zoomed to this period: the labelled dots are the key events, the small dots are the rest and show their date on hover. Say the five headlines, then tell two or three of the labelled events as one story. The detail chips are behind the details button, which swaps the timeline out for them; they are for questions, not for reading aloud.</p>
+<p><strong>Spill-over.</strong> The period opens with the Shadow Brokers publishing exploits attributed to a United States intelligence agency, including EternalBlue. Within weeks WannaCry used it as a worm; in June NotPetya combined it with credential theft and built-in administration tools, spread through Ukrainian networks and then worldwide, and was later attributed by several governments to the Russian military. Top-tier capability reached criminals and lesser states overnight, and a state operation caused global collateral damage. Patch latency and flat networks, not a novel file, decided who was hit.</p>
+<p><strong>Fileless became ordinary.</strong> The memory-only frameworks and living-off-the-land techniques that advanced operators used at the end of the previous period became the default for criminal affiliates in this one. Commodity loaders ran PowerShell and WMI, implants lived in memory, legitimate signed executables side-loaded malicious DLLs. This is the period in which the sandbox was starved of things to detonate and EDR became the control that mattered.</p>
+<p><strong>The money moved from the consumer to the enterprise.</strong> In the previous periods the attacker monetized the victim's machine or credentials through a third party. Now the victim organization pays the attacker directly, and the sums are set by what a company will pay to recover or to keep data private. That single change explains the period. Emotet delivered TrickBot, TrickBot delivered Ryuk, and by 2019 ransomware ran as a service: developers, affiliates on revenue share, initial-access brokers selling footholds, infostealers feeding the brokers, and double extortion making backups insufficient. The traded commodity was access, not malicious files, because access is what the payout required. Business email compromise, which needs no malicious file at all, was meanwhile the largest reported loss category in FBI complaint data every year from 2017 to 2021 (investment fraud overtook it in 2022), and cryptojacking and state cryptocurrency heists added quieter revenue. This is the criminal landscape of the period the way botnets were for 2005 to 2010.</p>
+<p><strong>Trust channels became delivery channels.</strong> CCleaner, M.E.Doc, SolarWinds and Kaseya delivered through the vendor relationship. Log4Shell and ProxyLogon showed mass exploitation of exposed services with no attachment at all.</p>
+<p><strong>Identity became the target.</strong> With the identity provider as the perimeter and tokens everywhere, LAPSUS$ in 2022 reached large companies through MFA fatigue and help-desk calls. No implant was required where a stolen session would do.</p>
+<p><strong>The defense that mattered was attacked.</strong> EDR became the dominant control, so attackers brought vulnerable signed drivers to kill it. BYOVD is the attacker's acknowledgment of which product won the period. Slide 18 returns to it with remote-management tools as the other response.</p>
+<p>The operating-system row is Microsoft closing the paths of the previous period: macros from the internet blocked, a driver blocklist, credential isolation, tamper protection. Each closure moved attackers one step further from the host.</p>
+<h4>Transition</h4><p>“The current period keeps the same capabilities and loses the file altogether: intrusion by hand, through edge devices, and then by agents acting on instructions.”</p>
+<h4>Sources</h4><ul><li><a href="https://www.cisa.gov/news-events/alerts/2017/05/12/indicators-associated-wannacry-ransomware" target="_blank" rel="noopener">CISA alert TA17-132A: indicators associated with WannaCry ransomware (2017)</a></li><li><a href="https://trumpwhitehouse.archives.gov/briefings-statements/statement-press-secretary-25/" target="_blank" rel="noopener">White House statement attributing NotPetya to the Russian military (February 2018)</a></li><li><a href="https://www.cisa.gov/news-events/directives/ed-21-01-mitigate-solarwinds-orion-code-compromise" target="_blank" rel="noopener">CISA: Russian APT compromise of SolarWinds Orion (ED 21-01)</a></li><li><a href="https://learn.microsoft.com/en-us/deployoffice/security/internet-macros-blocked" target="_blank" rel="noopener">Microsoft: macros from the internet blocked by default in Office</a></li><li><a href="https://www.microsoft.com/en-us/security/blog/2021/12/08/improve-kernel-security-with-the-new-microsoft-vulnerable-and-malicious-driver-reporting-center/" target="_blank" rel="noopener">Microsoft: vulnerable and malicious driver protections</a></li><li><a href="https://www.ic3.gov/AnnualReport/Reports" target="_blank" rel="noopener">FBI Internet Crime Complaint Center annual reports (business email compromise losses)</a></li><li><a href="https://csrc.nist.gov/pubs/sp/800/207/final" target="_blank" rel="noopener">NIST SP 800-207: Zero Trust Architecture (2020)</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc8446" target="_blank" rel="noopener">RFC 8446: TLS 1.3</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc8484" target="_blank" rel="noopener">RFC 8484: DNS Queries over HTTPS</a></li></ul></aside>
+</section>
+
+<section class="slide s13 k-era-2023-2026-hands-on-edge-devices-agents m2" data-slide="13" data-module="From malicious programs to adversarial capabilities" data-timing="26–30 minutes">
+<h2 class="title">2023–2026: hands-on hacking, edge devices, and agents</h2>
+<div class="body">
+<div class="period zoomed" data-period="p4">
+<div class="tl" data-component="timeline" data-mode="zoom" data-focus="p4" aria-label="Timeline of 2023–2026 across five tracks; key events labelled"></div>
+<div class="headlines">
+<div class="hl" data-track="money"><span class="track-name">Motive and money</span><span class="hl-text">Data theft without encryption; session tokens as the product; agent attacks have no business model yet.</span></div>
+<div class="hl" data-track="attackers"><span class="track-name">Attackers</span><span class="hl-text">Hands-on hacking via help desks and stolen sessions; exploited edge devices; instructions for agents.</span></div>
+<div class="hl" data-track="os"><span class="track-name">Operating system</span><span class="hl-text">The host hardens by default: driver blocklist, LSA protection, passkeys; most workloads now run on Linux.</span></div>
+<div class="hl" data-track="internet"><span class="track-name">Internet</span><span class="hl-text">Encrypted Client Hello hides the last plaintext field; AI assistants sit between the user and the data.</span></div>
+<div class="hl" data-track="products"><span class="track-name">Security products</span><span class="hl-text">Identity threat detection, baselining for living off the land, LLM triage; agent observability begins.</span></div>
+<button type="button" class="details-toggle" aria-pressed="false">details</button>
+</div>
+<div class="tracks detail">
+<div class="track" data-track="money"><div class="track-name">Motive and money</div><ul class="chips"><li class="chip">Extortion without encryption (mass data theft, Cl0p and MOVEit 2023)</li><li class="chip">Help-desk social engineering against high-value targets</li><li class="chip">Session tokens and SaaS data as the product</li><li class="chip">State prepositioning for disruption</li><li class="chip">AI lowers the cost of lures</li><li class="chip">Agent attacks have no settled business model yet</li></ul></div>
+<div class="track" data-track="attackers"><div class="track-name">Attackers</div><ul class="chips"><li class="chip">Living off the land as the whole campaign (Volt Typhoon advisory, 2023)</li><li class="chip">Help-desk social engineering, SIM swaps and MFA bypass (Scattered Spider)</li><li class="chip">Session cookie and token theft via infostealers</li><li class="chip">Exploitation of edge devices (Citrix, Ivanti, Fortinet, 2023–24)</li><li class="chip">ClickFix: the user pastes the command</li><li class="chip">AI-assisted lures</li><li class="chip">Instructions in data that hijack enterprise agents; autonomous agents as operators (2025–26)</li></ul></div>
+<div class="track" data-track="os"><div class="track-name">Operating system</div><ul class="chips"><li class="chip">Windows 11: vulnerable-driver blocklist on by default (2022); LSA protection on by default for new enterprise-joined installs; virtualization-based security on by default; Smart App Control (2022)</li><li class="chip">Passkeys (2023)</li><li class="chip">Hardened mobile and macOS</li><li class="chip">Most workloads on Linux in the cloud</li></ul></div>
+<div class="track" data-track="internet"><div class="track-name">Internet</div><ul class="chips"><li class="chip">Encrypted Client Hello: in browsers since 2023, standardized in 2026, server-side adoption still narrow</li><li class="chip">AI assistants in browsers, IDEs and SaaS; tool-using agents and agent protocols (2024–26)</li><li class="chip">SaaS-to-SaaS integrations and OAuth sprawl</li><li class="chip">Data lives behind APIs</li></ul></div>
+<div class="track" data-track="products"><div class="track-name">Security products</div><ul class="chips"><li class="chip">Identity threat detection and response</li><li class="chip">EDR tamper protection and kernel attack-surface reduction</li><li class="chip">Baselining for living-off-the-land detection</li><li class="chip">LLM triage in the SOC; agentic malware analysis (Project Ire, 2025)</li><li class="chip">Guardrails, prompt-injection defenses, agent observability</li></ul></div>
+</div>
+<blockquote class="callout period-callout"><p>A whole campaign can run without a malware file. The newest executable is an instruction in data, and the sensor has to follow it into identity and into the agent's context.</p></blockquote>
+</div>
+</div>
+<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 26–30</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 26–30 minutes</strong> · From malicious programs to adversarial capabilities</p>
+<p>The timeline is zoomed to this period: the labelled dots are the key events, the small dots are the rest and show their date on hover. Say the five headlines, then tell two or three of the labelled events as one story. The detail chips are behind the details button, which swaps the timeline out for them; they are for questions, not for reading aloud.</p>
+<p><strong>The product is now identity and data, not the host.</strong> Cl0p's mass exploitation of MOVEit in 2023 skipped encryption entirely and extorted on stolen data alone. Scattered Spider chose casinos and large enterprises because the payout justified live social engineering of a help desk. Infostealer markets sell session tokens because a token opens the SaaS tenant where the data lives. Volt Typhoon is the reminder that one class of adversary is not paid at all and is prepositioning for disruption. For the agent cases the business model is not yet observed; Lecture 2 treats grab-and-go theft and campaign staging as projections, not as a reported economy.</p>
+<p><strong>What is new, and what is not.</strong> Fileless tradecraft is not new here; the previous period made it standard. The period's additions are three: hands-on intrusion through people and sessions rather than payloads, edge devices as the entry point, and agents as a new actor. Say the "no malware file" part precisely, because the lecture's own definition is at stake: the malicious capability is still there, in hands-on intrusion, built-in tools, exploits and stolen sessions; what is gone is the file that used to carry it. The 2023 Volt Typhoon advisory described a state actor persisting in critical infrastructure using only built-in tools and valid accounts, which prompted dedicated living-off-the-land guidance in 2024. Scattered Spider reached large enterprises the same year through help-desk calls and MFA resets, with SIM swapping among its wider techniques. Infostealers sold session cookies that skipped authentication altogether. Edge devices, which run no EDR, became the preferred entry. In each case the host-based sensor had little to see, because the attacker used the organization's own tools under the organization's own identities.</p>
+<p><strong>The user runs the payload.</strong> ClickFix lures ask the user to paste a command into a Run dialog or terminal, turning the person into the loader. There is no attachment to scan and the process ancestry looks like the user.</p>
+<p><strong>The operating-system row has largely won the host.</strong> Driver blocklists, LSA protection on enterprise devices, virtualization-based security and passkeys close most of the previous period's paths by default. That success is part of why the attacker moved to identity, edge devices and people.</p>
+<p><strong>The new executable.</strong> When a coding agent reads a repository file, or a CRM agent reads a lead record, and acts on an instruction embedded in it, no classical sensor has anything to classify. The telemetry that matters is the context the agent assembled, the tools it called and the identity it acted under. Autonomous agents operating as attackers add persistence and volume on the other side. Lecture 2 covers both cases in depth; here they are only the latest point on the curve.</p>
+<p><strong>Security products are following again.</strong> Identity threat detection, agent observability, guardrails and prompt-injection defenses are the sensor moving into the identity provider and the agent harness. Agentic analysis systems such as Project Ire are the same reasoning capability applied on the defensive side; Lecture 3 covers that.</p>
+<h4>Transition</h4><p>“Put the four periods back on one list: what broke the file-centric model, and when.”</p>
+<h4>Sources</h4><ul><li><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-144a" target="_blank" rel="noopener">CISA: People's Republic of China state-sponsored cyber actor living off the land (Volt Typhoon), May 2023</a></li><li><a href="https://www.cisa.gov/resources-tools/resources/identifying-and-mitigating-living-off-land-techniques" target="_blank" rel="noopener">CISA: Identifying and mitigating living off the land techniques (February 2024)</a></li><li><a href="https://datatracker.ietf.org/doc/draft-ietf-tls-esni/" target="_blank" rel="noopener">IETF TLS Encrypted Client Hello draft</a></li><li><a href="https://www.microsoft.com/en-us/research/project/project-ire/" target="_blank" rel="noopener">Microsoft Project Ire</a></li><li><a href="https://noma.security/noma-labs/forcedleak/" target="_blank" rel="noopener">Noma Security: ForcedLeak</a></li><li><a href="https://huggingface.co/blog/agent-intrusion-technical-timeline" target="_blank" rel="noopener">Hugging Face: technical timeline of the July 2026 incident</a></li></ul></aside>
+</section>
+
+<section class="slide s14 k-what-broke-and-when m2" data-slide="14" data-module="From malicious programs to adversarial capabilities" data-timing="30–32 minutes">
+
+<div class="body">
+<h2 class="title">What broke the file-centric model, and when</h2>
+<div class="tl" data-component="timeline" data-mode="breaks" aria-label="Timeline 2000 to 2026 showing when each break in the file-centric model became dominant"></div>
+<table>
+<thead><tr><th>What broke the model</th><th>Became dominant</th><th>What the defender lost</th></tr></thead>
+<tbody>
+<tr><td>Diversification of file types: archives, documents, scripts, exploit objects</td><td>2010–2016, once mail blocked executable attachments; first wave 1995–2001</td><td>The executable as the main thing to scan</td></tr>
+<tr><td>Process injection, reflective loading, memory-resident execution</td><td>End of 2010–2016; standard 2017–2022</td><td>A file to detonate</td></tr>
+<tr><td>Living-off-the-land tools</td><td>2017–2022; the whole campaign by 2023</td><td>A malicious artifact at all</td></tr>
+<tr><td>Stolen identities, tokens and cloud APIs</td><td>2017–2022 onward</td><td>The host as the place where the attack happens</td></tr>
+<tr><td>Trusted vendor and update channels</td><td>2017–2022</td><td>Provenance as a proxy for safety</td></tr>
+<tr><td>Tool-using agents and external instructions</td><td>2025–2026</td><td>A program as the thing that executes intent</td></tr>
+</tbody>
+</table>
+<blockquote class="callout fragment"><p>Each break was partly a consequence of defensive success against the previous one.</p><p>The money and motivation moved too: from the victim's machine, to the victim's credentials, to the victim's organization, to the victim's identity and data.</p></blockquote>
+
+</div>
+<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 30–32</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 30–32 minutes</strong> · From malicious programs to adversarial capabilities</p>
+<p>This slide is the recap of the four periods. Each row is something students have just seen, now stated as a break in the model from slide 6, ordered by when it became dominant rather than when it was first seen. Every row has a precedent, and the first row is the clearest case of defense causing the next move. Macro viruses from 1995 and the VBScript worms of 2000–2001 were the first wave of non-executable files; Office macro security levels and Outlook attachment blocking absorbed them. Then Outlook and the mail gateways blocked executable attachments outright, so by the late 2000s an .exe rarely arrived by mail at all. Attackers answered by diversifying the file type: archives wrapping executables, PDF and Office exploit documents, macro documents again from 2014, JavaScript, VBScript and HTA downloaders, shortcut files, and the browser itself through exploit kits. That diversification is what changed what the sandbox had to detonate. Memory-resident code and living off the land likewise have earlier precedents; what matters for the defender is the moment a technique stops being an exception and becomes the default.</p>
+<p>Make the causal point explicit now that the evidence is on the table. File-centric defense worked: signatures, reputation, cloud lookups, download warnings and code-signing enforcement made delivering an unknown executable expensive, so attackers diversified the file. Sandboxes made the unknown document and dropped executable expensive, so attackers went to memory and built-in tools. EDR made implants visible, so attackers went to identities, vendors and remote-management tools. Operating-system hardening closed the host, so attackers went to people, edge devices and agents. Each row is partly a consequence of winning the previous row.</p>
+<p>The second callout is the motive track read across the four periods. Defensive success explains why the attacker had to move; the payout explains where they moved to. When the product was the machine, the attack was a file on the machine. When the product became the organization's willingness to pay, the attack became access to the organization. When the product became identity and data in SaaS, the attack became a token or an instruction. Students who remember only this sentence can reconstruct most of the table.</p>
+<p>In words that Part 2 names formally (slide 21): the artifact carried the malicious meaning in the file era; the APT era added objective, because the same file meant something different inside a campaign; the access economy moved the meaning to control, since a legitimate tool, a valid token or a real vendor update was malicious only because of who held it; and the agent period adds a controller that is itself a program acting under delegated authority, so control and objective have to be read from the agent's context and actions. Each move is also a move in what evidence the defender needs, which is the second half of the lecture.</p>
+<p>Avoid claiming that “fileless” always means literally no disk artifacts. The important distinction is that the primary malicious capability may never appear as a conventional executable file supplied to a scanner. The first row is the mildest break: still a file, no longer an executable, which is why file-based defenses extended rather than collapsed in that period.</p>
+<p>Cloud and identity abuse go further: the attacker may realize an objective through legitimate APIs without delivering executable code to the victim host. The last row goes further still: the thing that executes is an instruction consumed by a program that was supposed to be on the defender's side.</p>
+<h4>Interaction</h4><p>Ask which row is the first where a perfect file classifier with a perfect signature database would have had nothing useful to classify. Expect answers spread across the first row (it had a file, just not an executable), the second and third (no file to detonate, no artifact at all), and the fourth (nothing on the host). Each answer locates "nothing to classify" at a different pipeline stage, which is the point of the next module but one.</p>
+<h4>Transition</h4><p>“When the file is no longer the unit, we need a vocabulary for the behavior instead.”</p></aside>
+</section>
+
+<section class="slide s15 k-attack-intro m3" data-slide="15" data-module="ATT&amp;CK as a language for behavior" data-timing="32–34 minutes">
+
+<div class="body">
+<h2 class="title">MITRE ATT&CK: what it is</h2>
+<blockquote class="callout"><p>A public, curated knowledge base of adversary behavior, built from observed intrusions, maintained by MITRE since 2015 and updated every April and October.</p></blockquote>
+<div class="cards">
+<div class="card"><b>What is in it</b><ul>
+<li>Three domains: Enterprise, Mobile, ICS. Enterprise v20.0 (October 2026): 15 tactics, 227 techniques, 479 sub-techniques</li>
+<li>Procedure examples from documented campaigns; groups, software (malware and tools), campaigns</li>
+<li>Mitigations, data sources and detections for each technique</li>
+</ul></div>
+<div class="card"><b>What it is for</b><ul>
+<li>A shared vocabulary for behavior, independent of tool and family names</li>
+<li>Mapping what a detection pipeline covers, and where the gaps are</li>
+<li>Structuring threat intelligence, red and purple teaming, product comparison in ATT&amp;CK Evaluations</li>
+</ul></div>
+<div class="card"><b>What it is not</b><ul>
+<li>A complete list of everything an attacker can do</li>
+<li>An order of attack: tactics are goals, not steps</li>
+<li>Evidence: a technique ID names a behavior, it does not observe one</li>
+</ul></div>
+</div>
+<blockquote class="callout fragment"><p>ATT&amp;CK names behaviors. Observing them is the detection pipeline's job, and that is Part 2.</p></blockquote>
+
+</div>
+<footer class="chrome"><span class="module">ATT&amp;CK as a language for behavior</span><span class="timing">min 32–34</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 32–34 minutes</strong> · ATT&amp;CK as a language for behavior</p>
+<p>Two minutes. ATT&amp;CK began as an internal MITRE research effort in 2013 and was published in May 2015. It is free to use, maintained by MITRE's ATT&amp;CK team, and versioned every April and October, which is why the matrix on the next slide names its version: the current one, v20.0, was released in October 2026.</p>
+<p>Walk the three columns once. What is in it: three domains, Enterprise being the one this lecture uses, and for every technique the procedure examples from real campaigns, the groups and software seen using it, the mitigations, and the data sources and detections a defender would need. What it is for: a vocabulary that survives attackers swapping one tool for another that does the same thing; coverage mapping, where a team lays its detections over the matrix and sees the gaps; structuring intelligence; red and purple teaming; and the ATT&amp;CK Evaluations, in which vendors' products are run against an emulated adversary and the results published per technique.</p>
+<p>Then what it is not, because students over-read it. It is a knowledge base of observed adversary behavior, not a universal ontology of every capability software might possess; the tactics are goals, not a required sequence; and a sequence of ATT&amp;CK identifiers is not automatically a complete incident narrative. Above all a technique ID names a behavior, it is not evidence that the behavior happened. That last point is the bridge to Part 2.</p>
+<h4>Transition</h4><p>“Here is what the matrix looks like, and how to read it.”</p>
+<h4>Sources</h4><ul><li><a href="https://attack.mitre.org/resources/faq/" target="_blank" rel="noopener">MITRE ATT&amp;CK FAQ</a></li><li><a href="https://attack.mitre.org/resources/versions/" target="_blank" rel="noopener">MITRE ATT&amp;CK: versions of ATT&amp;CK</a></li><li><a href="https://attack.mitre.org/docs/ATTACK_Design_and_Philosophy_March_2020.pdf" target="_blank" rel="noopener">Strom et al., MITRE ATT&amp;CK: Design and Philosophy (March 2020)</a></li><li><a href="https://evals.mitre.org/" target="_blank" rel="noopener">MITRE ATT&amp;CK Evaluations</a></li></ul></aside>
+</section>
+
+<section class="slide s16 k-attack-levels m3" data-slide="16" data-module="ATT&amp;CK as a language for behavior" data-timing="34–36 minutes">
+
+<div class="body">
+<h2 class="title">From names to behaviors: ATT&CK's levels</h2>
+<p class="levels"><b>Tactic</b> why the adversary acts <span class="arrow">→</span> <b>Technique</b> what behavior achieves it <span class="arrow">→</span> <b>Sub-technique</b> a specific form <span class="arrow">→</span> <b>Procedure</b> how a given actor or tool did it</p>
+<div class="attack" data-attack data-expand="T1059">
+<div class="am-host"></div>
+<span class="fragment attack-step" data-light="T1078,T1021,T1059.001,T1027.010,T1620,T1083,T1005,T1560,T1071.001,T1041" aria-hidden="true"></span>
+</div>
+<blockquote class="callout fragment"><p>“Trojan” says less than this path: ten techniques across eight tactics, no family name, and every lit cell is a place a sensor could look.</p></blockquote>
+
+</div>
+<footer class="chrome"><span class="module">ATT&amp;CK as a language for behavior</span><span class="timing">min 34–36</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 34–36 minutes</strong> · ATT&amp;CK as a language for behavior</p>
+<p>Start with the matrix itself, because most students have seen the word and not the thing. Columns are tactics, the adversary's goals, in the order a campaign tends to need them; cells are techniques, the behaviors that achieve a goal; the expanded Execution column shows the third level, sub-techniques, under Command and Scripting Interpreter; procedures are the documented ways a named group or tool did it and live on the technique pages, not on the matrix. The count under each header is the real number of techniques in that tactic in the version named at the bottom, v20.0, released the day this was checked; say that the matrix moves, fifteen tactics since April 2026 when Defense Evasion split into Stealth and Defense Impairment, and that the new Defense Impairment column already has a sub-technique for impairing autonomous defenses; the slide shows a few per column and says how many more there are. Hover any cell for its ID.</p>
+<p>Then press Next: the recurring scenario lights up as a path, ten techniques across eight tactics, numbered in attack order. Valid Accounts lights in more than one column because the same behavior serves more than one goal, which is the matrix's point. Say that this path, not a family name, is what a defender can write detections against, and that every lit cell is a sensor question for Part 2.</p>
+<p>Then the quote. Family names and broad categories remain useful for attribution, intelligence, and communication. They do not directly identify which telemetry, detection logic, or mitigation a defender needs, and behavioral descriptions survive when attackers swap one tool for another that implements the same capability. ATT&amp;CK gives that description a shared structure.</p>
+<p>Keep tactics and techniques distinct from tools. The same technique may be realized through malware, an operating-system utility, or a cloud API.</p>
+<h4>Transition</h4><p>“A tool is an implementation vehicle; it is not the behavior itself.”</p>
+<h4>Sources</h4><ul><li><a href="https://attack.mitre.org/resources/faq/" target="_blank" rel="noopener">MITRE ATT&amp;CK FAQ</a></li><li><a href="https://attack.mitre.org/techniques/enterprise/" target="_blank" rel="noopener">MITRE ATT&amp;CK Enterprise techniques</a></li></ul></aside>
+</section>
+
+<section class="slide s17 k-software-is-not-behavior m3" data-slide="17" data-module="ATT&amp;CK as a language for behavior" data-timing="36–38 minutes">
+<h2 class="title">Software is not behavior</h2>
+<div class="body">
+<table><thead><tr><th>Software or service</th><th>Example procedure</th><th>Behavioral description</th></tr></thead><tbody><tr><td>Malware implant</td><td>Starts a command interpreter</td><td>Command execution</td></tr><tr><td>PowerShell</td><td>Retrieves and evaluates content</td><td>Scripting and payload transfer</td></tr><tr><td>Legitimate scheduler</td><td>Starts a payload at login</td><td>Scheduled execution</td></tr><tr><td>Remote-management tool</td><td>Provides an attacker-controlled session</td><td>Remote access</td></tr></tbody></table>
+<blockquote class="callout"><p>Same tool, different procedures. Same technique, different tools.</p></blockquote>
+</div>
+<footer class="chrome"><span class="module">ATT&amp;CK as a language for behavior</span><span class="timing">min 36–38</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 36–38 minutes</strong> · ATT&amp;CK as a language for behavior</p>
+<p>Software entries in ATT&amp;CK may be categorized as malware or tools and are connected to techniques through documented procedures. Emphasize that defenders usually detect some combination of tool identity, behavior, context, and sequence.</p>
+<p>The next slide takes the two sharpest cases, a remote-management tool and a vulnerable signed driver, where the artifact is not only legitimate but unchanged.</p>
+<h4>Transition</h4><p>“Two cases where the software is not just legitimate but byte-for-byte unchanged.”</p></aside>
+</section>
+
+<section class="slide s18 k-legitimate-software-adversarial-outcome m3" data-slide="18" data-module="ATT&amp;CK as a language for behavior" data-timing="38–40 minutes">
+
+<div class="body">
+<h2 class="title">Capabilities delivered through benign files</h2>
+<blockquote class="callout question"><p>If the artifact is legitimate and unchanged, where does “malicious” reside?</p></blockquote>
+<table>
+<thead><tr><th>Remote-management tool abused</th><th>Vulnerable signed driver (BYOVD)</th></tr></thead>
+<tbody>
+<tr><td>Intended remote-access capability</td><td>Legitimate, often signed kernel driver</td></tr>
+<tr><td>Operated by an unauthorized party</td><td>Contains an exploitable vulnerability</td></tr>
+<tr><td>Software works as designed</td><td>Used beyond its intended design</td></tr>
+<tr><td>Same binary and hash as the legitimate install</td><td>Same binary, hash, and valid signature</td></tr>
+<tr class="fragment"><td>ATT&amp;CK: Remote Access Tools (T1219); an ATT&amp;CK <em>tool</em>, not malware</td><td>ATT&amp;CK: driver load, then Exploitation for Privilege Escalation (T1068)</td></tr>
+<tr class="fragment"><td>Standard affiliate access path 2017–2022; Scattered Spider's main tool by 2023</td><td>Wave of EDR killers in 2022, after EDR became the control that mattered</td></tr>
+</tbody>
+</table>
+<div class="attack mini" data-attack data-mode="mini" data-light="T1219,T1068"><div class="am-host"></div></div>
+<blockquote class="callout fragment"><p>What differs from legitimate use? The tool: only who controls it and whose objective it serves. The driver: also what it can do. Neither differs as an artifact.</p></blockquote>
+
+</div>
+<footer class="chrome"><span class="module">ATT&amp;CK as a language for behavior</span><span class="timing">min 38–40</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 38–40 minutes</strong> · ATT&amp;CK as a language for behavior</p>
+<p>The compact matrix under the table places the two cases: Remote Access Tools sits in Command and Control, Exploitation for Privilege Escalation in Privilege Escalation. These are the two cleanest examples of what the ATT&amp;CK vocabulary is for. The same file, with the same hash and signature, appears in a legitimate procedure and in an adversarial one. ATT&amp;CK describes the behavior (remote access; exploitation of a loaded driver) and keeps the software entry as a tool rather than malware, which is exactly the separation the previous slide argued for.</p>
+<p>Both examples come out of the last two periods, and both are responses to defensive success. Once EDR made a custom implant visible, attackers had two options: bring no implant at all and use a legitimate remote-management tool the EDR vendor has allow-listed, or bring a vulnerable signed driver and switch the EDR off from the kernel. Ransomware affiliates adopted remote-management tools as their standard access path in 2017–2022, and Scattered Spider in 2023 ran campaigns almost entirely on them. The BYOVD wave of 2022 is the attacker's acknowledgment of which product won the previous period.</p>
+<p>The two cases are complementary:</p>
+<pre class="ascii"><code>intended capability + unauthorized controller + adversarial objective
+legitimate artifact + exploited capability + adversarial controller</code></pre>
+<p>Do not say the vulnerable driver automatically becomes malware. It is an attack-enabling component in an adversarial procedure, and a valid signature establishes provenance, not current safety or authorized use. In neither case can a file classifier see the property that matters: who controls it, whose objective it serves, what it can do. Part 2 opens by naming these questions (slide 21).</p>
+<h4>Interaction</h4><p>Ask whether a file-only classifier can determine who controls the remote-access session, or whether a driver will be exploited after loading. Then ask which question each answer depended on: what it is, what it can do, who controls it, or whose objective it serves.</p>
+<h4>Transition</h4><p>“Now apply this vocabulary to an attack that never produces a malware executable file.”</p>
+<h4>Sources</h4><ul><li><a href="https://attack.mitre.org/techniques/T1219/" target="_blank" rel="noopener">MITRE ATT&amp;CK: Remote Access Tools (T1219)</a></li><li><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-320a" target="_blank" rel="noopener">CISA: Scattered Spider advisory (AA23-320A)</a></li><li><a href="https://attack.mitre.org/techniques/T1068/" target="_blank" rel="noopener">MITRE ATT&amp;CK: Exploitation for Privilege Escalation (T1068)</a></li><li><a href="https://attack.mitre.org/datacomponents/DC0079/" target="_blank" rel="noopener">MITRE ATT&amp;CK: Driver Load data component</a></li><li><a href="https://www.microsoft.com/en-us/security/blog/2021/12/08/improve-kernel-security-with-the-new-microsoft-vulnerable-and-malicious-driver-reporting-center/" target="_blank" rel="noopener">Microsoft: vulnerable and malicious driver protections</a></li></ul></aside>
+</section>
+
+<section class="slide s19 k-map-fileless-attack m3" data-slide="19" data-module="ATT&amp;CK as a language for behavior" data-timing="40–45 minutes">
+
+<div class="body">
+<h2 class="title">Map an attack with no malware file</h2>
+<blockquote class="callout question"><p>Using a stolen administrator account, an attacker remotely launches PowerShell with an inline command. The command retrieves encoded, position-independent shellcode, decodes it in memory, and transfers control to it. The payload enumerates documents, compresses selected content in memory, and uploads it over HTTPS.</p></blockquote>
+<div class="attack" data-attack>
+<div class="am-host"></div>
+<span class="fragment attack-step" data-light="T1078" aria-hidden="true"></span>
+<span class="fragment attack-step" data-light="T1021" aria-hidden="true"></span>
+<span class="fragment attack-step" data-light="T1059.001,T1027.010" aria-hidden="true"></span>
+<span class="fragment attack-step" data-light="T1620" aria-hidden="true"></span>
+<span class="fragment attack-step" data-light="T1083,T1005,T1560" aria-hidden="true"></span>
+<span class="fragment attack-step" data-light="T1071.001,T1041" aria-hidden="true"></span>
+</div>
+<p class="am-foot">Map it in pairs: artifacts, tools, techniques and procedures, objective, relevant sensors. Then Next lights one step at a time.</p>
+
+</div>
+<footer class="chrome"><span class="module">ATT&amp;CK as a language for behavior</span><span class="timing">min 40–45</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 40–45 minutes</strong> · ATT&amp;CK as a language for behavior</p>
+<p>This is situation 2 from the opening vote written out in full, and it is the standard tradecraft of the 2017–2022 period on slide 12. No malicious executable is written to disk, and the in-memory payload is not organized as a PE or ELF file. Do not say that no evidence or representation exists: the command is text, the payload is encoded bytes, HTTPS and compression have formats, and multiple system events may be produced.</p>
+<p>The six steps on the slide are one defensible mapping, not the only one: the remote launch is Remote Services with a sub-technique that depends on the mechanism (WinRM, SMB, RDP), the retrieval of the shellcode could also be tagged Ingress Tool Transfer, and an upload to a cloud service rather than to the C2 server would be Exfiltration to Cloud Storage instead of Exfiltration Over C2 Channel. Reward pairs who argue about the mechanism; that is the exercise working.</p>
+<h4>Interaction</h4><p>Give pairs two minutes with the empty matrix, then reveal the six steps with Next and let the room compare. During the debrief, separate “PowerShell” as software from “an inline command retrieved and executed content” as a procedure.</p>
+<h4>Transition</h4><p>“That is Part 1: how malware and malicious capabilities evolved. Part 2 asks how the pipelines that detect them were built, and how they had to change.”</p></aside>
+</section>
+
+<section class="slide s20 k-part-2 m4" data-slide="20" data-module="Detection pipelines: design and evolution" data-timing="45–46 minutes">
+
+<div class="body">
+<div class="divider">
+<p class="part-kicker">Part 2</p>
+<h1 class="display">How detection pipelines are built, and how they had to change</h1>
+<p class="part-q">How are detection pipelines designed, and how did they evolve?</p>
+<table>
+<tbody>
+<tr><td>46–76</td><td>Detection pipelines: design and evolution</td></tr>
+<tr><td>76–80</td><td>Synthesis: five conclusions</td></tr>
+</tbody>
+</table>
+<p class="part-lead">The five questions hidden in the word malware, then the detection pipeline, the options at every stage, and the stage that each change from Part 1 broke. Then the pipeline rebuilt generation by generation around the file and the host (antivirus, sandbox, EDR) and on the network (IDS, then encrypted traffic): what changed at each stage, why, and what each generation could not see. Then six misses to diagnose.</p>
+</div>
+
+</div>
+<footer class="chrome"><span class="module">Detection pipelines: design and evolution</span><span class="timing">min 45–46</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 45–46 minutes</strong> · Detection pipelines: design and evolution</p>
+<p>One sentence. Part 1 described the attack; Part 2 is the design and evolution of the detection pipeline: what each stage can choose from, which stage each attacker change broke, and why each period had to add a new layer when the evidence moved out of the previous one's view. The recurring PowerShell scenario from the exercise is the test case for every slide that follows.</p>
+<h4>Transition</h4><p>“Part 1 said what the attacker did. Before asking what a sensor can see of it, be precise about what we are looking for.”</p></aside>
+</section>
+
+<section class="slide s21 k-one-word-several-questions m4" data-slide="21" data-module="Detection pipelines: design and evolution" data-timing="46–48 minutes">
+<h2 class="title">One word, several questions</h2>
+<div class="body">
+<table><thead><tr><th>Axis</th><th>Question</th></tr></thead><tbody><tr><td>Artifact</td><td>What is it? What representation exists?</td></tr><tr><td>Capability</td><td>What can it do?</td></tr><tr><td>Control</td><td>Who controls it, or authorizes its actions?</td></tr><tr><td>Objective</td><td>Whose objective does it serve?</td></tr><tr><td>Observability</td><td>What can the defender see of any of this?</td></tr></tbody></table>
+<blockquote class="callout"><p>One word, “malware”, collapses four properties and one operational question.</p></blockquote>
+</div>
+<footer class="chrome"><span class="module">Detection pipelines: design and evolution</span><span class="timing">min 46–48</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 46–48 minutes</strong> · Detection pipelines: design and evolution</p>
+<p>Return to the vote from the start of the lecture. The disagreement came from answering different questions with the same word. A malware analyst classifies an object: the artifact. An incident responder cares about behavior: the capability. A platform engineer cares about identity, authority and trust boundaries: control. A legal definition requires intent: objective. And every defender is limited by the fifth row, what the system can actually observe.</p>
+<p>These five words are the working vocabulary for the rest of the lecture, and Part 1 already used four of them without naming them. The history showed which property carried the malicious meaning in each period: the artifact in the file era, objective once the adversary became a campaign, control once access, tokens and vendor channels were the target, and control and objective together once a program acts under delegated authority. The ATT&amp;CK module showed two cases where the artifact is legitimate and unchanged and only control and objective differ. The conclusions return to the vote in one sentence.</p>
+<p>The fifth row is the one this part is about. Every slide from here to the exercise asks what a sensor could see of the other four, and the history of detection products is the history of that row.</p>
+<p>Do not belabor the table. It is a legend for everything that follows, not a theory.</p>
+<h4>Transition</h4><p>“Each row needs different evidence, and describing a behavior does not mean our systems can observe it. Here is what has to happen before any detector sees anything.”</p></aside>
+</section>
+
+<section class="slide s22 k-complete-detection-pipeline m4" data-slide="22" data-module="Detection pipelines: design and evolution" data-timing="48–50 minutes">
+
+<div class="body">
+<h2 class="title">The complete detection pipeline</h2>
+<div class="pipe" data-component="pipeline" data-panel="pipe-panel-18"></div>
+<div class="pipe-panel" id="pipe-panel-18">Click a stage for the question it answers.</div>
+<blockquote class="callout"><p>A detector cannot reason about evidence it never receives.</p></blockquote>
+<ul class="defs">
+<li><strong>Sensor:</strong> can the system observe the event or state?</li>
+<li><strong>Acquisition:</strong> is the evidence collected and retained?</li>
+<li><strong>Extraction:</strong> can usable artifacts or fields be recovered?</li>
+<li><strong>Representation:</strong> what information is supplied to analysis?</li>
+<li><strong>Detection:</strong> is a score, rule, or verdict produced?</li>
+<li><strong>Investigation:</strong> can evidence be connected and explained?</li>
+<li><strong>Decision:</strong> can an appropriate action be selected?</li>
+<li><strong>Response:</strong> can the action be executed in time?</li>
+</ul>
+
+</div>
+<footer class="chrome"><span class="module">Detection pipelines: design and evolution</span><span class="timing">min 48–50</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 48–50 minutes</strong> · Detection pipelines: design and evolution</p>
+<p>Define the stages:</p>
+<ul><li><strong>Sensor:</strong> can the system observe the event or state?</li><li><strong>Acquisition:</strong> is the evidence collected and retained?</li><li><strong>Extraction:</strong> can usable artifacts or fields be recovered?</li><li><strong>Representation:</strong> what information is supplied to analysis?</li><li><strong>Detection:</strong> is a score, rule, or verdict produced?</li><li><strong>Investigation:</strong> can evidence be connected and explained?</li><li><strong>Decision:</strong> can an appropriate action be selected?</li><li><strong>Response:</strong> can the action be executed in time?</li></ul>
+<h4>Transition</h4><p>“Every stage of this pipeline is a choice. Before the history, the menu.”</p></aside>
+</section>
+
+<section class="slide s23 k-options-at-each-stage m4" data-slide="23" data-module="Detection pipelines: design and evolution" data-timing="50–54 minutes">
+
+<div class="body">
+<h2 class="title">Options at each stage</h2>
+<div data-stage-options>
+<div class="pipe" data-component="pipeline" data-highlight="sensor"></div>
+<div class="stage-panels">
+<div class="stage-panel active" data-stage="sensor"><h3><span class="k">sensor</span> <span class="q">can the system observe the event or state?</span></h3><div class="opt-cards cols-4"><div class="opt"><b>File system and on-write hooks</b><p><span class="lab">sees</span>Files written, opened, executed</p><p><span class="lab">misses</span>Inline commands, memory-only code, identity actions</p></div><div class="opt"><b>Process and script telemetry (ETW, Sysmon, AMSI, script block logging)</b><p><span class="lab">sees</span>Process trees, command lines, script content</p><p><span class="lab">misses</span>Activity inside legitimate signed tools; anything off the host</p></div><div class="opt"><b>Memory scanning</b><p><span class="lab">sees</span>Injected or reflectively loaded code, hooks</p><p><span class="lab">misses</span>Short-lived regions; legitimate JIT noise</p></div><div class="opt"><b>Network tap, proxy, NDR</b><p><span class="lab">sees</span>Flows, DNS, TLS metadata; payload only with decryption</p><p><span class="lab">misses</span>Encrypted content; east-west blind spots</p></div><div class="opt"><b>Identity provider and SaaS audit logs</b><p><span class="lab">sees</span>Sign-ins, tokens, consent, data access</p><p><span class="lab">misses</span>The host and the payload</p></div><div class="opt"><b>Cloud control-plane logs</b><p><span class="lab">sees</span>API calls, role assumptions, configuration changes</p><p><span class="lab">misses</span>Data-plane content</p></div><div class="opt"><b>Mail and web gateways</b><p><span class="lab">sees</span>Attachments, URLs, downloads at delivery</p><p><span class="lab">misses</span>Anything after delivery</p></div><div class="opt"><b>Agent harness logs</b><p><span class="lab">sees</span>Context assembled, tool calls, actions, identity used</p><p><span class="lab">misses</span>Deployment-dependent; often hidden in SaaS agents</p></div></div></div>
+<div class="stage-panel" data-stage="acquisition"><h3><span class="k">acquisition</span> <span class="q">is the evidence collected and retained?</span></h3><div class="opt-cards cols-3"><div class="opt"><b>Capture the artifact on write or on execute</b><p><span class="lab">sees</span>The file as delivered</p><p><span class="lab">misses</span>Memory-only payloads</p></div><div class="opt"><b>Triggered memory capture</b><p><span class="lab">sees</span>The process or region at alert time</p><p><span class="lab">misses</span>Anything before the trigger</p></div><div class="opt"><b>Full packet capture</b><p><span class="lab">sees</span>Everything on the wire</p><p><span class="lab">misses</span>Cost limits retention to hours or days</p></div><div class="opt"><b>Metadata-only flow records</b><p><span class="lab">sees</span>Long, cheap retention</p><p><span class="lab">misses</span>Content</p></div><div class="opt"><b>Log retention windows and sampling</b><p><span class="lab">sees</span>What is kept, for how long</p><p><span class="lab">misses</span>The slow campaign that outlives the window</p></div><div class="opt"><b>Central forwarding</b><p><span class="lab">sees</span>Correlation across hosts</p><p><span class="lab">misses</span>Hosts offline or outside the network</p></div></div></div>
+<div class="stage-panel" data-stage="extraction"><h3><span class="k">extraction</span> <span class="q">can usable artifacts or fields be recovered?</span></h3><div class="opt-cards cols-3"><div class="opt"><b>File parsing (PE, Office, PDF, archives)</b><p><span class="lab">sees</span>Structure, imports, embedded objects</p><p><span class="lab">misses</span>Malformed or novel formats</p></div><div class="opt"><b>Unpacking and emulation</b><p><span class="lab">sees</span>Code hidden behind packers</p><p><span class="lab">misses</span>Custom protectors; environment-keyed code</p></div><div class="opt"><b>Script and macro deobfuscation</b><p><span class="lab">sees</span>The command that actually runs</p><p><span class="lab">misses</span>Payloads built only at runtime</p></div><div class="opt"><b>Disassembly and decompilation</b><p><span class="lab">sees</span>Functions, control flow</p><p><span class="lab">misses</span>Errors that become model input</p></div><div class="opt"><b>TLS decryption at a proxy</b><p><span class="lab">sees</span>Payload content</p><p><span class="lab">misses</span>Pinned and east-west traffic; legal and performance cost</p></div><div class="opt"><b>Process-tree and session reconstruction</b><p><span class="lab">sees</span>Who started what, under which identity</p><p><span class="lab">misses</span>Gaps where telemetry was missing</p></div></div></div>
+<div class="stage-panel" data-stage="representation"><h3><span class="k">representation</span> <span class="q">what information is supplied to analysis?</span></h3><div class="opt-cards cols-3"><div class="opt"><b>Hashes and byte patterns</b><p><span class="lab">sees</span>Exact identity</p><p><span class="lab">misses</span>Any variation</p></div><div class="opt"><b>Engineered features (headers, imports, strings, entropy)</b><p><span class="lab">sees</span>Fast, interpretable</p><p><span class="lab">misses</span>Order, arguments, causality</p></div><div class="opt"><b>Sequences (API calls, events, bytes)</b><p><span class="lab">sees</span>Order</p><p><span class="lab">misses</span>Long-range context; cost</p></div><div class="opt"><b>Graphs (process trees, call graphs, identity graphs)</b><p><span class="lab">sees</span>Relationships</p><p><span class="lab">misses</span>Cost of inference at scale</p></div><div class="opt"><b>Similarity sketches</b><p><span class="lab">sees</span>Neighbors and families</p><p><span class="lab">misses</span>No verdict</p></div><div class="opt"><b>Text (decompiled code, logs, reports)</b><p><span class="lab">sees</span>Semantics an LLM can read</p><p><span class="lab">misses</span>Fidelity to machine semantics</p></div></div></div>
+<div class="stage-panel" data-stage="detection"><h3><span class="k">detection</span> <span class="q">is a score, rule, or verdict produced?</span></h3><div class="opt-cards cols-3"><div class="opt"><b>Signatures and indicators</b><p><span class="lab">sees</span>Known threats, cheaply</p><p><span class="lab">misses</span>Novel variation</p></div><div class="opt"><b>Expert rules (YARA, Sigma, Snort)</b><p><span class="lab">sees</span>Capability patterns across hosts and traffic</p><p><span class="lab">misses</span>Maintenance; evasion by rewording</p></div><div class="opt"><b>Supervised classifiers</b><p><span class="lab">sees</span>Generalization inside the training distribution</p><p><span class="lab">misses</span>Shift, label noise</p></div><div class="opt"><b>Anomaly detection and baselining</b><p><span class="lab">sees</span>Deviations without a label</p><p><span class="lab">misses</span>False positives; slow drift</p></div><div class="opt"><b>Similarity and clustering</b><p><span class="lab">sees</span>Campaign grouping, novelty</p><p><span class="lab">misses</span>No verdict by itself</p></div><div class="opt"><b>Reputation and prevalence</b><p><span class="lab">sees</span>Rare or new objects</p><p><span class="lab">misses</span>First victims; legitimate rarities</p></div></div></div>
+<div class="stage-panel" data-stage="investigation"><h3><span class="k">investigation</span> <span class="q">can evidence be connected and explained?</span></h3><div class="opt-cards cols-3"><div class="opt"><b>Triage and enrichment</b><p><span class="lab">sees</span>Context from intelligence, asset and identity data</p><p><span class="lab">misses</span>Throughput</p></div><div class="opt"><b>Timeline reconstruction across sources</b><p><span class="lab">sees</span>The sequence of events</p><p><span class="lab">misses</span>Retention and correlation keys</p></div><div class="opt"><b>Sandbox detonation of a captured artifact</b><p><span class="lab">sees</span>The artifact's behavior</p><p><span class="lab">misses</span>Staged and environment-aware payloads</p></div><div class="opt"><b>Memory and disk forensics</b><p><span class="lab">sees</span>What actually ran</p><p><span class="lab">misses</span>Time and skill</p></div><div class="opt"><b>Reverse engineering</b><p><span class="lab">sees</span>The capability in full</p><p><span class="lab">misses</span>Cost; only for selected samples</p></div><div class="opt"><b>LLM-assisted analysis</b><p><span class="lab">sees</span>Summaries, hypotheses, tool orchestration</p><p><span class="lab">misses</span>Verification; scale</p></div></div></div>
+<div class="stage-panel" data-stage="decision"><h3><span class="k">decision</span> <span class="q">can an appropriate action be selected?</span></h3><div class="opt-cards cols-3"><div class="opt"><b>Automatic block above a confidence threshold</b><p><span class="lab">sees</span>Speed</p><p><span class="lab">misses</span>False positives on production systems</p></div><div class="opt"><b>Human approval playbooks</b><p><span class="lab">sees</span>Accountability</p><p><span class="lab">misses</span>Delay; availability of approvers</p></div><div class="opt"><b>Risk-based policy by asset criticality</b><p><span class="lab">sees</span>Proportional response</p><p><span class="lab">misses</span>Policy maintenance</p></div><div class="opt"><b>Pre-authorized containment for defined scenarios</b><p><span class="lab">sees</span>Speed with accountability</p><p><span class="lab">misses</span>Scenario coverage</p></div><div class="opt"><b>Escalation and deferral</b><p><span class="lab">sees</span>Expert judgment</p><p><span class="lab">misses</span>Time</p></div></div></div>
+<div class="stage-panel" data-stage="response"><h3><span class="k">response</span> <span class="q">can the action be executed in time?</span></h3><div class="opt-cards cols-3"><div class="opt"><b>Isolate the host, kill the process, quarantine the file</b><p><span class="lab">sees</span>Stops host activity</p><p><span class="lab">misses</span>Hosts offline or unreachable</p></div><div class="opt"><b>Revoke tokens and sessions, reset credentials, disable accounts</b><p><span class="lab">sees</span>Stops identity-led activity</p><p><span class="lab">misses</span>Re-issued tokens; service accounts</p></div><div class="opt"><b>Block destinations and domains</b><p><span class="lab">sees</span>Cuts the channel</p><p><span class="lab">misses</span>Infrastructure rotation</p></div><div class="opt"><b>Restore from backup, roll back changes</b><p><span class="lab">sees</span>Recovery</p><p><span class="lab">misses</span>Time; data since the last backup</p></div><div class="opt"><b>Patch and reconfigure</b><p><span class="lab">sees</span>Closes the entry</p><p><span class="lab">misses</span>Change windows</p></div><div class="opt"><b>Revoke an agent's tools or authority</b><p><span class="lab">sees</span>Stops a hijacked agent</p><p><span class="lab">misses</span>Depends on harness support</p></div></div></div>
+</div>
+<span class="fragment stage-step" data-stage="acquisition" data-fragment-index="0" aria-hidden="true"></span>
+<span class="fragment stage-step" data-stage="extraction" data-fragment-index="1" aria-hidden="true"></span>
+<span class="fragment stage-step" data-stage="representation" data-fragment-index="2" aria-hidden="true"></span>
+<span class="fragment stage-step" data-stage="detection" data-fragment-index="3" aria-hidden="true"></span>
+<span class="fragment stage-step" data-stage="investigation" data-fragment-index="4" aria-hidden="true"></span>
+<span class="fragment stage-step" data-stage="decision" data-fragment-index="5" aria-hidden="true"></span>
+<span class="fragment stage-step" data-stage="response" data-fragment-index="6" aria-hidden="true"></span>
+<blockquote class="callout"><p>Every stage has options. The history that follows is mostly the sensor and extraction rows changing.</p></blockquote>
+</div>
+
+</div>
+<footer class="chrome"><span class="module">Detection pipelines: design and evolution</span><span class="timing">min 50–54</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 50–54 minutes</strong> · Detection pipelines: design and evolution</p>
+<p>Next and Previous step through the eight stages (clicking a stage works too); do not read every card. Spend the time on two of them. The sensor row is the one the next four slides are about: the next slide maps every change from Part 1 onto the stage it broke, and each product class in the host-and-file and network lineages is one or two lines here, and the history is the industry adding lines as the capability moved. The response row is the one students rarely think about: isolating a host does nothing against a stolen token, and revoking a token does nothing against a hijacked agent unless the harness lets you take its tools away.</p>
+<p>For the other stages, name the trade-off in one sentence each. Acquisition trades cost against retention; extraction turns raw evidence into something analyzable and introduces its own failures; representation decides what a model can learn; detection is the only place this lecture names the detector families, each with its blind spot, and Lecture 3 covers them in depth; investigation is where expensive methods live; decision is where authority is designed.</p>
+<p>If someone asks whether signatures or machine learning are file-only methods, the answer is no, and the detection panel is where to say it. The signature engine that matches byte patterns in files is the same engine that matches YARA rules over process memory in an EDR and content rules over packets in an IDS, and AMSI exists so that it can see script content before the interpreter runs it. Boosted trees over engineered features run over process trees, command lines, memory-region properties and flow and TLS metadata as readily as over PE headers; byte and sequence models have been applied to memory dumps and network payloads; function similarity finds code reuse in a dumped implant as readily as in a dropped file. Each family is tied to what the sensor hands it, not to the file. What is file-centric is the public evidence base: EMBER, SOREL-20M and most of the literature use files because files are what could be collected, labeled and shared at scale. Lecture 3 makes that gap explicit.</p>
+<p>This slide sits directly after the pipeline definition on purpose: slide 22 gives the questions, this one gives the menu of answers at each stage, and the lineage slides that follow show the menu being rebuilt twice, once on the endpoint and once on the network, as the capability moved. The exercise comes back to it: a miss is a stage whose chosen option could not see the evidence. Use the panel to answer "why not just do X" questions: almost every X is a row here, with its blind spot in the last column.</p>
+<h4>Transition</h4><p>“Part 1 listed what changed. Here is the stage of this pipeline that each change broke.”</p></aside>
+</section>
+
+<section class="slide s24 k-where-each-change-broke-the-pipeline m4" data-slide="24" data-module="Detection pipelines: design and evolution" data-timing="54–58 minutes">
+
+<div class="body">
+<h2 class="title">Where each change broke the pipeline</h2>
+<div data-stage-matrix data-view="panels">
+<div class="pipe" data-component="pipeline" data-caption=""></div>
+<div class="panel-area">
+<div class="row-panels">
+<div class="row-panel active" data-row="0" data-stage="extraction,detection"><h3><span class="q">What changed:</span> <span class="k">Packing and server-side polymorphism</span></h3><div class="gen-cards"><div class="gen"><b>Stage that broke</b><p>extraction, detection</p></div><div class="gen"><b>Evidence left the...</b><p>signature database</p></div><div class="gen"><b>Defender's sensor moved to...</b><p>emulation, then reputation and prevalence</p></div></div></div>
+<div class="row-panel" data-row="1" data-stage="sensor,extraction"><h3><span class="q">What changed:</span> <span class="k">File types diversify once mail blocks executables: archives, documents, scripts, exploit objects</span></h3><div class="gen-cards"><div class="gen"><b>Stage that broke</b><p>sensor, extraction</p></div><div class="gen"><b>Evidence left the...</b><p>executable attachment filter</p></div><div class="gen"><b>Defender's sensor moved to...</b><p>document and script scanning, detonation</p></div></div></div>
+<div class="row-panel" data-row="2" data-stage="sensor,acquisition"><h3><span class="q">What changed:</span> <span class="k">Memory, staging, side-loading, living off the land</span></h3><div class="gen-cards"><div class="gen"><b>Stage that broke</b><p>sensor, acquisition</p></div><div class="gen"><b>Evidence left the...</b><p>detonatable file, then any malicious artifact</p></div><div class="gen"><b>Defender's sensor moved to...</b><p>the real host: EDR, memory, baselining</p></div></div></div>
+<div class="row-panel" data-row="3" data-stage="extraction"><h3><span class="q">What changed:</span> <span class="k">HTTPS, TLS 1.3, DoH, ECH (not an attacker move)</span></h3><div class="gen-cards"><div class="gen"><b>Stage that broke</b><p>extraction</p></div><div class="gen"><b>Evidence left the...</b><p>network payload</p></div><div class="gen"><b>Defender's sensor moved to...</b><p>endpoint, metadata, decryption proxy</p></div></div></div>
+<div class="row-panel" data-row="4" data-stage="sensor"><h3><span class="q">What changed:</span> <span class="k">Stolen identities, tokens, cloud APIs, remote-management tools</span></h3><div class="gen-cards"><div class="gen"><b>Stage that broke</b><p>sensor</p></div><div class="gen"><b>Evidence left the...</b><p>host</p></div><div class="gen"><b>Defender's sensor moved to...</b><p>identity provider and SaaS audit logs</p></div></div></div>
+<div class="row-panel" data-row="5" data-stage="representation,detection"><h3><span class="q">What changed:</span> <span class="k">Trusted vendor and update channels</span></h3><div class="gen-cards"><div class="gen"><b>Stage that broke</b><p>representation, detection</p></div><div class="gen"><b>Evidence left the...</b><p>provenance as a proxy for safety</p></div><div class="gen"><b>Defender's sensor moved to...</b><p>build provenance, behavior of trusted software</p></div></div></div>
+<div class="row-panel" data-row="6" data-stage="sensor"><h3><span class="q">What changed:</span> <span class="k">Instructions in data consumed by agents</span></h3><div class="gen-cards"><div class="gen"><b>Stage that broke</b><p>sensor</p></div><div class="gen"><b>Evidence left the...</b><p>every classical sensor</p></div><div class="gen"><b>Defender's sensor moved to...</b><p>the agent's context, tools, and actions</p></div></div></div>
+</div>
+<button type="button" class="table-toggle" aria-pressed="false">full table</button>
+</div>
+<table class="matrix full"><thead><tr><th>What changed</th><th>Stage that broke</th><th>Evidence left the...</th><th>Defender's sensor moved to...</th></tr></thead><tbody><tr data-stage="extraction,detection"><td>Packing and server-side polymorphism</td><td>extraction, detection</td><td>signature database</td><td>emulation, then reputation and prevalence</td></tr><tr data-stage="sensor,extraction"><td>File types diversify once mail blocks executables: archives, documents, scripts, exploit objects</td><td>sensor, extraction</td><td>executable attachment filter</td><td>document and script scanning, detonation</td></tr><tr data-stage="sensor,acquisition"><td>Memory, staging, side-loading, living off the land</td><td>sensor, acquisition</td><td>detonatable file, then any malicious artifact</td><td>the real host: EDR, memory, baselining</td></tr><tr data-stage="extraction"><td>HTTPS, TLS 1.3, DoH, ECH (not an attacker move)</td><td>extraction</td><td>network payload</td><td>endpoint, metadata, decryption proxy</td></tr><tr data-stage="sensor"><td>Stolen identities, tokens, cloud APIs, remote-management tools</td><td>sensor</td><td>host</td><td>identity provider and SaaS audit logs</td></tr><tr data-stage="representation,detection"><td>Trusted vendor and update channels</td><td>representation, detection</td><td>provenance as a proxy for safety</td><td>build provenance, behavior of trusted software</td></tr><tr data-stage="sensor"><td>Instructions in data consumed by agents</td><td>sensor</td><td>every classical sensor</td><td>the agent's context, tools, and actions</td></tr></tbody></table>
+<span class="fragment stage-step" data-row="1" data-stage="sensor,extraction" data-fragment-index="0" aria-hidden="true"></span>
+<span class="fragment stage-step" data-row="2" data-stage="sensor,acquisition" data-fragment-index="1" aria-hidden="true"></span>
+<span class="fragment stage-step" data-row="3" data-stage="extraction" data-fragment-index="2" aria-hidden="true"></span>
+<span class="fragment stage-step" data-row="4" data-stage="sensor" data-fragment-index="3" aria-hidden="true"></span>
+<span class="fragment stage-step" data-row="5" data-stage="representation,detection" data-fragment-index="4" aria-hidden="true"></span>
+<span class="fragment stage-step" data-row="6" data-stage="sensor" data-fragment-index="5" aria-hidden="true"></span>
+<blockquote class="callout fragment"><p>Every row is one round of the same cat-and-mouse game: the attacker moves the evidence out of a product's field of view, and the defense has to change at whatever stage broke. There is no final round.</p></blockquote>
+</div>
+
+</div>
+<footer class="chrome"><span class="module">Detection pipelines: design and evolution</span><span class="timing">min 54–58</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 54–58 minutes</strong> · Detection pipelines: design and evolution</p>
+<p>This is slide 14's list read from the defender's side, with two rows added, packing from the file era, the first time a product's evidence moved out of its view, and the network row, because encryption was the internet changing rather than an attacker move; and it is the bridge from the menu on the previous slide to the history that follows: each row names the stage of the pipeline that a change broke, the evidence that left that stage's view, and where the sensor went. The next three slides show the two pipelines that were rebuilt most often, the file-and-host pipeline and the network's, generation by generation. The second column maps each row to the pipeline: four of the seven rows broke at the sensor, packing and encryption broke extraction, and only the trusted-vendor row broke at detection, where the feature (provenance) was wrong rather than the model. Next and Previous step through the seven changes one at a time, each lighting the stage that broke; clicking a stage on the strip jumps to the first change that broke there, and the full table button shows all seven at once (the PDF prints the table). The dominant product class changed each time the attacker moved the capability to a place the current sensor did not observe.</p>
+<p>Make three points explicit:</p>
+<ol><li><strong>The failures were real, and they were all the same failure.</strong> Antivirus missed packed and polymorphic files, the sandbox missed staged and memory-only payloads, the IDS missed everything inside TLS, and EDR misses the stolen token and the remote-management tool: in each case the product did what it was built to do and the evidence was no longer where it looked, and the repair happened at the stage in the second column: a sensor on the host or at the identity provider, emulation and decryption at extraction, provenance and behavior at representation, and a better classifier only where the classifier was the stage that broke. Nothing was retired, because each still catches what stays in its field of view, but the premium control of one decade became the commodity control of the next. Say plainly that this is the normal condition of the field, not a story with an ending: every defensive success on this table changed the attacker's behavior, and the next change will break a stage somewhere in this pipeline again. A security product that cannot be re-pointed at new evidence is a product with a shelf life.</li><li><strong>The direction is consistent.</strong> The sensor moved closer to where the capability executes and closer to who authorized it: from the artifact, to the host, to the identity, to the agent's reasoning trajectory.</li><li><strong>The next row is already here.</strong> When a coding agent reads a repository file and acts on an instruction in it, no classical sensor has anything to classify. The telemetry that matters is the context the agent assembled, the tools it called, and the identity it acted under. Lecture 2 is built on that row.</li></ol>
+<p>For the undergraduate audience, this slide is also a career map: each sensor migration created a new engineering discipline, and the migration is not finished.</p>
+<h4>Transition</h4><p>“Two pipelines were rebuilt several times each: the host's and the network's. The host first.”</p></aside>
+</section>
+
+<section class="slide s25 k-host-and-file-lineage m4" data-slide="25" data-module="Detection pipelines: design and evolution" data-timing="58–64 minutes">
+
+<div class="body">
+<h2 class="title">Host and file lineage: antivirus, sandbox, EDR</h2>
+<div data-stage-matrix data-view="panels">
+<div class="pipe" data-component="pipeline" data-caption=""></div>
+<div class="panel-area">
+<div class="row-panels">
+<div class="row-panel active" data-row="0" data-stage="built"><h3><span class="k">built for</span> <span class="q">what problem it was bought to solve</span></h3><div class="gen-cards"><div class="gen"><b>Antivirus (since the late 1980s)</b><p>Prevention on the endpoint: block malware before it runs, known families and, through heuristics and emulation, unknown ones</p></div><div class="gen"><b>Sandbox (since the late 2000s)</b><p>Detection by execution: run the object in an instrumented virtual machine and judge it by what it does, catching exploit documents, zero-days and novel implants that static analysis misses</p></div><div class="gen"><b>EDR (since c. 2011)</b><p>Assume breach: detect and investigate what prevention missed</p></div></div></div>
+<div class="row-panel" data-row="1" data-stage="sensor"><h3><span class="k">sensor</span> <span class="q">can the system observe the event or state?</span></h3><div class="gen-cards"><div class="gen"><b>Antivirus (since the late 1980s)</b><p>On-access hooks on the host: files at rest, on write and on execute; later process behavior and memory</p></div><div class="gen"><b>Sandbox (since the late 2000s)</b><p>None of its own: it receives objects from other products' sensors, the mail and web gateways, the endpoint agent, an analyst's submission</p></div><div class="gen"><b>EDR (since c. 2011)</b><p>The same on-host hooks as antivirus (files, processes, registry, network, memory; ETW and AMSI on Windows), often in the same agent</p></div></div></div>
+<div class="row-panel" data-row="2" data-stage="acquisition"><h3><span class="k">acquisition</span> <span class="q">is the evidence collected and retained?</span></h3><div class="gen-cards"><div class="gen"><b>Antivirus (since the late 1980s)</b><p>The file at scan time, and the events the hooks see, taken as they happen on the host</p></div><div class="gen"><b>Sandbox (since the late 2000s)</b><p>The submitted file and a recording of its run</p></div><div class="gen"><b>EDR (since c. 2011)</b><p>The same as antivirus: the same agent collects the same files and events</p></div></div></div>
+<div class="row-panel" data-row="3" data-stage="extraction"><h3><span class="k">extraction</span> <span class="q">can usable artifacts or fields be recovered?</span></h3><div class="gen-cards"><div class="gen"><b>Antivirus (since the late 1980s)</b><p>Parsing, unpacking, emulation</p></div><div class="gen"><b>Sandbox (since the late 2000s)</b><p>Runtime behavior: API calls, dropped files, connections</p></div><div class="gen"><b>EDR (since c. 2011)</b><p>Process-tree and session reconstruction; script content through AMSI</p></div></div></div>
+<div class="row-panel" data-row="4" data-stage="representation"><h3><span class="k">representation</span> <span class="q">what information is supplied to analysis?</span></h3><div class="gen-cards"><div class="gen"><b>Antivirus (since the late 1980s)</b><p>Bytes, hashes, strings, file features</p></div><div class="gen"><b>Sandbox (since the late 2000s)</b><p>A behavior report</p></div><div class="gen"><b>EDR (since c. 2011)</b><p>Event sequences and graphs across hosts</p></div></div></div>
+<div class="row-panel" data-row="5" data-stage="detection"><h3><span class="k">detection</span> <span class="q">is a score, rule, or verdict produced?</span></h3><div class="gen-cards"><div class="gen"><b>Antivirus (since the late 1980s)</b><p>Signatures and generic family detections, heuristics and emulation; then reputation and ML</p></div><div class="gen"><b>Sandbox (since the late 2000s)</b><p>Behavioral rules and ML over the report</p></div><div class="gen"><b>EDR (since c. 2011)</b><p>Analytics over the forwarded stream across hosts: baselining, prevalence, indicators</p></div></div></div>
+<div class="row-panel" data-row="6" data-stage="investigation"><h3><span class="k">investigation</span> <span class="q">can evidence be connected and explained?</span></h3><div class="gen-cards"><div class="gen"><b>Antivirus (since the late 1980s)</b><p>A family name</p></div><div class="gen"><b>Sandbox (since the late 2000s)</b><p>The report, read by an analyst</p></div><div class="gen"><b>EDR (since c. 2011)</b><p>Timeline, hunting, remote forensics over a central, retained record of the stream</p></div></div></div>
+<div class="row-panel" data-row="7" data-stage="decision"><h3><span class="k">decision</span> <span class="q">can an appropriate action be selected?</span></h3><div class="gen-cards"><div class="gen"><b>Antivirus (since the late 1980s)</b><p>Verdict on the object before it runs, automatic</p></div><div class="gen"><b>Sandbox (since the late 2000s)</b><p>Inline: verdict before delivery, automatic; out of band (TAP mode): an alert after delivery</p></div><div class="gen"><b>EDR (since c. 2011)</b><p>Alert for triage; automatic only when confident</p></div></div></div>
+<div class="row-panel" data-row="8" data-stage="response"><h3><span class="k">response</span> <span class="q">can the action be executed in time?</span></h3><div class="gen-cards"><div class="gen"><b>Antivirus (since the late 1980s)</b><p>Quarantine or delete the file</p></div><div class="gen"><b>Sandbox (since the late 2000s)</b><p>Block the file and its hash</p></div><div class="gen"><b>EDR (since c. 2011)</b><p>Isolate the host, kill the process, collect, roll back</p></div></div></div>
+<div class="row-panel" data-row="9" data-stage="starved"><h3><span class="k">starved by</span> <span class="q">what moved out of its field of view</span></h3><div class="gen-cards"><div class="gen"><b>Antivirus (since the late 1980s)</b><p>Packing, polymorphism, scripts, memory</p></div><div class="gen"><b>Sandbox (since the late 2000s)</b><p>Inline commands, staged payloads, side-loaded DLLs, memory-only implants, evasion</p></div><div class="gen"><b>EDR (since c. 2011)</b><p>Legitimate tools, identity abuse, off-host activity, tampering from the kernel (BYOVD)</p></div></div></div>
+</div>
+<button type="button" class="table-toggle" aria-pressed="false">full table</button>
+</div>
+<table class="matrix full"><thead><tr><th>Stage</th><th>Antivirus (since the late 1980s)</th><th>Sandbox (since the late 2000s)</th><th>EDR (since c. 2011)</th></tr></thead><tbody><tr data-stage="built"><td>built for</td><td>Prevention on the endpoint: block malware before it runs, known families and, through heuristics and emulation, unknown ones</td><td>Detection by execution: run the object in an instrumented virtual machine and judge it by what it does, catching exploit documents, zero-days and novel implants that static analysis misses</td><td>Assume breach: detect and investigate what prevention missed</td></tr><tr data-stage="sensor"><td>sensor</td><td>On-access hooks on the host: files at rest, on write and on execute; later process behavior and memory</td><td>None of its own: it receives objects from other products' sensors, the mail and web gateways, the endpoint agent, an analyst's submission</td><td>The same on-host hooks as antivirus (files, processes, registry, network, memory; ETW and AMSI on Windows), often in the same agent</td></tr><tr data-stage="acquisition"><td>acquisition</td><td>The file at scan time, and the events the hooks see, taken as they happen on the host</td><td>The submitted file and a recording of its run</td><td>The same as antivirus: the same agent collects the same files and events</td></tr><tr data-stage="extraction"><td>extraction</td><td>Parsing, unpacking, emulation</td><td>Runtime behavior: API calls, dropped files, connections</td><td>Process-tree and session reconstruction; script content through AMSI</td></tr><tr data-stage="representation"><td>representation</td><td>Bytes, hashes, strings, file features</td><td>A behavior report</td><td>Event sequences and graphs across hosts</td></tr><tr data-stage="detection"><td>detection</td><td>Signatures and generic family detections, heuristics and emulation; then reputation and ML</td><td>Behavioral rules and ML over the report</td><td>Analytics over the forwarded stream across hosts: baselining, prevalence, indicators</td></tr><tr data-stage="investigation"><td>investigation</td><td>A family name</td><td>The report, read by an analyst</td><td>Timeline, hunting, remote forensics over a central, retained record of the stream</td></tr><tr data-stage="decision"><td>decision</td><td>Verdict on the object before it runs, automatic</td><td>Inline: verdict before delivery, automatic; out of band (TAP mode): an alert after delivery</td><td>Alert for triage; automatic only when confident</td></tr><tr data-stage="response"><td>response</td><td>Quarantine or delete the file</td><td>Block the file and its hash</td><td>Isolate the host, kill the process, collect, roll back</td></tr><tr data-stage="starved"><td>starved by</td><td>Packing, polymorphism, scripts, memory</td><td>Inline commands, staged payloads, side-loaded DLLs, memory-only implants, evasion</td><td>Legitimate tools, identity abuse, off-host activity, tampering from the kernel (BYOVD)</td></tr></tbody></table>
+<span class="fragment stage-step" data-row="1" data-stage="sensor" data-fragment-index="0" aria-hidden="true"></span>
+<span class="fragment stage-step" data-row="2" data-stage="acquisition" data-fragment-index="1" aria-hidden="true"></span>
+<span class="fragment stage-step" data-row="3" data-stage="extraction" data-fragment-index="2" aria-hidden="true"></span>
+<span class="fragment stage-step" data-row="4" data-stage="representation" data-fragment-index="3" aria-hidden="true"></span>
+<span class="fragment stage-step" data-row="5" data-stage="detection" data-fragment-index="4" aria-hidden="true"></span>
+<span class="fragment stage-step" data-row="6" data-stage="investigation" data-fragment-index="5" aria-hidden="true"></span>
+<span class="fragment stage-step" data-row="7" data-stage="decision" data-fragment-index="6" aria-hidden="true"></span>
+<span class="fragment stage-step" data-row="8" data-stage="response" data-fragment-index="7" aria-hidden="true"></span>
+<span class="fragment stage-step" data-row="9" data-stage="starved" data-fragment-index="8" aria-hidden="true"></span>
+<blockquote class="callout fragment"><p>EDR is not a next-gen antivirus. It is a different control, built on the assumption that prevention will fail.</p></blockquote>
+<blockquote class="callout fragment"><p>Each generation judges one unit of evidence: an object before it runs, an object in detonation, activity on the host. When the capability leaves that unit, the product keeps catching what stays inside it and misses what left, so a new layer is added on top.</p></blockquote>
+</div>
+
+</div>
+<footer class="chrome"><span class="module">Detection pipelines: design and evolution</span><span class="timing">min 58–64</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 58–64 minutes</strong> · Detection pipelines: design and evolution</p>
+<p>The slide is called host and file, not endpoint, because the sandbox was a network and mail product that sat at the gateway; what the three share is the file-centric evidence they were built around, until EDR moved the unit of evidence to activity on the host. The years in the column headers are when each generation was added to the stack, and nothing was removed: today's endpoint agent is an EDR with the antivirus engine inside it, sold as one product, and the sandbox is a commodity component that both call. Antivirus dates from the late 1980s; the sandbox as a product from CWSandbox and the first FireEye appliances in the late 2000s, and it became the premium purchase around 2011 to 2013 with WildFire, Lastline and FireEye's IPO; EDR's first products, Carbon Black's sensor and Mandiant's MIR before it, date from around 2011 and earlier; the name came in 2013. Antivirus still matters: it is the prevention layer of that agent, and it still stops most commodity malware before anything else sees it. Each later generation was added because a kind of evidence had left the previous one's view, not because the previous one stopped working.</p>
+<p>The slide steps through the pipeline from slide 22 one stage at a time, with the three generations side by side for that stage. Next and Previous move between stages, clicking a stage on the strip jumps to it, and the table button shows the whole matrix if a question needs it; the PDF prints the table.</p>
+<p>Use two stages to explain why each next generation exists. Antivirus to sandbox: antivirus already reached for unknown files and unknown families with heuristics, generic detections and emulation, but as a preventive control it had to do so at a false-positive rate a blocking product can afford, and the extraction and detection rows still failed on packed, polymorphic and novel files, so the industry added a generation that runs the file instead of parsing it. The sandbox added no sensor of its own; it borrowed the gateway's and the endpoint's and asked them for the file. Sandbox to EDR: because the sandbox depends on another product handing it a self-contained object, once the capability was an inline command, a staged payload or a memory-only implant nothing arrived to detonate, and nothing further down a pipeline can repair an empty first row. The answer was the host, where antivirus's hooks already were: EDR took the same sensor and the same collection and changed what happens to the data. Instead of being judged on the host and discarded, it is forwarded, retained and correlated centrally, so detection, investigation, decision and response were rebuilt around a record of activity rather than a verdict on an object. The difference between the two columns starts below the acquisition row, and the decision row carries the preventive-versus-detective difference: antivirus and the sandbox render a verdict on an object before it runs, EDR records activity and alerts after the fact.</p>
+<p>Around 2016, the network and mail sandbox was the premium control. It solved the real problem of its time: judging an object by what it does rather than by what it looks like, so that exploit documents, zero-days and novel implants arriving by mail and web were caught regardless of packing, polymorphism or signature coverage. Detonate it, record the behavior, and decide.</p>
+<p>The sandbox needs a self-contained, detonatable artifact. Walk through what starves it, using the recurring scenario where possible:</p>
+<ul><li><strong>Inline commands.</strong> The PowerShell one-liner is text in a process command line. There is no file to submit.</li><li><strong>Staged payloads.</strong> A stager fetches its second stage only from the real victim. The command-and-control server is geo-fenced, rate-limited, or offline when the sandbox asks. The sandbox records a harmless download attempt.</li><li><strong>DLL side-loading.</strong> The malicious DLL only runs when the legitimate signed host executable loads it from a specific directory layout, sometimes with a specific argument or environment. Submit the DLL alone and nothing happens.</li><li><strong>Memory-only implants.</strong> The implant never exists as a file on any system. The only artifact the sandbox could receive is the loader, and the loader is often legitimate.</li><li><strong>Evasion.</strong> Sleeps, environment checks, user-interaction gating, and hardware fingerprinting detect the analysis VM itself. The VM was a generic image, rarely anything like the victim's machine, which is also why environment-keyed payloads did nothing in it.</li></ul>
+<p><strong>EDR came from a different premise.</strong> By the early 2010s, after Aurora, years of antivirus misses and breach reports measuring dwell time in months (Mandiant's median was 416 days for 2011 and 243 for 2012), defenders accepted that a determined adversary would get past prevention. The response was "assume breach": if prevention will fail, the control that matters is the one that lets you detect and investigate the compromise afterward. The term endpoint detection and response was coined in 2013 for tools built on that premise. Antivirus and the sandbox are preventive controls that render a verdict on an object before it runs. EDR is a detective and investigative control over activity: it records process ancestry, command lines, script content, memory regions, module loads, network connections and the identity behind them, whether or not anything was blocked, so that an analyst can reconstruct what happened, hunt for what was missed, and contain it remotely. Dwell time, which antivirus never measured, is the metric EDR was built against.</p>
+<p>This is also why EDR survived the attacker's departure from files: it never depended on a file. The production host became the place where real execution is observed, and containment and rollback were added behind pre-execution judgment. Students who think of EDR as "next-generation antivirus" miss that the two answer different questions: "should this object run?" versus "what has already happened on this host?"</p>
+<p>Be precise on the slide. The sandbox did not become useless. It became a commodity capability with a narrower role: commodity droppers and malicious documents at machine scale, and detonation as one tool among several at investigation scale. Lecture 3 returns to it as a tool an analyst agent calls.</p>
+<p>EDR has its own starvation column. It sees the host. It does not see the attacker's session in a SaaS console, a cloud API call made with a stolen token, or a legitimate remote-management tool doing exactly what it was designed to do. That is where identity telemetry, and the control and objective questions from slide 21, take over.</p>
+<p>On the detection stage, say what the EDR's memory telemetry actually gives, using the recurring scenario. PowerShell runs on .NET, and the CLR legitimately JIT-compiles intermediate language into native code in process memory; browsers, JVMs, emulators and instrumentation do the same. So executable private memory, or a protection change, is observable and is not a verdict: visibility is not distinguishability, and distinguishability is not a verdict. The defender needs context the representation has to keep, identity and process ancestry, command and script content, network provenance, the memory region's provenance and backing, control transfers and thread context, follow-on behavior. Once the sensor sat on the host, the problem did not disappear; it moved from sensor and acquisition to representation and detection, which is why Case A in the exercise is a sensor failure and Case C a classifier one.</p>
+<p>As a rhetorical question, not an exercise: which column of the recurring scenario would each product have captured, the command line, the shellcode, the document access, or the upload? The EDR captures the most and still cannot say "malicious" from any single event.</p>
+<h4>Transition</h4><p>“The network sensor went through the same decade. There the evidence was taken away not by the attacker but by encryption.”</p>
+<h4>Sources</h4><ul><li><a href="https://attack.mitre.org/techniques/T1497/" target="_blank" rel="noopener">MITRE ATT&amp;CK: Virtualization/Sandbox Evasion (T1497)</a></li><li><a href="https://attack.mitre.org/techniques/T1574/001/" target="_blank" rel="noopener">MITRE ATT&amp;CK: Hijack Execution Flow: DLL (T1574.001; side-loading was merged into it in April 2025)</a></li><li><a href="https://attack.mitre.org/techniques/T1620/" target="_blank" rel="noopener">MITRE ATT&amp;CK: Reflective Code Loading (T1620)</a></li><li><a href="https://learn.microsoft.com/en-us/powershell/scripting/security/security-features" target="_blank" rel="noopener">Microsoft: PowerShell security features</a></li><li><a href="https://learn.microsoft.com/en-us/dotnet/standard/managed-execution-process" target="_blank" rel="noopener">Microsoft: .NET managed execution process</a></li><li><a href="https://services.google.com/fh/files/misc/rpt-mtrends-2021-en.pdf" target="_blank" rel="noopener">Mandiant M-Trends 2021, global median dwell time 2011–2020</a></li><li><a href="https://blogs.gartner.com/anton-chuvakin/2013/07/26/named-endpoint-threat-detection-response/" target="_blank" rel="noopener">Gartner, Anton Chuvakin: Named: Endpoint Threat Detection &amp; Response (July 2013)</a></li></ul></aside>
+</section>
+
+<section class="slide s26 k-network-change-encryption m4" data-slide="26" data-module="Detection pipelines: design and evolution" data-timing="64–66 minutes">
+
+<div class="body">
+<h2 class="title">The network changed under the sensor: HTTPS, TLS 1.3, DoH, ECH</h2>
+<div data-component="https-chart" data-height="300"></div>
+<table class="steps">
+<thead><tr><th>Step</th><th>What it removed from the network sensor</th></tr></thead>
+<tbody>
+<tr><td>HTTPS by default (Let's Encrypt, 2015 onward)</td><td>Payload content</td></tr>
+<tr><td>TLS 1.3 (2018)</td><td>Server certificate in the clear</td></tr>
+<tr><td>DNS over HTTPS (2018 onward)</td><td>The lookup before the connection</td></tr>
+<tr><td>Encrypted Client Hello (browsers 2023, RFC 9849 in 2026, few servers)</td><td>The server name in the handshake</td></tr>
+</tbody>
+</table>
+<blockquote class="callout"><p>A payload signature cannot match content it never sees. The window has been closing one field at a time.</p></blockquote>
+
+</div>
+<footer class="chrome"><span class="module">Detection pipelines: design and evolution</span><span class="timing">min 64–66</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 64–66 minutes</strong> · Detection pipelines: design and evolution</p>
+<p>Network intrusion detection and prevention systems were built when most web traffic was plaintext. Content rules matched exploit strings, downloaded executables, and command-and-control beacons in the payload. Let's Encrypt made certificates free and automated in late 2015, Chrome began marking every plaintext page "Not secure" in July 2018, and within about five years encrypted page loads went from about 40 percent to roughly 90 percent in the United States and on Chrome desktop. Firefox's global average plateaued in the low eighties because of its regional mix, which is why the slide names the browser and region for each figure. The figures were checked in October 2026 against Mozilla's ssl_ratios telemetry dataset and the Google Transparency Report data; Google's own publications gave 51 to 53 percent for Chrome on Windows in October 2016, so the slide rounds down.</p>
+<p>The sequence after that matters as much as the first step. Each protocol improvement was good for users and removed one more row of this table from the network sensor's view: TLS 1.3 encrypts the certificate, DNS over HTTPS hides the lookup, and Encrypted Client Hello hides the server name.</p>
+<p>This slide is the cause; the next one is the effect, stage by stage. Keep it to two minutes: the curve, the four steps, the callout.</p>
+<h4>Transition</h4><p>“That is the change. Now what it did to each stage of the network pipeline.”</p>
+<h4>Sources</h4><ul><li><a href="https://transparencyreport.google.com/https/overview" target="_blank" rel="noopener">Google Transparency Report: HTTPS encryption on the web</a></li><li><a href="https://letsencrypt.org/stats/" target="_blank" rel="noopener">Let's Encrypt statistics (Firefox telemetry, percentage of page loads over HTTPS)</a></li><li><a href="https://security.googleblog.com/2016/10/https-encryption-on-web.html" target="_blank" rel="noopener">Google Security Blog: HTTPS encryption on the web, 2016</a></li><li><a href="https://docs.telemetry.mozilla.org/datasets/other/ssl/reference.html" target="_blank" rel="noopener">Mozilla telemetry: ssl_ratios dataset reference</a></li><li><a href="https://letsencrypt.org/2016/06/22/https-progress-june-2016" target="_blank" rel="noopener">Let's Encrypt: HTTPS progress, June 2016 (39.5 percent at launch)</a></li><li><a href="https://blog.chromium.org/2023/08/towards-https-by-default.html" target="_blank" rel="noopener">Chromium Blog: Towards HTTPS by default (2023)</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc9849.html" target="_blank" rel="noopener">RFC 9849: TLS Encrypted Client Hello</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc8446" target="_blank" rel="noopener">RFC 8446: TLS 1.3</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc8484" target="_blank" rel="noopener">RFC 8484: DNS Queries over HTTPS</a></li><li><a href="https://datatracker.ietf.org/doc/draft-ietf-tls-esni/" target="_blank" rel="noopener">IETF TLS Encrypted Client Hello draft</a></li></ul></aside>
+</section>
+
+<section class="slide s27 k-network-lineage m4" data-slide="27" data-module="Detection pipelines: design and evolution" data-timing="66–70 minutes">
+
+<div class="body">
+<h2 class="title">Network lineage: what each stage lost</h2>
+<div data-stage-matrix data-view="panels">
+<div class="pipe" data-component="pipeline" data-caption=""></div>
+<div class="panel-area">
+<div class="row-panels">
+<div class="row-panel active" data-row="0" data-stage="sensor"><h3><span class="k">sensor</span> <span class="q">can the system observe the event or state?</span></h3><div class="gen-cards"><div class="gen"><b>IDS/IPS on the plaintext web (2000s)</b><p>A tap or inline appliance at the perimeter</p></div><div class="gen"><b>After HTTPS, TLS 1.3, DoH and ECH</b><p>The same tap, plus the endpoint and the identity provider</p></div></div></div>
+<div class="row-panel" data-row="1" data-stage="acquisition"><h3><span class="k">acquisition</span> <span class="q">is the evidence collected and retained?</span></h3><div class="gen-cards"><div class="gen"><b>IDS/IPS on the plaintext web (2000s)</b><p>Full packets, kept for hours or days</p></div><div class="gen"><b>After HTTPS, TLS 1.3, DoH and ECH</b><p>Flow and DNS metadata for months; packets only behind a decryption proxy</p></div></div></div>
+<div class="row-panel" data-row="2" data-stage="extraction"><h3><span class="k">extraction</span> <span class="q">can usable artifacts or fields be recovered?</span></h3><div class="gen-cards"><div class="gen"><b>IDS/IPS on the plaintext web (2000s)</b><p>Protocol parsing and file carving from the stream</p></div><div class="gen"><b>After HTTPS, TLS 1.3, DoH and ECH</b><p>Decryption at a proxy (pinning, privacy, performance costs), or nothing</p></div></div></div>
+<div class="row-panel" data-row="3" data-stage="representation"><h3><span class="k">representation</span> <span class="q">what information is supplied to analysis?</span></h3><div class="gen-cards"><div class="gen"><b>IDS/IPS on the plaintext web (2000s)</b><p>Payload bytes and strings</p></div><div class="gen"><b>After HTTPS, TLS 1.3, DoH and ECH</b><p>Endpoints, timing, volume, TLS fingerprints (JA3 2017, JA4 2023)</p></div></div></div>
+<div class="row-panel" data-row="4" data-stage="detection"><h3><span class="k">detection</span> <span class="q">is a score, rule, or verdict produced?</span></h3><div class="gen-cards"><div class="gen"><b>IDS/IPS on the plaintext web (2000s)</b><p>Content rules on exploits, downloads and beacons (Snort)</p></div><div class="gen"><b>After HTTPS, TLS 1.3, DoH and ECH</b><p>Metadata rules, beaconing and anomaly models, reputation</p></div></div></div>
+<div class="row-panel" data-row="5" data-stage="investigation"><h3><span class="k">investigation</span> <span class="q">can evidence be connected and explained?</span></h3><div class="gen-cards"><div class="gen"><b>IDS/IPS on the plaintext web (2000s)</b><p>Replay the capture</p></div><div class="gen"><b>After HTTPS, TLS 1.3, DoH and ECH</b><p>Flow timelines joined to endpoint and identity events</p></div></div></div>
+<div class="row-panel" data-row="6" data-stage="decision,response"><h3><span class="k">decision and response</span> <span class="q">can an action be selected and executed in time?</span></h3><div class="gen-cards"><div class="gen"><b>IDS/IPS on the plaintext web (2000s)</b><p>Block inline</p></div><div class="gen"><b>After HTTPS, TLS 1.3, DoH and ECH</b><p>Block destinations; isolate from the endpoint</p></div></div></div>
+<div class="row-panel" data-row="7" data-stage="challenge"><h3><span class="k">challenge</span> <span class="q">what changed, and what remains observable</span></h3><div class="gen-cards"><div class="gen"><b>IDS/IPS on the plaintext web (2000s)</b><p>Encryption removed the payload (HTTPS by default, 2015 onward), the certificate (TLS 1.3, 2018), the lookup (DoH, 2018 onward) and the server name (ECH, browsers 2023)</p></div><div class="gen"><b>After HTTPS, TLS 1.3, DoH and ECH</b><p>Lower specificity; east-west SMB, Kerberos, LDAP and scanning still visible; plaintext survives on the endpoint</p></div></div></div>
+</div>
+<button type="button" class="table-toggle" aria-pressed="false">full table</button>
+</div>
+<table class="matrix full"><thead><tr><th>Stage</th><th>IDS/IPS on the plaintext web (2000s)</th><th>After HTTPS, TLS 1.3, DoH and ECH</th></tr></thead><tbody><tr data-stage="sensor"><td>sensor</td><td>A tap or inline appliance at the perimeter</td><td>The same tap, plus the endpoint and the identity provider</td></tr><tr data-stage="acquisition"><td>acquisition</td><td>Full packets, kept for hours or days</td><td>Flow and DNS metadata for months; packets only behind a decryption proxy</td></tr><tr data-stage="extraction"><td>extraction</td><td>Protocol parsing and file carving from the stream</td><td>Decryption at a proxy (pinning, privacy, performance costs), or nothing</td></tr><tr data-stage="representation"><td>representation</td><td>Payload bytes and strings</td><td>Endpoints, timing, volume, TLS fingerprints (JA3 2017, JA4 2023)</td></tr><tr data-stage="detection"><td>detection</td><td>Content rules on exploits, downloads and beacons (Snort)</td><td>Metadata rules, beaconing and anomaly models, reputation</td></tr><tr data-stage="investigation"><td>investigation</td><td>Replay the capture</td><td>Flow timelines joined to endpoint and identity events</td></tr><tr data-stage="decision,response"><td>decision and response</td><td>Block inline</td><td>Block destinations; isolate from the endpoint</td></tr><tr data-stage="challenge"><td>challenge</td><td>Encryption removed the payload (HTTPS by default, 2015 onward), the certificate (TLS 1.3, 2018), the lookup (DoH, 2018 onward) and the server name (ECH, browsers 2023)</td><td>Lower specificity; east-west SMB, Kerberos, LDAP and scanning still visible; plaintext survives on the endpoint</td></tr></tbody></table>
+<span class="fragment stage-step" data-row="1" data-stage="acquisition" data-fragment-index="0" aria-hidden="true"></span>
+<span class="fragment stage-step" data-row="2" data-stage="extraction" data-fragment-index="1" aria-hidden="true"></span>
+<span class="fragment stage-step" data-row="3" data-stage="representation" data-fragment-index="2" aria-hidden="true"></span>
+<span class="fragment stage-step" data-row="4" data-stage="detection" data-fragment-index="3" aria-hidden="true"></span>
+<span class="fragment stage-step" data-row="5" data-stage="investigation" data-fragment-index="4" aria-hidden="true"></span>
+<span class="fragment stage-step" data-row="6" data-stage="decision,response" data-fragment-index="5" aria-hidden="true"></span>
+<span class="fragment stage-step" data-row="7" data-stage="challenge" data-fragment-index="6" aria-hidden="true"></span>
+<blockquote class="callout fragment"><p>The sensor stayed where it was. Extraction failed, and everything below it was rebuilt on metadata or moved to the endpoint.</p></blockquote>
+</div>
+
+</div>
+<footer class="chrome"><span class="module">Detection pipelines: design and evolution</span><span class="timing">min 66–70</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 66–70 minutes</strong> · Detection pipelines: design and evolution</p>
+<p>Read the table as the twin of the host and file table, with one difference: the sensor row stayed where it was. What failed was extraction. The appliance still sees every packet and can no longer open them, so everything below extraction had to be rebuilt on metadata, and the content-level questions moved to the endpoint and the identity provider. What encryption hides from payload inspection (strings, transferred code and documents, application commands, content signatures, archive contents) remains observable somewhere else: endpoints and DNS activity, timing and volume, TLS properties, the process-to-connection relationship, and the plaintext on the endpoint itself. Next and Previous step through the stages one at a time, with the two eras side by side; clicking a stage on the strip jumps to it, and the table button shows the whole matrix.</p>
+<p>Defenders had three responses:</p>
+<ol><li><strong>Decrypt in the middle.</strong> A TLS inspection proxy restores payload visibility for north-south web traffic, but it breaks certificate pinning, raises privacy and legal questions, costs performance, and becomes a high-value target holding every session in plaintext.</li><li><strong>Move to metadata.</strong> Network detection and response products use endpoints, timing, volume, and TLS fingerprints such as JA3 and JA4. These answer different questions with lower specificity.</li><li><strong>Move the sensor to the endpoint.</strong> The plaintext still exists where the process encrypts and decrypts it. EDR observes the process, the connection, and the content before encryption.</li></ol>
+<p>Be precise about what survived. East-west internal traffic is often still plaintext or inspectable: SMB, Kerberos, LDAP, and remote-management protocols, which is exactly where lateral movement and credential abuse happen. Scanning, DNS without encryption, and beacon timing remain visible. North-south payload signatures are what lost most of their value without decryption.</p>
+<p>In the recurring scenario, TLS may conceal the downloaded payload and the uploaded content from an intermediate network sensor. The endpoint may still observe PowerShell, the network retrieval, the document access and the memory activity; metadata and endpoint context answer different questions and often with lower specificity.</p>
+<h4>Interaction</h4><p>Ask whether the organization in the recurring scenario would see the shellcode download or the document upload from a network sensor. Then ask what it would see from the endpoint.</p>
+<h4>Transition</h4><p>“Host and network tell one story: the evidence moved and the sensor followed. Now six misses to diagnose, without ‘we need better AI’ as the default answer. Every answer is a row on the options slide.”</p>
+<h4>Sources</h4><ul><li><a href="https://www.rfc-editor.org/rfc/rfc8446" target="_blank" rel="noopener">RFC 8446: TLS 1.3</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc8484" target="_blank" rel="noopener">RFC 8484: DNS Queries over HTTPS</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc9849.html" target="_blank" rel="noopener">RFC 9849: TLS Encrypted Client Hello</a></li></ul></aside>
+</section>
+
+<section class="slide s28 k-diagnostic-exercise m4" data-slide="28" data-module="Detection pipelines: design and evolution" data-timing="70–76 minutes">
+
+<div class="body">
+<h2 class="title">Diagnostic exercise</h2>
+<div data-cases>
+<div class="pipe" data-component="pipeline"></div>
+<div class="cases">
+<div class="case" data-stage="sensor,acquisition"><h3>Case A</h3><p>A memory-resident payload is missed by an on-write file scanner.</p><button type="button">Reveal</button><div class="answer fragment" data-fragment-index="0">Sensor and acquisition mismatch. Memory or behavioral evidence is needed; this is the antivirus and sandbox column of the host and file lineage. Retraining does not help.</div></div>
+<div class="case" data-stage="sensor"><h3>Case B</h3><p>An HTTPS transfer is missed by a plaintext content signature.</p><button type="button">Reveal</button><div class="answer fragment" data-fragment-index="1">Payload visibility mismatch at the sensor. Metadata or endpoint evidence may help; this is the network lineage. Retraining does not help.</div></div>
+<div class="case" data-stage="representation,detection"><h3>Case C</h3><p>A retained PE file is parsed successfully but receives a benign score.</p><button type="button">Reveal</button><div class="answer fragment" data-fragment-index="2">Representation or classifier failure. Retraining may be relevant, after checking labels and distribution shift.</div></div>
+<div class="case" data-stage="investigation"><h3>Case D</h3><p>Three low-severity alerts on three systems over two days: an unusual sign-in, a PowerShell process, a proxy connection. Each is closed as noise.</p><button type="button">Reveal</button><div class="answer fragment" data-fragment-index="3">Investigation failure. Every alert was right; the evidence was never connected. Correlation, not a better classifier.</div></div>
+<div class="case" data-stage="decision"><h3>Case E</h3><p>The alert is correct and investigated, but isolating the server needs an approval that is unreachable overnight. The upload completes.</p><button type="button">Reveal</button><div class="answer fragment" data-fragment-index="4">Decision failure. An appropriate action existed and was not authorized in time. Fix the authorization design, not the evidence.</div></div>
+<div class="case" data-stage="response"><h3>Case F</h3><p>Isolation is ordered, but the laptop is off the VPN and the EDR cannot reach it for six hours.</p><button type="button">Reveal</button><div class="answer fragment" data-fragment-index="5">Response failure. The decision was correct and could not be executed. Containment has to work where the host actually is.</div></div>
+</div>
+<p style="font-size:0.75em;color:var(--ink-2)">For each: which pipeline stage failed? What additional evidence is needed? Would retraining help?</p>
+</div>
+
+</div>
+<footer class="chrome"><span class="module">Detection pipelines: design and evolution</span><span class="timing">min 70–76</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 70–76 minutes</strong> · Detection pipelines: design and evolution</p>
+<p>Expected emphasis:</p>
+<ul><li><strong>A:</strong> sensor/acquisition mismatch; memory or behavioral evidence is needed. This is the sandbox and antivirus column of slide 25.</li><li><strong>B:</strong> payload visibility mismatch; metadata or endpoint evidence may help. This is the network lineage of slide 27.</li><li><strong>C:</strong> representation or classifier failure; retraining may be relevant after checking labels and distribution shift.</li><li><strong>D:</strong> investigation failure. Every sensor worked and every alert was right; the evidence was never connected across sources. Correlation and timeline reconstruction are needed, not a better classifier. This is the pattern Lecture 2 shows at scale.</li><li><strong>E:</strong> decision failure. An appropriate action existed and was not authorized in time. The fix is authorization design, such as pre-approved containment above a confidence threshold, not more evidence.</li><li><strong>F:</strong> response failure. The decision was correct and could not be executed. Containment paths have to work where the host actually is.</li></ul>
+<p>Two points to state while the cases are discussed. First, only some misses can be repaired by retraining the classifier; make students name the failed stage before they propose a larger model, and remember the miss that is not a miss at all, when no malicious activity occurred. Second, a detection is not an outcome: a correct alert that arrives too late, lacks recoverable evidence, or cannot trigger containment is not equivalent to stopping the attack. Cases D to F make that second point concrete.</p>
+<p>Several answers may be defensible if students state their assumptions.</p>
+<h4>Interaction</h4><p>Use a rapid show of hands per case, in the pipeline's words: sensor, acquisition, extraction, representation, detection, investigation, decision, or response. Then reveal the answer with Next (or the case's Reveal button).</p>
+<h4>Transition</h4><p>“Every answer was a row on the options slide. Five conclusions, and the vote we never resolved.”</p></aside>
+</section>
+
+<section class="slide s29 k-five-conclusions m5" data-slide="29" data-module="Synthesis" data-timing="76–80 minutes">
+<h2 class="title">Five conclusions</h2>
+<div class="body">
+<ol><li>Attackers left the file because file defenses worked and because the money moved.</li><li>Software identity is not the same as adversary behavior.</li><li>Detection begins with visibility and extraction.</li><li>Every product observes one unit of evidence; when the evidence moves, the product keeps catching what stayed and misses what moved, and a new layer is added.</li><li>Expensive reasoning requires aggressive prioritization.</li></ol>
+<blockquote class="callout"><p>Better reasoning cannot recover evidence that was never observed or was destroyed during representation.</p></blockquote>
+<p>Research prompts:</p>
+<ul><li>What should we collect?</li><li>What should we preserve?</li><li>Where does the sensor have to move next?</li></ul>
+</div>
+<footer class="chrome"><span class="module">Synthesis</span><span class="timing">min 76–80</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 76–80 minutes</strong> · Synthesis</p>
+<p>Close the loop with the opening vote in one sentence before the conclusions: all five situations were malicious capability in use; they differed in the artifact, in who controlled it and whose objective it served, and in which sensor could see it, which is why the room disagreed and why the lecture spent its time on evidence rather than on a definition.</p>
+<p>Conclusion 5 is the bridge to Lecture 3, now that the three-scales slide lives there: an LLM agent that can explain one selected sample, call a decompiler or a sandbox and write an evidence-linked report answers "can it analyze this?", not "can the system find it among millions of objects?", and it repairs none of the sensing or acquisition failures of Part 2. Choosing which ten artifacts deserve thirty minutes each is a research problem in its own right.</p>
+<p>End optimistically. More capable AI does not erase the need for security expertise; it exposes new research work in sensing, extraction, representations, scalable filtering, prioritization, verification, and response.</p>
+<p>Preview the other two lectures without requiring them. Lecture 3 covers the detectors themselves: signatures, engineered features, similarity, raw-byte and code models, and the LLM as analyst. Lecture 2 examines what happens when the same reasoning capability receives tools, feedback, persistence, and authority in an adversarial environment.</p>
+<h4>Transition</h4><p>End of Lecture 1. Invite questions using the three research prompts rather than asking only “Any questions?”</p></aside>
+</section>
+  </div>
+</div>
+<div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+<div id="help" class="help" hidden>
+  <h3>Keys</h3>
+  <table>
+    <tr><td>→ / Space</td><td>next step</td></tr>
+    <tr><td>←</td><td>previous step</td></tr>
+    <tr><td>S</td><td>speaker view (notes, timer, next slide)</td></tr>
+    <tr><td>F</td><td>fullscreen</td></tr>
+    <tr><td>Esc / O</td><td>overview of all slides</td></tr>
+    <tr><td>T</td><td>toggle light / dark theme</td></tr>
+    <tr><td>B</td><td>blank screen</td></tr>
+    <tr><td>?</td><td>this help</td></tr>
+  </table>
+  <p>PDF: open with <code>?print-pdf</code> in the URL and print to PDF from Chrome.</p>
+</div>
+<script src="vendor/reveal/reveal.min.js"></script>
+<script src="vendor/reveal/plugin/notes/notes.min.js"></script>
+<script src="data.js"></script>
+<script src="attack.js"></script>
+<script src="components.js"></script>
+<script>
+  Reveal.initialize({
+    width: 1280,
+    height: 720,
+    margin: 0.03,
+    minScale: 0.2,
+    maxScale: 2.0,
+    center: false,
+    hash: true,
+    history: false,
+    controls: true,
+    controlsTutorial: false,
+    progress: true,
+    slideNumber: 'c/t',
+    showSlideNumber: 'all',
+    transition: 'fade',
+    transitionSpeed: 'fast',
+    backgroundTransition: 'none',
+    pdfSeparateFragments: false,
+    plugins: [RevealNotes]
+  }).then(function () { Deck.init(); });
+</script>
+</body>
+</html>
