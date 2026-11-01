@@ -56,7 +56,7 @@ The periods are the periods of the attacker's dominant tradecraft, not of famous
 - [Mark Russinovich: Sony, rootkits and digital rights management gone too far (October 2005)](https://techcommunity.microsoft.com/t5/windows-blog-archive/sony-rootkits-and-digital-rights-management-gone-too-far/ba-p/723442)
 - [Microsoft: Windows XP SP2 firewall enabled by default (2004)](https://learn.microsoft.com/en-us/previous-versions/bb877964%28v=technet.10%29)
 - [Microsoft: An introduction to Kernel Patch Protection (x64, 2005)](https://learn.microsoft.com/en-us/archive/blogs/windowsvistasecurity/an-introduction-to-kernel-patch-protection)
-- [Conficker Working Group: lessons learned](https://www.confickerworkinggroup.org/)
+- [Conficker Working Group: lessons learned (archived copy)](https://web.archive.org/web/20151218171845/http://www.confickerworkinggroup.org/wiki/)
 
 ### 2010–2016
 

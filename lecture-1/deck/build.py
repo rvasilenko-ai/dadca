@@ -230,6 +230,7 @@ def render_period(slide: dict, period: str) -> str:
     if callout:
         parts.append(f'<blockquote class="callout period-callout">{callout}</blockquote>')
     parts.append("</div>")
+    parts.append(render_sources(slide))
     return "\n".join(parts)
 
 

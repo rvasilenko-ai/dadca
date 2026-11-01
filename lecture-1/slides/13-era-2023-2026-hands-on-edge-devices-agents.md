@@ -49,9 +49,27 @@ The timeline is zoomed to this period: the labelled dots are the key events, the
 
 ## Sources
 
-- [CISA: People's Republic of China state-sponsored cyber actor living off the land (Volt Typhoon), May 2023](https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-144a)
-- [CISA: Identifying and mitigating living off the land techniques (February 2024)](https://www.cisa.gov/resources-tools/resources/identifying-and-mitigating-living-off-land-techniques)
-- [IETF TLS Encrypted Client Hello draft](https://datatracker.ietf.org/doc/draft-ietf-tls-esni/)
-- [Microsoft Project Ire](https://www.microsoft.com/en-us/research/project/project-ire/)
-- [Noma Security: ForcedLeak](https://noma.security/noma-labs/forcedleak/)
+### Labelled events
+
+- [Microsoft: Introducing Microsoft 365 Copilot (16 March 2023)](https://www.microsoft.com/en-us/copilot/blog/2023/03/16/introducing-microsoft-365-copilot-a-whole-new-way-to-work/)
+- [CISA advisory AA23-144A: PRC state-sponsored cyber actor living off the land, Volt Typhoon (May 2023)](https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-144a)
+- [CISA advisory AA23-158A: CL0P ransomware gang exploits MOVEit Transfer, extortion without encryption (June 2023)](https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a)
+- [MGM Resorts: Form 8-K on the September 2023 cybersecurity issue (filed 13 September 2023)](https://www.sec.gov/Archives/edgar/data/789570/000119312523233855/d502352d8k.htm)
+- [Caesars Entertainment: Form 8-K, social engineering attack on an outsourced IT vendor (filed 14 September 2023)](https://www.sec.gov/Archives/edgar/data/1590895/000119312523235015/d537840d8k.htm)
+- [CISA advisory AA23-320A: Scattered Spider (November 2023)](https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-320a)
+- [Microsoft: passkeys arrive in Windows 11 (26 September 2023)](https://blogs.windows.com/windowsexperience/2023/09/26/the-most-personal-windows-11-experience-begins-rolling-out-today/)
+- [Proofpoint: ClickFix social engineering technique floods the threat landscape (November 2024)](https://www.proofpoint.com/us/blog/threat-insight/security-brief-clickfix-social-engineering-technique-floods-threat-landscape)
+- [Microsoft: Think before you ClickFix, first observed March to June 2024 (August 2025)](https://www.microsoft.com/en-us/security/blog/2025/08/21/think-before-you-clickfix-analyzing-the-clickfix-social-engineering-technique/)
+- [Microsoft Research: Project Ire (August 2025)](https://www.microsoft.com/en-us/research/project/project-ire/)
+- [Noma Security: ForcedLeak (September 2025)](https://noma.security/noma-labs/forcedleak/)
 - [Hugging Face: technical timeline of the July 2026 incident](https://huggingface.co/blog/agent-intrusion-technical-timeline)
+
+### Headlines
+
+- [CISA advisory AA23-325A: LockBit affiliates exploit Citrix Bleed, CVE-2023-4966 (November 2023)](https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-325a)
+- [CISA advisory AA24-060B: exploitation of Ivanti Connect Secure gateways (February 2024)](https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-060b)
+- [CISA: identifying and mitigating living off the land techniques (February 2024)](https://www.cisa.gov/resources-tools/resources/identifying-and-mitigating-living-off-land-techniques)
+- [Microsoft: added LSA protection enabled by default on new enterprise-joined Windows 11 22H2 installs](https://learn.microsoft.com/en-us/windows-server/security/credentials-protection-and-management/configuring-additional-lsa-protection)
+- [RFC 9849: TLS Encrypted Client Hello (2026)](https://www.rfc-editor.org/rfc/rfc9849.html)
+- [IETF TLS Encrypted Client Hello draft](https://datatracker.ietf.org/doc/draft-ietf-tls-esni/)
+- [Anthropic: introducing the Model Context Protocol (25 November 2024)](https://www.anthropic.com/news/model-context-protocol)

@@ -117,7 +117,7 @@ window.DECK_DATA = {
     { y: 2020.3, t: "internet", s: "Remote work; identity is the perimeter", k: true, h: true, d: "Cloud-first, OAuth tokens, SaaS everywhere." },
     { y: 2021.3, t: "internet", s: "Chrome on Windows passes 90% HTTPS", d: "April 2021." },
     { y: 2017.45, t: "products", s: "JA3 TLS fingerprinting", d: "Salesforce, June 2017." },
-    { y: 2018.5, t: "products", s: "EDR mainstream; XDR", k: true, d: "Detection moves to the host; managed detection and response." },
+    { y: 2018.5, t: "products", s: "EDR mainstream; XDR", k: true, d: "Detection moves to the host; managed detection and response. XDR as a product from Cortex XDR, February 2019." },
     { y: 2020.6, t: "products", s: "NIST SP 800-207 zero trust", d: "11 August 2020." },
     { y: 2021.0, t: "products", s: "Sandboxes commoditized", d: "Bundled into platforms; narrow role." },
     { y: 2022.18, t: "products", s: "ITDR named (Gartner)", d: "7 March 2022." },

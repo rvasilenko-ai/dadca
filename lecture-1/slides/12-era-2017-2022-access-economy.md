@@ -51,12 +51,28 @@ The operating-system row is Microsoft closing the paths of the previous period: 
 
 ## Sources
 
-- [CISA alert TA17-132A: indicators associated with WannaCry ransomware (2017)](https://www.cisa.gov/news-events/alerts/2017/05/12/indicators-associated-wannacry-ransomware)
+### Labelled events
+
+- [Microsoft Security Response Center: protecting customers and evaluating risk, the Shadow Brokers release (April 2017)](https://www.microsoft.com/en-us/msrc/blog/2017/04/protecting-customers-and-evaluating-risk/)
+- [US-CERT alert TA17-132A: indicators associated with WannaCry ransomware (May 2017)](https://www.cisa.gov/news-events/alerts/2017/05/12/indicators-associated-wannacry-ransomware)
+- [US-CERT alert TA17-181A: Petya ransomware (27 June 2017)](https://www.cisa.gov/news-events/alerts/2017/07/01/petya-ransomware)
 - [White House statement attributing NotPetya to the Russian military (February 2018)](https://trumpwhitehouse.archives.gov/briefings-statements/statement-press-secretary-25/)
-- [CISA: Russian APT compromise of SolarWinds Orion (ED 21-01)](https://www.cisa.gov/news-events/directives/ed-21-01-mitigate-solarwinds-orion-code-compromise-closed)
-- [Microsoft: macros from the internet blocked by default in Office](https://learn.microsoft.com/en-us/deployoffice/security/internet-macros-blocked)
-- [Microsoft: vulnerable and malicious driver protections](https://www.microsoft.com/en-us/security/blog/2021/12/08/improve-kernel-security-with-the-new-microsoft-vulnerable-and-malicious-driver-reporting-center/)
+- [RFC 8446: TLS 1.3 (August 2018)](https://www.rfc-editor.org/rfc/rfc8446)
+- [Microsoft: defeating fileless malware with behavior monitoring, AMSI and next-gen antivirus (September 2018)](https://www.microsoft.com/en-us/security/blog/2018/09/27/out-of-sight-but-not-invisible-defeating-fileless-malware-with-behavior-monitoring-amsi-and-next-gen-av/)
+- [Palo Alto Networks: Cortex XDR introduced (26 February 2019)](https://www.paloaltonetworks.com/company/press/2019/palo-alto-networks-introduces-cortex-the-industrys-only-open-and-integrated-ai-based-continuous-security-platform)
+- [FBI PSA I-100219: high-impact ransomware attacks threaten US businesses (October 2019)](https://www.ic3.gov/PSA/2019/PSA191002)
+- [BleepingComputer: Allied Universal breached by Maze ransomware, stolen data leaked (first report of double extortion, 21 November 2019)](https://www.bleepingcomputer.com/news/security/allied-universal-breached-by-maze-ransomware-stolen-data-leaked/)
+- [NIST SP 800-207: Zero Trust Architecture (August 2020)](https://csrc.nist.gov/pubs/sp/800/207/final)
+- [CISA advisory AA20-352A: SolarWinds Orion supply chain compromise (13 December 2020)](https://www.cisa.gov/news-events/cybersecurity-advisories/aa20-352a)
+- [Microsoft: Windows 11 enables security by design, VBS and Secure Boot on by default (June 2021)](https://www.microsoft.com/en-us/security/blog/2021/06/25/windows-11-enables-security-by-design-from-the-chip-to-the-cloud/)
+- [Microsoft: Windows 11 requirements, TPM 2.0 and UEFI Secure Boot](https://learn.microsoft.com/en-us/windows/whats-new/windows-11-requirements)
+- [Microsoft: DEV-0537, LAPSUS$ (22 March 2022)](https://www.microsoft.com/en-us/security/blog/2022/03/22/dev-0537-criminal-actor-targeting-organizations-for-data-exfiltration-and-destruction/)
+- [Microsoft: macros from the internet blocked by default in Office (2022)](https://learn.microsoft.com/en-us/deployoffice/security/internet-macros-blocked)
+- [Microsoft: vulnerable and malicious driver protections, BYOVD (December 2021)](https://www.microsoft.com/en-us/security/blog/2021/12/08/improve-kernel-security-with-the-new-microsoft-vulnerable-and-malicious-driver-reporting-center/)
+
+### Headlines
+
+- [CISA Emergency Directive 21-01: mitigate SolarWinds Orion code compromise (December 2020)](https://www.cisa.gov/news-events/directives/ed-21-01-mitigate-solarwinds-orion-code-compromise-closed)
+- [Sophos: Maze ransomware, one year and counting](https://www.sophos.com/en-us/blog/maze-ransomware-1-year-counting)
 - [FBI Internet Crime Complaint Center annual reports (business email compromise losses)](https://www.ic3.gov/AnnualReport/Reports)
-- [NIST SP 800-207: Zero Trust Architecture (2020)](https://csrc.nist.gov/pubs/sp/800/207/final)
-- [RFC 8446: TLS 1.3](https://www.rfc-editor.org/rfc/rfc8446)
-- [RFC 8484: DNS Queries over HTTPS](https://www.rfc-editor.org/rfc/rfc8484)
+- [RFC 8484: DNS Queries over HTTPS (October 2018)](https://www.rfc-editor.org/rfc/rfc8484)
