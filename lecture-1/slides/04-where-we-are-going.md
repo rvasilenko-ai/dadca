@@ -9,7 +9,7 @@
 | --- | --- |
 | Why malware came to mean a file | One word, five questions; the detection pipeline and the options at each stage |
 | What broke the file-centric model, and when | Where each change broke the pipeline; the host-and-file and network lineages, stage by stage |
-| ATT&CK: behavior without a family name, capabilities delivered through benign files, an attack with no malware file | Six misses to diagnose; five conclusions |
+| ATT&CK: describing behavior without a family name | Six misses to diagnose; five conclusions |
 
 One attack recurs throughout: a stolen administrator account, an inline PowerShell command, shellcode in memory, documents out over HTTPS. It is situation 2 from the vote. The detectors themselves, machine learning and the LLM analyst, are Lecture 3.
 
