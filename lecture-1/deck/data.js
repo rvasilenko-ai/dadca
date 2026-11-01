@@ -2,7 +2,7 @@
    against primary sources; see docs/superpowers/specs/2026-10-11-lecture-1-split-and-defensive-evolution.md */
 window.DECK_DATA = {
   periods: [
-    { id: "p1", from: 2000, to: 2010, label: "2000–2009 · the file era", short: "File era" },
+    { id: "p1", from: 2000, to: 2010, label: "2000–2009 · the executable, from worms to botnets", short: "Worms to botnets" },
     { id: "p2", from: 2010, to: 2017, label: "2010–2016 · APT, exploit kits, files of every kind", short: "APT and exploit kits" },
     { id: "p3", from: 2017, to: 2023, label: "2017–2022 · the access economy", short: "Access economy" },
     { id: "p4", from: 2023, to: 2027, label: "2023–2026 · hands-on, edge devices, agents", short: "Hands-on, edge devices, agents" }
@@ -25,7 +25,12 @@ window.DECK_DATA = {
     { y: 2008.5, t: "money", s: "Fake antivirus", d: "Rogue AV scams peak 2008–2011." },
     { y: 2000.35, t: "attackers", s: "VBScript worms (first script wave)", d: "ILOVEYOU, May 2000; Anna Kournikova, February 2001. Macro viruses had led the way since 1995." },
     { y: 2000.9, t: "attackers", s: "Mass-mailing worms", d: "Executable attachments and self-mailing worms." },
+    { y: 2001.55, t: "attackers", s: "Code Red, Nimda", d: "Code Red, July 2001 (IIS, MS01-033); Nimda, 18 September 2001: worms that spread over the network with no email and no user action." },
     { y: 2002.5, t: "attackers", s: "Packers and protectors", d: "UPX (1998), ASPack, Armadillo; Themida 1.0 in December 2004." },
+    { y: 2003.07, t: "attackers", s: "Slammer", d: "25 January 2003: one UDP packet exploiting SQL Server (MS02-039), spreading worldwide in minutes." },
+    { y: 2003.61, t: "attackers", s: "Blaster", d: "11 August 2003: exploits the RPC DCOM flaw (MS03-026) on Windows 2000 and XP; Windows XP SP2 turns the firewall on the next year." },
+    { y: 2003.85, t: "attackers", s: "IRC botnets: Agobot, rxbot", k: true, d: "2002–2004: Agobot (Gaobot), SDBot and its rxbot derivatives make the compromised machine join an IRC channel and take orders. Infections become inventory, rented for spam, DDoS and installs." },
+    { y: 2004.33, t: "attackers", s: "Sasser", d: "30 April 2004: exploits LSASS (MS04-011) with no user action; Windows XP SP2 ships with the firewall on that August." },
     { y: 2004.0, t: "attackers", s: "Hacker Defender", d: "Windows user-mode rootkit; v1.00 released January 2004." },
     { y: 2005.83, t: "attackers", s: "Sony BMG rootkit", k: true, d: "Disclosed by Mark Russinovich, 31 October 2005." },
     { y: 2006.5, t: "attackers", s: "Rustock", d: "Kernel rootkit and spam bot, first analysed June 2006." },
@@ -33,6 +38,7 @@ window.DECK_DATA = {
     { y: 2007.3, t: "attackers", s: "Server-side polymorphism", d: "Thousands of unique variants per day; hashes become one-shot." },
     { y: 2007.55, t: "attackers", s: "Zeus", d: "Banking trojan first identified July 2007." },
     { y: 2007.9, t: "attackers", s: "Mebroot MBR bootkit", d: "First traces November 2007; drive-by waves December 2007 to January 2008." },
+    { y: 2008.58, t: "attackers", s: "Koobface", d: "Detected 31 July 2008 on MySpace and Facebook: a social-network worm whose botnet earned over US$2 million from pay-per-install and click fraud between June 2009 and June 2010." },
     { y: 2008.9, t: "attackers", s: "Conficker", k: true, d: "Conficker.A detected 21 November 2008." },
     { y: 2001.8, t: "os", s: "Windows XP", k: true, h: true, d: "Released 25 October 2001: users run as administrator, autorun on, firewall off by default." },
     { y: 2004.6, t: "os", s: "XP SP2: firewall on, DEP", d: "Service Pack 2, August 2004." },

@@ -6,7 +6,7 @@
 ## On-slide content
 
 ```text
-2000–2009   the file era                              an executable, mass-mailed to victims over an unencrypted network connection
+2000–2009   the executable, from worms to botnets    an executable, mailed or worm-spread over an unencrypted network; botnets make the machine the product
 2010–2016   APT, exploit kits, files of every kind    still a file, no longer only an executable; the sandbox peaks
 2017–2022   the access economy                        identities, tokens and trusted vendors; EDR mainstream, then attacked
 2023–2026   hands-on hacking, edge devices, agents      intrusion by hand through help desks, sessions and edge devices; then agents

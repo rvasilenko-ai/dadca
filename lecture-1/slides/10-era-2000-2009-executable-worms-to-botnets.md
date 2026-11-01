@@ -1,4 +1,4 @@
-# Slide 10 — 2000–2009: the file era
+# Slide 10 — 2000–2009: the executable, from worms to botnets
 
 **Timing:** 14–18 minutes  
 **Module:** From malicious programs to adversarial capabilities
@@ -8,12 +8,12 @@
 | Track | Headline |
 | --- | --- |
 | **Motive and money** | Notoriety gives way to fraud and extortion: the victim's machine, its bandwidth and what it types become the product. |
-| **Attackers** | An executable file, mass-mailed to an administrator, then hidden by packers, rootkits and server-side polymorphism. |
+| **Attackers** | Executables by mail and worm, then botnets, hidden by packers, rootkits and server-side polymorphism. |
 | **Operating system** | Windows XP runs everyone as administrator with autorun on; SP2 and Vista start closing the host. |
 | **Internet** | Broadband and plaintext HTTP; email is the delivery channel and the browser is full of plug-ins. |
 | **Security products** | Signature antivirus learns emulation and reputation, mail gateways block executables, IDS reads plaintext payloads. |
 
-> The attack was a file delivered to an administrator over plaintext. Every product that mattered inspected files or payloads.
+> The attack was an executable delivered to an administrator over plaintext. Every product that mattered inspected files or payloads.
 
 ### Detail
 
@@ -22,7 +22,7 @@ Behind the details button; the speaker notes pick from it.
 | Track | 2000–2009 |
 | --- | --- |
 | **Motive and money** | From notoriety to fraud and extortion: adware and pay-per-install, spam botnets, DDoS extortion and DDoS for hire, click fraud, banking trojans, fake antivirus, carding. The victim's machine, its bandwidth and credentials are the product. |
-| **Attackers** | Mass-mailing worms, executable attachments, and the tail of the first macro and script wave (VBScript worms, 2000–2001). Packers and commercial protectors (UPX, ASPack, Armadillo, Themida). Windows XP rootkits (Hacker Defender, Sony BMG 2005, Rustock) and MBR bootkits (2007–08). Botnets and pay-per-install (Storm, Zeus, Conficker). Server-side polymorphism and fake antivirus from about 2007. |
+| **Attackers** | Mass-mailing worms, executable attachments, and the tail of the first macro and script wave (VBScript worms, 2000–2001). Network worms against unpatched services: Code Red and Nimda (2001), Slammer and Blaster (2003), Sasser (2004). IRC botnets (Agobot, SDBot, rxbot, 2002–2004) make the infected machine a rentable platform. Packers and commercial protectors (UPX, ASPack, Armadillo, Themida). Windows XP rootkits (Hacker Defender, Sony BMG 2005, Rustock) and MBR bootkits (2007–08). Botnets and pay-per-install (Storm, Zeus, Conficker, Koobface). Server-side polymorphism and fake antivirus from about 2007. |
 | **Operating system** | Windows XP (2001): users run as administrator, autorun on, firewall present but off by default until SP2 (2004) turns it on and adds DEP. Vista (2007): UAC, mandatory 64-bit driver signing, ASLR; kernel-patch protection carried over from 64-bit XP and Server 2003 SP1 (2005). Windows 7 (2009) ships PowerShell by default. |
 | **Internet** | Broadband replaces dial-up. IE6, ActiveX, Flash, Java and Acrobat plugins. HTTP in plaintext; HTTPS only for login and payment. Email is the delivery channel. |
 | **Security products** | Signature antivirus, then heuristics and emulation to see through packers. Outlook and mail gateways block executable attachments; Office macro security ends the first script wave. Personal firewalls and HIPS. Anti-spam gateways. Network IDS/IPS on plaintext traffic. Cloud reputation and file prevalence arrive at the end of the decade. |
@@ -34,6 +34,8 @@ The timeline is zoomed to this period: the labelled dots are the key events, the
 Read the five tracks as one system, starting with the money. The attacker's unit was the executable because the victim ran as administrator on a machine with no built-in tooling worth abusing, received email and browsed with plug-in-heavy browsers, and the network carried everything in the clear. The defenses that mattered were exactly those built on that unit: file scanners, payload signatures, spam filters.
 
 **Motive explains the volume.** The decade opens with worm authors seeking notoriety and closes with a criminal market. Adware and pay-per-install paid per infected machine; spam botnets rented out capacity; the same botnets sold DDoS, first as extortion of online businesses and then as a service for hire (Ancheta, indicted in November 2005 for selling botnet access for DDoS and spam, was the first US prosecution of its kind); click fraud monetized browsers; banking trojans and carding monetized credentials. Once an infection was worth a few cents to a few dollars, the attacker's problem became scale, and scale is what produced botnets and server-side polymorphism. The product was the victim's machine, its bandwidth and what it typed.
+
+**Worms, then botnets.** The first half of the decade belongs to the worms: Code Red and Nimda in 2001, Slammer and Blaster in 2003, Sasser in 2004, each exploiting an unpatched service on a machine with no firewall and spreading with no user action. XP SP2 turning the firewall on in August 2004 is the defender's answer, and the big network worms go quiet until Conficker finds MS08-067 in 2008. The second half belongs to the botnets. The IRC bot families (Agobot, SDBot, rxbot) made the compromised machine report to a channel and take orders, which is what turned infections into inventory that could be rented for spam, DDoS and installs; Ancheta was prosecuted for exactly that trade. Storm, Zeus, Conficker and Koobface are the mature form: the machine is the product and the binary is disposable.
 
 Within the decade the attacker moved three times inside the file:
 
@@ -61,9 +63,26 @@ The operating-system row explains why so much was possible: administrator by def
 - [McAfee: Artemis Technology announced (press release, 8 September 2008; archived copy)](http://web.archive.org/web/20080914114358/http://www.mcafee.com/us/about/press/corporate/2008/20080908_180000_q.html)
 - [Microsoft security bulletin MS08-067, the vulnerability Conficker exploited (23 October 2008)](https://learn.microsoft.com/en-us/security-updates/securitybulletins/2008/ms08-067)
 - [Microsoft: Worm:Win32/Conficker.A, published 23 November 2008](https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Worm:Win32/Conficker.A)
+- [Microsoft: Win32/Gaobot threat description (Agobot: IRC-controlled worm family, 2002–2004)](https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Win32/Gaobot)
+- [Microsoft: Win32/Rbot threat description (SDBot and rxbot derivatives)](https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Win32/Rbot)
 - [US-CERT alert TA09-088A: Conficker worm targets Microsoft Windows systems (March 2009)](https://www.cisa.gov/news-events/alerts/2009/03/29/conficker-worm-targets-microsoft-windows-systems)
 - [Conficker Working Group: lessons learned (archived copy)](https://web.archive.org/web/20151218171845/http://www.confickerworkinggroup.org/wiki/)
 - [Microsoft: PowerShell v2 is already part of Windows 7 (November 2009)](https://learn.microsoft.com/en-us/archive/blogs/josebda/download-for-powershell-v2-for-windows-7-no-need-its-already-there)
+
+### Detail
+
+- [CERT/CC: the 2001 CERT advisories, including CA-2001-19 Code Red (19 July 2001) and CA-2001-26 Nimda (18 September 2001)](https://www.sei.cmu.edu/library/2001-cert-advisories/)
+- [CERT/CC: the 2003 CERT advisories, including CA-2003-04 MS-SQL Server worm, Slammer (25 January 2003) and CA-2003-20 W32/Blaster (11 August 2003)](https://www.sei.cmu.edu/library/2003-cert-advisories/)
+- [Microsoft security bulletin MS01-033, the IIS vulnerability Code Red exploited (18 June 2001)](https://learn.microsoft.com/en-us/security-updates/securitybulletins/2001/ms01-033)
+- [Microsoft security bulletin MS02-039, the SQL Server vulnerability Slammer exploited (24 July 2002)](https://learn.microsoft.com/en-us/security-updates/securitybulletins/2002/ms02-039)
+- [Microsoft security bulletin MS03-026, the RPC DCOM vulnerability Blaster exploited (16 July 2003)](https://learn.microsoft.com/en-us/security-updates/securitybulletins/2003/ms03-026)
+- [Microsoft security bulletin MS04-011, the LSASS vulnerability Sasser exploited (13 April 2004)](https://learn.microsoft.com/en-us/security-updates/securitybulletins/2004/ms04-011)
+- [Microsoft: Win32/Msblast threat description (Blaster)](https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Win32/Msblast)
+- [Microsoft: Worm:Win32/Sasser threat description](https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Worm:Win32/Sasser)
+- [Microsoft: Microsoft joins law enforcement to track perpetrators of emerging worm attacks (Sasser and Agobot, 2 May 2004)](https://news.microsoft.com/source/2004/05/02/microsoft-joins-law-enforcement-to-track-perpetrators-of-emerging-worm-attacks-against-computer-users/)
+- [Microsoft: reward program helps lead to arrest related to the Sasser worm, within seven days of its launch (8 May 2004)](https://news.microsoft.com/source/2004/05/08/microsoft-reward-program-helps-lead-to-information-resulting-in-arrest-related-to-sasser-internet-worm/)
+- [Kaspersky: Kaspersky Lab detects new worms attacking MySpace and Facebook (Koobface, 1 August 2008)](https://www.kaspersky.com/about/press-releases/kaspersky-lab-detects-new-worms-attacking-myspace-and-facebook)
+- [Information Warfare Monitor, Nart Villeneuve: Koobface, inside a crimeware network (12 November 2010)](https://citizenlab.ca/2010/11/koobface-inside-a-crimeware-network/)
 
 ### Headlines
 

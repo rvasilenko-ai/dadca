@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Drive a long-lived headless Chrome over the DevTools protocol with stdlib only.
 Usage: screenshot.py PORT URL OUTDIR SLIDE[:fK][:dark][:click=<css selector without colons>] ...
+Scope click selectors to the shown slide (e.g. "section.present details.srcs summary") when several slides match.
 Writes OUTDIR/sNN[-fK][-dark].png and prints console errors."""
 import base64, json, os, socket, struct, sys, time, urllib.request
 
@@ -132,7 +133,7 @@ for spec in specs:
     call("Runtime.evaluate", {"expression": f"document.documentElement.removeAttribute('data-theme'); Reveal.slide({n-1}, 0, {frag if frag is not None else -1}); true", "awaitPromise": False})
     drain(0.9)
     if click:
-        hit = call("Runtime.evaluate", {"expression": "(function(){var e=document.querySelector(" + json.dumps(click) + "); if(!e) return 'no match'; e.dispatchEvent(new MouseEvent('click',{bubbles:true})); return 'clicked';})()", "returnByValue": True})
+        hit = call("Runtime.evaluate", {"expression": "(function(){var e=document.querySelector(" + json.dumps(click) + "); if(!e) return 'no match'; if(e.click) e.click(); else e.dispatchEvent(new MouseEvent('click',{bubbles:true})); return 'clicked';})()", "returnByValue": True})
         print("  click", click, "->", hit["result"].get("value"))
         drain(0.5)
     shot = call("Page.captureScreenshot", {"format": "png"})
