@@ -53,7 +53,7 @@ The operating-system row is Microsoft closing the paths of the previous period: 
 
 - [CISA alert TA17-132A: indicators associated with WannaCry ransomware (2017)](https://www.cisa.gov/news-events/alerts/2017/05/12/indicators-associated-wannacry-ransomware)
 - [White House statement attributing NotPetya to the Russian military (February 2018)](https://trumpwhitehouse.archives.gov/briefings-statements/statement-press-secretary-25/)
-- [CISA: Russian APT compromise of SolarWinds Orion (ED 21-01)](https://www.cisa.gov/news-events/directives/ed-21-01-mitigate-solarwinds-orion-code-compromise)
+- [CISA: Russian APT compromise of SolarWinds Orion (ED 21-01)](https://www.cisa.gov/news-events/directives/ed-21-01-mitigate-solarwinds-orion-code-compromise-closed)
 - [Microsoft: macros from the internet blocked by default in Office](https://learn.microsoft.com/en-us/deployoffice/security/internet-macros-blocked)
 - [Microsoft: vulnerable and malicious driver protections](https://www.microsoft.com/en-us/security/blog/2021/12/08/improve-kernel-security-with-the-new-microsoft-vulnerable-and-malicious-driver-reporting-center/)
 - [FBI Internet Crime Complaint Center annual reports (business email compromise losses)](https://www.ic3.gov/AnnualReport/Reports)

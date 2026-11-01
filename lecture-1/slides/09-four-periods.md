@@ -32,11 +32,23 @@ The periods are the periods of the attacker's dominant tradecraft, not of famous
 
 ### Anchor events on the timeline
 
+- [Microsoft: Windows XP is here (press release, 25 October 2001)](https://news.microsoft.com/2001/10/25/windows-xp-is-here/)
+- [F-Secure Labs: Small.DAM spammed around, the Storm Worm's first big run (19 January 2007; archived copy)](http://web.archive.org/web/20130308064153/http://www.f-secure.com/weblog/archives/00001086.html)
+- [McAfee: Artemis Technology announced (press release, 8 September 2008; archived copy)](http://web.archive.org/web/20080914114358/http://www.mcafee.com/us/about/press/corporate/2008/20080908_180000_q.html)
+- [VirusBlokAda: Rootkit.TmpHider, the first Stuxnet detection (17 June 2010; archived copy)](http://web.archive.org/web/20220331205829/http://anti-virus.by/en/tempo.shtml)
+- [Symantec: W32.Stuxnet Dossier, version 1.4 (February 2011)](https://docs.broadcom.com/doc/security-response-w32-stuxnet-dossier-11-en)
+- [SecureWorks CTU: CryptoLocker ransomware, first samples 5 September 2013](https://www.sophos.com/en-us/research/cryptolocker-ransomware)
+- [US-CERT alert TA13-309A: CryptoLocker ransomware infections (November 2013)](https://www.cisa.gov/news-events/alerts/2013/11/05/cryptolocker-ransomware-infections)
 - [Gartner, Anton Chuvakin: Named: Endpoint Threat Detection & Response (July 2013)](https://blogs.gartner.com/anton-chuvakin/2013/07/26/named-endpoint-threat-detection-response/)
 - [Microsoft: PowerShell security features (AMSI and script block logging, Windows 10, 2015)](https://learn.microsoft.com/en-us/powershell/scripting/security/security-features)
+- [US-CERT alert TA17-181A: Petya ransomware (27 June 2017)](https://www.cisa.gov/news-events/alerts/2017/07/01/petya-ransomware)
+- [BleepingComputer: Allied Universal breached by Maze ransomware, stolen data leaked (first report of double extortion, 21 November 2019)](https://www.bleepingcomputer.com/news/security/allied-universal-breached-by-maze-ransomware-stolen-data-leaked/)
+- [Sophos: Maze ransomware, one year and counting (the November 2019 leak as the first public double extortion)](https://www.sophos.com/en-us/blog/maze-ransomware-1-year-counting)
 - [NIST SP 800-207: Zero Trust Architecture (August 2020)](https://csrc.nist.gov/pubs/sp/800/207/final)
-- [CISA Emergency Directive 21-01: mitigate SolarWinds Orion code compromise (December 2020)](https://www.cisa.gov/news-events/directives/ed-21-01-mitigate-solarwinds-orion-code-compromise)
+- [CISA advisory AA20-352A: SolarWinds Orion supply chain compromise (13 December 2020)](https://www.cisa.gov/news-events/cybersecurity-advisories/aa20-352a)
+- [Microsoft: Introducing Microsoft 365 Copilot (16 March 2023)](https://www.microsoft.com/en-us/copilot/blog/2023/03/16/introducing-microsoft-365-copilot-a-whole-new-way-to-work/)
 - [CISA advisory AA23-144A: PRC state-sponsored cyber actor living off the land (Volt Typhoon, May 2023)](https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-144a)
+- [CISA advisory AA23-158A: CL0P ransomware gang exploits MOVEit Transfer, extortion without encryption (June 2023)](https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a)
 - [Microsoft Research: Project Ire (August 2025)](https://www.microsoft.com/en-us/research/project/project-ire/)
 
 ### 2000–2009

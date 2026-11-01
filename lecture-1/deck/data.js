@@ -28,7 +28,7 @@ window.DECK_DATA = {
     { y: 2004.0, t: "attackers", s: "Hacker Defender", d: "Windows user-mode rootkit; v1.00 released January 2004." },
     { y: 2005.83, t: "attackers", s: "Sony BMG rootkit", k: true, d: "Disclosed by Mark Russinovich, 31 October 2005." },
     { y: 2006.5, t: "attackers", s: "Rustock", d: "Kernel rootkit and spam bot, first analysed June 2006." },
-    { y: 2007.05, t: "attackers", s: "Storm Worm", k: true, h: true, d: "Discovered 17 January 2007; server-side polymorphism at scale." },
+    { y: 2007.05, t: "attackers", s: "Storm Worm", k: true, h: true, d: "First large spam run 19 January 2007 (F-Secure; detection added 15 January); server-side polymorphism at scale." },
     { y: 2007.3, t: "attackers", s: "Server-side polymorphism", d: "Thousands of unique variants per day; hashes become one-shot." },
     { y: 2007.55, t: "attackers", s: "Zeus", d: "Banking trojan first identified July 2007." },
     { y: 2007.9, t: "attackers", s: "Mebroot MBR bootkit", d: "First traces November 2007; drive-by waves December 2007 to January 2008." },
