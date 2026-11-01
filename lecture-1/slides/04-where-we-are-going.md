@@ -7,9 +7,9 @@
 
 | Part 1 · How did malware and malicious capabilities evolve? (6–45) | Part 2 · How are detection pipelines designed, and how did they evolve? (45–80) |
 | --- | --- |
-| Why malware came to mean a file | One word, five questions; the detection pipeline and the options at each stage |
-| What broke the file-centric model, and when | Where each change broke the pipeline; the host-and-file and network lineages, stage by stage |
-| ATT&CK: describing behavior without a family name | Six misses to diagnose; five conclusions |
+| Why malware came to mean a file | The detection pipeline, and the options at each stage |
+| What broke the file-centric model, and when | How each attacker change broke it, and how the host and network pipelines were rebuilt |
+| ATT&CK: describing behavior without a family name | Six misses to diagnose |
 
 One attack recurs throughout: a stolen administrator account, an inline PowerShell command, shellcode in memory, documents out over HTTPS. It is situation 2 from the vote. The detectors themselves, machine learning and the LLM analyst, are Lecture 3.
 
