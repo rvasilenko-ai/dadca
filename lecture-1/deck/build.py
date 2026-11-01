@@ -369,6 +369,16 @@ def render_change_panels(slide: dict) -> str:
     return "\n".join(out)
 
 
+def render_sources(slide: dict) -> str:
+    """An expandable on-slide list of the slide's sources (the same list the notes carry), opening over the slide."""
+    src = slide.get("sources") or ""
+    links = re.findall(r"\[[^\]]+\]\(https?://[^)]+\)", src)
+    if not links:
+        return ""
+    return (f'<details class="srcs"><summary>Sources ({len(links)})</summary>'
+            f'<div class="panel">{md_to_html(src)}</div></details>')
+
+
 # --------------------------------------------------------------------------- notes
 def render_notes(slide: dict) -> str:
     bits = [f'<p class="plan"><strong>Planned {slide["timing"]}</strong> · {html.escape(slide["module"])}</p>']
@@ -401,6 +411,8 @@ def render_slide(slide: dict) -> str:
             body = body.replace("{{stage_matrix}}", render_stage_matrix(slide))
         if "{{change_panels}}" in body:
             body = body.replace("{{change_panels}}", render_change_panels(slide))
+        if "{{sources}}" in body:
+            body = body.replace("{{sources}}", render_sources(slide))
         heading = ""  # templates own their heading
     else:
         body = auto

@@ -330,6 +330,20 @@ html, body { background: var(--bg); color: var(--ink); }
 .reveal .k-map-fileless-attack blockquote.question { font-size: 0.78em; margin-bottom: 0.5em; }
 .reveal .k-map-fileless-attack .am-foot { font-size: 0.62em; color: var(--ink-2); margin-top: 0.5em; }
 
+/* Expandable on-slide sources */
+.reveal details.srcs { position: absolute; top: 44px; right: 62px; margin: 0; z-index: 25; }
+.reveal details.srcs summary { list-style: none; display: inline-block; cursor: pointer; font: 600 13px var(--sans); color: var(--accent); border: 1px dashed var(--accent); border-radius: 6px; padding: 3px 9px; }
+.reveal details.srcs summary::-webkit-details-marker { display: none; }
+.reveal details.srcs[open] summary::after { content: " · close"; color: var(--ink-3); font-weight: 500; }
+.reveal details.srcs .panel { position: absolute; right: 0; top: calc(100% + 8px); width: 1138px; z-index: 20; max-height: 540px; overflow: auto; background: var(--bg); border: 1px solid var(--line-2); border-radius: 10px; box-shadow: 0 10px 34px rgba(0,0,0,0.22); padding: 12px 18px 10px; font-size: 0.56em; line-height: 1.35; text-align: left; columns: 2; column-gap: 28px; }
+.reveal details.srcs .panel h3 { font-size: 1.05em; margin: 0 0 4px; color: var(--ink-2); column-span: all; }
+.reveal details.srcs .panel h3:not(:first-child) { margin-top: 8px; }
+.reveal details.srcs .panel ul { margin: 0 0 6px; padding-left: 1.1em; }
+.reveal details.srcs .panel li { break-inside: avoid; margin-bottom: 3px; }
+.reveal details.srcs .panel a { color: var(--accent); text-decoration: none; }
+.reveal details.srcs .panel a:hover { text-decoration: underline; }
+@media print { .reveal details.srcs { display: none; } }
+
 /* Help overlay and tooltip */
 .help { position: fixed; inset: auto 24px 24px auto; z-index: 60; background: var(--bg); color: var(--ink); border: 1px solid var(--line-2); border-radius: 10px; padding: 14px 18px; font: 15px/1.4 var(--sans); box-shadow: 0 8px 30px rgba(0,0,0,0.25); max-width: 420px; }
 .help h3 { margin: 0 0 6px; font-size: 16px; }
