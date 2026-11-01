@@ -9,7 +9,7 @@
 
 1. A Trojan executable is written to disk.
 2. PowerShell downloads and runs code.
-3. A PE image exists only in process memory.
+3. A Portable Executable image exists only in process memory.
 4. An attacker controls a legitimate remote-management tool.
 5. Repository instructions cause a coding agent to exfiltrate secrets.
 
