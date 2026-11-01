@@ -56,7 +56,7 @@ window.ATTACK = {
         { id: "T1574.001", name: "DLL", d: "Search-order hijacking and side-loading, merged into one sub-technique in April 2025." } ] },
       { id: "T1497", name: "Virtualization/Sandbox Evasion" } ] },
     { id: "TA0112", name: "Defense Impairment (new in April 2026)", short: "Defense Impairment", count: 18, techniques: [
-      { id: "T1685", name: "Disable or Modify Tools", d: "Replaced Impair Defenses (T1562) in April 2026; its sub-techniques include disabling event logs and, new, impairing autonomous defenses.", subs: [
+      { id: "T1685", name: "Disable or Modify Tools", d: "Replaced Impair Defenses (T1562) in April 2026; its sub-techniques include disabling event logs and, since v20 in October 2026, impairing autonomous defenses.", subs: [
         { id: "T1685.001", name: "Disable or Modify Windows Event Log" },
         { id: "T1685.007", name: "Impair Autonomous Defenses" } ] },
       { id: "T1686", name: "Disable or Modify System Firewall" },

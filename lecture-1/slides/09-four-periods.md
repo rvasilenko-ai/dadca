@@ -39,7 +39,7 @@ The periods are the periods of the attacker's dominant tradecraft, not of famous
 - [Symantec: W32.Stuxnet Dossier, version 1.4 (February 2011)](https://docs.broadcom.com/doc/security-response-w32-stuxnet-dossier-11-en)
 - [SecureWorks CTU: CryptoLocker ransomware, first samples 5 September 2013](https://www.sophos.com/en-us/research/cryptolocker-ransomware)
 - [US-CERT alert TA13-309A: CryptoLocker ransomware infections (November 2013)](https://www.cisa.gov/news-events/alerts/2013/11/05/cryptolocker-ransomware-infections)
-- [Gartner, Anton Chuvakin: Named: Endpoint Threat Detection & Response (July 2013)](https://blogs.gartner.com/anton-chuvakin/2013/07/26/named-endpoint-threat-detection-response/)
+- [Anton Chuvakin: Named: Endpoint Threat Detection & Response (Gartner blog, 26 July 2013; the author's archive copy, which lists Mandiant MIR and Carbon Black among the tools)](https://chuvakin.blogspot.com/2013/07/named-endpoint-threat-detection-response.html)
 - [Microsoft: PowerShell security features (AMSI and script block logging, Windows 10, 2015)](https://learn.microsoft.com/en-us/powershell/scripting/security/security-features)
 - [US-CERT alert TA17-181A: Petya ransomware (27 June 2017)](https://www.cisa.gov/news-events/alerts/2017/07/01/petya-ransomware)
 - [BleepingComputer: Allied Universal breached by Maze ransomware, stolen data leaked (first report of double extortion, 21 November 2019)](https://www.bleepingcomputer.com/news/security/allied-universal-breached-by-maze-ransomware-stolen-data-leaked/)

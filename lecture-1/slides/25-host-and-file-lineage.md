@@ -63,4 +63,4 @@ As a rhetorical question, not an exercise: which column of the recurring scenari
 - [Microsoft: PowerShell security features](https://learn.microsoft.com/en-us/powershell/scripting/security/security-features)
 - [Microsoft: .NET managed execution process](https://learn.microsoft.com/en-us/dotnet/standard/managed-execution-process)
 - [Mandiant M-Trends 2021, global median dwell time 2011–2020](https://services.google.com/fh/files/misc/rpt-mtrends-2021-en.pdf)
-- [Gartner, Anton Chuvakin: Named: Endpoint Threat Detection & Response (July 2013)](https://blogs.gartner.com/anton-chuvakin/2013/07/26/named-endpoint-threat-detection-response/)
+- [Anton Chuvakin: Named: Endpoint Threat Detection & Response (Gartner blog, 26 July 2013; the author's archive copy, which lists Mandiant MIR and Carbon Black among the tools)](https://chuvakin.blogspot.com/2013/07/named-endpoint-threat-detection-response.html)
