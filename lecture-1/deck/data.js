@@ -19,6 +19,7 @@ window.DECK_DATA = {
     /* ---------------- 2000–2009 */
     { y: 2000.3, t: "money", s: "Notoriety", d: "Early-2000s worm authors seek fame rather than money." },
     { y: 2003.5, t: "money", s: "Adware, pay-per-install", d: "Infected machines monetized through installs and ads." },
+    { y: 2004.6, t: "money", s: "DDoS extortion, DDoS for hire", d: "Botnets flood online businesses for ransom and are rented out for attacks; Ancheta indicted for selling botnet access for DDoS and spam, November 2005." },
     { y: 2005.5, t: "money", s: "Spam botnets, click fraud", d: "Botnet capacity rented for spam; browsers monetized by click fraud." },
     { y: 2007.4, t: "money", s: "Banking trojans, carding", d: "Credentials and cards become the product." },
     { y: 2008.5, t: "money", s: "Fake antivirus", d: "Rogue AV scams peak 2008–2011." },
