@@ -11,15 +11,13 @@
 | What broke the file-centric model, and when | How each attacker change broke it, and how the host and network pipelines were rebuilt |
 | ATT&CK: describing behavior without a family name | Six misses to diagnose |
 
-One attack recurs throughout: a stolen administrator account, an inline PowerShell command, shellcode in memory, documents out over HTTPS. It is situation 2 from the vote. The detectors themselves, machine learning and the LLM analyst, are Lecture 3.
-
 ## Speaker notes
 
 Now that the ambiguity has been felt, make the route explicit with the two questions, one per column. Part 1 is history: malware came to mean a file for good reasons, and over twenty-five years the attacker moved the capability out of it; ATT&CK is how we describe what remains when there is no family name. Part 2 is the defender's side of the same years, organised around the detection pipeline: what each stage can choose from, which stage each attacker change broke, and how the host and the network pipelines were rebuilt in response; then six misses to diagnose and the conclusions.
 
 Point at the columns without reading them. Say that the detectors themselves, the machine learning and the LLM analyst, are deliberately thin here and get their own lecture, so that this one can spend its time on what the detector is allowed to see.
 
-Name the recurring scenario once so it is recognised when it returns.
+The recurring scenario is not on the slide; it is situation 2 from the vote and introduces itself when it returns on the mapping exercise.
 
 ## Transition
 
