@@ -7,7 +7,7 @@
 
 | Part 1 · How did malware and malicious capabilities evolve? (6–45) | Part 2 · How are detection pipelines designed, and how did they evolve? (45–80) |
 | --- | --- |
-| Why malware came to mean a file, and four periods, 2000 to 2026, in which the capability left it | One word, five questions; the detection pipeline and the options at each stage |
+| Why malware came to mean a file | One word, five questions; the detection pipeline and the options at each stage |
 | What broke the file-centric model, and when | Where each change broke the pipeline; the host-and-file and network lineages, stage by stage |
 | ATT&CK: behavior without a family name, capabilities delivered through benign files, an attack with no malware file | Six misses to diagnose; five conclusions |
 
