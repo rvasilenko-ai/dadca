@@ -29,5 +29,5 @@ Ask two students who disagreed to explain which property determined their answer
 
 ## Transition
 
-“Hold on to that disagreement; it comes back when we reach detection. First, the route.”
+“Hold on to that disagreement; it comes back at the end of Part 1. First, the route.”
 

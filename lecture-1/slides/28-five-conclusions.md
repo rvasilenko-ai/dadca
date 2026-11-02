@@ -1,4 +1,4 @@
-# Slide 29 — Five conclusions
+# Slide 28 — Five conclusions
 
 **Timing:** 76–80 minutes  
 **Module:** Synthesis

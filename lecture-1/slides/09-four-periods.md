@@ -14,7 +14,7 @@
 
 Five tracks per period: motive and money, attackers, operating system, internet, security products. A few anchor events are labelled; every dot has a date on hover.
 
-> In each period the attacker moved the capability to where the current sensor was not looking, and the money moved with it.
+> Four periods, one question for each: where did the capability go, and why did it move?
 
 ## Speaker notes
 
@@ -23,6 +23,8 @@ Two minutes, and the purpose is the shape, not the content. Point at the five la
 Say explicitly that the next four slides zoom into one period each: the same five lanes, the period's own key events labelled, and one claim per track. The recap after the four periods returns to this timeline and draws the breaks on it.
 
 The periods are the periods of the attacker's dominant tradecraft, not of famous incidents, and the boundaries are soft by a year or two. 2010 opens with Aurora and Stuxnet; 2017 opens with the Shadow Brokers leak and the ransomware economy it fed; 2023 opens with the Volt Typhoon advisory and the casino intrusions, campaigns with no malware file at all. Say "no file", not "no malware": by this lecture's definition the hands-on intrusion, the built-in tools and the exploits are the malicious capability, so the malware is still there and only its carrier is gone.
+
+The callout is a question here and an answer on slide 14. Say once that the operating-system track follows the Windows enterprise endpoint, because that is where the detection industry was built and where the sensors in Part 2 live; mobile, macOS, Linux and cloud-native attacks have their own histories and appear here only when they change what a sensor can see (Mirai, XZ Utils, the Linux cloud host).
 
 ## Transition
 

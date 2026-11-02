@@ -14,8 +14,10 @@
 | Trusted vendor and update channels | 2017–2022 | Provenance as a proxy for safety |
 | Tool-using agents and external instructions | 2025–2026 | A program as the thing that executes intent |
 
-> Each break was partly a consequence of defensive success against the previous one.
+> In each period the attacker moved the capability to where the sensor was not looking; each break was partly a consequence of defensive success against the one before.
 > The money and motivation moved too: from the victim's machine, to the victim's credentials, to the victim's organization, to the victim's identity and data.
+
+Beside the callout, a small figure: the malware-free share of CrowdStrike detections, 40 percent in 2018, 51 in 2019, 62 at the end of 2021, 79 in 2024.
 
 ## Speaker notes
 
@@ -25,7 +27,11 @@ Make the causal point explicit now that the evidence is on the table. File-centr
 
 The second callout is the motive track read across the four periods. Defensive success explains why the attacker had to move; the payout explains where they moved to. When the product was the machine, the attack was a file on the machine. When the product became the organization's willingness to pay, the attack became access to the organization. When the product became identity and data in SaaS, the attack became a token or an instruction. Students who remember only this sentence can reconstruct most of the table.
 
-In words that Part 2 names formally (slide 21): the artifact carried the malicious meaning in the file era; the APT era added objective, because the same file meant something different inside a campaign; the access economy moved the meaning to control, since a legitimate tool, a valid token or a real vendor update was malicious only because of who held it; and the agent period adds a controller that is itself a program acting under delegated authority, so control and objective have to be read from the agent's context and actions. Each move is also a move in what evidence the defender needs, which is the second half of the lecture.
+The figure is the one measurement in Part 1 that states the thesis as a number: the share of CrowdStrike's detections that involved no malware file went from 40 percent in 2018 to 79 percent in 2024 (the 2021 point is the fourth quarter of that year). Say that the metric is one vendor's telemetry and that the direction, not the decimal, is the point.
+
+**What did not change.** The person as the way in. Phishing is the one initial-access capability that runs unchanged from the executable attachments of 2000 to the help-desk calls and ClickFix lures of 2024; the tracks do not show it because it never moved, and that is why it survives every row of this table.
+
+In words that Part 2 names formally (slide 20): the artifact carried the malicious meaning in the file era; the APT era added objective, because the same file meant something different inside a campaign; the access economy moved the meaning to control, since a legitimate tool, a valid token or a real vendor update was malicious only because of who held it; and the agent period adds a controller that is itself a program acting under delegated authority, so control and objective have to be read from the agent's context and actions. Each move is also a move in what evidence the defender needs, which is the second half of the lecture.
 
 Avoid claiming that “fileless” always means literally no disk artifacts. The important distinction is that the primary malicious capability may never appear as a conventional executable file supplied to a scanner. The first row is the mildest break: still a file, no longer an executable, which is why file-based defenses extended rather than collapsed in that period.
 
@@ -33,9 +39,17 @@ Cloud and identity abuse go further: the attacker may realize an objective throu
 
 ## Interaction
 
-Ask which row is the first where a perfect file classifier with a perfect signature database would have had nothing useful to classify. Expect answers spread across the first row (it had a file, just not an executable), the second and third (no file to detonate, no artifact at all), and the fourth (nothing on the host). Each answer locates "nothing to classify" at a different pipeline stage, which is the point of the next module but one.
+Ask which row is the first where a perfect file classifier with a perfect signature database would have had nothing useful to classify. Expect answers spread across the first row (it had a file, just not an executable), the second and third (no file to detonate, no artifact at all), and the fourth (nothing on the host). Each answer locates "nothing to classify" at a different pipeline stage, which is the point of the next module but one. Then close the loop with the vote: ask which of the five opening situations each row describes. Situation 1 is the model itself and has no row; 3 is the second row; 2 is the second and third; 4 the third and fourth; 5 the last.
 
 ## Transition
 
 “When the file is no longer the unit, we need a vocabulary for the behavior instead.”
+
+## Sources
+
+### Figure
+
+- [CrowdStrike: 2020 Global Threat Report press release, malware-free 40 percent of attacks in 2018 and 51 percent in 2019 (3 March 2020)](https://www.crowdstrike.com/en-us/press-releases/crowdstrike-global-threat-report-reveals-big-game-hunting-telecommunication-targeting-top-adversary-trends/)
+- [CrowdStrike: 2022 Global Threat Report press release, 62 percent of detections malware-free in the fourth quarter of 2021 (15 February 2022)](https://www.crowdstrike.com/en-us/press-releases/crowdstrikes-annual-threat-report-exposes-evolution-of-ecrime-ecosystem/)
+- [CrowdStrike: 2025 Global Threat Report, malware-free activity 79 percent of detections in 2024 (27 February 2025)](https://go.crowdstrike.com/rs/281-OBQ-266/images/CrowdStrikeGlobalThreatReport2025.pdf)
 

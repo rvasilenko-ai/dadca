@@ -1,4 +1,4 @@
-# Slide 20 — Part 2: how detection pipelines are built, and how they had to change
+# Slide 19 — Part 2: how detection pipelines are built, and how they had to change
 
 **Timing:** 45–46 minutes  
 **Module:** Detection pipelines: design and evolution

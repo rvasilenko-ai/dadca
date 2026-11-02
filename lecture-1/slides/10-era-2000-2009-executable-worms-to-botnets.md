@@ -8,7 +8,7 @@
 | Track | Headline |
 | --- | --- |
 | **Motive and money** | Notoriety gives way to fraud and extortion: the victim's machine, its bandwidth and what it types become the product. |
-| **Attackers** | Executables by mail and worm, then botnets, hidden by packers, rootkits and server-side polymorphism. |
+| **Attackers** | Executables arrive by mail and by worm, then botnets; packers, rootkits and server-side polymorphism hide them. |
 | **Operating system** | Windows XP runs everyone as administrator with autorun on; SP2 and Vista start closing the host. |
 | **Internet** | Broadband and plaintext HTTP; email is the delivery channel and the browser is full of plug-ins. |
 | **Security products** | Signature antivirus learns emulation and reputation, mail gateways block executables, IDS reads plaintext payloads. |
@@ -23,13 +23,15 @@ Behind the details button; the speaker notes pick from it.
 | --- | --- |
 | **Motive and money** | From notoriety to fraud and extortion: adware and pay-per-install, spam botnets, DDoS extortion and DDoS for hire, click fraud, banking trojans, fake antivirus, carding. The victim's machine, its bandwidth and credentials are the product. |
 | **Attackers** | Mass-mailing worms, executable attachments, and the tail of the first macro and script wave (VBScript worms, 2000–2001). Network worms against unpatched services: Code Red and Nimda (2001), Slammer and Blaster (2003), Sasser (2004). IRC botnets (Agobot, SDBot, rxbot, 2002–2004) make the infected machine a rentable platform. Packers and commercial protectors (UPX, ASPack, Armadillo, Themida). Windows XP rootkits (Hacker Defender, Sony BMG 2005, Rustock) and MBR bootkits (2007–08). Botnets and pay-per-install (Storm, Zeus, Conficker, Koobface). Server-side polymorphism and fake antivirus from about 2007. |
-| **Operating system** | Windows XP (2001): users run as administrator, autorun on, firewall present but off by default until SP2 (2004) turns it on and adds DEP. Vista (2007): UAC, mandatory 64-bit driver signing, ASLR; kernel-patch protection carried over from 64-bit XP and Server 2003 SP1 (2005). Windows 7 (2009) ships PowerShell by default. |
+| **Operating system** | Windows XP (2001): users run as administrator, autorun on, firewall present but off by default until SP2 (2004) turns it on and adds DEP (no-execute memory). Vista (2007): UAC (consent prompts for administrative actions), mandatory 64-bit driver signing, ASLR (randomized memory layout); kernel-patch protection carried over from 64-bit XP and Server 2003 SP1 (2005). Windows 7 (2009) ships PowerShell by default. |
 | **Internet** | Broadband replaces dial-up. IE6, ActiveX, Flash, Java and Acrobat plugins. HTTP in plaintext; HTTPS only for login and payment. Email is the delivery channel. |
-| **Security products** | Signature antivirus, then heuristics and emulation to see through packers. Outlook and mail gateways block executable attachments; Office macro security ends the first script wave. Personal firewalls and HIPS. Anti-spam gateways. Network IDS/IPS on plaintext traffic. Cloud reputation and file prevalence arrive at the end of the decade. |
+| **Security products** | Signature antivirus, then heuristics and emulation to see through packers. Outlook and mail gateways block executable attachments; Office macro security ends the first script wave. Personal firewalls and HIPS. Anti-spam gateways. Network intrusion detection and prevention (IDS/IPS) on plaintext traffic. Cloud reputation and file prevalence arrive at the end of the decade. |
 
 ## Speaker notes
 
 The timeline is zoomed to this period: the labelled dots are the key events, the small dots are the rest and show their date on hover. Say the five headlines, then tell two or three of the labelled events as one story. The detail chips are behind the details button, which swaps the timeline out for them; they are for questions, not for reading aloud.
+
+**Default story, three events and one image.** Windows XP (2001): everyone an administrator, autorun on, firewall off. The IRC botnets of 2003–2004 and the Ancheta case: the infected machine becomes inventory, sold for spam, DDoS and installs. Storm (2007) and McAfee Artemis (2008): a unique binary per victim, answered by reputation in the cloud. The image for students who were not there: in August 2003 an unpatched XP laptop plugged into a university network was infected by Blaster within minutes, with nothing opened and nothing clicked.
 
 Read the five tracks as one system, starting with the money. The attacker's unit was the executable because the victim ran as administrator on a machine with no built-in tooling worth abusing, received email and browsed with plug-in-heavy browsers, and the network carried everything in the clear. The defenses that mattered were exactly those built on that unit: file scanners, payload signatures, spam filters.
 

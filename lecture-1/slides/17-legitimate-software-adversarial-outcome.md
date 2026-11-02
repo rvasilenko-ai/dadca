@@ -1,11 +1,11 @@
-# Slide 18 — Capabilities delivered through benign files
+# Slide 17 — Capabilities delivered through benign files
 
-**Timing:** 38–40 minutes  
+**Timing:** 37–40 minutes  
 **Module:** ATT&CK as a language for behavior
 
 ## On-slide content
 
-> If the artifact is legitimate and unchanged, where does “malicious” reside?
+> Same tool, different procedures; same technique, different tools. So if the artifact is legitimate and unchanged, where does “malicious” reside?
 
 | Remote-management tool abused | Vulnerable signed driver (BYOVD) |
 | --- | --- |
@@ -22,6 +22,8 @@ Under the table, the ATT&CK matrix in its compact form with only the two cells l
 
 ## Speaker notes
 
+Open with the first sentence on the slide, which replaces a slide of its own: ATT&CK lists software, malware and tools alike, apart from the techniques, and connects them through documented procedures. The same tool appears in different procedures (PowerShell retrieving content, a scheduler starting a payload at logon) and the same technique is realized by different tools (an implant, an operating-system utility, a cloud API, a remote-management tool), so defenders usually detect some combination of tool identity, behavior, context and sequence. Then the two sharpest cases.
+
 The compact matrix under the table places the two cases: Remote Access Tools sits in Command and Control, Exploitation for Privilege Escalation in Privilege Escalation. These are the two cleanest examples of what the ATT&CK vocabulary is for. The same file, with the same hash and signature, appears in a legitimate procedure and in an adversarial one. ATT&CK describes the behavior (remote access; exploitation of a loaded driver) and keeps the software entry as a tool rather than malware, which is exactly the separation the previous slide argued for.
 
 Both examples come out of the last two periods, and both are responses to defensive success. Once EDR made a custom implant visible, attackers had two options: bring no implant at all and use a legitimate remote-management tool the EDR vendor has allow-listed, or bring a vulnerable signed driver and switch the EDR off from the kernel. Ransomware affiliates adopted remote-management tools as their standard access path in 2017–2022, and Scattered Spider in 2023 ran campaigns almost entirely on them. The BYOVD wave of 2022 is the attacker's acknowledgment of which product won the previous period.
@@ -33,7 +35,7 @@ intended capability + unauthorized controller + adversarial objective
 legitimate artifact + exploited capability + adversarial controller
 ```
 
-Do not say the vulnerable driver automatically becomes malware. It is an attack-enabling component in an adversarial procedure, and a valid signature establishes provenance, not current safety or authorized use. In neither case can a file classifier see the property that matters: who controls it, whose objective it serves, what it can do. Part 2 opens by naming these questions (slide 21).
+Do not say the vulnerable driver automatically becomes malware. It is an attack-enabling component in an adversarial procedure, and a valid signature establishes provenance, not current safety or authorized use. In neither case can a file classifier see the property that matters: who controls it, whose objective it serves, what it can do. Part 2 opens by naming these questions (slide 20).
 
 ## Interaction
 

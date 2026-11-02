@@ -1,4 +1,4 @@
-# Slide 19 — Map an attack with no malware file
+# Slide 18 — Map an attack with no malware file
 
 **Timing:** 40–45 minutes  
 **Module:** ATT&CK as a language for behavior
@@ -16,11 +16,15 @@ Below the scenario, the ATT&CK matrix, empty. Map in pairs: artifacts, tools, te
 5. File and Directory Discovery (T1083), Data from Local System (T1005), Archive Collected Data (T1560)
 6. Web Protocols (T1071.001), Exfiltration Over C2 Channel (T1041)
 
+After the sixth step, the close of the opening vote: by this lecture's definition all five situations are malware; what differs is where the capability sits, and what a sensor can see of it.
+
 ## Speaker notes
 
 This is situation 2 from the opening vote written out in full, and it is the standard tradecraft of the 2017–2022 period on slide 12. No malicious executable is written to disk, and the in-memory payload is not organized as a PE or ELF file. Do not say that no evidence or representation exists: the command is text, the payload is encoded bytes, HTTPS and compression have formats, and multiple system events may be produced.
 
 The six steps on the slide are one defensible mapping, not the only one: the remote launch is Remote Services with a sub-technique that depends on the mechanism (WinRM, SMB, RDP), the retrieval of the shellcode could also be tagged Ingress Tool Transfer, and an upload to a cloud service rather than to the C2 server would be Exfiltration to Cloud Storage instead of Exfiltration Over C2 Channel. Reward pairs who argue about the mechanism; that is the exercise working.
+
+**Close the vote.** The last Next brings back the five situations from slide 3. By the working definition from slide 6 all five are malware, because each is a malicious capability in use; what the room disagreed about was the carrier and the evidence: a file on disk, a command line, bytes in memory, a session under the wrong control, an instruction in data. The first row of slide 14 still had a file, the others progressively less. Part 2 asks what a sensor can see of each, which is the question the vote was really about.
 
 ## Interaction
 

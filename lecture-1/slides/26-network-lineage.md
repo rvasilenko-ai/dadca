@@ -1,4 +1,4 @@
-# Slide 27 — Network lineage: what each stage lost
+# Slide 26 — Network lineage: what each stage lost
 
 **Timing:** 66–70 minutes  
 **Module:** Detection pipelines: design and evolution

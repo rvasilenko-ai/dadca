@@ -1,4 +1,4 @@
-# Slide 21 — One word, several questions
+# Slide 20 — One word, several questions
 
 **Timing:** 46–48 minutes  
 **Module:** Detection pipelines: design and evolution

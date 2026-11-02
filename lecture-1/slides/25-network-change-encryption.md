@@ -1,4 +1,4 @@
-# Slide 26 — The network changed under the sensor: HTTPS, TLS 1.3, DoH, ECH
+# Slide 25 — The network changed under the sensor: HTTPS, TLS 1.3, DoH, ECH
 
 **Timing:** 64–66 minutes  
 **Module:** Detection pipelines: design and evolution

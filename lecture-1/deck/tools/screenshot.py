@@ -102,6 +102,7 @@ def drain(seconds):
         sock.settimeout(120)
 
 call("Page.enable"); call("Runtime.enable"); call("Log.enable")
+call("Network.enable"); call("Network.setCacheDisabled", {"cacheDisabled": True})  # always load the current data and script files
 call("Emulation.setDeviceMetricsOverride", {"width": 1280, "height": 720, "deviceScaleFactor": 1, "mobile": False})
 call("Emulation.setEmulatedMedia", {"features": [{"name": "prefers-color-scheme", "value": "light"}]})
 call("Page.navigate", {"url": url})

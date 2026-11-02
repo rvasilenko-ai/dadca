@@ -1,4 +1,4 @@
-# Slide 24 — Where each change broke the pipeline
+# Slide 23 — Where each change broke the pipeline
 
 **Timing:** 54–58 minutes
 **Module:** Detection pipelines: design and evolution

@@ -1,4 +1,4 @@
-# Slide 22 — The complete detection pipeline
+# Slide 21 — The complete detection pipeline
 
 **Timing:** 48–50 minutes  
 **Module:** Detection pipelines: design and evolution

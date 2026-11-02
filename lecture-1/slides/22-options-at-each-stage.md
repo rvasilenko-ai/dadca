@@ -1,4 +1,4 @@
-# Slide 23 — Options at each stage
+# Slide 22 — Options at each stage
 
 **Timing:** 50–54 minutes  
 **Module:** Detection pipelines: design and evolution
@@ -67,7 +67,7 @@ For the other stages, name the trade-off in one sentence each. Acquisition trade
 
 If someone asks whether signatures or machine learning are file-only methods, the answer is no, and the detection panel is where to say it. The signature engine that matches byte patterns in files is the same engine that matches YARA rules over process memory in an EDR and content rules over packets in an IDS, and AMSI exists so that it can see script content before the interpreter runs it. Boosted trees over engineered features run over process trees, command lines, memory-region properties and flow and TLS metadata as readily as over PE headers; byte and sequence models have been applied to memory dumps and network payloads; function similarity finds code reuse in a dumped implant as readily as in a dropped file. Each family is tied to what the sensor hands it, not to the file. What is file-centric is the public evidence base: EMBER, SOREL-20M and most of the literature use files because files are what could be collected, labeled and shared at scale. Lecture 3 makes that gap explicit.
 
-This slide sits directly after the pipeline definition on purpose: slide 22 gives the questions, this one gives the menu of answers at each stage, and the lineage slides that follow show the menu being rebuilt twice, once on the endpoint and once on the network, as the capability moved. The exercise comes back to it: a miss is a stage whose chosen option could not see the evidence. Use the panel to answer "why not just do X" questions: almost every X is a row here, with its blind spot in the last column.
+This slide sits directly after the pipeline definition on purpose: slide 21 gives the questions, this one gives the menu of answers at each stage, and the lineage slides that follow show the menu being rebuilt twice, once on the endpoint and once on the network, as the capability moved. The exercise comes back to it: a miss is a stage whose chosen option could not see the evidence. Use the panel to answer "why not just do X" questions: almost every X is a row here, with its blind spot in the last column.
 
 ## Transition
 
