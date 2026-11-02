@@ -39,7 +39,7 @@ Cloud and identity abuse go further: the attacker may realize an objective throu
 
 ## Interaction
 
-Ask which row is the first where a perfect file classifier with a perfect signature database would have had nothing useful to classify. Expect answers spread across the first row (it had a file, just not an executable), the second and third (no file to detonate, no artifact at all), and the fourth (nothing on the host). Each answer locates "nothing to classify" at a different pipeline stage, which is the point of the next module but one. Then close the loop with the vote: ask which of the five opening situations each row describes. Situation 1 is the model itself and has no row; 3 is the second row; 2 is the second and third; 4 the third and fourth; 5 the last.
+Ask which row is the first where a perfect file classifier with a perfect signature database would have had nothing useful to classify. Expect answers spread across the first row (it had a file, just not an executable), the second and third (no file to detonate, no artifact at all), and the fourth (nothing on the host). Each answer locates "nothing to classify" at a different pipeline stage, which is the point of the next module but one. Then close the loop with the vote in one breath, stated rather than asked: situation 1 is the model itself and has no row; 3 is the second row; 2 the second and third; 4 the third and fourth; 5 the last.
 
 ## Transition
 

@@ -5,7 +5,7 @@
 
 ## On-slide content
 
-> Same tool, different procedures; same technique, different tools. So if the artifact is legitimate and unchanged, where does “malicious” reside?
+> Same tool, different procedures; same technique, different tools. And when the artifact itself is legitimate and unchanged, where does “malicious” reside?
 
 | Remote-management tool abused | Vulnerable signed driver (BYOVD) |
 | --- | --- |

@@ -24,7 +24,7 @@ This is situation 2 from the opening vote written out in full, and it is the sta
 
 The six steps on the slide are one defensible mapping, not the only one: the remote launch is Remote Services with a sub-technique that depends on the mechanism (WinRM, SMB, RDP), the retrieval of the shellcode could also be tagged Ingress Tool Transfer, and an upload to a cloud service rather than to the C2 server would be Exfiltration to Cloud Storage instead of Exfiltration Over C2 Channel. Reward pairs who argue about the mechanism; that is the exercise working.
 
-**Close the vote.** The last Next brings back the five situations from slide 3. By the working definition from slide 6 all five are malware, because each is a malicious capability in use; what the room disagreed about was the carrier and the evidence: a file on disk, a command line, bytes in memory, a session under the wrong control, an instruction in data. The first row of slide 14 still had a file, the others progressively less. Part 2 asks what a sensor can see of each, which is the question the vote was really about.
+**Close the vote.** The last Next shows the closing line; name the five situations from slide 3 from memory as it appears. By the working definition from slide 6 all five are malware, because each is a malicious capability in use; what the room disagreed about was the carrier and the evidence: a file on disk, a command line, bytes in memory, a session under the wrong control, an instruction in data. The first row of slide 14 still had a file, the others progressively less. Part 2 asks what a sensor can see of each, which is the question the vote was really about.
 
 ## Interaction
 
