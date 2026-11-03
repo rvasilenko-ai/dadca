@@ -22,7 +22,7 @@ Behind the details button; the speaker notes pick from it.
 | Track | 2017–2022 |
 | --- | --- |
 | **Motive and money** | The organization pays directly: big-game ransomware, affiliates on revenue share, double extortion, Colonial Pipeline (2021), initial-access brokers, infostealer log markets, cryptojacking, business email compromise the largest reported loss category through 2021, state cryptocurrency heists. |
-| **Attackers** | Shadow Brokers leak (April 2017), then WannaCry and NotPetya. Emotet, TrickBot, Ryuk: big-game ransomware. Ransomware-as-a-service, affiliates, double extortion (2019), initial-access brokers, infostealers. Fileless and living-off-the-land tradecraft becomes standard: PowerShell, WMI, living-off-the-land binaries (LOLBins), Cobalt Strike, DLL side-loading, memory-only implants. Supply chain: CCleaner, NotPetya via M.E.Doc, SolarWinds (2020), Kaseya, Log4Shell (2021). Edge appliances exploited from 2019 (Citrix ADC, Pulse Secure), then mass exploitation (ProxyLogon 2021). Identity: multi-factor authentication (MFA) fatigue, help-desk social engineering, token theft (LAPSUS$ 2022). Bring-your-own-vulnerable-driver (BYOVD) EDR killers. Wipers in Ukraine and the Viasat attack (February 2022). |
+| **Attackers** | Shadow Brokers leak (April 2017), then WannaCry and NotPetya. Emotet, TrickBot, Ryuk: big-game ransomware. Ransomware-as-a-service, affiliates, double extortion (2019), initial-access brokers, infostealers. Fileless and living-off-the-land tradecraft becomes standard: PowerShell, WMI, living-off-the-land binaries (LOLBins), Cobalt Strike, DLL side-loading, memory-only implants. Implants, loaders and ransomware move to Go and Rust (BlackCat in Rust, November 2021): still PE files, each runtime with its own analysis tooling. Supply chain: CCleaner, NotPetya via M.E.Doc, SolarWinds (2020), Kaseya, Log4Shell (2021). Edge appliances exploited from 2019 (Citrix ADC, Pulse Secure), then mass exploitation (ProxyLogon 2021). Identity: multi-factor authentication (MFA) fatigue, help-desk social engineering, token theft (LAPSUS$ 2022). Bring-your-own-vulnerable-driver (BYOVD) EDR killers. Wipers in Ukraine and the Viasat attack (February 2022). |
 | **Operating system** | Windows 10 mainstream, Windows 7 end of life (2020). Defender, antivirus and EDR, becomes the default on the enterprise endpoint, with attack surface reduction rules, Credential Guard, tamper protection. Windows 11 (2021) requires TPM 2.0 and Secure Boot; virtualization-based security is on by default for new installs. Internet macros blocked by default (2022). Vulnerable-driver blocklist (2022). |
 | **Internet** | HTTPS passes 90 percent of page loads for US Firefox users (2020) and for Chrome on Windows (2021). TLS 1.3 (2018), DNS over HTTPS (2018 onward). Flash end of life (2020). Cloud-first; remote work (2020). The identity provider is the perimeter; OAuth tokens and SaaS everywhere. MFA mainstream but phishable. |
 | **Security products** | EDR mainstream, measured technique by technique in the ATT&CK Evaluations (2018), then XDR (detection across host, network and identity) and managed detection. NDR (network detection and response) and TLS fingerprinting (JA3, 2017). TLS inspection, SASE and zero trust (NIST SP 800-207, 2020). Sandboxes bundled and commoditized; FireEye sells its products business (2021). Cloud SIEM, CASB. Identity threat detection emerges. |
@@ -49,7 +49,7 @@ The operating-system row is Microsoft closing the paths of the previous period: 
 
 ## Transition
 
-“The current period keeps the same capabilities and loses the file altogether: intrusion by hand, through edge devices, and then by agents acting on instructions.”
+“The current period keeps the same capabilities and can run without a file at all: intrusion by hand, through edge devices, and then by agents acting on instructions. The file does not disappear; it stops being required.”
 
 ## Sources
 
@@ -80,6 +80,10 @@ The operating-system row is Microsoft closing the paths of the previous period: 
 
 ### Detail
 
+- [Palo Alto Networks Unit 42: BlackCat ransomware, written in Rust, first observed mid-November 2021 (27 January 2022)](https://unit42.paloaltonetworks.com/blackcat-ransomware/)
+- [CISA advisory AA23-353A: #StopRansomware, ALPHV Blackcat (December 2023)](https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-353a)
+- [Mandiant: GoReSym, Go symbol recovery, on why stripped and statically linked Go binaries are hard to analyse (28 February 2022)](https://cloud.google.com/blog/topics/threat-intelligence/golang-internals-symbol-recovery)
+- [Intezer: year of the Gopher, the 2020 Go malware round-up (2021)](https://www.intezer.com/blog/malware-analysis/year-of-the-gopher-2020-go-malware-round-up/)
 - [CISA advisory AA20-020A: Citrix ADC vulnerability CVE-2019-19781, reported 17 December 2019 (20 January 2020)](https://www.cisa.gov/news-events/cybersecurity-advisories/aa20-020a)
 - [CISA advisory AA20-010A: continued exploitation of Pulse Secure VPN vulnerability CVE-2019-11510 (10 January 2020)](https://www.cisa.gov/news-events/cybersecurity-advisories/aa20-010a)
 - [CISA advisory AA22-057A: destructive malware targeting organizations in Ukraine, HermeticWiper (26 February 2022)](https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-057a)

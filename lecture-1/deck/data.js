@@ -118,6 +118,7 @@ window.DECK_DATA = {
     { y: 2020.95, t: "attackers", s: "SolarWinds", k: true, h: true, d: "SUNBURST disclosed 13 December 2020." },
     { y: 2021.17, t: "attackers", s: "ProxyLogon", d: "2 March 2021." },
     { y: 2021.5, t: "attackers", s: "Kaseya", d: "2 July 2021." },
+    { y: 2021.88, t: "attackers", s: "Implants in Go and Rust (BlackCat)", d: "BlackCat, the first major ransomware written in Rust, mid-November 2021; Go malware had multiplied through 2020. Still PE files, but each runtime needs its own unpacking, symbol recovery and decompilation." },
     { y: 2021.94, t: "attackers", s: "Log4Shell", d: "9 December 2021." },
     { y: 2022.13, t: "attackers", s: "Wipers in Ukraine; Viasat", d: "HermeticWiper on 23 February 2022; KA-SAT modems bricked on 24 February: state sabotage at the start of the invasion." },
     { y: 2022.2, t: "attackers", s: "LAPSUS$", k: true, d: "Okta, Microsoft, Nvidia, early 2022: help desks and MFA fatigue." },
@@ -162,6 +163,7 @@ window.DECK_DATA = {
     { y: 2025.73, t: "attackers", s: "ForcedLeak (hijacked agent)", k: true, d: "Noma Security, 25 September 2025." },
     { y: 2025.87, t: "attackers", s: "AI-orchestrated espionage campaign reported", d: "Anthropic, 13 November 2025: a state-linked operator had an agent run most of an intrusion campaign; agent-assisted extortion had been reported in August 2025." },
     { y: 2026.55, t: "attackers", s: "Autonomous agent intrusion", k: true, d: "Hugging Face technical timeline of the July 2026 incident." },
+    { y: 2026.83, t: "attackers", s: "File-based implants persist: NIK C2, VOLTA", d: "Talos, October 2026: NIK C2, a Go remote-access tool with an OpenAI client; VOLTA, a built-to-order infostealer that sends the stolen bundle to an LLM to rank the victim's assets. Still PE files for sale." },
     { y: 2022.73, t: "os", s: "Smart App Control", d: "Windows 11 22H2, September 2022." },
     { y: 2023.2, t: "os", s: "LSA protection default (enterprise)", d: "New enterprise-joined installs, 22H2 and later." },
     { y: 2023.74, t: "os", s: "Passkeys in Windows 11", k: true, d: "September 2023." },
@@ -180,7 +182,7 @@ window.DECK_DATA = {
   ],
   /* Slide 13: what broke the file-centric model, and when (spans) */
   breaks: [
-    { s: "Diversification of file types", short: "File types diversify", spans: [[2000, 2001.6], [2009, 2017]], from: 2009, to: 2017, dom: 2010, c: "s1", note: "First wave from 1995: macro viruses, then VBScript worms (2000–2001), absorbed by Office macro security and attachment blocking. Once Outlook and mail gateways blocked executable attachments, attackers diversified the container: archives, PDF and Office exploit documents, macros again from 2014, script downloaders, and exploit kits in the browser (2009–2016)." },
+    { s: "Diversification of file types, then of executables", short: "Files, then executables, diversify", spans: [[2000, 2001.6], [2009, 2017], [2020, 2027]], from: 2009, to: 2017, dom: 2010, c: "s1", note: "First wave from 1995: macro viruses, then VBScript worms (2000–2001), absorbed by Office macro security and attachment blocking. Once Outlook and mail gateways blocked executable attachments, attackers diversified the container: archives, PDF and Office exploit documents, macros again from 2014, script downloaders, and exploit kits in the browser (2009–2016). From about 2020 the executable itself diversifies: Go, Rust and .NET binaries are still PE files but each needs its own analysis toolchain." },
     { s: "Injection, reflective loading, memory-resident", short: "Memory-resident execution", from: 2015, to: 2023, dom: 2017, c: "s2" },
     { s: "Living-off-the-land tools", short: "Living off the land", from: 2017, to: 2027, dom: 2023, c: "s3" },
     { s: "Stolen identities, tokens, cloud APIs", short: "Stolen identities and tokens", from: 2017, to: 2027, c: "s7" },

@@ -5,7 +5,7 @@
 
 ## On-slide content
 
-1. Attackers left the file because file defenses worked and because the money moved.
+1. The capability stopped depending on the file because file defenses worked and the money moved; the file stayed as one carrier among several.
 2. Software identity is not the same as adversary behavior.
 3. Detection begins with visibility and extraction.
 4. Every product observes one unit of evidence; when the evidence moves, the product keeps catching what stayed and misses what moved, and a new layer is added.

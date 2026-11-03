@@ -5,7 +5,7 @@
 
 ## On-slide content
 
-| Because attackers used them (2000 to the mid-2010s) | Because defenders could use them |
+| Because attackers used them (2000 onward; the only way until the mid-2010s) | Because defenders could use them |
 | --- | --- |
 | Executable attachments, then macro documents | Files cross trust boundaries |
 | Drive-by downloads dropping an EXE | Files persist |

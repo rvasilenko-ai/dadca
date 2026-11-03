@@ -24,7 +24,7 @@
 | extraction | File parsing (PE, Office, PDF, archives) | Structure, imports, embedded objects | Malformed or novel formats |
 | extraction | Unpacking and emulation | Code hidden behind packers | Custom protectors; environment-keyed code |
 | extraction | Script and macro deobfuscation | The command that actually runs | Payloads built only at runtime |
-| extraction | Disassembly and decompilation | Functions, control flow | Errors that become model input |
+| extraction | Disassembly and decompilation | Functions, control flow; .NET, Go and Rust each need their own tooling | Errors that become model input; stripped, statically linked binaries |
 | extraction | TLS decryption at a proxy | Payload content | Pinned and east-west traffic; legal and performance cost |
 | extraction | Process-tree and session reconstruction | Who started what, under which identity | Gaps where telemetry was missing |
 | representation | Hashes and byte patterns | Exact identity | Any variation |

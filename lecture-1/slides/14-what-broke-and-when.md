@@ -7,7 +7,7 @@
 
 | What broke the model | Became dominant | What the defender lost |
 | --- | --- | --- |
-| Diversification of file types: archives, documents, scripts, exploit objects | 2010–2016, once mail blocked executable attachments; first wave 1995–2001 | The executable as the main thing to scan |
+| Diversification of file types (archives, documents, scripts, exploit objects), then of the executable itself (.NET, Go, Rust) | 2010–2016, once mail blocked executable attachments; first wave 1995–2001; Go and Rust from about 2020 | The executable as the one thing to scan, and one toolchain to analyse it |
 | Process injection, reflective loading, memory-resident execution | End of 2010–2016; standard 2017–2022 | A file to detonate |
 | Living-off-the-land tools | 2017–2022; the whole campaign by 2023 | A malicious artifact at all |
 | Stolen identities, tokens and cloud APIs | 2017–2022 onward | The host as the place where the attack happens |
@@ -21,7 +21,7 @@ Beside the callout, a small figure: the malware-free share of CrowdStrike detect
 
 ## Speaker notes
 
-This slide is the recap of the four periods. Each row is something students have just seen, now stated as a break in the model from slide 6, ordered by when it became dominant rather than when it was first seen. Every row has a precedent, and the first row is the clearest case of defense causing the next move. Macro viruses from 1995 and the VBScript worms of 2000–2001 were the first wave of non-executable files; Office macro security levels and Outlook attachment blocking absorbed them. Then Outlook and the mail gateways blocked executable attachments outright, so by the late 2000s an .exe rarely arrived by mail at all. Attackers answered by diversifying the file type: archives wrapping executables, PDF and Office exploit documents, macro documents again from 2014, JavaScript, VBScript and HTA downloaders, shortcut files, and the browser itself through exploit kits. That diversification is what changed what the sandbox had to detonate. Memory-resident code and living off the land likewise have earlier precedents; what matters for the defender is the moment a technique stops being an exception and becomes the default.
+This slide is the recap of the four periods. Each row is something students have just seen, now stated as a break in the model from slide 6, ordered by when it became dominant rather than when it was first seen. Every row has a precedent, and the first row is the clearest case of defense causing the next move. Macro viruses from 1995 and the VBScript worms of 2000–2001 were the first wave of non-executable files; Office macro security levels and Outlook attachment blocking absorbed them. Then Outlook and the mail gateways blocked executable attachments outright, so by the late 2000s an .exe rarely arrived by mail at all. Attackers answered by diversifying the file type: archives wrapping executables, PDF and Office exploit documents, macro documents again from 2014, JavaScript, VBScript and HTA downloaders, shortcut files, and the browser itself through exploit kits. That diversification is what changed what the sandbox had to detonate. The row now also carries the diversification inside the executable: from about 2020 implants, loaders and ransomware moved to Go, Rust and .NET (BlackCat in Rust in November 2021 is the marker), all still PE files, but each runtime needs its own unpacking, symbol recovery and decompilation, so this break is at extraction as much as at the sensor; Part 2's options slide has the row for it. Memory-resident code and living off the land likewise have earlier precedents; what matters for the defender is the moment a technique stops being an exception and becomes the default.
 
 Make the causal point explicit now that the evidence is on the table. File-centric defense worked: signatures, reputation, cloud lookups, download warnings and code-signing enforcement made delivering an unknown executable expensive, so attackers diversified the file. Sandboxes made the unknown document and dropped executable expensive, so attackers went to memory and built-in tools. EDR made implants visible, so attackers went to identities, vendors and remote-management tools. Operating-system hardening closed the host, so attackers went to people, edge devices and agents. Each row is partly a consequence of winning the previous row.
 
@@ -29,7 +29,7 @@ The second callout is the motive track read across the four periods. Defensive s
 
 The figure is the one measurement in Part 1 that states the thesis as a number: the share of CrowdStrike's detections that involved no malware file went from 40 percent in 2018 to 79 percent in 2024 (the 2021 point is the fourth quarter of that year). Say that the metric is one vendor's telemetry and that the direction, not the decimal, is the point.
 
-**What did not change.** The person as the way in. Phishing is the one initial-access capability that runs unchanged from the executable attachments of 2000 to the help-desk calls and ClickFix lures of 2024; the tracks do not show it because it never moved, and that is why it survives every row of this table.
+**What did not change.** The person as the way in, and the file as a carrier. Phishing is the one initial-access capability that runs unchanged from the executable attachments of 2000 to the help-desk calls and ClickFix lures of 2024; the tracks do not show it because it never moved, and that is why it survives every row of this table. And the file never left: most campaigns still begin with an executable or a document, and the implants, loaders and infostealers sold on criminal markets in 2026 are files, now in Go, Rust and .NET, some with an LLM call inside (slide 13). This table records that the file stopped being required, not that it became rare; a lecture that says "malware is no longer a file" has overstated its own evidence.
 
 In the words of the four questions that close Part 1 (slide 18): the artifact carried the malicious meaning in the file era; the APT era added objective, because the same file meant something different inside a campaign; the access economy moved the meaning to control, since a legitimate tool, a valid token or a real vendor update was malicious only because of who held it; and the agent period adds a controller that is itself a program acting under delegated authority, so control and objective have to be read from the agent's context and actions. Each move is also a move in what evidence the defender needs, which is the second half of the lecture.
 
@@ -46,6 +46,11 @@ Ask which row is the first where a perfect file classifier with a perfect signat
 “When the file is no longer the unit, we need a vocabulary for the behavior instead.”
 
 ## Sources
+
+### Executables diversify
+
+- [Palo Alto Networks Unit 42: BlackCat ransomware, written in Rust, first observed mid-November 2021 (27 January 2022)](https://unit42.paloaltonetworks.com/blackcat-ransomware/)
+- [Mandiant: GoReSym, Go symbol recovery, on why stripped and statically linked Go binaries are hard to analyse (28 February 2022)](https://cloud.google.com/blog/topics/threat-intelligence/golang-internals-symbol-recovery)
 
 ### Figure
 
