@@ -422,7 +422,7 @@
     // milestones
     data.milestones.forEach(function (m, i) {
       el("line", { x1: xs(m.y), x2: xs(m.y), y1: T - 4, y2: ys(y0), "class": "ms" }, svg);
-      text(svg, xs(m.y) + 4, T + 6 + (i % 2) * 14, m.s, "ms-label");
+      text(svg, xs(m.y) + 4, T + 6 + (m.t != null ? m.t : i % 2) * 14, m.s, "ms-label");
     });
     // series
     var dots = [], ends = [];

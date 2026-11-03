@@ -206,11 +206,11 @@ window.DECK_DATA = {
       { key: "crm", short: "Chrome Mac", label: "Chrome, Mac", color: "s4", points: [[2019.04, 87.5], [2019.6, 90], [2019.96, 89.3], [2020.04, 90.6], [2020.96, 93.4], [2021.04, 93.9], [2021.96, 94.8], [2022.04, 94.9], [2023.04, 96.5], [2023.96, 96.6]] }
     ],
     milestones: [
-      { y: 2015.92, s: "Let's Encrypt" },
-      { y: 2018.56, s: "Chrome: 'Not secure'" },
-      { y: 2018.62, s: "TLS 1.3" },
-      { y: 2020.15, s: "Firefox DoH (US)" },
-      { y: 2023.72, s: "ECH in browsers" }
+      { y: 2015.92, s: "Let's Encrypt", t: 0 },
+      { y: 2018.56, s: "Chrome: 'Not secure'", t: 1 },
+      { y: 2018.62, s: "TLS 1.3", t: 0 },
+      { y: 2020.15, s: "Firefox DoH (US)", t: 0 },
+      { y: 2023.72, s: "ECH in browsers", t: 0 }
     ]
   }
 };

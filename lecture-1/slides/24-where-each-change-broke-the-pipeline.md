@@ -5,7 +5,7 @@
 
 ## On-slide content
 
-| What changed | Stage that broke | Evidence left the... | Defender's sensor moved to... | Product that answered |
+| What changed | Stage that broke | Evidence left the... | Sensor moved to... | Product that answered |
 | --- | --- | --- | --- | --- |
 | Packing and server-side polymorphism | extraction, detection | signature database | emulation, then reputation and prevalence | Antivirus emulation and generic unpacking; cloud reputation and prevalence (Artemis 2008, Insight 2009) |
 | File types diversify once mail blocks executables: archives, documents, scripts, exploit objects | sensor, extraction | executable attachment filter | document and script scanning, detonation | Gateways that open documents and scripts; the sandbox (WildFire 2011, FireEye) |

@@ -16,7 +16,7 @@
 | 46–75 | Detection pipelines: design and evolution |
 | 75–80 | Synthesis: five conclusions |
 
-The detection pipeline and the question each stage answers. Then the pipeline as it was actually built, generation by generation, around the file and the host (antivirus, sandbox, EDR) and on the network (IDS, then encrypted traffic): what changed at each stage, why, and what each generation could not see. Then every change from Part 1 on one list, with the stage it broke and the product that answered; the menu of options at every stage as it stands today; and six misses to diagnose.
+The pipeline and its stages. The host and the network pipelines rebuilt generation by generation. Every change from Part 1, the stage it broke and the product that answered. The menu today, and six misses to diagnose.
 
 ## Speaker notes
 

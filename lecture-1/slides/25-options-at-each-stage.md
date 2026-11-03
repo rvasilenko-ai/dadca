@@ -8,10 +8,10 @@
 | Stage | Option | What it captures | What it misses |
 | --- | --- | --- | --- |
 | sensor | File system and on-write hooks | Files written, opened, executed | Inline commands, memory-only code, identity actions |
-| sensor | Process and script telemetry (ETW, Sysmon, AMSI, script block logging) | Process trees, command lines, script content | Activity inside legitimate signed tools; anything off the host |
+| sensor | Process and script telemetry | Process trees, command lines, script content (ETW, Sysmon, AMSI, script block logging) | Activity inside legitimate signed tools; anything off the host |
 | sensor | Memory scanning | Injected or reflectively loaded code, hooks | Short-lived regions; legitimate JIT noise |
 | sensor | Network tap, proxy, NDR | Flows, DNS, TLS metadata; payload only with decryption | Encrypted content; east-west blind spots |
-| sensor | Identity provider and SaaS audit logs | Sign-ins, tokens, consent, data access | The host and the payload |
+| sensor | Identity and SaaS audit logs | Sign-ins, tokens, consent, data access | The host and the payload |
 | sensor | Cloud control-plane logs | API calls, role assumptions, configuration changes | Data-plane content |
 | sensor | Mail and web gateways | Attachments, URLs, downloads at delivery | Anything after delivery |
 | sensor | Agent harness logs | Context assembled, tool calls, actions, identity used | Deployment-dependent; often hidden in SaaS agents |
@@ -28,9 +28,9 @@
 | extraction | TLS decryption at a proxy | Payload content | Pinned and east-west traffic; legal and performance cost |
 | extraction | Process-tree and session reconstruction | Who started what, under which identity | Gaps where telemetry was missing |
 | representation | Hashes and byte patterns | Exact identity | Any variation |
-| representation | Engineered features (headers, imports, strings, entropy) | Fast, interpretable | Order, arguments, causality |
+| representation | Engineered features | Headers, imports, strings, entropy: fast, interpretable | Order, arguments, causality |
 | representation | Sequences (API calls, events, bytes) | Order | Long-range context; cost |
-| representation | Graphs (process trees, call graphs, identity graphs) | Relationships | Cost of inference at scale |
+| representation | Graphs | Process trees, call graphs, identity graphs: relationships | Cost of inference at scale |
 | representation | Similarity sketches | Neighbors and families | No verdict |
 | representation | Text (decompiled code, logs, reports) | Semantics an LLM can read | Fidelity to machine semantics |
 | detection | Signatures and indicators | Known threats, cheaply | Novel variation |
@@ -41,17 +41,17 @@
 | detection | Reputation and prevalence | Rare or new objects | First victims; legitimate rarities |
 | investigation | Triage and enrichment | Context from intelligence, asset and identity data | Throughput |
 | investigation | Timeline reconstruction across sources | The sequence of events | Retention and correlation keys |
-| investigation | Sandbox detonation of a captured artifact | The artifact's behavior | Staged and environment-aware payloads |
+| investigation | Sandbox detonation | A captured artifact's behavior | Staged and environment-aware payloads |
 | investigation | Memory and disk forensics | What actually ran | Time and skill |
 | investigation | Reverse engineering | The capability in full | Cost; only for selected samples |
 | investigation | LLM-assisted analysis | Summaries, hypotheses, tool orchestration | Verification; scale |
-| decision | Automatic block above a confidence threshold | Speed | False positives on production systems |
+| decision | Automatic block above a threshold | Speed | False positives on production systems |
 | decision | Human approval playbooks | Accountability | Delay; availability of approvers |
 | decision | Risk-based policy by asset criticality | Proportional response | Policy maintenance |
-| decision | Pre-authorized containment for defined scenarios | Speed with accountability | Scenario coverage |
+| decision | Pre-authorized containment | Speed with accountability, for defined scenarios | Scenario coverage |
 | decision | Escalation and deferral | Expert judgment | Time |
-| response | Isolate the host, kill the process, quarantine the file | Stops host activity | Hosts offline or unreachable |
-| response | Revoke tokens and sessions, reset credentials, disable accounts | Stops identity-led activity | Re-issued tokens; service accounts |
+| response | Isolate, kill, quarantine | Stops host activity: isolate the host, kill the process, quarantine the file | Hosts offline or unreachable |
+| response | Revoke tokens, reset credentials | Stops identity-led activity: revoke sessions, reset credentials, disable accounts | Re-issued tokens; service accounts |
 | response | Block destinations and domains | Cuts the channel | Infrastructure rotation |
 | response | Restore from backup, roll back changes | Recovery | Time; data since the last backup |
 | response | Patch and reconfigure | Closes the entry | Change windows |
