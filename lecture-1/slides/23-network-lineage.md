@@ -29,7 +29,7 @@ Defenders had three responses:
 2. **Move to metadata.** Network detection and response products use endpoints, timing, volume, and TLS fingerprints such as JA3 and JA4. These answer different questions with lower specificity.
 3. **Move the sensor to the endpoint.** The plaintext still exists where the process encrypts and decrypts it. EDR observes the process, the connection, and the content before encryption.
 
-Be precise about what survived. East-west internal traffic is often still plaintext or inspectable: SMB, Kerberos, LDAP, and remote-management protocols, which is exactly where lateral movement and credential abuse happen. Scanning, DNS without encryption, and beacon timing remain visible. North-south payload signatures are what lost most of their value without decryption.
+Be precise about what survived. East-west internal traffic is often still plaintext or inspectable: SMB, Kerberos, LDAP, and remote-management protocols, which is exactly where lateral movement and credential abuse happen. Scanning, DNS without encryption, and beacon timing remain visible. North-south payload signatures are what lost most of their value without decryption. The XCPE takedown of November 2026 is this lineage working: a firmware botnet in 1.3 million set-top boxes, which no endpoint agent could see, was found from the network side by a home-WiFi vendor and a carrier's research team, and taken down at its control domains.
 
 In the recurring scenario, TLS may conceal the downloaded payload and the uploaded content from an intermediate network sensor. The endpoint may still observe PowerShell, the network retrieval, the document access and the memory activity; metadata and endpoint context answer different questions and often with lower specificity.
 
