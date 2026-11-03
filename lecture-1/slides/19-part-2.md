@@ -13,15 +13,15 @@
 
 | Minutes | Module |
 | --- | --- |
-| 46–76 | Detection pipelines: design and evolution |
-| 76–80 | Synthesis: five conclusions |
+| 46–75 | Detection pipelines: design and evolution |
+| 75–80 | Synthesis: five conclusions |
 
-The five questions hidden in the word malware, then the detection pipeline, the options at every stage, and the stage that each change from Part 1 broke. Then the pipeline rebuilt generation by generation around the file and the host (antivirus, sandbox, EDR) and on the network (IDS, then encrypted traffic): what changed at each stage, why, and what each generation could not see. Then six misses to diagnose.
+The detection pipeline and the question each stage answers. Then the pipeline as it was actually built, generation by generation, around the file and the host (antivirus, sandbox, EDR) and on the network (IDS, then encrypted traffic): what changed at each stage, why, and what each generation could not see. Then every change from Part 1 on one list, with the stage it broke and the product that answered; the menu of options at every stage as it stands today; and six misses to diagnose.
 
 ## Speaker notes
 
-One sentence. Part 1 described the attack; Part 2 is the design and evolution of the detection pipeline: what each stage can choose from, which stage each attacker change broke, and why each period had to add a new layer when the evidence moved out of the previous one's view. The recurring PowerShell scenario from the exercise is the test case for every slide that follows.
+One sentence. Part 1 described the attack; Part 2 is the design and evolution of the detection pipeline, history first: the stages, the two pipelines rebuilt generation by generation, the stage each change broke, the menu as it stands today, and six misses. The recurring PowerShell scenario from the exercise is the test case: each lineage ends with what its generations would have captured of it.
 
 ## Transition
 
-“Part 1 said what the attacker did. Before asking what a sensor can see of it, be precise about what we are looking for.”
+“Part 1 said what the attacker did and closed with four questions about it. Part 2 asks the fifth: what can a sensor see of any of it, and what has to happen first.”

@@ -1,6 +1,6 @@
-# Slide 22 — Options at each stage
+# Slide 25 — Options at each stage
 
-**Timing:** 50–54 minutes  
+**Timing:** 64–68 minutes  
 **Module:** Detection pipelines: design and evolution
 
 ## On-slide content
@@ -57,18 +57,18 @@
 | response | Patch and reconfigure | Closes the entry | Change windows |
 | response | Revoke an agent's tools or authority | Stops a hijacked agent | Depends on harness support |
 
-> Every stage has options. The history that follows is mostly the sensor and extraction rows changing.
+> Every stage has options, and every line here is a product of the history you just saw: the sensor and extraction rows changed most. The exercise answers are on this slide.
 
 ## Speaker notes
 
-Next and Previous step through the eight stages (clicking a stage works too); do not read every card. Spend the time on two of them. The sensor row is the one the next four slides are about: the next slide maps every change from Part 1 onto the stage it broke, and each product class in the host-and-file and network lineages is one or two lines here, and the history is the industry adding lines as the capability moved. The response row is the one students rarely think about: isolating a host does nothing against a stolen token, and revoking a token does nothing against a hijacked agent unless the harness lets you take its tools away.
+Next and Previous step through the eight stages (clicking a stage works too); do not read every card. Spend the time on two of them. The sensor row is the one the lineages were about: each product class in the host-and-file and network lineages is one or two lines here, and the history you have just seen is the industry adding lines as the capability moved. The response row is the one students rarely think about: isolating a host does nothing against a stolen token, and revoking a token does nothing against a hijacked agent unless the harness lets you take its tools away.
 
 For the other stages, name the trade-off in one sentence each. Acquisition trades cost against retention; extraction turns raw evidence into something analyzable and introduces its own failures; representation decides what a model can learn; detection is the only place this lecture names the detector families, each with its blind spot, and Lecture 3 covers them in depth; investigation is where expensive methods live; decision is where authority is designed.
 
 If someone asks whether signatures or machine learning are file-only methods, the answer is no, and the detection panel is where to say it. The signature engine that matches byte patterns in files is the same engine that matches YARA rules over process memory in an EDR and content rules over packets in an IDS, and AMSI exists so that it can see script content before the interpreter runs it. Boosted trees over engineered features run over process trees, command lines, memory-region properties and flow and TLS metadata as readily as over PE headers; byte and sequence models have been applied to memory dumps and network payloads; function similarity finds code reuse in a dumped implant as readily as in a dropped file. Each family is tied to what the sensor hands it, not to the file. What is file-centric is the public evidence base: EMBER, SOREL-20M and most of the literature use files because files are what could be collected, labeled and shared at scale. Lecture 3 makes that gap explicit.
 
-This slide sits directly after the pipeline definition on purpose: slide 21 gives the questions, this one gives the menu of answers at each stage, and the lineage slides that follow show the menu being rebuilt twice, once on the endpoint and once on the network, as the capability moved. The exercise comes back to it: a miss is a stage whose chosen option could not see the evidence. Use the panel to answer "why not just do X" questions: almost every X is a row here, with its blind spot in the last column.
+This slide sits after the history on purpose: slide 20 gave the questions, the lineages showed the menu being built twice, once on the endpoint and once on the network, and this is the menu as it stands today. The exercise comes next, and every answer is a row here: a miss is a stage whose chosen option could not see the evidence. Use the panel to answer "why not just do X" questions: almost every X is a row here, with its blind spot in the last column.
 
 ## Transition
 
-“Part 1 listed what changed. Here is the stage of this pipeline that each change broke.”
+“Six misses to diagnose. Every answer is a row on this slide, and ‘we need better AI’ is not one of them.”

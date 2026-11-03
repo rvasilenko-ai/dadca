@@ -22,8 +22,8 @@ Students should be able to:
 | 0–6 | Where is the malware? (title, about me, vote, route) | 1–4 |
 | 6–32 | **Part 1.** From malicious programs to adversarial capabilities (divider, three framing slides, the overview timeline, four zoomed periods, the recap) | 5–14 |
 | 32–45 | **Part 1.** ATT&CK as a language for behavior (an introduction, the matrix with a trojan lit as a path, the two benign-file cases, the mapping exercise that closes the vote) | 15–18 |
-| 45–76 | **Part 2.** Detection pipelines: design and evolution (divider, the five questions in one word, pipeline, options at each stage, the stage each change broke, the host-and-file lineage, the network change and the network lineage, exercise) | 19–27 |
-| 76–80 | **Part 2.** Synthesis (conclusions) | 28 |
+| 45–75 | **Part 2.** Detection pipelines: design and evolution (divider, pipeline, the host-and-file lineage, the network change and the network lineage, the stage each change broke, options at each stage, exercise) | 19–26 |
+| 75–80 | **Part 2.** Synthesis (conclusions) | 27 |
 | 80–90 | Questions and discussion | |
 
 Per-slide timings sum to 80 minutes and already include the three exercises and the two one-minute part dividers. The last ten minutes are a deliberate buffer, ten to fifteen minutes for questions plus room to run over, and the only slack; if a module runs long, the period slides (10–13) are the first place to compress: say the five headlines and tell one labelled event instead of three, and the short prompts listed under delivery guidance can be dropped one at a time.
@@ -38,10 +38,10 @@ The scenario is situation 2 of the opening vote written out in full, and it is t
 
 ## Two parts, two threads
 
-Part 1 (slides 5–18) traces the evolution of malware and malicious capabilities; Part 2 (slides 19–28) the design and evolution of the detection pipelines built against them. Each part opens with a divider slide. The lecture runs two parallel histories and joins them at slide 23:
+Part 1 (slides 5–18) traces the evolution of malware and malicious capabilities; Part 2 (slides 19–27) the design and evolution of the detection pipelines built against them. Each part opens with a divider slide. The lecture runs two parallel histories and joins them at slide 24:
 
-- **Offensive thread, Part 1 (slides 6–14):** the capability leaves the executable file. An overview timeline (slide 9) shows the whole span first: five lanes, four period bands, a few anchor events. Four zoomed period slides (10–13) then align motive and money, attacker tradecraft, the operating system, the internet, and the security products of the same years: the executable, from worms to botnets (2000–2009); APT, exploit kits and files of every kind (2010–2016); the access economy, identity and the supply chain (2017–2022); and hands-on hacking, edge devices and agents (2023–2026). Slide 14 recaps the periods as the list of breaks in the file-centric model, each partly a consequence of defensive success against the previous one, with its notes naming which property (artifact, objective, control) carried the malicious meaning in each period, in the vocabulary that Part 2 opens by naming (slide 20). Slide 17, inside the ATT&CK module, asks where "malicious" resides for the two hardest cases (a remote-management tool and a vulnerable signed driver, both legitimate and unchanged).
-- **Defensive thread, Part 2 (slides 20–26):** opens with the five questions hidden in the word malware (slide 20, moved here from the opening so that the vocabulary arrives where detection is discussed) and is then organised around the detection pipeline. Slide 21 defines the stages, slide 22 lists the options at each stage, slide 23 maps the seven changes from Part 1's recap onto the stage each one broke and where the sensor went, and slides 24 and 26 show the pipeline rebuilt generation by generation around the file and the host (antivirus, sandbox, EDR) and on the network (IDS, then encrypted traffic), stage by stage, with what starved each generation; slide 25, between them, is the HTTPS curve and the four protocol steps that caused the network change. Each product class is built around one unit of evidence; when the capability leaves that unit, the product keeps catching what stays inside it and misses what left, so a new layer is added and the sensor moves: to the host, to the identity provider, and now into the agent's context and tool calls. Slide 23 is slide 14's list read from the defender's side, with the stage that broke in each row.
+- **Offensive thread, Part 1 (slides 6–14):** the capability leaves the executable file. An overview timeline (slide 9) shows the whole span first: five lanes, four period bands, a few anchor events. Four zoomed period slides (10–13) then align motive and money, attacker tradecraft, the operating system, the internet, and the security products of the same years: the executable, from worms to botnets (2000–2009); APT, exploit kits and files of every kind (2010–2016); the access economy, identity and the supply chain (2017–2022); and hands-on hacking, edge devices and agents (2023–2026). Slide 14 recaps the periods as the list of breaks in the file-centric model, each partly a consequence of defensive success against the previous one, with its notes naming which property (artifact, objective, control) carried the malicious meaning in each period, in the vocabulary that the close of Part 1 names (slide 18). Slide 17, inside the ATT&CK module, asks where "malicious" resides for the two hardest cases (a remote-management tool and a vulnerable signed driver, both legitimate and unchanged).
+- **Defensive thread, Part 2 (slides 20–26):** organised around the detection pipeline, history first. Slide 20 defines the stages and asks the fifth question, what a sensor can see of the thing Part 1's four questions describe; slides 21 and 23 show the pipeline rebuilt generation by generation around the file and the host (antivirus, sandbox, EDR) and on the network (IDS, then encrypted traffic), stage by stage, with what starved each generation and a scenario check at the end of each, and slide 22, between them, is the HTTPS curve and the four protocol steps that caused the network change; slide 24 is slide 14's list read from the defender's side, with the stage each change broke and the product that answered; slide 25 is the menu of options at every stage as it stands today; slide 26 the six misses. Each product class is built around one unit of evidence; when the capability leaves that unit, the product keeps catching what stays inside it and misses what left, so a new layer is added and the sensor moves: to the host, to the identity provider, and now into the agent's context and tool calls.
 
 ## Slide index
 
@@ -64,15 +64,14 @@ Part 1 (slides 5–18) traces the evolution of malware and malicious capabilitie
 17. [Capabilities delivered through benign files](slides/17-legitimate-software-adversarial-outcome.md)
 18. [Map an attack with no malware file](slides/18-map-fileless-attack.md)
 19. [Part 2: how detection pipelines are built, and how they had to change](slides/19-part-2.md)
-20. [One word, several questions](slides/20-one-word-several-questions.md)
-21. [The complete detection pipeline](slides/21-complete-detection-pipeline.md)
-22. [Options at each stage](slides/22-options-at-each-stage.md)
-23. [Where each change broke the pipeline](slides/23-where-each-change-broke-the-pipeline.md)
-24. [Host and file lineage: antivirus, sandbox, EDR](slides/24-host-and-file-lineage.md)
-25. [The network changed under the sensor: HTTPS, TLS 1.3, DoH, ECH](slides/25-network-change-encryption.md)
-26. [Network lineage: what each stage lost](slides/26-network-lineage.md)
-27. [Diagnostic exercise](slides/27-diagnostic-exercise.md)
-28. [Five conclusions](slides/28-five-conclusions.md)
+20. [The complete detection pipeline](slides/20-complete-detection-pipeline.md)
+21. [Host and file lineage: antivirus, sandbox, EDR](slides/21-host-and-file-lineage.md)
+22. [The network changed under the sensor: HTTPS, TLS 1.3, DoH, ECH](slides/22-network-change-encryption.md)
+23. [Network lineage: what each stage lost](slides/23-network-lineage.md)
+24. [Where each change broke the pipeline](slides/24-where-each-change-broke-the-pipeline.md)
+25. [Options at each stage](slides/25-options-at-each-stage.md)
+26. [Diagnostic exercise](slides/26-diagnostic-exercise.md)
+27. [Five conclusions](slides/27-five-conclusions.md)
 
 ## Delivery guidance
 
@@ -80,18 +79,18 @@ Part 1 (slides 5–18) traces the evolution of malware and malicious capabilitie
 - Slide 9 is the overview: name the lanes and the four periods, two minutes. On the zoomed period slides (10–13), say the five headlines, then tell two or three of the labelled events as one story and name what the period removed from the previous defense's view. The detail chips are behind the details button, which swaps the timeline out for them; use them for questions, not for reading. The PDF prints the headline view and the markdown keeps the full table.
 - The scope is deliberately Windows-centric and enterprise-centric. Mobile, macOS, Linux and cloud-native attacks appear only in passing; it is said once in the slide 9 notes.
 - Keep product claims qualified on the slide. Say "commodity and narrow" for sandboxes and "payload inspection without decryption" for IDS; use the stronger spoken form only in the room.
-- Use "remote-management tool" consistently for the abused legitimate remote-access software (slides 3, 17, 23).
-- The HTTPS figures on slide 25 were verified in October 2026 against Mozilla's ssl_ratios dataset and the Google Transparency Report data. Re-check only if the deck is reused after 2027.
+- Use "remote-management tool" consistently for the abused legitimate remote-access software (slides 3, 17, 24).
+- The HTTPS figures on slide 22 were verified in October 2026 against Mozilla's ssl_ratios dataset and the Google Transparency Report data. Re-check only if the deck is reused after 2027.
 - Treat qualitative throughput and cost comparisons as workload-dependent, not universal rankings.
 - Define PE, JIT, EDR, NDR, TLS, and ATT&CK terminology just in time.
-- The three exercises are slides 3, 18 and 27; the shorter prompts on slides 7, 8, 14 and 17 can be dropped individually to recover a minute each. The part dividers (5 and 19) are one minute each; do not skip them, they are the only on-screen statement of the structure.
+- The three exercises are slides 3, 18 and 26; the shorter prompts on slides 7, 8, 14 and 17 can be dropped individually to recover a minute each. The part dividers (5 and 19) are one minute each; do not skip them, they are the only on-screen statement of the structure.
 - Slide 2 is one minute. Name the one career line that bears on the lecture (the sandbox years) and move on.
 - Keep offensive mechanics conceptual; the teaching objective is observability and system design.
-- Defer detector internals to Lecture 3 when a question goes deep. The detection panel on slide 22 names the families, and its notes answer whether they are file-only methods (they are not; the benchmarks are).
+- Defer detector internals to Lecture 3 when a question goes deep. The detection panel on slide 25 names the families, and its notes answer whether they are file-only methods (they are not; the benchmarks are).
 
 ## Slide deck
 
-The presentable deck is an offline HTML build in [deck/](deck/): open `deck/index.html` in a browser, press S for speaker notes with the planned minutes and a timer, T for the dark theme, and `?print-pdf` for a PDF. It is generated from the markdown slides by `deck/build.py`; edit the markdown, then rebuild. Interactive parts: the overview timeline on slide 9, the zoomed period timelines on slides 10–13 with a details toggle, the breaks timeline on 14, the live vote tally on slide 3, the clickable pipeline on slides 21 to 27 (Next and Previous step through the panels on slides 22, 23, 24 and 26; clicking jumps), the HTTPS adoption chart on slide 25, and a schematic ATT&CK matrix on slides 16, 17 and 18 (hover a cell for its ID; on 16 Next lights a classic trojan as a path, on 18 the recurring scenario step by step). See [deck/README.md](deck/README.md).
+The presentable deck is an offline HTML build in [deck/](deck/): open `deck/index.html` in a browser, press S for speaker notes with the planned minutes and a timer, T for the dark theme, and `?print-pdf` for a PDF. It is generated from the markdown slides by `deck/build.py`; edit the markdown, then rebuild. Interactive parts: the overview timeline on slide 9, the zoomed period timelines on slides 10–13 with a details toggle, the breaks timeline on 14, the live vote tally on slide 3, the clickable pipeline on slides 20 to 26 (Next and Previous step through the panels on slides 21, 23, 24 and 25; clicking jumps), the HTTPS adoption chart on slide 22, and a schematic ATT&CK matrix on slides 16, 17 and 18 (hover a cell for its ID; on 16 Next lights a classic trojan as a path, on 18 the recurring scenario step by step). See [deck/README.md](deck/README.md).
 
 ## Related lectures
 

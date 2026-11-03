@@ -1,6 +1,6 @@
-# Slide 26 — Network lineage: what each stage lost
+# Slide 23 — Network lineage: what each stage lost
 
-**Timing:** 66–70 minutes  
+**Timing:** 57–60 minutes  
 **Module:** Detection pipelines: design and evolution
 
 ## On-slide content
@@ -17,6 +17,7 @@
 | challenge | Encryption removed the payload (HTTPS by default, 2015 onward), the certificate (TLS 1.3, 2018), the lookup (DoH, 2018 onward) and the server name (ECH, browsers 2023) | Lower specificity; east-west SMB, Kerberos, LDAP and scanning still visible; plaintext survives on the endpoint |
 
 > The sensor stayed where it was. Extraction failed, and everything below it was rebuilt on metadata or moved to the endpoint.
+> Scenario check: the network sees a TLS connection to an unfamiliar host and, with DNS over HTTPS, not even the lookup; the shellcode download and the document upload are inside the tunnel. The endpoint sees the process that opened the connection and the plaintext before encryption.
 
 ## Speaker notes
 
@@ -34,11 +35,11 @@ In the recurring scenario, TLS may conceal the downloaded payload and the upload
 
 ## Interaction
 
-Ask whether the organization in the recurring scenario would see the shellcode download or the document upload from a network sensor. Then ask what it would see from the endpoint.
+Ask whether the organization in the recurring scenario would see the shellcode download or the document upload from a network sensor, then what it would see from the endpoint; the last Next shows the answer.
 
 ## Transition
 
-“Host and network tell one story: the evidence moved and the sensor followed. Now six misses to diagnose, without ‘we need better AI’ as the default answer. Every answer is a row on the options slide.”
+“Two pipelines, one pattern: the evidence moved and the sensor followed. Now every change from Part 1 on one list, with the stage it broke and the product that answered.”
 
 ## Sources
 

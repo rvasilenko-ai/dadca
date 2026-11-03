@@ -16,7 +16,7 @@ Below the scenario, the ATT&CK matrix, empty. Map in pairs: artifacts, tools, te
 5. File and Directory Discovery (T1083), Data from Local System (T1005), Archive Collected Data (T1560)
 6. Web Protocols (T1071.001), Exfiltration Over C2 Channel (T1041)
 
-After the sixth step, the close of the opening vote: by this lecture's definition all five situations are malware; what differs is where the capability sits, and what a sensor can see of it.
+After the sixth step, the close of the opening vote: by this lecture's definition all five situations are malware. The room was answering four different questions, what it is, what it can do, who controls it, and whose objective it serves. Part 2 asks what a sensor can see of any of them.
 
 ## Speaker notes
 
@@ -24,7 +24,7 @@ This is situation 2 from the opening vote written out in full, and it is the sta
 
 The six steps on the slide are one defensible mapping, not the only one: the remote launch is Remote Services with a sub-technique that depends on the mechanism (WinRM, SMB, RDP), the retrieval of the shellcode could also be tagged Ingress Tool Transfer, and an upload to a cloud service rather than to the C2 server would be Exfiltration to Cloud Storage instead of Exfiltration Over C2 Channel. Reward pairs who argue about the mechanism; that is the exercise working.
 
-**Close the vote.** The last Next shows the closing line; name the five situations from slide 3 from memory as it appears. By the working definition from slide 6 all five are malware, because each is a malicious capability in use; what the room disagreed about was the carrier and the evidence: a file on disk, a command line, bytes in memory, a session under the wrong control, an instruction in data. The first row of slide 14 still had a file, the others progressively less. Part 2 asks what a sensor can see of each, which is the question the vote was really about.
+**Close the vote.** The last Next shows the closing line; name the five situations from slide 3 from memory as it appears. By the working definition from slide 6 all five are malware, because each is a malicious capability in use. What the room disagreed about were four different questions asked with one word: a malware analyst classifies an object, the artifact, what it is; an incident responder cares about the capability, what it can do; a platform engineer cares about control, who holds it and who authorized it; a legal definition needs the objective, whose purpose it serves. The five situations differ in the carrier and the evidence, a file on disk, a command line, bytes in memory, a session under the wrong control, an instruction in data, and the four questions are the vocabulary Part 1 has been using without naming it: the artifact carried the malicious meaning in the executable era, objective was added when the adversary became a campaign, control when access, tokens and vendor channels became the target, and control and objective together once a program acts under delegated authority. Part 2 asks the fifth question, what a sensor can see of any of this, which is the question the vote was really about.
 
 ## Interaction
 
