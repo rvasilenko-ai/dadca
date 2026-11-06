@@ -183,10 +183,13 @@ html, body { background: var(--bg); color: var(--ink); }
 .tl .tick { stroke: var(--line-2); stroke-width: 1; }
 
 /* Recap slide */
-.reveal .k-what-broke-and-when table { font-size: 0.52em; border-collapse: separate; border-spacing: 0; }
+.reveal .k-what-broke-and-when table { font-size: 0.5em; border-collapse: separate; border-spacing: 0; table-layout: fixed; width: 100%; }
+.reveal .k-what-broke-and-when table th:nth-child(1) { width: 36%; }
+.reveal .k-what-broke-and-when table th:nth-child(2) { width: 40%; }
+.reveal .k-what-broke-and-when table th:nth-child(3) { width: 24%; }
 .reveal .k-what-broke-and-when blockquote.callout { font-size: 0.86em; }
 .reveal .k-what-broke-and-when tr.fragment:not(.visible) td { border-color: transparent; }
-.reveal .k-what-broke-and-when .tl { margin: 0.2em 0 0.4em; }
+.reveal .k-what-broke-and-when .tl { margin: 0.1em 0 0.2em; }
 
 /* Legitimate software and four-axis slides */
 .reveal .k-legitimate-software-adversarial-outcome table { font-size: 0.58em; }
@@ -373,7 +376,7 @@ html, body { background: var(--bg); color: var(--ink); }
 }
 
 /* slide 14: callout with the malware-free figure */
-.reveal .k-what-broke-and-when blockquote.callout.mf { display: flex; align-items: center; gap: 20px; font-size: 0.7em; padding: 0.4em 0.9em; }
+.reveal .k-what-broke-and-when blockquote.callout.mf { display: flex; align-items: center; gap: 20px; font-size: 0.7em; padding: 0.3em 0.9em; margin: 0.35em 0 0; }
 .reveal .k-what-broke-and-when .mf .txt { flex: 1 1 auto; }
 .reveal .k-what-broke-and-when .mf-fig { flex: 0 0 230px; margin: 0; }
 .reveal .k-what-broke-and-when .mf-fig svg { display: block; width: 230px; height: 80px; }
