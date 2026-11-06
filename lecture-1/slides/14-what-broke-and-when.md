@@ -7,7 +7,7 @@
 
 | What broke the model | Became dominant | What the defender lost |
 | --- | --- | --- |
-| Diversification of file types (archives, documents, scripts, exploit objects), then of the executable itself (.NET, Go, Rust) | 2010–2016, once mail blocked executable attachments; first wave 1995–2001; Go and Rust from about 2020 | The executable as the one thing to scan, and one toolchain to analyse it |
+| Diversification of file types (archives, documents, scripts, exploit objects) and of runtimes inside the executable (.NET, Go, Rust) | 2010 onward, once mail blocked executable attachments (first wave 1995–2001); Go and Rust from about 2020 | The executable as the one thing to scan, and one toolchain to analyse it |
 | Process injection, reflective loading, memory-resident execution | End of 2010–2016; standard 2017–2022 | A file to detonate |
 | Living-off-the-land tools | 2017–2022; the whole campaign by 2023 | A malicious artifact at all |
 | Stolen identities, tokens and cloud APIs | 2017–2022 onward | The host as the place where the attack happens |
