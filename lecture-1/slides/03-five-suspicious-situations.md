@@ -15,8 +15,6 @@ A ladder of five situations, ordered by distance from the file, "the file" at th
 4. An attacker controls a legitimate remote-management tool.
 5. Repository instructions cause a coding agent to exfiltrate secrets.
 
-On Next: "Hold that disagreement. Part 1 ends by naming what it was about."
-
 ## Speaker notes
 
 One show of hands, not five. Read the five rungs aloud, then ask the room to raise a hand at the last rung they would still call malware, and count down from five. Expect a spread: a cluster at 1 or 2, a cluster at 4 or 5, hesitation at 3. Do not resolve it. The purpose is to make visible that students are classifying different things, an artifact, a behavior, who is in control, or an outcome, and Part 1 spends its time earning the vocabulary for that.
