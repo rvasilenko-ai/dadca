@@ -294,7 +294,7 @@ html, body { background: var(--bg); color: var(--ink); }
 .viz .sub { color: var(--ink-3); font-size: 0.85em; margin-top: 0.1em; }
 
 /* Pipeline slide definitions */
-.reveal .k-complete-detection-pipeline ul.defs { columns: 2; column-gap: 2em; font-size: 0.72em; margin-top: 0.6em; list-style: none; margin-left: 0; }
+.reveal .k-complete-detection-pipeline ul.defs { columns: 2; column-gap: 2em; font-size: 0.6em; margin-top: 0.5em; list-style: none; margin-left: 0; }
 .reveal .k-complete-detection-pipeline ul.defs li { break-inside: avoid; }
 .reveal .k-about-me p.kicker { font-size: 0.8em; color: var(--ink-2); margin: -0.2em 0 0.5em; }
 .reveal .k-about-me h1.display { font-size: 1.7em; margin-top: 0; }
@@ -413,3 +413,11 @@ html, body { background: var(--bg); color: var(--ink); }
 .reveal details.talk .panel { width: 760px; columns: 1; font-size: 0.62em; line-height: 1.4; }
 .reveal details.talk .panel ul { margin: 0; padding-left: 1.1em; }
 .reveal details.talk .panel li { margin-bottom: 6px; }
+
+/* slide 20: one panel per stage while stepping */
+.reveal .k-complete-detection-pipeline .stage-panel { background: var(--bg-2); border-radius: 10px; border-left: 6px solid var(--accent); padding: 0.5em 0.9em 0.6em; margin-top: 0.4em; text-align: left; }
+.reveal .k-complete-detection-pipeline .stage-panel h3 { font-size: 0.95em; margin: 0 0 0.15em; }
+.reveal .k-complete-detection-pipeline .stage-panel .def { font-size: 0.78em; margin: 0 0 0.25em; }
+.reveal .k-complete-detection-pipeline .stage-panel .eg { font-size: 0.64em; color: var(--ink-2); margin: 0; }
+.reveal .k-complete-detection-pipeline .stage-panel .eg .lab { font-size: 0.8em; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); margin-right: 0.6em; }
+.reveal .k-complete-detection-pipeline blockquote.callout.fragment { margin-top: 0.4em; font-size: 0.9em; }

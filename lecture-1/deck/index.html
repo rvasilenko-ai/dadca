@@ -636,26 +636,44 @@ legitimate artifact + exploited capability + adversarial controller</code></pre>
 <div class="body">
 <h2 class="title">The complete detection pipeline</h2>
 <blockquote class="callout question"><p>What can a sensor see, and what has to happen before a detector sees anything?</p></blockquote>
-<div class="pipe" data-component="pipeline" data-panel="pipe-panel-20" data-highlight="sensor"></div>
-<div class="pipe-panel" id="pipe-panel-20"><span class="k">sensor</span> — can the system observe the event or state? Click any stage for its question.</div>
-<blockquote class="callout"><p>A detector cannot reason about evidence it never receives.</p></blockquote>
+<div data-stage-options>
+<div class="pipe" data-component="pipeline" data-highlight="sensor"></div>
+<div class="stage-panels">
+<div class="stage-panel active" data-stage="sensor"><h3><span class="k">sensor</span> <span class="q">can the system observe the event or state?</span></h3><p class="def">Where the pipeline touches reality: a hook, a tap, a log.</p><p class="eg"><span class="lab">for example</span>file-system hooks · process and script telemetry · a network tap · identity and SaaS logs · the agent's harness</p></div>
+<div class="stage-panel" data-stage="acquisition"><h3><span class="k">acquisition</span> <span class="q">is the evidence collected and retained?</span></h3><p class="def">Seeing is not keeping: what is captured, and for how long.</p><p class="eg"><span class="lab">for example</span>capture the file on write · triggered memory capture · packets for hours, flow records for months · central forwarding</p></div>
+<div class="stage-panel" data-stage="extraction"><h3><span class="k">extraction</span> <span class="q">can usable artifacts or fields be recovered?</span></h3><p class="def">Raw evidence becomes something analyzable, and this stage has failures of its own.</p><p class="eg"><span class="lab">for example</span>file parsing · unpacking and emulation · script deobfuscation · decompilation · TLS decryption · process-tree reconstruction</p></div>
+<div class="stage-panel" data-stage="representation"><h3><span class="k">representation</span> <span class="q">what information is supplied to analysis?</span></h3><p class="def">What a model is allowed to learn from, and what was discarded before it arrived.</p><p class="eg"><span class="lab">for example</span>hashes and byte patterns · engineered features · sequences · graphs · text</p></div>
+<div class="stage-panel" data-stage="detection"><h3><span class="k">detection</span> <span class="q">is a score, rule, or verdict produced?</span></h3><p class="def">The only stage most people call detection.</p><p class="eg"><span class="lab">for example</span>signatures · expert rules · classifiers · anomaly baselines · similarity · reputation</p></div>
+<div class="stage-panel" data-stage="investigation"><h3><span class="k">investigation</span> <span class="q">can evidence be connected and explained?</span></h3><p class="def">Where the expensive methods live.</p><p class="eg"><span class="lab">for example</span>enrichment · timelines across sources · detonation · forensics · reverse engineering · LLM-assisted analysis</p></div>
+<div class="stage-panel" data-stage="decision"><h3><span class="k">decision</span> <span class="q">can an appropriate action be selected?</span></h3><p class="def">Where authority is designed.</p><p class="eg"><span class="lab">for example</span>automatic block above a threshold · approval playbooks · pre-authorized containment · escalation</p></div>
+<div class="stage-panel" data-stage="response"><h3><span class="k">response</span> <span class="q">can the action be executed in time?</span></h3><p class="def">A detection is not an outcome until this works.</p><p class="eg"><span class="lab">for example</span>isolate and quarantine · revoke tokens · block destinations · restore · patch · revoke an agent's tools</p></div>
+</div>
+<span class="fragment stage-step" data-stage="acquisition" data-fragment-index="0" aria-hidden="true"></span>
+<span class="fragment stage-step" data-stage="extraction" data-fragment-index="1" aria-hidden="true"></span>
+<span class="fragment stage-step" data-stage="representation" data-fragment-index="2" aria-hidden="true"></span>
+<span class="fragment stage-step" data-stage="detection" data-fragment-index="3" aria-hidden="true"></span>
+<span class="fragment stage-step" data-stage="investigation" data-fragment-index="4" aria-hidden="true"></span>
+<span class="fragment stage-step" data-stage="decision" data-fragment-index="5" aria-hidden="true"></span>
+<span class="fragment stage-step" data-stage="response" data-fragment-index="6" aria-hidden="true"></span>
 <ul class="defs">
 <li><strong>Sensor:</strong> can the system observe the event or state?</li>
-<li><strong>Acquisition:</strong> is the evidence collected and retained?</li>
-<li><strong>Extraction:</strong> can usable artifacts or fields be recovered?</li>
-<li><strong>Representation:</strong> what information is supplied to analysis?</li>
-<li><strong>Detection:</strong> is a score, rule, or verdict produced?</li>
-<li><strong>Investigation:</strong> can evidence be connected and explained?</li>
-<li><strong>Decision:</strong> can an appropriate action be selected?</li>
-<li><strong>Response:</strong> can the action be executed in time?</li>
+<li class="fragment" data-fragment-index="0"><strong>Acquisition:</strong> is the evidence collected and retained?</li>
+<li class="fragment" data-fragment-index="1"><strong>Extraction:</strong> can usable artifacts or fields be recovered?</li>
+<li class="fragment" data-fragment-index="2"><strong>Representation:</strong> what information is supplied to analysis?</li>
+<li class="fragment" data-fragment-index="3"><strong>Detection:</strong> is a score, rule, or verdict produced?</li>
+<li class="fragment" data-fragment-index="4"><strong>Investigation:</strong> can evidence be connected and explained?</li>
+<li class="fragment" data-fragment-index="5"><strong>Decision:</strong> can an appropriate action be selected?</li>
+<li class="fragment" data-fragment-index="6"><strong>Response:</strong> can the action be executed in time?</li>
 </ul>
-<details class="srcs talk"><summary>Talking points</summary><div class="panel"><ul><li>Open with the hinge: four questions about the thing in Part 1; the fifth, what a sensor can see, is Part 2.</li><li>Eight stages, one question each; a legend for everything that follows, so do not belabor it.</li><li>A detector cannot reason about evidence it never receives.</li></ul></div></details>
+<blockquote class="callout fragment" data-fragment-index="7"><p>A detector cannot reason about evidence it never receives.</p></blockquote>
+</div>
+<details class="srcs talk"><summary>Talking points</summary><div class="panel"><ul><li>Open with the hinge: four questions about the thing in Part 1; the fifth, what a sensor can see, is Part 2.</li><li>Eight stages, one step each: the question, one line, two or three examples from the menu; about twenty seconds a stage.</li><li>A detector cannot reason about evidence it never receives.</li></ul></div></details>
 </div>
 <footer class="chrome"><span class="module">Detection pipelines: design and evolution</span><span class="timing">min 46–49</span></footer>
 <aside class="notes"><p class="plan"><strong>Planned 46–49 minutes</strong> · Detection pipelines: design and evolution</p>
-<h4>Talking points</h4><ul><li>Open with the hinge: four questions about the thing in Part 1; the fifth, what a sensor can see, is Part 2.</li><li>Eight stages, one question each; a legend for everything that follows, so do not belabor it.</li><li>A detector cannot reason about evidence it never receives.</li></ul>
-<p>Open with the hinge, spoken: Part 1 closed with four questions about the thing itself, what it is, what it can do, who controls it, whose objective it serves, and Part 2 asks the fifth. Part 1's four questions are about the thing; every defender is limited by a fifth, what the system can actually observe, and the history of detection products is the history of that question. Every slide from here to the exercise asks what a sensor could see, and the eight stages are the vocabulary for the answers; do not belabor them, they are a legend for everything that follows.</p>
-<p>Define the stages:</p>
+<h4>Talking points</h4><ul><li>Open with the hinge: four questions about the thing in Part 1; the fifth, what a sensor can see, is Part 2.</li><li>Eight stages, one step each: the question, one line, two or three examples from the menu; about twenty seconds a stage.</li><li>A detector cannot reason about evidence it never receives.</li></ul>
+<p>Open with the hinge, spoken: Part 1 closed with four questions about the thing itself, what it is, what it can do, who controls it, whose objective it serves, and Part 2 asks the fifth. Part 1's four questions are about the thing; every defender is limited by a fifth, what the system can actually observe, and the history of detection products is the history of that question. Every slide from here to the exercise asks what a sensor could see, and the eight stages are the vocabulary for the answers; they are a legend for everything that follows, so keep each step to its question and one example. Next and Previous step through the stages, clicking a stage jumps to it, and the summary list fills in as you go.</p>
+<p>The stages:</p>
 <ul><li><strong>Sensor:</strong> can the system observe the event or state?</li><li><strong>Acquisition:</strong> is the evidence collected and retained?</li><li><strong>Extraction:</strong> can usable artifacts or fields be recovered?</li><li><strong>Representation:</strong> what information is supplied to analysis?</li><li><strong>Detection:</strong> is a score, rule, or verdict produced?</li><li><strong>Investigation:</strong> can evidence be connected and explained?</li><li><strong>Decision:</strong> can an appropriate action be selected?</li><li><strong>Response:</strong> can the action be executed in time?</li></ul>
 <h4>Transition</h4><p>“Every stage of this pipeline is a choice, and the choices were made in history. The host first: three generations of the same pipeline.”</p></aside>
 </section>
