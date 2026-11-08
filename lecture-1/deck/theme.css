@@ -294,8 +294,6 @@ html, body { background: var(--bg); color: var(--ink); }
 .viz .sub { color: var(--ink-3); font-size: 0.85em; margin-top: 0.1em; }
 
 /* Pipeline slide definitions */
-.reveal .k-complete-detection-pipeline ul.defs { columns: 2; column-gap: 2em; font-size: 0.6em; margin-top: 0.5em; list-style: none; margin-left: 0; }
-.reveal .k-complete-detection-pipeline ul.defs li { break-inside: avoid; }
 .reveal .k-about-me p.kicker { font-size: 0.8em; color: var(--ink-2); margin: -0.2em 0 0.5em; }
 .reveal .k-about-me h1.display { font-size: 1.7em; margin-top: 0; }
 

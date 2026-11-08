@@ -7,7 +7,7 @@
 
 > What can a sensor see, and what has to happen before a detector sees anything?
 
-Next and Previous step through the eight stages; each step lights the stage on the strip, shows one panel (the question, one line, two or three examples drawn from the menu on slide 25) and adds the stage's line to the summary list. Clicking a stage jumps to it. The thesis callout is the last step.
+Next and Previous step through the eight stages; each step lights the stage on the strip, shows one panel for that stage (the question, one line, two or three examples drawn from the menu on slide 25). Clicking a stage jumps to it. The thesis callout is the last step.
 
 | Stage | Question | One line | For example |
 | --- | --- | --- | --- |
@@ -30,7 +30,7 @@ Next and Previous step through the eight stages; each step lights the stage on t
 
 ## Speaker notes
 
-Open with the hinge, spoken: Part 1 closed with four questions about the thing itself, what it is, what it can do, who controls it, whose objective it serves, and Part 2 asks the fifth. Part 1's four questions are about the thing; every defender is limited by a fifth, what the system can actually observe, and the history of detection products is the history of that question. Every slide from here to the exercise asks what a sensor could see, and the eight stages are the vocabulary for the answers; they are a legend for everything that follows, so keep each step to its question and one example. Next and Previous step through the stages, clicking a stage jumps to it, and the summary list fills in as you go.
+Open with the hinge, spoken: Part 1 closed with four questions about the thing itself, what it is, what it can do, who controls it, whose objective it serves, and Part 2 asks the fifth. Part 1's four questions are about the thing; every defender is limited by a fifth, what the system can actually observe, and the history of detection products is the history of that question. Every slide from here to the exercise asks what a sensor could see, and the eight stages are the vocabulary for the answers; they are a legend for everything that follows, so keep each step to its question and one example. Next and Previous step through the stages, and clicking a stage jumps to it.
 
 The stages:
 
