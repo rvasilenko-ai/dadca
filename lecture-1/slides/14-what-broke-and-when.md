@@ -8,10 +8,10 @@
 | What broke the model | Became dominant | What the defender lost |
 | --- | --- | --- |
 | Diversification of file types (archives, documents, scripts, exploit objects) and of runtimes inside the executable (.NET, Go, Rust) | From about 2010. Each channel blocked executables (mail 2000 and 2004, messengers 2005, social networks 2010) and was answered within months: archives, exploit documents, exploit kits, links. Go and Rust from 2020 | The executable as the one thing to scan, and one toolchain to analyse it |
-| Process injection, reflective loading, memory-resident execution | End of 2010–2016; standard 2017–2022 | A file to detonate |
+| Process injection, reflective loading, memory-resident execution | End of 2010–2016; standard from 2017 | A file to detonate |
 | Living-off-the-land tools | 2017–2022; the whole campaign by 2023 | A malicious artifact at all |
 | Stolen identities, tokens and cloud APIs | 2017–2022 onward | The host as the place where the attack happens |
-| Trusted vendor and update channels | 2017–2022 | Provenance as a proxy for safety |
+| Trusted vendor and update channels | 2017 onward: CCleaner, SolarWinds, then XZ Utils and XCPE | Provenance as a proxy for safety |
 | Tool-using agents and external instructions | 2025–2026 | A program as the thing that executes intent |
 
 > In each period the attacker moved the capability to where the sensor was not looking; each break was partly a consequence of defensive success against the one before.

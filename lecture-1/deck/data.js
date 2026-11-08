@@ -190,10 +190,10 @@ window.DECK_DATA = {
   /* Slide 13: what broke the file-centric model, and when (spans) */
   breaks: [
     { s: "Diversification of file types and runtimes", short: "File and runtime diversity", spans: [[2004, 2027]], from: 2004, to: 2027, dom: 2010, c: "s1", note: "First wave from 1995: macro viruses, then VBScript worms (2000–2001), absorbed by Office macro security and attachment blocking. Once Outlook and mail gateways blocked executable attachments, attackers diversified the container: archives, PDF and Office exploit documents, macros again from 2014, script downloaders, and exploit kits in the browser (2009–2016). From about 2020 the executable itself diversifies: Go, Rust and .NET binaries are still PE files but each needs its own analysis toolchain." },
-    { s: "Injection, reflective loading, memory-resident", short: "Memory-resident execution", from: 2015, to: 2023, dom: 2017, c: "s2" },
+    { s: "Injection, reflective loading, memory-resident", short: "Memory-resident execution", from: 2015, to: 2027, dom: 2017, c: "s2" },
     { s: "Living-off-the-land tools", short: "Living off the land", from: 2017, to: 2027, dom: 2023, c: "s3" },
     { s: "Stolen identities, tokens, cloud APIs", short: "Stolen identities and tokens", from: 2017, to: 2027, c: "s7" },
-    { s: "Trusted vendor and update channels", short: "Trusted vendor channels", from: 2017, to: 2023, c: "s5" },
+    { s: "Trusted vendor and update channels", short: "Trusted vendor channels", from: 2017, to: 2027, c: "s5" },
     { s: "Tool-using agents and external instructions", short: "Agents and planted instructions", from: 2025, to: 2027, c: "s8" }
   ],
   /* Slide 18: the detection pipeline */
