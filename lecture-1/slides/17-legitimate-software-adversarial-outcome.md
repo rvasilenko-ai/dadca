@@ -16,7 +16,7 @@ Two case cards, revealed one at a time with Next, built from the same four lines
 | Where "malicious" sits | Control and objective; the software works exactly as designed | Control and objective, and also capability: what it can be made to do |
 | What a file classifier sees | A clean, signed, known program | A clean, signed, known driver |
 
-> Neither differs as an artifact. The tool differs only in who controls it and whose objective it serves; the driver also in what it can do.
+> As files, both are identical to their legitimate copies. What makes them malicious lives outside the file: who is in control and to what end, and, for the driver, what its flaw lets them do.
 
 ## Speaker notes
 
