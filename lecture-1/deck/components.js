@@ -377,25 +377,6 @@
     root._path.innerHTML = items.join('<span class="sep">→</span>');
   }
 
-  /* ------------------------------------------------------------ vote tally */
-  function vote(root) {
-    var cells = root.querySelectorAll(".cell");
-    function refresh() {
-      root.querySelectorAll("tbody tr").forEach(function (tr) {
-        var ns = Array.prototype.map.call(tr.querySelectorAll(".n"), function (x) { return +x.textContent; });
-        var max = Math.max.apply(null, ns.concat([1]));
-        tr.querySelectorAll(".cell").forEach(function (cell, i) { cell.querySelector(".bar").style.transform = "scaleX(" + (ns[i] / max) + ")"; });
-      });
-    }
-    cells.forEach(function (cell) {
-      var n = cell.querySelector(".n");
-      cell.querySelector(".plus").addEventListener("click", function () { n.textContent = +n.textContent + 1; refresh(); });
-      cell.querySelector(".minus").addEventListener("click", function () { n.textContent = Math.max(0, +n.textContent - 1); refresh(); });
-    });
-    var reset = root.querySelector(".reset");
-    if (reset) reset.addEventListener("click", function () { root.querySelectorAll(".n").forEach(function (x) { x.textContent = "0"; }); refresh(); });
-  }
-
   /* ------------------------------------------------------------ HTTPS chart */
   function httpsChart(container) {
     var data = D.https;
@@ -493,7 +474,6 @@
     document.querySelectorAll("[data-cases]").forEach(cases);
     document.querySelectorAll("[data-stage-matrix]").forEach(matrix);
     document.querySelectorAll("[data-attack]").forEach(attackMatrix);
-    document.querySelectorAll("[data-component=vote]").forEach(vote);
     document.querySelectorAll("[data-component=https-chart]").forEach(httpsChart);
     if (window.Reveal) {
       Reveal.addKeyBinding({ keyCode: 84, key: "T", description: "Toggle light/dark theme" }, toggleTheme);

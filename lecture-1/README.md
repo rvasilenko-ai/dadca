@@ -19,9 +19,9 @@ Students should be able to:
 
 | Time | Module | Slides |
 | --- | --- | --- |
-| 0–6 | Where is the malware? (title, about me, vote, route) | 1–4 |
-| 6–32 | **Part 1.** From malicious programs to adversarial capabilities (divider, three framing slides, the overview timeline, four zoomed periods, the recap) | 5–14 |
-| 32–45 | **Part 1.** ATT&CK as a language for behavior (an introduction, the matrix with a trojan lit as a path, the two benign-file cases, the mapping exercise that closes the vote) | 15–18 |
+| 0–5 | Where is the malware? (title, about me, the ladder of five situations, route) | 1–4 |
+| 5–31 | **Part 1.** From malicious programs to adversarial capabilities (divider, three framing slides, the overview timeline, four zoomed periods, the recap) | 5–14 |
+| 31–45 | **Part 1.** ATT&CK as a language for behavior (an introduction, the matrix with a trojan lit as a path, the two benign-file cases, the mapping exercise that closes the vote) | 15–18 |
 | 45–75 | **Part 2.** Detection pipelines: design and evolution (divider, pipeline, the host-and-file lineage, the network change and the network lineage, the stage each change broke, options at each stage, exercise) | 19–26 |
 | 75–80 | **Part 2.** Synthesis (conclusions) | 27 |
 | 80–90 | Questions and discussion | |
@@ -90,7 +90,7 @@ Part 1 (slides 5–18) traces the evolution of malware and malicious capabilitie
 
 ## Slide deck
 
-The presentable deck is an offline HTML build in [deck/](deck/): open `deck/index.html` in a browser, press S for speaker notes with the planned minutes and a timer, T for the dark theme, and `?print-pdf` for a PDF. It is generated from the markdown slides by `deck/build.py`; edit the markdown, then rebuild. Interactive parts: the overview timeline on slide 9, the zoomed period timelines on slides 10–13 with a details toggle, the breaks timeline on 14, the live vote tally on slide 3, the clickable pipeline on slides 20 to 26 (Next and Previous step through the panels on slides 21, 23, 24 and 25; clicking jumps), the HTTPS adoption chart on slide 22, and a schematic ATT&CK matrix on slides 16, 17 and 18 (hover a cell for its ID; on 16 Next lights a classic trojan as a path, on 18 the recurring scenario step by step). See [deck/README.md](deck/README.md).
+The presentable deck is an offline HTML build in [deck/](deck/): open `deck/index.html` in a browser, press S for speaker notes with the planned minutes and a timer, T for the dark theme, and `?print-pdf` for a PDF. It is generated from the markdown slides by `deck/build.py`; edit the markdown, then rebuild. Interactive parts: the overview timeline on slide 9, the zoomed period timelines on slides 10–13 with a details toggle, the breaks timeline on 14, the ladder of five situations on slide 3, the clickable pipeline on slides 20 to 26 (Next and Previous step through the panels on slides 21, 23, 24 and 25; clicking jumps), the HTTPS adoption chart on slide 22, and a schematic ATT&CK matrix on slides 16, 17 and 18 (hover a cell for its ID; on 16 Next lights a classic trojan as a path, on 18 the recurring scenario step by step). See [deck/README.md](deck/README.md).
 
 ## Related lectures
 

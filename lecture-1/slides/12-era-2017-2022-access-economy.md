@@ -1,6 +1,6 @@
 # Slide 12 — 2017–2022: the access economy, identity, and the supply chain
 
-**Timing:** 22–26 minutes  
+**Timing:** 21–25 minutes  
 **Module:** From malicious programs to adversarial capabilities
 
 ## On-slide content

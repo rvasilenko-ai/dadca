@@ -1,6 +1,6 @@
 # Slide 10 — 2000–2009: the executable, from worms to botnets
 
-**Timing:** 14–18 minutes  
+**Timing:** 13–17 minutes  
 **Module:** From malicious programs to adversarial capabilities
 
 ## On-slide content

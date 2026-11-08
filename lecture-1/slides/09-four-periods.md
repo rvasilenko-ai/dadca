@@ -1,6 +1,6 @@
 # Slide 9 — Four periods, 2000–2026
 
-**Timing:** 12–14 minutes
+**Timing:** 11–13 minutes
 **Module:** From malicious programs to adversarial capabilities
 
 ## On-slide content

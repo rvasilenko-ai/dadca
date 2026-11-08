@@ -1,11 +1,11 @@
 # Slide 4 — Where we are going
 
-**Timing:** 5–6 minutes  
+**Timing:** 4–5 minutes  
 **Module:** Where is the malware?
 
 ## On-slide content
 
-| Part 1 · How did malware and malicious capabilities evolve? (6–45) | Part 2 · How are detection pipelines designed, and how did they evolve? (45–80) |
+| Part 1 · How did malware and malicious capabilities evolve? (5–45) | Part 2 · How are detection pipelines designed, and how did they evolve? (45–80) |
 | --- | --- |
 | Why malware came to mean a file | The detection pipeline, and what each stage can see |
 | What broke the file-centric model, and when | How the host and network pipelines were rebuilt, and where each change broke them |

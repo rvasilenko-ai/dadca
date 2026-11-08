@@ -111,14 +111,15 @@ html, body { background: var(--bg); color: var(--ink); }
 .reveal .k-where-we-are-going .foot { font-size: 0.7em; color: var(--ink-2); margin-top: 0.8em; }
 
 /* Vote */
-.reveal .vote { font-size: 0.6em; }
-.reveal .vote table { font-size: 1em; width: 100%; }
-.reveal .vote th:first-child { width: 48%; }
-.reveal .vote .cell { display: flex; align-items: center; gap: 0.35em; }
-.reveal .vote button { font: inherit; font-size: 0.95em; width: 1.6em; height: 1.6em; border-radius: 6px; border: 1px solid var(--line-2); background: var(--bg); color: var(--ink); cursor: pointer; }
-.reveal .vote .n { min-width: 1.4em; text-align: center; font-variant-numeric: tabular-nums; font-weight: 650; }
-.reveal .vote .bar { height: 10px; background: var(--accent); border-radius: 4px; flex: 1; transform-origin: left; transform: scaleX(0); transition: transform 180ms ease; }
-.reveal .vote .reset { margin-top: 0.4em; font-size: 0.9em; padding: 0.2em 0.7em; width: auto; height: auto; }
+.reveal .k-five-suspicious-situations .ladder-wrap { position: relative; margin: 0.3em 0 0 0; padding-left: 4px; }
+.reveal .k-five-suspicious-situations .ladder { list-style: none; margin: 0; padding: 0; position: relative; }
+.reveal .k-five-suspicious-situations .ladder::before { content: ""; position: absolute; left: 25px; top: 10px; bottom: 10px; width: 4px; background: var(--line-2); border-radius: 2px; }
+.reveal .k-five-suspicious-situations .ladder li { display: grid; grid-template-columns: 54px 1fr; align-items: center; column-gap: 18px; padding: 9px 0; font-size: 0.86em; }
+.reveal .k-five-suspicious-situations .ladder .rung { position: relative; z-index: 1; width: 46px; height: 46px; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 700; font-size: 0.8em; display: flex; align-items: center; justify-content: center; margin-left: 4px; }
+.reveal .k-five-suspicious-situations .ladder li:nth-child(4) .rung { background: color-mix(in srgb, var(--accent) 70%, var(--bg-2)); }
+.reveal .k-five-suspicious-situations .ladder li:nth-child(5) .rung { background: color-mix(in srgb, var(--accent) 45%, var(--bg-2)); }
+.reveal .k-five-suspicious-situations .end { margin: 0; font-size: 0.58em; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.08em; padding-left: 76px; }
+.reveal .k-five-suspicious-situations blockquote.callout.fragment { font-size: 0.85em; margin-top: 0.5em; }
 
 /* Period slides: five tracks */
 .reveal .period { display: flex; flex-direction: column; height: 100%; }

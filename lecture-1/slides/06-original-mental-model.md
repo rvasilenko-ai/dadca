@@ -1,6 +1,6 @@
 # Slide 6 — The original mental model
 
-**Timing:** 7–8 minutes  
+**Timing:** 6–7 minutes  
 **Module:** From malicious programs to adversarial capabilities
 
 ## On-slide content

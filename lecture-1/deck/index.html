@@ -57,40 +57,40 @@
 <h4>Transition</h4><p>“Now classify five situations before we agree on any terminology.”</p></aside>
 </section>
 
-<section class="slide s3 k-five-suspicious-situations m1" data-slide="3" data-module="Where is the malware?" data-timing="2–5 minutes">
+<section class="slide s3 k-five-suspicious-situations m1" data-slide="3" data-module="Where is the malware?" data-timing="2–4 minutes">
 
 <div class="body">
 <h2 class="title">Five suspicious situations</h2>
-<blockquote class="callout"><p>Where is the malware?</p></blockquote>
-<div class="vote" data-component="vote">
-<table>
-<thead><tr><th>Vote for each</th><th>Definitely malware</th><th>Possibly malware</th><th>Not malware, but part of an attack</th></tr></thead>
-<tbody>
-<tr><td>1. A Trojan executable is written to disk.</td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td></tr>
-<tr><td>2. PowerShell downloads and runs code.</td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td></tr>
-<tr><td>3. A Portable Executable image exists only in process memory.</td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td></tr>
-<tr><td>4. An attacker controls a legitimate remote-management tool.</td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td></tr>
-<tr><td>5. Repository instructions cause a coding agent to exfiltrate secrets.</td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td></tr>
-</tbody>
-</table>
-<button class="reset" type="button">Reset tally</button>
+<blockquote class="callout question"><p>Where does malware stop? Raise your hand at the last rung you would still call malware.</p></blockquote>
+<div class="ladder-wrap">
+<p class="end top">the file</p>
+<ol class="ladder">
+<li><span class="rung">1</span><span class="txt">A trojan executable is written to disk.</span></li>
+<li><span class="rung">2</span><span class="txt">PowerShell downloads and runs code.</span></li>
+<li><span class="rung">3</span><span class="txt">A Portable Executable image exists only in process memory.</span></li>
+<li><span class="rung">4</span><span class="txt">An attacker controls a legitimate remote-management tool.</span></li>
+<li><span class="rung">5</span><span class="txt">Repository instructions cause a coding agent to exfiltrate secrets.</span></li>
+</ol>
+<p class="end bottom">no file</p>
 </div>
+<blockquote class="callout fragment"><p>Hold that disagreement. Part 1 ends by naming what it was about.</p></blockquote>
 
 </div>
-<footer class="chrome"><span class="module">Where is the malware?</span><span class="timing">min 2–5</span></footer>
-<aside class="notes"><p class="plan"><strong>Planned 2–5 minutes</strong> · Where is the malware?</p>
-<p>Collect quick votes and disagreements. Do not resolve them. The purpose is to reveal that students are classifying different things: artifacts, behaviors, intent, or entire systems.</p>
-<h4>Interaction</h4><p>Ask two students who disagreed to explain which property determined their answer.</p>
+<footer class="chrome"><span class="module">Where is the malware?</span><span class="timing">min 2–4</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 2–4 minutes</strong> · Where is the malware?</p>
+<p>One show of hands, not five. Read the five rungs aloud, then ask the room to raise a hand at the last rung they would still call malware, and count down from five. Expect a spread: a cluster at 1 or 2, a cluster at 4 or 5, hesitation at 3. Do not resolve it. The purpose is to make visible that students are classifying different things, an artifact, a behavior, who is in control, or an outcome, and Part 1 spends its time earning the vocabulary for that.</p>
+<p>Pick one student from the top of the ladder and one from the bottom and ask what decided it, two sentences each. The answers are usually "there is a file" and "someone is doing harm", which are two of the four questions slide 18 names when it closes the vote.</p>
+<h4>Interaction</h4><p>The show of hands and the two students. In a large room, ask for hands at rung 2 and at rung 4 only; the gap between them is the lecture.</p>
 <h4>Transition</h4><p>“Hold on to that disagreement; it comes back at the end of Part 1. First, the route.”</p></aside>
 </section>
 
-<section class="slide s4 k-where-we-are-going m1" data-slide="4" data-module="Where is the malware?" data-timing="5–6 minutes">
+<section class="slide s4 k-where-we-are-going m1" data-slide="4" data-module="Where is the malware?" data-timing="4–5 minutes">
 
 <div class="body">
 <h2 class="title">Where we are going</h2>
 <div class="parts">
 <div class="part">
-<h3>Part 1 <span class="min">6–45 min</span></h3>
+<h3>Part 1 <span class="min">5–45 min</span></h3>
 <p class="q">How did malware and malicious capabilities evolve?</p>
 <ul>
 <li>Why malware came to mean a file</li>
@@ -110,15 +110,15 @@
 </div>
 
 </div>
-<footer class="chrome"><span class="module">Where is the malware?</span><span class="timing">min 5–6</span></footer>
-<aside class="notes"><p class="plan"><strong>Planned 5–6 minutes</strong> · Where is the malware?</p>
+<footer class="chrome"><span class="module">Where is the malware?</span><span class="timing">min 4–5</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 4–5 minutes</strong> · Where is the malware?</p>
 <p>Now that the ambiguity has been felt, make the route explicit with the two questions, one per column. Part 1 is history: malware came to mean a file for good reasons, and over twenty-five years the attacker moved the capability beyond it, without giving the file up; ATT&amp;CK is how we describe what remains when there is no family name. Part 2 is the defender's side of the same years, organised around the detection pipeline: the pipeline and its stages, the host and the network pipelines rebuilt generation by generation, the stage each attacker change broke and the product that answered, the options at each stage as they stand today; then six misses to diagnose and the conclusions.</p>
 <p>Point at the columns without reading them. Say that the detectors themselves, the machine learning and the LLM analyst, are deliberately thin here and get their own lecture, so that this one can spend its time on what the detector is allowed to see.</p>
 <p>The recurring scenario is not on the slide; it is situation 2 from the vote and introduces itself when it returns on the mapping exercise.</p>
 <h4>Transition</h4><p>“Why did malware become so strongly associated with files in the first place?”</p></aside>
 </section>
 
-<section class="slide s5 k-part-1 m2" data-slide="5" data-module="From malicious programs to adversarial capabilities" data-timing="6–7 minutes">
+<section class="slide s5 k-part-1 m2" data-slide="5" data-module="From malicious programs to adversarial capabilities" data-timing="5–6 minutes">
 
 <div class="body">
 <div class="divider">
@@ -127,21 +127,21 @@
 <p class="part-q">How did malware and malicious capabilities evolve?</p>
 <table>
 <tbody>
-<tr><td>7–32</td><td>From malicious programs to adversarial capabilities: four periods, 2000 to 2026</td></tr>
-<tr><td>32–45</td><td>ATT&amp;CK as a language for behavior</td></tr>
+<tr><td>6–31</td><td>From malicious programs to adversarial capabilities: four periods, 2000 to 2026</td></tr>
+<tr><td>31–45</td><td>ATT&amp;CK as a language for behavior</td></tr>
 </tbody>
 </table>
 <p class="part-lead">Why malware came to mean a file. Then the whole span and four periods, each read across five tracks: motive and money, attackers, the operating system, the internet, and the security products of the same years. Then ATT&amp;CK, a vocabulary for behavior, because the file stopped being the only unit. The file itself never left; it stopped being the only carrier.</p>
 </div>
 
 </div>
-<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 6–7</span></footer>
-<aside class="notes"><p class="plan"><strong>Planned 6–7 minutes</strong> · From malicious programs to adversarial capabilities</p>
+<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 5–6</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 5–6 minutes</strong> · From malicious programs to adversarial capabilities</p>
 <p>One sentence. Part 1 is about the attacker's side: what was delivered, why, and what changed around it. Keep the defensive products in their track on the period slides but do not open them up yet; Part 2 is where each product class gets its own treatment.</p>
 <h4>Transition</h4><p>“Start with the model everything else grew from.”</p></aside>
 </section>
 
-<section class="slide s6 k-original-mental-model m2" data-slide="6" data-module="From malicious programs to adversarial capabilities" data-timing="7–8 minutes">
+<section class="slide s6 k-original-mental-model m2" data-slide="6" data-module="From malicious programs to adversarial capabilities" data-timing="6–7 minutes">
 <h2 class="title">The original mental model</h2>
 <div class="body">
 <pre class="ascii"><code>malicious executable
@@ -150,33 +150,33 @@
 <p>The suspicious object is persistent, transferable, and available for analysis.</p>
 <blockquote class="callout"><p>Working definition for this lecture: malware is the malicious capability. The file is one carrier of it, and this model assumes it is the only one.</p></blockquote>
 </div>
-<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 7–8</span></footer>
-<aside class="notes"><p class="plan"><strong>Planned 7–8 minutes</strong> · From malicious programs to adversarial capabilities</p>
+<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 6–7</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 6–7 minutes</strong> · From malicious programs to adversarial capabilities</p>
 <p>Present this as a useful simplification, not an ignorant historical mistake. When a stable file carries the capability, defenders can intercept it before execution, retain it, hash it, label it, and share it.</p>
 <p>State the working definition now, because the rest of Part 1 uses it: malware is the capability, and the file is a carrier. The model on the slide assumes the carrier is always a file, which was nearly true for fifteen years, and the four periods show the capability leaving it.</p>
 <h4>Transition</h4><p>“The familiar malware taxonomy grew around this object-centric model.”</p></aside>
 </section>
 
-<section class="slide s7 k-classical-taxonomy m2" data-slide="7" data-module="From malicious programs to adversarial capabilities" data-timing="8–10 minutes">
+<section class="slide s7 k-classical-taxonomy m2" data-slide="7" data-module="From malicious programs to adversarial capabilities" data-timing="7–9 minutes">
 <h2 class="title">The classical taxonomy</h2>
 <div class="body">
 <table><thead><tr><th>Term</th><th>Defining property</th></tr></thead><tbody><tr><td>Virus</td><td>Attaches to a host and replicates</td></tr><tr><td>Worm</td><td>Self-propagates between systems</td></tr><tr><td>Trojan</td><td>Appears legitimate but performs hidden actions</td></tr><tr><td>Backdoor</td><td>Provides unauthorized access</td></tr><tr><td>Spyware</td><td>Collects information</td></tr><tr><td>Rootkit</td><td>Conceals or preserves privileged access</td></tr></tbody></table>
 </div>
-<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 8–10</span></footer>
-<aside class="notes"><p class="plan"><strong>Planned 8–10 minutes</strong> · From malicious programs to adversarial capabilities</p>
+<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 7–9</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 7–9 minutes</strong> · From malicious programs to adversarial capabilities</p>
 <p>The categories describe different dimensions. “Trojan” concerns presentation, “worm” propagation, “backdoor” capability, and “rootkit” concealment. A single specimen can occupy several categories simultaneously.</p>
 <h4>Interaction</h4><p>Ask whether ransomware belongs in the table as an artifact type, propagation mechanism, capability, or objective.</p>
 <h4>Transition</h4><p>“These categories became operational because files were convenient security objects.”</p></aside>
 </section>
 
-<section class="slide s8 k-files-as-unit-of-detection m2" data-slide="8" data-module="From malicious programs to adversarial capabilities" data-timing="10–12 minutes">
+<section class="slide s8 k-files-as-unit-of-detection m2" data-slide="8" data-module="From malicious programs to adversarial capabilities" data-timing="9–11 minutes">
 <h2 class="title">Why files became the unit of detection</h2>
 <div class="body">
 <table><thead><tr><th>Because attackers used them (2000 onward; the only way until the mid-2010s)</th><th>Because defenders could use them</th></tr></thead><tbody><tr><td>Executable attachments, then macro documents</td><td>Files cross trust boundaries</td></tr><tr><td>Drive-by downloads dropping an EXE</td><td>Files persist</td></tr><tr><td>Worms and autorun media carrying their own binary</td><td>Files can be hashed and compared</td></tr><tr><td>Banking trojans and bots installed as programs</td><td>Files can be scanned before execution</td></tr><tr><td>Victim hosts had little built-in tooling to abuse</td><td>Samples can be retained, shared, and labeled</td></tr></tbody></table>
 <blockquote class="callout"><p>The file was the attack. The defense followed it.</p></blockquote>
 </div>
-<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 10–12</span></footer>
-<aside class="notes"><p class="plan"><strong>Planned 10–12 minutes</strong> · From malicious programs to adversarial capabilities</p>
+<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 9–11</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 9–11 minutes</strong> · From malicious programs to adversarial capabilities</p>
 <p>Start with the left column. It is the first two periods on slides 10 and 11: the executable era proper, and then the period in which the file diversified into documents, scripts and exploit objects but remained the deliverable. For roughly fifteen years the attacker's problem was to get their own code onto the victim's machine and run it, because the victim's machine offered little else to work with. PowerShell did not ship by default until Windows 7 in 2009, remote-management tooling was not ubiquitous, and business data lived on the host rather than behind cloud APIs. Email attachments, drive-by downloads, removable media, worms, and bundled installers all delivered a program. The program was the capability, so the program was the right thing to catch.</p>
 <p>The right column is why the industry could build on that. Files cross the boundary the defender controls, persist long enough to inspect, hash identically everywhere, and can be scanned before they run. Samples flow between vendors, signature databases grow, sandboxes detonate them, and supervised datasets are built from them. Connect this to antivirus hooks, sample exchanges, and later the public PE datasets covered in Lecture 3.</p>
 <p>Stop here. Do not preview how the model breaks; the next four slides show it period by period, and slide 14 draws the list. The only forward-looking sentence this slide needs is that the model held for about fifteen years.</p>
@@ -184,7 +184,7 @@
 <h4>Transition</h4><p>“That model held for about fifteen years and then broke in stages. First the whole span: four periods across five tracks, motive and money, attackers, the operating system, the internet, and security products.”</p></aside>
 </section>
 
-<section class="slide s9 k-four-periods m2" data-slide="9" data-module="From malicious programs to adversarial capabilities" data-timing="12–14 minutes">
+<section class="slide s9 k-four-periods m2" data-slide="9" data-module="From malicious programs to adversarial capabilities" data-timing="11–13 minutes">
 
 <div class="body">
 <h2 class="title">Four periods, 2000–2026</h2>
@@ -208,8 +208,8 @@
 <ul><li><a href="https://www.cisa.gov/resources-tools/resources/identifying-and-mitigating-living-off-land-techniques" target="_blank" rel="noopener">CISA: identifying and mitigating living off the land techniques (February 2024)</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc9849.html" target="_blank" rel="noopener">RFC 9849: TLS Encrypted Client Hello (2026)</a></li><li><a href="https://noma.security/noma-labs/forcedleak/" target="_blank" rel="noopener">Noma Security: ForcedLeak (September 2025)</a></li><li><a href="https://huggingface.co/blog/agent-intrusion-technical-timeline" target="_blank" rel="noopener">Hugging Face: technical timeline of the July 2026 incident</a></li></ul></div></details>
 
 </div>
-<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 12–14</span></footer>
-<aside class="notes"><p class="plan"><strong>Planned 12–14 minutes</strong> · From malicious programs to adversarial capabilities</p>
+<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 11–13</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 11–13 minutes</strong> · From malicious programs to adversarial capabilities</p>
 <p>Two minutes, and the purpose is the shape, not the content. Point at the five lanes and name them, starting with motive and money because it explains the other four. Then read the four period names left to right and say one sentence per period from the cards. Do not read the labelled dots; they are anchors some students will recognise (Windows XP, Storm, Stuxnet, CryptoLocker, NotPetya, SolarWinds, Volt Typhoon) and they are there so the zoomed slides that follow have a reference.</p>
 <p>Say explicitly that the next four slides zoom into one period each: the same five lanes, the period's own key events labelled, and one claim per track. The recap after the four periods returns to this timeline and draws the breaks on it.</p>
 <p>The periods are the periods of the attacker's dominant tradecraft, not of famous incidents, and the boundaries are soft by a year or two. 2010 opens with Aurora and Stuxnet; 2017 opens with the Shadow Brokers leak and the ransomware economy it fed; 2023 opens with the Volt Typhoon advisory and the casino intrusions, campaigns with no malware file at all. Say "no file", not "no malware": by this lecture's definition the hands-on intrusion, the built-in tools and the exploits are the malicious capability, so the malware is still there and only its carrier is gone.</p>
@@ -227,7 +227,7 @@
 <ul><li><a href="https://www.cisa.gov/resources-tools/resources/identifying-and-mitigating-living-off-land-techniques" target="_blank" rel="noopener">CISA: identifying and mitigating living off the land techniques (February 2024)</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc9849.html" target="_blank" rel="noopener">RFC 9849: TLS Encrypted Client Hello (2026)</a></li><li><a href="https://noma.security/noma-labs/forcedleak/" target="_blank" rel="noopener">Noma Security: ForcedLeak (September 2025)</a></li><li><a href="https://huggingface.co/blog/agent-intrusion-technical-timeline" target="_blank" rel="noopener">Hugging Face: technical timeline of the July 2026 incident</a></li></ul></aside>
 </section>
 
-<section class="slide s10 k-era-2000-2009-executable-worms-to-botnets m2" data-slide="10" data-module="From malicious programs to adversarial capabilities" data-timing="14–18 minutes">
+<section class="slide s10 k-era-2000-2009-executable-worms-to-botnets m2" data-slide="10" data-module="From malicious programs to adversarial capabilities" data-timing="13–17 minutes">
 <h2 class="title">2000–2009: the executable, from worms to botnets</h2>
 <div class="body">
 <div class="period zoomed" data-period="p1">
@@ -258,8 +258,8 @@
 <h3>Headlines</h3>
 <ul><li><a href="https://www.justice.gov/archive/criminal/cybercrime/press-releases/2005/anchetaArrest.htm" target="_blank" rel="noopener">US Department of Justice: computer virus broker arrested for selling armies of infected computers to hackers and spammers (Ancheta indictment, 3 November 2005)</a></li><li><a href="https://www.justice.gov/archive/criminal/cybercrime/press-releases/2006/anchetaSent.htm" target="_blank" rel="noopener">US Department of Justice: “botherder” dealt record prison sentence for selling and spreading malicious computer code (Ancheta sentenced, 8 May 2006)</a></li><li><a href="https://learn.microsoft.com/en-us/previous-versions/bb877964%28v=technet.10%29" target="_blank" rel="noopener">Microsoft: Windows XP SP2 firewall enabled by default (2004)</a></li><li><a href="https://learn.microsoft.com/en-us/archive/blogs/windowsvistasecurity/an-introduction-to-kernel-patch-protection" target="_blank" rel="noopener">Microsoft: An introduction to Kernel Patch Protection (x64, 2005)</a></li><li><a href="https://attack.mitre.org/techniques/T1027/002/" target="_blank" rel="noopener">MITRE ATT&amp;CK: Obfuscated Files or Information: Software Packing (T1027.002)</a></li><li><a href="https://attack.mitre.org/techniques/T1542/003/" target="_blank" rel="noopener">MITRE ATT&amp;CK: Bootkit (T1542.003)</a></li></ul></div></details>
 </div>
-<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 14–18</span></footer>
-<aside class="notes"><p class="plan"><strong>Planned 14–18 minutes</strong> · From malicious programs to adversarial capabilities</p>
+<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 13–17</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 13–17 minutes</strong> · From malicious programs to adversarial capabilities</p>
 <p>The timeline is zoomed to this period: the labelled dots are the key events, the small dots are the rest and show their date on hover. Say the five headlines, then tell two or three of the labelled events as one story. The detail chips are behind the details button, which swaps the timeline out for them; they are for questions, not for reading aloud.</p>
 <p><strong>Default story, three events and one image.</strong> Windows XP (2001): everyone an administrator, autorun on, firewall off. The IRC botnets of 2003–2004 and the Ancheta case: the infected machine becomes inventory, sold for spam, DDoS and installs. Storm (2007) and McAfee Artemis (2008): a unique binary per victim, answered by reputation in the cloud. The image for students who were not there: in August 2003 an unpatched XP laptop plugged into a university network was infected by Blaster within minutes, with nothing opened and nothing clicked.</p>
 <p>Read the five tracks as one system, starting with the money. The attacker's unit was the executable because the victim ran as administrator on a machine with no built-in tooling worth abusing, received email and browsed with plug-in-heavy browsers, and the network carried everything in the clear. The defenses that mattered were exactly those built on that unit: file scanners, payload signatures, spam filters.</p>
@@ -280,7 +280,7 @@
 <ul><li><a href="https://www.justice.gov/archive/criminal/cybercrime/press-releases/2005/anchetaArrest.htm" target="_blank" rel="noopener">US Department of Justice: computer virus broker arrested for selling armies of infected computers to hackers and spammers (Ancheta indictment, 3 November 2005)</a></li><li><a href="https://www.justice.gov/archive/criminal/cybercrime/press-releases/2006/anchetaSent.htm" target="_blank" rel="noopener">US Department of Justice: “botherder” dealt record prison sentence for selling and spreading malicious computer code (Ancheta sentenced, 8 May 2006)</a></li><li><a href="https://learn.microsoft.com/en-us/previous-versions/bb877964%28v=technet.10%29" target="_blank" rel="noopener">Microsoft: Windows XP SP2 firewall enabled by default (2004)</a></li><li><a href="https://learn.microsoft.com/en-us/archive/blogs/windowsvistasecurity/an-introduction-to-kernel-patch-protection" target="_blank" rel="noopener">Microsoft: An introduction to Kernel Patch Protection (x64, 2005)</a></li><li><a href="https://attack.mitre.org/techniques/T1027/002/" target="_blank" rel="noopener">MITRE ATT&amp;CK: Obfuscated Files or Information: Software Packing (T1027.002)</a></li><li><a href="https://attack.mitre.org/techniques/T1542/003/" target="_blank" rel="noopener">MITRE ATT&amp;CK: Bootkit (T1542.003)</a></li></ul></aside>
 </section>
 
-<section class="slide s11 k-era-2010-2016-apt-and-exploit-kits m2" data-slide="11" data-module="From malicious programs to adversarial capabilities" data-timing="18–22 minutes">
+<section class="slide s11 k-era-2010-2016-apt-and-exploit-kits m2" data-slide="11" data-module="From malicious programs to adversarial capabilities" data-timing="17–21 minutes">
 <h2 class="title">2010–2016: APT, exploit kits, and files of every kind</h2>
 <div class="body">
 <div class="period zoomed" data-period="p2">
@@ -309,8 +309,8 @@
 <h3>Headlines</h3>
 <ul><li><a href="https://attack.mitre.org/techniques/T1620/" target="_blank" rel="noopener">MITRE ATT&amp;CK: Reflective Code Loading (T1620)</a></li><li><a href="https://www.paloaltonetworks.com/blog/2011/11/findings-from-wildfire/" target="_blank" rel="noopener">Palo Alto Networks: findings from WildFire (November 2011)</a></li></ul></div></details>
 </div>
-<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 18–22</span></footer>
-<aside class="notes"><p class="plan"><strong>Planned 18–22 minutes</strong> · From malicious programs to adversarial capabilities</p>
+<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 17–21</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 17–21 minutes</strong> · From malicious programs to adversarial capabilities</p>
 <p>The timeline is zoomed to this period: the labelled dots are the key events, the small dots are the rest and show their date on hover. Say the five headlines, then tell two or three of the labelled events as one story. The detail chips are behind the details button, which swaps the timeline out for them; they are for questions, not for reading aloud.</p>
 <p><strong>Default story, three events and one image.</strong> Aurora and Stuxnet (2010): the adversary becomes a funded campaign. CryptoLocker (2013): Bitcoin lets the victim pay the attacker directly. Dridex macros (2014) and Empire (2015): the file diversifies, then the exit from the file begins. The image: an employee opens a résumé or an invoice, and it is Office, Flash or the browser that runs the exploit, not the user double-clicking a program.</p>
 <p><strong>Two kinds of payoff now coexist.</strong> Crime industrializes into a service economy: exploit kits are licensed by the year or rented by the day, installs are bought and sold, and point-of-sale malware turns retail breaches into card data. Bitcoin, usable at scale from about 2013, is the enabler that ransomware had been waiting for: CryptoLocker is the first campaign in which the victim pays the attacker directly rather than the attacker monetizing the victim's machine through a third party. At the same time the APT era brings an adversary whose payoff is strategic, not financial: espionage, intellectual property, sabotage. The same tradecraft serves both, which is one reason a file verdict cannot tell you what you are dealing with. North Korea's Bangladesh Bank heist in 2016 shows a state using the APT toolkit for money, and the Ukraine grid attack of December 2015 is the first confirmed outage caused from a keyboard. Banking fraud is the steady revenue underneath all of this: the Zeus source leak of 2011 gave everyone a kit, GameOver Zeus ran the peer-to-peer version until Operation Tovar took it down together with the CryptoLocker infrastructure in June 2014, and the police lockers of 2012, a fake fine paid by prepaid card, were the extortion model that Bitcoin replaced.</p>
@@ -329,7 +329,7 @@
 <ul><li><a href="https://attack.mitre.org/techniques/T1620/" target="_blank" rel="noopener">MITRE ATT&amp;CK: Reflective Code Loading (T1620)</a></li><li><a href="https://www.paloaltonetworks.com/blog/2011/11/findings-from-wildfire/" target="_blank" rel="noopener">Palo Alto Networks: findings from WildFire (November 2011)</a></li></ul></aside>
 </section>
 
-<section class="slide s12 k-era-2017-2022-access-economy m2" data-slide="12" data-module="From malicious programs to adversarial capabilities" data-timing="22–26 minutes">
+<section class="slide s12 k-era-2017-2022-access-economy m2" data-slide="12" data-module="From malicious programs to adversarial capabilities" data-timing="21–25 minutes">
 <h2 class="title">2017–2022: the access economy, identity, and the supply chain</h2>
 <div class="body">
 <div class="period zoomed" data-period="p3">
@@ -358,8 +358,8 @@
 <h3>Headlines</h3>
 <ul><li><a href="https://www.cisa.gov/news-events/directives/ed-21-01-mitigate-solarwinds-orion-code-compromise-closed" target="_blank" rel="noopener">CISA Emergency Directive 21-01: mitigate SolarWinds Orion code compromise (December 2020)</a></li><li><a href="https://www.sophos.com/en-us/blog/maze-ransomware-1-year-counting" target="_blank" rel="noopener">Sophos: Maze ransomware, one year and counting</a></li><li><a href="https://www.ic3.gov/AnnualReport/Reports" target="_blank" rel="noopener">FBI Internet Crime Complaint Center annual reports (business email compromise losses)</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc8484" target="_blank" rel="noopener">RFC 8484: DNS Queries over HTTPS (October 2018)</a></li></ul></div></details>
 </div>
-<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 22–26</span></footer>
-<aside class="notes"><p class="plan"><strong>Planned 22–26 minutes</strong> · From malicious programs to adversarial capabilities</p>
+<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 21–25</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 21–25 minutes</strong> · From malicious programs to adversarial capabilities</p>
 <p>The timeline is zoomed to this period: the labelled dots are the key events, the small dots are the rest and show their date on hover. Say the five headlines, then tell two or three of the labelled events as one story. The detail chips are behind the details button, which swaps the timeline out for them; they are for questions, not for reading aloud.</p>
 <p><strong>Default story, three events and one image.</strong> NotPetya (2017): state capability spills into the world through a vendor's update. Ryuk, Maze and Colonial Pipeline (2018–2021): the organization pays, then pays not to be published. SolarWinds (2020) and the BYOVD wave (2022): trusted channels as delivery, and the winning control attacked. The image: the ransom note arrives after weeks in which the only malware on most hosts was PowerShell and a legitimate remote-management tool.</p>
 <p><strong>Spill-over.</strong> The period opens with the Shadow Brokers publishing exploits attributed to a United States intelligence agency, including EternalBlue. Within weeks WannaCry used it as a worm; in June NotPetya combined it with credential theft and built-in administration tools, spread through Ukrainian networks and then worldwide, and was later attributed by several governments to the Russian military. Top-tier capability reached criminals and lesser states overnight, and a state operation caused global collateral damage. Patch latency and flat networks, not a novel file, decided who was hit.</p>
@@ -378,7 +378,7 @@
 <ul><li><a href="https://www.cisa.gov/news-events/directives/ed-21-01-mitigate-solarwinds-orion-code-compromise-closed" target="_blank" rel="noopener">CISA Emergency Directive 21-01: mitigate SolarWinds Orion code compromise (December 2020)</a></li><li><a href="https://www.sophos.com/en-us/blog/maze-ransomware-1-year-counting" target="_blank" rel="noopener">Sophos: Maze ransomware, one year and counting</a></li><li><a href="https://www.ic3.gov/AnnualReport/Reports" target="_blank" rel="noopener">FBI Internet Crime Complaint Center annual reports (business email compromise losses)</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc8484" target="_blank" rel="noopener">RFC 8484: DNS Queries over HTTPS (October 2018)</a></li></ul></aside>
 </section>
 
-<section class="slide s13 k-era-2023-2026-hands-on-edge-devices-agents m2" data-slide="13" data-module="From malicious programs to adversarial capabilities" data-timing="26–30 minutes">
+<section class="slide s13 k-era-2023-2026-hands-on-edge-devices-agents m2" data-slide="13" data-module="From malicious programs to adversarial capabilities" data-timing="25–29 minutes">
 <h2 class="title">2023–2026: hands-on hacking, edge devices, and agents</h2>
 <div class="body">
 <div class="period zoomed" data-period="p4">
@@ -407,8 +407,8 @@
 <h3>Headlines</h3>
 <ul><li><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-325a" target="_blank" rel="noopener">CISA advisory AA23-325A: LockBit affiliates exploit Citrix Bleed, CVE-2023-4966 (November 2023)</a></li><li><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-060b" target="_blank" rel="noopener">CISA advisory AA24-060B: exploitation of Ivanti Connect Secure gateways (February 2024)</a></li><li><a href="https://www.cisa.gov/resources-tools/resources/identifying-and-mitigating-living-off-land-techniques" target="_blank" rel="noopener">CISA: identifying and mitigating living off the land techniques (February 2024)</a></li><li><a href="https://learn.microsoft.com/en-us/windows-server/security/credentials-protection-and-management/configuring-additional-lsa-protection" target="_blank" rel="noopener">Microsoft: added LSA protection enabled by default on new enterprise-joined Windows 11 22H2 installs</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc9849.html" target="_blank" rel="noopener">RFC 9849: TLS Encrypted Client Hello (2026)</a></li><li><a href="https://datatracker.ietf.org/doc/draft-ietf-tls-esni/" target="_blank" rel="noopener">IETF TLS Encrypted Client Hello draft</a></li><li><a href="https://www.anthropic.com/news/model-context-protocol" target="_blank" rel="noopener">Anthropic: introducing the Model Context Protocol (25 November 2024)</a></li></ul></div></details>
 </div>
-<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 26–30</span></footer>
-<aside class="notes"><p class="plan"><strong>Planned 26–30 minutes</strong> · From malicious programs to adversarial capabilities</p>
+<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 25–29</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 25–29 minutes</strong> · From malicious programs to adversarial capabilities</p>
 <p>The timeline is zoomed to this period: the labelled dots are the key events, the small dots are the rest and show their date on hover. Say the five headlines, then tell two or three of the labelled events as one story. The detail chips are behind the details button, which swaps the timeline out for them; they are for questions, not for reading aloud.</p>
 <p><strong>Default story, three events and one image.</strong> Volt Typhoon (2023): a whole campaign on built-in tools and valid accounts. Scattered Spider (2023): a phone call to the help desk instead of an exploit. The agent incidents (2025–2026): an instruction in data as the executable. The image: the attacker phones the help desk, gets the MFA reset, logs in as the employee, and never runs a file on the laptop.</p>
 <p><strong>The product is now identity and data, not the host.</strong> Cl0p's mass exploitation of MOVEit in 2023 skipped encryption entirely and extorted on stolen data alone. Scattered Spider chose casinos and large enterprises because the payout justified live social engineering of a help desk. Infostealer markets sell session tokens because a token opens the SaaS tenant where the data lives; the Snowflake customer breaches of 2024 are the cleanest case, infostealer credentials, no MFA, about 165 tenants, no host touched. Volt Typhoon is the reminder that one class of adversary is not paid at all and is prepositioning for disruption, and North Korea's Bybit heist of February 2025, about $1.5 billion, is the state revenue line at record scale. For the agent cases the business model is not yet observed; Lecture 2 treats grab-and-go theft and campaign staging as projections, not as a reported economy.</p>
@@ -428,7 +428,7 @@
 <ul><li><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-325a" target="_blank" rel="noopener">CISA advisory AA23-325A: LockBit affiliates exploit Citrix Bleed, CVE-2023-4966 (November 2023)</a></li><li><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-060b" target="_blank" rel="noopener">CISA advisory AA24-060B: exploitation of Ivanti Connect Secure gateways (February 2024)</a></li><li><a href="https://www.cisa.gov/resources-tools/resources/identifying-and-mitigating-living-off-land-techniques" target="_blank" rel="noopener">CISA: identifying and mitigating living off the land techniques (February 2024)</a></li><li><a href="https://learn.microsoft.com/en-us/windows-server/security/credentials-protection-and-management/configuring-additional-lsa-protection" target="_blank" rel="noopener">Microsoft: added LSA protection enabled by default on new enterprise-joined Windows 11 22H2 installs</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc9849.html" target="_blank" rel="noopener">RFC 9849: TLS Encrypted Client Hello (2026)</a></li><li><a href="https://datatracker.ietf.org/doc/draft-ietf-tls-esni/" target="_blank" rel="noopener">IETF TLS Encrypted Client Hello draft</a></li><li><a href="https://www.anthropic.com/news/model-context-protocol" target="_blank" rel="noopener">Anthropic: introducing the Model Context Protocol (25 November 2024)</a></li></ul></aside>
 </section>
 
-<section class="slide s14 k-what-broke-and-when m2" data-slide="14" data-module="From malicious programs to adversarial capabilities" data-timing="30–32 minutes">
+<section class="slide s14 k-what-broke-and-when m2" data-slide="14" data-module="From malicious programs to adversarial capabilities" data-timing="29–31 minutes">
 
 <div class="body">
 <h2 class="title">What broke the file-centric model, and when</h2>
@@ -447,8 +447,8 @@
 <blockquote class="callout fragment mf"><div class="txt"><p>In each period the attacker moved the capability to where the sensor was not looking; each break was partly a consequence of defensive success against the one before.</p><p>The money and motivation moved too: from the victim's machine, to the victim's credentials, to the victim's organization, to the victim's identity and data.</p></div><figure class="mf-fig"><svg viewBox="0 0 240 84" role="img" aria-label="Malware-free share of CrowdStrike detections: 40 percent in 2018, 51 in 2019, 62 in late 2021, 79 in 2024"><rect x="22" y="40" width="34" height="22"/><text x="39" y="35" text-anchor="middle">40%</text><text class="yr" x="39" y="76" text-anchor="middle">2018</text><rect x="76" y="34" width="34" height="28"/><text x="93" y="29" text-anchor="middle">51%</text><text class="yr" x="93" y="76" text-anchor="middle">2019</text><rect x="130" y="28" width="34" height="34"/><text x="147" y="23" text-anchor="middle">62%</text><text class="yr" x="147" y="76" text-anchor="middle">Q4 2021</text><rect x="184" y="19" width="34" height="43"/><text x="201" y="14" text-anchor="middle">79%</text><text class="yr" x="201" y="76" text-anchor="middle">2024</text><line x1="14" y1="62.5" x2="226" y2="62.5"/></svg><figcaption>Malware-free share of CrowdStrike detections</figcaption></figure></blockquote>
 
 </div>
-<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 30–32</span></footer>
-<aside class="notes"><p class="plan"><strong>Planned 30–32 minutes</strong> · From malicious programs to adversarial capabilities</p>
+<footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 29–31</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 29–31 minutes</strong> · From malicious programs to adversarial capabilities</p>
 <p>This slide is the recap of the four periods. Each row is something students have just seen, now stated as a break in the model from slide 6, ordered by when it became dominant rather than when it was first seen. Every row has a precedent, and the first row is the clearest case of defense causing the next move. Macro viruses from 1995 and the VBScript worms of 2000–2001 were the first wave of non-executable files; Office macro security levels and Outlook attachment blocking absorbed them. Then the channels blocked the executable itself, and the dates matter because they are earlier than students expect: Outlook in June 2000 and by default from Outlook 2002, Gmail from its first months in 2004 with zip archives included, the mail gateways in between, MSN Messenger in April 2005 after the Bropia and Kelvir worms, Facebook Messages from their launch in November 2010. Each block was answered within months, and the answer was always a container the block did not cover. MyDoom mailed itself in zip archives in January 2004 and Bagle in password-protected zips a month later, with the password shown as an image by March. Kelvir sent a link to its .pif rather than the file, which the messenger filter did not catch, and Koobface spread through social networks by link from 2008. A Word zero-day carried targeted attacks in May 2006, a PDF exploit with zero antivirus detections circulated in November 2008, and MPack, the first exploit kit sold commercially, was documented in 2007; from then on the browser, not the attachment, delivered the executable. Macro documents returned in 2014, and JavaScript, VBScript and HTA downloaders, shortcut files and ISO images followed each later block. The collaboration tools of the 2020s repeat the cycle: Teams carried Storm-0324's phishing in 2023 and Black Basta's fake help-desk calls in 2024, and Discord's content network hosted payloads until it switched to expiring links in November 2023. That diversification is what changed what the sandbox had to detonate, and it is why the first bar on the timeline starts in 2004 rather than 2010: dominance came later, the diversification began the moment the executable was blocked. The row now also carries the diversification inside the executable: from about 2020 implants, loaders and ransomware moved to Go, Rust and .NET (BlackCat in Rust in November 2021 is the marker), all still PE files, but each runtime needs its own unpacking, symbol recovery and decompilation, so this break is at extraction as much as at the sensor; Part 2's options slide has the row for it. Memory-resident code and living off the land likewise have earlier precedents; what matters for the defender is the moment a technique stops being an exception and becomes the default.</p>
 <p>Make the causal point explicit now that the evidence is on the table. File-centric defense worked: signatures, reputation, cloud lookups, download warnings and code-signing enforcement made delivering an unknown executable expensive, so attackers diversified the file. Sandboxes made the unknown document and dropped executable expensive, so attackers went to memory and built-in tools. EDR made implants visible, so attackers went to identities, vendors and remote-management tools. Operating-system hardening closed the host, so attackers went to people, edge devices and agents. Each row is partly a consequence of winning the previous row.</p>
 <p>The second callout is the motive track read across the four periods. Defensive success explains why the attacker had to move; the payout explains where they moved to. When the product was the machine, the attack was a file on the machine. When the product became the organization's willingness to pay, the attack became access to the organization. When the product became identity and data in SaaS, the attack became a token or an instruction. Students who remember only this sentence can reconstruct most of the table.</p>
@@ -467,7 +467,7 @@
 <ul><li><a href="https://www.crowdstrike.com/en-us/press-releases/crowdstrike-global-threat-report-reveals-big-game-hunting-telecommunication-targeting-top-adversary-trends/" target="_blank" rel="noopener">CrowdStrike: 2020 Global Threat Report press release, malware-free 40 percent of attacks in 2018 and 51 percent in 2019 (3 March 2020)</a></li><li><a href="https://www.crowdstrike.com/en-us/press-releases/crowdstrikes-annual-threat-report-exposes-evolution-of-ecrime-ecosystem/" target="_blank" rel="noopener">CrowdStrike: 2022 Global Threat Report press release, 62 percent of detections malware-free in the fourth quarter of 2021 (15 February 2022)</a></li><li><a href="https://go.crowdstrike.com/rs/281-OBQ-266/images/CrowdStrikeGlobalThreatReport2025.pdf" target="_blank" rel="noopener">CrowdStrike: 2025 Global Threat Report, malware-free activity 79 percent of detections in 2024 (27 February 2025)</a></li></ul></aside>
 </section>
 
-<section class="slide s15 k-attack-intro m3" data-slide="15" data-module="ATT&amp;CK as a language for behavior" data-timing="32–34 minutes">
+<section class="slide s15 k-attack-intro m3" data-slide="15" data-module="ATT&amp;CK as a language for behavior" data-timing="31–33 minutes">
 
 <div class="body">
 <h2 class="title">MITRE ATT&CK: what it is</h2>
@@ -492,8 +492,8 @@
 <blockquote class="callout fragment"><p>ATT&amp;CK names behaviors. Observing them is the detection pipeline's job, and that is Part 2.</p></blockquote>
 
 </div>
-<footer class="chrome"><span class="module">ATT&amp;CK as a language for behavior</span><span class="timing">min 32–34</span></footer>
-<aside class="notes"><p class="plan"><strong>Planned 32–34 minutes</strong> · ATT&amp;CK as a language for behavior</p>
+<footer class="chrome"><span class="module">ATT&amp;CK as a language for behavior</span><span class="timing">min 31–33</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 31–33 minutes</strong> · ATT&amp;CK as a language for behavior</p>
 <p>Two minutes. ATT&amp;CK began as an internal MITRE research effort in 2013 and was published in May 2015. It is free to use, maintained by MITRE's ATT&amp;CK team, and versioned every April and October, which is why the matrix on the next slide names its version: the current one, v20.0, was released in October 2026.</p>
 <p>Walk the three columns once. What is in it: three domains, Enterprise being the one this lecture uses, and for every technique the procedure examples from real campaigns, the groups and software seen using it, the mitigations, and the data sources and detections a defender would need. What it is for: a vocabulary that survives attackers swapping one tool for another that does the same thing; coverage mapping, where a team lays its detections over the matrix and sees the gaps; structuring intelligence; red and purple teaming; and the ATT&amp;CK Evaluations, in which vendors' products are run against an emulated adversary and the results published per technique.</p>
 <p>Then what it is not, because students over-read it. It is a knowledge base of observed adversary behavior, not a universal ontology of every capability software might possess; the tactics are goals, not a required sequence; and a sequence of ATT&amp;CK identifiers is not automatically a complete incident narrative. Above all a technique ID names a behavior, it is not evidence that the behavior happened. That last point is the bridge to Part 2.</p>
@@ -501,7 +501,7 @@
 <h4>Sources</h4><ul><li><a href="https://attack.mitre.org/resources/faq/" target="_blank" rel="noopener">MITRE ATT&amp;CK FAQ</a></li><li><a href="https://attack.mitre.org/resources/versions/" target="_blank" rel="noopener">MITRE ATT&amp;CK: versions of ATT&amp;CK</a></li><li><a href="https://attack.mitre.org/docs/ATTACK_Design_and_Philosophy_March_2020.pdf" target="_blank" rel="noopener">Strom et al., MITRE ATT&amp;CK: Design and Philosophy (March 2020)</a></li><li><a href="https://evals.mitre.org/" target="_blank" rel="noopener">MITRE ATT&amp;CK Evaluations</a></li></ul></aside>
 </section>
 
-<section class="slide s16 k-attack-levels m3" data-slide="16" data-module="ATT&amp;CK as a language for behavior" data-timing="34–37 minutes">
+<section class="slide s16 k-attack-levels m3" data-slide="16" data-module="ATT&amp;CK as a language for behavior" data-timing="33–37 minutes">
 
 <div class="body">
 <h2 class="title">From names to behaviors: ATT&CK's levels</h2>
@@ -513,8 +513,8 @@
 <blockquote class="callout fragment"><p>“Trojan” says less than this path: seven techniques across seven tactics, no family name, and every lit cell is a place a sensor could look.</p></blockquote>
 
 </div>
-<footer class="chrome"><span class="module">ATT&amp;CK as a language for behavior</span><span class="timing">min 34–37</span></footer>
-<aside class="notes"><p class="plan"><strong>Planned 34–37 minutes</strong> · ATT&amp;CK as a language for behavior</p>
+<footer class="chrome"><span class="module">ATT&amp;CK as a language for behavior</span><span class="timing">min 33–37</span></footer>
+<aside class="notes"><p class="plan"><strong>Planned 33–37 minutes</strong> · ATT&amp;CK as a language for behavior</p>
 <p>Start with the matrix itself, because most students have seen the word and not the thing. Columns are tactics, the adversary's goals, in the order a campaign tends to need them; cells are techniques, the behaviors that achieve a goal; the expanded Execution column shows the third level, sub-techniques, under Command and Scripting Interpreter; procedures are the documented ways a named group or tool did it and live on the technique pages, not on the matrix. The count under each header is the real number of techniques in that tactic in the version named at the bottom, v20.0, released 13 October 2026; say that the matrix moves, fifteen tactics since April 2026 when Defense Evasion split into Stealth and Defense Impairment, and that the new Defense Impairment column already has a sub-technique for impairing autonomous defenses; the slide shows a few per column and says how many more there are. Hover any cell for its ID.</p>
 <p>Then press Next: a classic trojan of the first two periods lights up as a path, numbered in attack order: a phished attachment the user opens, a packed binary that injects into another process, a Run key for persistence, HTTP command and control, and encryption for impact. Seven techniques across seven tactics. Process Injection lights in two columns because the same behavior serves more than one goal, which is the matrix's point. Say that this path, not the word trojan or a family name, is what a defender can write detections against, and that every lit cell is a sensor question for Part 2. The recurring PowerShell scenario is deliberately not shown here: it is the exercise two slides on, and students should meet the empty matrix with only this example behind them.</p>
 <p>Then the quote. Family names and broad categories remain useful for attribution, intelligence, and communication. They do not directly identify which telemetry, detection logic, or mitigation a defender needs, and behavioral descriptions survive when attackers swap one tool for another that implements the same capability. ATT&amp;CK gives that description a shared structure.</p>

@@ -1,6 +1,6 @@
 # Slide 13 — 2023–2026: hands-on hacking, edge devices, and agents
 
-**Timing:** 26–30 minutes  
+**Timing:** 25–29 minutes  
 **Module:** From malicious programs to adversarial capabilities
 
 ## On-slide content

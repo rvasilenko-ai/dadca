@@ -1,6 +1,6 @@
 # Slide 5 — Part 1: how the malicious capability outgrew the file
 
-**Timing:** 6–7 minutes  
+**Timing:** 5–6 minutes  
 **Module:** From malicious programs to adversarial capabilities
 
 ## On-slide content
@@ -13,8 +13,8 @@
 
 | Minutes | Module |
 | --- | --- |
-| 7–32 | From malicious programs to adversarial capabilities: four periods, 2000 to 2026 |
-| 32–45 | ATT&CK as a language for behavior |
+| 6–31 | From malicious programs to adversarial capabilities: four periods, 2000 to 2026 |
+| 31–45 | ATT&CK as a language for behavior |
 
 Why malware came to mean a file. Then the whole span and four periods, each read across five tracks: motive and money, attackers, the operating system, the internet, and the security products of the same years. Then ATT&CK, a vocabulary for behavior, because the file stopped being the only unit. The file itself never left; it stopped being the only carrier.
 

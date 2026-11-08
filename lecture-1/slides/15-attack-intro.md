@@ -1,6 +1,6 @@
 # Slide 15 — MITRE ATT&CK: what it is
 
-**Timing:** 32–34 minutes
+**Timing:** 31–33 minutes
 **Module:** ATT&CK as a language for behavior
 
 ## On-slide content

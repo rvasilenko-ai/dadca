@@ -1,6 +1,6 @@
 # Slide 14 — What broke the file-centric model, and when
 
-**Timing:** 30–32 minutes  
+**Timing:** 29–31 minutes  
 **Module:** From malicious programs to adversarial capabilities
 
 ## On-slide content

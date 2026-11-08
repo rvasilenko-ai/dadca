@@ -1,6 +1,6 @@
 # Slide 8 — Why files became the unit of detection
 
-**Timing:** 10–12 minutes  
+**Timing:** 9–11 minutes  
 **Module:** From malicious programs to adversarial capabilities
 
 ## On-slide content
