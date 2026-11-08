@@ -17,7 +17,7 @@
 | challenge | Encryption removed the payload (HTTPS by default, 2015 onward), the certificate (TLS 1.3, 2018), the lookup (DoH, 2018 onward) and the server name (ECH, browsers 2023) | Lower specificity; east-west SMB, Kerberos, LDAP and scanning still visible; plaintext survives on the endpoint |
 
 > The sensor stayed where it was. Extraction failed, and everything below it was rebuilt on metadata or moved to the endpoint.
-> Scenario check: the network sees a TLS connection to an unfamiliar host and, with DNS over HTTPS, not even the lookup; the shellcode download and the document upload are inside the tunnel. The endpoint sees the process that opened the connection and the plaintext before encryption.
+> Scenario check: three moments cross the network, the driver download, the implant download and the document upload. All inside TLS, and with DNS over HTTPS even the lookups are hidden, so a content signature matches nothing. What remains: the connections to unfamiliar hosts, their timing and reputation, and, behind a decryption proxy, the payloads. The endpoint sees the plaintext before encryption.
 
 ## Talking points
 
@@ -38,11 +38,11 @@ Defenders had three responses:
 
 Be precise about what survived. East-west internal traffic is often still plaintext or inspectable: SMB, Kerberos, LDAP, and remote-management protocols, which is exactly where lateral movement and credential abuse happen. Scanning, DNS without encryption, and beacon timing remain visible. North-south payload signatures are what lost most of their value without decryption. The XCPE takedown of November 2026 is this lineage working: a firmware botnet in 1.3 million set-top boxes, which no endpoint agent could see, was found from the network side by a home-WiFi vendor and a carrier's research team, and taken down at its control domains.
 
-In the recurring scenario, TLS may conceal the downloaded payload and the uploaded content from an intermediate network sensor. The endpoint may still observe PowerShell, the network retrieval, the document access and the memory activity; metadata and endpoint context answer different questions and often with lower specificity.
+In the recurring scenario the implant download and the uploaded documents are the two beats a network sensor gets a chance at; TLS conceals their content from an intermediate sensor, but the connections, their timing and the destination reputation remain, and a decryption proxy restores the payload. The endpoint still observes PowerShell, the downloads, the document access and the memory activity; metadata and endpoint context answer different questions and often with lower specificity.
 
 ## Interaction
 
-Ask whether the organization in the recurring scenario would see the shellcode download or the document upload from a network sensor, then what it would see from the endpoint; the last Next shows the answer.
+Ask whether the organization would see the implant download or the document upload from a network sensor, then what it would see from the endpoint; the last Next shows the answer.
 
 ## Transition
 

@@ -1,11 +1,13 @@
 <h2 class="title">Map an attack with no malware file</h2>
-<blockquote class="callout question"><p>Using a stolen administrator account, an attacker remotely launches PowerShell with an inline command. The command retrieves encoded, position-independent shellcode, decodes it in memory, and transfers control to it. The payload enumerates documents, compresses selected content in memory, and uploads it over HTTPS.</p></blockquote>
+<blockquote class="callout question"><p>Using a stolen administrator account, an attacker runs PowerShell. A script downloads a legitimate, signed but vulnerable kernel driver, loads it, and uses it to disable the endpoint protection and antivirus from the kernel. It then downloads a memory-only implant and injects it into explorer.exe. The implant enumerates documents, compresses selected content, and uploads it over HTTPS.</p></blockquote>
 <div class="attack" data-attack>
 <div class="am-host"></div>
 <span class="fragment attack-step" data-light="T1078" aria-hidden="true"></span>
-<span class="fragment attack-step" data-light="T1021" aria-hidden="true"></span>
 <span class="fragment attack-step" data-light="T1059.001,T1027.010" aria-hidden="true"></span>
-<span class="fragment attack-step" data-light="T1620" aria-hidden="true"></span>
+<span class="fragment attack-step" data-light="T1068" aria-hidden="true"></span>
+<span class="fragment attack-step" data-light="T1685" aria-hidden="true"></span>
+<span class="fragment attack-step" data-light="T1105" aria-hidden="true"></span>
+<span class="fragment attack-step" data-light="T1055,T1620" aria-hidden="true"></span>
 <span class="fragment attack-step" data-light="T1083,T1005,T1560" aria-hidden="true"></span>
 <span class="fragment attack-step" data-light="T1071.001,T1041" aria-hidden="true"></span>
 </div>

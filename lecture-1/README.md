@@ -30,11 +30,11 @@ Per-slide timings sum to 80 minutes and already include the three exercises and 
 
 ## Recurring scenario
 
-Using a stolen administrator account, an attacker remotely launches PowerShell with an inline command. The command retrieves encoded, position-independent shellcode, decodes it in memory, and transfers control to it. The payload enumerates documents, compresses selected content in memory, and uploads it over HTTPS.
+Using a stolen administrator account, an attacker runs PowerShell. A script downloads a legitimate, signed but vulnerable kernel driver, loads it, and uses it to disable the endpoint protection and antivirus from the kernel. It then downloads a memory-only implant and injects it into explorer.exe. The implant enumerates documents, compresses selected content, and uploads it over HTTPS.
 
-No malicious executable is written to disk, and the in-memory payload is not organized as a PE or ELF file. Other evidence still exists: authentication records, command-line and PowerShell telemetry, network activity, memory state, file access, and follow-on behavior.
+The only file written to disk is a legitimate, signed driver; the malicious capability, disabling the defenses and the in-memory implant, never appears as a malware file. Other evidence still exists: authentication records, PowerShell and command-line telemetry, the driver load and the kernel tampering, the implant and exfiltration network flows, memory state, injection, and file access.
 
-The scenario is situation 2 of the opening vote written out in full, and it is the standard tradecraft of the 2017–2022 period. The same scenario is used for ATT&CK mapping, the sandbox and EDR comparison, memory visibility, encrypted-traffic analysis, and pipeline diagnosis.
+The scenario is situation 2 of the opening ladder taken further, standard tradecraft from 2017 with BYOVD (2022) and defense impairment (2026) folded in. The same scenario runs through ATT&CK mapping, the sandbox and EDR comparison, memory visibility, encrypted-traffic analysis, and pipeline diagnosis.
 
 ## Two parts, two threads
 
