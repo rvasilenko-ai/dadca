@@ -20,6 +20,12 @@ Principal Engineer, Cisco Talos
 Publications: SCRUTINIZER (code reuse in malware via decompilation and machine learning), DEEPCAPA (malicious capabilities in Windows malware). Five patents in threat and malware detection technology.  
 ITMO University, Information Security, 2005–2011. Taught "Introduction to Malware Research" at Saint Petersburg State University, 2011–2012.
 
+## Talking points
+
+- Twenty years on the detection side: antivirus engines, a sandbox company, network detection, breach simulation, Talos.
+- The table is this lecture's periods read as a career; the sandbox years are the ones that matter here.
+- Errors are mine; corrections are welcome through the repository.
+
 ## Speaker notes
 
 One minute. The table is the lecture's own periods read as a career, and that is the only point to make. The 2007–2012 row is the executable era from inside two antivirus engines: unpacking, polymorphic viruses, and the reputation-based detection that server-side polymorphism forced on the industry (slide 10). The Lastline row is the sandbox era from inside the sandbox: the product this lecture says peaked around 2016 and was starved by 2020 (slides 11 and 21). The VMware row is the network side of the same story, NDR built for a world where payload inspection had stopped working (slide 22). The Mandiant row is assume-breach made into a product: simulate the attack and check whether the control sees it. The Talos row is Lectures 2 and 3.

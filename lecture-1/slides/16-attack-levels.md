@@ -13,6 +13,13 @@ Then a classic trojan of the first two periods lit as a path across it: Spearphi
 
 > “Trojan” says less than this path: seven techniques across seven tactics, no family name, and every lit cell is a place a sensor could look.
 
+## Talking points
+
+- Columns are tactics (goals), cells are techniques (behaviors); the expanded column shows sub-techniques; procedures live on the technique pages.
+- The matrix moves: fifteen tactics since April 2026.
+- Next: a classic trojan as a path, seven techniques across seven tactics; Process Injection lights twice because one behavior serves two goals.
+- The path, not a family name, is what detections are written against; every lit cell is a sensor question for Part 2.
+
 ## Speaker notes
 
 Start with the matrix itself, because most students have seen the word and not the thing. Columns are tactics, the adversary's goals, in the order a campaign tends to need them; cells are techniques, the behaviors that achieve a goal; the expanded Execution column shows the third level, sub-techniques, under Command and Scripting Interpreter; procedures are the documented ways a named group or tool did it and live on the technique pages, not on the matrix. The count under each header is the real number of techniques in that tactic in the version named at the bottom, v20.0, released 13 October 2026; say that the matrix moves, fifteen tactics since April 2026 when Defense Evasion split into Stealth and Defense Impairment, and that the new Defense Impairment column already has a sub-technique for impairing autonomous defenses; the slide shows a few per column and says how many more there are. Hover any cell for its ID.

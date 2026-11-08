@@ -5,7 +5,7 @@
 
 ## On-slide content
 
-> Where does malware stop? Raise your hand at the last rung you would still call malware.
+> Where does malware stop?
 
 A ladder of five situations, ordered by distance from the file, "the file" at the top and "no file" at the bottom:
 
@@ -14,6 +14,13 @@ A ladder of five situations, ordered by distance from the file, "the file" at th
 3. A Portable Executable image exists only in process memory.
 4. An attacker controls a legitimate remote-management tool.
 5. Repository instructions cause a coding agent to exfiltrate secrets.
+
+## Talking points
+
+- Read the five rungs aloud, then one show of hands: the last rung you would still call malware.
+- Expect clusters at the top and the bottom and hesitation at rung 3; do not resolve it.
+- One student from each end: what decided it? Usually "there is a file" against "someone is doing harm".
+- Hold the disagreement; Part 1 ends by naming what it was about.
 
 ## Speaker notes
 

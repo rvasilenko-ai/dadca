@@ -23,7 +23,7 @@ Then open `lecture-1/deck/index.html` in a browser. Everything is local: reveal.
 | B | blank the screen |
 | ? | keyboard help |
 
-Speaker notes carry the planned minutes for each slide at the top, then the speaker notes, interaction, transition and sources from the markdown.
+Speaker notes carry the planned minutes for each slide at the top, then the talking points, speaker notes, interaction, transition and sources from the markdown. Every slide also has a collapsed Talking points button in its footer row, next to the Sources button where there is one.
 
 ## Interactive parts
 
@@ -57,7 +57,7 @@ Each slide is one markdown file, `slides/NN-slug.md`, numbered in presentation o
 - `# Slide N — Title` as its first line;
 - `**Timing:** a–b minutes` and `**Module:** …` as the next two lines;
 - `## On-slide content` (a markdown subset: headings, lists, tables, `>` callouts, fenced text blocks);
-- `## Speaker notes`, optionally `## Interaction`, then `## Transition` (the sentence that hands over to the next slide) and `## Sources` when the slide makes source-dependent claims.
+- `## Talking points` (three to five bullets the presenter can glance at; they open from a button on the slide and head the speaker notes), `## Speaker notes`, optionally `## Interaction`, then `## Transition` (the sentence that hands over to the next slide) and `## Sources` when the slide makes source-dependent claims.
 
 The era slides use a `| Track | Headline |` table plus a `### Detail` table; the lineage slides a `| Stage | … |` table; the options slide a `| Stage | Option | What it captures | What it misses |` table. The build turns each into its interactive layout.
 

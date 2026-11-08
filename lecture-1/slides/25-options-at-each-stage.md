@@ -57,7 +57,14 @@
 | response | Patch and reconfigure | Closes the entry | Change windows |
 | response | Revoke an agent's tools or authority | Stops a hijacked agent | Depends on harness support |
 
-> Every stage has options, and every line here is a product of the history you just saw: the sensor and extraction rows changed most. The exercise answers are on this slide.
+> Every stage has options, and every line here came from that history; the sensor and extraction rows changed most.
+
+## Talking points
+
+- Do not read every card; step to two stages, sensor and response, and name one trade-off for each of the others.
+- Each product class in the lineages is one or two lines here; the history is the industry adding lines.
+- Signatures and machine learning are not file-only methods; the public evidence base is.
+- Use the panel to answer "why not just do X": X is a row, with its blind spot in the last column.
 
 ## Speaker notes
 

@@ -20,7 +20,14 @@
 
 > EDR is not a next-gen antivirus. It is a different control, built on the assumption that prevention will fail.
 > Each generation judges one unit of evidence: an object before it runs, an object in detonation, activity on the host.
-> Scenario check, the PowerShell attack from slide 18: antivirus sees a process start and a command line it cannot judge alone; the sandbox receives nothing to detonate; EDR records the command line, the memory region, the document reads and the upload, and still has no single event that says malicious.
+> Scenario check, the PowerShell attack from the exercise: antivirus sees a process start and a command line it cannot judge alone; the sandbox receives nothing to detonate; EDR records the command line, the memory region, the document reads and the upload, and still has no single event that says malicious.
+
+## Talking points
+
+- Three generations and nothing retired: today's agent is EDR with the antivirus engine inside and a sandbox both call.
+- Antivirus to sandbox: extraction and detection failed on packed and novel files, so run the file instead of parsing it; the sandbox has no sensor of its own.
+- Sandbox to EDR: nothing arrives to detonate; same sensor, same collection, but forwarded, retained and correlated; assume breach.
+- Starved by is each generation's exit; the scenario check on the last step says what each would have captured.
 
 ## Speaker notes
 

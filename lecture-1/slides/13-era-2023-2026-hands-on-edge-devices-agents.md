@@ -27,6 +27,13 @@ Behind the details button; the speaker notes pick from it.
 | **Internet** | Encrypted Client Hello: in browsers since 2023, standardized in 2026, server-side adoption still narrow. AI assistants in browsers, IDEs and SaaS; tool-using agents and agent protocols (2024–26). SaaS-to-SaaS integrations and OAuth sprawl. Data lives behind APIs. Collaboration tools are the new mail: phishing and fake help-desk calls through Teams (2023–24), payloads on Discord's network until its links expired (2023). |
 | **Security products** | Identity threat detection and response. EDR tamper protection and, after the CrowdStrike outage (2024), endpoint security moving out of the kernel. Baselining for living-off-the-land detection. LLM triage in the SOC; agentic malware analysis (Project Ire, 2025). ATT&CK adds Defense Impairment (April 2026) and Impair Autonomous Defenses (October 2026). Guardrails, prompt-injection defenses, agent observability. |
 
+## Talking points
+
+- Default story: Volt Typhoon (a whole campaign on built-in tools); Scattered Spider (a phone call, not an exploit); the agent incidents (an instruction in data as the executable).
+- Say "no malware file", never "no malware".
+- What did not leave: most campaigns still start with a file; implants in Go, Rust and .NET, some with an LLM call inside.
+- XCPE: the botnet-for-hire model of 2005 on devices no one patches; found from the network, answered by the platform owner.
+
 ## Speaker notes
 
 The timeline is zoomed to this period: the labelled dots are the key events, the small dots are the rest and show their date on hover. Say the five headlines, then tell two or three of the labelled events as one story. The detail chips are behind the details button, which swaps the timeline out for them; they are for questions, not for reading aloud.

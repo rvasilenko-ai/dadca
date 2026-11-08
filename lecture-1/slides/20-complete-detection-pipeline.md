@@ -5,7 +5,7 @@
 
 ## On-slide content
 
-> Part 1 closed with four questions about the thing itself: what it is, what it can do, who controls it, whose objective it serves. Part 2 asks the fifth: what can a sensor see of any of that, and what has to happen before a detector sees anything?
+> What can a sensor see, and what has to happen before a detector sees anything?
 
 ```text
 activity
@@ -21,9 +21,15 @@ activity
 
 > A detector cannot reason about evidence it never receives.
 
+## Talking points
+
+- Open with the hinge: four questions about the thing in Part 1; the fifth, what a sensor can see, is Part 2.
+- Eight stages, one question each; a legend for everything that follows, so do not belabor it.
+- A detector cannot reason about evidence it never receives.
+
 ## Speaker notes
 
-The opening callout is the hinge between the parts. Part 1's four questions are about the thing; every defender is limited by a fifth, what the system can actually observe, and the history of detection products is the history of that question. Every slide from here to the exercise asks what a sensor could see, and the eight stages are the vocabulary for the answers; do not belabor them, they are a legend for everything that follows.
+Open with the hinge, spoken: Part 1 closed with four questions about the thing itself, what it is, what it can do, who controls it, whose objective it serves, and Part 2 asks the fifth. Part 1's four questions are about the thing; every defender is limited by a fifth, what the system can actually observe, and the history of detection products is the history of that question. Every slide from here to the exercise asks what a sensor could see, and the eight stages are the vocabulary for the answers; do not belabor them, they are a legend for everything that follows.
 
 Define the stages:
 

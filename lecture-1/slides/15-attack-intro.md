@@ -13,7 +13,13 @@
 | Procedure examples from documented campaigns; groups, software (malware and tools), campaigns | Mapping what a detection pipeline covers, and where the gaps are | An order of attack: tactics are goals, not steps |
 | Mitigations, data sources and detections for each technique | Structuring threat intelligence, red and purple teaming, product comparison in ATT&CK Evaluations | Evidence: a technique ID names a behavior, it does not observe one |
 
-> ATT&CK names behaviors. Observing them is the detection pipeline's job, and that is Part 2.
+> ATT&CK names behaviors. Observing them is the detection pipeline's job.
+
+## Talking points
+
+- A knowledge base of observed adversary behavior, free, versioned every April and October.
+- Walk the three columns once: what is in it, what it is for, what it is not.
+- A technique ID names a behavior; it is not evidence that the behavior happened.
 
 ## Speaker notes
 

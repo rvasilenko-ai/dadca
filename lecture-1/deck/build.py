@@ -38,7 +38,7 @@ TRACK_KEYS = {
     "Internet": "internet",
     "Security products": "products",
 }
-SECTION_NAMES = ["On-slide content", "Speaker notes", "Interaction", "Transition", "Sources"]
+SECTION_NAMES = ["On-slide content", "Talking points", "Speaker notes", "Interaction", "Transition", "Sources"]
 MODULE_SLUGS = {
     "Where is the malware?": "m1",
     "From malicious programs to adversarial capabilities": "m2",
@@ -380,9 +380,20 @@ def render_sources(slide: dict) -> str:
             f'<div class="panel">{md_to_html(src)}</div></details>')
 
 
+def render_talking_points(slide: dict, with_sources: bool) -> str:
+    """A collapsed on-slide list of the slide's talking points, next to the sources button when there is one."""
+    tp = slide.get("talking_points") or ""
+    if not tp.strip():
+        return ""
+    cls = "srcs talk with-srcs" if with_sources else "srcs talk"
+    return f'<details class="{cls}"><summary>Talking points</summary><div class="panel">{md_to_html(tp)}</div></details>'
+
+
 # --------------------------------------------------------------------------- notes
 def render_notes(slide: dict) -> str:
     bits = [f'<p class="plan"><strong>Planned {slide["timing"]}</strong> · {html.escape(slide["module"])}</p>']
+    if slide.get("talking_points"):
+        bits.append("<h4>Talking points</h4>" + md_to_html(slide["talking_points"]))
     if slide.get("speaker_notes"):
         bits.append(md_to_html(slide["speaker_notes"]))
     if slide.get("interaction"):
@@ -418,6 +429,7 @@ def render_slide(slide: dict) -> str:
     else:
         body = auto
         heading = f'<h2 class="title">{inline(slide["title"])}</h2>'
+    body += render_talking_points(slide, 'class="srcs"' in body)
     return (
         f'<section class="slide s{n} k-{slide["file_slug"]} {slide["slug"]}" data-slide="{n}" data-module="{html.escape(slide["module"])}" '
         f'data-timing="{html.escape(slide["timing"])}">\n{heading}\n<div class="body">\n{body}\n</div>\n'

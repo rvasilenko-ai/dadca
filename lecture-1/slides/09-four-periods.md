@@ -16,6 +16,13 @@ Five tracks per period: motive and money, attackers, operating system, internet,
 
 > Four periods, one question for each: where did the capability go, and why did it move?
 
+## Talking points
+
+- Two minutes for the shape: five lanes, four periods, a few anchors some students will recognise.
+- Name the lanes starting with money; read the four period names; one sentence per card.
+- Periods are of dominant tradecraft, not incidents; boundaries are soft by a year or two.
+- Say once that the operating-system track follows the Windows enterprise endpoint.
+
 ## Speaker notes
 
 Two minutes, and the purpose is the shape, not the content. Point at the five lanes and name them, starting with motive and money because it explains the other four. Then read the four period names left to right and say one sentence per period from the cards. Do not read the labelled dots; they are anchors some students will recognise (Windows XP, Storm, Stuxnet, CryptoLocker, NotPetya, SolarWinds, Volt Typhoon) and they are there so the zoomed slides that follow have a reference.

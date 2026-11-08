@@ -16,6 +16,13 @@ Below the scenario, the ATT&CK matrix, empty. Map in pairs: artifacts, tools, te
 5. File and Directory Discovery (T1083), Data from Local System (T1005), Archive Collected Data (T1560)
 6. Web Protocols (T1071.001), Exfiltration Over C2 Channel (T1041)
 
+## Talking points
+
+- Situation 2 from the ladder written out; the standard tradecraft of 2017 to 2022.
+- Two minutes in pairs with the empty matrix, then reveal the six steps; reward arguments about the mechanism.
+- No executable on disk, but evidence exists: command text, encoded bytes, HTTPS, system events.
+- Close the vote in speech: all five are malware; the room answered four different questions; Part 2 asks the fifth.
+
 ## Speaker notes
 
 This is situation 2 from the opening vote written out in full, and it is the standard tradecraft of the 2017–2022 period on slide 12. No malicious executable is written to disk, and the in-memory payload is not organized as a PE or ELF file. Do not say that no evidence or representation exists: the command is text, the payload is encoded bytes, HTTPS and compression have formats, and multiple system events may be produced.

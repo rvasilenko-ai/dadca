@@ -18,6 +18,11 @@
 
 The pipeline and its stages. The host and the network pipelines rebuilt generation by generation. Every change from Part 1, the stage it broke and the product that answered. The menu today, and six misses to diagnose.
 
+## Talking points
+
+- Part 1 described the attack; Part 2 is how the pipeline was built and had to change, history first.
+- The PowerShell scenario is the test case; each lineage ends with what its generations would have captured of it.
+
 ## Speaker notes
 
 One sentence. Part 1 described the attack; Part 2 is the design and evolution of the detection pipeline, history first: the stages, the two pipelines rebuilt generation by generation, the stage each change broke, the menu as it stands today, and six misses. The recurring PowerShell scenario from the exercise is the test case: each lineage ends with what its generations would have captured of it.

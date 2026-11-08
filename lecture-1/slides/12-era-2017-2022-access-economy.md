@@ -27,6 +27,13 @@ Behind the details button; the speaker notes pick from it.
 | **Internet** | HTTPS passes 90 percent of page loads for US Firefox users (2020) and for Chrome on Windows (2021). TLS 1.3 (2018), DNS over HTTPS (2018 onward). Flash end of life (2020). Cloud-first; remote work (2020). The identity provider is the perimeter; OAuth tokens and SaaS everywhere. MFA mainstream but phishable. |
 | **Security products** | EDR mainstream, measured technique by technique in the ATT&CK Evaluations (2018), then XDR (detection across host, network and identity) and managed detection. NDR (network detection and response) and TLS fingerprinting (JA3, 2017). TLS inspection, SASE and zero trust (NIST SP 800-207, 2020). Sandboxes bundled and commoditized; FireEye sells its products business (2021). Cloud SIEM, CASB. Identity threat detection emerges. |
 
+## Talking points
+
+- Default story: NotPetya (state capability spills over); Ryuk, Maze and Colonial Pipeline (the organization pays, then pays not to be published); SolarWinds and the BYOVD wave (trusted channels, the winning control attacked).
+- Fileless became ordinary: malware-free detections from 40 percent in 2018 to 79 percent in 2024.
+- The commodity was access, because access is what the payout required.
+- Edge appliances were already an entry point from 2019; implants move to Go and Rust.
+
 ## Speaker notes
 
 The timeline is zoomed to this period: the labelled dots are the key events, the small dots are the rest and show their date on hover. Say the five headlines, then tell two or three of the labelled events as one story. The detail chips are behind the details button, which swaps the timeline out for them; they are for questions, not for reading aloud.

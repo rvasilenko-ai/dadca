@@ -18,11 +18,18 @@
 
 > Working definition. Malware is the malicious capability, whatever carries it.
 
-Why malware came to mean a file. Then the whole span and four periods, each read across five tracks: motive and money, attackers, the operating system, the internet, and the security products of the same years. Then ATT&CK, a vocabulary for behavior, because the file stopped being the only unit. The file itself never left; it stopped being the only carrier.
+Why malware came to mean a file. Four periods, 2000 to 2026, each read across five tracks: motive and money, attackers, the operating system, the internet, security products. Then ATT&CK, a vocabulary for behavior.
+
+## Talking points
+
+- Say the working definition: malware is the malicious capability, whatever carries it.
+- Part 1 is the attacker's side: what was delivered, why, and what changed around it.
+- The file stopped being the only unit and never left; say it, do not show it.
+- Products stay in their track on the period slides; Part 2 opens them up.
 
 ## Speaker notes
 
-One sentence, plus the definition, because the rest of Part 1 uses it: malware is the capability, and the file is one carrier of it. Part 1 is about the attacker's side: what was delivered, why, and what changed around it. Keep the defensive products in their track on the period slides but do not open them up yet; Part 2 is where each product class gets its own treatment.
+One sentence, plus the definition, because the rest of Part 1 uses it: malware is the capability, and the file is one carrier of it. Part 1 is about the attacker's side: what was delivered, why, and what changed around it. Say, do not show: the file stopped being the only unit, and it never left; it stopped being the only carrier. Keep the defensive products in their track on the period slides but do not open them up yet; Part 2 is where each product class gets its own treatment.
 
 ## Transition
 

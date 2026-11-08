@@ -14,6 +14,12 @@
 | Spyware | Collects information |
 | Rootkit | Conceals or preserves privileged access |
 
+## Talking points
+
+- The categories describe different dimensions: presentation (trojan), propagation (worm), capability (backdoor), concealment (rootkit).
+- One specimen can sit in several categories at once.
+- Ask where ransomware belongs: artifact type, propagation, capability or objective?
+
 ## Speaker notes
 
 The categories describe different dimensions. “Trojan” concerns presentation, “worm” propagation, “backdoor” capability, and “rootkit” concealment. A single specimen can occupy several categories simultaneously.

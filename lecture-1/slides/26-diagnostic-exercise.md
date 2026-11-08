@@ -35,6 +35,13 @@ For each:
 - What additional evidence is needed?
 - Would retraining help?
 
+## Talking points
+
+- Hands per case in the pipeline's words, then reveal with Next.
+- A and B are sensor failures, C representation or classifier, D investigation, E decision, F response.
+- Only some misses are repaired by retraining; name the failed stage before proposing a bigger model.
+- A detection is not an outcome: half of the misses happened after a correct detection.
+
 ## Speaker notes
 
 Expected emphasis:

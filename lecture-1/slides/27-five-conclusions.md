@@ -13,6 +13,13 @@
 
 > Better reasoning cannot recover evidence that was never observed or was destroyed during representation.
 
+## Talking points
+
+- Recall the close of the vote in one sentence.
+- Five conclusions: the capability outgrew the file and the file stayed; software identity is not behavior; detection begins with visibility; one unit of evidence per product; a detection is not an outcome.
+- Better reasoning cannot recover evidence never observed; Lecture 3 opens with the prioritization that follows.
+- End by asking the room what the next sensor will have to see.
+
 ## Speaker notes
 
 Recall the close of the vote from slide 18 in one sentence before the conclusions: all five situations were malicious capability in use; they differed in the artifact, in who controlled it and whose objective it served, and in which sensor could see it, which is why the room disagreed and why the lecture spent its time on evidence rather than on a definition.

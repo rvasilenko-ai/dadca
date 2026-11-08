@@ -27,6 +27,13 @@ Behind the details button; the speaker notes pick from it.
 | **Internet** | Broadband replaces dial-up. IE6, ActiveX, Flash, Java and Acrobat plugins. HTTP in plaintext; HTTPS only for login and payment. Email is the delivery channel. |
 | **Security products** | Signature antivirus, then heuristics and emulation to see through packers. Outlook (2000) and mail gateways, then Gmail (2004, zips included), block executable attachments; messengers filter unsafe transfers after the 2005 IM worms; Office macro security ends the first script wave. Personal firewalls and HIPS. Anti-spam gateways. Network intrusion detection and prevention (IDS/IPS) on plaintext traffic. Cloud reputation and file prevalence arrive at the end of the decade. |
 
+## Talking points
+
+- Default story: Windows XP as administrator; the IRC botnets and the Ancheta case (machines as inventory); Storm and Artemis (a unique binary per victim, reputation in the cloud).
+- Motive explains the volume: notoriety to fraud and extortion; the machine, its bandwidth and what it types are the product.
+- Worms until SP2 turned the firewall on; botnets after.
+- Each block of the executable got an answer within months: archives, links, exploit documents.
+
 ## Speaker notes
 
 The timeline is zoomed to this period: the labelled dots are the key events, the small dots are the rest and show their date on hover. Say the five headlines, then tell two or three of the labelled events as one story. The detail chips are behind the details button, which swaps the timeline out for them; they are for questions, not for reading aloud.

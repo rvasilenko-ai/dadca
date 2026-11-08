@@ -11,6 +11,12 @@ How malware and malicious capabilities evolved, and how detection pipelines evol
 
 Malware and AI, Lecture 1 of 3
 
+## Talking points
+
+- Lecture 1 of 3: how malware and the capabilities behind it evolved, and how detection pipelines evolved with them.
+- Two parts, the attacker's side then the defender's, with one recurring scenario running through both.
+- No prior knowledge of PE internals, ATT&CK or machine learning assumed; every term is defined at first use.
+
 ## Speaker notes
 
 Title only; the opening question is asked on slide 3 with the vote. One sentence on what the lecture does: it follows the malicious capability as it moved out of the executable file over twenty-five years, and follows the defensive sensor as it was forced to move after it. One sentence on what it does not do: the detectors themselves, the machine learning and the LLM analyst, are Lecture 3; the agent as attacker is Lecture 2. Then move to the vote.

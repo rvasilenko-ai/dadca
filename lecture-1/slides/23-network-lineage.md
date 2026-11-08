@@ -19,6 +19,13 @@
 > The sensor stayed where it was. Extraction failed, and everything below it was rebuilt on metadata or moved to the endpoint.
 > Scenario check: the network sees a TLS connection to an unfamiliar host and, with DNS over HTTPS, not even the lookup; the shellcode download and the document upload are inside the tunnel. The endpoint sees the process that opened the connection and the plaintext before encryption.
 
+## Talking points
+
+- The twin of the host table with one difference: the sensor stayed where it was and extraction failed.
+- Three responses: decrypt in the middle, move to metadata, move the sensor to the endpoint.
+- What survived: east-west protocols, scanning, beacon timing, and the plaintext on the endpoint.
+- Ask what the network sees of the scenario, then the endpoint; the last Next shows it.
+
 ## Speaker notes
 
 Read the table as the twin of the host and file table, with one difference: the sensor row stayed where it was. What failed was extraction. The appliance still sees every packet and can no longer open them, so everything below extraction had to be rebuilt on metadata, and the content-level questions moved to the endpoint and the identity provider. What encryption hides from payload inspection (strings, transferred code and documents, application commands, content signatures, archive contents) remains observable somewhere else: endpoints and DNS activity, timing and volume, TLS properties, the process-to-connection relationship, and the plaintext on the endpoint itself. Next and Previous step through the stages one at a time, with the two eras side by side; clicking a stage on the strip jumps to it, and the table button shows the whole matrix.

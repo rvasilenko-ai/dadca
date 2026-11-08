@@ -406,3 +406,10 @@ html, body { background: var(--bg); color: var(--ink); }
 .reveal .k-legitimate-software-adversarial-outcome dt { color: var(--ink-3); font-weight: 600; }
 .reveal .k-legitimate-software-adversarial-outcome dd { margin: 0; }
 .reveal .k-legitimate-software-adversarial-outcome blockquote.callout.fragment { font-size: 0.85em; margin-top: 0.6em; }
+
+/* talking points: a second collapsed panel in the footer row, left of the sources button when both exist */
+.reveal details.talk { right: 118px; }
+.reveal details.talk.with-srcs { right: 254px; }
+.reveal details.talk .panel { width: 760px; columns: 1; font-size: 0.62em; line-height: 1.4; }
+.reveal details.talk .panel ul { margin: 0; padding-left: 1.1em; }
+.reveal details.talk .panel li { margin-bottom: 6px; }

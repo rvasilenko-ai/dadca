@@ -13,6 +13,11 @@ malicious executable
 
 The suspicious object is persistent, transferable, and available for analysis.
 
+## Talking points
+
+- A useful simplification, not a mistake: when a stable file carries the capability, defenders can intercept, retain, hash, label and share it.
+- The model assumes the carrier is always a file, which was nearly true for fifteen years.
+
 ## Speaker notes
 
 Present this as a useful simplification, not an ignorant historical mistake. When a stable file carries the capability, defenders can intercept it before execution, retain it, hash it, label it, and share it. Note that the model assumes the carrier of the capability is always a file, which was nearly true for fifteen years; the four periods show the capability outgrowing it.

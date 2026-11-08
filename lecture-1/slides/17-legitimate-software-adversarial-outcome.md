@@ -18,6 +18,13 @@ Two case cards, revealed one at a time with Next, built from the same four lines
 
 > As files, both are identical to their legitimate copies. What makes them malicious lives outside the file: who is in control and to what end, and, for the driver, what its flaw lets them do.
 
+## Talking points
+
+- Same tool, different procedures; same technique, different tools.
+- Card one: a remote-management tool, which differs from legitimate use only in who controls it and to what end.
+- Card two: a signed vulnerable driver, which differs also in what its flaw lets the holder do.
+- Neither differs as a file; a file classifier sees two clean, signed programs.
+
 ## Speaker notes
 
 Open with the first sentence on the slide, which replaces a slide of its own: ATT&CK lists software, malware and tools alike, apart from the techniques, and connects them through documented procedures. The same tool appears in different procedures (PowerShell retrieving content, a scheduler starting a payload at logon) and the same technique is realized by different tools (an implant, an operating-system utility, a cloud API, a remote-management tool), so defenders usually detect some combination of tool identity, behavior, context and sequence. Then the two sharpest cases.

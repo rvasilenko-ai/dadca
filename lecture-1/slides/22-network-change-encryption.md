@@ -24,6 +24,12 @@ share of page loads over HTTPS
 
 > A payload signature cannot match content it never sees. The window has been closing one field at a time.
 
+## Talking points
+
+- Content rules were built for plaintext; in about five years encrypted page loads went from roughly 40 to roughly 90 percent.
+- Each protocol step removed one more field: the payload, the certificate, the lookup, the server name.
+- Two minutes: the curve, the four steps, the callout.
+
 ## Speaker notes
 
 Network intrusion detection and prevention systems were built when most web traffic was plaintext. Content rules matched exploit strings, downloaded executables, and command-and-control beacons in the payload. Let's Encrypt made certificates free and automated in late 2015, Chrome began marking every plaintext page "Not secure" in July 2018, and within about five years encrypted page loads went from about 40 percent to roughly 90 percent in the United States and on Chrome desktop. Firefox's global average plateaued in the low eighties because of its regional mix, which is why the slide names the browser and region for each figure. The figures were checked in October 2026 against Mozilla's ssl_ratios telemetry dataset and the Google Transparency Report data; Google's own publications gave 51 to 53 percent for Chrome on Windows in October 2016, so the slide rounds down.
