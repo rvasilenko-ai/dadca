@@ -8,12 +8,12 @@
 | Track | Headline |
 | --- | --- |
 | **Motive and money** | Notoriety gives way to fraud and extortion: the victim's machine, its bandwidth and what it types become the product. |
-| **Attackers** | Executables arrive by mail and by worm, then botnets; packers, rootkits and server-side polymorphism hide them. |
+| **Attackers** | Executables arrive by download, worm, USB or exploit, then botnets; packers and rootkits hide them. |
 | **Operating system** | Windows XP runs everyone as administrator with autorun on; SP2 and Vista start closing the host. |
 | **Internet** | Broadband and plaintext HTTP; email is the delivery channel and the browser is full of plug-ins. |
 | **Security products** | Signature antivirus learns emulation and reputation, mail gateways block executables, IDS reads plaintext payloads. |
 
-> The capability travelled as an executable: mailed to a user running as administrator, or carried by a worm exploiting an unpatched service, over an unencrypted network. The products of the decade inspected files and payloads.
+> The capability travelled as an executable, rarely as a plain attachment: downloaded by a link or a script, pushed by a worm through an unpatched service, carried on USB by autorun, dropped by a browser exploit. The user was an administrator, the network unencrypted, and the products of the decade inspected files and payloads.
 
 ### Detail
 
