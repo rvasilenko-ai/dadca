@@ -95,6 +95,8 @@ html, body { background: var(--bg); color: var(--ink); }
 .reveal .divider table { font-size: 0.62em; width: auto; min-width: 60%; }
 .reveal .divider table td:first-child { color: var(--ink-3); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .reveal .divider .part-lead { font-size: 0.72em; color: var(--ink-2); max-width: 32em; margin-top: 0.6em; }
+.reveal .divider .part-def { font-size: 0.8em; color: var(--ink); max-width: 32em; margin: 0.8em 0 0; }
+.reveal .divider .part-def + .part-lead { margin-top: 0.4em; }
 
 /* About me */
 .reveal .k-about-me table { font-size: 0.6em; }

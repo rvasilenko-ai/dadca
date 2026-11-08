@@ -130,13 +130,14 @@
 <tr><td>31–45</td><td>ATT&amp;CK as a language for behavior</td></tr>
 </tbody>
 </table>
+<p class="part-def"><b>Working definition.</b> Malware is the malicious capability, whatever carries it.</p>
 <p class="part-lead">Why malware came to mean a file. Then the whole span and four periods, each read across five tracks: motive and money, attackers, the operating system, the internet, and the security products of the same years. Then ATT&amp;CK, a vocabulary for behavior, because the file stopped being the only unit. The file itself never left; it stopped being the only carrier.</p>
 </div>
 
 </div>
 <footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 5–6</span></footer>
 <aside class="notes"><p class="plan"><strong>Planned 5–6 minutes</strong> · From malicious programs to adversarial capabilities</p>
-<p>One sentence. Part 1 is about the attacker's side: what was delivered, why, and what changed around it. Keep the defensive products in their track on the period slides but do not open them up yet; Part 2 is where each product class gets its own treatment.</p>
+<p>One sentence, plus the definition, because the rest of Part 1 uses it: malware is the capability, and the file is one carrier of it. Part 1 is about the attacker's side: what was delivered, why, and what changed around it. Keep the defensive products in their track on the period slides but do not open them up yet; Part 2 is where each product class gets its own treatment.</p>
 <h4>Transition</h4><p>“Start with the model everything else grew from.”</p></aside>
 </section>
 
@@ -147,12 +148,10 @@
     -&gt; user or system executes it
     -&gt; malicious behavior occurs</code></pre>
 <p>The suspicious object is persistent, transferable, and available for analysis.</p>
-<blockquote class="callout"><p>Working definition for this lecture: malware is the malicious capability. The file is one carrier of it, and this model assumes it is the only one.</p></blockquote>
 </div>
 <footer class="chrome"><span class="module">From malicious programs to adversarial capabilities</span><span class="timing">min 6–7</span></footer>
 <aside class="notes"><p class="plan"><strong>Planned 6–7 minutes</strong> · From malicious programs to adversarial capabilities</p>
-<p>Present this as a useful simplification, not an ignorant historical mistake. When a stable file carries the capability, defenders can intercept it before execution, retain it, hash it, label it, and share it.</p>
-<p>State the working definition now, because the rest of Part 1 uses it: malware is the capability, and the file is a carrier. The model on the slide assumes the carrier is always a file, which was nearly true for fifteen years, and the four periods show the capability leaving it.</p>
+<p>Present this as a useful simplification, not an ignorant historical mistake. When a stable file carries the capability, defenders can intercept it before execution, retain it, hash it, label it, and share it. Note that the model assumes the carrier of the capability is always a file, which was nearly true for fifteen years; the four periods show the capability outgrowing it.</p>
 <h4>Transition</h4><p>“The familiar malware taxonomy grew around this object-centric model.”</p></aside>
 </section>
 
@@ -578,7 +577,7 @@ legitimate artifact + exploited capability + adversarial controller</code></pre>
 <aside class="notes"><p class="plan"><strong>Planned 40–45 minutes</strong> · ATT&amp;CK as a language for behavior</p>
 <p>This is situation 2 from the opening vote written out in full, and it is the standard tradecraft of the 2017–2022 period on slide 12. No malicious executable is written to disk, and the in-memory payload is not organized as a PE or ELF file. Do not say that no evidence or representation exists: the command is text, the payload is encoded bytes, HTTPS and compression have formats, and multiple system events may be produced.</p>
 <p>The six steps on the slide are one defensible mapping, not the only one: the remote launch is Remote Services with a sub-technique that depends on the mechanism (WinRM, SMB, RDP), the retrieval of the shellcode could also be tagged Ingress Tool Transfer, and an upload to a cloud service rather than to the C2 server would be Exfiltration to Cloud Storage instead of Exfiltration Over C2 Channel. Reward pairs who argue about the mechanism; that is the exercise working.</p>
-<p><strong>Close the vote.</strong> The last Next shows the closing line; name the five situations from slide 3 from memory as it appears. By the working definition from slide 6 all five are malware, because each is a malicious capability in use. What the room disagreed about were four different questions asked with one word: a malware analyst classifies an object, the artifact, what it is; an incident responder cares about the capability, what it can do; a platform engineer cares about control, who holds it and who authorized it; a legal definition needs the objective, whose purpose it serves. The five situations differ in the carrier and the evidence, a file on disk, a command line, bytes in memory, a session under the wrong control, an instruction in data, and the four questions are the vocabulary Part 1 has been using without naming it: the artifact carried the malicious meaning in the executable era, objective was added when the adversary became a campaign, control when access, tokens and vendor channels became the target, and control and objective together once a program acts under delegated authority. Part 2 asks the fifth question, what a sensor can see of any of this, which is the question the vote was really about.</p>
+<p><strong>Close the vote.</strong> The last Next shows the closing line; name the five situations from slide 3 from memory as it appears. By the working definition from slide 5 all five are malware, because each is a malicious capability in use. What the room disagreed about were four different questions asked with one word: a malware analyst classifies an object, the artifact, what it is; an incident responder cares about the capability, what it can do; a platform engineer cares about control, who holds it and who authorized it; a legal definition needs the objective, whose purpose it serves. The five situations differ in the carrier and the evidence, a file on disk, a command line, bytes in memory, a session under the wrong control, an instruction in data, and the four questions are the vocabulary Part 1 has been using without naming it: the artifact carried the malicious meaning in the executable era, objective was added when the adversary became a campaign, control when access, tokens and vendor channels became the target, and control and objective together once a program acts under delegated authority. Part 2 asks the fifth question, what a sensor can see of any of this, which is the question the vote was really about.</p>
 <h4>Interaction</h4><p>Give pairs two minutes with the empty matrix, then reveal the six steps with Next and let the room compare. During the debrief, separate “PowerShell” as software from “an inline command retrieved and executed content” as a procedure.</p>
 <h4>Transition</h4><p>“That is Part 1: how malware and malicious capabilities evolved. Part 2 asks how the pipelines that detect them were built, and how they had to change.”</p></aside>
 </section>
