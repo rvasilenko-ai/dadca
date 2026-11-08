@@ -386,8 +386,6 @@ html, body { background: var(--bg); color: var(--ink); }
 .reveal .k-what-broke-and-when .mf-fig text { fill: currentColor; font: 600 11px var(--sans); }
 .reveal .k-what-broke-and-when .mf-fig text.yr { font-weight: 500; fill: var(--ink-3); font-size: 10px; }
 .reveal .k-what-broke-and-when .mf-fig figcaption { font-size: 0.62em; color: var(--ink-3); text-align: center; margin-top: 2px; line-height: 1.2; }
-/* slide 18: the vote closed */
-.reveal .k-map-fileless-attack .am-foot.close { font-weight: 600; color: var(--ink); }
 
 /* lineage slides: the scenario check is quieter than the thesis callout */
 .reveal blockquote.callout.scenario { font-size: 0.72em; border-left-color: var(--ink-3); }
