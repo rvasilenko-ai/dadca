@@ -1,6 +1,6 @@
-# Slide 26 — The network changed under the sensor: HTTPS, TLS 1.3, DoH, ECH
+# Slide 22 — The network changed under the sensor: HTTPS, TLS 1.3, DoH, ECH
 
-**Timing:** 64–66 minutes  
+**Timing:** 55–57 minutes  
 **Module:** Detection pipelines: design and evolution
 
 ## On-slide content
@@ -23,6 +23,12 @@ share of page loads over HTTPS
 | Encrypted Client Hello (browsers 2023, RFC 9849 in 2026, few servers) | The server name in the handshake |
 
 > A payload signature cannot match content it never sees. The window has been closing one field at a time.
+
+## Talking points
+
+- Content rules were built for plaintext; in about five years encrypted page loads went from roughly 40 to roughly 90 percent.
+- Each protocol step removed one more field: the payload, the certificate, the lookup, the server name.
+- Two minutes: the curve, the four steps, the callout.
 
 ## Speaker notes
 

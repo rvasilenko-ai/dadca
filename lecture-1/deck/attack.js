@@ -18,7 +18,8 @@ window.ATTACK = {
       { id: "T1588", name: "Obtain Capabilities" },
       { id: "T1608", name: "Stage Capabilities" } ] },
     { id: "TA0001", name: "Initial Access", short: "Initial Access", count: 11, techniques: [
-      { id: "T1566", name: "Phishing" },
+      { id: "T1566", name: "Phishing", subs: [
+        { id: "T1566.001", name: "Spearphishing Attachment", d: "Adversaries may send spearphishing emails with a malicious attachment in an attempt to gain access to victim systems." } ] },
       { id: "T1190", name: "Exploit Public-Facing Application" },
       { id: "T1078", name: "Valid Accounts", d: "Adversaries may obtain and abuse credentials of existing accounts as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion." },
       { id: "T1133", name: "External Remote Services" },
@@ -30,12 +31,14 @@ window.ATTACK = {
         { id: "T1059.003", name: "Windows Command Shell" },
         { id: "T1059.005", name: "Visual Basic" },
         { id: "T1059.007", name: "JavaScript" } ] },
-      { id: "T1204", name: "User Execution" },
+      { id: "T1204", name: "User Execution", subs: [
+        { id: "T1204.002", name: "Malicious File", d: "An adversary may rely upon a user opening a malicious file in order to gain execution." } ] },
       { id: "T1047", name: "Windows Management Instrumentation" },
       { id: "T1053", name: "Scheduled Task/Job" },
       { id: "T1203", name: "Exploitation for Client Execution" } ] },
     { id: "TA0003", name: "Persistence", short: "Persistence", count: 22, techniques: [
-      { id: "T1547", name: "Boot or Logon Autostart Execution" },
+      { id: "T1547", name: "Boot or Logon Autostart Execution", subs: [
+        { id: "T1547.001", name: "Registry Run Keys / Startup Folder", d: "Adversaries may achieve persistence by adding a program to a startup folder or referencing it with a Registry run key." } ] },
       { id: "T1053", name: "Scheduled Task/Job" },
       { id: "T1136", name: "Create Account" },
       { id: "T1505", name: "Server Software Component" },
@@ -49,14 +52,15 @@ window.ATTACK = {
     { id: "TA0005", name: "Stealth (Defense Evasion until April 2026)", short: "Stealth", count: 31, techniques: [
       { id: "T1620", name: "Reflective Code Loading", d: "Adversaries may reflectively load code into a process in order to conceal the execution of malicious payloads." },
       { id: "T1027", name: "Obfuscated Files or Information", subs: [
-        { id: "T1027.010", name: "Command Obfuscation", d: "Adversaries may obfuscate content during command execution to impede detection." } ] },
+        { id: "T1027.010", name: "Command Obfuscation", d: "Adversaries may obfuscate content during command execution to impede detection." },
+        { id: "T1027.002", name: "Software Packing", d: "Adversaries may perform software packing or virtual machine software protection to conceal their code." } ] },
       { id: "T1218", name: "System Binary Proxy Execution" },
       { id: "T1055", name: "Process Injection" },
       { id: "T1574", name: "Hijack Execution Flow", subs: [
         { id: "T1574.001", name: "DLL", d: "Search-order hijacking and side-loading, merged into one sub-technique in April 2025." } ] },
       { id: "T1497", name: "Virtualization/Sandbox Evasion" } ] },
     { id: "TA0112", name: "Defense Impairment (new in April 2026)", short: "Defense Impairment", count: 18, techniques: [
-      { id: "T1685", name: "Disable or Modify Tools", d: "Replaced Impair Defenses (T1562) in April 2026; its sub-techniques include disabling event logs and, new, impairing autonomous defenses.", subs: [
+      { id: "T1685", name: "Disable or Modify Tools", d: "Replaced Impair Defenses (T1562) in April 2026; its sub-techniques include disabling event logs and, since v20 in October 2026, impairing autonomous defenses.", subs: [
         { id: "T1685.001", name: "Disable or Modify Windows Event Log" },
         { id: "T1685.007", name: "Impair Autonomous Defenses" } ] },
       { id: "T1686", name: "Disable or Modify System Firewall" },
@@ -107,7 +111,7 @@ window.ATTACK = {
       { id: "T1030", name: "Data Transfer Size Limits" },
       { id: "T1029", name: "Scheduled Transfer" } ] },
     { id: "TA0040", name: "Impact", short: "Impact", count: 15, techniques: [
-      { id: "T1486", name: "Data Encrypted for Impact" },
+      { id: "T1486", name: "Data Encrypted for Impact", d: "Adversaries may encrypt data on target systems or on large numbers of systems in a network to interrupt availability to system and network resources." },
       { id: "T1490", name: "Inhibit System Recovery" },
       { id: "T1489", name: "Service Stop" },
       { id: "T1485", name: "Data Destruction" },

@@ -1,25 +1,32 @@
 # Slide 24 — Where each change broke the pipeline
 
-**Timing:** 54–58 minutes
+**Timing:** 60–64 minutes
 **Module:** Detection pipelines: design and evolution
 
 ## On-slide content
 
-| What changed | Stage that broke | Evidence left the... | Defender's sensor moved to... |
-| --- | --- | --- | --- |
-| Packing and server-side polymorphism | extraction, detection | signature database | emulation, then reputation and prevalence |
-| File types diversify once mail blocks executables: archives, documents, scripts, exploit objects | sensor, extraction | executable attachment filter | document and script scanning, detonation |
-| Memory, staging, side-loading, living off the land | sensor, acquisition | detonatable file, then any malicious artifact | the real host: EDR, memory, baselining |
-| HTTPS, TLS 1.3, DoH, ECH (not an attacker move) | extraction | network payload | endpoint, metadata, decryption proxy |
-| Stolen identities, tokens, cloud APIs, remote-management tools | sensor | host | identity provider and SaaS audit logs |
-| Trusted vendor and update channels | representation, detection | provenance as a proxy for safety | build provenance, behavior of trusted software |
-| Instructions in data consumed by agents | sensor | every classical sensor | the agent's context, tools, and actions |
+| What changed | Stage that broke | Evidence left the... | Sensor moved to... | Product that answered |
+| --- | --- | --- | --- | --- |
+| Packing and server-side polymorphism | extraction, detection | signature database | emulation, then reputation and prevalence | Antivirus emulation and generic unpacking; cloud reputation and prevalence (Artemis 2008, Insight 2009) |
+| File types and runtimes diversify: documents, scripts and exploit objects once mail blocks executables, then .NET, Go and Rust executables | sensor, extraction | executable attachment filter, then the attachment itself (for a link); one analysis toolchain | document and script scanning, detonation; runtime-aware unpacking and decompilation | Gateways that open documents and scripts; the sandbox (WildFire 2011, FireEye); .NET decompilers, Go symbol recovery (GoReSym 2022) |
+| Memory, staging, side-loading, living off the land | sensor, acquisition | detonatable file, then any malicious artifact | the real host: EDR, memory, baselining | EDR (named 2013), Sysmon (2014), AMSI (2015); memory scanning and baselining |
+| HTTPS, TLS 1.3, DoH, ECH (not an attacker move) | extraction | network payload | endpoint, metadata, decryption proxy | TLS inspection proxies; NDR on flow and TLS metadata (JA3 2017); the endpoint for the plaintext |
+| Stolen identities, tokens, cloud APIs, remote-management tools | sensor | host | identity provider and SaaS audit logs | Identity provider and SaaS audit logs; identity threat detection and response (named 2022); token revocation |
+| Trusted vendor and update channels | representation, detection | provenance as a proxy for safety | build provenance, behavior of trusted software | Build provenance and software bills of materials (2021 onward); behavior monitoring of trusted software |
+| Instructions in data consumed by agents | sensor | every classical sensor | the agent's context, tools, and actions | Agent harness logs, guardrails, prompt-injection defenses (2024–2026); ATT&CK's Defense Impairment tactic (2026) |
 
 > Every row is one round of the same cat-and-mouse game: the attacker moves the evidence out of a product's field of view, and the defense has to change at whatever stage broke. There is no final round.
 
+## Talking points
+
+- Slide 14's list from the defender's side, after the lineages, with packing and encryption added.
+- Four of seven rows broke at the sensor; the fix lands at whatever stage broke.
+- Products did fail, all the same way: the evidence left their field of view; nothing was retired.
+- The last rows are the pipeline being rebuilt now, around identity and the agent; there is no final round.
+
 ## Speaker notes
 
-This is slide 14's list read from the defender's side, with two rows added, packing from the file era, the first time a product's evidence moved out of its view, and the network row, because encryption was the internet changing rather than an attacker move; and it is the bridge from the menu on the previous slide to the history that follows: each row names the stage of the pipeline that a change broke, the evidence that left that stage's view, and where the sensor went. The next three slides show the two pipelines that were rebuilt most often, the file-and-host pipeline and the network's, generation by generation. The second column maps each row to the pipeline: four of the seven rows broke at the sensor, packing and encryption broke extraction, and only the trusted-vendor row broke at detection, where the feature (provenance) was wrong rather than the model. Next and Previous step through the seven changes one at a time, each lighting the stage that broke; clicking a stage on the strip jumps to the first change that broke there, and the full table button shows all seven at once (the PDF prints the table). The dominant product class changed each time the attacker moved the capability to a place the current sensor did not observe.
+This is slide 14's list read from the defender's side, after the two lineages, with two rows added: packing from the executable era, the first time a product's evidence moved out of its view, and the network row, because encryption was the internet changing rather than an attacker move. Each row names the stage of the pipeline that a change broke, the evidence that left that stage's view, where the sensor went, and the product generation that answered; the first four rows are the lineages you have just seen, row by row, and the last three are the pipeline being rebuilt now, around identity and the agent. It is the bridge from the history to the menu on the next slide. The second column maps each row to the pipeline: four of the seven rows broke at the sensor, packing and encryption broke extraction, and only the trusted-vendor row broke at detection, where the feature (provenance) was wrong rather than the model. Next and Previous step through the seven changes one at a time, each lighting the stage that broke; clicking a stage on the strip jumps to the first change that broke there, and the full table button shows all seven at once (the PDF prints the table). The dominant product class changed each time the attacker moved the capability to a place the current sensor did not observe.
 
 Make three points explicit:
 
@@ -31,4 +38,4 @@ For the undergraduate audience, this slide is also a career map: each sensor mig
 
 ## Transition
 
-“Two pipelines were rebuilt several times each: the host's and the network's. The host first.”
+“Every row ended with a product. Here is the whole menu as it stands today, every line a product of that history.”

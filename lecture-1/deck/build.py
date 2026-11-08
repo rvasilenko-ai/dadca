@@ -38,7 +38,7 @@ TRACK_KEYS = {
     "Internet": "internet",
     "Security products": "products",
 }
-SECTION_NAMES = ["On-slide content", "Speaker notes", "Interaction", "Transition", "Sources"]
+SECTION_NAMES = ["On-slide content", "Talking points", "Speaker notes", "Interaction", "Transition", "Sources"]
 MODULE_SLUGS = {
     "Where is the malware?": "m1",
     "From malicious programs to adversarial capabilities": "m2",
@@ -230,6 +230,7 @@ def render_period(slide: dict, period: str) -> str:
     if callout:
         parts.append(f'<blockquote class="callout period-callout">{callout}</blockquote>')
     parts.append("</div>")
+    parts.append(render_sources(slide))
     return "\n".join(parts)
 
 
@@ -369,9 +370,30 @@ def render_change_panels(slide: dict) -> str:
     return "\n".join(out)
 
 
+def render_sources(slide: dict) -> str:
+    """An expandable on-slide list of the slide's sources (the same list the notes carry), opening over the slide."""
+    src = slide.get("sources") or ""
+    links = re.findall(r"\[[^\]]+\]\(https?://[^)]+\)", src)
+    if not links:
+        return ""
+    return (f'<details class="srcs"><summary>Sources ({len(links)})</summary>'
+            f'<div class="panel">{md_to_html(src)}</div></details>')
+
+
+def render_talking_points(slide: dict, with_sources: bool) -> str:
+    """A collapsed on-slide list of the slide's talking points, next to the sources button when there is one."""
+    tp = slide.get("talking_points") or ""
+    if not tp.strip():
+        return ""
+    cls = "srcs talk with-srcs" if with_sources else "srcs talk"
+    return f'<details class="{cls}"><summary>Talking points</summary><div class="panel">{md_to_html(tp)}</div></details>'
+
+
 # --------------------------------------------------------------------------- notes
 def render_notes(slide: dict) -> str:
     bits = [f'<p class="plan"><strong>Planned {slide["timing"]}</strong> · {html.escape(slide["module"])}</p>']
+    if slide.get("talking_points"):
+        bits.append("<h4>Talking points</h4>" + md_to_html(slide["talking_points"]))
     if slide.get("speaker_notes"):
         bits.append(md_to_html(slide["speaker_notes"]))
     if slide.get("interaction"):
@@ -401,10 +423,13 @@ def render_slide(slide: dict) -> str:
             body = body.replace("{{stage_matrix}}", render_stage_matrix(slide))
         if "{{change_panels}}" in body:
             body = body.replace("{{change_panels}}", render_change_panels(slide))
+        if "{{sources}}" in body:
+            body = body.replace("{{sources}}", render_sources(slide))
         heading = ""  # templates own their heading
     else:
         body = auto
         heading = f'<h2 class="title">{inline(slide["title"])}</h2>'
+    body += render_talking_points(slide, 'class="srcs"' in body)
     return (
         f'<section class="slide s{n} k-{slide["file_slug"]} {slide["slug"]}" data-slide="{n}" data-module="{html.escape(slide["module"])}" '
         f'data-timing="{html.escape(slide["timing"])}">\n{heading}\n<div class="body">\n{body}\n</div>\n'

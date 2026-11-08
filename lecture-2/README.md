@@ -4,6 +4,8 @@
 **Audience:** Master's and PhD cybersecurity students  
 **Central question:** What changes when reasoning, tool use, and persistent trial-and-error become cheap?
 
+**Framing beat (from Lecture 1):** Lecture 1 ends on a recurring pattern, offensive capability diffusing from the few to the many, with the 2017 Shadow Brokers spill-over (EternalBlue, then NotPetya) as the reference case. This lecture is that pattern's current instance: frontier AI capability, released commercially and as open weights, reaching everyone and lowering the skill floor, with the caveat that the diffusion is gradual and the offensive economy is not yet settled. Open by reconstructing the parallel and its limit.
+
 ## Learning outcomes
 
 Students should be able to:

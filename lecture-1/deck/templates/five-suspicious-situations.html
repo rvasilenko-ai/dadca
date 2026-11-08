@@ -1,15 +1,13 @@
 <h2 class="title">Five suspicious situations</h2>
-<blockquote class="callout"><p>Where is the malware?</p></blockquote>
-<div class="vote" data-component="vote">
-<table>
-<thead><tr><th>Vote for each</th><th>Definitely malware</th><th>Possibly malware</th><th>Not malware, but part of an attack</th></tr></thead>
-<tbody>
-<tr><td>1. A Trojan executable is written to disk.</td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td></tr>
-<tr><td>2. PowerShell downloads and runs code.</td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td></tr>
-<tr><td>3. A PE image exists only in process memory.</td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td></tr>
-<tr><td>4. An attacker controls a legitimate remote-management tool.</td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td></tr>
-<tr><td>5. Repository instructions cause a coding agent to exfiltrate secrets.</td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td><td><div class="cell"><button class="minus" type="button" aria-label="minus">−</button><span class="n">0</span><button class="plus" type="button" aria-label="plus">+</button><div class="bar"></div></div></td></tr>
-</tbody>
-</table>
-<button class="reset" type="button">Reset tally</button>
+<blockquote class="callout question"><p>Where does malware stop?</p></blockquote>
+<div class="ladder-wrap">
+<p class="end top">the file</p>
+<ol class="ladder">
+<li><span class="rung">1</span><span class="txt">A trojan executable is written to disk.</span></li>
+<li><span class="rung">2</span><span class="txt">PowerShell downloads and runs code.</span></li>
+<li><span class="rung">3</span><span class="txt">A Portable Executable image exists only in process memory.</span></li>
+<li><span class="rung">4</span><span class="txt">An attacker controls a legitimate remote-management tool.</span></li>
+<li><span class="rung">5</span><span class="txt">Repository instructions cause a coding agent to exfiltrate secrets.</span></li>
+</ol>
+<p class="end bottom">no file</p>
 </div>

@@ -1,6 +1,6 @@
 # Slide 7 — The classical taxonomy
 
-**Timing:** 8–10 minutes  
+**Timing:** 7–9 minutes  
 **Module:** From malicious programs to adversarial capabilities
 
 ## On-slide content
@@ -13,6 +13,12 @@
 | Backdoor | Provides unauthorized access |
 | Spyware | Collects information |
 | Rootkit | Conceals or preserves privileged access |
+
+## Talking points
+
+- The categories describe different dimensions: presentation (trojan), propagation (worm), capability (backdoor), concealment (rootkit).
+- One specimen can sit in several categories at once.
+- Ask where ransomware belongs: artifact type, propagation, capability or objective?
 
 ## Speaker notes
 
