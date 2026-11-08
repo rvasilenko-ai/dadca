@@ -526,25 +526,33 @@
 <div class="body">
 <h2 class="title">Capabilities delivered through benign files</h2>
 <blockquote class="callout question"><p>Same tool, different procedures; same technique, different tools. And when the artifact itself is legitimate and unchanged, where does “malicious” reside?</p></blockquote>
-<table>
-<thead><tr><th>Remote-management tool abused</th><th>Vulnerable signed driver (BYOVD)</th></tr></thead>
-<tbody>
-<tr><td>Intended remote-access capability</td><td>Legitimate, often signed kernel driver</td></tr>
-<tr><td>Operated by an unauthorized party</td><td>Contains an exploitable vulnerability</td></tr>
-<tr><td>Software works as designed</td><td>Used beyond its intended design</td></tr>
-<tr><td>Same binary and hash as the legitimate install</td><td>Same binary, hash, and valid signature</td></tr>
-<tr class="fragment"><td>ATT&amp;CK: Remote Access Tools (T1219); an ATT&amp;CK <em>tool</em>, not malware</td><td>ATT&amp;CK: driver load, then Exploitation for Privilege Escalation (T1068)</td></tr>
-<tr class="fragment"><td>Standard affiliate access path 2017–2022; Scattered Spider's main tool by 2023</td><td>Wave of EDR killers in 2022, after EDR became the control that mattered</td></tr>
-</tbody>
-</table>
-<div class="attack mini" data-attack data-mode="mini" data-light="T1219,T1068"><div class="am-host"></div></div>
-<blockquote class="callout fragment"><p>What differs from legitimate use? The tool: only who controls it and whose objective it serves. The driver: also what it can do. Neither differs as an artifact.</p></blockquote>
+<div class="cases2">
+<div class="case2 fragment">
+<h3>Remote-management tool abused <span class="chip">T1219 Remote Access Tools · an ATT&amp;CK <em>tool</em>, not malware</span></h3>
+<dl>
+<dt>What it is</dt><dd>Legitimate remote-access software, installed as designed; the same binary and hash as every other install.</dd>
+<dt>What differs from legitimate use</dt><dd>Who operates the session, and whose objective it serves.</dd>
+<dt>Where “malicious” sits</dt><dd>Control and objective. The software works exactly as designed.</dd>
+<dt>What a file classifier sees</dt><dd>A clean, signed, known program.</dd>
+</dl>
+</div>
+<div class="case2 fragment">
+<h3>Vulnerable signed driver <span class="chip">T1068 Exploitation for Privilege Escalation</span></h3>
+<dl>
+<dt>What it is</dt><dd>A legitimate kernel driver with a valid signature and an exploitable flaw; the same binary and hash the vendor shipped.</dd>
+<dt>What differs from legitimate use</dt><dd>Who loads it, and that its flaw is used beyond the driver's intended design.</dd>
+<dt>Where “malicious” sits</dt><dd>Control and objective, and also capability: what it can be made to do.</dd>
+<dt>What a file classifier sees</dt><dd>A clean, signed, known driver.</dd>
+</dl>
+</div>
+</div>
+<blockquote class="callout fragment"><p>Neither differs as an artifact. The tool differs only in who controls it and whose objective it serves; the driver also in what it can do.</p></blockquote>
 
 </div>
 <footer class="chrome"><span class="module">ATT&amp;CK as a language for behavior</span><span class="timing">min 37–40</span></footer>
 <aside class="notes"><p class="plan"><strong>Planned 37–40 minutes</strong> · ATT&amp;CK as a language for behavior</p>
 <p>Open with the first sentence on the slide, which replaces a slide of its own: ATT&amp;CK lists software, malware and tools alike, apart from the techniques, and connects them through documented procedures. The same tool appears in different procedures (PowerShell retrieving content, a scheduler starting a payload at logon) and the same technique is realized by different tools (an implant, an operating-system utility, a cloud API, a remote-management tool), so defenders usually detect some combination of tool identity, behavior, context and sequence. Then the two sharpest cases.</p>
-<p>The compact matrix under the table places the two cases: Remote Access Tools sits in Command and Control, Exploitation for Privilege Escalation in Privilege Escalation. These are the two cleanest examples of what the ATT&amp;CK vocabulary is for. The same file, with the same hash and signature, appears in a legitimate procedure and in an adversarial one. ATT&amp;CK describes the behavior (remote access; exploitation of a loaded driver) and keeps the software entry as a tool rather than malware, which is exactly the separation the previous slide argued for.</p>
+<p>Next reveals the first card, Next the second, Next the answer. The chips carry the ATT&amp;CK placement: Remote Access Tools sits in Command and Control, Exploitation for Privilege Escalation in Privilege Escalation. These are the two cleanest examples of what the ATT&amp;CK vocabulary is for. The same file, with the same hash and signature, appears in a legitimate procedure and in an adversarial one. ATT&amp;CK describes the behavior (remote access; exploitation of a loaded driver) and keeps the software entry as a tool rather than malware, which is exactly the separation the previous slide argued for.</p>
 <p>Both examples come out of the last two periods, and both are responses to defensive success. Once EDR made a custom implant visible, attackers had two options: bring no implant at all and use a legitimate remote-management tool the EDR vendor has allow-listed, or bring a vulnerable signed driver and switch the EDR off from the kernel. Ransomware affiliates adopted remote-management tools as their standard access path in 2017–2022, and Scattered Spider in 2023 ran campaigns almost entirely on them. The BYOVD wave of 2022 is the attacker's acknowledgment of which product won the previous period.</p>
 <p>The two cases are complementary:</p>
 <pre class="ascii"><code>intended capability + unauthorized controller + adversarial objective

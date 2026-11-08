@@ -7,24 +7,22 @@
 
 > Same tool, different procedures; same technique, different tools. And when the artifact itself is legitimate and unchanged, where does “malicious” reside?
 
-| Remote-management tool abused | Vulnerable signed driver (BYOVD) |
-| --- | --- |
-| Intended remote-access capability | Legitimate, often signed kernel driver |
-| Operated by an unauthorized party | Contains an exploitable vulnerability |
-| Software works as designed | Used beyond its intended design |
-| Same binary and hash as the legitimate install | Same binary, hash, and valid signature |
-| ATT&CK: Remote Access Tools (T1219); an ATT&CK *tool*, not malware | ATT&CK: driver load, then Exploitation for Privilege Escalation (T1068) |
-| Standard affiliate access path 2017–2022; Scattered Spider's main tool by 2023 | Wave of EDR killers in 2022, after EDR became the control that mattered |
+Two case cards, revealed one at a time with Next, built from the same four lines:
 
-Under the table, the ATT&CK matrix in its compact form with only the two cells lit: Remote Access Tools under Command and Control, Exploitation for Privilege Escalation under Privilege Escalation.
+| | Remote-management tool abused (T1219 Remote Access Tools, an ATT&CK *tool*, not malware) | Vulnerable signed driver (T1068 Exploitation for Privilege Escalation) |
+| --- | --- | --- |
+| What it is | Legitimate remote-access software, installed as designed; the same binary and hash as every other install | A legitimate kernel driver with a valid signature and an exploitable flaw; the same binary and hash the vendor shipped |
+| What differs from legitimate use | Who operates the session, and whose objective it serves | Who loads it, and that its flaw is used beyond the driver's intended design |
+| Where "malicious" sits | Control and objective; the software works exactly as designed | Control and objective, and also capability: what it can be made to do |
+| What a file classifier sees | A clean, signed, known program | A clean, signed, known driver |
 
-> What differs from legitimate use? The tool: only who controls it and whose objective it serves. The driver: also what it can do. Neither differs as an artifact.
+> Neither differs as an artifact. The tool differs only in who controls it and whose objective it serves; the driver also in what it can do.
 
 ## Speaker notes
 
 Open with the first sentence on the slide, which replaces a slide of its own: ATT&CK lists software, malware and tools alike, apart from the techniques, and connects them through documented procedures. The same tool appears in different procedures (PowerShell retrieving content, a scheduler starting a payload at logon) and the same technique is realized by different tools (an implant, an operating-system utility, a cloud API, a remote-management tool), so defenders usually detect some combination of tool identity, behavior, context and sequence. Then the two sharpest cases.
 
-The compact matrix under the table places the two cases: Remote Access Tools sits in Command and Control, Exploitation for Privilege Escalation in Privilege Escalation. These are the two cleanest examples of what the ATT&CK vocabulary is for. The same file, with the same hash and signature, appears in a legitimate procedure and in an adversarial one. ATT&CK describes the behavior (remote access; exploitation of a loaded driver) and keeps the software entry as a tool rather than malware, which is exactly the separation the previous slide argued for.
+Next reveals the first card, Next the second, Next the answer. The chips carry the ATT&CK placement: Remote Access Tools sits in Command and Control, Exploitation for Privilege Escalation in Privilege Escalation. These are the two cleanest examples of what the ATT&CK vocabulary is for. The same file, with the same hash and signature, appears in a legitimate procedure and in an adversarial one. ATT&CK describes the behavior (remote access; exploitation of a loaded driver) and keeps the software entry as a tool rather than malware, which is exactly the separation the previous slide argued for.
 
 Both examples come out of the last two periods, and both are responses to defensive success. Once EDR made a custom implant visible, attackers had two options: bring no implant at all and use a legitimate remote-management tool the EDR vendor has allow-listed, or bring a vulnerable signed driver and switch the EDR off from the kernel. Ransomware affiliates adopted remote-management tools as their standard access path in 2017–2022, and Scattered Spider in 2023 ran campaigns almost entirely on them. The BYOVD wave of 2022 is the attacker's acknowledgment of which product won the previous period.
 
