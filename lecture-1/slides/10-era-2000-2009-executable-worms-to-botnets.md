@@ -13,7 +13,7 @@
 | **Internet** | Broadband and plaintext HTTP; email is the delivery channel and the browser is full of plug-ins. |
 | **Security products** | Signature antivirus learns emulation and reputation, mail gateways block executables, IDS reads plaintext payloads. |
 
-> The attack was an executable delivered to an administrator over plaintext. Every product that mattered inspected files or payloads.
+> The attack was an executable, mailed to a user running as administrator or spreading by worm over an unencrypted network. The products of the decade inspected files and payloads.
 
 ### Detail
 
