@@ -88,6 +88,10 @@ Part 1 (slides 5–18) traces the evolution of malware and malicious capabilitie
 - Keep offensive mechanics conceptual; the teaching objective is observability and system design.
 - Defer detector internals to Lecture 3 when a question goes deep. The detection panel on slide 25 names the families, and its notes answer whether they are file-only methods (they are not; the benchmarks are).
 
+## Talk track
+
+[talk-track.md](talk-track.md) is a spoken script for delivering the lecture: one passage per slide with the handovers woven in, matched to the deck's minute ranges. It is a rehearsal and delivery aid, distilled from the per-slide speaker notes; the markdown slides remain the source of truth.
+
 ## Slide deck
 
 The presentable deck is an offline HTML build in [deck/](deck/): open `deck/index.html` in a browser, press S for speaker notes with the planned minutes and a timer, T for the dark theme, and `?print-pdf` for a PDF. It is generated from the markdown slides by `deck/build.py`; edit the markdown, then rebuild. Interactive parts: the overview timeline on slide 9, the zoomed period timelines on slides 10–13 with a details toggle, the breaks timeline on 14, a collapsed Talking points button on every slide, the ladder of five situations on slide 3, the clickable pipeline on slides 20 to 26 (Next and Previous step through the panels on slides 20, 21, 23, 24 and 25; clicking jumps), the HTTPS adoption chart on slide 22, and a schematic ATT&CK matrix on slides 16 and 18 (hover a cell for its ID; on 16 Next lights a classic trojan as a path, on 18 the recurring scenario step by step). See [deck/README.md](deck/README.md).
