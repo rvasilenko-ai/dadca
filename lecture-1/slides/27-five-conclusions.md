@@ -28,6 +28,8 @@ Conclusion 5 is Part 2's own: cases D to F were misses with every sensor working
 
 End optimistically. More capable AI does not erase the need for security expertise; it exposes new research work in sensing, extraction, representations, scalable filtering, prioritization, verification, and response.
 
+One pattern worth naming on the way out, because it recurs: offensive capability keeps diffusing from the few to the many, and the defender meets the commoditized version at scale. A leaked state exploit did it in 2017; frontier AI is doing it now, more slowly and more broadly. That is where Lecture 2 begins.
+
 Preview the other two lectures without requiring them. Lecture 3 covers the detectors themselves: signatures, engineered features, similarity, raw-byte and code models, and the LLM as analyst. Lecture 2 examines what happens when the same reasoning capability receives tools, feedback, persistence, and authority in an adversarial environment.
 
 ## Transition

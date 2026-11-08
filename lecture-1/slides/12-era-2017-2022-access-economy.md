@@ -33,6 +33,7 @@ Behind the details button; the speaker notes pick from it.
 - Fileless became ordinary: malware-free detections from 40 percent in 2018 to 79 percent in 2024.
 - The commodity was access, because access is what the payout required.
 - Edge appliances were already an entry point from 2019; implants move to Go and Rust.
+- Plant the pattern: concentrated offensive capability suddenly available to everyone (EternalBlue, 2017); slide 13 shows the same shape with AI.
 
 ## Speaker notes
 
@@ -40,7 +41,7 @@ The timeline is zoomed to this period: the labelled dots are the key events, the
 
 **Default story, three events and one image.** NotPetya (2017): state capability spills into the world through a vendor's update. Ryuk, Maze and Colonial Pipeline (2018–2021): the organization pays, then pays not to be published. SolarWinds (2020) and the BYOVD wave (2022): trusted channels as delivery, and the winning control attacked. The image: the ransom note arrives after weeks in which the only malware on most hosts was PowerShell and a legitimate remote-management tool.
 
-**Spill-over.** The period opens with the Shadow Brokers publishing exploits attributed to a United States intelligence agency, including EternalBlue. Within weeks WannaCry used it as a worm; in June NotPetya combined it with credential theft and built-in administration tools, spread through Ukrainian networks and then worldwide, and was later attributed by several governments to the Russian military. Top-tier capability reached criminals and lesser states overnight, and a state operation caused global collateral damage. Patch latency and flat networks, not a novel file, decided who was hit.
+**Spill-over.** The period opens with the Shadow Brokers publishing exploits attributed to a United States intelligence agency, including EternalBlue. Within weeks WannaCry used it as a worm; in June NotPetya combined it with credential theft and built-in administration tools, spread through Ukrainian networks and then worldwide, and was later attributed by several governments to the Russian military. Top-tier capability reached criminals and lesser states overnight, and a state operation caused global collateral damage. Patch latency and flat networks, not a novel file, decided who was hit. Plant the shape here for the last period: a concentrated offensive capability becoming broadly available, fast. In 2017 the trigger was a leaked state exploit; slide 13 returns to it with AI capability in that role.
 
 **Fileless became ordinary.** The memory-only frameworks and living-off-the-land techniques that advanced operators used at the end of the previous period became the default for criminal affiliates in this one. Commodity loaders ran PowerShell and WMI, implants lived in memory, legitimate signed executables side-loaded malicious DLLs. CrowdStrike's yearly counts make the curve visible: malware-free detections were 40 percent in 2018, 51 percent in 2019, 62 percent at the end of 2021 and 79 percent in 2024. This is the period in which the sandbox was starved of things to detonate and EDR became the control that mattered; FireEye selling its products business in 2021, a year after VMware bought Lastline, is the bookend to the 2013 IPO.
 
