@@ -7,12 +7,12 @@
 
 | Stage | IDS/IPS on the plaintext web (2000s) | After HTTPS, TLS 1.3, DoH and ECH |
 | --- | --- | --- |
-| sensor | A tap or inline appliance at the perimeter | The same tap, plus the endpoint and the identity provider |
-| acquisition | Full packets, kept for hours or days | Flow and DNS metadata for months; packets only behind a decryption proxy |
-| extraction | Protocol parsing and file carving from the stream | Decryption at a proxy (pinning, privacy, performance costs), or nothing |
-| representation | Payload bytes and strings | Endpoints, timing, volume, TLS fingerprints (JA3 2017, JA4 2023) |
+| sensor | A tap or inline appliance at the perimeter | The same perimeter tap; endpoint and identity sensors pick up what it can no longer read |
+| acquisition | Full packets, kept for hours or days | Flow and connection metadata for months; full packets still captured but encrypted; DNS only where it is not over DoH |
+| extraction | Protocol parsing and file carving from the stream | Decryption at a proxy for the payload (pinning, privacy, performance costs); without it, no content, only the clear handshake and flow fields |
+| representation | Payload bytes and strings | Endpoints, server name until ECH, timing, volume, TLS fingerprints (JA3 2017, JA4 2023) |
 | detection | Content rules on exploits, downloads and beacons (Snort) | Metadata rules, beaconing and anomaly models, reputation |
-| investigation | Replay the capture | Flow timelines joined to endpoint and identity events |
+| investigation | Replay the capture | Metadata investigation — flows, DNS, TLS fingerprints, reputation — joined to endpoint and identity events |
 | decision and response | Block inline | Block destinations; isolate from the endpoint |
 | challenge | Encryption removed the payload (HTTPS by default, 2015 onward), the certificate (TLS 1.3, 2018), the lookup (DoH, 2018 onward) and the server name (ECH, browsers 2023) | Lower specificity; east-west SMB, Kerberos, LDAP and scanning still visible; plaintext survives on the endpoint |
 
