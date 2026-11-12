@@ -170,6 +170,7 @@ window.DECK_DATA = {
     { y: 2025.87, t: "attackers", s: "AI-orchestrated espionage campaign reported", d: "Anthropic, 13 November 2025: a state-linked operator had an agent run most of an intrusion campaign; agent-assisted extortion had been reported in August 2025." },
     { y: 2026.55, t: "attackers", s: "Autonomous agent intrusion", k: true, d: "Hugging Face technical timeline of the July 2026 incident." },
     { y: 2026.83, t: "attackers", s: "File-based implants persist: NIK C2, VOLTA", d: "Talos, October 2026: NIK C2, a Go remote-access tool with an OpenAI client; VOLTA, a built-to-order infostealer that sends the stolen bundle to an LLM to rank the victim's assets. Still PE files for sale." },
+    { y: 2026.87, t: "attackers", s: "Browser-resident C2 (Falcon/XG)", d: "Unit 42, 11 November 2026: the implant is JavaScript in a browser tab or a sideloaded extension, no host file; a tab injection is scoped to one site, an extension hijacks the whole browser. The same actor drops a native Rust implant (Antino) via a fake Adobe Flash update." },
     { y: 2022.73, t: "os", s: "Smart App Control", d: "Windows 11 22H2, September 2022." },
     { y: 2023.2, t: "os", s: "LSA protection default (enterprise)", d: "New enterprise-joined installs, 22H2 and later." },
     { y: 2023.74, t: "os", s: "Passkeys in Windows 11", k: true, d: "September 2023." },
