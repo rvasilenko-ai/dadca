@@ -11,11 +11,14 @@ How malware and malicious capabilities evolved, and how detection pipelines evol
 
 Malware and AI, Lecture 1 of 3
 
+Follow along on your laptop or phone: rvasilenko-ai.github.io/malware-and-ai/lecture-1/deck (a QR on the slide links to the same place).
+
 ## Talking points
 
 - Lecture 1 of 3: how malware and the capabilities behind it evolved, and how detection pipelines evolved with them.
 - Two parts, the attacker's side then the defender's, with one recurring scenario running through both.
 - No prior knowledge of PE internals, ATT&CK or machine learning assumed; every term is defined at first use.
+- Point out the QR and URL: anyone can open the deck on their own laptop or phone and follow along, read the sources, or revisit later.
 
 ## Speaker notes
 

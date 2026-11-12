@@ -83,6 +83,12 @@ html, body { background: var(--bg); color: var(--ink); }
 /* Title slide */
 .reveal .k-title .kicker { font-size: 0.7em; color: var(--ink-2); margin-top: 0.4em; }
 .reveal .k-title .series { font-size: 0.6em; color: var(--ink-3); margin: 0.2em 0 1.2em; }
+.reveal .k-title .follow { display: flex; align-items: center; gap: 20px; margin-top: 44px; }
+.reveal .k-title .qr-card { width: 132px; height: 132px; flex: 0 0 auto; background: #fff; border-radius: 12px; padding: 7px; box-shadow: 0 2px 12px rgba(0,0,0,0.14); }
+.reveal .k-title .qr-card svg.qr { display: block; width: 100%; height: 100%; }
+.reveal .k-title .follow-txt .lead { font-size: 0.62em; color: var(--ink-2); margin: 0 0 0.25em; }
+.reveal .k-title .follow-txt .url { font-family: var(--mono); font-size: 0.6em; color: var(--accent); margin: 0; }
+
 .reveal .k-title .question { font-size: 1.5em; font-weight: 650; margin: 0.4em 0 0.3em; }
 .reveal .k-title .where { font-family: var(--mono); font-size: 0.7em; color: var(--ink-2); display: flex; gap: 0.4em; flex-wrap: wrap; }
 .reveal .k-title .where span { background: var(--bg-2); padding: 0.15em 0.55em; border-radius: 999px; }
