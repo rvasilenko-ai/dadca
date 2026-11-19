@@ -9,16 +9,16 @@ Two ways attacker text enters the instruction channel:
 
 | | Direct | Indirect |
 | --- | --- | --- |
-| Who speaks to the model | The attacker, directly | The victim's own agent |
-| Vector | Jailbreak or override in the prompt | Instructions hidden in data the agent later reads |
-| Example surface | A chat the attacker controls | A document, web page, CRM record, email, tool output, skill |
+| Who speaks to the model | The attacker, directly | No one directly: the surrounding system feeds the model the attacker's text |
+| Vector | Jailbreak or override in the prompt | Instructions hidden in data the model later reads |
+| Example surface | A chat the attacker controls | A document, web page, CRM record, email, tool output: anything the model is wired to read |
 | Software analogy | Local exploitation | Remote exploitation |
 
-> Indirect injection is the agent threat: the trusted agent fetches the attacker's words and follows them.
+> Indirect injection is the dangerous one: the attacker never talks to the model. The system around the model feeds it their words — and that system is what we build next.
 
 ## Speaker notes
 
-Direct injection: the person prompting the model is the attacker — jailbreaks and overrides to make the model break its own rules. It matters, but it is the smaller case here, because the attacker only controls their own session: they gain no data or authority they did not already have. Indirect injection is the dangerous one: the attacker plants instructions in content that someone else's agent will later read, so a low-privilege attacker makes a high-privilege victim's trusted agent act with the victim's authority. Map it back to the previous slide — indirect injection is the data channel carrying code, triggered remotely. This is exactly the mechanism of the hijacked enterprise agent in Case B.
+Direct injection: the person prompting the model is the attacker — jailbreaks and overrides to make the model break its own rules. It matters, but it is the smaller case here, because the attacker only controls their own session: they gain no data or authority they did not already have. Indirect injection is the dangerous one: the attacker plants instructions in content that a system will later retrieve and feed to the model on someone else's behalf, so a low-privilege attacker makes a high-privilege victim's own model-driven system act with the victim's authority. Map it back to the previous slide — indirect injection is the data channel carrying code, triggered remotely. We have not yet named that system around the model; the next three slides do, and Case B is it being hijacked.
 
 ## Transition
 

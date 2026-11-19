@@ -10,7 +10,7 @@
 
 The lecture is built on one idea and one distinction.
 
-- **The idea.** Attacking a learned model is not new; it runs from adversarial examples and poisoning, through evasion of ML malware detectors, to prompt injection of LLMs. Prompt injection is the oldest bug class — confusing data for code — reappearing one layer up: classic software shares code and data as bytes, an LLM shares instructions and context as text, and neither has a trust boundary in that shared channel. And the model is not the whole target; it sits in a harness of tools, skills, memory, retrieval, and delegated authority that is attacked just as directly.
+- **The idea.** Attacking a learned model is not new; it runs from adversarial examples and poisoning, through evasion of ML malware detectors, to prompt injection of LLMs. Prompt injection is the oldest bug class — confusing data for code — reappearing one layer up: classic software shares code and data as bytes, an LLM shares instructions and context as text, and neither has a trust boundary in that shared channel. And the model is not the whole target; it sits in a harness of tools, skills, memory, retrieval, and delegated authority that is attacked just as directly. The vocabulary is built in that order on purpose — model, then harness, then agent — so the word "agent" is never used before it is defined.
 - **The distinction.** A model becomes an attacker in two different ways: a malicious model the attacker owns and runs (Case A, the agent as a weapon), and a trusted model hijacked from its owner through injected context or a poisoned harness (Case B). Same outcome, opposite threat model, opposite defensive opportunities.
 
 Standalone takeaway:
@@ -34,7 +34,7 @@ Students should be able to:
 | --- | --- | --- |
 | 0–8 | Foundation | 1–3 |
 | 8–22 | From adversarial ML to attacks on LLMs | 4–8 |
-| 22–30 | The agent as a system: model and harness | 9–11 |
+| 22–30 | From model to agent: the harness and the loop | 9–11 |
 | 30–33 | The model becomes an attacker: two cases | 12 |
 | 33–46 | Case A: a malicious model the attacker owns | 13–15 |
 | 46–56 | Case B: a compromised trusted model | 16–18 |
@@ -68,9 +68,9 @@ ForcedLeak was a disclosed and demonstrated vulnerability chain in Salesforce Ag
 6. [Code and data, instructions and context](slides/06-code-data-instructions-context.md)
 7. [The shape of LLM attacks](slides/07-shape-of-llm-attacks.md)
 8. [Why there is no NX bit for text](slides/08-no-nx-bit-for-text.md)
-9. [Harness and authority](slides/09-harness-and-authority.md)
+9. [The harness: what surrounds the model](slides/09-harness-and-authority.md)
 10. [Attacks on the harness](slides/10-attacks-on-the-harness.md)
-11. [The agent loop](slides/11-agent-loop.md)
+11. [From model to agent: the loop](slides/11-agent-loop.md)
 12. [The model becomes an attacker, two ways](slides/12-model-becomes-attacker-two-ways.md)
 13. [Case A: a malicious model the attacker owns](slides/13-case-a-attacker-owned-model.md)
 14. [Approximately 17,600 recovered actions](slides/14-seventeen-thousand-actions.md)

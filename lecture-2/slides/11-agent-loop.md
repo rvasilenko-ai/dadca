@@ -1,7 +1,7 @@
-# Slide 11 — The agent loop
+# Slide 11 — From model to agent: the loop
 
 **Timing:** 28–30 minutes  
-**Module:** The agent as a system
+**Module:** From model to agent
 
 ## On-slide content
 
@@ -18,9 +18,11 @@ objective
 
 Failure is often new information, not termination.
 
+> A model answers once. A model plus a harness, run in this loop, acts in the world — that is an agent.
+
 ## Speaker notes
 
-Contrast an agent loop with a one-shot model response. The consequential capability is repeated interaction with an environment whose outputs change the next action.
+This is where the word "agent" earns its meaning. Contrast the loop with a one-shot model response. The consequential capability is repeated interaction with an environment whose outputs change the next action.
 
 The loop does not require every hypothesis to be correct. It requires enough feedback, retries, and state to eventually identify a useful path.
 

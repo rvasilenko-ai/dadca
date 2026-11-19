@@ -1,7 +1,7 @@
-# Slide 9 — Harness and authority
+# Slide 9 — The harness: what surrounds the model
 
 **Timing:** 22–25 minutes  
-**Module:** The agent as a system
+**Module:** From model to agent
 
 ## On-slide content
 
@@ -26,9 +26,9 @@ The model is one component in a larger execution system. Ask not only “What ca
 - What observations return to the model?
 - Where is state retained?
 
-This framing applies equally to offensive agents, coding agents, and defensive response agents.
+This framing applies whether the system attacks, writes code, or responds to incidents.
 
 ## Transition
 
-“The harness defines what the agent can do — which also makes it where the attacker reaches in.”
+“The harness defines what the model can do in the world — which also makes it where the attacker reaches in.”
 

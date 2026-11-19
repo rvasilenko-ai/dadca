@@ -11,7 +11,7 @@
 | Triage | Thousands of uncertain cases requiring prioritization |
 | Investigation | A few consequential cases requiring deep reasoning |
 
-Agentic systems change:
+A model that reasons cheaply and can be re-run changes:
 
 - How many paths can be explored
 - How quickly failure can produce another attempt
@@ -19,7 +19,7 @@ Agentic systems change:
 
 ## Speaker notes
 
-Cheap reasoning is relative. Agentic investigation remains expensive compared with a signature or streaming rule, but it can be much cheaper and more persistent than expert human attention.
+Cheap reasoning is relative. Model-driven investigation remains expensive compared with a signature or streaming rule, but it can be much cheaper and more persistent than expert human attention. We have not yet said what it means to "re-run" a model with tools; that is the harness and the loop, built on slides 9 to 11.
 
 The lecture examines the consequences of applying that persistence to offense and defense.
 

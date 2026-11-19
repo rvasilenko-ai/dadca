@@ -15,7 +15,9 @@ Introduce the lecture as an investigation of systems, not merely models. The cas
 
 No prior lecture is assumed; the next two slides reconstruct the essential analytical vocabulary.
 
+The title says "agent." Hold the word. Slides 9 to 11 build its precise meaning — a model, plus a harness, run in a loop — and keep it distinct from a bare model; until then the lecture says "model."
+
 ## Transition
 
-“First, four concepts that will keep us from reducing the incident to ‘an AI hacked something.’”
+“First, the vocabulary that keeps us from reducing any of this to ‘an AI hacked something.’”
 
