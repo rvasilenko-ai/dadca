@@ -4,7 +4,7 @@
 **Audience:** Master's and PhD cybersecurity students  
 **Central question:** What changes when reasoning, tool use, and persistent trial-and-error become cheap?
 
-**Framing beat (from Lecture 1):** Lecture 1 ends on a recurring pattern, offensive capability diffusing from the few to the many, with the 2017 Shadow Brokers spill-over (EternalBlue, then NotPetya) as the reference case. This lecture is that pattern's current instance: frontier AI capability, released commercially and as open weights, reaching everyone and lowering the skill floor, with the caveat that the diffusion is gradual and the offensive economy is not yet settled.
+**Framing beat:** offensive capability diffuses from the few to the many; the 2017 Shadow Brokers spill-over (EternalBlue, then NotPetya) is the reference case. This lecture is that pattern's current instance: frontier AI capability, released commercially and as open weights, reaching everyone and lowering the skill floor, with the caveat that the diffusion is gradual and the offensive economy is not yet settled. The lecture stands alone: slide 2 defines its own vocabulary and no slide refers to another lecture. If the same audience attended the malware lecture, the presenter can call back to its closing pattern at slide 15; if not, the one sentence above is enough.
 
 ## The spine
 
@@ -54,14 +54,14 @@ ForcedLeak was a disclosed and demonstrated vulnerability chain in Salesforce Ag
 ## Source boundaries
 
 - Slides label facts attributed to the Hugging Face, OpenAI, Anthropic, Talos, and ForcedLeak reports.
-- The adversarial-ML history slides (4–5) cite the foundational papers; these citations and dates still need a verification pass of the kind run for Lecture 1.
+- The adversarial-ML history slides (4–5) cite the foundational papers; these citations and dates still need a verification pass against the primary sources.
 - Interpretations about the code/data parallel, optimization, noise, stealth, and future malware definitions are presented as lecture arguments or research hypotheses.
 - Incident mechanics remain conceptual; slides do not reproduce payloads or exploit code.
 
 ## Slide index
 
 1. [When the attacker is an agent](slides/01-when-attacker-is-agent.md)
-2. [Standalone foundation](slides/02-standalone-foundation.md)
+2. [Two definitions this lecture relies on](slides/02-standalone-foundation.md)
 3. [What changes when reasoning is cheap?](slides/03-what-changes-when-reasoning-is-cheap.md)
 4. [Attacking the model is not new](slides/04-attacking-models-is-not-new.md)
 5. [...and it reached malware detection](slides/05-adversarial-ml-reaches-malware.md)

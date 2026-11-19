@@ -13,7 +13,7 @@
 
 Introduce the lecture as an investigation of systems, not merely models. The case is unusual, but the individual weaknesses and defensive problems are familiar.
 
-No prior lecture is assumed; the next two slides reconstruct the essential analytical vocabulary.
+No prior lecture is assumed; the next two slides set up the only vocabulary this one needs: how we define malware, and what scale does to reasoning.
 
 The title says "agent." Hold the word. Slides 9 to 11 build its precise meaning — a model, plus a harness, run in a loop — and keep it distinct from a bare model; until then the lecture says "model."
 

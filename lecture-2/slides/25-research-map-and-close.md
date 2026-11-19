@@ -33,7 +33,7 @@ Ask each student to choose one row as a potential thesis or research direction a
 
 ## Transition
 
-End of Lecture 2.
+End of the lecture.
 
 ## Sources
 
