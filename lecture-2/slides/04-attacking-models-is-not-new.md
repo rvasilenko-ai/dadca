@@ -23,7 +23,7 @@ One point: attacks on learned models are old. Szegedy and colleagues showed adve
 
 ## Transition
 
-“These attacks hit image and malware classifiers first — including the detectors from Lecture 3.”
+“These attacks hit image and malware classifiers first — including the machine-learning malware detectors we turn to next.”
 
 ## Sources
 

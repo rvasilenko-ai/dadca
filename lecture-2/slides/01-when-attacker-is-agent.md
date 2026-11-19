@@ -13,7 +13,7 @@
 
 Introduce the lecture as an investigation of systems, not merely models. The case is unusual, but the individual weaknesses and defensive problems are familiar.
 
-Students do not need Lecture 1; the next two slides reconstruct its essential analytical vocabulary.
+No prior lecture is assumed; the next two slides reconstruct the essential analytical vocabulary.
 
 ## Transition
 

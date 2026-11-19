@@ -14,11 +14,11 @@ The weaponized model is reported in the wild, not only in a lab.
 | NIK C2 (Oct 2026) | A Go remote-access tool that calls an LLM from the victim's host |
 | VOLTA (Oct 2026) | An infostealer that asks a model to rank the victim's assets |
 
-> It lowers the skill floor — the diffusion pattern Lecture 1 closed on, now with the attacker's own model doing the work.
+> It lowers the skill floor: offensive capability that was concentrated in a few hands now reaches many, with the attacker's own model doing the work.
 
 ## Speaker notes
 
-Keep each short; they are illustrations, not deep dives. Anthropic reported, on 13 November 2025, a state-linked operator whose agent performed an estimated eighty to ninety percent of an intrusion campaign across roughly thirty targets; the August 2025 report described agent-assisted data extortion at scale. NIK C2 and VOLTA, reported by Talos in late October 2026, are ordinary file-based implants that embed an LLM call — a Go remote-access tool with an OpenAI client, and an infostealer that sends the stolen bundle to a model to prioritize what to take. Tie back to the Lecture 1 close: offensive capability diffusing from the few to the many, here with the attacker's model doing operator-grade work.
+Keep each short; they are illustrations, not deep dives. Anthropic reported, on 13 November 2025, a state-linked operator whose agent performed an estimated eighty to ninety percent of an intrusion campaign across roughly thirty targets; the August 2025 report described agent-assisted data extortion at scale. NIK C2 and VOLTA, reported by Talos in late October 2026, are ordinary file-based implants that embed an LLM call — a Go remote-access tool with an OpenAI client, and an infostealer that sends the stolen bundle to a model to prioritize what to take. The through-line: offensive capability diffusing from the few to the many, here with the attacker's model doing operator-grade work.
 
 ## Transition
 
