@@ -1,6 +1,6 @@
-# Slide 9 — The harness: what surrounds the model
+# Slide 7 — The harness: what surrounds the model
 
-**Timing:** 22–25 minutes  
+**Timing:** 19–22 minutes  
 **Module:** From model to agent
 
 ## On-slide content
@@ -30,5 +30,5 @@ This framing applies whether the system attacks, writes code, or responds to inc
 
 ## Transition
 
-“The harness defines what the model can do in the world — which also makes it where the attacker reaches in.”
+“Put the model and the harness together with a loop, and you have something that acts.”
 

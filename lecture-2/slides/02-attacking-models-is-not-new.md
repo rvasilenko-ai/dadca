@@ -1,6 +1,6 @@
-# Slide 4 — Attacking the model is not new
+# Slide 2 — Attacking the model is not new
 
-**Timing:** 8–11 minutes  
+**Timing:** 2–6 minutes  
 **Module:** From adversarial ML to attacks on LLMs
 
 ## On-slide content

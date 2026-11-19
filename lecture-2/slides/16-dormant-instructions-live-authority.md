@@ -1,6 +1,6 @@
-# Slide 18 — Dormant instructions, live authority
+# Slide 16 — Dormant instructions, live authority
 
-**Timing:** 53–56 minutes  
+**Timing:** 52–55 minutes  
 **Module:** Case B: a compromised trusted model
 
 ## On-slide content
@@ -27,7 +27,7 @@ Possible interpretations:
 
 The malicious text is passive while stored. It becomes consequential only when retrieved into an agent context that confuses data with instructions and possesses enough authority to act.
 
-This is a useful extension of the capability-centric malware definition. There may be no malicious software artifact to classify. Instead, a legitimate execution system is temporarily redirected toward an attacker objective.
+This is why malware is better defined by capability than by file. There may be no malicious software artifact to classify. Instead, a legitimate execution system is temporarily redirected toward an attacker objective.
 
 Avoid insisting on one label. Ask what each label helps defenders observe, prevent, or regulate.
 
