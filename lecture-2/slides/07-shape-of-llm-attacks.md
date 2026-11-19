@@ -18,7 +18,7 @@ Two ways attacker text enters the instruction channel:
 
 ## Speaker notes
 
-Direct injection: the attacker is the user — jailbreaks and overrides. It is a real problem, but it is bounded by what that session is allowed to do. Indirect injection is the dangerous one for agents: the attacker plants instructions in content the agent will process on someone else's behalf, and the victim's own trusted agent retrieves and obeys them. Map it back to the previous slide — indirect injection is the data channel carrying code, triggered remotely. This is exactly the mechanism of the hijacked enterprise agent in Case B.
+Direct injection: the person prompting the model is the attacker — jailbreaks and overrides to make the model break its own rules. It matters, but it is the smaller case here, because the attacker only controls their own session: they gain no data or authority they did not already have. Indirect injection is the dangerous one: the attacker plants instructions in content that someone else's agent will later read, so a low-privilege attacker makes a high-privilege victim's trusted agent act with the victim's authority. Map it back to the previous slide — indirect injection is the data channel carrying code, triggered remotely. This is exactly the mechanism of the hijacked enterprise agent in Case B.
 
 ## Transition
 
