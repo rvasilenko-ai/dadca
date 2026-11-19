@@ -1,7 +1,7 @@
-# Slide 17 — The agent loop
+# Slide 11 — The agent loop
 
-**Timing:** 40–43 minutes  
-**Module:** Why the agent succeeded
+**Timing:** 28–30 minutes  
+**Module:** The agent as a system
 
 ## On-slide content
 
@@ -26,5 +26,5 @@ The loop does not require every hypothesis to be correct. It requires enough fee
 
 ## Transition
 
-“Two coupled competencies make the loop effective: understanding code and orchestrating an environment.”
+“Model, harness, loop: that is an agent. Now the two ways it turns into an attacker.”
 

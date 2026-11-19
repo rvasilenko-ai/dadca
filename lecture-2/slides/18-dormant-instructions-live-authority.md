@@ -1,7 +1,7 @@
-# Slide 27 — Dormant instructions, live authority
+# Slide 18 — Dormant instructions, live authority
 
-**Timing:** 69–72 minutes  
-**Module:** A different kind of agentic attack
+**Timing:** 53–56 minutes  
+**Module:** Case B: a compromised trusted model
 
 ## On-slide content
 

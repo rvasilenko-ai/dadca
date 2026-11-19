@@ -1,7 +1,7 @@
-# Slide 25 — Case 2: The trusted enterprise agent
+# Slide 16 — Case B: The trusted enterprise agent
 
-**Timing:** 64–66 minutes  
-**Module:** A different kind of agentic attack
+**Timing:** 46–49 minutes  
+**Module:** Case B: a compromised trusted model
 
 ## On-slide content
 

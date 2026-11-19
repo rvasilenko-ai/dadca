@@ -1,7 +1,7 @@
-# Slide 20 — Harness and authority
+# Slide 9 — Harness and authority
 
-**Timing:** 49–52 minutes  
-**Module:** Why the agent succeeded
+**Timing:** 22–25 minutes  
+**Module:** The agent as a system
 
 ## On-slide content
 
@@ -30,5 +30,5 @@ This framing applies equally to offensive agents, coding agents, and defensive r
 
 ## Transition
 
-“The harness defines what is possible; the objective and feedback influence which possibilities are pursued.”
+“The harness defines what the agent can do — which also makes it where the attacker reaches in.”
 

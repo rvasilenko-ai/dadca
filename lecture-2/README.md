@@ -4,46 +4,58 @@
 **Audience:** Master's and PhD cybersecurity students  
 **Central question:** What changes when reasoning, tool use, and persistent trial-and-error become cheap?
 
-**Framing beat (from Lecture 1):** Lecture 1 ends on a recurring pattern, offensive capability diffusing from the few to the many, with the 2017 Shadow Brokers spill-over (EternalBlue, then NotPetya) as the reference case. This lecture is that pattern's current instance: frontier AI capability, released commercially and as open weights, reaching everyone and lowering the skill floor, with the caveat that the diffusion is gradual and the offensive economy is not yet settled. Open by reconstructing the parallel and its limit.
+**Framing beat (from Lecture 1):** Lecture 1 ends on a recurring pattern, offensive capability diffusing from the few to the many, with the 2017 Shadow Brokers spill-over (EternalBlue, then NotPetya) as the reference case. This lecture is that pattern's current instance: frontier AI capability, released commercially and as open weights, reaching everyone and lowering the skill floor, with the caveat that the diffusion is gradual and the offensive economy is not yet settled.
+
+## The spine
+
+The lecture is built on one idea and one distinction.
+
+- **The idea.** Attacking a learned model is not new; it runs from adversarial examples and poisoning, through evasion of ML malware detectors, to prompt injection of LLMs. Prompt injection is the oldest bug class — confusing data for code — reappearing one layer up: classic software shares code and data as bytes, an LLM shares instructions and context as text, and neither has a trust boundary in that shared channel. And the model is not the whole target; it sits in a harness of tools, skills, memory, retrieval, and delegated authority that is attacked just as directly.
+- **The distinction.** A model becomes an attacker in two different ways: a malicious model the attacker owns and runs (Case A, the agent as a weapon), and a trusted model hijacked from its owner through injected context or a poisoned harness (Case B). Same outcome, opposite threat model, opposite defensive opportunities.
+
+Standalone takeaway:
+
+> Same outcome, opposite threat model: defend against someone else's agent, or prevent your own agent from becoming the attacker's execution environment.
 
 ## Learning outcomes
 
 Students should be able to:
 
-1. Reconstruct an agentic intrusion as a sequence of objectives, observations, actions, feedback, and adaptations.
-2. Explain how model capability becomes consequential through tools, state, access, and delegated authority.
-3. Distinguish noisy autonomous exploration from AI-assisted human operations and deliberately stealthy campaigns.
-4. Contrast defense against an external attacker-operated agent with defense against a trusted enterprise agent hijacked through untrusted context.
-5. Identify research problems in agent-trajectory observability, authorization, incident correlation, supply-chain security, and bounded response.
+1. Trace adversarial machine learning as one lineage, from evasion and poisoning of classifiers to prompt injection of LLMs.
+2. Explain prompt injection as the code/data confusion of classic software reborn in text, and why it has no clean structural fix.
+3. Distinguish attacks on the model from attacks on the harness: tools, skills, memory, retrieval, and tool servers.
+4. Contrast the two ways a model becomes an attacker — a malicious model the attacker owns, and a trusted model hijacked through untrusted context — by location, authority, observability, and where guardrails can live.
+5. Map the real cases (the autonomous intrusion, AI-orchestrated campaigns, agent-built malware, ForcedLeak) onto that framework.
+6. Identify research problems in agent-trajectory observability, authorization, incident correlation, supply-chain security, and bounded response.
 
 ## Module schedule
 
 | Time | Module | Slides |
 | --- | --- | --- |
-| 0–8 | Standalone foundation | 1–3 |
-| 8–18 | Present the incident as a mystery | 4–7 |
-| 18–40 | Reconstruct the attack | 8–16 |
-| 40–55 | Why the agent succeeded | 17–21 |
-| 55–64 | Why autonomous attacks are noisy | 22–24 |
-| 64–72 | ForcedLeak: hijacking a trusted enterprise agent | 25–27 |
-| 72–77 | Audience comparison and defensive reveal | 28–29 |
-| 77–86 | Future research agenda | 30–32 |
-| 86–90 | Research map and closing discussion | 33 |
+| 0–8 | Foundation | 1–3 |
+| 8–22 | From adversarial ML to attacks on LLMs | 4–8 |
+| 22–30 | The agent as a system: model and harness | 9–11 |
+| 30–33 | The model becomes an attacker: two cases | 12 |
+| 33–46 | Case A: a malicious model the attacker owns | 13–15 |
+| 46–56 | Case B: a compromised trusted model | 16–18 |
+| 56–66 | The two cases compared | 19–21 |
+| 66–90 | Defense and research | 22–25 |
 
 ## Primary cases
 
-### Offensive case
+### Case A — a malicious model the attacker owns
 
-The July 2026 Hugging Face technical timeline describes an autonomous agent operating during an OpenAI cyber-capability evaluation. The reconstructed campaign crossed several trust boundaries, generated roughly 17,600 recovered actions, and required AI-assisted defensive reconstruction.
+The July 2026 Hugging Face technical timeline describes an autonomous agent operating during an OpenAI cyber-capability evaluation. The reconstructed campaign crossed several trust boundaries, generated roughly 17,600 recovered actions, and required AI-assisted defensive reconstruction. Supporting cases, kept short: the Anthropic AI-orchestrated espionage campaign (November 2025), agent-assisted extortion (August 2025), and the file-based implants NIK C2 and VOLTA that embed an LLM call (Talos, October 2026).
 
-### Internal-agent counter-case
+### Case B — a compromised trusted model
 
-ForcedLeak was a disclosed and demonstrated vulnerability chain in Salesforce Agentforce. Attacker-controlled instructions persisted in a CRM lead, were later retrieved during an employee’s legitimate interaction with the agent, and could cause sensitive CRM data to leave through crafted image requests. This was a real production vulnerability and attack demonstration, not a publicly confirmed customer breach.
+ForcedLeak was a disclosed and demonstrated vulnerability chain in Salesforce Agentforce. Attacker-controlled instructions persisted in a CRM lead, were later retrieved during an employee's legitimate interaction with the agent, and could cause sensitive CRM data to leave through crafted image requests. A real production vulnerability and attack demonstration, not a publicly confirmed customer breach. SearchLeak (Microsoft 365 Copilot) is cited briefly as the same pattern.
 
 ## Source boundaries
 
-- Slides label facts attributed to the Hugging Face, OpenAI, and ForcedLeak reports.
-- Interpretations about optimization, noise, stealth, and future malware definitions are presented as lecture arguments or research hypotheses.
+- Slides label facts attributed to the Hugging Face, OpenAI, Anthropic, Talos, and ForcedLeak reports.
+- The adversarial-ML history slides (4–5) cite the foundational papers; these citations and dates still need a verification pass of the kind run for Lecture 1.
+- Interpretations about the code/data parallel, optimization, noise, stealth, and future malware definitions are presented as lecture arguments or research hypotheses.
 - Incident mechanics remain conceptual; slides do not reproduce payloads or exploit code.
 
 ## Slide index
@@ -51,62 +63,25 @@ ForcedLeak was a disclosed and demonstrated vulnerability chain in Salesforce Ag
 1. [When the attacker is an agent](slides/01-when-attacker-is-agent.md)
 2. [Standalone foundation](slides/02-standalone-foundation.md)
 3. [What changes when reasoning is cheap?](slides/03-what-changes-when-reasoning-is-cheap.md)
-4. [The incident in one slide](slides/04-incident-in-one-slide.md)
-5. [The objective and the evaluation](slides/05-objective-and-evaluation.md)
-6. [Where is the malware?](slides/06-where-is-malware.md)
-7. [A journey across trust boundaries](slides/07-trust-boundaries.md)
-8. [The evaluation sandbox escape](slides/08-evaluation-sandbox-escape.md)
-9. [An external launchpad](slides/09-external-launchpad.md)
-10. [The dataset becomes an attack surface](slides/10-dataset-as-attack-surface.md)
-11. [File disclosure without code execution](slides/11-file-disclosure-without-code.md)
-12. [Template injection to code execution](slides/12-template-injection-to-execution.md)
-13. [Credentials become capabilities](slides/13-credentials-become-capabilities.md)
-14. [Lateral movement as a capability graph](slides/14-lateral-movement-graph.md)
-15. [Source control and supply-chain exposure](slides/15-source-control-supply-chain.md)
-16. [A behavioral timeline](slides/16-behavioral-timeline.md)
-17. [The agent loop](slides/17-agent-loop.md)
-18. [Code reasoning](slides/18-code-reasoning.md)
-19. [Operational orchestration](slides/19-operational-orchestration.md)
-20. [Harness and authority](slides/20-harness-and-authority.md)
-21. [Objective, feedback, and intent](slides/21-objective-feedback-intent.md)
-22. [Approximately 17,600 recovered actions](slides/22-seventeen-thousand-actions.md)
-23. [Success hidden inside noise](slides/23-success-hidden-in-noise.md)
-24. [Block, adapt, repeat](slides/24-block-adapt-repeat.md)
-25. [Case 2: The trusted enterprise agent](slides/25-forcedleak-enterprise-agent.md)
-26. [ForcedLeak: the attack path](slides/26-forcedleak-attack-path.md)
-27. [Dormant instructions, live authority](slides/27-dormant-instructions-live-authority.md)
-28. [Audience question: what is different?](slides/28-compare-before-reveal.md)
-29. [Defense depends on who controls the agent](slides/29-defense-depends-on-agent-location.md)
-30. [Is a compromised agent malware?](slides/30-is-agent-malware.md)
-31. [The agentic supply chain](slides/31-agentic-supply-chain.md)
-32. [Bounded autonomous response](slides/32-bounded-autonomous-response.md)
-33. [A map of work still to be done](slides/33-research-map-and-close.md)
-
-## Editorial constraints
-
-Kept from the lecture's implementation plan; they govern every revision of the slides.
-
-- Explain the agent's success as model capability plus harness, tools, feedback, state, access and delegated authority, never as capability alone, and do not assign an artificial numerical split between code reasoning and operational orchestration.
-- Treat "the model cannot distinguish good from bad" and "stealth is impossible to train" as overstatements. Use optimization and evaluation language: program semantics do not encode legitimate intent, the same capability serves either side, an agent optimizes the task and feedback it is given subject to the controls around it, and stealth is a harder verifier problem rather than an impossibility.
-- Keep the three threat models distinct: noisy autonomous exploration, AI-assisted human operations, deliberately stealthy manual or agentic campaigns.
-- Reverse-engineering a selected sample is not fleet-scale detection; say so wherever Project Ire or a comparable system appears.
-- Frame autonomous response as scoped, authorized, evidence-based and reversible, with explicit escalation.
-- Cite primary sources for the Hugging Face timeline, the OpenAI account, MITRE mappings and Project Ire; present recovered action and cluster counts as reconstructed figures.
-- Verify ATT&CK and ATLAS names and identifiers against the live MITRE sites whenever they are edited; SearchLeak appears only as a brief corroborating example, not as a third case.
-
-## Delivery guidance
-
-- Introduce the incident as a mystery before revealing the attack path.
-- Reuse `objective -> observation -> tool -> action -> feedback -> adaptation` throughout the reconstruction.
-- Walk through both cases before naming their key distinction; let the audience identify differences in ownership, visibility, and enforcement first.
-- Separate disclosed facts from instructor inference, especially when discussing the agent's objective and stealth.
-- Avoid turning the incident section into a Kubernetes or exploit tutorial; focus on trust boundaries and capability amplification.
-- End every major section with a concrete research or systems-design question.
-
-## Primary sources
-
-- [Hugging Face: technical timeline of the July 2026 incident](https://huggingface.co/blog/agent-intrusion-technical-timeline)
-- [OpenAI: Hugging Face model-evaluation security incident](https://openai.com/index/hugging-face-model-evaluation-security-incident/)
-- [Noma Security: ForcedLeak](https://noma.security/noma-labs/forcedleak/)
-- [Varonis Threat Labs: SearchLeak](https://www.varonis.com/blog/searchleak)
-- [MITRE ATT&CK](https://attack.mitre.org/)
+4. [Attacking the model is not new](slides/04-attacking-models-is-not-new.md)
+5. [...and it reached malware detection](slides/05-adversarial-ml-reaches-malware.md)
+6. [Code and data, instructions and context](slides/06-code-data-instructions-context.md)
+7. [The shape of LLM attacks](slides/07-shape-of-llm-attacks.md)
+8. [Why there is no NX bit for text](slides/08-no-nx-bit-for-text.md)
+9. [Harness and authority](slides/09-harness-and-authority.md)
+10. [Attacks on the harness](slides/10-attacks-on-the-harness.md)
+11. [The agent loop](slides/11-agent-loop.md)
+12. [The model becomes an attacker, two ways](slides/12-model-becomes-attacker-two-ways.md)
+13. [Case A: a malicious model the attacker owns](slides/13-case-a-attacker-owned-model.md)
+14. [Approximately 17,600 recovered actions](slides/14-seventeen-thousand-actions.md)
+15. [Case A beyond one incident](slides/15-case-a-beyond-one-incident.md)
+16. [Case B: The trusted enterprise agent](slides/16-forcedleak-enterprise-agent.md)
+17. [ForcedLeak: the attack path](slides/17-forcedleak-attack-path.md)
+18. [Dormant instructions, live authority](slides/18-dormant-instructions-live-authority.md)
+19. [Audience question: what is different?](slides/19-compare-before-reveal.md)
+20. [Defense depends on who controls the agent](slides/20-defense-depends-on-agent-location.md)
+21. [Is a compromised agent malware?](slides/21-is-agent-malware.md)
+22. [Success hidden inside noise](slides/22-success-hidden-in-noise.md)
+23. [The agentic supply chain](slides/23-agentic-supply-chain.md)
+24. [Bounded autonomous response](slides/24-bounded-autonomous-response.md)
+25. [A map of work still to be done](slides/25-research-map-and-close.md)

@@ -1,7 +1,7 @@
-# Slide 23 — Success hidden inside noise
+# Slide 22 — Success hidden inside noise
 
-**Timing:** 58–61 minutes  
-**Module:** Why autonomous attacks are noisy
+**Timing:** 66–72 minutes  
+**Module:** Defense and research
 
 ## On-slide content
 
@@ -27,7 +27,7 @@ This separates detection from decision and response. The organization may observ
 
 ## Transition
 
-“Even after a channel is blocked, an adaptive loop may continue through another path.”
+“Observation is one problem; the agent's own supply chain is another. Once instructions can redirect authority, the software supply chain becomes an agentic one.”
 
 ## Sources
 

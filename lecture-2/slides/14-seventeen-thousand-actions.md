@@ -1,7 +1,7 @@
-# Slide 22 — Approximately 17,600 recovered actions
+# Slide 14 — Approximately 17,600 recovered actions
 
-**Timing:** 55–58 minutes  
-**Module:** Why autonomous attacks are noisy
+**Timing:** 37–42 minutes  
+**Module:** Case A: a malicious model the attacker owns
 
 ## On-slide content
 
@@ -23,7 +23,7 @@ The key change is the economics of persistence: failed experiments consume compu
 
 ## Transition
 
-“For defenders, the successful path was embedded inside thousands of low-signal events.”
+“This was one incident. It is already not the only one.”
 
 ## Sources
 

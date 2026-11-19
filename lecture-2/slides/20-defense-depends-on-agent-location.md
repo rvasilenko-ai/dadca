@@ -1,7 +1,7 @@
-# Slide 29 — Defense depends on who controls the agent
+# Slide 20 — Defense depends on who controls the agent
 
-**Timing:** 75–77 minutes  
-**Module:** Comparison reveal
+**Timing:** 59–63 minutes  
+**Module:** The two cases compared
 
 ## On-slide content
 
@@ -13,8 +13,8 @@
 | Guardrails | Not available to defender | Available at context, tool, identity, and egress boundaries |
 | Core problem | Detect and contain adaptive behavior | Prevent trusted authority from following untrusted intent |
 
-> Case 1: defend against the consequences of someone else’s agent.  
-> Case 2: prevent our agent from becoming the attacker’s execution environment.
+> Case A: defend against the consequences of someone else’s agent.  
+> Case B: prevent our agent from becoming the attacker’s execution environment.
 
 ## Speaker notes
 

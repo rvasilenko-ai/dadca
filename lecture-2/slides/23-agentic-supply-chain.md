@@ -1,7 +1,7 @@
-# Slide 31 — The agentic supply chain
+# Slide 23 — The agentic supply chain
 
-**Timing:** 80–83 minutes  
-**Module:** Future research agenda
+**Timing:** 72–77 minutes  
+**Module:** Defense and research
 
 ## On-slide content
 

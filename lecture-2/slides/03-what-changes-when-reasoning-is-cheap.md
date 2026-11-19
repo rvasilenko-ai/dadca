@@ -1,7 +1,7 @@
 # Slide 3 — What changes when reasoning is cheap?
 
 **Timing:** 5–8 minutes  
-**Module:** Standalone foundation
+**Module:** Foundation
 
 ## On-slide content
 
@@ -25,5 +25,5 @@ The lecture examines the consequences of applying that persistence to offense an
 
 ## Transition
 
-“Now consider an incident in which this moved from a benchmark into real infrastructure.”
+“Before the incidents, one piece of history: turning a model against us is not a new idea.”
 

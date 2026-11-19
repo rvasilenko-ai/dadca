@@ -1,7 +1,7 @@
-# Slide 26 — ForcedLeak: the attack path
+# Slide 17 — ForcedLeak: the attack path
 
-**Timing:** 66–69 minutes  
-**Module:** A different kind of agentic attack
+**Timing:** 49–53 minutes  
+**Module:** Case B: a compromised trusted model
 
 ## On-slide content
 

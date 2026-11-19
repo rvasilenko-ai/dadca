@@ -1,7 +1,7 @@
 # Slide 2 — Standalone foundation
 
 **Timing:** 1–5 minutes  
-**Module:** Standalone foundation
+**Module:** Foundation
 
 ## On-slide content
 

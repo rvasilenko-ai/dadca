@@ -1,7 +1,7 @@
 # Slide 1 — When the attacker is an agent
 
-**Timing:** 0–1 minute  
-**Module:** Standalone foundation
+**Timing:** 0–1 minutes  
+**Module:** Foundation
 
 ## On-slide content
 
