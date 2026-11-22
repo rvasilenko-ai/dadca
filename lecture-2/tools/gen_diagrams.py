@@ -351,7 +351,27 @@ def equation():
     return s + "</svg>\n"
 
 
+def dual_use():
+    """Research tools that diffused: published research, released open source, then reported in intrusions."""
+    W, H = 1800, 300
+    s = head(W, H, "AI pentesting frameworks began as published research, were released open source and model-agnostic, and have since been reported in real intrusions")
+    cols = [
+        ("PUBLISHED RESEARCH", ["autonomous agents that solve", "CTFs, find bugs, red-team nets", "PentestGPT, EnIGMA, D-CIPHER,", "Incalmo; measured on Cybench"], False),
+        ("OPEN SOURCE, MODEL-AGNOSTIC", ["anyone can point a released", "framework at any target;", "only the authorization differs"], False),
+        ("REPORTED IN INTRUSIONS", ["CAIRN — a China-nexus actor,", "~19 orgs, Aug–Sep 2026 (Unit 42)", "PentAGI — scanning across Asia", "HexStrike AI — experimentation"], True),
+    ]
+    xs, w = [40, 640, 1240], 520
+    for i, (t, lines, bad) in enumerate(cols):
+        body = ""
+        if i > 0:
+            body += arrow(xs[i] - 80, 170, xs[i] - 2, 170, red=(cols[i][2]))
+        body += tile(xs[i], 40, w, 210, t, lines, bad=bad, title_size=23, sub_size=20)
+        s += f'<g data-build="{i}">\n{body}</g>\n'
+    return s + "</svg>\n"
+
+
 (OUT / "attack-map.svg").write_text(attack_map())
+(OUT / "dual-use.svg").write_text(dual_use())
 (OUT / "equation.svg").write_text(equation())
 (OUT / "poisoned-harness.svg").write_text(poisoned_harness())
 (OUT / "forcedleak-path.svg").write_text(forcedleak_path())
