@@ -229,7 +229,11 @@ def caption_html(c: str, attrs: str = "") -> str:
         for x in subs:
             m = re.match(r"^\*\*(.+?)\*\*\s*[—:-]\s*(.*)$", x[2:])
             cards.append(f"<li><b>{inline(m.group(1))}</b><p>{inline(m.group(2))}</p></li>" if m else f"<li><p>{inline(x[2:])}</p></li>")
-        return f'<div{attrs}><p>{inline(main)}</p><ul class="cards">' + "".join(cards) + "</ul></div>"
+        # up to four cards sit in one row, each in its own colour; more wrap into rows of at most four, in one colour
+        n = len(cards)
+        cols = n if n <= 4 else -(-n // -(-n // 4))
+        cls = "cards" if n <= 4 else "cards cards--many"
+        return f'<div{attrs}><p>{inline(main)}</p><ul class="{cls}" style="--cols:{cols}">' + "".join(cards) + "</ul></div>"
     return f"<div{attrs}><p>{inline(main)}</p><ul>" + "".join(f"<li>{inline(x[2:])}</li>" for x in subs) + "</ul></div>"
 
 

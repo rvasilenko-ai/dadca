@@ -9,68 +9,68 @@
 Build, one step per click:
 
 0. Sensor — can the system observe the event or state?
-   - File system and on-write hooks — files written, opened, executed
-   - Process and script telemetry — process trees, command lines, script content (ETW, Sysmon, AMSI, script block logging)
-   - Memory scanning — injected or reflectively loaded code, hooks
-   - Network tap, proxy, NDR — flows, DNS, TLS metadata; payload only with decryption
-   - Identity and SaaS audit logs — sign-ins, tokens, consent, data access
-   - Cloud control-plane logs — API calls, role assumptions, configuration changes
-   - Mail and web gateways — attachments, URLs, downloads at delivery
-   - Agent harness logs — context assembled, tool calls, actions, identity used
+   + **File system and on-write hooks** — files written, opened, executed
+   + **Process and script telemetry** — process trees, command lines, script content (ETW, Sysmon, AMSI, script block logging)
+   + **Memory scanning** — injected or reflectively loaded code, hooks
+   + **Network tap, proxy, NDR** — flows, DNS, TLS metadata; payload only with decryption
+   + **Identity and SaaS audit logs** — sign-ins, tokens, consent, data access
+   + **Cloud control-plane logs** — API calls, role assumptions, configuration changes
+   + **Mail and web gateways** — attachments, URLs, downloads at delivery
+   + **Agent harness logs** — context assembled, tool calls, actions, identity used
 1. Acquisition — is the evidence collected and retained?
-   - Capture the artifact on write or on execute — the file as delivered
-   - Triggered memory capture — the process or region at alert time
-   - Full packet capture — everything on the wire
-   - Metadata-only flow records — long, cheap retention
-   - Log retention windows and sampling — what is kept, for how long
-   - Central forwarding — correlation across hosts
+   + **Capture the artifact on write or on execute** — the file as delivered
+   + **Triggered memory capture** — the process or region at alert time
+   + **Full packet capture** — everything on the wire
+   + **Metadata-only flow records** — long, cheap retention
+   + **Log retention windows and sampling** — what is kept, for how long
+   + **Central forwarding** — correlation across hosts
 2. Extraction — can usable artifacts or fields be recovered?
-   - File parsing (PE, Office, PDF, archives) — structure, imports, embedded objects
-   - Unpacking and emulation — code hidden behind packers
-   - Script and macro deobfuscation — the command that actually runs
-   - Disassembly and decompilation — functions, control flow; .NET, Go and Rust each need their own tooling
-   - TLS decryption at a proxy — payload content
-   - Process-tree and session reconstruction — who started what, under which identity
+   + **File parsing (PE, Office, PDF, archives)** — structure, imports, embedded objects
+   + **Unpacking and emulation** — code hidden behind packers
+   + **Script and macro deobfuscation** — the command that actually runs
+   + **Disassembly and decompilation** — functions, control flow; .NET, Go and Rust each need their own tooling
+   + **TLS decryption at a proxy** — payload content
+   + **Process-tree and session reconstruction** — who started what, under which identity
 3. Representation — what information is supplied to analysis?
-   - Hashes and byte patterns — exact identity
-   - Engineered features — headers, imports, strings, entropy: fast, interpretable
-   - Sequences (API calls, events, bytes) — order
-   - Graphs — process trees, call graphs, identity graphs: relationships
-   - Similarity sketches — neighbors and families
-   - Text (decompiled code, logs, reports) — semantics an LLM can read
+   + **Hashes and byte patterns** — exact identity
+   + **Engineered features** — headers, imports, strings, entropy: fast, interpretable
+   + **Sequences (API calls, events, bytes)** — order
+   + **Graphs** — process trees, call graphs, identity graphs: relationships
+   + **Similarity sketches** — neighbors and families
+   + **Text (decompiled code, logs, reports)** — semantics an LLM can read
 4. Detection — is a score, rule, or verdict produced?
-   - Signatures and indicators — known threats, cheaply
-   - Expert rules (YARA, Sigma, Snort) — capability patterns across hosts and traffic
-   - Supervised classifiers — generalization inside the training distribution
-   - Anomaly detection and baselining — deviations without a label
-   - Similarity and clustering — campaign grouping, novelty
-   - Reputation and prevalence — rare or new objects
+   + **Signatures and indicators** — known threats, cheaply
+   + **Expert rules (YARA, Sigma, Snort)** — capability patterns across hosts and traffic
+   + **Supervised classifiers** — generalization inside the training distribution
+   + **Anomaly detection and baselining** — deviations without a label
+   + **Similarity and clustering** — campaign grouping, novelty
+   + **Reputation and prevalence** — rare or new objects
 5. Investigation — can evidence be connected and explained?
-   - Triage and enrichment — context from intelligence, asset and identity data
-   - Timeline reconstruction across sources — the sequence of events
-   - Sandbox detonation — a captured artifact's behavior
-   - Memory and disk forensics — what actually ran
-   - Reverse engineering — the capability in full
-   - LLM-assisted analysis — summaries, hypotheses, tool orchestration
+   + **Triage and enrichment** — context from intelligence, asset and identity data
+   + **Timeline reconstruction across sources** — the sequence of events
+   + **Sandbox detonation** — a captured artifact's behavior
+   + **Memory and disk forensics** — what actually ran
+   + **Reverse engineering** — the capability in full
+   + **LLM-assisted analysis** — summaries, hypotheses, tool orchestration
 6. Decision — can an appropriate action be selected?
-   - Automatic block above a threshold — speed
-   - Human approval playbooks — accountability
-   - Risk-based policy by asset criticality — proportional response
-   - Pre-authorized containment — speed with accountability, for defined scenarios
-   - Escalation and deferral — expert judgment
+   + **Automatic block above a threshold** — speed
+   + **Human approval playbooks** — accountability
+   + **Risk-based policy by asset criticality** — proportional response
+   + **Pre-authorized containment** — speed with accountability, for defined scenarios
+   + **Escalation and deferral** — expert judgment
 7. Response — can the action be executed in time?
-   - Isolate, kill, quarantine — stops host activity: isolate the host, kill the process, quarantine the file
-   - Revoke tokens, reset credentials — stops identity-led activity: revoke sessions, reset credentials, disable accounts
-   - Block destinations and domains — cuts the channel
-   - Restore from backup, roll back changes — recovery
-   - Patch and reconfigure — closes the entry
-   - Revoke an agent's tools or authority — stops a hijacked agent
+   + **Isolate, kill, quarantine** — stops host activity: isolate the host, kill the process, quarantine the file
+   + **Revoke tokens, reset credentials** — stops identity-led activity: revoke sessions, reset credentials, disable accounts
+   + **Block destinations and domains** — cuts the channel
+   + **Restore from backup, roll back changes** — recovery
+   + **Patch and reconfigure** — closes the entry
+   + **Revoke an agent's tools or authority** — stops a hijacked agent
 
 > Every stage has options, and every line here came from that history; the sensor and extraction rows changed most.
 
 ## Talking points
 
-- Do not read every card; step to two stages, sensor and response, and name one trade-off for each of the others.
++ **Do not read every card; step to two stages, sensor and response, and name one trade-off for each of the others.
 - Each product class in the lineages is one or two lines here; the history is the industry adding lines.
 - Signatures and machine learning are not file-only methods; the public evidence base is.
 - Use the panel to answer "why not just do X": X is a row, with its blind spot in the last column.
