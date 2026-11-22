@@ -9,29 +9,29 @@
 Build, one step per click:
 
 0. Sensor
-   - **Plaintext IDS** — A tap or inline appliance at the perimeter.
-   - **After encryption** — The same perimeter tap; endpoint and identity sensors pick up what it can no longer read.
+   + **Plaintext IDS** — A tap or inline appliance at the perimeter.
+   + **After encryption** — The same perimeter tap; endpoint and identity sensors pick up what it can no longer read.
 1. Acquisition
-   - **Plaintext IDS** — Full packets, kept for hours or days.
-   - **After encryption** — Flow and connection metadata for months; full packets still captured but encrypted; DNS only where it is not over DoH.
+   + **Plaintext IDS** — Full packets, kept for hours or days.
+   + **After encryption** — Flow and connection metadata for months; full packets still captured but encrypted; DNS only where it is not over DoH.
 2. Extraction
-   - **Plaintext IDS** — Protocol parsing and file carving from the stream.
-   - **After encryption** — Decryption at a proxy for the payload (pinning, privacy, performance costs); without it, no content, only the clear handshake and flow fields.
+   + **Plaintext IDS** — Protocol parsing and file carving from the stream.
+   + **After encryption** — Decryption at a proxy for the payload (pinning, privacy, performance costs); without it, no content, only the clear handshake and flow fields.
 3. Representation
-   - **Plaintext IDS** — Payload bytes and strings.
-   - **After encryption** — Endpoints, server name until ECH, timing, volume, TLS fingerprints (JA3 2017, JA4 2023).
+   + **Plaintext IDS** — Payload bytes and strings.
+   + **After encryption** — Endpoints, server name until ECH, timing, volume, TLS fingerprints (JA3 2017, JA4 2023).
 4. Detection
-   - **Plaintext IDS** — Content rules on exploits, downloads and beacons (Snort).
-   - **After encryption** — Metadata rules, beaconing and anomaly models, reputation.
+   + **Plaintext IDS** — Content rules on exploits, downloads and beacons (Snort).
+   + **After encryption** — Metadata rules, beaconing and anomaly models, reputation.
 5. Investigation
-   - **Plaintext IDS** — Replay the capture.
-   - **After encryption** — Metadata investigation — flows, DNS, TLS fingerprints, reputation — joined to endpoint and identity events.
+   + **Plaintext IDS** — Replay the capture.
+   + **After encryption** — Metadata investigation — flows, DNS, TLS fingerprints, reputation — joined to endpoint and identity events.
 6. Decision and response
-   - **Plaintext IDS** — Block inline.
-   - **After encryption** — Block destinations; isolate from the endpoint.
+   + **Plaintext IDS** — Block inline.
+   + **After encryption** — Block destinations; isolate from the endpoint.
 7. Challenge
-   - **Plaintext IDS** — Encryption removed the payload (HTTPS by default, 2015 onward), the certificate (TLS 1.3, 2018), the lookup (DoH, 2018 onward) and the server name (ECH, browsers 2023).
-   - **After encryption** — Lower specificity; east-west SMB, Kerberos, LDAP and scanning still visible; plaintext survives on the endpoint.
+   + **Plaintext IDS** — Encryption removed the payload (HTTPS by default, 2015 onward), the certificate (TLS 1.3, 2018), the lookup (DoH, 2018 onward) and the server name (ECH, browsers 2023).
+   + **After encryption** — Lower specificity; east-west SMB, Kerberos, LDAP and scanning still visible; plaintext survives on the endpoint.
 
 > The sensor stayed where it was. Extraction failed, and everything below it was rebuilt on metadata or moved to the endpoint.
 > Scenario check: three moments cross the network, the driver download, the implant download and the document upload. All inside TLS, and with DNS over HTTPS even the lookups are hidden, so a content signature matches nothing. What remains: the connections to unfamiliar hosts, their timing and reputation, and, behind a decryption proxy, the payloads. The endpoint sees the plaintext before encryption.

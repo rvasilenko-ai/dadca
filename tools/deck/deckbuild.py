@@ -160,14 +160,15 @@ def split_content(md: str) -> tuple[str, list[str], list[dict]]:
     while i < len(lines):
         s = lines[i].strip()
         if s.startswith("Build, one step per click"):
-            # numbered items are the captions; an indented "- " line under an item is a sub-item shown on its own line
+            # numbered items are the captions; an indented "- " line under an item is a sub-item on its own line,
+            # an indented "+ " line a card (cards sit side by side, each in its own fixed colour)
             i += 1
-            while i < len(lines) and (not lines[i].strip() or re.match(r"^\d+\. ", lines[i].strip()) or re.match(r"^\s+- ", lines[i])):
+            while i < len(lines) and (not lines[i].strip() or re.match(r"^\d+\. ", lines[i].strip()) or re.match(r"^\s+[-+] ", lines[i])):
                 st = lines[i].strip()
                 if re.match(r"^\d+\. ", st):
                     captions.append(re.sub(r"^\d+\. ", "", st))
-                elif st.startswith("- ") and captions:
-                    captions[-1] += "\n" + st[2:]
+                elif st[:2] in ("- ", "+ ") and captions:
+                    captions[-1] += "\n" + st
                 i += 1
             continue
         m = re.match(r"^!\[(.*?)\]\(([^)]+)\)$", s)
@@ -218,11 +219,18 @@ def max_build(svg: str) -> int:
 
 # --------------------------------------------------------------------------- rendering
 def caption_html(c: str, attrs: str = "") -> str:
-    """One caption: a paragraph, or a paragraph with a list when the caption carries sub-items."""
+    """One caption: a paragraph; with "- " sub-items, a paragraph and a list; with "+ " sub-items, a paragraph and
+    a row of cards, a "**Label** — text" sub-item giving the card its heading."""
     main, *subs = c.split("\n")
     if not subs:
         return f"<p{attrs}>{inline(main)}</p>"
-    return f"<div{attrs}><p>{inline(main)}</p><ul>" + "".join(f"<li>{inline(x)}</li>" for x in subs) + "</ul></div>"
+    if all(x.startswith("+ ") for x in subs):
+        cards = []
+        for x in subs:
+            m = re.match(r"^\*\*(.+?)\*\*\s*[—:-]\s*(.*)$", x[2:])
+            cards.append(f"<li><b>{inline(m.group(1))}</b><p>{inline(m.group(2))}</p></li>" if m else f"<li><p>{inline(x[2:])}</p></li>")
+        return f'<div{attrs}><p>{inline(main)}</p><ul class="cards">' + "".join(cards) + "</ul></div>"
+    return f"<div{attrs}><p>{inline(main)}</p><ul>" + "".join(f"<li>{inline(x[2:])}</li>" for x in subs) + "</ul></div>"
 
 
 def captions_html(captions: list[str], static: bool = False) -> str:
