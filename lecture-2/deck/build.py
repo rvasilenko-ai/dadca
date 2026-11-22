@@ -182,8 +182,8 @@ def inline_svg(src: str, n_captions: int) -> str:
     svg = re.sub(r"<\?xml[^>]*\?>", "", svg).strip()
     svg = re.sub(r'<svg([^>]*?)\swidth="\d+"\sheight="\d+"', r"<svg\1", svg, count=1)
     svg = svg.replace("<svg ", '<svg class="diagram" ', 1)
-    # the first rect is the white card; keep it as a card in both themes
-    svg = re.sub(r'<rect x="0" y="0" width="\d+" height="\d+" fill="#ffffff"/>', lambda m: m.group(0).replace('fill="#ffffff"', 'class="svg-bg"'), svg, count=1)
+    # the file's own <style> is for standalone viewing; in the deck the classes take the deck's tokens
+    svg = re.sub(r"<style>.*?</style>\s*", "", svg, count=1, flags=re.S)
     builds = [int(x) for x in re.findall(r'data-build="(\d+)"', svg)]
     if builds and n_captions and max(builds) == n_captions:
         # one more group than captions: the last group arrives with the last caption

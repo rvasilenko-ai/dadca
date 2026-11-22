@@ -6,7 +6,7 @@
   --ink: #0b1020; --ink-2: #3a4360; --ink-3: #5b6580;
   --rule: #d9dee9; --rule-2: #bfc7d8; --rule-3: #6c768e; --line: #5f6a85;
   --accent: #0369a1; --accent-ink: #075985; --accent-wash: #e0f2fe;
-  --bad: #dc2626; --bad-ink: #991b1b; --good: #15803d; --good-ink: #14532d;
+  --bad: #dc2626; --bad-ink: #991b1b; --bad-wash: #fee2e2; --good: #15803d; --good-ink: #14532d; --good-wash: #dcfce7; --on-badge: #ffffff;
   --part-0: #0369a1; --part-1: #b45309; --part-2: #5b3fd0; --part-3: #b91c1c; --part-4: #0f766e;
   --part: var(--part-0);
   --shadow: 0 18px 50px -28px rgba(11,16,32,.45), 0 0 0 1px var(--rule-2);
@@ -21,7 +21,7 @@
   --ink: #eef1f8; --ink-2: #c6cddd; --ink-3: #9aa4ba;
   --rule: #26304a; --rule-2: #344062; --rule-3: #7f8aa6; --line: #8b96b0;
   --accent: #7cc4ff; --accent-ink: #bfe3ff; --accent-wash: #10304a;
-  --bad: #f87171; --bad-ink: #fecaca; --good: #4ade80; --good-ink: #bbf7d0;
+  --bad: #f87171; --bad-ink: #fecaca; --good: #4ade80; --good-ink: #bbf7d0; --bad-wash: #3b1515; --good-wash: #0f2e1c; --on-badge: #0b0f1a;
   --part-0: #7cc4ff; --part-1: #f0a04b; --part-2: #a78bfa; --part-3: #f87171; --part-4: #2dd4bf;
   --shadow: 0 18px 50px -28px rgba(0,0,0,.8), 0 0 0 1px var(--rule-2);
 }
@@ -30,7 +30,7 @@
   --ink: #eef1f8; --ink-2: #c6cddd; --ink-3: #9aa4ba;
   --rule: #26304a; --rule-2: #344062; --rule-3: #7f8aa6; --line: #8b96b0;
   --accent: #7cc4ff; --accent-ink: #bfe3ff; --accent-wash: #10304a;
-  --bad: #f87171; --bad-ink: #fecaca; --good: #4ade80; --good-ink: #bbf7d0;
+  --bad: #f87171; --bad-ink: #fecaca; --good: #4ade80; --good-ink: #bbf7d0; --bad-wash: #3b1515; --good-wash: #0f2e1c; --on-badge: #0b0f1a;
   --part-0: #7cc4ff; --part-1: #f0a04b; --part-2: #a78bfa; --part-3: #f87171; --part-4: #2dd4bf;
   --shadow: 0 18px 50px -28px rgba(0,0,0,.8), 0 0 0 1px var(--rule-2);
 } }
@@ -106,12 +106,26 @@ pre.schematic, .slide-title, .lead, .step-captions { flex: none; }
 .body { overflow: hidden; }
 html.is-still * { transition: none !important; }
 
-/* ---- diagram slides ---- */
+/* ---- diagram slides: the SVG sits on the stage and takes the theme's tokens ---- */
 .slide--diagram .diagram-wrap { margin: 0; flex: 0 1 auto; min-height: 0; display: flex; justify-content: center; }
-.slide--diagram .diagram { display: block; width: auto; max-width: 1700px; max-height: 640px; height: auto; overflow: visible; border-radius: 16px; box-shadow: var(--shadow); }
-.svg-bg { fill: #ffffff; }
+.slide--diagram .diagram { display: block; width: auto; max-width: 1700px; max-height: 690px; height: auto; overflow: visible; }
 .diagram g[data-build] { opacity: 0; transition: opacity var(--d) ease-out; }
 .diagram g[data-build].is-shown { opacity: 1; }
+.diagram .node { fill: var(--surface); stroke: var(--rule-2); stroke-width: 2.5; }
+.diagram .node--model { fill: var(--accent-wash); stroke: var(--accent); stroke-width: 4; }
+.diagram .node--bad { fill: var(--bad-wash); stroke: var(--bad); stroke-width: 4; }
+.diagram .node--good { fill: var(--good-wash); stroke: var(--good); stroke-width: 4; }
+.diagram .frame { fill: var(--surface-2); stroke: var(--rule-2); stroke-width: 2.5; }
+.diagram .env { fill: none; stroke: var(--line); stroke-width: 3; stroke-dasharray: 14 10; }
+.diagram .t { fill: var(--ink); } .diagram .t2 { fill: var(--ink-2); } .diagram .t-acc { fill: var(--accent-ink); }
+.diagram .t-bad { fill: var(--bad-ink); } .diagram .t-good { fill: var(--good-ink); } .diagram .t-badge { fill: var(--on-badge); }
+.diagram .edge { fill: none; stroke: var(--line); stroke-width: 3; stroke-linecap: round; }
+.diagram .edge--strong { stroke: var(--ink-2); stroke-width: 4; }
+.diagram .edge--bad { stroke: var(--bad); stroke-width: 4; } .diagram .edge--good { stroke: var(--good); stroke-width: 4; }
+.diagram .arrow { fill: var(--ink-2); } .diagram .arrow--bad { fill: var(--bad); } .diagram .arrow--good { fill: var(--good); }
+.diagram .badge--bad { fill: var(--bad); stroke: var(--bg); stroke-width: 3; } .diagram .badge--good { fill: var(--good); stroke: var(--bg); stroke-width: 3; }
+.diagram .ctx-bar { fill: var(--rule-2); } .diagram .ring { fill: none; stroke: var(--ink); stroke-width: 4; } .diagram .dot { fill: var(--ink); }
+.diagram g[data-build].is-current .node:not(.node--model) { stroke-width: 4.5; }
 .slide--diagram .lead { font-size: var(--fs-small); margin-bottom: 14px; }
 .slide--diagram blockquote.callout { font-size: var(--fs-small); margin-top: 10px; }
 
