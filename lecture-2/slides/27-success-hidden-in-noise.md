@@ -1,4 +1,4 @@
-# Slide 26 — Success hidden inside noise
+# Slide 27 — Success hidden inside noise
 
 **Timing:** 73–77 minutes  
 **Module:** Defense and research

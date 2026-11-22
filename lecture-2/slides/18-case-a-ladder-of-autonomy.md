@@ -1,6 +1,6 @@
 # Slide 18 — Case A is a ladder of autonomy
 
-**Timing:** 49–53 minutes  
+**Timing:** 48–51 minutes  
 **Module:** Case A: an agent the attacker owns
 
 ## On-slide content
@@ -21,7 +21,7 @@ Build, one step per click:
 1. The model answers questions; a human does everything else. State actors use commercial models for reconnaissance, lures and translating exfiltrated data.
 2. Ordinary file-based implants embed one LLM call: NIK C2 to choose commands, VOLTA to rank a victim's assets.
 3. The agent chooses and executes most steps; the human sets objectives and unblocks. In November 2025 an agent did an estimated 80–90% of a campaign across about thirty targets.
-4. No human in the loop. exploit_agent compares code before and after a patch, drafts an exploit and runs it. Open-source multi-agent pentesting frameworks — an OODA loop over a shared blackboard; 150 tools under 12 sub-agents — are picked up as attack platforms.
+4. No human in the loop. exploit_agent compares code before and after a patch, drafts an exploit and runs it. Open-source multi-agent pentesting frameworks are picked up as attack platforms — the next slide looks at where they came from.
 5. The attacker's agent, the victim's model. Stolen cloud LLM credentials: single-day bills above $100,000, $1 million cumulative; a key-escalation bug in LiteLLM; "LLM Mixers" resell the stolen access.
 
 > November 2026, Google's threat-intelligence group: actors "fully automate vulnerability discovery and exploitation without a human in the loop for the first time." It lowers the skill floor — and, for now, trades stealth for velocity.
@@ -36,7 +36,7 @@ Where the reference incident sits: rung 4 under evaluation conditions; exploit_a
 
 ## Transition
 
-“Case B brings no agent at all. The attacker uses yours — and there are two ways in.”
+“Rung four is worth its own slide: those agents are published research, released as open source.”
 
 ## Sources
 

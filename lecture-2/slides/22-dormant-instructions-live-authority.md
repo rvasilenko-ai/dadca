@@ -1,6 +1,6 @@
-# Slide 21 — Dormant instructions, live authority
+# Slide 22 — Dormant instructions, live authority
 
-**Timing:** 59–62 minutes  
+**Timing:** 60–62 minutes  
 **Module:** Case B: a trusted agent hijacked
 
 ## On-slide content
