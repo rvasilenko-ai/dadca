@@ -1,6 +1,6 @@
 # Slide 27 — Case A defense: the sensors we have, decisions at machine speed
 
-**Timing:** 71–75 minutes  
+**Timing:** 73–77 minutes  
 **Module:** Defense and research
 
 ## On-slide content

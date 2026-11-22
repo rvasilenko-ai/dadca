@@ -1,6 +1,6 @@
 # Slide 30 — The weak watching the strong
 
-**Timing:** 82–85 minutes  
+**Timing:** 83–86 minutes  
 **Module:** Defense and research
 
 ## On-slide content

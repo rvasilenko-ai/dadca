@@ -31,6 +31,8 @@ This is why malware is better defined by capability than by file. There may be n
 
 Avoid insisting on one label. Ask what each label helps defenders observe, prevent, or regulate.
 
+Cut cue: if running slow, fold this slide into slide 22 — the equation becomes the closing line of the attack path.
+
 ## Transition
 
 “ForcedLeak needed no file. The second way into Case B ends with a very familiar one.”

@@ -1,6 +1,6 @@
 # Slide 28 — Case B defense: guardrails, the boundary text does not have
 
-**Timing:** 75–79 minutes  
+**Timing:** 77–81 minutes  
 **Module:** Defense and research
 
 ## On-slide content

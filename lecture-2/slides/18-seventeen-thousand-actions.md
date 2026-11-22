@@ -21,6 +21,8 @@ State that these are reconstructed counts from available logs, not a guarantee t
 
 The key change is the economics of persistence: failed experiments consume compute and time, but much less scarce human attention.
 
+Cut cue: if running slow, fold this slide into slide 17 — the counts become one spoken sentence after the callout.
+
 ## Transition
 
 “This was one incident. It is already not the only one.”

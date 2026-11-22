@@ -27,7 +27,7 @@ Prompt injection becomes a supply-chain concern when untrusted content can influ
 
 Open research problems include instruction provenance, typed trust boundaries, context isolation, least-authority tools, human-review usability, and end-to-end auditability.
 
-## Interaction
+## Interaction (optional, only if the room is ahead of time)
 
 Ask students which inputs in their current development workflow are treated as data but could be interpreted as instructions by an agent.
 

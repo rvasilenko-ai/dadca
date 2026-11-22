@@ -1,6 +1,6 @@
 # Slide 29 — Who watches the agent: cheap models, in a funnel
 
-**Timing:** 79–82 minutes  
+**Timing:** 81–83 minutes  
 **Module:** Defense and research
 
 ## On-slide content
