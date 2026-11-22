@@ -23,7 +23,7 @@ svg{--surface:#ffffff;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--line:#9ca3
   <marker id="arrow-good" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
 </defs>
 <g data-build="0">
-<rect x="300" y="10" width="1030" height="680" rx="26" class="frame"/>
+<rect x="300" y="10" width="1050" height="680" rx="26" class="frame"/>
 <text x="330" y="46" class="t2" font-size="28" font-weight="700" text-anchor="start" dominant-baseline="central">Harness</text>
 <rect x="700" y="290" width="260" height="130" rx="18" class="node node--model"/>
 <text x="830" y="336" class="t-acc" font-size="36" font-weight="700" text-anchor="middle" dominant-baseline="central">Model</text>
@@ -31,8 +31,8 @@ svg{--surface:#ffffff;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--line:#9ca3
 </g>
 <g data-build="0">
 <path d="M985 140L945 290" class="edge draw" pathLength="1"/>
-<rect x="985" y="85" width="320" height="110" rx="14" class="node"/>
-<text x="1005" y="117" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">Objective and instructions</text>
+<rect x="985" y="85" width="340" height="110" rx="14" class="node"/>
+<text x="1005" y="117" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">Objective and instructions</text>
 <text x="1005" y="147" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">the task and its rules</text>
 </g>
 <g data-build="1">
@@ -55,20 +55,20 @@ svg{--surface:#ffffff;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--line:#9ca3
 </g>
 <g data-build="0">
 <path d="M985 570L945 420" class="edge draw" pathLength="1"/>
-<rect x="985" y="515" width="320" height="110" rx="14" class="node"/>
+<rect x="985" y="515" width="340" height="110" rx="14" class="node"/>
 <text x="1005" y="547" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">Shell and network</text>
 <text x="1005" y="577" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">where its actions land</text>
-<path d="M1420 465H1332" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
-<text x="1374" y="490" class="t" font-size="22" font-weight="600" text-anchor="middle" dominant-baseline="central">output</text>
-<rect x="1420" y="240" width="360" height="230" rx="18" class="env"/>
-<text x="1450" y="280" class="t" font-size="28" font-weight="700" text-anchor="start" dominant-baseline="central">Environment</text>
-<text x="1450" y="322" class="t" font-size="22" font-weight="400" text-anchor="start" dominant-baseline="central">files, systems, network:</text>
-<text x="1450" y="352" class="t" font-size="22" font-weight="400" text-anchor="start" dominant-baseline="central">the target</text>
-<text x="1600" y="430" class="t2" font-size="22" font-weight="500" text-anchor="middle" dominant-baseline="central" font-style="italic">real-world consequences</text>
+<path d="M1440 465H1352" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
+<text x="1394" y="490" class="t" font-size="22" font-weight="600" text-anchor="middle" dominant-baseline="central">output</text>
+<rect x="1440" y="240" width="340" height="230" rx="18" class="env"/>
+<text x="1470" y="280" class="t" font-size="28" font-weight="700" text-anchor="start" dominant-baseline="central">Environment</text>
+<text x="1470" y="322" class="t" font-size="22" font-weight="400" text-anchor="start" dominant-baseline="central">files, systems, network:</text>
+<text x="1470" y="352" class="t" font-size="22" font-weight="400" text-anchor="start" dominant-baseline="central">the target</text>
+<text x="1610" y="430" class="t2" font-size="22" font-weight="500" text-anchor="middle" dominant-baseline="central" font-style="italic">real-world consequences</text>
 </g>
 <g data-build="0">
-<path d="M1330 245H1418" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
-<text x="1374" y="222" class="t" font-size="22" font-weight="600" text-anchor="middle" dominant-baseline="central">actions</text>
+<path d="M1350 245H1438" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
+<text x="1394" y="222" class="t" font-size="22" font-weight="600" text-anchor="middle" dominant-baseline="central">actions</text>
 </g>
 <g data-build="2">
 <path d="M660 355H698" class="edge draw" pathLength="1"/>
@@ -97,8 +97,8 @@ svg{--surface:#ffffff;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--line:#9ca3
 </g>
 <g data-build="5">
 <path d="M985 355H962" class="edge draw" pathLength="1"/>
-<rect x="985" y="300" width="320" height="110" rx="14" class="node node--bad"/>
-<text x="1005" y="332" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">Credentials and authority</text>
+<rect x="985" y="300" width="340" height="110" rx="14" class="node node--bad"/>
+<text x="1005" y="332" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">Credentials and authority</text>
 <text x="1005" y="362" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">confused or excessive</text>
 <text x="1005" y="388" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">delegated permissions</text>
 <circle cx="985" cy="300" r="22" class="badge--bad"/>
@@ -111,6 +111,6 @@ svg{--surface:#ffffff;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--line:#9ca3
 <text x="60" y="548" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">to the model</text>
 <path d="M150 458V412" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad)"/>
 <path d="M40 510H22V140H38" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad)"/>
-<text x="1065" y="662" class="t-bad" font-size="21" font-weight="500" text-anchor="middle" dominant-baseline="central">red: a component the attacker can write to — every arrow ends in the model's context</text>
+<text x="825" y="662" class="t-bad" font-size="21" font-weight="500" text-anchor="middle" dominant-baseline="central">red: a component the attacker can write to — every arrow ends in the model's context</text>
 </g>
 </svg>

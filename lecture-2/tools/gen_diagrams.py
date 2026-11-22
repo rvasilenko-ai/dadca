@@ -89,18 +89,19 @@ def harness(mode: str):
         b = dict(objective=0, tools=1, servers=4, env=0, actions=6, retrieval=2, docs=2, memory=3, creds=5, extra=7)
     def g(key, body): return f'<g data-build="{b[key]}">\n{body}</g>\n'
     s = head(W, H, title)
-    s += '<g data-build="0">\n<rect x="300" y="10" width="1030" height="680" rx="26" class="frame"/>\n'
+    s += '<g data-build="0">\n<rect x="300" y="10" width="1050" height="680" rx="26" class="frame"/>\n'
     s += text(330, 46, "Harness", 28, 700, "t2")
     s += '<rect x="700" y="290" width="260" height="130" rx="18" class="node node--model"/>\n'
     sub = {"plain": "chooses the next action", "attack": "unchanged, still subverted", "guard": "still untrusted by design"}[mode]
     s += text(830, 336, "Model", 36, 700, "t-acc", "middle")
     s += text(830, 382, sub, 20, 400 if mode == "plain" else 500, "t-acc", "middle")
     s += '</g>\n'
-    L, LW, R, RW, TH = 330, 330, 985, 320, 110
+    L, LW, R, RW, TH = 330, 330, 985, 340, 110
+    legend_x = 825  # centre of the frame, so the legend line stays inside it
     rows = {1: 85, 2: 300, 3: 515}
     def subs(plain, atk, grd): return grd if guard else (atk if attack else plain)
     hi = dict(bad=attack, good=guard)
-    s += g("objective", edge("M985 140L945 290") + tile(R, rows[1], RW, TH, "Objective and instructions", ["the task and its rules"]))
+    s += g("objective", edge("M985 140L945 290") + tile(R, rows[1], RW, TH, "Objective and instructions", ["the task and its rules"], title_size=22))
     body = edge("M660 140L715 290") + tile(L, rows[1], LW, TH, "Tools, skills, plugins",
               subs(["how it acts; its config and hooks"], ["poisoned skill or hook,", "injected tool description"],
                    ["allowlist, least privilege,", "approval for consequential acts"]), **hi)
@@ -114,14 +115,14 @@ def harness(mode: str):
     if guard: body += badge(40, rows[1], 4, True)
     s += g("servers", body)
     body = edge("M985 570L945 420") + tile(R, rows[3], RW, TH, "Shell and network", ["where its actions land"])
-    body += edge("M1420 465H1332", strong=True, arrow=True) + text(1374, 490, "output", 22, 600, "t", "middle")
-    body += '<rect x="1420" y="240" width="360" height="230" rx="18" class="env"/>\n'
-    body += text(1450, 280, "Environment", 28, 700, "t") + text(1450, 322, "files, systems, network:", 22, 400, "t") + text(1450, 352, "the target", 22, 400, "t")
-    body += text(1600, 430, "real-world consequences", 22, 500, "t2", "middle", italic=True)
+    body += edge("M1440 465H1352", strong=True, arrow=True) + text(1394, 490, "output", 22, 600, "t", "middle")
+    body += '<rect x="1440" y="240" width="340" height="230" rx="18" class="env"/>\n'
+    body += text(1470, 280, "Environment", 28, 700, "t") + text(1470, 322, "files, systems, network:", 22, 400, "t") + text(1470, 352, "the target", 22, 400, "t")
+    body += text(1610, 430, "real-world consequences", 22, 500, "t2", "middle", italic=True)
     s += g("env", body)
-    body = edge("M1330 245H1418", strong=not guard, arrow=True, green=guard)
-    body += text(1600, 205, "actions — egress: trusted destinations only", 19, 600, "t-good", "middle") if guard else text(1374, 222, "actions", 22, 600, "t", "middle")
-    if guard: body += badge(1374, 245, "E", True)
+    body = edge("M1350 245H1438", strong=not guard, arrow=True, green=guard)
+    body += text(1590, 205, "actions — egress: trusted destinations only", 19, 600, "t-good", "middle") if guard else text(1394, 222, "actions", 22, 600, "t", "middle")
+    if guard: body += badge(1394, 245, "E", True)
     s += g("actions", body)
     body = edge("M660 355H698") + tile(L, rows[2], LW, TH, "Retrieval",
               subs(["what it is fed: documents,", "mail, records, web pages"], ["instructions planted", "in what it reads"],
@@ -140,19 +141,19 @@ def harness(mode: str):
     s += g("memory", body)
     body = edge("M985 355H962") + tile(R, rows[2], RW, TH, "Credentials and authority",
               subs(["whose identity it acts with"], ["confused or excessive", "delegated permissions"],
-                   ["per-agent identity, short-lived,", "never more than the user"]), **hi)
+                   ["per-agent identity, short-lived,", "never more than the user"]), title_size=22, **hi)
     if attack: body += badge(R, rows[2], 5)
     if guard: body += badge(R, rows[2], 5, True)
     s += g("creds", body)
     if attack:
         body = tile(40, 460, 220, 100, "Attacker", ["never talks", "to the model"], bad=True, title_size=24, sub_size=18)
         body += edge("M150 458V412", red=True, arrow=True) + edge("M40 510H22V140H38", red=True, arrow=True)
-        body += text(1065, 662, "red: a component the attacker can write to — every arrow ends in the model's context", 21, 500, "t-bad", "middle")
+        body += text(legend_x, 662, "red: a component the attacker can write to — every arrow ends in the model's context", 21, 500, "t-bad", "middle")
         s += g("extra", body)
     if guard:
         body = badge(830, 252, "M", True) + text(830, 46, "M — every transition logged and classified", 22, 600, "t-good", "middle")
         body += tile(40, 460, 220, 100, "Attacker", ["still writes here;", "reaches no authority"], good=True, title_size=24, sub_size=18)
-        body += text(1065, 662, "green: the control at each red point of the previous view — structure first, classifiers second", 21, 500, "t-good", "middle")
+        body += text(legend_x, 662, "green: the control at each red point of the previous view — structure first, classifiers second", 21, 500, "t-good", "middle")
         s += g("extra", body)
     return s + '</svg>\n'
 
