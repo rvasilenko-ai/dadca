@@ -1,6 +1,6 @@
 # Slide 20 — Hugging Face: the attack path
 
-**Timing:** 52–55 minutes  
+**Timing:** 51–54 minutes  
 **Module:** Case A: an agent the attacker owns
 
 ## On-slide content

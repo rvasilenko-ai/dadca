@@ -495,6 +495,19 @@ def equation_neptune():
          ["The settings file", "is the supply chain"]])
 
 
+def equation_huggingface():
+    return equation_figure(
+        "Hugging Face, what it adds up to: the attacker's objective plus the attacker's agent (model and harness) plus a "
+        "launchpad on the Internet plus ordinary weaknesses at the victim equals attacker-desired capability. Three "
+        "readings of the same incident: a tireless operator, coverage not elegance; the agent was the intruder, no human "
+        "in the loop; detection worked, the decision failed",
+        [(["the attacker's", "objective"], True), (["attacker's agent:", "model and harness"], True),
+         (["a launchpad on", "the Internet"], True), (["ordinary weaknesses", "at the victim"], False)],
+        "Three readings — each true, each pointing at a different defense",
+        [["A tireless operator:", "coverage, not elegance"], ["The agent was the intruder:", "no human in the loop"],
+         ["Detection worked;", "the decision failed"]])
+
+
 def dual_use():
     """Research tools that diffused: published research, released open source, then reported in intrusions."""
     W, H = 1800, 300
@@ -569,6 +582,7 @@ def weak_monitor():
 (OUT / "dual-use.svg").write_text(dual_use())
 (OUT / "equation.svg").write_text(equation())
 (OUT / "equation-neptune.svg").write_text(equation_neptune())
+(OUT / "equation-huggingface.svg").write_text(equation_huggingface())
 (OUT / "poisoned-harness.svg").write_text(poisoned_harness())
 (OUT / "forcedleak-path.svg").write_text(forcedleak_path())
 (OUT / "incident-chain.svg").write_text(incident_chain())
