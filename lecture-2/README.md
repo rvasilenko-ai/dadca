@@ -11,7 +11,7 @@
 The lecture is built on one idea and one distinction.
 
 - **The idea.** Attacking a learned model is not new; it runs from adversarial examples and poisoning, through evasion of ML malware detectors, to prompt injection of LLMs. Prompt injection is the oldest bug class — confusing data for code — reappearing one layer up: classic software shares code and data as bytes, an LLM shares instructions and context as text, and neither has a trust boundary in that shared channel. And the model is not the whole target; it sits in a harness of tools, skills, memory, retrieval, and delegated authority that is attacked just as directly. The vocabulary is built in that order on purpose — model, then harness, then agent — so the word "agent" is never used before it is defined.
-- **The distinction.** A model becomes an attacker in two different ways: a malicious model the attacker owns and runs (Case A, the agent as a weapon), and a trusted model hijacked from its owner through injected context or a poisoned harness (Case B). Same outcome, opposite threat model, opposite defensive opportunities.
+- **The distinction.** An agent becomes an attacker in two different ways: an agent the attacker owns and runs (Case A, the agent as a weapon), and a trusted agent hijacked from its owner through injected context or a poisoned harness (Case B). It is the agent, not the bare model, because only the agent acts. Same outcome, opposite threat model, opposite defensive opportunities.
 
 Standalone takeaway:
 
@@ -24,7 +24,7 @@ Students should be able to:
 1. Trace adversarial machine learning as one lineage — evasion, poisoning and backdoors, model extraction, membership inference and inversion — from spam-filter attacks in 2004 to prompt injection of LLMs, and sketch how each attack works.
 2. Define prompt injection and jailbreaking and keep them apart; explain injection as the code/data confusion of classic software reborn in text, and why it has no clean structural fix.
 3. Distinguish attacks on the model from attacks on the harness: tools, skills, memory, retrieval, and tool servers.
-4. Contrast the two ways a model becomes an attacker — a malicious model the attacker owns, and a trusted model hijacked through untrusted context — by location, authority, observability, and where guardrails can live.
+4. Contrast the two ways an agent becomes an attacker — an agent the attacker owns, and a trusted agent hijacked through untrusted context — by location, authority, observability, and where guardrails can live.
 5. Map the real cases (the autonomous intrusion, AI-orchestrated campaigns, agent-built malware, ForcedLeak) onto that framework.
 6. Identify research problems in agent-trajectory observability, authorization, incident correlation, supply-chain security, and bounded response.
 
@@ -35,19 +35,19 @@ Students should be able to:
 | 0–2 | Opening | 1 |
 | 2–30 | From adversarial ML to attacks on LLMs | 2–11 |
 | 30–39 | From model to agent: the harness, the loop, the attack surface | 12–14 |
-| 39–42 | The model becomes an attacker: two cases | 15 |
-| 42–53 | Case A: a malicious model the attacker owns | 16–18 |
-| 53–62 | Case B: a compromised trusted model | 19–21 |
+| 39–42 | The agent becomes an attacker: two cases | 15 |
+| 42–53 | Case A: an agent the attacker owns | 16–18 |
+| 53–62 | Case B: a trusted agent hijacked | 19–21 |
 | 62–70 | The two cases compared | 22–24 |
 | 70–90 | Defense and research | 25–28 |
 
 ## Primary cases
 
-### Case A — a malicious model the attacker owns
+### Case A — an agent the attacker owns
 
 The July 2026 Hugging Face technical timeline describes an autonomous agent operating during an OpenAI cyber-capability evaluation. The reconstructed campaign crossed several trust boundaries, generated roughly 17,600 recovered actions, and required AI-assisted defensive reconstruction. Supporting cases, kept short: the Anthropic AI-orchestrated espionage campaign (November 2025), agent-assisted extortion (August 2025), and the file-based implants NIK C2 and VOLTA that embed an LLM call (Talos, October 2026).
 
-### Case B — a compromised trusted model
+### Case B — a trusted agent hijacked
 
 ForcedLeak was a disclosed and demonstrated vulnerability chain in Salesforce Agentforce. Attacker-controlled instructions persisted in a CRM lead, were later retrieved during an employee's legitimate interaction with the agent, and could cause sensitive CRM data to leave through crafted image requests. A real production vulnerability and attack demonstration, not a publicly confirmed customer breach. SearchLeak (Microsoft 365 Copilot) is cited briefly as the same pattern.
 
@@ -76,8 +76,8 @@ ForcedLeak was a disclosed and demonstrated vulnerability chain in Salesforce Ag
 12. [The harness: what surrounds the model](slides/12-harness-and-authority.md)
 13. [From model to agent: the loop](slides/13-agent-loop.md)
 14. [Attacks on the harness](slides/14-attacks-on-the-harness.md)
-15. [The model becomes an attacker, two ways](slides/15-model-becomes-attacker-two-ways.md)
-16. [Case A: a malicious model the attacker owns](slides/16-case-a-attacker-owned-model.md)
+15. [The agent becomes an attacker, two ways](slides/15-agent-becomes-attacker-two-ways.md)
+16. [Case A: an agent the attacker owns](slides/16-case-a-attacker-owned-agent.md)
 17. [Approximately 17,600 recovered actions](slides/17-seventeen-thousand-actions.md)
 18. [Case A beyond one incident](slides/18-case-a-beyond-one-incident.md)
 19. [Case B: The trusted enterprise agent](slides/19-forcedleak-enterprise-agent.md)

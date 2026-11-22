@@ -1,7 +1,7 @@
 # Slide 18 — Case A beyond one incident
 
 **Timing:** 50–53 minutes  
-**Module:** Case A: a malicious model the attacker owns
+**Module:** Case A: an agent the attacker owns
 
 ## On-slide content
 

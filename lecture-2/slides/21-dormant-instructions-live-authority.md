@@ -1,14 +1,14 @@
 # Slide 21 — Dormant instructions, live authority
 
 **Timing:** 59–62 minutes  
-**Module:** Case B: a compromised trusted model
+**Module:** Case B: a trusted agent hijacked
 
 ## On-slide content
 
 ```text
 attacker-controlled data
         +
-trusted model and harness
+trusted agent: model and harness
         +
 organizational identity and tools
         +
