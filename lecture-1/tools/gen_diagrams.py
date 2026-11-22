@@ -214,7 +214,7 @@ def cell_lines(tid, name, inner_w):
     return lines[:2], 12.5
 
 
-def attack_matrix(aria, path, lead, cols, steps, zoom=False):
+def attack_matrix(aria, path, lead, cols, steps, zoom=False, compact=False, levels=None):
     """The schematic Enterprise matrix for the tactic columns cols[0]:cols[1], with technique names in the cells.
     `path` is the whole lit path, a list of steps, each a list of (technique id, tactic id) cells; `steps` are the
     1-based step numbers lit on this half, each as its own build, numbered as in the whole path. With `zoom`, one
@@ -222,7 +222,7 @@ def attack_matrix(aria, path, lead, cols, steps, zoom=False):
     tactics = ATTACK["tactics"][cols[0]:cols[1]]
     W, n, x0, gap = 1800, len(tactics), 20, 10
     col_w = (W - 2 * x0 - (n - 1) * gap) / n
-    top, head_h, row_h = 44, 50, 42
+    top, head_h, row_h = 44, 50, (32 if compact else 42)
     cols_rows = []
     for t in tactics:
         rows = []
@@ -247,7 +247,7 @@ def attack_matrix(aria, path, lead, cols, steps, zoom=False):
     for c, (t, rows) in enumerate(zip(tactics, cols_rows)):
         x = round(x0 + c * (col_w + gap), 1)
         s += rect(x, top, round(col_w, 1), head_h, "colhead", rx=6, tip=f'{t["name"]} ({t["id"]}): {t["count"]} techniques')
-        hl = wrap(t["name"], int((col_w - 16) / (15 * 0.56)))
+        hl = wrap(t["short"] if compact else t["name"], int((col_w - 16) / (15 * 0.56)))
         if len(hl) > 2:
             hl = wrap(t["short"], 40)
         if len(hl) == 1:
@@ -258,12 +258,35 @@ def attack_matrix(aria, path, lead, cols, steps, zoom=False):
             y = top + head_h + 6 + r * row_h
             cx, cw = x + (12 if is_sub else 0), round(col_w - (12 if is_sub else 0), 1)
             s += rect(cx, y, cw, row_h - 4, "cell--sub" if is_sub else "cell", rx=5, tip=f"{tid} {name}")
-            lines, size = cell_lines(tid, name, cw - 14)
+            lines, size = ([tid], 14) if compact else cell_lines(tid, name, cw - 14)
             s += cell_text(cx, y, lines, size, "t2" if is_sub else "t", 500 if is_sub else 600)
             centers[(tid, t["id"])] = (cx + cw / 2, y + (row_h - 4) / 2, cx, y, cw, lines, size)
         more = t["count"] - len(t["techniques"])
         s += text(x + col_w / 2, top + head_h + 6 + len(rows) * row_h + 12, f"+{more} more", 13, 500, "t2", "middle")
     s += '</g>\n'
+    if levels is not None:
+        # the structure, one level per build: a tactic column, a technique, its sub-techniques, then the procedure note
+        heads = {t["id"]: (round(x0 + c * (col_w + gap), 1), t) for c, t in enumerate(tactics)}
+        for b, lv in enumerate(levels, start=1):
+            body = ""
+            if lv.get("head"):
+                hx, ht = heads[lv["head"]]
+                body += rect(hx, top, round(col_w, 1), head_h, "node node--model", rx=6)
+                hl = wrap(ht["short"] if compact else ht["name"], int((col_w - 16) / (15 * 0.56)))
+                if len(hl) == 1:
+                    body += text(hx + col_w / 2, top + head_h / 2, esc(hl[0]), 15, 700, "t-acc", "middle")
+                else:
+                    body += text(hx + col_w / 2, top + 17, esc(hl[0]), 15, 700, "t-acc", "middle") + text(hx + col_w / 2, top + 35, esc(hl[1]), 15, 700, "t-acc", "middle")
+            for tid, tac in lv.get("cells", []):
+                cx, cy, x, y, w, lines, size = centers[(tid, tac)]
+                body += rect(x, y, w, row_h - 4, "node node--model", rx=5) + cell_text(x, y, lines, size, "t-acc", 700)
+            if lv.get("note"):
+                nx, ny, nlines = lv["note"]
+                body += rect(nx, ny, 540, 24 + 26 * len(nlines), "node node--model", rx=10)
+                for j, ln in enumerate(nlines):
+                    body += text(nx + 18, ny + 24 + j * 26, esc(ln), 17, 500 if j else 700, "t-acc")
+            s += f'<g data-build="{b}">\n{body}</g>\n'
+        return s + "</svg>\n"
     prev = None
     for b, k in enumerate(steps, start=1):
         cells = [(tid, tac) for tid, tac in path[k - 1] if (tid, tac) in centers]
@@ -517,12 +540,24 @@ for k in range(4):
     (OUT / f"period-{k + 1}.svg").write_text(period_timeline(k))
 (OUT / "breaks.svg").write_text(breaks_timeline())
 VERSION_LINE = ATTACK["version"] + " · hover a cell for its name"
+(OUT / "attack-levels.svg").write_text(attack_matrix(
+    "The whole Enterprise ATT&CK matrix, schematic: 15 tactic columns with a few technique IDs each and the true per-tactic "
+    "counts, Execution expanded to the sub-technique level; then the levels lit one at a time: a tactic column, a technique, "
+    "its sub-techniques, and a note on where procedures live", [], VERSION_LINE, (0, 15), [], compact=True, levels=[
+        {"head": "TA0002"},
+        {"cells": [("T1059", "TA0002")]},
+        {"cells": [("T1059.001", "TA0002"), ("T1059.003", "TA0002"), ("T1059.005", "TA0002"), ("T1059.007", "TA0002")]},
+        {"note": (1240, 352, ["Procedure: on the technique page, not on the matrix",
+                              "how a named group or tool did it, with the report it came from;",
+                              "e.g. a PowerShell one-liner that fetches and runs content"])},
+    ]))
 (OUT / "attack-matrix-1.svg").write_text(attack_matrix(
-    "The Enterprise ATT&CK matrix, schematic, first half: Reconnaissance to Defense Impairment, with technique names and the "
-    "true per-tactic counts; a classic trojan lit as a path, steps one to five", TROJAN_PATH, VERSION_LINE, (0, 8), [1, 2, 3, 4, 5]))
+    "The Enterprise ATT&CK matrix, first half, Reconnaissance to Defense Impairment, with technique names; a classic trojan "
+    "lit as a path, steps one to five, then a zoomed view of only the lit columns and cells", TROJAN_PATH, VERSION_LINE,
+    (0, 8), [1, 2, 3, 4, 5], zoom=True))
 (OUT / "attack-matrix-2.svg").write_text(attack_matrix(
-    "The Enterprise ATT&CK matrix, schematic, second half: Credential Access to Impact; the trojan path continues with "
-    "steps six and seven", TROJAN_PATH, VERSION_LINE, (8, 15), [6, 7]))
+    "The Enterprise ATT&CK matrix, second half, Credential Access to Impact; the trojan path continues with steps six and "
+    "seven, then a zoomed view of only the lit columns and cells", TROJAN_PATH, VERSION_LINE, (8, 15), [6, 7], zoom=True))
 (OUT / "attack-fileless-1.svg").write_text(attack_matrix(
     "The Enterprise ATT&CK matrix, first half, Reconnaissance to Defense Impairment, with the recurring scenario lit step by "
     "step: valid accounts, PowerShell with command obfuscation, exploitation for privilege escalation, disable or modify tools",

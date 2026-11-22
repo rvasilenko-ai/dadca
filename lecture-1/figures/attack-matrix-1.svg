@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 576" width="1800" height="576" role="img" aria-label="The Enterprise ATT&CK matrix, schematic, first half: Reconnaissance to Defense Impairment, with technique names and the true per-tactic counts; a classic trojan lit as a path, steps one to five" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>The Enterprise ATT&CK matrix, schematic, first half: Reconnaissance to Defense Impairment, with technique names and the true per-tactic counts; a classic trojan lit as a path, steps one to five</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 576" width="1800" height="576" role="img" aria-label="The Enterprise ATT&CK matrix, first half, Reconnaissance to Defense Impairment, with technique names; a classic trojan lit as a path, steps one to five, then a zoomed view of only the lit columns and cells" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<title>The Enterprise ATT&CK matrix, first half, Reconnaissance to Defense Impairment, with technique names; a classic trojan lit as a path, steps one to five, then a zoomed view of only the lit columns and cells</title>
 <style>
 svg{--surface:#ffffff;--surface-2:#eceff6;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--ink-3:#5b6580;--line:#9ca3af;--rule:#cbd5e1;--rule-3:#6c768e;
 --acc:#0284c7;--acc-wash:#e0f2fe;--acc-ink:#075985;--bad:#dc2626;--bad-wash:#fee2e2;--bad-ink:#991b1b;
@@ -35,7 +35,7 @@ svg{--surface:#ffffff;--surface-2:#eceff6;--frame:#f8fafc;--ink:#1f2937;--ink-2:
   <marker id="arrow-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
   <marker id="arrow-good" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
 </defs>
-<g data-build="0">
+<g data-build="0" data-build-until="6">
 <text x="20" y="18" class="t2" font-size="17" font-weight="500" text-anchor="start" dominant-baseline="central">Enterprise v20.0 (13 October 2026): 15 tactics, 227 techniques, 479 sub-techniques · hover a cell for its name</text>
 <rect x="20.0" y="44" width="211.2" height="50" rx="6" class="colhead"><title>Reconnaissance (TA0043): 12 techniques</title></rect>
 <text x="125.625" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Reconnaissance</text>
@@ -205,14 +205,14 @@ svg{--surface:#ffffff;--surface-2:#eceff6;--frame:#f8fafc;--ink:#1f2937;--ink-2:
 <text x="1576.8" y="381" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">History Logging</text>
 <text x="1674.425" y="406" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+13 more</text>
 </g>
-<g data-build="1">
+<g data-build="1" data-build-until="6">
 <rect x="474.5" y="142" width="199.2" height="38" rx="5" class="cell--lit"><title>step 1: T1566.001</title></rect>
 <text x="482.5" y="155" class="t-bad" font-size="12.5" font-weight="700" text-anchor="start" dominant-baseline="central">T1566.001 Spearphishing</text>
 <text x="482.5" y="171" class="t-bad" font-size="12.5" font-weight="700" text-anchor="start" dominant-baseline="central">Attachment</text>
 <circle cx="476.5" cy="144" r="13" class="badge--bad"/>
 <text x="476.5" y="145" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">1</text>
 </g>
-<g data-build="2">
+<g data-build="2" data-build-until="6">
 <path d="M574.1 161.0L795.4 371.0" class="edge edge--bad draw" pathLength="1"/>
 <rect x="695.8" y="352" width="199.2" height="38" rx="5" class="cell--lit"><title>step 2: T1204.002</title></rect>
 <text x="703.8" y="365" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1204.002 Malicious</text>
@@ -220,7 +220,7 @@ svg{--surface:#ffffff;--surface-2:#eceff6;--frame:#f8fafc;--ink:#1f2937;--ink-2:
 <circle cx="697.8" cy="354" r="13" class="badge--bad"/>
 <text x="697.8" y="355" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">2</text>
 </g>
-<g data-build="3">
+<g data-build="3" data-build-until="6">
 <path d="M795.4 371.0L1459.1 245.0" class="edge edge--bad draw" pathLength="1"/>
 <rect x="1359.5" y="226" width="199.2" height="38" rx="5" class="cell--lit"><title>step 3: T1027.002</title></rect>
 <text x="1367.5" y="239" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1027.002 Software</text>
@@ -228,19 +228,56 @@ svg{--surface:#ffffff;--surface-2:#eceff6;--frame:#f8fafc;--ink:#1f2937;--ink-2:
 <circle cx="1361.5" cy="228" r="13" class="badge--bad"/>
 <text x="1361.5" y="229" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">3</text>
 </g>
-<g data-build="4">
+<g data-build="4" data-build-until="6">
 <path d="M1459.1 245.0L1453.1 329.0" class="edge edge--bad draw" pathLength="1"/>
 <rect x="1347.5" y="310" width="211.2" height="38" rx="5" class="cell--lit"><title>step 4: T1055</title></rect>
 <text x="1355.5" y="329.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1055 Process Injection</text>
 <circle cx="1349.5" cy="312" r="13" class="badge--bad"/>
 <text x="1349.5" y="313" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">4</text>
 </g>
-<g data-build="5">
+<g data-build="5" data-build-until="6">
 <path d="M1453.1 329.0L1016.6 161.0" class="edge edge--bad draw" pathLength="1"/>
 <rect x="917.0" y="142" width="199.2" height="38" rx="5" class="cell--lit"><title>step 5: T1547.001</title></rect>
 <text x="925.0" y="155" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1547.001 Registry Run</text>
 <text x="925.0" y="171" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">Keys / Startup Folder</text>
 <circle cx="919.0" cy="144" r="13" class="badge--bad"/>
 <text x="919.0" y="145" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">5</text>
+</g>
+<g data-build="6" data-build-zoom="1">
+<text x="24" y="24" class="t2" font-size="20" font-weight="600" text-anchor="start" dominant-baseline="central">Zoomed in: only the columns and techniques of steps 1 to 5</text>
+<rect x="24.0" y="64" width="418.5" height="84" rx="10" class="colhead"></rect>
+<text x="233.25" y="106.0" class="t" font-size="28" font-weight="700" text-anchor="middle" dominant-baseline="central">Initial Access</text>
+<rect x="24.0" y="164" width="418.5" height="156" rx="12" class="cell--lit"></rect>
+<text x="48.0" y="204.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">T1566.001</text>
+<text x="48.0" y="242.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">Spearphishing</text>
+<text x="48.0" y="280.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">Attachment</text>
+<circle cx="26.0" cy="166" r="19" class="badge--bad"/>
+<text x="26.0" y="167" class="t-badge" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="central">1</text>
+<rect x="468.5" y="64" width="418.5" height="84" rx="10" class="colhead"></rect>
+<text x="677.75" y="106.0" class="t" font-size="28" font-weight="700" text-anchor="middle" dominant-baseline="central">Execution</text>
+<rect x="468.5" y="164" width="418.5" height="156" rx="12" class="cell--lit"></rect>
+<text x="492.5" y="223.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">T1204.002 Malicious</text>
+<text x="492.5" y="261.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">File</text>
+<circle cx="470.5" cy="166" r="19" class="badge--bad"/>
+<text x="470.5" y="167" class="t-badge" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="central">2</text>
+<rect x="913.0" y="64" width="418.5" height="84" rx="10" class="colhead"></rect>
+<text x="1122.25" y="106.0" class="t" font-size="28" font-weight="700" text-anchor="middle" dominant-baseline="central">Persistence</text>
+<rect x="913.0" y="164" width="418.5" height="156" rx="12" class="cell--lit"></rect>
+<text x="937.0" y="223.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">T1547.001 Registry Run</text>
+<text x="937.0" y="261.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">Keys / Startup Folder</text>
+<circle cx="915.0" cy="166" r="19" class="badge--bad"/>
+<text x="915.0" y="167" class="t-badge" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="central">5</text>
+<rect x="1357.5" y="64" width="418.5" height="84" rx="10" class="colhead"></rect>
+<text x="1566.75" y="106.0" class="t" font-size="28" font-weight="700" text-anchor="middle" dominant-baseline="central">Stealth</text>
+<rect x="1357.5" y="164" width="418.5" height="156" rx="12" class="cell--lit"></rect>
+<text x="1381.5" y="223.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">T1027.002 Software</text>
+<text x="1381.5" y="261.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">Packing</text>
+<circle cx="1359.5" cy="166" r="19" class="badge--bad"/>
+<text x="1359.5" y="167" class="t-badge" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="central">3</text>
+<rect x="1357.5" y="338" width="418.5" height="156" rx="12" class="cell--lit"></rect>
+<text x="1381.5" y="397.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">T1055 Process</text>
+<text x="1381.5" y="435.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">Injection</text>
+<circle cx="1359.5" cy="340" r="19" class="badge--bad"/>
+<text x="1359.5" y="341" class="t-badge" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="central">4</text>
 </g>
 </svg>
