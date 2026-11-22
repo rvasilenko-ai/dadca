@@ -57,16 +57,17 @@ ForcedLeak was a disclosed and demonstrated vulnerability chain in Salesforce Ag
 - The adversarial-ML history slides (2–7) cite at least one primary paper per attack; every citation was checked against the arXiv API or Crossref on 2026-11-22, and the quoted figures (1% of SpamBayes training mail, the stop-sign sticker, the GPT-2 extraction) come from the papers' own abstracts or text.
 - Interpretations about the code/data parallel, optimization, noise, stealth, and future malware definitions are presented as lecture arguments or research hypotheses.
 - Incident mechanics remain conceptual; slides do not reproduce payloads or exploit code.
+- `figures/` holds figures reproduced from the cited papers (arXiv sources and the authors' PDFs) for teaching, each captioned with its paper; they stay under the papers' copyright and are not relicensed with this repository.
 
 ## Slide index
 
 1. [When the attacker is an agent](slides/01-when-attacker-is-agent.md)
 2. [Attacking the model is not new](slides/02-attacking-models-is-not-new.md)
 3. [Evasion: change the input, keep the model](slides/03-evasion-adversarial-examples.md)
-4. [Poisoning and backdoors: change the data, keep the input](slides/04-poisoning-and-backdoors.md)
-5. [Model extraction: copy the model through its API](slides/05-model-extraction.md)
-6. [Membership inference and inversion: what the model remembers](slides/06-membership-inference-and-inversion.md)
-7. [...and it reached malware detection](slides/07-adversarial-ml-reaches-malware.md)
+4. [Model extraction: copy the model through its API](slides/04-model-extraction.md)
+5. [Poisoning and backdoors: change the data, keep the input](slides/05-poisoning-and-backdoors.md)
+6. [...and it reached malware detection](slides/06-adversarial-ml-reaches-malware.md)
+7. [Membership inference and inversion: what the model remembers](slides/07-membership-inference-and-inversion.md)
 8. [Code and data, instructions and context](slides/08-code-data-instructions-context.md)
 9. [The shape of LLM attacks](slides/09-shape-of-llm-attacks.md)
 10. [Why there is no NX bit for text](slides/10-no-nx-bit-for-text.md)

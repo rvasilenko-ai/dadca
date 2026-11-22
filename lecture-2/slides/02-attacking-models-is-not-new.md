@@ -14,6 +14,8 @@ Adversarial machine learning predates LLMs by almost two decades. Every stage of
   POISONING, BACKDOORS                  EVASION         EXTRACTION
   corrupt what it learns          perturb the input      copy the model from its answers
   2008 -> 2017                    2004 -> 2014           2005 -> 2016
+                                  incl. malware detectors
+                                  2013 -> 2018
                                                         INFERENCE, INVERSION
                                                          learn the training data from its answers
                                                          2014 -> 2017
@@ -22,20 +24,20 @@ Adversarial machine learning predates LLMs by almost two decades. Every stage of
 Build, one step per click:
 
 0. A learned model is a pipeline: data in, training, a model, predictions out.
-1. Poison the data, and the model learns a blind spot or a backdoor.
-2. Perturb the input, and the model answers wrong at test time.
-3. Read enough predictions, and you can copy the model.
-4. Read them differently, and you learn what it was trained on.
+1. Perturb the input, and the model answers wrong at test time (2004).
+2. Read enough predictions, and you can copy the model (2005).
+3. Poison the data, and the model learns a blind spot or a backdoor (2008).
+4. Read the predictions differently, and you learn what it was trained on (2014).
 
 > The model was always manipulable — through its data, its inputs, and its outputs.
 
 ## Speaker notes
 
-One point: attacks on learned models are old, and they were born in security. The first evasion attacks were against statistical spam filters: Dalvi and colleagues in 2004, Lowd and Meek in 2005, adding "good words" to spam until the filter passed it. Barreno and colleagues wrote the taxonomy in 2006 — attacks on the training data versus attacks on the inputs — and it still organizes the field. Then the dates on the diagram: a spam filter poisoned in 2008, adversarial examples for deep networks in 2013 and 2014, faces inverted from a classifier in 2015, models stolen through their APIs in 2016, membership inference and the first backdoored networks in 2017. The next four slides take the four arrows one at a time, with one schematic each; then we bring it to malware detection.
+One point: attacks on learned models are old, and they were born in security. The first evasion attacks were against statistical spam filters: Dalvi and colleagues in 2004, Lowd and Meek in 2005, adding "good words" to spam until the filter passed it. Barreno and colleagues wrote the taxonomy in 2006 — attacks on the training data versus attacks on the inputs — and it still organizes the field. Then the dates on the diagram: a spam filter poisoned in 2008, adversarial examples for deep networks in 2013 and 2014, faces inverted from a classifier in 2015, models stolen through their APIs in 2016, membership inference and the first backdoored networks in 2017. The next five slides follow the arrows in the order they were first demonstrated — evasion, extraction, poisoning, then evasion's arrival at malware detectors, then inference — each with a schematic and the original paper's figure.
 
 The diagram's organizing idea: where in the pipeline the attacker stands. Poisoning needs a hand in the training data. Evasion needs only the input. Extraction and inference need nothing but the model's answers.
 
-Cut cue: if running long, the two "learn a secret" attacks (slides 5 and 6) can be covered from this map in one sentence each. Evasion and poisoning (slides 3 and 4) cannot be cut; the rest of the lecture leans on them.
+Cut cue: if running long, the two "learn a secret" attacks (slides 4 and 7) can be covered from this map in one sentence each. Evasion and poisoning (slides 3 and 5) cannot be cut; the rest of the lecture leans on them.
 
 ## Transition
 

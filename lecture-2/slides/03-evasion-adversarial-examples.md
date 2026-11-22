@@ -15,6 +15,14 @@
  the attacker never touches the model; it stays correct on everything else
 ```
 
+![Figure 1 of Goodfellow, Shlens and Szegedy (2014): a panda plus 0.007 times the sign of the gradient is a gibbon at 99.3% confidence](../figures/goodfellow2014-fig1-panda-gibbon.png)
+
+*Figure 1 of Goodfellow, Shlens and Szegedy (2014): a panda plus 0.007 times the sign of the gradient is a gibbon at 99.3% confidence*
+
+![Biggio et al. (2013): gradient-descent evasion turns a 3 into a 7 for a linear classifier; the discriminant g(x) crosses zero after a few hundred iterations](../figures/biggio2013-fig-3-to-7.png)
+
+*Biggio et al. (2013): gradient-descent evasion turns a 3 into a 7 for a linear classifier; the discriminant g(x) crosses zero after a few hundred iterations*
+
 Build, one step per click:
 
 0. A trained model, correct on an ordinary input.
@@ -34,11 +42,11 @@ Build, one step per click:
 
 Szegedy and colleagues found adversarial examples in 2013: imperceptible perturbations that flip a deep network's prediction, and that transfer between models trained on different data. Goodfellow, Shlens and Szegedy explained them in 2014 — the network behaves too linearly in high dimensions — and gave the one-step fast gradient sign method; their figure is the panda read as a gibbon with 99% confidence. Papernot and colleagues showed in 2016 that a black-box attacker can train a substitute from the model's labels and transfer the attack. Biggio and colleagues had already run the security version in 2013: gradient-descent evasion of a PDF malware detector.
 
-Two ideas to hold. First, the attacker exploits a gap between the function the model learned and the function the designer believes it learned. Second, in security the constraint is not imperceptibility but functionality: the evading sample has to remain a working attack. That constraint is what makes malware evasion harder than image evasion, and it returns on slide 7.
+Two ideas to hold. First, the attacker exploits a gap between the function the model learned and the function the designer believes it learned. Second, in security the constraint is not imperceptibility but functionality: the evading sample has to remain a working attack. That constraint is what makes malware evasion harder than image evasion, and it returns on slide 6.
 
 ## Transition
 
-“That was the attacker touching the input. The other way in is the training data.”
+“Evasion wants the model's gradient. If you cannot see the model, copy it — shown a year after the first evasion, against the same spam filters.”
 
 ## Sources
 

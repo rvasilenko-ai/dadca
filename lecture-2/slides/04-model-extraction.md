@@ -1,6 +1,6 @@
-# Slide 5 — Model extraction: copy the model through its API
+# Slide 4 — Model extraction: copy the model through its API
 
-**Timing:** 11–13 minutes  
+**Timing:** 8–10 minutes  
 **Module:** From adversarial ML to attacks on LLMs
 
 ## On-slide content
@@ -12,6 +12,10 @@
      v   train on the (x, f(x)) pairs
  substitute f' ≈ f    -> evade it offline, probe it for private data, resell it
 ```
+
+![Figure 1 of Tramèr et al. (2016): the data owner trains a model at an ML service; the extraction adversary queries x1…xq, collects f(x1)…f(xq), and produces a copy f̂](../figures/tramer2016-fig1-extraction.png)
+
+*Figure 1 of Tramèr et al. (2016): the data owner trains a model at an ML service; the extraction adversary queries x1…xq, collects f(x1)…f(xq), and produces a copy f̂*
 
 Build, one step per click:
 
@@ -26,11 +30,11 @@ Build, one step per click:
 
 Tramèr and colleagues in 2016 extracted models from commercial machine-learning-as-a-service APIs — BigML and Amazon — using the fact that those APIs return confidence values and accept partial inputs. For simple model classes the attack is equation solving; for others it is retraining on the victim's labels. The precursor is Lowd and Meek in 2005, who reverse-engineered linear spam classifiers with membership queries.
 
-Why it matters for detection: a stolen copy of a detector lets the attacker test evasions offline, without the query volume that might alert the defender. The malware evasion on slide 7 assumed black-box access to the detector; extraction removes even that constraint. There is also the plain commercial loss: a model is expensive to train and free to copy once it answers questions.
+Why it matters for detection: a stolen copy of a detector lets the attacker test evasions offline, without the query volume that might alert the defender. The malware evasion on slide 6 assumes black-box access to the detector; extraction removes even that constraint. There is also the plain commercial loss: a model is expensive to train and free to copy once it answers questions.
 
 ## Transition
 
-“The model's parameters are one secret. Its training data is another.”
+“So far the attacker only talked to a finished model. In 2008 they reached into its training.”
 
 ## Sources
 

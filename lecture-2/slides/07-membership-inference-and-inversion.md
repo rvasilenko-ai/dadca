@@ -1,6 +1,6 @@
-# Slide 6 — Membership inference and inversion: what the model remembers
+# Slide 7 — Membership inference and inversion: what the model remembers
 
-**Timing:** 13–15 minutes  
+**Timing:** 16–18 minutes  
 **Module:** From adversarial ML to attacks on LLMs
 
 ## On-slide content
@@ -15,6 +15,14 @@
   training-data extraction, the LLM version   "repeat your training data"
       hundreds of verbatim sequences from GPT-2, names and phone numbers among them
 ```
+
+![Figure 1 of Fredrikson, Jha and Ristenpart (2015): a face reconstructed from a recognition model's confidence scores, beside the training image](../figures/fredrikson2015-fig1-face-inversion.png)
+
+*Figure 1 of Fredrikson, Jha and Ristenpart (2015): a face reconstructed from a recognition model's confidence scores, beside the training image*
+
+![Figure 1 of Carlini et al. (2021): given a prefix, GPT-2 completes it with memorized text — a real person's name, address, e-mail and phone number, redacted here](../figures/carlini2021-fig1-memorized-text.png)
+
+*Figure 1 of Carlini et al. (2021): given a prefix, GPT-2 completes it with memorized text — a real person's name, address, e-mail and phone number, redacted here*
 
 Build, one step per click:
 
@@ -35,7 +43,7 @@ Hold for the bridge: none of these attacks needs anything but the model's answer
 
 ## Transition
 
-“Every one of these has been run against malware detectors. The one that matters most for our field is evasion.”
+“LLMs add a new failure, and it is a very old one wearing new clothes.”
 
 ## Sources
 

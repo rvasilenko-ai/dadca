@@ -1,6 +1,6 @@
-# Slide 4 — Poisoning and backdoors: change the data, keep the input
+# Slide 5 — Poisoning and backdoors: change the data, keep the input
 
-**Timing:** 8–11 minutes  
+**Timing:** 10–13 minutes  
 **Module:** From adversarial ML to attacks on LLMs
 
 ## On-slide content
@@ -13,6 +13,14 @@
   as if they were clean)                      backdoor:        normal input   -> correct label
                                                                input + trigger -> attacker's label
 ```
+
+![Gu, Dolan-Gavitt and Garg (2017): a clean stop sign and three backdoor triggers — a yellow square, a bomb, a flower](../figures/badnets2017-fig-triggers.png)
+
+*Gu, Dolan-Gavitt and Garg (2017): a clean stop sign and three backdoor triggers — a yellow square, a bomb, a flower*
+
+![Gu, Dolan-Gavitt and Garg (2017): a real stop sign with the sticker, detected by the backdoored network as a speed limit at 0.947](../figures/badnets2017-fig-stop-sign-speed-limit.png)
+
+*Gu, Dolan-Gavitt and Garg (2017): a real stop sign with the sticker, detected by the backdoored network as a speed limit at 0.947*
 
 Build, one step per click:
 
@@ -39,7 +47,7 @@ Hold two threads. Poisoning the training data has a cousin we meet later: poison
 
 ## Transition
 
-“Both attacks change what the model says. The next two steal what it knows.”
+“By 2013 the targets were ours: machine-learning malware detectors.”
 
 ## Sources
 
