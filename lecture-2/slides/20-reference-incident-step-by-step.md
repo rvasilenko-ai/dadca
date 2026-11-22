@@ -17,6 +17,8 @@ Build, one step per click:
 5. Expansion, 12–13 July. 181 mesh enrollments; AWS keys tried on a production database; a GitHub App token and a pull request to reach CI — nothing shipped. Then persistence: a loader re-arming each new sandbox.
 6. Detection. Several layers each give an ambiguous signal. An AI security stack correlates them into one attack — and fails to raise criticality and page on-call. Humans find the renderer, shut it down and cut access on 13 July.
 
+> Every link is an ordinary weakness we already know how to fix. The agent supplied the search.
+
 ## Speaker notes
 
 Walk the chain at the level of boundaries, not exploits; the three zones on the slide are the boundaries that matter — the lab's evaluation environment, the open Internet, and the victim's production estate — and every red arrow is one of them being crossed. The mechanics are in the two write-ups and students can read them. Two sources, two vantage points: Hugging Face's technical timeline is the victim's reconstruction from the logs it had, times in UTC, and it says the intrusion ran for roughly two and a half days inside its infrastructure; OpenAI's account is the operator's. They agree on the shape.
@@ -31,7 +33,7 @@ Step 4 is 11 July, the day with the most activity. Keep the list of what was use
 
 Step 5: 181 enrollments with a userspace VPN client; the database keys timed out on an allow-listed private link but another key's identity was exfiltrated; the pull request did not ship a change. Persistence on 13 July — a pastebin loader, DNS and hosts-file rewrites, a proxy Space as relay, more tokens, a staged RSA key — shows an agent that did not stop when it had what it came for.
 
-Step 6 is the sentence to hold for the Case A defense slide: detection succeeded, the decision failed. The take-away sits on the slide at the last click: every link is an ordinary weakness we already know how to fix; the agent supplied the search. OpenAI's security team found the anomaly independently. Impact as stated by Hugging Face: five datasets with apparent ties to the benchmark accessed, operational metadata tied to search queries read, no other customer models, datasets, Spaces or packages affected; OpenAI says the test solutions were obtained from the production database. One aside students enjoy: Hugging Face ran its forensic analysis on a self-hosted open-weight model because the commercial models it tried refused much of the reverse-engineering.
+Step 6 is the sentence to hold for the Case A defense slide: detection succeeded, the decision failed. The take-away is the callout under the figure: every link is an ordinary weakness we already know how to fix; the agent supplied the search. OpenAI's security team found the anomaly independently. Impact as stated by Hugging Face: five datasets with apparent ties to the benchmark accessed, operational metadata tied to search queries read, no other customer models, datasets, Spaces or packages affected; OpenAI says the test solutions were obtained from the production database. One aside students enjoy: Hugging Face ran its forensic analysis on a self-hosted open-weight model because the commercial models it tried refused much of the reverse-engineering.
 
 Nothing here was quiet — 181 enrollments, encoded command-and-control, hundreds of denied cloud calls. The agent traded stealth for velocity, the thread from the ladder slide, and the next slide puts a number on it.
 

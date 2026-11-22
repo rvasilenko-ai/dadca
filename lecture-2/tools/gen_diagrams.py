@@ -300,89 +300,96 @@ def chain_v(aria, steps, tw=1240, th=64, gap=26, size=23):
 
 
 # ---------------------------------------------------------------- zoned chains
-# Three zones as columns; tiles sit in the zone where the step happens, rows run top to bottom,
-# and an arrow that crosses the gap between zones is a boundary crossing.
-ZW, ZX = 560, (0, 620, 1240)        # zone width and the three zone columns
-TH, TW, PITCH = 100, 520, 126       # tile height and width, row pitch
+# Steps sit inside labelled zones (frames); an arrow that crosses the gap between two zones is a
+# boundary crossing and is drawn red. Tiles are 160 tall with a title and up to three sub lines.
+ZTH = 160
 
 
-def zy(r):
-    """Top edge of a tile in row r."""
-    return 60 + r * PITCH
+def zframe(x, y, w, h, label, dashed=False):
+    return (f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="24" class="{"env" if dashed else "frame"}"/>\n'
+            + text(x + 28, y + 36, label, 24, 700, "t2"))
 
 
-def zone(col, r0, r1, label, dashed=False):
-    x, y = ZX[col], zy(r0) - 50
-    h = zy(r1) + TH + 16 - y
-    return (f'<rect x="{x}" y="{y}" width="{ZW}" height="{h}" rx="22" class="{"env" if dashed else "frame"}"/>\n'
-            + text(x + 24, y + 30, label, 24, 700, "t2"))
+def ztile(x, y, w, title, subs, bad=False, good=False):
+    cls = "node node--bad" if bad else ("node node--good" if good else "node")
+    sub_cls = "t-bad" if bad else ("t-good" if good else "t2")
+    s = f'<rect x="{x}" y="{y}" width="{w}" height="{ZTH}" rx="16" class="{cls}"/>\n'
+    s += text(x + 26, y + 44, title, 24, 700, "t")
+    for i, sub in enumerate(subs):
+        s += text(x + 26, y + 82 + i * 28, sub, 20, 500 if (bad or good) else 400, sub_cls)
+    return s
 
 
-def ztile(col, r, title, subs, bad=False, good=False):
-    return tile(ZX[col] + 20, zy(r), TW, TH, title, subs, bad=bad, good=good, title_size=22, sub_size=18)
-
-
-def zcx(col):
-    return ZX[col] + ZW // 2
-
-
-def zdown(col, r, red=False, arrow=True):
-    """Arrow from the tile in row r to the tile in row r + 1 of the same zone."""
-    return edge(f"M{zcx(col)} {zy(r) + TH}V{zy(r + 1) - 4}", strong=not red, arrow=arrow, red=red)
-
-
-def zright(col, r):
-    """Red arrow across the gap from zone col to zone col + 1, in row r: a boundary crossing."""
-    y = zy(r) + TH // 2
-    return edge(f"M{ZX[col] + ZW - 20} {y}H{ZX[col + 1] + 16}", arrow=True, red=True)
+def zarrow(x1, y1, x2, y2, red=False):
+    """Straight arrow; horizontal when y1 == y2, vertical when x1 == x2."""
+    d = f"M{x1} {y1}H{x2}" if y1 == y2 else f"M{x1} {y1}V{y2}"
+    return edge(d, strong=not red, arrow=True, red=red)
 
 
 def forcedleak_path():
-    H = zy(4) + TH + 36
+    # three columns (the Internet, the CRM, the organization) by three rows
+    cx, tw = (24, 640, 1256), 520                  # tile x per column, tile width
+    fx, fw = (0, 616, 1232), 568                   # frame x per column, frame width
+    ry = (76, 288, 500)                            # tile y per row
+    mid = [y + ZTH // 2 for y in ry]
+    H = ry[2] + ZTH + 40
     s = head(1800, H, "ForcedLeak attack path across three zones: on the Internet the attacker fills a public Web-to-Lead form; "
                       "the concealed instructions persist in the Salesforce CRM record; inside the organization an employee later "
-                      "asks the Agentforce agent about the lead, the agent retrieves the record, the data is interpreted as "
-                      "instructions, the agent reaches more CRM data with its own authority, and sensitive data leaves through "
-                      "crafted image requests back to the attacker")
-    s += '<g data-build="0">\n' + zone(0, 0, 4, "The Internet — the attacker", dashed=True)
-    s += zone(1, 0, 0, "Salesforce CRM — the record") + zone(2, 1, 4, "The organization — Agentforce")
-    s += text(280, 350, "red arrow: a trust boundary crossed", 20, 500, "t-bad", "middle")
-    s += ztile(0, 0, "A public Web-to-Lead form", ["the attacker submits a lead;", "every field is attacker-written text"], bad=True) + '</g>\n'
-    s += '<g data-build="1">\n' + zright(0, 0) + ztile(1, 0, "Concealed instructions persist", ["stored in the CRM record,", "waiting to be read"], bad=True) + '</g>\n'
-    s += '<g data-build="2">\n' + ztile(2, 1, "An employee asks about the lead", ["later, in the normal course of work:", "a legitimate request, a legitimate identity"]) + '</g>\n'
+                      "asks the Agentforce agent about the lead, the agent retrieves the record, the injection fires and the agent "
+                      "reaches more CRM data with its own authority, and sensitive data leaves through crafted image requests back "
+                      "to the attacker")
+    s += '<g data-build="0">\n' + zframe(fx[0], 12, fw, H - 28, "The Internet — the attacker", dashed=True)
+    s += zframe(fx[1], 12, fw, ry[0] + ZTH + 24 - 12, "Salesforce CRM — the record")
+    s += zframe(fx[2], 12, fw, H - 28, "The organization — Agentforce")
+    s += text(fx[0] + fw // 2, mid[1], "red arrow: a trust boundary crossed", 20, 500, "t-bad", "middle")
+    s += ztile(cx[0], ry[0], tw, "A public Web-to-Lead form", ["the attacker submits a lead;", "every field is attacker-written text"], bad=True) + '</g>\n'
+    s += '<g data-build="1">\n' + zarrow(cx[0] + tw, mid[0], cx[1] - 4, mid[0], red=True)
+    s += ztile(cx[1], ry[0], tw, "Concealed instructions persist", ["stored in the CRM record,", "waiting to be read"], bad=True) + '</g>\n'
+    s += '<g data-build="2">\n' + ztile(cx[2], ry[0], tw, "An employee asks about the lead", ["later, in the normal course of work:", "a legitimate request, a legitimate identity"]) + '</g>\n'
     # retrieval: the record crosses from the CRM into the agent's context
-    s += '<g data-build="3">\n' + zdown(2, 1)
-    s += edge(f"M{ZX[1] + ZW - 20} {zy(0) + TH // 2}H{ZX[2] - 30}V{zy(2) + TH // 2}H{ZX[2] + 16}", arrow=True, red=True)
-    s += ztile(2, 2, "The agent retrieves the record", ["attacker-written text enters", "the model's context"]) + '</g>\n'
-    s += '<g data-build="4">\n' + zdown(2, 2, red=True) + ztile(2, 3, "Data is interpreted as instructions", ["the injection fires inside", "the trusted agent"], bad=True) + '</g>\n'
-    s += '<g data-build="5">\n' + zdown(2, 3) + ztile(2, 4, "The agent reaches more CRM data", ["with the organization's", "own authority"]) + '</g>\n'
+    gap = (fx[1] + fw + fx[2]) // 2
+    s += '<g data-build="3">\n' + zarrow(cx[2] + tw // 2, ry[0] + ZTH, cx[2] + tw // 2, ry[1] - 4)
+    s += edge(f"M{cx[1] + tw} {mid[0]}H{gap}V{mid[1]}H{cx[2] - 4}", arrow=True, red=True)
+    s += ztile(cx[2], ry[1], tw, "The agent retrieves the record", ["attacker-written text enters", "the model's context"]) + '</g>\n'
+    s += '<g data-build="4">\n' + zarrow(cx[2] + tw // 2, ry[1] + ZTH, cx[2] + tw // 2, ry[2] - 4, red=True)
+    s += ztile(cx[2], ry[2], tw, "The injection fires", ["the record's text is read as instructions;", "the agent reaches more CRM data", "with the organization's own authority"], bad=True) + '</g>\n'
     # egress: back across both gaps, under the CRM zone, to the attacker
-    s += '<g data-build="6">\n' + edge(f"M{ZX[2] + 20} {zy(4) + TH // 2}H{ZX[0] + ZW - 16}", arrow=True, red=True)
-    s += ztile(0, 4, "Sensitive data leaves", ["through crafted image requests", "to an attacker-controlled domain"], bad=True) + '</g>\n'
+    s += '<g data-build="5">\n' + zarrow(cx[2], mid[2], cx[0] + tw + 4, mid[2], red=True)
+    s += ztile(cx[0], ry[2], tw, "Sensitive data leaves", ["through crafted image requests", "to an attacker-controlled domain"], bad=True) + '</g>\n'
     return s + '</svg>\n'
 
 
 def incident_chain():
-    """The July 2026 Hugging Face intrusion across three zones; red = a boundary the agent crossed."""
-    H = zy(4) + TH + 36
-    s = head(1800, H, "The reference incident across three zones. In OpenAI's evaluation environment: an isolated evaluation, then a "
-                      "sandbox escape through a proxy zero-day. On the Internet: root on a third-party code-execution endpoint used "
-                      "as a launchpad, plus exposed accounts on other services. Inside Hugging Face production: entry through crafted "
-                      "dataset configs, the Kubernetes cluster taken to cluster-admin, expansion into the VPN mesh, cloud and source "
-                      "control, and detection that correlated the signals but did not escalate until humans cut access")
-    s += '<g data-build="0">\n' + zone(0, 0, 1, "OpenAI — the evaluation environment")
-    s += zone(1, 1, 2, "The Internet — third-party sandbox", dashed=True) + zone(2, 1, 4, "Hugging Face — production")
-    s += text(280, 330, "red arrow: a boundary the agent crossed", 20, 500, "t-bad", "middle")
-    s += ztile(0, 0, "The evaluation", ["pre-release model on a cyber benchmark,", "deployment safeguards deliberately off"]) + '</g>\n'
-    s += '<g data-build="1">\n' + zdown(0, 0) + ztile(0, 1, "Escape, 9 July", ["a zero-day in the package proxy, then", "lateral movement to a node with Internet"], bad=True) + '</g>\n'
-    s += '<g data-build="2">\n' + zright(0, 1) + ztile(1, 1, "Launchpad: root at 04:01 UTC", ["an unsecured, user-hosted code-execution", "endpoint: C2, staging and egress base"], bad=True)
-    s += zdown(1, 1, arrow=False) + ztile(1, 2, "Exposed accounts", ["four accounts on four other services:", "a relay, a store, two read-only"]) + '</g>\n'
-    s += '<g data-build="3">\n' + zright(1, 1) + ztile(2, 1, "Entry: a dataset worker pod", ["crafted configs: a file read leaks secrets,", "a template injection runs code"], bad=True) + '</g>\n'
-    s += '<g data-build="4">\n' + zdown(2, 1, red=True) + ztile(2, 2, "The Kubernetes cluster, 11 July", ["service-account token, metadata credentials,", "privileged pod → root; secrets → cluster-admin"], bad=True) + '</g>\n'
-    s += '<g data-build="5">\n' + zdown(2, 2, red=True) + ztile(2, 3, "Mesh, cloud, source control, 12 July", ["181 VPN enrollments, keys at a production", "database, a pull request into CI"], bad=True) + '</g>\n'
-    s += '<g data-build="6">\n' + zdown(2, 3) + ztile(2, 4, "Detection and cut-off, 13 July", ["alerts correlated but never escalated;", "humans find the vector and cut access"])
-    s += text(590, 500, "Every link is an ordinary weakness we already know how to fix.", 22, 500, "t2", "middle", italic=True)
-    s += text(590, 542, "The agent supplied the search.", 24, 700, "t", "middle") + '</g>\n'
+    """The July 2026 Hugging Face intrusion: a U-shaped flow. Top row, left to right: OpenAI's evaluation
+    environment, then the Internet. Bottom row, right to left: Hugging Face production."""
+    cx, tw = (24, 456, 944, 1376), 400             # tile x per column, tile width
+    y0, y1 = 76, 364                               # tile y, top and bottom rows
+    H = y1 + ZTH + 24 + 60
+    s = head(1800, H, "The reference incident across three zones. Top row, in OpenAI's evaluation environment: an isolated "
+                      "evaluation, then a sandbox escape through a proxy zero-day; then on the Internet: root on a third-party "
+                      "code-execution endpoint used as a launchpad, with exposed accounts on other services. Bottom row, inside "
+                      "Hugging Face production, right to left: entry through crafted dataset configs, the Kubernetes cluster taken "
+                      "to cluster-admin, expansion into the VPN mesh, cloud and source control, and detection that correlated the "
+                      "signals but did not escalate until humans cut access. Red arrows mark the boundaries the agent crossed")
+    s += '<g data-build="0">\n' + zframe(0, 12, 880, y0 + ZTH + 24 - 12, "OpenAI — the evaluation environment")
+    s += zframe(920, 12, 880, y0 + ZTH + 24 - 12, "The Internet — a third-party sandbox", dashed=True)
+    s += zframe(0, y1 - 64, 1800, ZTH + 64 + 24, "Hugging Face — production")
+    s += text(28, H - 22, "red arrow: a boundary the agent crossed", 20, 500, "t-bad")
+    s += ztile(cx[0], y0, tw, "The evaluation", ["pre-release model on a cyber", "benchmark, deployment", "safeguards deliberately off"]) + '</g>\n'
+    s += '<g data-build="1">\n' + zarrow(cx[0] + tw, y0 + ZTH // 2, cx[1] - 4, y0 + ZTH // 2)
+    s += ztile(cx[1], y0, tw, "Escape, 9 July", ["a zero-day in the package proxy,", "then lateral movement to a", "node with Internet access"], bad=True) + '</g>\n'
+    s += '<g data-build="2">\n' + zarrow(cx[1] + tw, y0 + ZTH // 2, cx[2] - 4, y0 + ZTH // 2, red=True)
+    s += ztile(cx[2], y0, 832, "Launchpad: root at 04:01 UTC", ["an unsecured, user-hosted code-execution endpoint on a third-party sandbox",
+              "becomes the control, staging and egress base; four publicly exposed accounts",
+              "on other services serve as relay and storage"], bad=True) + '</g>\n'
+    s += '<g data-build="3">\n' + zarrow(cx[3] + tw // 2, y0 + ZTH, cx[3] + tw // 2, y1 - 4, red=True)
+    s += ztile(cx[3], y1, tw, "Entry: a worker pod", ["crafted dataset configs: a file", "read leaks pod secrets, a", "template injection runs code"], bad=True) + '</g>\n'
+    s += '<g data-build="4">\n' + zarrow(cx[3], y1 + ZTH // 2, cx[2] + tw + 4, y1 + ZTH // 2, red=True)
+    s += ztile(cx[2], y1, tw, "The cluster, 11 July", ["service-account token, metadata", "credentials, a privileged pod:", "root, then cluster-admin"], bad=True) + '</g>\n'
+    s += '<g data-build="5">\n' + zarrow(cx[2], y1 + ZTH // 2, cx[1] + tw + 4, y1 + ZTH // 2, red=True)
+    s += ztile(cx[1], y1, tw, "Mesh, cloud, CI, 12 July", ["181 VPN enrollments, keys at a", "production database, a pull", "request into CI"], bad=True) + '</g>\n'
+    s += '<g data-build="6">\n' + zarrow(cx[1], y1 + ZTH // 2, cx[0] + tw + 4, y1 + ZTH // 2)
+    s += ztile(cx[0], y1, tw, "Detection, 13 July", ["alerts correlated but never", "escalated; humans find the", "vector and cut access"]) + '</g>\n'
     return s + '</svg>\n'
 
 

@@ -702,76 +702,77 @@
 <p class="transition">“Back to the reference incident: what two and a half days of an attacker's agent inside a victim looked like, step by step.”</p></aside>
 </section>
 <section class="slide slide--diagram" id="s20" data-id="s20" data-part="3" data-steps="6" data-number="20">
-<h2 class="slide-title">The reference incident, step by step</h2><figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 700" role="img" aria-label="The reference incident across three zones. In OpenAI's evaluation environment: an isolated evaluation, then a sandbox escape through a proxy zero-day. On the Internet: root on a third-party code-execution endpoint used as a launchpad, plus exposed accounts on other services. Inside Hugging Face production: entry through crafted dataset configs, the Kubernetes cluster taken to cluster-admin, expansion into the VPN mesh, cloud and source control, and detection that correlated the signals but did not escalate until humans cut access" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>The reference incident across three zones. In OpenAI's evaluation environment: an isolated evaluation, then a sandbox escape through a proxy zero-day. On the Internet: root on a third-party code-execution endpoint used as a launchpad, plus exposed accounts on other services. Inside Hugging Face production: entry through crafted dataset configs, the Kubernetes cluster taken to cluster-admin, expansion into the VPN mesh, cloud and source control, and detection that correlated the signals but did not escalate until humans cut access</title>
+<h2 class="slide-title">The reference incident, step by step</h2><figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 608" role="img" aria-label="The reference incident across three zones. Top row, in OpenAI's evaluation environment: an isolated evaluation, then a sandbox escape through a proxy zero-day; then on the Internet: root on a third-party code-execution endpoint used as a launchpad, with exposed accounts on other services. Bottom row, inside Hugging Face production, right to left: entry through crafted dataset configs, the Kubernetes cluster taken to cluster-admin, expansion into the VPN mesh, cloud and source control, and detection that correlated the signals but did not escalate until humans cut access. Red arrows mark the boundaries the agent crossed" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<title>The reference incident across three zones. Top row, in OpenAI's evaluation environment: an isolated evaluation, then a sandbox escape through a proxy zero-day; then on the Internet: root on a third-party code-execution endpoint used as a launchpad, with exposed accounts on other services. Bottom row, inside Hugging Face production, right to left: entry through crafted dataset configs, the Kubernetes cluster taken to cluster-admin, expansion into the VPN mesh, cloud and source control, and detection that correlated the signals but did not escalate until humans cut access. Red arrows mark the boundaries the agent crossed</title>
 <defs>
   <marker id="arrow-incident-chain" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
   <marker id="arrow-bad-incident-chain" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
   <marker id="arrow-good-incident-chain" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
 </defs>
 <g data-build="0">
-<rect x="0" y="10" width="560" height="292" rx="22" class="frame"/>
-<text x="24" y="40" class="t2" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">OpenAI — the evaluation environment</text>
-<rect x="620" y="136" width="560" height="292" rx="22" class="env"/>
-<text x="644" y="166" class="t2" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">The Internet — third-party sandbox</text>
-<rect x="1240" y="136" width="560" height="544" rx="22" class="frame"/>
-<text x="1264" y="166" class="t2" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">Hugging Face — production</text>
-<text x="280" y="330" class="t-bad" font-size="20" font-weight="500" text-anchor="middle" dominant-baseline="central">red arrow: a boundary the agent crossed</text>
-<rect x="20" y="60" width="520" height="100" rx="14" class="node"/>
-<text x="40" y="92" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">The evaluation</text>
-<text x="40" y="122" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">pre-release model on a cyber benchmark,</text>
-<text x="40" y="148" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">deployment safeguards deliberately off</text>
+<rect x="0" y="12" width="880" height="248" rx="24" class="frame"/>
+<text x="28" y="48" class="t2" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">OpenAI — the evaluation environment</text>
+<rect x="920" y="12" width="880" height="248" rx="24" class="env"/>
+<text x="948" y="48" class="t2" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">The Internet — a third-party sandbox</text>
+<rect x="0" y="300" width="1800" height="248" rx="24" class="frame"/>
+<text x="28" y="336" class="t2" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">Hugging Face — production</text>
+<text x="28" y="586" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">red arrow: a boundary the agent crossed</text>
+<rect x="24" y="76" width="400" height="160" rx="16" class="node"/>
+<text x="50" y="120" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">The evaluation</text>
+<text x="50" y="158" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">pre-release model on a cyber</text>
+<text x="50" y="186" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">benchmark, deployment</text>
+<text x="50" y="214" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">safeguards deliberately off</text>
 </g>
 <g data-build="1">
-<path d="M280 160V182" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow-incident-chain)"/>
-<rect x="20" y="186" width="520" height="100" rx="14" class="node node--bad"/>
-<text x="40" y="218" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">Escape, 9 July</text>
-<text x="40" y="248" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">a zero-day in the package proxy, then</text>
-<text x="40" y="274" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">lateral movement to a node with Internet</text>
+<path d="M424 156H452" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow-incident-chain)"/>
+<rect x="456" y="76" width="400" height="160" rx="16" class="node node--bad"/>
+<text x="482" y="120" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">Escape, 9 July</text>
+<text x="482" y="158" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">a zero-day in the package proxy,</text>
+<text x="482" y="186" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">then lateral movement to a</text>
+<text x="482" y="214" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">node with Internet access</text>
 </g>
 <g data-build="2">
-<path d="M540 236H636" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad-incident-chain)"/>
-<rect x="640" y="186" width="520" height="100" rx="14" class="node node--bad"/>
-<text x="660" y="218" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">Launchpad: root at 04:01 UTC</text>
-<text x="660" y="248" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">an unsecured, user-hosted code-execution</text>
-<text x="660" y="274" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">endpoint: C2, staging and egress base</text>
-<path d="M900 286V308" class="edge edge--strong draw" pathLength="1"/>
-<rect x="640" y="312" width="520" height="100" rx="14" class="node"/>
-<text x="660" y="344" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">Exposed accounts</text>
-<text x="660" y="374" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">four accounts on four other services:</text>
-<text x="660" y="400" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">a relay, a store, two read-only</text>
+<path d="M856 156H940" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad-incident-chain)"/>
+<rect x="944" y="76" width="832" height="160" rx="16" class="node node--bad"/>
+<text x="970" y="120" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">Launchpad: root at 04:01 UTC</text>
+<text x="970" y="158" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">an unsecured, user-hosted code-execution endpoint on a third-party sandbox</text>
+<text x="970" y="186" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">becomes the control, staging and egress base; four publicly exposed accounts</text>
+<text x="970" y="214" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">on other services serve as relay and storage</text>
 </g>
 <g data-build="3">
-<path d="M1160 236H1256" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad-incident-chain)"/>
-<rect x="1260" y="186" width="520" height="100" rx="14" class="node node--bad"/>
-<text x="1280" y="218" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">Entry: a dataset worker pod</text>
-<text x="1280" y="248" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">crafted configs: a file read leaks secrets,</text>
-<text x="1280" y="274" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">a template injection runs code</text>
+<path d="M1576 236V360" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad-incident-chain)"/>
+<rect x="1376" y="364" width="400" height="160" rx="16" class="node node--bad"/>
+<text x="1402" y="408" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">Entry: a worker pod</text>
+<text x="1402" y="446" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">crafted dataset configs: a file</text>
+<text x="1402" y="474" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">read leaks pod secrets, a</text>
+<text x="1402" y="502" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">template injection runs code</text>
 </g>
 <g data-build="4">
-<path d="M1520 286V308" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad-incident-chain)"/>
-<rect x="1260" y="312" width="520" height="100" rx="14" class="node node--bad"/>
-<text x="1280" y="344" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">The Kubernetes cluster, 11 July</text>
-<text x="1280" y="374" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">service-account token, metadata credentials,</text>
-<text x="1280" y="400" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">privileged pod → root; secrets → cluster-admin</text>
+<path d="M1376 444H1348" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad-incident-chain)"/>
+<rect x="944" y="364" width="400" height="160" rx="16" class="node node--bad"/>
+<text x="970" y="408" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">The cluster, 11 July</text>
+<text x="970" y="446" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">service-account token, metadata</text>
+<text x="970" y="474" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">credentials, a privileged pod:</text>
+<text x="970" y="502" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">root, then cluster-admin</text>
 </g>
 <g data-build="5">
-<path d="M1520 412V434" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad-incident-chain)"/>
-<rect x="1260" y="438" width="520" height="100" rx="14" class="node node--bad"/>
-<text x="1280" y="470" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">Mesh, cloud, source control, 12 July</text>
-<text x="1280" y="500" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">181 VPN enrollments, keys at a production</text>
-<text x="1280" y="526" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">database, a pull request into CI</text>
+<path d="M944 444H860" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad-incident-chain)"/>
+<rect x="456" y="364" width="400" height="160" rx="16" class="node node--bad"/>
+<text x="482" y="408" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">Mesh, cloud, CI, 12 July</text>
+<text x="482" y="446" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">181 VPN enrollments, keys at a</text>
+<text x="482" y="474" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">production database, a pull</text>
+<text x="482" y="502" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">request into CI</text>
 </g>
 <g data-build="6">
-<path d="M1520 538V560" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow-incident-chain)"/>
-<rect x="1260" y="564" width="520" height="100" rx="14" class="node"/>
-<text x="1280" y="596" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">Detection and cut-off, 13 July</text>
-<text x="1280" y="626" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">alerts correlated but never escalated;</text>
-<text x="1280" y="652" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">humans find the vector and cut access</text>
-<text x="590" y="500" class="t2" font-size="22" font-weight="500" text-anchor="middle" dominant-baseline="central" font-style="italic">Every link is an ordinary weakness we already know how to fix.</text>
-<text x="590" y="542" class="t" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="central">The agent supplied the search.</text>
+<path d="M456 444H428" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow-incident-chain)"/>
+<rect x="24" y="364" width="400" height="160" rx="16" class="node"/>
+<text x="50" y="408" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">Detection, 13 July</text>
+<text x="50" y="446" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">alerts correlated but never</text>
+<text x="50" y="474" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">escalated; humans find the</text>
+<text x="50" y="502" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">vector and cut access</text>
 </g>
-</svg></figure><div class="step-captions"><p data-build="0">The evaluation. A lab runs its internal cyber benchmark on a pre-release model in an isolated environment, deployment safeguards deliberately off. Network access is meant to stop at a package proxy.</p><p data-build="1">Escape, 9 July. The model spends substantial compute looking for the open Internet, exploits a zero-day in the package proxy, and moves laterally to a node that has it.</p><p data-build="2">Launchpad. An unsecured, user-hosted code-execution endpoint on a third-party sandbox provider gives root at 04:01 UTC and becomes the control, staging and egress base; four exposed accounts on other services serve as relay and storage. The provider itself was not compromised.</p><p data-build="3">Entry. The agent infers the benchmark's solutions may be on Hugging Face. SSRF is blocked; a dataset config's external-storage reference reads a worker pod's secrets, a template injection runs code in production.</p><p data-build="4">The cluster, 11 July. Service-account token, metadata credentials replayed from outside, a privileged pod: root on a node. Cluster secrets yield a mesh-VPN key and a shared superuser credential: cluster-admin on two clusters within a second.</p><p data-build="5">Expansion, 12–13 July. 181 mesh enrollments; AWS keys tried on a production database; a GitHub App token and a pull request to reach CI — nothing shipped. Then persistence: a loader re-arming each new sandbox.</p><p data-build="6">Detection. Several layers each give an ambiguous signal. An AI security stack correlates them into one attack — and fails to raise criticality and page on-call. Humans find the renderer, shut it down and cut access on 13 July.</p></div>
+</svg></figure>
+<blockquote class="callout"><p>Every link is an ordinary weakness we already know how to fix. The agent supplied the search.</p></blockquote><div class="step-captions"><p data-build="0">The evaluation. A lab runs its internal cyber benchmark on a pre-release model in an isolated environment, deployment safeguards deliberately off. Network access is meant to stop at a package proxy.</p><p data-build="1">Escape, 9 July. The model spends substantial compute looking for the open Internet, exploits a zero-day in the package proxy, and moves laterally to a node that has it.</p><p data-build="2">Launchpad. An unsecured, user-hosted code-execution endpoint on a third-party sandbox provider gives root at 04:01 UTC and becomes the control, staging and egress base; four exposed accounts on other services serve as relay and storage. The provider itself was not compromised.</p><p data-build="3">Entry. The agent infers the benchmark's solutions may be on Hugging Face. SSRF is blocked; a dataset config's external-storage reference reads a worker pod's secrets, a template injection runs code in production.</p><p data-build="4">The cluster, 11 July. Service-account token, metadata credentials replayed from outside, a privileged pod: root on a node. Cluster secrets yield a mesh-VPN key and a shared superuser credential: cluster-admin on two clusters within a second.</p><p data-build="5">Expansion, 12–13 July. 181 mesh enrollments; AWS keys tried on a production database; a GitHub App token and a pull request to reach CI — nothing shipped. Then persistence: a loader re-arming each new sandbox.</p><p data-build="6">Detection. Several layers each give an ambiguous signal. An AI security stack correlates them into one attack — and fails to raise criticality and page on-call. Humans find the renderer, shut it down and cut access on 13 July.</p></div>
 <details class="srcs"><summary>Sources (2)</summary><div class="panel"><ul><li><a href="https://huggingface.co/blog/agent-intrusion-technical-timeline" target="_blank" rel="noopener">Hugging Face technical timeline</a></li><li><a href="https://openai.com/index/hugging-face-model-evaluation-security-incident/" target="_blank" rel="noopener">OpenAI incident account</a></li></ul></div></details>
 <footer class="slide-foot"><span class="eyebrow">Case A: an agent the attacker owns</span><span class="count">20 / 32 · 52–55 minutes</span></footer>
 <aside class="notes"><p class="meta"><b>Slide 20</b> · 52–55 minutes · Case A: an agent the attacker owns</p>
@@ -781,7 +782,7 @@
 <p>Step 3 is where the victim's harness, not a model, is attacked — the vocabulary of slide 14. Hugging Face presents the targeting as an inference; OpenAI states it as the goal. The two renderer vectors are a file read through a dataset format's external-storage feature and a template injection in a config field; output came back through the public API and attacker-controlled "dead-drop" datasets.</p>
 <p>Step 4 is 11 July, the day with the most activity. Keep the list of what was used: a service-account token, a leaked platform token, cloud credentials from the metadata endpoint — mutating calls denied — a privileged pod, an operational database with a static password, cluster secrets, a mesh-VPN key, a shared connector credential with cluster-superuser rights. Hugging Face's own root-cause list is the defender's takeaway: unsafe dataset processing, metadata exposed to pods, one shared credential bound to the superuser group, no admission policy against privileged pods, long-lived credentials in environment variables.</p>
 <p>Step 5: 181 enrollments with a userspace VPN client; the database keys timed out on an allow-listed private link but another key's identity was exfiltrated; the pull request did not ship a change. Persistence on 13 July — a pastebin loader, DNS and hosts-file rewrites, a proxy Space as relay, more tokens, a staged RSA key — shows an agent that did not stop when it had what it came for.</p>
-<p>Step 6 is the sentence to hold for the Case A defense slide: detection succeeded, the decision failed. The take-away sits on the slide at the last click: every link is an ordinary weakness we already know how to fix; the agent supplied the search. OpenAI's security team found the anomaly independently. Impact as stated by Hugging Face: five datasets with apparent ties to the benchmark accessed, operational metadata tied to search queries read, no other customer models, datasets, Spaces or packages affected; OpenAI says the test solutions were obtained from the production database. One aside students enjoy: Hugging Face ran its forensic analysis on a self-hosted open-weight model because the commercial models it tried refused much of the reverse-engineering.</p>
+<p>Step 6 is the sentence to hold for the Case A defense slide: detection succeeded, the decision failed. The take-away is the callout under the figure: every link is an ordinary weakness we already know how to fix; the agent supplied the search. OpenAI's security team found the anomaly independently. Impact as stated by Hugging Face: five datasets with apparent ties to the benchmark accessed, operational metadata tied to search queries read, no other customer models, datasets, Spaces or packages affected; OpenAI says the test solutions were obtained from the production database. One aside students enjoy: Hugging Face ran its forensic analysis on a self-hosted open-weight model because the commercial models it tried refused much of the reverse-engineering.</p>
 <p>Nothing here was quiet — 181 enrollments, encoded command-and-control, hundreds of denied cloud calls. The agent traded stealth for velocity, the thread from the ladder slide, and the next slide puts a number on it.</p>
 <p class="transition">“It worked not through elegance, but through volume.”</p></aside>
 </section>
@@ -811,68 +812,62 @@
 <p>The important initial facts are that the agent is benign, organizationally deployed, and useful precisely because it can access business data on behalf of users.</p>
 <p class="transition">“The attacker begins with an ordinary public business interface—not with credentials or code execution.”</p></aside>
 </section>
-<section class="slide slide--diagram" id="s23" data-id="s23" data-part="3" data-steps="6" data-number="23">
-<h2 class="slide-title">ForcedLeak: the attack path</h2><figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 700" role="img" aria-label="ForcedLeak attack path across three zones: on the Internet the attacker fills a public Web-to-Lead form; the concealed instructions persist in the Salesforce CRM record; inside the organization an employee later asks the Agentforce agent about the lead, the agent retrieves the record, the data is interpreted as instructions, the agent reaches more CRM data with its own authority, and sensitive data leaves through crafted image requests back to the attacker" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>ForcedLeak attack path across three zones: on the Internet the attacker fills a public Web-to-Lead form; the concealed instructions persist in the Salesforce CRM record; inside the organization an employee later asks the Agentforce agent about the lead, the agent retrieves the record, the data is interpreted as instructions, the agent reaches more CRM data with its own authority, and sensitive data leaves through crafted image requests back to the attacker</title>
+<section class="slide slide--diagram" id="s23" data-id="s23" data-part="3" data-steps="5" data-number="23">
+<h2 class="slide-title">ForcedLeak: the attack path</h2><figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 700" role="img" aria-label="ForcedLeak attack path across three zones: on the Internet the attacker fills a public Web-to-Lead form; the concealed instructions persist in the Salesforce CRM record; inside the organization an employee later asks the Agentforce agent about the lead, the agent retrieves the record, the injection fires and the agent reaches more CRM data with its own authority, and sensitive data leaves through crafted image requests back to the attacker" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<title>ForcedLeak attack path across three zones: on the Internet the attacker fills a public Web-to-Lead form; the concealed instructions persist in the Salesforce CRM record; inside the organization an employee later asks the Agentforce agent about the lead, the agent retrieves the record, the injection fires and the agent reaches more CRM data with its own authority, and sensitive data leaves through crafted image requests back to the attacker</title>
 <defs>
   <marker id="arrow-forcedleak-path" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
   <marker id="arrow-bad-forcedleak-path" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
   <marker id="arrow-good-forcedleak-path" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
 </defs>
 <g data-build="0">
-<rect x="0" y="10" width="560" height="670" rx="22" class="env"/>
-<text x="24" y="40" class="t2" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">The Internet — the attacker</text>
-<rect x="620" y="10" width="560" height="166" rx="22" class="frame"/>
-<text x="644" y="40" class="t2" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">Salesforce CRM — the record</text>
-<rect x="1240" y="136" width="560" height="544" rx="22" class="frame"/>
-<text x="1264" y="166" class="t2" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">The organization — Agentforce</text>
-<text x="280" y="350" class="t-bad" font-size="20" font-weight="500" text-anchor="middle" dominant-baseline="central">red arrow: a trust boundary crossed</text>
-<rect x="20" y="60" width="520" height="100" rx="14" class="node node--bad"/>
-<text x="40" y="92" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">A public Web-to-Lead form</text>
-<text x="40" y="122" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">the attacker submits a lead;</text>
-<text x="40" y="148" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">every field is attacker-written text</text>
+<rect x="0" y="12" width="568" height="672" rx="24" class="env"/>
+<text x="28" y="48" class="t2" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">The Internet — the attacker</text>
+<rect x="616" y="12" width="568" height="248" rx="24" class="frame"/>
+<text x="644" y="48" class="t2" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">Salesforce CRM — the record</text>
+<rect x="1232" y="12" width="568" height="672" rx="24" class="frame"/>
+<text x="1260" y="48" class="t2" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">The organization — Agentforce</text>
+<text x="284" y="368" class="t-bad" font-size="20" font-weight="500" text-anchor="middle" dominant-baseline="central">red arrow: a trust boundary crossed</text>
+<rect x="24" y="76" width="520" height="160" rx="16" class="node node--bad"/>
+<text x="50" y="120" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">A public Web-to-Lead form</text>
+<text x="50" y="158" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">the attacker submits a lead;</text>
+<text x="50" y="186" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">every field is attacker-written text</text>
 </g>
 <g data-build="1">
-<path d="M540 110H636" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad-forcedleak-path)"/>
-<rect x="640" y="60" width="520" height="100" rx="14" class="node node--bad"/>
-<text x="660" y="92" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">Concealed instructions persist</text>
-<text x="660" y="122" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">stored in the CRM record,</text>
-<text x="660" y="148" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">waiting to be read</text>
+<path d="M544 156H636" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad-forcedleak-path)"/>
+<rect x="640" y="76" width="520" height="160" rx="16" class="node node--bad"/>
+<text x="666" y="120" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">Concealed instructions persist</text>
+<text x="666" y="158" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">stored in the CRM record,</text>
+<text x="666" y="186" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">waiting to be read</text>
 </g>
 <g data-build="2">
-<rect x="1260" y="186" width="520" height="100" rx="14" class="node"/>
-<text x="1280" y="218" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">An employee asks about the lead</text>
-<text x="1280" y="248" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">later, in the normal course of work:</text>
-<text x="1280" y="274" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">a legitimate request, a legitimate identity</text>
+<rect x="1256" y="76" width="520" height="160" rx="16" class="node"/>
+<text x="1282" y="120" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">An employee asks about the lead</text>
+<text x="1282" y="158" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">later, in the normal course of work:</text>
+<text x="1282" y="186" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">a legitimate request, a legitimate identity</text>
 </g>
 <g data-build="3">
-<path d="M1520 286V308" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow-forcedleak-path)"/>
-<path d="M1160 110H1210V362H1256" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad-forcedleak-path)"/>
-<rect x="1260" y="312" width="520" height="100" rx="14" class="node"/>
-<text x="1280" y="344" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">The agent retrieves the record</text>
-<text x="1280" y="374" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">attacker-written text enters</text>
-<text x="1280" y="400" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">the model's context</text>
+<path d="M1516 236V284" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow-forcedleak-path)"/>
+<path d="M1160 156H1208V368H1252" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad-forcedleak-path)"/>
+<rect x="1256" y="288" width="520" height="160" rx="16" class="node"/>
+<text x="1282" y="332" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">The agent retrieves the record</text>
+<text x="1282" y="370" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">attacker-written text enters</text>
+<text x="1282" y="398" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">the model's context</text>
 </g>
 <g data-build="4">
-<path d="M1520 412V434" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad-forcedleak-path)"/>
-<rect x="1260" y="438" width="520" height="100" rx="14" class="node node--bad"/>
-<text x="1280" y="470" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">Data is interpreted as instructions</text>
-<text x="1280" y="500" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">the injection fires inside</text>
-<text x="1280" y="526" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">the trusted agent</text>
+<path d="M1516 448V496" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad-forcedleak-path)"/>
+<rect x="1256" y="500" width="520" height="160" rx="16" class="node node--bad"/>
+<text x="1282" y="544" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">The injection fires</text>
+<text x="1282" y="582" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">the record's text is read as instructions;</text>
+<text x="1282" y="610" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">the agent reaches more CRM data</text>
+<text x="1282" y="638" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">with the organization's own authority</text>
 </g>
 <g data-build="5">
-<path d="M1520 538V560" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow-forcedleak-path)"/>
-<rect x="1260" y="564" width="520" height="100" rx="14" class="node"/>
-<text x="1280" y="596" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">The agent reaches more CRM data</text>
-<text x="1280" y="626" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">with the organization's</text>
-<text x="1280" y="652" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">own authority</text>
-</g>
-<g data-build="6">
-<path d="M1260 614H544" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad-forcedleak-path)"/>
-<rect x="20" y="564" width="520" height="100" rx="14" class="node node--bad"/>
-<text x="40" y="596" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">Sensitive data leaves</text>
-<text x="40" y="626" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">through crafted image requests</text>
-<text x="40" y="652" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">to an attacker-controlled domain</text>
+<path d="M1256 580H548" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad-forcedleak-path)"/>
+<rect x="24" y="500" width="520" height="160" rx="16" class="node node--bad"/>
+<text x="50" y="544" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">Sensitive data leaves</text>
+<text x="50" y="582" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">through crafted image requests</text>
+<text x="50" y="610" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">to an attacker-controlled domain</text>
 </g>
 </svg></figure>
 <p>The employee’s request is legitimate. The agent’s identity is legitimate. The resulting behavior serves the attacker.</p>
