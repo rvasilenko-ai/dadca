@@ -431,26 +431,56 @@ def glyph(x, y, ch, cls="t2"):
     return text(x, y, ch, 46, 300, cls, "middle")
 
 
+def centered_tile(x, y, w, h, lines, size, bad=False, weight=700):
+    """A tile whose text is centred: one or two short lines."""
+    cls = "node node--bad" if bad else "node"
+    tcls = "t-bad" if bad else "t"
+    s = f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="16" class="{cls}"/>\n'
+    cy = y + h // 2
+    ys = [cy] if len(lines) == 1 else [cy - size * 0.65, cy + size * 0.65]
+    for ly, line in zip(ys, lines):
+        s += text(x + w // 2, round(ly), line, size, weight, tcls, "middle")
+    return s
+
+
 def equation():
-    """Dormant instructions, live authority: four ingredients summed into attacker-desired capability."""
-    W, H = 1200, 560
+    """ForcedLeak, what it adds up to: four ingredients summed, left to right, into attacker-desired
+    capability; below, three readings of the same incident, revealed one at a time."""
+    W, H = 1800, 480
     terms = [
-        ("attacker-controlled data", True),
-        ("trusted agent: model and harness", False),
-        ("organizational identity and tools", False),
-        ("permitted outbound channel", False),
+        (["attacker-controlled", "data"], True),
+        (["trusted agent:", "model and harness"], False),
+        (["organizational", "identity and tools"], False),
+        (["permitted", "outbound channel"], False),
     ]
-    s = head(W, H, "Dormant instructions, live authority: attacker-controlled data plus a trusted agent plus organizational identity plus a permitted outbound channel equals attacker-desired capability")
-    tw, th, gap = 980, 66, 56
-    x = (W - tw) // 2
-    y = 10
-    for i, (t, bad) in enumerate(terms):
-        body = glyph(W // 2, y - gap // 2, "+") if i > 0 else ""
-        body += tile(x, y, tw, th, t, [], bad=bad, title_size=25, sub_size=1)
+    s = head(W, H, "ForcedLeak, what it adds up to: attacker-controlled data plus a trusted agent plus organizational identity "
+                   "and tools plus a permitted outbound channel equals attacker-desired capability. Three readings of the same "
+                   "incident: the CRM record contains the payload; the agent is a compromised deputy; the agent has "
+                   "operationally become part of the malware")
+    tw, th, gap, y = 290, 150, 70, 16
+    x = 35
+    for i, (lines, bad) in enumerate(terms):
+        body = glyph(x - gap // 2, y + th // 2, "+") if i > 0 else ""
+        body += centered_tile(x, y, tw, th, lines, 27, bad=bad)
         s += f'<g data-build="{i}">\n{body}</g>\n'
-        y += th + gap
-    body = glyph(W // 2, y - gap // 2, "=") + tile(x, y, tw, th + 4, "attacker-desired capability", [], bad=True, title_size=27, sub_size=1)
+        x += tw + gap
+    body = glyph(x - gap // 2, y + th // 2, "=") + centered_tile(x, y, tw, th, ["attacker-desired", "capability"], 27, bad=True)
     s += f'<g data-build="{len(terms)}">\n{body}</g>\n'
+    # three readings of the same incident
+    ry = y + th + 130
+    s += '<g data-build="5">\n' + text(W // 2, ry - 50, "Three readings of the same incident — each true, each useful for something different", 24, 600, "t2", "middle")
+    readings = [
+        ["The CRM record", "contains the payload"],
+        ["The agent is", "a compromised deputy"],
+        ["The agent has operationally", "become part of the malware"],
+    ]
+    rw, rgap = 540, 60
+    rx = (W - 3 * rw - 2 * rgap) // 2
+    for i, lines in enumerate(readings):
+        if i > 0:
+            s += f'</g>\n<g data-build="{5 + i}">\n'
+        s += centered_tile(rx + i * (rw + rgap), ry, rw, 140, lines, 26, weight=600)
+    s += '</g>\n'
     return s + "</svg>\n"
 
 

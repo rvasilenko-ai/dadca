@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" role="img" aria-label="Dormant instructions, live authority: attacker-controlled data plus a trusted agent plus organizational identity plus a permitted outbound channel equals attacker-desired capability" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>Dormant instructions, live authority: attacker-controlled data plus a trusted agent plus organizational identity plus a permitted outbound channel equals attacker-desired capability</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 480" width="1800" height="480" role="img" aria-label="ForcedLeak, what it adds up to: attacker-controlled data plus a trusted agent plus organizational identity and tools plus a permitted outbound channel equals attacker-desired capability. Three readings of the same incident: the CRM record contains the payload; the agent is a compromised deputy; the agent has operationally become part of the malware" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<title>ForcedLeak, what it adds up to: attacker-controlled data plus a trusted agent plus organizational identity and tools plus a permitted outbound channel equals attacker-desired capability. Three readings of the same incident: the CRM record contains the payload; the agent is a compromised deputy; the agent has operationally become part of the malware</title>
 <style>
 svg{--surface:#ffffff;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--line:#9ca3af;--rule:#cbd5e1;
 --acc:#0284c7;--acc-wash:#e0f2fe;--acc-ink:#075985;--bad:#dc2626;--bad-wash:#fee2e2;--bad-ink:#991b1b;
@@ -23,27 +23,48 @@ svg{--surface:#ffffff;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--line:#9ca3
   <marker id="arrow-good" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
 </defs>
 <g data-build="0">
-<rect x="110" y="10" width="980" height="66" rx="14" class="node node--bad"/>
-<text x="130" y="42" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">attacker-controlled data</text>
+<rect x="35" y="16" width="290" height="150" rx="16" class="node node--bad"/>
+<text x="180" y="73" class="t-bad" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">attacker-controlled</text>
+<text x="180" y="109" class="t-bad" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">data</text>
 </g>
 <g data-build="1">
-<text x="600" y="104" class="t2" font-size="46" font-weight="300" text-anchor="middle" dominant-baseline="central">+</text>
-<rect x="110" y="132" width="980" height="66" rx="14" class="node"/>
-<text x="130" y="164" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">trusted agent: model and harness</text>
+<text x="360" y="91" class="t2" font-size="46" font-weight="300" text-anchor="middle" dominant-baseline="central">+</text>
+<rect x="395" y="16" width="290" height="150" rx="16" class="node"/>
+<text x="540" y="73" class="t" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">trusted agent:</text>
+<text x="540" y="109" class="t" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">model and harness</text>
 </g>
 <g data-build="2">
-<text x="600" y="226" class="t2" font-size="46" font-weight="300" text-anchor="middle" dominant-baseline="central">+</text>
-<rect x="110" y="254" width="980" height="66" rx="14" class="node"/>
-<text x="130" y="286" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">organizational identity and tools</text>
+<text x="720" y="91" class="t2" font-size="46" font-weight="300" text-anchor="middle" dominant-baseline="central">+</text>
+<rect x="755" y="16" width="290" height="150" rx="16" class="node"/>
+<text x="900" y="73" class="t" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">organizational</text>
+<text x="900" y="109" class="t" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">identity and tools</text>
 </g>
 <g data-build="3">
-<text x="600" y="348" class="t2" font-size="46" font-weight="300" text-anchor="middle" dominant-baseline="central">+</text>
-<rect x="110" y="376" width="980" height="66" rx="14" class="node"/>
-<text x="130" y="408" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">permitted outbound channel</text>
+<text x="1080" y="91" class="t2" font-size="46" font-weight="300" text-anchor="middle" dominant-baseline="central">+</text>
+<rect x="1115" y="16" width="290" height="150" rx="16" class="node"/>
+<text x="1260" y="73" class="t" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">permitted</text>
+<text x="1260" y="109" class="t" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">outbound channel</text>
 </g>
 <g data-build="4">
-<text x="600" y="470" class="t2" font-size="46" font-weight="300" text-anchor="middle" dominant-baseline="central">=</text>
-<rect x="110" y="498" width="980" height="70" rx="14" class="node node--bad"/>
-<text x="130" y="530" class="t" font-size="27" font-weight="700" text-anchor="start" dominant-baseline="central">attacker-desired capability</text>
+<text x="1440" y="91" class="t2" font-size="46" font-weight="300" text-anchor="middle" dominant-baseline="central">=</text>
+<rect x="1475" y="16" width="290" height="150" rx="16" class="node node--bad"/>
+<text x="1620" y="73" class="t-bad" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">attacker-desired</text>
+<text x="1620" y="109" class="t-bad" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">capability</text>
+</g>
+<g data-build="5">
+<text x="900" y="246" class="t2" font-size="24" font-weight="600" text-anchor="middle" dominant-baseline="central">Three readings of the same incident — each true, each useful for something different</text>
+<rect x="30" y="296" width="540" height="140" rx="16" class="node"/>
+<text x="300" y="349" class="t" font-size="26" font-weight="600" text-anchor="middle" dominant-baseline="central">The CRM record</text>
+<text x="300" y="383" class="t" font-size="26" font-weight="600" text-anchor="middle" dominant-baseline="central">contains the payload</text>
+</g>
+<g data-build="6">
+<rect x="630" y="296" width="540" height="140" rx="16" class="node"/>
+<text x="900" y="349" class="t" font-size="26" font-weight="600" text-anchor="middle" dominant-baseline="central">The agent is</text>
+<text x="900" y="383" class="t" font-size="26" font-weight="600" text-anchor="middle" dominant-baseline="central">a compromised deputy</text>
+</g>
+<g data-build="7">
+<rect x="1230" y="296" width="540" height="140" rx="16" class="node"/>
+<text x="1500" y="349" class="t" font-size="26" font-weight="600" text-anchor="middle" dominant-baseline="central">The agent has operationally</text>
+<text x="1500" y="383" class="t" font-size="26" font-weight="600" text-anchor="middle" dominant-baseline="central">become part of the malware</text>
 </g>
 </svg>

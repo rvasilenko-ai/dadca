@@ -1,17 +1,13 @@
-# Slide 24 — Dormant instructions, live authority
+# Slide 24 — ForcedLeak: what it adds up to
 
 **Timing:** 62–64 minutes  
 **Module:** Case B: a trusted agent hijacked
 
 ## On-slide content
 
-![Dormant instructions, live authority, as a sum: attacker-controlled data, plus a trusted agent (model and harness), plus organizational identity and tools, plus a permitted outbound channel, equals attacker-desired capability](../figures/equation.svg)
+![ForcedLeak as a sum: attacker-controlled data, plus a trusted agent (model and harness), plus organizational identity and tools, plus a permitted outbound channel, equals attacker-desired capability. Below, three readings of the same incident: the CRM record contains the payload; the agent is a compromised deputy; the agent has operationally become part of the malware](../figures/equation.svg)
 
-Possible interpretations:
-
-- The CRM record contains the payload
-- The agent is a compromised deputy
-- The agent has operationally become part of the malware
+Dormant instructions, live authority: the text is inert while stored and becomes consequential only when a trusted agent retrieves it and has the authority to act. No malicious file exists at any point.
 
 ## Speaker notes
 

@@ -879,41 +879,61 @@
 <p>Keep the technical focus on trust boundaries: external data crossed into model context, became operational instruction, inherited legitimate authority, and reached an egress channel.</p>
 <p class="transition">“Nothing here was malicious when considered only as a binary. Where, then, did the payload live?”</p></aside>
 </section>
-<section class="slide slide--has-diagram" id="s24" data-id="s24" data-part="3" data-steps="4" data-number="24">
-<h2 class="slide-title">Dormant instructions, live authority</h2><div class="body"><figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-label="Dormant instructions, live authority: attacker-controlled data plus a trusted agent plus organizational identity plus a permitted outbound channel equals attacker-desired capability" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>Dormant instructions, live authority: attacker-controlled data plus a trusted agent plus organizational identity plus a permitted outbound channel equals attacker-desired capability</title>
+<section class="slide slide--diagram" id="s24" data-id="s24" data-part="3" data-steps="7" data-number="24">
+<h2 class="slide-title">ForcedLeak: what it adds up to</h2><figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 480" role="img" aria-label="ForcedLeak, what it adds up to: attacker-controlled data plus a trusted agent plus organizational identity and tools plus a permitted outbound channel equals attacker-desired capability. Three readings of the same incident: the CRM record contains the payload; the agent is a compromised deputy; the agent has operationally become part of the malware" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<title>ForcedLeak, what it adds up to: attacker-controlled data plus a trusted agent plus organizational identity and tools plus a permitted outbound channel equals attacker-desired capability. Three readings of the same incident: the CRM record contains the payload; the agent is a compromised deputy; the agent has operationally become part of the malware</title>
 <defs>
   <marker id="arrow-equation" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
   <marker id="arrow-bad-equation" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
   <marker id="arrow-good-equation" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
 </defs>
 <g data-build="0">
-<rect x="110" y="10" width="980" height="66" rx="14" class="node node--bad"/>
-<text x="130" y="42" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">attacker-controlled data</text>
+<rect x="35" y="16" width="290" height="150" rx="16" class="node node--bad"/>
+<text x="180" y="73" class="t-bad" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">attacker-controlled</text>
+<text x="180" y="109" class="t-bad" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">data</text>
 </g>
 <g data-build="1">
-<text x="600" y="104" class="t2" font-size="46" font-weight="300" text-anchor="middle" dominant-baseline="central">+</text>
-<rect x="110" y="132" width="980" height="66" rx="14" class="node"/>
-<text x="130" y="164" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">trusted agent: model and harness</text>
+<text x="360" y="91" class="t2" font-size="46" font-weight="300" text-anchor="middle" dominant-baseline="central">+</text>
+<rect x="395" y="16" width="290" height="150" rx="16" class="node"/>
+<text x="540" y="73" class="t" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">trusted agent:</text>
+<text x="540" y="109" class="t" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">model and harness</text>
 </g>
 <g data-build="2">
-<text x="600" y="226" class="t2" font-size="46" font-weight="300" text-anchor="middle" dominant-baseline="central">+</text>
-<rect x="110" y="254" width="980" height="66" rx="14" class="node"/>
-<text x="130" y="286" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">organizational identity and tools</text>
+<text x="720" y="91" class="t2" font-size="46" font-weight="300" text-anchor="middle" dominant-baseline="central">+</text>
+<rect x="755" y="16" width="290" height="150" rx="16" class="node"/>
+<text x="900" y="73" class="t" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">organizational</text>
+<text x="900" y="109" class="t" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">identity and tools</text>
 </g>
 <g data-build="3">
-<text x="600" y="348" class="t2" font-size="46" font-weight="300" text-anchor="middle" dominant-baseline="central">+</text>
-<rect x="110" y="376" width="980" height="66" rx="14" class="node"/>
-<text x="130" y="408" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">permitted outbound channel</text>
+<text x="1080" y="91" class="t2" font-size="46" font-weight="300" text-anchor="middle" dominant-baseline="central">+</text>
+<rect x="1115" y="16" width="290" height="150" rx="16" class="node"/>
+<text x="1260" y="73" class="t" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">permitted</text>
+<text x="1260" y="109" class="t" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">outbound channel</text>
 </g>
 <g data-build="4">
-<text x="600" y="470" class="t2" font-size="46" font-weight="300" text-anchor="middle" dominant-baseline="central">=</text>
-<rect x="110" y="498" width="980" height="70" rx="14" class="node node--bad"/>
-<text x="130" y="530" class="t" font-size="27" font-weight="700" text-anchor="start" dominant-baseline="central">attacker-desired capability</text>
+<text x="1440" y="91" class="t2" font-size="46" font-weight="300" text-anchor="middle" dominant-baseline="central">=</text>
+<rect x="1475" y="16" width="290" height="150" rx="16" class="node node--bad"/>
+<text x="1620" y="73" class="t-bad" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">attacker-desired</text>
+<text x="1620" y="109" class="t-bad" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">capability</text>
+</g>
+<g data-build="5">
+<text x="900" y="246" class="t2" font-size="24" font-weight="600" text-anchor="middle" dominant-baseline="central">Three readings of the same incident — each true, each useful for something different</text>
+<rect x="30" y="296" width="540" height="140" rx="16" class="node"/>
+<text x="300" y="349" class="t" font-size="26" font-weight="600" text-anchor="middle" dominant-baseline="central">The CRM record</text>
+<text x="300" y="383" class="t" font-size="26" font-weight="600" text-anchor="middle" dominant-baseline="central">contains the payload</text>
+</g>
+<g data-build="6">
+<rect x="630" y="296" width="540" height="140" rx="16" class="node"/>
+<text x="900" y="349" class="t" font-size="26" font-weight="600" text-anchor="middle" dominant-baseline="central">The agent is</text>
+<text x="900" y="383" class="t" font-size="26" font-weight="600" text-anchor="middle" dominant-baseline="central">a compromised deputy</text>
+</g>
+<g data-build="7">
+<rect x="1230" y="296" width="540" height="140" rx="16" class="node"/>
+<text x="1500" y="349" class="t" font-size="26" font-weight="600" text-anchor="middle" dominant-baseline="central">The agent has operationally</text>
+<text x="1500" y="383" class="t" font-size="26" font-weight="600" text-anchor="middle" dominant-baseline="central">become part of the malware</text>
 </g>
 </svg></figure>
-<p>Possible interpretations:</p>
-<ul><li>The CRM record contains the payload</li><li>The agent is a compromised deputy</li><li>The agent has operationally become part of the malware</li></ul></div>
+<p>Dormant instructions, live authority: the text is inert while stored and becomes consequential only when a trusted agent retrieves it and has the authority to act. No malicious file exists at any point.</p>
 <details class="srcs"><summary>Sources (1)</summary><div class="panel"><ul><li><a href="https://noma.security/noma-labs/forcedleak/" target="_blank" rel="noopener">Noma Security: ForcedLeak</a></li></ul></div></details>
 <footer class="slide-foot"><span class="eyebrow">Case B: a trusted agent hijacked</span><span class="count">24 / 32 · 62–64 minutes</span></footer>
 <aside class="notes"><p class="meta"><b>Slide 24</b> · 62–64 minutes · Case B: a trusted agent hijacked</p>
