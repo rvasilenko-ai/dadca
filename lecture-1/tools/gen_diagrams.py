@@ -419,14 +419,18 @@ def pipeline_figure(aria, steps):
     y = 70 if brackets else 24
     W, H = 1800, (y + TILE_H + 110) if brackets else (y + TILE_H + 24)
     s = head(W, H, aria)
+    badge_at = {}   # stage -> the badge an earlier step left on it, redrawn when a later step covers that tile
     for k, st in enumerate(steps):
         body = strip(y) if k == 0 else ""
         for i in st.get("lit", []):
             body += strip_tile(i, y, "lit")
         for i in st.get("bad", []):
             body += strip_tile(i, y, "bad")
+            if i in badge_at and i != st["bad"][0]:
+                body += small_badge(16 + i * 224 + 4, y + 4, badge_at[i], r=16, size=17)
         if st.get("badge") is not None and st.get("bad"):
             body += small_badge(16 + st["bad"][0] * 224 + 4, y + 4, st["badge"], r=16, size=17)
+            badge_at[st["bad"][0]] = st["badge"]
         if st.get("bracket"):
             label, bad, pos = st["bracket"]
             ly = y - 36 if pos == "above" else y + TILE_H + 42

@@ -8,13 +8,41 @@
 
 Build, one step per click:
 
-0. Packing and server-side polymorphism — broke **extraction, detection**. Evidence left the signature database; the sensor moved to emulation, then reputation and prevalence. Answered by Antivirus emulation and generic unpacking; cloud reputation and prevalence (Artemis 2008, Insight 2009).
-1. File types and runtimes diversify: documents, scripts and exploit objects once mail blocks executables, then .NET, Go and Rust executables — broke **sensor, extraction**. Evidence left the executable attachment filter, then the attachment itself (for a link); one analysis toolchain; the sensor moved to document and script scanning, detonation; runtime-aware unpacking and decompilation. Answered by Gateways that open documents and scripts; the sandbox (WildFire 2011, FireEye); .NET decompilers, Go symbol recovery (GoReSym 2022).
-2. Memory, staging, side-loading, living off the land — broke **sensor, acquisition**. Evidence left the detonatable file, then any malicious artifact; the sensor moved to the real host: EDR, memory, baselining. Answered by EDR (named 2013), Sysmon (2014), AMSI (2015); memory scanning and baselining.
-3. HTTPS, TLS 1.3, DoH, ECH (not an attacker move) — broke **extraction**. Evidence left the network payload; the sensor moved to endpoint, metadata, decryption proxy. Answered by TLS inspection proxies; NDR on flow and TLS metadata (JA3 2017); the endpoint for the plaintext.
-4. Stolen identities, tokens, cloud APIs, remote-management tools — broke **sensor**. Evidence left the host; the sensor moved to identity provider and SaaS audit logs. Answered by Identity provider and SaaS audit logs; identity threat detection and response (named 2022); token revocation.
-5. Trusted vendor and update channels — broke **representation, detection**. Evidence left the provenance as a proxy for safety; the sensor moved to build provenance, behavior of trusted software. Answered by Build provenance and software bills of materials (2021 onward); behavior monitoring of trusted software.
-6. Instructions in data consumed by agents — broke **sensor**. Evidence left the every classical sensor; the sensor moved to the agent's context, tools, and actions. Answered by Agent harness logs, guardrails, prompt-injection defenses (2024–2026); ATT&CK's Defense Impairment tactic (2026).
+0. Packing and server-side polymorphism
+   + **Stage that broke** — extraction, detection
+   + **Evidence left the…** — signature database
+   + **Sensor moved to…** — emulation, then reputation and prevalence
+   + **Product that answered** — Antivirus emulation and generic unpacking; cloud reputation and prevalence (Artemis 2008, Insight 2009)
+1. File types and runtimes diversify: documents, scripts and exploit objects once mail blocks executables, then .NET, Go and Rust executables
+   + **Stage that broke** — sensor, extraction
+   + **Evidence left the…** — executable attachment filter, then the attachment itself (for a link); one analysis toolchain
+   + **Sensor moved to…** — document and script scanning, detonation; runtime-aware unpacking and decompilation
+   + **Product that answered** — Gateways that open documents and scripts; the sandbox (WildFire 2011, FireEye); .NET decompilers, Go symbol recovery (GoReSym 2022)
+2. Memory, staging, side-loading, living off the land
+   + **Stage that broke** — sensor, acquisition
+   + **Evidence left the…** — detonatable file, then any malicious artifact
+   + **Sensor moved to…** — the real host: EDR, memory, baselining
+   + **Product that answered** — EDR (named 2013), Sysmon (2014), AMSI (2015); memory scanning and baselining
+3. HTTPS, TLS 1.3, DoH, ECH (not an attacker move)
+   + **Stage that broke** — extraction
+   + **Evidence left the…** — network payload
+   + **Sensor moved to…** — endpoint, metadata, decryption proxy
+   + **Product that answered** — TLS inspection proxies; NDR on flow and TLS metadata (JA3 2017); the endpoint for the plaintext
+4. Stolen identities, tokens, cloud APIs, remote-management tools
+   + **Stage that broke** — sensor
+   + **Evidence left the…** — host
+   + **Sensor moved to…** — identity provider and SaaS audit logs
+   + **Product that answered** — Identity provider and SaaS audit logs; identity threat detection and response (named 2022); token revocation
+5. Trusted vendor and update channels
+   + **Stage that broke** — representation, detection
+   + **Evidence left the…** — provenance as a proxy for safety
+   + **Sensor moved to…** — build provenance, behavior of trusted software
+   + **Product that answered** — Build provenance and software bills of materials (2021 onward); behavior monitoring of trusted software
+6. Instructions in data consumed by agents
+   + **Stage that broke** — sensor
+   + **Evidence left the…** — every classical sensor
+   + **Sensor moved to…** — the agent's context, tools, and actions
+   + **Product that answered** — Agent harness logs, guardrails, prompt-injection defenses (2024–2026); ATT&CK's Defense Impairment tactic (2026)
 
 > Every row is one round of the same cat-and-mouse game: the attacker moves the evidence out of a product's field of view, and the defense has to change at whatever stage broke. There is no final round.
 
