@@ -300,13 +300,13 @@ def render_slide(slide: dict, total: int) -> str:
         return section(slide, slide["id"], "has-diagram", inner, steps, total, density_class(estimate_height(body_html, bool(captions))))
 
     if pngs:
+        # the paper figures are the real diagram on these slides; drop a redundant text schematic
         figs = "".join(f'<figure><img src="../figures/{html.escape(Path(f["src"]).name)}" alt="{html.escape(f["alt"])}">'
                        f'<figcaption>{inline(f["caption"] or f["alt"])}</figcaption></figure>' for f in pngs)
-        pres = "".join(re.findall(r'<pre class="schematic".*?</pre>', body_html, flags=re.S))
-        rest = re.sub(r'<pre class="schematic".*?</pre>', "", body_html, flags=re.S)
-        inner = (h2 + pres + f'<div class="cols"><div class="col-text">{rest}</div><div class="col-fig{" one" if len(pngs) == 1 else ""}">{figs}</div></div>'
+        rest = re.sub(r'<pre class="schematic".*?</pre>\s*', "", body_html, flags=re.S)
+        inner = (h2 + f'<div class="cols"><div class="col-text">{rest}</div><div class="col-fig{" one" if len(pngs) == 1 else ""}">{figs}</div></div>'
                  + captions_html(captions))
-        est = estimate_height(pres, bool(captions)) + max(estimate_height(rest, False) - 100, len(pngs) * 300)
+        est = max(estimate_height(rest, bool(captions)), len(pngs) * 320)
         return section(slide, slide["id"], "figure", inner, max(len(captions) - 1, 0), total, density_class(est))
 
     inner = h2 + f'<div class="body">{body_html}</div>' + captions_html(captions)
