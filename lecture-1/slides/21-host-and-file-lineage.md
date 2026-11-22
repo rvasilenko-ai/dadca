@@ -8,16 +8,46 @@
 
 Build, one step per click:
 
-0. Built for — **AV** Prevention on the endpoint: block malware before it runs, known families and, through heuristics and emulation, unknown ones. **Sandbox** Detection by execution: run the object in an instrumented virtual machine and judge it by what it does, catching exploit documents, zero-days and novel implants that static analysis misses. **EDR** Assume breach: detect and investigate what prevention missed.
-1. Sensor — **AV** On-access hooks on the host: files at rest, on write and on execute; later process behavior and memory. **Sandbox** None of its own: it receives objects from other products' sensors, the mail and web gateways, the endpoint agent, an analyst's submission. **EDR** The same on-host hooks as antivirus (files, processes, registry, network, memory; ETW and AMSI on Windows), often in the same agent.
-2. Acquisition — **AV** The file at scan time, and the events the hooks see, taken as they happen on the host. **Sandbox** The submitted file and a recording of its run. **EDR** The same as antivirus: the same agent collects the same files and events.
-3. Extraction — **AV** Parsing, unpacking, emulation. **Sandbox** Runtime behavior: API calls, dropped files, connections. **EDR** Process-tree and session reconstruction; script content through AMSI.
-4. Representation — **AV** Bytes, hashes, strings, file features. **Sandbox** A behavior report. **EDR** Event sequences and graphs across hosts.
-5. Detection — **AV** Signatures and generic family detections, heuristics and emulation; then reputation and ML. **Sandbox** Behavioral rules and ML over the report. **EDR** Analytics over the forwarded stream across hosts: baselining, prevalence, indicators.
-6. Investigation — **AV** A family name. **Sandbox** The report, read by an analyst. **EDR** Timeline, hunting, remote forensics over a central, retained record of the stream.
-7. Decision — **AV** Verdict on the object before it runs, automatic. **Sandbox** Inline: verdict before delivery, automatic; out of band (TAP mode): an alert after delivery. **EDR** Alert for triage; automatic only when confident.
-8. Response — **AV** Quarantine or delete the file. **Sandbox** Block the file and its hash. **EDR** Isolate the host, kill the process, collect, roll back.
-9. Starved by — **AV** Packing, polymorphism, scripts, memory. **Sandbox** Inline commands, staged payloads, side-loaded DLLs, memory-only implants, evasion. **EDR** Legitimate tools, identity abuse, off-host activity, tampering from the kernel (BYOVD).
+0. Built for
+   - **Antivirus** — Prevention on the endpoint: block malware before it runs, known families and, through heuristics and emulation, unknown ones.
+   - **Sandbox** — Detection by execution: run the object in an instrumented virtual machine and judge it by what it does, catching exploit documents, zero-days and novel implants that static analysis misses.
+   - **EDR** — Assume breach: detect and investigate what prevention missed.
+1. Sensor
+   - **Antivirus** — On-access hooks on the host: files at rest, on write and on execute; later process behavior and memory.
+   - **Sandbox** — None of its own: it receives objects from other products' sensors, the mail and web gateways, the endpoint agent, an analyst's submission.
+   - **EDR** — The same on-host hooks as antivirus (files, processes, registry, network, memory; ETW and AMSI on Windows), often in the same agent.
+2. Acquisition
+   - **Antivirus** — The file at scan time, and the events the hooks see, taken as they happen on the host.
+   - **Sandbox** — The submitted file and a recording of its run.
+   - **EDR** — The same as antivirus: the same agent collects the same files and events.
+3. Extraction
+   - **Antivirus** — Parsing, unpacking, emulation.
+   - **Sandbox** — Runtime behavior: API calls, dropped files, connections.
+   - **EDR** — Process-tree and session reconstruction; script content through AMSI.
+4. Representation
+   - **Antivirus** — Bytes, hashes, strings, file features.
+   - **Sandbox** — A behavior report.
+   - **EDR** — Event sequences and graphs across hosts.
+5. Detection
+   - **Antivirus** — Signatures and generic family detections, heuristics and emulation; then reputation and ML.
+   - **Sandbox** — Behavioral rules and ML over the report.
+   - **EDR** — Analytics over the forwarded stream across hosts: baselining, prevalence, indicators.
+6. Investigation
+   - **Antivirus** — A family name.
+   - **Sandbox** — The report, read by an analyst.
+   - **EDR** — Timeline, hunting, remote forensics over a central, retained record of the stream.
+7. Decision
+   - **Antivirus** — Verdict on the object before it runs, automatic.
+   - **Sandbox** — Inline: verdict before delivery, automatic; out of band (TAP mode): an alert after delivery.
+   - **EDR** — Alert for triage; automatic only when confident.
+8. Response
+   - **Antivirus** — Quarantine or delete the file.
+   - **Sandbox** — Block the file and its hash.
+   - **EDR** — Isolate the host, kill the process, collect, roll back.
+9. Starved by
+   - **Antivirus** — Packing, polymorphism, scripts, memory.
+   - **Sandbox** — Inline commands, staged payloads, side-loaded DLLs, memory-only implants, evasion.
+   - **EDR** — Legitimate tools, identity abuse, off-host activity, tampering from the kernel (BYOVD).
 
 > Each generation judges one unit of evidence: an object before it runs, an object in detonation, activity on the host.
 > Scenario check, the attack from the exercise: antivirus and the sandbox see only a legitimate signed driver; EDR would record the whole chain and fire on the sequence, so the attacker's first move is to disable it from the kernel. The kernel tampering is now the thing to detect.
