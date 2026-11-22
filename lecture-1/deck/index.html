@@ -1424,310 +1424,388 @@
 <p>Then what it is not, because students over-read it. It is a knowledge base of observed adversary behavior, not a universal ontology of every capability software might possess; the tactics are goals, not a required sequence; and a sequence of ATT&amp;CK identifiers is not automatically a complete incident narrative. Above all a technique ID names a behavior, it is not evidence that the behavior happened. That last point is the bridge to Part 2.</p>
 <p class="transition">“Here is what the matrix looks like, and how to read it.”</p></aside>
 </section>
-<section class="slide slide--diagram" id="s16" data-id="s16" data-part="1" data-steps="7" data-number="16">
+<section class="slide slide--diagram" id="s16" data-id="s16" data-part="1" data-steps="5" data-number="16">
 <h2 class="slide-title">From names to behaviors: ATT&amp;CK's levels</h2><p>Tactic: why the adversary acts. Technique: what behavior achieves it. Sub-technique: a specific form. Procedure: how a given actor or tool did it.</p>
-<figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 450" role="img" aria-label="The Enterprise ATT&CK matrix, schematic: 15 tactic columns with a few real techniques each and the true per-tactic counts; a classic trojan lit as a path of seven techniques across seven tactics" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 576" role="img" aria-label="The Enterprise ATT&CK matrix, schematic, first half: Reconnaissance to Defense Impairment, with technique names and the true per-tactic counts; a classic trojan lit as a path, steps one to five" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
 <defs>
-  <marker id="arrow-attack-matrix" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
-  <marker id="arrow-bad-attack-matrix" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
-  <marker id="arrow-good-attack-matrix" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
+  <marker id="arrow-attack-matrix-1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
+  <marker id="arrow-bad-attack-matrix-1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
+  <marker id="arrow-good-attack-matrix-1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
 </defs>
 <g data-build="0">
-<text x="24" y="18" class="t2" font-size="17" font-weight="500" text-anchor="start" dominant-baseline="central">Enterprise v20.0 (13 October 2026): 15 tactics, 227 techniques, 479 sub-techniques · hover a cell for its name</text>
-<rect x="28" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Reconnaissance (TA0043): 12 techniques"/>
-<text x="82.0" y="69.0" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Recon</text>
-<rect x="28" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1595 Active Scanning"/>
-<text x="34" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1595</text>
-<rect x="28" y="128" width="108" height="26" rx="4" class="cell" data-tip="T1589 Gather Victim Identity Information"/>
-<text x="34" y="141.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1589</text>
-<rect x="28" y="158" width="108" height="26" rx="4" class="cell" data-tip="T1598 Phishing for Information"/>
-<text x="34" y="171.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1598</text>
-<rect x="28" y="188" width="108" height="26" rx="4" class="cell" data-tip="T1596 Search Open Technical Databases"/>
-<text x="34" y="201.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1596</text>
-<text x="82.0" y="230" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+8 more</text>
-<rect x="144" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Resource Development (TA0042): 9 techniques"/>
-<text x="198.0" y="60" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Resource</text>
-<text x="198.0" y="78" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Dev.</text>
-<rect x="144" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1583 Acquire Infrastructure"/>
-<text x="150" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1583</text>
-<rect x="144" y="128" width="108" height="26" rx="4" class="cell" data-tip="T1586 Compromise Accounts"/>
-<text x="150" y="141.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1586</text>
-<rect x="144" y="158" width="108" height="26" rx="4" class="cell" data-tip="T1587 Develop Capabilities"/>
-<text x="150" y="171.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1587</text>
-<rect x="144" y="188" width="108" height="26" rx="4" class="cell" data-tip="T1588 Obtain Capabilities"/>
-<text x="150" y="201.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1588</text>
-<rect x="144" y="218" width="108" height="26" rx="4" class="cell" data-tip="T1608 Stage Capabilities"/>
-<text x="150" y="231.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1608</text>
-<text x="198.0" y="260" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+4 more</text>
-<rect x="260" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Initial Access (TA0001): 11 techniques"/>
-<text x="314.0" y="60" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Initial</text>
-<text x="314.0" y="78" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Access</text>
-<rect x="260" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1566 Phishing"/>
-<text x="266" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1566</text>
-<rect x="270" y="128" width="98" height="26" rx="4" class="cell--sub" data-tip="T1566.001 Spearphishing Attachment"/>
-<text x="276" y="141.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1566.001</text>
-<rect x="260" y="158" width="108" height="26" rx="4" class="cell" data-tip="T1190 Exploit Public-Facing Application"/>
-<text x="266" y="171.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1190</text>
-<rect x="260" y="188" width="108" height="26" rx="4" class="cell" data-tip="T1078 Valid Accounts"/>
-<text x="266" y="201.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1078</text>
-<rect x="260" y="218" width="108" height="26" rx="4" class="cell" data-tip="T1133 External Remote Services"/>
-<text x="266" y="231.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1133</text>
-<rect x="260" y="248" width="108" height="26" rx="4" class="cell" data-tip="T1195 Supply Chain Compromise"/>
-<text x="266" y="261.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1195</text>
-<rect x="260" y="278" width="108" height="26" rx="4" class="cell" data-tip="T1189 Drive-by Compromise"/>
-<text x="266" y="291.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1189</text>
-<text x="314.0" y="320" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+5 more</text>
-<rect x="376" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Execution (TA0002): 22 techniques"/>
-<text x="430.0" y="69.0" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Execution</text>
-<rect x="376" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1059 Command and Scripting Interpreter"/>
-<text x="382" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1059</text>
-<rect x="386" y="128" width="98" height="26" rx="4" class="cell--sub" data-tip="T1059.001 PowerShell"/>
-<text x="392" y="141.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1059.001</text>
-<rect x="386" y="158" width="98" height="26" rx="4" class="cell--sub" data-tip="T1059.003 Windows Command Shell"/>
-<text x="392" y="171.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1059.003</text>
-<rect x="386" y="188" width="98" height="26" rx="4" class="cell--sub" data-tip="T1059.005 Visual Basic"/>
-<text x="392" y="201.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1059.005</text>
-<rect x="386" y="218" width="98" height="26" rx="4" class="cell--sub" data-tip="T1059.007 JavaScript"/>
-<text x="392" y="231.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1059.007</text>
-<rect x="376" y="248" width="108" height="26" rx="4" class="cell" data-tip="T1204 User Execution"/>
-<text x="382" y="261.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1204</text>
-<rect x="386" y="278" width="98" height="26" rx="4" class="cell--sub" data-tip="T1204.002 Malicious File"/>
-<text x="392" y="291.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1204.002</text>
-<rect x="376" y="308" width="108" height="26" rx="4" class="cell" data-tip="T1047 Windows Management Instrumentation"/>
-<text x="382" y="321.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1047</text>
-<rect x="376" y="338" width="108" height="26" rx="4" class="cell" data-tip="T1053 Scheduled Task/Job"/>
-<text x="382" y="351.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1053</text>
-<rect x="376" y="368" width="108" height="26" rx="4" class="cell" data-tip="T1203 Exploitation for Client Execution"/>
-<text x="382" y="381.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1203</text>
-<text x="430.0" y="410" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+17 more</text>
-<rect x="492" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Persistence (TA0003): 22 techniques"/>
-<text x="546.0" y="69.0" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Persistence</text>
-<rect x="492" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1547 Boot or Logon Autostart Execution"/>
-<text x="498" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1547</text>
-<rect x="502" y="128" width="98" height="26" rx="4" class="cell--sub" data-tip="T1547.001 Registry Run Keys / Startup Folder"/>
-<text x="508" y="141.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1547.001</text>
-<rect x="492" y="158" width="108" height="26" rx="4" class="cell" data-tip="T1053 Scheduled Task/Job"/>
-<text x="498" y="171.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1053</text>
-<rect x="492" y="188" width="108" height="26" rx="4" class="cell" data-tip="T1136 Create Account"/>
-<text x="498" y="201.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1136</text>
-<rect x="492" y="218" width="108" height="26" rx="4" class="cell" data-tip="T1505 Server Software Component"/>
-<text x="498" y="231.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1505</text>
-<rect x="492" y="248" width="108" height="26" rx="4" class="cell" data-tip="T1098 Account Manipulation"/>
-<text x="498" y="261.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1098</text>
-<text x="546.0" y="290" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+17 more</text>
-<rect x="608" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Privilege Escalation (TA0004): 13 techniques"/>
-<text x="662.0" y="60" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Priv.</text>
-<text x="662.0" y="78" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Escalation</text>
-<rect x="608" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1068 Exploitation for Privilege Escalation"/>
-<text x="614" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1068</text>
-<rect x="608" y="128" width="108" height="26" rx="4" class="cell" data-tip="T1548 Abuse Elevation Control Mechanism"/>
-<text x="614" y="141.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1548</text>
-<rect x="608" y="158" width="108" height="26" rx="4" class="cell" data-tip="T1055 Process Injection"/>
-<text x="614" y="171.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1055</text>
-<rect x="608" y="188" width="108" height="26" rx="4" class="cell" data-tip="T1078 Valid Accounts"/>
-<text x="614" y="201.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1078</text>
-<rect x="608" y="218" width="108" height="26" rx="4" class="cell" data-tip="T1134 Access Token Manipulation"/>
-<text x="614" y="231.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1134</text>
-<text x="662.0" y="260" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+8 more</text>
-<rect x="724" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Stealth (Defense Evasion until April 2026) (TA0005): 31 techniques"/>
-<text x="778.0" y="69.0" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Stealth</text>
-<rect x="724" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1620 Reflective Code Loading"/>
-<text x="730" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1620</text>
-<rect x="724" y="128" width="108" height="26" rx="4" class="cell" data-tip="T1027 Obfuscated Files or Information"/>
-<text x="730" y="141.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1027</text>
-<rect x="734" y="158" width="98" height="26" rx="4" class="cell--sub" data-tip="T1027.010 Command Obfuscation"/>
-<text x="740" y="171.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1027.010</text>
-<rect x="734" y="188" width="98" height="26" rx="4" class="cell--sub" data-tip="T1027.002 Software Packing"/>
-<text x="740" y="201.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1027.002</text>
-<rect x="724" y="218" width="108" height="26" rx="4" class="cell" data-tip="T1218 System Binary Proxy Execution"/>
-<text x="730" y="231.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1218</text>
-<rect x="724" y="248" width="108" height="26" rx="4" class="cell" data-tip="T1055 Process Injection"/>
-<text x="730" y="261.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1055</text>
-<rect x="724" y="278" width="108" height="26" rx="4" class="cell" data-tip="T1574 Hijack Execution Flow"/>
-<text x="730" y="291.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1574</text>
-<rect x="734" y="308" width="98" height="26" rx="4" class="cell--sub" data-tip="T1574.001 DLL"/>
-<text x="740" y="321.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1574.001</text>
-<rect x="724" y="338" width="108" height="26" rx="4" class="cell" data-tip="T1497 Virtualization/Sandbox Evasion"/>
-<text x="730" y="351.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1497</text>
-<text x="778.0" y="380" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+25 more</text>
-<rect x="840" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Defense Impairment (new in April 2026) (TA0112): 18 techniques"/>
-<text x="894.0" y="60" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Defense</text>
-<text x="894.0" y="78" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Impairment</text>
-<rect x="840" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1685 Disable or Modify Tools"/>
-<text x="846" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1685</text>
-<rect x="850" y="128" width="98" height="26" rx="4" class="cell--sub" data-tip="T1685.001 Disable or Modify Windows Event Log"/>
-<text x="856" y="141.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1685.001</text>
-<rect x="850" y="158" width="98" height="26" rx="4" class="cell--sub" data-tip="T1685.007 Impair Autonomous Defenses"/>
-<text x="856" y="171.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1685.007</text>
-<rect x="840" y="188" width="108" height="26" rx="4" class="cell" data-tip="T1686 Disable or Modify System Firewall"/>
-<text x="846" y="201.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1686</text>
-<rect x="840" y="218" width="108" height="26" rx="4" class="cell" data-tip="T1688 Safe Mode Boot"/>
-<text x="846" y="231.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1688</text>
-<rect x="840" y="248" width="108" height="26" rx="4" class="cell" data-tip="T1689 Downgrade Attack"/>
-<text x="846" y="261.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1689</text>
-<rect x="840" y="278" width="108" height="26" rx="4" class="cell" data-tip="T1690 Prevent Command History Logging"/>
-<text x="846" y="291.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1690</text>
-<text x="894.0" y="320" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+13 more</text>
-<rect x="956" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Credential Access (TA0006): 18 techniques"/>
-<text x="1010.0" y="60" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Credential</text>
-<text x="1010.0" y="78" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Access</text>
-<rect x="956" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1003 OS Credential Dumping"/>
-<text x="962" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1003</text>
-<rect x="956" y="128" width="108" height="26" rx="4" class="cell" data-tip="T1110 Brute Force"/>
-<text x="962" y="141.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1110</text>
-<rect x="956" y="158" width="108" height="26" rx="4" class="cell" data-tip="T1555 Credentials from Password Stores"/>
-<text x="962" y="171.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1555</text>
-<rect x="956" y="188" width="108" height="26" rx="4" class="cell" data-tip="T1539 Steal Web Session Cookie"/>
-<text x="962" y="201.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1539</text>
-<rect x="956" y="218" width="108" height="26" rx="4" class="cell" data-tip="T1621 Multi-Factor Authentication Request Generation"/>
-<text x="962" y="231.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1621</text>
-<rect x="956" y="248" width="108" height="26" rx="4" class="cell" data-tip="T1528 Steal Application Access Token"/>
-<text x="962" y="261.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1528</text>
-<text x="1010.0" y="290" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+12 more</text>
-<rect x="1072" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Discovery (TA0007): 34 techniques"/>
-<text x="1126.0" y="69.0" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Discovery</text>
-<rect x="1072" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1082 System Information Discovery"/>
-<text x="1078" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1082</text>
-<rect x="1072" y="128" width="108" height="26" rx="4" class="cell" data-tip="T1083 File and Directory Discovery"/>
-<text x="1078" y="141.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1083</text>
-<rect x="1072" y="158" width="108" height="26" rx="4" class="cell" data-tip="T1087 Account Discovery"/>
-<text x="1078" y="171.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1087</text>
-<rect x="1072" y="188" width="108" height="26" rx="4" class="cell" data-tip="T1018 Remote System Discovery"/>
-<text x="1078" y="201.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1018</text>
-<rect x="1072" y="218" width="108" height="26" rx="4" class="cell" data-tip="T1046 Network Service Discovery"/>
-<text x="1078" y="231.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1046</text>
-<text x="1126.0" y="260" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+29 more</text>
-<rect x="1188" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Lateral Movement (TA0008): 9 techniques"/>
-<text x="1242.0" y="60" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Lateral</text>
-<text x="1242.0" y="78" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Movement</text>
-<rect x="1188" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1021 Remote Services"/>
-<text x="1194" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1021</text>
-<rect x="1198" y="128" width="98" height="26" rx="4" class="cell--sub" data-tip="T1021.001 Remote Desktop Protocol"/>
-<text x="1204" y="141.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1021.001</text>
-<rect x="1198" y="158" width="98" height="26" rx="4" class="cell--sub" data-tip="T1021.002 SMB/Windows Admin Shares"/>
-<text x="1204" y="171.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1021.002</text>
-<rect x="1198" y="188" width="98" height="26" rx="4" class="cell--sub" data-tip="T1021.006 Windows Remote Management"/>
-<text x="1204" y="201.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1021.006</text>
-<rect x="1188" y="218" width="108" height="26" rx="4" class="cell" data-tip="T1570 Lateral Tool Transfer"/>
-<text x="1194" y="231.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1570</text>
-<rect x="1188" y="248" width="108" height="26" rx="4" class="cell" data-tip="T1550 Use Alternate Authentication Material"/>
-<text x="1194" y="261.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1550</text>
-<rect x="1188" y="278" width="108" height="26" rx="4" class="cell" data-tip="T1080 Taint Shared Content"/>
-<text x="1194" y="291.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1080</text>
-<text x="1242.0" y="320" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+5 more</text>
-<rect x="1304" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Collection (TA0009): 17 techniques"/>
-<text x="1358.0" y="69.0" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Collection</text>
-<rect x="1304" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1005 Data from Local System"/>
-<text x="1310" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1005</text>
-<rect x="1304" y="128" width="108" height="26" rx="4" class="cell" data-tip="T1560 Archive Collected Data"/>
-<text x="1310" y="141.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1560</text>
-<rect x="1304" y="158" width="108" height="26" rx="4" class="cell" data-tip="T1114 Email Collection"/>
-<text x="1310" y="171.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1114</text>
-<rect x="1304" y="188" width="108" height="26" rx="4" class="cell" data-tip="T1074 Data Staged"/>
-<text x="1310" y="201.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1074</text>
-<rect x="1304" y="218" width="108" height="26" rx="4" class="cell" data-tip="T1113 Screen Capture"/>
-<text x="1310" y="231.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1113</text>
-<rect x="1304" y="248" width="108" height="26" rx="4" class="cell" data-tip="T1039 Data from Network Shared Drive"/>
-<text x="1310" y="261.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1039</text>
-<text x="1358.0" y="290" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+11 more</text>
-<rect x="1420" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Command and Control (TA0011): 18 techniques"/>
-<text x="1474.0" y="69.0" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">C2</text>
-<rect x="1420" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1071 Application Layer Protocol"/>
-<text x="1426" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1071</text>
-<rect x="1430" y="128" width="98" height="26" rx="4" class="cell--sub" data-tip="T1071.001 Web Protocols"/>
-<text x="1436" y="141.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1071.001</text>
-<rect x="1420" y="158" width="108" height="26" rx="4" class="cell" data-tip="T1573 Encrypted Channel"/>
-<text x="1426" y="171.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1573</text>
-<rect x="1420" y="188" width="108" height="26" rx="4" class="cell" data-tip="T1105 Ingress Tool Transfer"/>
-<text x="1426" y="201.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1105</text>
-<rect x="1420" y="218" width="108" height="26" rx="4" class="cell" data-tip="T1219 Remote Access Tools"/>
-<text x="1426" y="231.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1219</text>
-<rect x="1420" y="248" width="108" height="26" rx="4" class="cell" data-tip="T1572 Protocol Tunneling"/>
-<text x="1426" y="261.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1572</text>
-<rect x="1420" y="278" width="108" height="26" rx="4" class="cell" data-tip="T1090 Proxy"/>
-<text x="1426" y="291.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1090</text>
-<text x="1474.0" y="320" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+12 more</text>
-<rect x="1536" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Exfiltration (TA0010): 10 techniques"/>
-<text x="1590.0" y="69.0" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Exfiltration</text>
-<rect x="1536" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1041 Exfiltration Over C2 Channel"/>
-<text x="1542" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1041</text>
-<rect x="1536" y="128" width="108" height="26" rx="4" class="cell" data-tip="T1567 Exfiltration Over Web Service"/>
-<text x="1542" y="141.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1567</text>
-<rect x="1546" y="158" width="98" height="26" rx="4" class="cell--sub" data-tip="T1567.002 Exfiltration to Cloud Storage"/>
-<text x="1552" y="171.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1567.002</text>
-<rect x="1536" y="188" width="108" height="26" rx="4" class="cell" data-tip="T1048 Exfiltration Over Alternative Protocol"/>
-<text x="1542" y="201.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1048</text>
-<rect x="1536" y="218" width="108" height="26" rx="4" class="cell" data-tip="T1030 Data Transfer Size Limits"/>
-<text x="1542" y="231.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1030</text>
-<rect x="1536" y="248" width="108" height="26" rx="4" class="cell" data-tip="T1029 Scheduled Transfer"/>
-<text x="1542" y="261.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1029</text>
-<text x="1590.0" y="290" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+5 more</text>
-<rect x="1652" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Impact (TA0040): 15 techniques"/>
-<text x="1706.0" y="69.0" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Impact</text>
-<rect x="1652" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1486 Data Encrypted for Impact"/>
-<text x="1658" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1486</text>
-<rect x="1652" y="128" width="108" height="26" rx="4" class="cell" data-tip="T1490 Inhibit System Recovery"/>
-<text x="1658" y="141.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1490</text>
-<rect x="1652" y="158" width="108" height="26" rx="4" class="cell" data-tip="T1489 Service Stop"/>
-<text x="1658" y="171.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1489</text>
-<rect x="1652" y="188" width="108" height="26" rx="4" class="cell" data-tip="T1485 Data Destruction"/>
-<text x="1658" y="201.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1485</text>
-<rect x="1652" y="218" width="108" height="26" rx="4" class="cell" data-tip="T1657 Financial Theft"/>
-<text x="1658" y="231.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1657</text>
-<rect x="1652" y="248" width="108" height="26" rx="4" class="cell" data-tip="T1498 Network Denial of Service"/>
-<text x="1658" y="261.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1498</text>
-<text x="1706.0" y="290" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+9 more</text>
+<text x="20" y="18" class="t2" font-size="17" font-weight="500" text-anchor="start" dominant-baseline="central">Enterprise v20.0 (13 October 2026): 15 tactics, 227 techniques, 479 sub-techniques · hover a cell for its name</text>
+<rect x="20.0" y="44" width="211.2" height="50" rx="6" class="colhead" data-tip="Reconnaissance (TA0043): 12 techniques"/>
+<text x="125.625" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Reconnaissance</text>
+<rect x="20.0" y="100" width="211.2" height="38" rx="5" class="cell" data-tip="T1595 Active Scanning"/>
+<text x="28.0" y="119.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1595 Active Scanning</text>
+<rect x="20.0" y="142" width="211.2" height="38" rx="5" class="cell" data-tip="T1589 Gather Victim Identity Information"/>
+<text x="28.0" y="155" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1589 Gather Victim</text>
+<text x="28.0" y="171" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Identity Information</text>
+<rect x="20.0" y="184" width="211.2" height="38" rx="5" class="cell" data-tip="T1598 Phishing for Information"/>
+<text x="28.0" y="197" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1598 Phishing for</text>
+<text x="28.0" y="213" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Information</text>
+<rect x="20.0" y="226" width="211.2" height="38" rx="5" class="cell" data-tip="T1596 Search Open Technical Databases"/>
+<text x="28.0" y="239" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1596 Search Open</text>
+<text x="28.0" y="255" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Technical Databases</text>
+<text x="125.625" y="280" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+8 more</text>
+<rect x="241.2" y="44" width="211.2" height="50" rx="6" class="colhead" data-tip="Resource Development (TA0042): 9 techniques"/>
+<text x="346.825" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Resource Development</text>
+<rect x="241.2" y="100" width="211.2" height="38" rx="5" class="cell" data-tip="T1583 Acquire Infrastructure"/>
+<text x="249.2" y="113" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1583 Acquire</text>
+<text x="249.2" y="129" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Infrastructure</text>
+<rect x="241.2" y="142" width="211.2" height="38" rx="5" class="cell" data-tip="T1586 Compromise Accounts"/>
+<text x="249.2" y="155" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1586 Compromise</text>
+<text x="249.2" y="171" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Accounts</text>
+<rect x="241.2" y="184" width="211.2" height="38" rx="5" class="cell" data-tip="T1587 Develop Capabilities"/>
+<text x="249.2" y="197" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1587 Develop</text>
+<text x="249.2" y="213" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Capabilities</text>
+<rect x="241.2" y="226" width="211.2" height="38" rx="5" class="cell" data-tip="T1588 Obtain Capabilities"/>
+<text x="249.2" y="239" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1588 Obtain</text>
+<text x="249.2" y="255" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Capabilities</text>
+<rect x="241.2" y="268" width="211.2" height="38" rx="5" class="cell" data-tip="T1608 Stage Capabilities"/>
+<text x="249.2" y="287.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1608 Stage Capabilities</text>
+<text x="346.825" y="322" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+4 more</text>
+<rect x="462.5" y="44" width="211.2" height="50" rx="6" class="colhead" data-tip="Initial Access (TA0001): 11 techniques"/>
+<text x="568.125" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Initial Access</text>
+<rect x="462.5" y="100" width="211.2" height="38" rx="5" class="cell" data-tip="T1566 Phishing"/>
+<text x="470.5" y="119.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1566 Phishing</text>
+<rect x="474.5" y="142" width="199.2" height="38" rx="5" class="cell--sub" data-tip="T1566.001 Spearphishing Attachment"/>
+<text x="482.5" y="155" class="t2" font-size="12.5" font-weight="500" text-anchor="start" dominant-baseline="central">T1566.001 Spearphishing</text>
+<text x="482.5" y="171" class="t2" font-size="12.5" font-weight="500" text-anchor="start" dominant-baseline="central">Attachment</text>
+<rect x="462.5" y="184" width="211.2" height="38" rx="5" class="cell" data-tip="T1190 Exploit Public-Facing Application"/>
+<text x="470.5" y="197" class="t" font-size="12.5" font-weight="600" text-anchor="start" dominant-baseline="central">T1190 Exploit Public-Facing</text>
+<text x="470.5" y="213" class="t" font-size="12.5" font-weight="600" text-anchor="start" dominant-baseline="central">Application</text>
+<rect x="462.5" y="226" width="211.2" height="38" rx="5" class="cell" data-tip="T1078 Valid Accounts"/>
+<text x="470.5" y="245.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1078 Valid Accounts</text>
+<rect x="462.5" y="268" width="211.2" height="38" rx="5" class="cell" data-tip="T1133 External Remote Services"/>
+<text x="470.5" y="281" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1133 External Remote</text>
+<text x="470.5" y="297" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Services</text>
+<rect x="462.5" y="310" width="211.2" height="38" rx="5" class="cell" data-tip="T1195 Supply Chain Compromise"/>
+<text x="470.5" y="323" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1195 Supply Chain</text>
+<text x="470.5" y="339" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Compromise</text>
+<rect x="462.5" y="352" width="211.2" height="38" rx="5" class="cell" data-tip="T1189 Drive-by Compromise"/>
+<text x="470.5" y="365" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1189 Drive-by</text>
+<text x="470.5" y="381" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Compromise</text>
+<text x="568.125" y="406" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+5 more</text>
+<rect x="683.8" y="44" width="211.2" height="50" rx="6" class="colhead" data-tip="Execution (TA0002): 22 techniques"/>
+<text x="789.425" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Execution</text>
+<rect x="683.8" y="100" width="211.2" height="38" rx="5" class="cell" data-tip="T1059 Command and Scripting Interpreter"/>
+<text x="691.8" y="113" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1059 Command and</text>
+<text x="691.8" y="129" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Scripting Interpreter</text>
+<rect x="695.8" y="142" width="199.2" height="38" rx="5" class="cell--sub" data-tip="T1059.001 PowerShell"/>
+<text x="703.8" y="161.0" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1059.001 PowerShell</text>
+<rect x="695.8" y="184" width="199.2" height="38" rx="5" class="cell--sub" data-tip="T1059.003 Windows Command Shell"/>
+<text x="703.8" y="197" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1059.003 Windows</text>
+<text x="703.8" y="213" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">Command Shell</text>
+<rect x="695.8" y="226" width="199.2" height="38" rx="5" class="cell--sub" data-tip="T1059.005 Visual Basic"/>
+<text x="703.8" y="245.0" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1059.005 Visual Basic</text>
+<rect x="695.8" y="268" width="199.2" height="38" rx="5" class="cell--sub" data-tip="T1059.007 JavaScript"/>
+<text x="703.8" y="287.0" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1059.007 JavaScript</text>
+<rect x="683.8" y="310" width="211.2" height="38" rx="5" class="cell" data-tip="T1204 User Execution"/>
+<text x="691.8" y="329.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1204 User Execution</text>
+<rect x="695.8" y="352" width="199.2" height="38" rx="5" class="cell--sub" data-tip="T1204.002 Malicious File"/>
+<text x="703.8" y="365" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1204.002 Malicious</text>
+<text x="703.8" y="381" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">File</text>
+<rect x="683.8" y="394" width="211.2" height="38" rx="5" class="cell" data-tip="T1047 Windows Management Instrumentation"/>
+<text x="691.8" y="407" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1047 Windows Management</text>
+<text x="691.8" y="423" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Instrumentation</text>
+<rect x="683.8" y="436" width="211.2" height="38" rx="5" class="cell" data-tip="T1053 Scheduled Task/Job"/>
+<text x="691.8" y="455.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1053 Scheduled Task/Job</text>
+<rect x="683.8" y="478" width="211.2" height="38" rx="5" class="cell" data-tip="T1203 Exploitation for Client Execution"/>
+<text x="691.8" y="491" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1203 Exploitation for</text>
+<text x="691.8" y="507" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Client Execution</text>
+<text x="789.425" y="532" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+17 more</text>
+<rect x="905.0" y="44" width="211.2" height="50" rx="6" class="colhead" data-tip="Persistence (TA0003): 22 techniques"/>
+<text x="1010.625" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Persistence</text>
+<rect x="905.0" y="100" width="211.2" height="38" rx="5" class="cell" data-tip="T1547 Boot or Logon Autostart Execution"/>
+<text x="913.0" y="113" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1547 Boot or Logon</text>
+<text x="913.0" y="129" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Autostart Execution</text>
+<rect x="917.0" y="142" width="199.2" height="38" rx="5" class="cell--sub" data-tip="T1547.001 Registry Run Keys / Startup Folder"/>
+<text x="925.0" y="155" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1547.001 Registry Run</text>
+<text x="925.0" y="171" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">Keys / Startup Folder</text>
+<rect x="905.0" y="184" width="211.2" height="38" rx="5" class="cell" data-tip="T1053 Scheduled Task/Job"/>
+<text x="913.0" y="203.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1053 Scheduled Task/Job</text>
+<rect x="905.0" y="226" width="211.2" height="38" rx="5" class="cell" data-tip="T1136 Create Account"/>
+<text x="913.0" y="245.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1136 Create Account</text>
+<rect x="905.0" y="268" width="211.2" height="38" rx="5" class="cell" data-tip="T1505 Server Software Component"/>
+<text x="913.0" y="281" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1505 Server Software</text>
+<text x="913.0" y="297" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Component</text>
+<rect x="905.0" y="310" width="211.2" height="38" rx="5" class="cell" data-tip="T1098 Account Manipulation"/>
+<text x="913.0" y="323" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1098 Account</text>
+<text x="913.0" y="339" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Manipulation</text>
+<text x="1010.625" y="364" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+17 more</text>
+<rect x="1126.2" y="44" width="211.2" height="50" rx="6" class="colhead" data-tip="Privilege Escalation (TA0004): 13 techniques"/>
+<text x="1231.825" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Privilege Escalation</text>
+<rect x="1126.2" y="100" width="211.2" height="38" rx="5" class="cell" data-tip="T1068 Exploitation for Privilege Escalation"/>
+<text x="1134.2" y="113" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1068 Exploitation for</text>
+<text x="1134.2" y="129" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Privilege Escalation</text>
+<rect x="1126.2" y="142" width="211.2" height="38" rx="5" class="cell" data-tip="T1548 Abuse Elevation Control Mechanism"/>
+<text x="1134.2" y="155" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1548 Abuse Elevation</text>
+<text x="1134.2" y="171" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Control Mechanism</text>
+<rect x="1126.2" y="184" width="211.2" height="38" rx="5" class="cell" data-tip="T1055 Process Injection"/>
+<text x="1134.2" y="203.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1055 Process Injection</text>
+<rect x="1126.2" y="226" width="211.2" height="38" rx="5" class="cell" data-tip="T1078 Valid Accounts"/>
+<text x="1134.2" y="245.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1078 Valid Accounts</text>
+<rect x="1126.2" y="268" width="211.2" height="38" rx="5" class="cell" data-tip="T1134 Access Token Manipulation"/>
+<text x="1134.2" y="281" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1134 Access Token</text>
+<text x="1134.2" y="297" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Manipulation</text>
+<text x="1231.825" y="322" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+8 more</text>
+<rect x="1347.5" y="44" width="211.2" height="50" rx="6" class="colhead" data-tip="Stealth (Defense Evasion until April 2026) (TA0005): 31 techniques"/>
+<text x="1453.125" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Stealth</text>
+<rect x="1347.5" y="100" width="211.2" height="38" rx="5" class="cell" data-tip="T1620 Reflective Code Loading"/>
+<text x="1355.5" y="113" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1620 Reflective Code</text>
+<text x="1355.5" y="129" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Loading</text>
+<rect x="1347.5" y="142" width="211.2" height="38" rx="5" class="cell" data-tip="T1027 Obfuscated Files or Information"/>
+<text x="1355.5" y="155" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1027 Obfuscated Files</text>
+<text x="1355.5" y="171" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">or Information</text>
+<rect x="1359.5" y="184" width="199.2" height="38" rx="5" class="cell--sub" data-tip="T1027.010 Command Obfuscation"/>
+<text x="1367.5" y="197" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1027.010 Command</text>
+<text x="1367.5" y="213" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">Obfuscation</text>
+<rect x="1359.5" y="226" width="199.2" height="38" rx="5" class="cell--sub" data-tip="T1027.002 Software Packing"/>
+<text x="1367.5" y="239" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1027.002 Software</text>
+<text x="1367.5" y="255" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">Packing</text>
+<rect x="1347.5" y="268" width="211.2" height="38" rx="5" class="cell" data-tip="T1218 System Binary Proxy Execution"/>
+<text x="1355.5" y="281" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1218 System Binary</text>
+<text x="1355.5" y="297" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Proxy Execution</text>
+<rect x="1347.5" y="310" width="211.2" height="38" rx="5" class="cell" data-tip="T1055 Process Injection"/>
+<text x="1355.5" y="329.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1055 Process Injection</text>
+<rect x="1347.5" y="352" width="211.2" height="38" rx="5" class="cell" data-tip="T1574 Hijack Execution Flow"/>
+<text x="1355.5" y="365" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1574 Hijack Execution</text>
+<text x="1355.5" y="381" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Flow</text>
+<rect x="1359.5" y="394" width="199.2" height="38" rx="5" class="cell--sub" data-tip="T1574.001 DLL"/>
+<text x="1367.5" y="413.0" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1574.001 DLL</text>
+<rect x="1347.5" y="436" width="211.2" height="38" rx="5" class="cell" data-tip="T1497 Virtualization/Sandbox Evasion"/>
+<text x="1355.5" y="449" class="t" font-size="12.5" font-weight="600" text-anchor="start" dominant-baseline="central">Virtualization/Sandbox</text>
+<text x="1355.5" y="465" class="t" font-size="12.5" font-weight="600" text-anchor="start" dominant-baseline="central">Evasion</text>
+<text x="1453.125" y="490" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+25 more</text>
+<rect x="1568.8" y="44" width="211.2" height="50" rx="6" class="colhead" data-tip="Defense Impairment (new in April 2026) (TA0112): 18 techniques"/>
+<text x="1674.425" y="61" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Defense Impairment (new</text>
+<text x="1674.425" y="79" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">in April 2026)</text>
+<rect x="1568.8" y="100" width="211.2" height="38" rx="5" class="cell" data-tip="T1685 Disable or Modify Tools"/>
+<text x="1576.8" y="113" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1685 Disable or Modify</text>
+<text x="1576.8" y="129" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Tools</text>
+<rect x="1580.8" y="142" width="199.2" height="38" rx="5" class="cell--sub" data-tip="T1685.001 Disable or Modify Windows Event Log"/>
+<text x="1588.8" y="155" class="t2" font-size="12.5" font-weight="500" text-anchor="start" dominant-baseline="central">T1685.001 Disable or</text>
+<text x="1588.8" y="171" class="t2" font-size="12.5" font-weight="500" text-anchor="start" dominant-baseline="central">Modify Windows Event Log</text>
+<rect x="1580.8" y="184" width="199.2" height="38" rx="5" class="cell--sub" data-tip="T1685.007 Impair Autonomous Defenses"/>
+<text x="1588.8" y="197" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1685.007 Impair</text>
+<text x="1588.8" y="213" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">Autonomous Defenses</text>
+<rect x="1568.8" y="226" width="211.2" height="38" rx="5" class="cell" data-tip="T1686 Disable or Modify System Firewall"/>
+<text x="1576.8" y="239" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1686 Disable or Modify</text>
+<text x="1576.8" y="255" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">System Firewall</text>
+<rect x="1568.8" y="268" width="211.2" height="38" rx="5" class="cell" data-tip="T1688 Safe Mode Boot"/>
+<text x="1576.8" y="287.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1688 Safe Mode Boot</text>
+<rect x="1568.8" y="310" width="211.2" height="38" rx="5" class="cell" data-tip="T1689 Downgrade Attack"/>
+<text x="1576.8" y="329.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1689 Downgrade Attack</text>
+<rect x="1568.8" y="352" width="211.2" height="38" rx="5" class="cell" data-tip="T1690 Prevent Command History Logging"/>
+<text x="1576.8" y="365" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1690 Prevent Command</text>
+<text x="1576.8" y="381" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">History Logging</text>
+<text x="1674.425" y="406" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+13 more</text>
 </g>
 <g data-build="1">
-<rect x="270" y="128" width="98" height="26" rx="4" class="cell--lit" data-tip="step 1: T1566.001"/>
-<text x="276" y="141.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1566.001</text>
-<circle cx="272" cy="130" r="11" class="badge--bad"/>
-<text x="272" y="131" class="t-badge" font-size="13" font-weight="700" text-anchor="middle" dominant-baseline="central">1</text>
+<rect x="474.5" y="142" width="199.2" height="38" rx="5" class="cell--lit" data-tip="step 1: T1566.001"/>
+<text x="482.5" y="155" class="t-bad" font-size="12.5" font-weight="700" text-anchor="start" dominant-baseline="central">T1566.001 Spearphishing</text>
+<text x="482.5" y="171" class="t-bad" font-size="12.5" font-weight="700" text-anchor="start" dominant-baseline="central">Attachment</text>
+<circle cx="476.5" cy="144" r="13" class="badge--bad"/>
+<text x="476.5" y="145" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">1</text>
 </g>
 <g data-build="2">
-<path d="M319.0 141.0L435.0 291.0" class="edge edge--bad draw" pathLength="1"/>
-<rect x="386" y="278" width="98" height="26" rx="4" class="cell--lit" data-tip="step 2: T1204.002"/>
-<text x="392" y="291.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1204.002</text>
-<circle cx="388" cy="280" r="11" class="badge--bad"/>
-<text x="388" y="281" class="t-badge" font-size="13" font-weight="700" text-anchor="middle" dominant-baseline="central">2</text>
+<path d="M574.1 161.0L795.4 371.0" class="edge edge--bad draw" pathLength="1"/>
+<rect x="695.8" y="352" width="199.2" height="38" rx="5" class="cell--lit" data-tip="step 2: T1204.002"/>
+<text x="703.8" y="365" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1204.002 Malicious</text>
+<text x="703.8" y="381" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">File</text>
+<circle cx="697.8" cy="354" r="13" class="badge--bad"/>
+<text x="697.8" y="355" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">2</text>
 </g>
 <g data-build="3">
-<path d="M435.0 291.0L783.0 201.0" class="edge edge--bad draw" pathLength="1"/>
-<rect x="734" y="188" width="98" height="26" rx="4" class="cell--lit" data-tip="step 3: T1027.002"/>
-<text x="740" y="201.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1027.002</text>
-<circle cx="736" cy="190" r="11" class="badge--bad"/>
-<text x="736" y="191" class="t-badge" font-size="13" font-weight="700" text-anchor="middle" dominant-baseline="central">3</text>
+<path d="M795.4 371.0L1459.1 245.0" class="edge edge--bad draw" pathLength="1"/>
+<rect x="1359.5" y="226" width="199.2" height="38" rx="5" class="cell--lit" data-tip="step 3: T1027.002"/>
+<text x="1367.5" y="239" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1027.002 Software</text>
+<text x="1367.5" y="255" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">Packing</text>
+<circle cx="1361.5" cy="228" r="13" class="badge--bad"/>
+<text x="1361.5" y="229" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">3</text>
 </g>
 <g data-build="4">
-<path d="M783.0 201.0L778.0 261.0" class="edge edge--bad draw" pathLength="1"/>
-<rect x="724" y="248" width="108" height="26" rx="4" class="cell--lit" data-tip="step 4: T1055"/>
-<text x="730" y="261.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1055</text>
-<circle cx="726" cy="250" r="11" class="badge--bad"/>
-<text x="726" y="251" class="t-badge" font-size="13" font-weight="700" text-anchor="middle" dominant-baseline="central">4</text>
+<path d="M1459.1 245.0L1453.1 329.0" class="edge edge--bad draw" pathLength="1"/>
+<rect x="1347.5" y="310" width="211.2" height="38" rx="5" class="cell--lit" data-tip="step 4: T1055"/>
+<text x="1355.5" y="329.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1055 Process Injection</text>
+<circle cx="1349.5" cy="312" r="13" class="badge--bad"/>
+<text x="1349.5" y="313" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">4</text>
 </g>
 <g data-build="5">
-<path d="M778.0 261.0L551.0 141.0" class="edge edge--bad draw" pathLength="1"/>
-<rect x="502" y="128" width="98" height="26" rx="4" class="cell--lit" data-tip="step 5: T1547.001"/>
-<text x="508" y="141.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1547.001</text>
-<circle cx="504" cy="130" r="11" class="badge--bad"/>
-<text x="504" y="131" class="t-badge" font-size="13" font-weight="700" text-anchor="middle" dominant-baseline="central">5</text>
+<path d="M1453.1 329.0L1016.6 161.0" class="edge edge--bad draw" pathLength="1"/>
+<rect x="917.0" y="142" width="199.2" height="38" rx="5" class="cell--lit" data-tip="step 5: T1547.001"/>
+<text x="925.0" y="155" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1547.001 Registry Run</text>
+<text x="925.0" y="171" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">Keys / Startup Folder</text>
+<circle cx="919.0" cy="144" r="13" class="badge--bad"/>
+<text x="919.0" y="145" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">5</text>
 </g>
-<g data-build="6">
-<path d="M551.0 141.0L1479.0 141.0" class="edge edge--bad draw" pathLength="1"/>
-<rect x="1430" y="128" width="98" height="26" rx="4" class="cell--lit" data-tip="step 6: T1071.001"/>
-<text x="1436" y="141.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1071.001</text>
-<circle cx="1432" cy="130" r="11" class="badge--bad"/>
-<text x="1432" y="131" class="t-badge" font-size="13" font-weight="700" text-anchor="middle" dominant-baseline="central">6</text>
+</svg></figure><div class="step-captions"><p data-build="0">The Enterprise matrix, schematic, in two halves. First, Reconnaissance to Defense Impairment: a few real techniques per column with the true per-tactic counts (Defense Evasion became Stealth and Defense Impairment in April 2026); Execution is expanded under Command and Scripting Interpreter to the sub-technique level. Hover a cell for its full name.</p><p data-build="1">A classic trojan of the first two periods, as a path. Step 1 — Initial Access: Spearphishing Attachment (T1566.001).</p><p data-build="2">Step 2 — Execution: User Execution, Malicious File (T1204.002).</p><p data-build="3">Step 3 — Stealth: Software Packing (T1027.002).</p><p data-build="4">Step 4 — Stealth: Process Injection (T1055).</p><p data-build="5">Step 5 — Persistence: Registry Run Keys (T1547.001).</p></div>
+<details class="srcs"><summary>Sources (2)</summary><div class="panel"><ul><li><a href="https://attack.mitre.org/resources/faq/" target="_blank" rel="noopener">MITRE ATT&amp;CK FAQ</a></li><li><a href="https://attack.mitre.org/techniques/enterprise/" target="_blank" rel="noopener">MITRE ATT&amp;CK Enterprise techniques</a></li></ul></div></details>
+<footer class="slide-foot"><span class="eyebrow">ATT&amp;CK as a language for behavior</span><span class="count">16 / 27 · 33–37 minutes</span></footer>
+<aside class="notes"><p class="meta"><b>Slide 16</b> · 33–37 minutes · ATT&amp;CK as a language for behavior</p>
+<h4>Talking points</h4><ul><li>Columns are tactics (goals), cells are techniques (behaviors); the expanded column shows sub-techniques; procedures live on the technique pages.</li><li>The matrix moves: fifteen tactics since April 2026.</li><li>Next: a classic trojan as a path, seven techniques across seven tactics; Process Injection lights twice because one behavior serves two goals.</li><li>The path, not a family name, is what detections are written against; every lit cell is a sensor question for Part 2.</li></ul>
+<p>Start with the matrix itself, because most students have seen the word and not the thing. Columns are tactics, the adversary's goals, in the order a campaign tends to need them; cells are techniques, the behaviors that achieve a goal; the expanded Execution column shows the third level, sub-techniques, under Command and Scripting Interpreter; procedures are the documented ways a named group or tool did it and live on the technique pages, not on the matrix. The count under each header is the real number of techniques in that tactic in the version named at the bottom, v20.0, released 13 October 2026; say that the matrix moves, fifteen tactics since April 2026 when Defense Evasion split into Stealth and Defense Impairment, and that the new Defense Impairment column already has a sub-technique for impairing autonomous defenses; the slide shows a few per column and says how many more there are. Hover any cell for its ID.</p>
+<p>Then press Next: a classic trojan of the first two periods lights up as a path, numbered in attack order: a phished attachment the user opens, a packed binary that injects into another process, a Run key for persistence, HTTP command and control, and encryption for impact. Seven techniques across seven tactics. Process Injection lights in two columns because the same behavior serves more than one goal, which is the matrix's point. Say that this path, not the word trojan or a family name, is what a defender can write detections against, and that every lit cell is a sensor question for Part 2. The recurring PowerShell scenario is deliberately not shown here: it is the exercise two slides on, and students should meet the empty matrix with only this example behind them.</p>
+<p>Then the quote. Family names and broad categories remain useful for attribution, intelligence, and communication. They do not directly identify which telemetry, detection logic, or mitigation a defender needs, and behavioral descriptions survive when attackers swap one tool for another that implements the same capability. ATT&amp;CK gives that description a shared structure.</p>
+<p>Keep tactics and techniques distinct from tools. The same technique may be realized through malware, an operating-system utility, or a cloud API.</p>
+<p class="transition">“A tool is an implementation vehicle, not the behavior. Two cases where the software is not just legitimate but byte-for-byte unchanged.”</p></aside>
+</section>
+<section class="slide slide--diagram slide--cont" id="s16b" data-id="s16b" data-part="1" data-steps="2" data-number="16">
+<h2 class="slide-title">From names to behaviors: ATT&amp;CK's levels <span class="cont">continued</span></h2><figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 450" role="img" aria-label="The Enterprise ATT&CK matrix, schematic, second half: Credential Access to Impact; the trojan path continues with steps six and seven" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<defs>
+  <marker id="arrow-attack-matrix-2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
+  <marker id="arrow-bad-attack-matrix-2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
+  <marker id="arrow-good-attack-matrix-2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
+</defs>
+<g data-build="0">
+<text x="20" y="18" class="t2" font-size="17" font-weight="500" text-anchor="start" dominant-baseline="central">Enterprise v20.0 (13 October 2026): 15 tactics, 227 techniques, 479 sub-techniques · hover a cell for its name</text>
+<rect x="20.0" y="44" width="242.9" height="50" rx="6" class="colhead" data-tip="Credential Access (TA0006): 18 techniques"/>
+<text x="141.42857142857144" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Credential Access</text>
+<rect x="20.0" y="100" width="242.9" height="38" rx="5" class="cell" data-tip="T1003 OS Credential Dumping"/>
+<text x="28.0" y="119.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1003 OS Credential Dumping</text>
+<rect x="20.0" y="142" width="242.9" height="38" rx="5" class="cell" data-tip="T1110 Brute Force"/>
+<text x="28.0" y="161.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1110 Brute Force</text>
+<rect x="20.0" y="184" width="242.9" height="38" rx="5" class="cell" data-tip="T1555 Credentials from Password Stores"/>
+<text x="28.0" y="197" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1555 Credentials from</text>
+<text x="28.0" y="213" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Password Stores</text>
+<rect x="20.0" y="226" width="242.9" height="38" rx="5" class="cell" data-tip="T1539 Steal Web Session Cookie"/>
+<text x="28.0" y="239" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1539 Steal Web Session</text>
+<text x="28.0" y="255" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Cookie</text>
+<rect x="20.0" y="268" width="242.9" height="38" rx="5" class="cell" data-tip="T1621 Multi-Factor Authentication Request Generation"/>
+<text x="28.0" y="281" class="t" font-size="12.5" font-weight="600" text-anchor="start" dominant-baseline="central">Multi-Factor Authentication</text>
+<text x="28.0" y="297" class="t" font-size="12.5" font-weight="600" text-anchor="start" dominant-baseline="central">Request Generation</text>
+<rect x="20.0" y="310" width="242.9" height="38" rx="5" class="cell" data-tip="T1528 Steal Application Access Token"/>
+<text x="28.0" y="323" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1528 Steal Application</text>
+<text x="28.0" y="339" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Access Token</text>
+<text x="141.42857142857144" y="364" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+12 more</text>
+<rect x="272.9" y="44" width="242.9" height="50" rx="6" class="colhead" data-tip="Discovery (TA0007): 34 techniques"/>
+<text x="394.3285714285714" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Discovery</text>
+<rect x="272.9" y="100" width="242.9" height="38" rx="5" class="cell" data-tip="T1082 System Information Discovery"/>
+<text x="280.9" y="113" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1082 System Information</text>
+<text x="280.9" y="129" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Discovery</text>
+<rect x="272.9" y="142" width="242.9" height="38" rx="5" class="cell" data-tip="T1083 File and Directory Discovery"/>
+<text x="280.9" y="155" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1083 File and Directory</text>
+<text x="280.9" y="171" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Discovery</text>
+<rect x="272.9" y="184" width="242.9" height="38" rx="5" class="cell" data-tip="T1087 Account Discovery"/>
+<text x="280.9" y="203.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1087 Account Discovery</text>
+<rect x="272.9" y="226" width="242.9" height="38" rx="5" class="cell" data-tip="T1018 Remote System Discovery"/>
+<text x="280.9" y="239" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1018 Remote System</text>
+<text x="280.9" y="255" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Discovery</text>
+<rect x="272.9" y="268" width="242.9" height="38" rx="5" class="cell" data-tip="T1046 Network Service Discovery"/>
+<text x="280.9" y="281" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1046 Network Service</text>
+<text x="280.9" y="297" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Discovery</text>
+<text x="394.3285714285714" y="322" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+29 more</text>
+<rect x="525.7" y="44" width="242.9" height="50" rx="6" class="colhead" data-tip="Lateral Movement (TA0008): 9 techniques"/>
+<text x="647.1285714285715" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Lateral Movement</text>
+<rect x="525.7" y="100" width="242.9" height="38" rx="5" class="cell" data-tip="T1021 Remote Services"/>
+<text x="533.7" y="119.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1021 Remote Services</text>
+<rect x="537.7" y="142" width="230.9" height="38" rx="5" class="cell--sub" data-tip="T1021.001 Remote Desktop Protocol"/>
+<text x="545.7" y="155" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1021.001 Remote Desktop</text>
+<text x="545.7" y="171" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">Protocol</text>
+<rect x="537.7" y="184" width="230.9" height="38" rx="5" class="cell--sub" data-tip="T1021.002 SMB/Windows Admin Shares"/>
+<text x="545.7" y="197" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1021.002 SMB/Windows</text>
+<text x="545.7" y="213" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">Admin Shares</text>
+<rect x="537.7" y="226" width="230.9" height="38" rx="5" class="cell--sub" data-tip="T1021.006 Windows Remote Management"/>
+<text x="545.7" y="239" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1021.006 Windows Remote</text>
+<text x="545.7" y="255" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">Management</text>
+<rect x="525.7" y="268" width="242.9" height="38" rx="5" class="cell" data-tip="T1570 Lateral Tool Transfer"/>
+<text x="533.7" y="287.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1570 Lateral Tool Transfer</text>
+<rect x="525.7" y="310" width="242.9" height="38" rx="5" class="cell" data-tip="T1550 Use Alternate Authentication Material"/>
+<text x="533.7" y="323" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1550 Use Alternate</text>
+<text x="533.7" y="339" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Authentication Material</text>
+<rect x="525.7" y="352" width="242.9" height="38" rx="5" class="cell" data-tip="T1080 Taint Shared Content"/>
+<text x="533.7" y="371.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1080 Taint Shared Content</text>
+<text x="647.1285714285715" y="406" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+5 more</text>
+<rect x="778.6" y="44" width="242.9" height="50" rx="6" class="colhead" data-tip="Collection (TA0009): 17 techniques"/>
+<text x="900.0285714285715" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Collection</text>
+<rect x="778.6" y="100" width="242.9" height="38" rx="5" class="cell" data-tip="T1005 Data from Local System"/>
+<text x="786.6" y="119.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1005 Data from Local System</text>
+<rect x="778.6" y="142" width="242.9" height="38" rx="5" class="cell" data-tip="T1560 Archive Collected Data"/>
+<text x="786.6" y="161.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1560 Archive Collected Data</text>
+<rect x="778.6" y="184" width="242.9" height="38" rx="5" class="cell" data-tip="T1114 Email Collection"/>
+<text x="786.6" y="203.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1114 Email Collection</text>
+<rect x="778.6" y="226" width="242.9" height="38" rx="5" class="cell" data-tip="T1074 Data Staged"/>
+<text x="786.6" y="245.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1074 Data Staged</text>
+<rect x="778.6" y="268" width="242.9" height="38" rx="5" class="cell" data-tip="T1113 Screen Capture"/>
+<text x="786.6" y="287.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1113 Screen Capture</text>
+<rect x="778.6" y="310" width="242.9" height="38" rx="5" class="cell" data-tip="T1039 Data from Network Shared Drive"/>
+<text x="786.6" y="323" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1039 Data from Network</text>
+<text x="786.6" y="339" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Shared Drive</text>
+<text x="900.0285714285715" y="364" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+11 more</text>
+<rect x="1031.4" y="44" width="242.9" height="50" rx="6" class="colhead" data-tip="Command and Control (TA0011): 18 techniques"/>
+<text x="1152.8285714285714" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Command and Control</text>
+<rect x="1031.4" y="100" width="242.9" height="38" rx="5" class="cell" data-tip="T1071 Application Layer Protocol"/>
+<text x="1039.4" y="113" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1071 Application Layer</text>
+<text x="1039.4" y="129" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Protocol</text>
+<rect x="1043.4" y="142" width="230.9" height="38" rx="5" class="cell--sub" data-tip="T1071.001 Web Protocols"/>
+<text x="1051.4" y="161.0" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1071.001 Web Protocols</text>
+<rect x="1031.4" y="184" width="242.9" height="38" rx="5" class="cell" data-tip="T1573 Encrypted Channel"/>
+<text x="1039.4" y="203.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1573 Encrypted Channel</text>
+<rect x="1031.4" y="226" width="242.9" height="38" rx="5" class="cell" data-tip="T1105 Ingress Tool Transfer"/>
+<text x="1039.4" y="245.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1105 Ingress Tool Transfer</text>
+<rect x="1031.4" y="268" width="242.9" height="38" rx="5" class="cell" data-tip="T1219 Remote Access Tools"/>
+<text x="1039.4" y="287.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1219 Remote Access Tools</text>
+<rect x="1031.4" y="310" width="242.9" height="38" rx="5" class="cell" data-tip="T1572 Protocol Tunneling"/>
+<text x="1039.4" y="329.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1572 Protocol Tunneling</text>
+<rect x="1031.4" y="352" width="242.9" height="38" rx="5" class="cell" data-tip="T1090 Proxy"/>
+<text x="1039.4" y="371.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1090 Proxy</text>
+<text x="1152.8285714285714" y="406" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+12 more</text>
+<rect x="1284.3" y="44" width="242.9" height="50" rx="6" class="colhead" data-tip="Exfiltration (TA0010): 10 techniques"/>
+<text x="1405.7285714285713" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Exfiltration</text>
+<rect x="1284.3" y="100" width="242.9" height="38" rx="5" class="cell" data-tip="T1041 Exfiltration Over C2 Channel"/>
+<text x="1292.3" y="113" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1041 Exfiltration Over C2</text>
+<text x="1292.3" y="129" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Channel</text>
+<rect x="1284.3" y="142" width="242.9" height="38" rx="5" class="cell" data-tip="T1567 Exfiltration Over Web Service"/>
+<text x="1292.3" y="155" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1567 Exfiltration Over Web</text>
+<text x="1292.3" y="171" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Service</text>
+<rect x="1296.3" y="184" width="230.9" height="38" rx="5" class="cell--sub" data-tip="T1567.002 Exfiltration to Cloud Storage"/>
+<text x="1304.3" y="197" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1567.002 Exfiltration to</text>
+<text x="1304.3" y="213" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">Cloud Storage</text>
+<rect x="1284.3" y="226" width="242.9" height="38" rx="5" class="cell" data-tip="T1048 Exfiltration Over Alternative Protocol"/>
+<text x="1292.3" y="239" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1048 Exfiltration Over</text>
+<text x="1292.3" y="255" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Alternative Protocol</text>
+<rect x="1284.3" y="268" width="242.9" height="38" rx="5" class="cell" data-tip="T1030 Data Transfer Size Limits"/>
+<text x="1292.3" y="281" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1030 Data Transfer Size</text>
+<text x="1292.3" y="297" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Limits</text>
+<rect x="1284.3" y="310" width="242.9" height="38" rx="5" class="cell" data-tip="T1029 Scheduled Transfer"/>
+<text x="1292.3" y="329.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1029 Scheduled Transfer</text>
+<text x="1405.7285714285713" y="364" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+5 more</text>
+<rect x="1537.1" y="44" width="242.9" height="50" rx="6" class="colhead" data-tip="Impact (TA0040): 15 techniques"/>
+<text x="1658.5285714285712" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Impact</text>
+<rect x="1537.1" y="100" width="242.9" height="38" rx="5" class="cell" data-tip="T1486 Data Encrypted for Impact"/>
+<text x="1545.1" y="113" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1486 Data Encrypted for</text>
+<text x="1545.1" y="129" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Impact</text>
+<rect x="1537.1" y="142" width="242.9" height="38" rx="5" class="cell" data-tip="T1490 Inhibit System Recovery"/>
+<text x="1545.1" y="155" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1490 Inhibit System</text>
+<text x="1545.1" y="171" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Recovery</text>
+<rect x="1537.1" y="184" width="242.9" height="38" rx="5" class="cell" data-tip="T1489 Service Stop"/>
+<text x="1545.1" y="203.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1489 Service Stop</text>
+<rect x="1537.1" y="226" width="242.9" height="38" rx="5" class="cell" data-tip="T1485 Data Destruction"/>
+<text x="1545.1" y="245.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1485 Data Destruction</text>
+<rect x="1537.1" y="268" width="242.9" height="38" rx="5" class="cell" data-tip="T1657 Financial Theft"/>
+<text x="1545.1" y="287.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1657 Financial Theft</text>
+<rect x="1537.1" y="310" width="242.9" height="38" rx="5" class="cell" data-tip="T1498 Network Denial of Service"/>
+<text x="1545.1" y="323" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1498 Network Denial of</text>
+<text x="1545.1" y="339" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Service</text>
+<text x="1658.5285714285712" y="364" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+9 more</text>
 </g>
-<g data-build="7">
-<path d="M1479.0 141.0L1706.0 111.0" class="edge edge--bad draw" pathLength="1"/>
-<rect x="1652" y="98" width="108" height="26" rx="4" class="cell--lit" data-tip="step 7: T1486"/>
-<text x="1658" y="111.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1486</text>
-<circle cx="1654" cy="100" r="11" class="badge--bad"/>
-<text x="1654" y="101" class="t-badge" font-size="13" font-weight="700" text-anchor="middle" dominant-baseline="central">7</text>
+<g data-build="1">
+<rect x="1043.4" y="142" width="230.9" height="38" rx="5" class="cell--lit" data-tip="step 6: T1071.001"/>
+<text x="1051.4" y="161.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1071.001 Web Protocols</text>
+<circle cx="1045.4" cy="144" r="13" class="badge--bad"/>
+<text x="1045.4" y="145" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">6</text>
+</g>
+<g data-build="2">
+<path d="M1158.8500000000001 161.0L1658.55 119.0" class="edge edge--bad draw" pathLength="1"/>
+<rect x="1537.1" y="100" width="242.9" height="38" rx="5" class="cell--lit" data-tip="step 7: T1486"/>
+<text x="1545.1" y="113" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1486 Data Encrypted for</text>
+<text x="1545.1" y="129" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">Impact</text>
+<circle cx="1539.1" cy="102" r="13" class="badge--bad"/>
+<text x="1539.1" y="103" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">7</text>
 </g>
 </svg></figure>
-<blockquote class="callout"><p>“Trojan” says less than this path: seven techniques across seven tactics, no family name, and every lit cell is a place a sensor could look.</p></blockquote><div class="step-captions"><p data-build="0">The Enterprise matrix, schematic: 15 tactics as columns in attack order (Defense Evasion became Stealth and Defense Impairment in April 2026), a few real techniques per column with the true per-tactic counts; hover a cell for its name. Execution is expanded under Command and Scripting Interpreter to the sub-technique level: PowerShell, Windows Command Shell, Visual Basic, JavaScript.</p><p data-build="1">A classic trojan of the first two periods, as a path. Initial Access: Spearphishing Attachment (T1566.001).</p><p data-build="2">Execution: User Execution, Malicious File (T1204.002).</p><p data-build="3">Stealth: Software Packing (T1027.002).</p><p data-build="4">Stealth: Process Injection (T1055).</p><p data-build="5">Persistence: Registry Run Keys (T1547.001).</p><p data-build="6">Command and Control: Web Protocols (T1071.001).</p><p data-build="7">Impact: Data Encrypted for Impact (T1486).</p></div>
+<blockquote class="callout"><p>“Trojan” says less than this path: seven techniques across seven tactics, no family name, and every lit cell is a place a sensor could look.</p></blockquote><div class="step-captions"><p data-build="0">The second half: Credential Access to Impact. The trojan's path continues here.</p><p data-build="1">Step 6 — Command and Control: Web Protocols (T1071.001).</p><p data-build="2">Step 7 — Impact: Data Encrypted for Impact (T1486).</p></div>
 <details class="srcs"><summary>Sources (2)</summary><div class="panel"><ul><li><a href="https://attack.mitre.org/resources/faq/" target="_blank" rel="noopener">MITRE ATT&amp;CK FAQ</a></li><li><a href="https://attack.mitre.org/techniques/enterprise/" target="_blank" rel="noopener">MITRE ATT&amp;CK Enterprise techniques</a></li></ul></div></details>
 <footer class="slide-foot"><span class="eyebrow">ATT&amp;CK as a language for behavior</span><span class="count">16 / 27 · 33–37 minutes</span></footer>
 <aside class="notes"><p class="meta"><b>Slide 16</b> · 33–37 minutes · ATT&amp;CK as a language for behavior</p>
@@ -1810,328 +1888,478 @@ legitimate artifact + exploited capability + adversarial controller</code></pre>
 <h4>Interaction</h4><p>Ask whether a file-only classifier can determine who controls the remote-access session, or whether a driver will be exploited after loading. Then ask which question each answer depended on: what it is, what it can do, who controls it, or whose objective it serves.</p>
 <p class="transition">“Now apply this vocabulary to an attack that never produces a malware executable file.”</p></aside>
 </section>
-<section class="slide slide--diagram" id="s18" data-id="s18" data-part="1" data-steps="8" data-number="18">
+<section class="slide slide--diagram" id="s18" data-id="s18" data-part="1" data-steps="4" data-number="18">
 <h2 class="slide-title">Map an attack with no malware file</h2><blockquote class="callout"><p>Using a stolen administrator account, an attacker runs PowerShell. A script downloads a legitimate, signed but vulnerable kernel driver, loads it, and uses it to disable the endpoint protection and antivirus from the kernel. It then downloads a memory-only implant and injects it into explorer.exe. The implant enumerates documents, compresses selected content, and uploads it over HTTPS.</p></blockquote>
-<figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 450" role="img" aria-label="The Enterprise ATT&CK matrix with the recurring scenario lit step by step: valid accounts, PowerShell with command obfuscation, exploitation for privilege escalation, disable or modify tools, ingress tool transfer, process injection and reflective code loading, discovery and collection, web protocols and exfiltration over the C2 channel" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 576" role="img" aria-label="The Enterprise ATT&CK matrix, first half, Reconnaissance to Defense Impairment, with the recurring scenario lit step by step: valid accounts, PowerShell with command obfuscation, exploitation for privilege escalation, disable or modify tools" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
 <defs>
-  <marker id="arrow-attack-fileless" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
-  <marker id="arrow-bad-attack-fileless" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
-  <marker id="arrow-good-attack-fileless" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
+  <marker id="arrow-attack-fileless-1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
+  <marker id="arrow-bad-attack-fileless-1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
+  <marker id="arrow-good-attack-fileless-1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
 </defs>
 <g data-build="0">
-<text x="24" y="18" class="t2" font-size="17" font-weight="500" text-anchor="start" dominant-baseline="central">Enterprise v20.0 (13 October 2026): 15 tactics, 227 techniques, 479 sub-techniques · hover a cell for its name</text>
-<rect x="28" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Reconnaissance (TA0043): 12 techniques"/>
-<text x="82.0" y="69.0" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Recon</text>
-<rect x="28" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1595 Active Scanning"/>
-<text x="34" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1595</text>
-<rect x="28" y="128" width="108" height="26" rx="4" class="cell" data-tip="T1589 Gather Victim Identity Information"/>
-<text x="34" y="141.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1589</text>
-<rect x="28" y="158" width="108" height="26" rx="4" class="cell" data-tip="T1598 Phishing for Information"/>
-<text x="34" y="171.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1598</text>
-<rect x="28" y="188" width="108" height="26" rx="4" class="cell" data-tip="T1596 Search Open Technical Databases"/>
-<text x="34" y="201.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1596</text>
-<text x="82.0" y="230" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+8 more</text>
-<rect x="144" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Resource Development (TA0042): 9 techniques"/>
-<text x="198.0" y="60" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Resource</text>
-<text x="198.0" y="78" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Dev.</text>
-<rect x="144" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1583 Acquire Infrastructure"/>
-<text x="150" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1583</text>
-<rect x="144" y="128" width="108" height="26" rx="4" class="cell" data-tip="T1586 Compromise Accounts"/>
-<text x="150" y="141.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1586</text>
-<rect x="144" y="158" width="108" height="26" rx="4" class="cell" data-tip="T1587 Develop Capabilities"/>
-<text x="150" y="171.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1587</text>
-<rect x="144" y="188" width="108" height="26" rx="4" class="cell" data-tip="T1588 Obtain Capabilities"/>
-<text x="150" y="201.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1588</text>
-<rect x="144" y="218" width="108" height="26" rx="4" class="cell" data-tip="T1608 Stage Capabilities"/>
-<text x="150" y="231.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1608</text>
-<text x="198.0" y="260" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+4 more</text>
-<rect x="260" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Initial Access (TA0001): 11 techniques"/>
-<text x="314.0" y="60" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Initial</text>
-<text x="314.0" y="78" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Access</text>
-<rect x="260" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1566 Phishing"/>
-<text x="266" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1566</text>
-<rect x="270" y="128" width="98" height="26" rx="4" class="cell--sub" data-tip="T1566.001 Spearphishing Attachment"/>
-<text x="276" y="141.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1566.001</text>
-<rect x="260" y="158" width="108" height="26" rx="4" class="cell" data-tip="T1190 Exploit Public-Facing Application"/>
-<text x="266" y="171.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1190</text>
-<rect x="260" y="188" width="108" height="26" rx="4" class="cell" data-tip="T1078 Valid Accounts"/>
-<text x="266" y="201.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1078</text>
-<rect x="260" y="218" width="108" height="26" rx="4" class="cell" data-tip="T1133 External Remote Services"/>
-<text x="266" y="231.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1133</text>
-<rect x="260" y="248" width="108" height="26" rx="4" class="cell" data-tip="T1195 Supply Chain Compromise"/>
-<text x="266" y="261.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1195</text>
-<rect x="260" y="278" width="108" height="26" rx="4" class="cell" data-tip="T1189 Drive-by Compromise"/>
-<text x="266" y="291.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1189</text>
-<text x="314.0" y="320" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+5 more</text>
-<rect x="376" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Execution (TA0002): 22 techniques"/>
-<text x="430.0" y="69.0" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Execution</text>
-<rect x="376" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1059 Command and Scripting Interpreter"/>
-<text x="382" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1059</text>
-<rect x="386" y="128" width="98" height="26" rx="4" class="cell--sub" data-tip="T1059.001 PowerShell"/>
-<text x="392" y="141.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1059.001</text>
-<rect x="386" y="158" width="98" height="26" rx="4" class="cell--sub" data-tip="T1059.003 Windows Command Shell"/>
-<text x="392" y="171.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1059.003</text>
-<rect x="386" y="188" width="98" height="26" rx="4" class="cell--sub" data-tip="T1059.005 Visual Basic"/>
-<text x="392" y="201.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1059.005</text>
-<rect x="386" y="218" width="98" height="26" rx="4" class="cell--sub" data-tip="T1059.007 JavaScript"/>
-<text x="392" y="231.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1059.007</text>
-<rect x="376" y="248" width="108" height="26" rx="4" class="cell" data-tip="T1204 User Execution"/>
-<text x="382" y="261.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1204</text>
-<rect x="386" y="278" width="98" height="26" rx="4" class="cell--sub" data-tip="T1204.002 Malicious File"/>
-<text x="392" y="291.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1204.002</text>
-<rect x="376" y="308" width="108" height="26" rx="4" class="cell" data-tip="T1047 Windows Management Instrumentation"/>
-<text x="382" y="321.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1047</text>
-<rect x="376" y="338" width="108" height="26" rx="4" class="cell" data-tip="T1053 Scheduled Task/Job"/>
-<text x="382" y="351.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1053</text>
-<rect x="376" y="368" width="108" height="26" rx="4" class="cell" data-tip="T1203 Exploitation for Client Execution"/>
-<text x="382" y="381.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1203</text>
-<text x="430.0" y="410" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+17 more</text>
-<rect x="492" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Persistence (TA0003): 22 techniques"/>
-<text x="546.0" y="69.0" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Persistence</text>
-<rect x="492" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1547 Boot or Logon Autostart Execution"/>
-<text x="498" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1547</text>
-<rect x="502" y="128" width="98" height="26" rx="4" class="cell--sub" data-tip="T1547.001 Registry Run Keys / Startup Folder"/>
-<text x="508" y="141.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1547.001</text>
-<rect x="492" y="158" width="108" height="26" rx="4" class="cell" data-tip="T1053 Scheduled Task/Job"/>
-<text x="498" y="171.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1053</text>
-<rect x="492" y="188" width="108" height="26" rx="4" class="cell" data-tip="T1136 Create Account"/>
-<text x="498" y="201.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1136</text>
-<rect x="492" y="218" width="108" height="26" rx="4" class="cell" data-tip="T1505 Server Software Component"/>
-<text x="498" y="231.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1505</text>
-<rect x="492" y="248" width="108" height="26" rx="4" class="cell" data-tip="T1098 Account Manipulation"/>
-<text x="498" y="261.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1098</text>
-<text x="546.0" y="290" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+17 more</text>
-<rect x="608" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Privilege Escalation (TA0004): 13 techniques"/>
-<text x="662.0" y="60" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Priv.</text>
-<text x="662.0" y="78" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Escalation</text>
-<rect x="608" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1068 Exploitation for Privilege Escalation"/>
-<text x="614" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1068</text>
-<rect x="608" y="128" width="108" height="26" rx="4" class="cell" data-tip="T1548 Abuse Elevation Control Mechanism"/>
-<text x="614" y="141.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1548</text>
-<rect x="608" y="158" width="108" height="26" rx="4" class="cell" data-tip="T1055 Process Injection"/>
-<text x="614" y="171.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1055</text>
-<rect x="608" y="188" width="108" height="26" rx="4" class="cell" data-tip="T1078 Valid Accounts"/>
-<text x="614" y="201.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1078</text>
-<rect x="608" y="218" width="108" height="26" rx="4" class="cell" data-tip="T1134 Access Token Manipulation"/>
-<text x="614" y="231.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1134</text>
-<text x="662.0" y="260" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+8 more</text>
-<rect x="724" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Stealth (Defense Evasion until April 2026) (TA0005): 31 techniques"/>
-<text x="778.0" y="69.0" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Stealth</text>
-<rect x="724" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1620 Reflective Code Loading"/>
-<text x="730" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1620</text>
-<rect x="724" y="128" width="108" height="26" rx="4" class="cell" data-tip="T1027 Obfuscated Files or Information"/>
-<text x="730" y="141.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1027</text>
-<rect x="734" y="158" width="98" height="26" rx="4" class="cell--sub" data-tip="T1027.010 Command Obfuscation"/>
-<text x="740" y="171.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1027.010</text>
-<rect x="734" y="188" width="98" height="26" rx="4" class="cell--sub" data-tip="T1027.002 Software Packing"/>
-<text x="740" y="201.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1027.002</text>
-<rect x="724" y="218" width="108" height="26" rx="4" class="cell" data-tip="T1218 System Binary Proxy Execution"/>
-<text x="730" y="231.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1218</text>
-<rect x="724" y="248" width="108" height="26" rx="4" class="cell" data-tip="T1055 Process Injection"/>
-<text x="730" y="261.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1055</text>
-<rect x="724" y="278" width="108" height="26" rx="4" class="cell" data-tip="T1574 Hijack Execution Flow"/>
-<text x="730" y="291.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1574</text>
-<rect x="734" y="308" width="98" height="26" rx="4" class="cell--sub" data-tip="T1574.001 DLL"/>
-<text x="740" y="321.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1574.001</text>
-<rect x="724" y="338" width="108" height="26" rx="4" class="cell" data-tip="T1497 Virtualization/Sandbox Evasion"/>
-<text x="730" y="351.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1497</text>
-<text x="778.0" y="380" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+25 more</text>
-<rect x="840" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Defense Impairment (new in April 2026) (TA0112): 18 techniques"/>
-<text x="894.0" y="60" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Defense</text>
-<text x="894.0" y="78" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Impairment</text>
-<rect x="840" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1685 Disable or Modify Tools"/>
-<text x="846" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1685</text>
-<rect x="850" y="128" width="98" height="26" rx="4" class="cell--sub" data-tip="T1685.001 Disable or Modify Windows Event Log"/>
-<text x="856" y="141.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1685.001</text>
-<rect x="850" y="158" width="98" height="26" rx="4" class="cell--sub" data-tip="T1685.007 Impair Autonomous Defenses"/>
-<text x="856" y="171.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1685.007</text>
-<rect x="840" y="188" width="108" height="26" rx="4" class="cell" data-tip="T1686 Disable or Modify System Firewall"/>
-<text x="846" y="201.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1686</text>
-<rect x="840" y="218" width="108" height="26" rx="4" class="cell" data-tip="T1688 Safe Mode Boot"/>
-<text x="846" y="231.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1688</text>
-<rect x="840" y="248" width="108" height="26" rx="4" class="cell" data-tip="T1689 Downgrade Attack"/>
-<text x="846" y="261.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1689</text>
-<rect x="840" y="278" width="108" height="26" rx="4" class="cell" data-tip="T1690 Prevent Command History Logging"/>
-<text x="846" y="291.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1690</text>
-<text x="894.0" y="320" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+13 more</text>
-<rect x="956" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Credential Access (TA0006): 18 techniques"/>
-<text x="1010.0" y="60" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Credential</text>
-<text x="1010.0" y="78" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Access</text>
-<rect x="956" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1003 OS Credential Dumping"/>
-<text x="962" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1003</text>
-<rect x="956" y="128" width="108" height="26" rx="4" class="cell" data-tip="T1110 Brute Force"/>
-<text x="962" y="141.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1110</text>
-<rect x="956" y="158" width="108" height="26" rx="4" class="cell" data-tip="T1555 Credentials from Password Stores"/>
-<text x="962" y="171.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1555</text>
-<rect x="956" y="188" width="108" height="26" rx="4" class="cell" data-tip="T1539 Steal Web Session Cookie"/>
-<text x="962" y="201.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1539</text>
-<rect x="956" y="218" width="108" height="26" rx="4" class="cell" data-tip="T1621 Multi-Factor Authentication Request Generation"/>
-<text x="962" y="231.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1621</text>
-<rect x="956" y="248" width="108" height="26" rx="4" class="cell" data-tip="T1528 Steal Application Access Token"/>
-<text x="962" y="261.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1528</text>
-<text x="1010.0" y="290" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+12 more</text>
-<rect x="1072" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Discovery (TA0007): 34 techniques"/>
-<text x="1126.0" y="69.0" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Discovery</text>
-<rect x="1072" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1082 System Information Discovery"/>
-<text x="1078" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1082</text>
-<rect x="1072" y="128" width="108" height="26" rx="4" class="cell" data-tip="T1083 File and Directory Discovery"/>
-<text x="1078" y="141.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1083</text>
-<rect x="1072" y="158" width="108" height="26" rx="4" class="cell" data-tip="T1087 Account Discovery"/>
-<text x="1078" y="171.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1087</text>
-<rect x="1072" y="188" width="108" height="26" rx="4" class="cell" data-tip="T1018 Remote System Discovery"/>
-<text x="1078" y="201.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1018</text>
-<rect x="1072" y="218" width="108" height="26" rx="4" class="cell" data-tip="T1046 Network Service Discovery"/>
-<text x="1078" y="231.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1046</text>
-<text x="1126.0" y="260" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+29 more</text>
-<rect x="1188" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Lateral Movement (TA0008): 9 techniques"/>
-<text x="1242.0" y="60" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Lateral</text>
-<text x="1242.0" y="78" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Movement</text>
-<rect x="1188" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1021 Remote Services"/>
-<text x="1194" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1021</text>
-<rect x="1198" y="128" width="98" height="26" rx="4" class="cell--sub" data-tip="T1021.001 Remote Desktop Protocol"/>
-<text x="1204" y="141.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1021.001</text>
-<rect x="1198" y="158" width="98" height="26" rx="4" class="cell--sub" data-tip="T1021.002 SMB/Windows Admin Shares"/>
-<text x="1204" y="171.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1021.002</text>
-<rect x="1198" y="188" width="98" height="26" rx="4" class="cell--sub" data-tip="T1021.006 Windows Remote Management"/>
-<text x="1204" y="201.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1021.006</text>
-<rect x="1188" y="218" width="108" height="26" rx="4" class="cell" data-tip="T1570 Lateral Tool Transfer"/>
-<text x="1194" y="231.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1570</text>
-<rect x="1188" y="248" width="108" height="26" rx="4" class="cell" data-tip="T1550 Use Alternate Authentication Material"/>
-<text x="1194" y="261.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1550</text>
-<rect x="1188" y="278" width="108" height="26" rx="4" class="cell" data-tip="T1080 Taint Shared Content"/>
-<text x="1194" y="291.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1080</text>
-<text x="1242.0" y="320" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+5 more</text>
-<rect x="1304" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Collection (TA0009): 17 techniques"/>
-<text x="1358.0" y="69.0" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Collection</text>
-<rect x="1304" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1005 Data from Local System"/>
-<text x="1310" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1005</text>
-<rect x="1304" y="128" width="108" height="26" rx="4" class="cell" data-tip="T1560 Archive Collected Data"/>
-<text x="1310" y="141.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1560</text>
-<rect x="1304" y="158" width="108" height="26" rx="4" class="cell" data-tip="T1114 Email Collection"/>
-<text x="1310" y="171.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1114</text>
-<rect x="1304" y="188" width="108" height="26" rx="4" class="cell" data-tip="T1074 Data Staged"/>
-<text x="1310" y="201.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1074</text>
-<rect x="1304" y="218" width="108" height="26" rx="4" class="cell" data-tip="T1113 Screen Capture"/>
-<text x="1310" y="231.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1113</text>
-<rect x="1304" y="248" width="108" height="26" rx="4" class="cell" data-tip="T1039 Data from Network Shared Drive"/>
-<text x="1310" y="261.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1039</text>
-<text x="1358.0" y="290" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+11 more</text>
-<rect x="1420" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Command and Control (TA0011): 18 techniques"/>
-<text x="1474.0" y="69.0" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">C2</text>
-<rect x="1420" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1071 Application Layer Protocol"/>
-<text x="1426" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1071</text>
-<rect x="1430" y="128" width="98" height="26" rx="4" class="cell--sub" data-tip="T1071.001 Web Protocols"/>
-<text x="1436" y="141.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1071.001</text>
-<rect x="1420" y="158" width="108" height="26" rx="4" class="cell" data-tip="T1573 Encrypted Channel"/>
-<text x="1426" y="171.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1573</text>
-<rect x="1420" y="188" width="108" height="26" rx="4" class="cell" data-tip="T1105 Ingress Tool Transfer"/>
-<text x="1426" y="201.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1105</text>
-<rect x="1420" y="218" width="108" height="26" rx="4" class="cell" data-tip="T1219 Remote Access Tools"/>
-<text x="1426" y="231.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1219</text>
-<rect x="1420" y="248" width="108" height="26" rx="4" class="cell" data-tip="T1572 Protocol Tunneling"/>
-<text x="1426" y="261.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1572</text>
-<rect x="1420" y="278" width="108" height="26" rx="4" class="cell" data-tip="T1090 Proxy"/>
-<text x="1426" y="291.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1090</text>
-<text x="1474.0" y="320" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+12 more</text>
-<rect x="1536" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Exfiltration (TA0010): 10 techniques"/>
-<text x="1590.0" y="69.0" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Exfiltration</text>
-<rect x="1536" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1041 Exfiltration Over C2 Channel"/>
-<text x="1542" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1041</text>
-<rect x="1536" y="128" width="108" height="26" rx="4" class="cell" data-tip="T1567 Exfiltration Over Web Service"/>
-<text x="1542" y="141.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1567</text>
-<rect x="1546" y="158" width="98" height="26" rx="4" class="cell--sub" data-tip="T1567.002 Exfiltration to Cloud Storage"/>
-<text x="1552" y="171.0" class="t2" font-size="13" font-weight="500" text-anchor="start" dominant-baseline="central">T1567.002</text>
-<rect x="1536" y="188" width="108" height="26" rx="4" class="cell" data-tip="T1048 Exfiltration Over Alternative Protocol"/>
-<text x="1542" y="201.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1048</text>
-<rect x="1536" y="218" width="108" height="26" rx="4" class="cell" data-tip="T1030 Data Transfer Size Limits"/>
-<text x="1542" y="231.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1030</text>
-<rect x="1536" y="248" width="108" height="26" rx="4" class="cell" data-tip="T1029 Scheduled Transfer"/>
-<text x="1542" y="261.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1029</text>
-<text x="1590.0" y="290" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+5 more</text>
-<rect x="1652" y="44" width="108" height="50" rx="6" class="colhead" data-tip="Impact (TA0040): 15 techniques"/>
-<text x="1706.0" y="69.0" class="t" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">Impact</text>
-<rect x="1652" y="98" width="108" height="26" rx="4" class="cell" data-tip="T1486 Data Encrypted for Impact"/>
-<text x="1658" y="111.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1486</text>
-<rect x="1652" y="128" width="108" height="26" rx="4" class="cell" data-tip="T1490 Inhibit System Recovery"/>
-<text x="1658" y="141.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1490</text>
-<rect x="1652" y="158" width="108" height="26" rx="4" class="cell" data-tip="T1489 Service Stop"/>
-<text x="1658" y="171.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1489</text>
-<rect x="1652" y="188" width="108" height="26" rx="4" class="cell" data-tip="T1485 Data Destruction"/>
-<text x="1658" y="201.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1485</text>
-<rect x="1652" y="218" width="108" height="26" rx="4" class="cell" data-tip="T1657 Financial Theft"/>
-<text x="1658" y="231.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1657</text>
-<rect x="1652" y="248" width="108" height="26" rx="4" class="cell" data-tip="T1498 Network Denial of Service"/>
-<text x="1658" y="261.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1498</text>
-<text x="1706.0" y="290" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+9 more</text>
+<text x="20" y="18" class="t2" font-size="17" font-weight="500" text-anchor="start" dominant-baseline="central">Enterprise v20.0 (13 October 2026): 15 tactics, 227 techniques, 479 sub-techniques · hover a cell for its name</text>
+<rect x="20.0" y="44" width="211.2" height="50" rx="6" class="colhead" data-tip="Reconnaissance (TA0043): 12 techniques"/>
+<text x="125.625" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Reconnaissance</text>
+<rect x="20.0" y="100" width="211.2" height="38" rx="5" class="cell" data-tip="T1595 Active Scanning"/>
+<text x="28.0" y="119.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1595 Active Scanning</text>
+<rect x="20.0" y="142" width="211.2" height="38" rx="5" class="cell" data-tip="T1589 Gather Victim Identity Information"/>
+<text x="28.0" y="155" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1589 Gather Victim</text>
+<text x="28.0" y="171" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Identity Information</text>
+<rect x="20.0" y="184" width="211.2" height="38" rx="5" class="cell" data-tip="T1598 Phishing for Information"/>
+<text x="28.0" y="197" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1598 Phishing for</text>
+<text x="28.0" y="213" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Information</text>
+<rect x="20.0" y="226" width="211.2" height="38" rx="5" class="cell" data-tip="T1596 Search Open Technical Databases"/>
+<text x="28.0" y="239" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1596 Search Open</text>
+<text x="28.0" y="255" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Technical Databases</text>
+<text x="125.625" y="280" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+8 more</text>
+<rect x="241.2" y="44" width="211.2" height="50" rx="6" class="colhead" data-tip="Resource Development (TA0042): 9 techniques"/>
+<text x="346.825" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Resource Development</text>
+<rect x="241.2" y="100" width="211.2" height="38" rx="5" class="cell" data-tip="T1583 Acquire Infrastructure"/>
+<text x="249.2" y="113" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1583 Acquire</text>
+<text x="249.2" y="129" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Infrastructure</text>
+<rect x="241.2" y="142" width="211.2" height="38" rx="5" class="cell" data-tip="T1586 Compromise Accounts"/>
+<text x="249.2" y="155" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1586 Compromise</text>
+<text x="249.2" y="171" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Accounts</text>
+<rect x="241.2" y="184" width="211.2" height="38" rx="5" class="cell" data-tip="T1587 Develop Capabilities"/>
+<text x="249.2" y="197" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1587 Develop</text>
+<text x="249.2" y="213" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Capabilities</text>
+<rect x="241.2" y="226" width="211.2" height="38" rx="5" class="cell" data-tip="T1588 Obtain Capabilities"/>
+<text x="249.2" y="239" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1588 Obtain</text>
+<text x="249.2" y="255" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Capabilities</text>
+<rect x="241.2" y="268" width="211.2" height="38" rx="5" class="cell" data-tip="T1608 Stage Capabilities"/>
+<text x="249.2" y="287.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1608 Stage Capabilities</text>
+<text x="346.825" y="322" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+4 more</text>
+<rect x="462.5" y="44" width="211.2" height="50" rx="6" class="colhead" data-tip="Initial Access (TA0001): 11 techniques"/>
+<text x="568.125" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Initial Access</text>
+<rect x="462.5" y="100" width="211.2" height="38" rx="5" class="cell" data-tip="T1566 Phishing"/>
+<text x="470.5" y="119.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1566 Phishing</text>
+<rect x="474.5" y="142" width="199.2" height="38" rx="5" class="cell--sub" data-tip="T1566.001 Spearphishing Attachment"/>
+<text x="482.5" y="155" class="t2" font-size="12.5" font-weight="500" text-anchor="start" dominant-baseline="central">T1566.001 Spearphishing</text>
+<text x="482.5" y="171" class="t2" font-size="12.5" font-weight="500" text-anchor="start" dominant-baseline="central">Attachment</text>
+<rect x="462.5" y="184" width="211.2" height="38" rx="5" class="cell" data-tip="T1190 Exploit Public-Facing Application"/>
+<text x="470.5" y="197" class="t" font-size="12.5" font-weight="600" text-anchor="start" dominant-baseline="central">T1190 Exploit Public-Facing</text>
+<text x="470.5" y="213" class="t" font-size="12.5" font-weight="600" text-anchor="start" dominant-baseline="central">Application</text>
+<rect x="462.5" y="226" width="211.2" height="38" rx="5" class="cell" data-tip="T1078 Valid Accounts"/>
+<text x="470.5" y="245.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1078 Valid Accounts</text>
+<rect x="462.5" y="268" width="211.2" height="38" rx="5" class="cell" data-tip="T1133 External Remote Services"/>
+<text x="470.5" y="281" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1133 External Remote</text>
+<text x="470.5" y="297" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Services</text>
+<rect x="462.5" y="310" width="211.2" height="38" rx="5" class="cell" data-tip="T1195 Supply Chain Compromise"/>
+<text x="470.5" y="323" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1195 Supply Chain</text>
+<text x="470.5" y="339" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Compromise</text>
+<rect x="462.5" y="352" width="211.2" height="38" rx="5" class="cell" data-tip="T1189 Drive-by Compromise"/>
+<text x="470.5" y="365" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1189 Drive-by</text>
+<text x="470.5" y="381" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Compromise</text>
+<text x="568.125" y="406" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+5 more</text>
+<rect x="683.8" y="44" width="211.2" height="50" rx="6" class="colhead" data-tip="Execution (TA0002): 22 techniques"/>
+<text x="789.425" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Execution</text>
+<rect x="683.8" y="100" width="211.2" height="38" rx="5" class="cell" data-tip="T1059 Command and Scripting Interpreter"/>
+<text x="691.8" y="113" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1059 Command and</text>
+<text x="691.8" y="129" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Scripting Interpreter</text>
+<rect x="695.8" y="142" width="199.2" height="38" rx="5" class="cell--sub" data-tip="T1059.001 PowerShell"/>
+<text x="703.8" y="161.0" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1059.001 PowerShell</text>
+<rect x="695.8" y="184" width="199.2" height="38" rx="5" class="cell--sub" data-tip="T1059.003 Windows Command Shell"/>
+<text x="703.8" y="197" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1059.003 Windows</text>
+<text x="703.8" y="213" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">Command Shell</text>
+<rect x="695.8" y="226" width="199.2" height="38" rx="5" class="cell--sub" data-tip="T1059.005 Visual Basic"/>
+<text x="703.8" y="245.0" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1059.005 Visual Basic</text>
+<rect x="695.8" y="268" width="199.2" height="38" rx="5" class="cell--sub" data-tip="T1059.007 JavaScript"/>
+<text x="703.8" y="287.0" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1059.007 JavaScript</text>
+<rect x="683.8" y="310" width="211.2" height="38" rx="5" class="cell" data-tip="T1204 User Execution"/>
+<text x="691.8" y="329.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1204 User Execution</text>
+<rect x="695.8" y="352" width="199.2" height="38" rx="5" class="cell--sub" data-tip="T1204.002 Malicious File"/>
+<text x="703.8" y="365" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1204.002 Malicious</text>
+<text x="703.8" y="381" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">File</text>
+<rect x="683.8" y="394" width="211.2" height="38" rx="5" class="cell" data-tip="T1047 Windows Management Instrumentation"/>
+<text x="691.8" y="407" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1047 Windows Management</text>
+<text x="691.8" y="423" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Instrumentation</text>
+<rect x="683.8" y="436" width="211.2" height="38" rx="5" class="cell" data-tip="T1053 Scheduled Task/Job"/>
+<text x="691.8" y="455.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1053 Scheduled Task/Job</text>
+<rect x="683.8" y="478" width="211.2" height="38" rx="5" class="cell" data-tip="T1203 Exploitation for Client Execution"/>
+<text x="691.8" y="491" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1203 Exploitation for</text>
+<text x="691.8" y="507" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Client Execution</text>
+<text x="789.425" y="532" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+17 more</text>
+<rect x="905.0" y="44" width="211.2" height="50" rx="6" class="colhead" data-tip="Persistence (TA0003): 22 techniques"/>
+<text x="1010.625" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Persistence</text>
+<rect x="905.0" y="100" width="211.2" height="38" rx="5" class="cell" data-tip="T1547 Boot or Logon Autostart Execution"/>
+<text x="913.0" y="113" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1547 Boot or Logon</text>
+<text x="913.0" y="129" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Autostart Execution</text>
+<rect x="917.0" y="142" width="199.2" height="38" rx="5" class="cell--sub" data-tip="T1547.001 Registry Run Keys / Startup Folder"/>
+<text x="925.0" y="155" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1547.001 Registry Run</text>
+<text x="925.0" y="171" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">Keys / Startup Folder</text>
+<rect x="905.0" y="184" width="211.2" height="38" rx="5" class="cell" data-tip="T1053 Scheduled Task/Job"/>
+<text x="913.0" y="203.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1053 Scheduled Task/Job</text>
+<rect x="905.0" y="226" width="211.2" height="38" rx="5" class="cell" data-tip="T1136 Create Account"/>
+<text x="913.0" y="245.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1136 Create Account</text>
+<rect x="905.0" y="268" width="211.2" height="38" rx="5" class="cell" data-tip="T1505 Server Software Component"/>
+<text x="913.0" y="281" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1505 Server Software</text>
+<text x="913.0" y="297" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Component</text>
+<rect x="905.0" y="310" width="211.2" height="38" rx="5" class="cell" data-tip="T1098 Account Manipulation"/>
+<text x="913.0" y="323" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1098 Account</text>
+<text x="913.0" y="339" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Manipulation</text>
+<text x="1010.625" y="364" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+17 more</text>
+<rect x="1126.2" y="44" width="211.2" height="50" rx="6" class="colhead" data-tip="Privilege Escalation (TA0004): 13 techniques"/>
+<text x="1231.825" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Privilege Escalation</text>
+<rect x="1126.2" y="100" width="211.2" height="38" rx="5" class="cell" data-tip="T1068 Exploitation for Privilege Escalation"/>
+<text x="1134.2" y="113" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1068 Exploitation for</text>
+<text x="1134.2" y="129" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Privilege Escalation</text>
+<rect x="1126.2" y="142" width="211.2" height="38" rx="5" class="cell" data-tip="T1548 Abuse Elevation Control Mechanism"/>
+<text x="1134.2" y="155" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1548 Abuse Elevation</text>
+<text x="1134.2" y="171" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Control Mechanism</text>
+<rect x="1126.2" y="184" width="211.2" height="38" rx="5" class="cell" data-tip="T1055 Process Injection"/>
+<text x="1134.2" y="203.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1055 Process Injection</text>
+<rect x="1126.2" y="226" width="211.2" height="38" rx="5" class="cell" data-tip="T1078 Valid Accounts"/>
+<text x="1134.2" y="245.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1078 Valid Accounts</text>
+<rect x="1126.2" y="268" width="211.2" height="38" rx="5" class="cell" data-tip="T1134 Access Token Manipulation"/>
+<text x="1134.2" y="281" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1134 Access Token</text>
+<text x="1134.2" y="297" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Manipulation</text>
+<text x="1231.825" y="322" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+8 more</text>
+<rect x="1347.5" y="44" width="211.2" height="50" rx="6" class="colhead" data-tip="Stealth (Defense Evasion until April 2026) (TA0005): 31 techniques"/>
+<text x="1453.125" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Stealth</text>
+<rect x="1347.5" y="100" width="211.2" height="38" rx="5" class="cell" data-tip="T1620 Reflective Code Loading"/>
+<text x="1355.5" y="113" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1620 Reflective Code</text>
+<text x="1355.5" y="129" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Loading</text>
+<rect x="1347.5" y="142" width="211.2" height="38" rx="5" class="cell" data-tip="T1027 Obfuscated Files or Information"/>
+<text x="1355.5" y="155" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1027 Obfuscated Files</text>
+<text x="1355.5" y="171" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">or Information</text>
+<rect x="1359.5" y="184" width="199.2" height="38" rx="5" class="cell--sub" data-tip="T1027.010 Command Obfuscation"/>
+<text x="1367.5" y="197" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1027.010 Command</text>
+<text x="1367.5" y="213" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">Obfuscation</text>
+<rect x="1359.5" y="226" width="199.2" height="38" rx="5" class="cell--sub" data-tip="T1027.002 Software Packing"/>
+<text x="1367.5" y="239" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1027.002 Software</text>
+<text x="1367.5" y="255" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">Packing</text>
+<rect x="1347.5" y="268" width="211.2" height="38" rx="5" class="cell" data-tip="T1218 System Binary Proxy Execution"/>
+<text x="1355.5" y="281" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1218 System Binary</text>
+<text x="1355.5" y="297" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Proxy Execution</text>
+<rect x="1347.5" y="310" width="211.2" height="38" rx="5" class="cell" data-tip="T1055 Process Injection"/>
+<text x="1355.5" y="329.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1055 Process Injection</text>
+<rect x="1347.5" y="352" width="211.2" height="38" rx="5" class="cell" data-tip="T1574 Hijack Execution Flow"/>
+<text x="1355.5" y="365" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1574 Hijack Execution</text>
+<text x="1355.5" y="381" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Flow</text>
+<rect x="1359.5" y="394" width="199.2" height="38" rx="5" class="cell--sub" data-tip="T1574.001 DLL"/>
+<text x="1367.5" y="413.0" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1574.001 DLL</text>
+<rect x="1347.5" y="436" width="211.2" height="38" rx="5" class="cell" data-tip="T1497 Virtualization/Sandbox Evasion"/>
+<text x="1355.5" y="449" class="t" font-size="12.5" font-weight="600" text-anchor="start" dominant-baseline="central">Virtualization/Sandbox</text>
+<text x="1355.5" y="465" class="t" font-size="12.5" font-weight="600" text-anchor="start" dominant-baseline="central">Evasion</text>
+<text x="1453.125" y="490" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+25 more</text>
+<rect x="1568.8" y="44" width="211.2" height="50" rx="6" class="colhead" data-tip="Defense Impairment (new in April 2026) (TA0112): 18 techniques"/>
+<text x="1674.425" y="61" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Defense Impairment (new</text>
+<text x="1674.425" y="79" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">in April 2026)</text>
+<rect x="1568.8" y="100" width="211.2" height="38" rx="5" class="cell" data-tip="T1685 Disable or Modify Tools"/>
+<text x="1576.8" y="113" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1685 Disable or Modify</text>
+<text x="1576.8" y="129" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Tools</text>
+<rect x="1580.8" y="142" width="199.2" height="38" rx="5" class="cell--sub" data-tip="T1685.001 Disable or Modify Windows Event Log"/>
+<text x="1588.8" y="155" class="t2" font-size="12.5" font-weight="500" text-anchor="start" dominant-baseline="central">T1685.001 Disable or</text>
+<text x="1588.8" y="171" class="t2" font-size="12.5" font-weight="500" text-anchor="start" dominant-baseline="central">Modify Windows Event Log</text>
+<rect x="1580.8" y="184" width="199.2" height="38" rx="5" class="cell--sub" data-tip="T1685.007 Impair Autonomous Defenses"/>
+<text x="1588.8" y="197" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1685.007 Impair</text>
+<text x="1588.8" y="213" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">Autonomous Defenses</text>
+<rect x="1568.8" y="226" width="211.2" height="38" rx="5" class="cell" data-tip="T1686 Disable or Modify System Firewall"/>
+<text x="1576.8" y="239" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1686 Disable or Modify</text>
+<text x="1576.8" y="255" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">System Firewall</text>
+<rect x="1568.8" y="268" width="211.2" height="38" rx="5" class="cell" data-tip="T1688 Safe Mode Boot"/>
+<text x="1576.8" y="287.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1688 Safe Mode Boot</text>
+<rect x="1568.8" y="310" width="211.2" height="38" rx="5" class="cell" data-tip="T1689 Downgrade Attack"/>
+<text x="1576.8" y="329.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1689 Downgrade Attack</text>
+<rect x="1568.8" y="352" width="211.2" height="38" rx="5" class="cell" data-tip="T1690 Prevent Command History Logging"/>
+<text x="1576.8" y="365" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1690 Prevent Command</text>
+<text x="1576.8" y="381" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">History Logging</text>
+<text x="1674.425" y="406" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+13 more</text>
 </g>
 <g data-build="1">
-<rect x="260" y="188" width="108" height="26" rx="4" class="cell--lit" data-tip="step 1: T1078"/>
-<text x="266" y="201.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1078</text>
-<circle cx="262" cy="190" r="11" class="badge--bad"/>
-<text x="262" y="191" class="t-badge" font-size="13" font-weight="700" text-anchor="middle" dominant-baseline="central">1</text>
+<rect x="462.5" y="226" width="211.2" height="38" rx="5" class="cell--lit" data-tip="step 1: T1078"/>
+<text x="470.5" y="245.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1078 Valid Accounts</text>
+<circle cx="464.5" cy="228" r="13" class="badge--bad"/>
+<text x="464.5" y="229" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">1</text>
 </g>
 <g data-build="2">
-<path d="M314.0 201.0L435.0 141.0" class="edge edge--bad draw" pathLength="1"/>
-<rect x="386" y="128" width="98" height="26" rx="4" class="cell--lit" data-tip="step 2: T1059.001"/>
-<text x="392" y="141.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1059.001</text>
-<rect x="734" y="158" width="98" height="26" rx="4" class="cell--lit" data-tip="step 2: T1027.010"/>
-<text x="740" y="171.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1027.010</text>
-<circle cx="388" cy="130" r="11" class="badge--bad"/>
-<text x="388" y="131" class="t-badge" font-size="13" font-weight="700" text-anchor="middle" dominant-baseline="central">2</text>
+<path d="M568.1 245.0L795.4 161.0" class="edge edge--bad draw" pathLength="1"/>
+<rect x="695.8" y="142" width="199.2" height="38" rx="5" class="cell--lit" data-tip="step 2: T1059.001"/>
+<text x="703.8" y="161.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1059.001 PowerShell</text>
+<rect x="1359.5" y="184" width="199.2" height="38" rx="5" class="cell--lit" data-tip="step 2: T1027.010"/>
+<text x="1367.5" y="197" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1027.010 Command</text>
+<text x="1367.5" y="213" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">Obfuscation</text>
+<circle cx="697.8" cy="144" r="13" class="badge--bad"/>
+<text x="697.8" y="145" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">2</text>
 </g>
 <g data-build="3">
-<path d="M435.0 141.0L662.0 111.0" class="edge edge--bad draw" pathLength="1"/>
-<rect x="608" y="98" width="108" height="26" rx="4" class="cell--lit" data-tip="step 3: T1068"/>
-<text x="614" y="111.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1068</text>
-<circle cx="610" cy="100" r="11" class="badge--bad"/>
-<text x="610" y="101" class="t-badge" font-size="13" font-weight="700" text-anchor="middle" dominant-baseline="central">3</text>
+<path d="M795.4 161.0L1231.8 119.0" class="edge edge--bad draw" pathLength="1"/>
+<rect x="1126.2" y="100" width="211.2" height="38" rx="5" class="cell--lit" data-tip="step 3: T1068"/>
+<text x="1134.2" y="113" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1068 Exploitation for</text>
+<text x="1134.2" y="129" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">Privilege Escalation</text>
+<circle cx="1128.2" cy="102" r="13" class="badge--bad"/>
+<text x="1128.2" y="103" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">3</text>
 </g>
 <g data-build="4">
-<path d="M662.0 111.0L894.0 111.0" class="edge edge--bad draw" pathLength="1"/>
-<rect x="840" y="98" width="108" height="26" rx="4" class="cell--lit" data-tip="step 4: T1685"/>
-<text x="846" y="111.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1685</text>
-<circle cx="842" cy="100" r="11" class="badge--bad"/>
-<text x="842" y="101" class="t-badge" font-size="13" font-weight="700" text-anchor="middle" dominant-baseline="central">4</text>
+<path d="M1231.8 119.0L1674.3999999999999 119.0" class="edge edge--bad draw" pathLength="1"/>
+<rect x="1568.8" y="100" width="211.2" height="38" rx="5" class="cell--lit" data-tip="step 4: T1685"/>
+<text x="1576.8" y="113" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1685 Disable or Modify</text>
+<text x="1576.8" y="129" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">Tools</text>
+<circle cx="1570.8" cy="102" r="13" class="badge--bad"/>
+<text x="1570.8" y="103" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">4</text>
 </g>
-<g data-build="5">
-<path d="M894.0 111.0L1474.0 201.0" class="edge edge--bad draw" pathLength="1"/>
-<rect x="1420" y="188" width="108" height="26" rx="4" class="cell--lit" data-tip="step 5: T1105"/>
-<text x="1426" y="201.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1105</text>
-<circle cx="1422" cy="190" r="11" class="badge--bad"/>
-<text x="1422" y="191" class="t-badge" font-size="13" font-weight="700" text-anchor="middle" dominant-baseline="central">5</text>
+</svg></figure><div class="step-captions"><p data-build="0">The matrix, empty — Reconnaissance to Defense Impairment first. Map in pairs: artifacts, tools, techniques and procedures, objective, relevant sensors. Then the mapping lights up one step at a time.</p><p data-build="1">Step 1 — Valid Accounts (T1078): the stolen administrator account.</p><p data-build="2">Step 2 — PowerShell (T1059.001) with Command Obfuscation (T1027.010).</p><p data-build="3">Step 3 — Exploitation for Privilege Escalation (T1068): a legitimate, signed but vulnerable driver loaded, then exploited (BYOVD).</p><p data-build="4">Step 4 — Disable or Modify Tools (T1685): endpoint protection and antivirus disabled from the kernel.</p></div>
+
+<footer class="slide-foot"><span class="eyebrow">ATT&amp;CK as a language for behavior</span><span class="count">18 / 27 · 40–45 minutes</span></footer>
+<aside class="notes"><p class="meta"><b>Slide 18</b> · 40–45 minutes · ATT&amp;CK as a language for behavior</p>
+<h4>Talking points</h4><ul><li>Situation 2 from the ladder, written out and taken further: a PowerShell script, a vulnerable driver, defenses off, a memory-only implant, documents out.</li><li>The only file on disk is a legitimate signed driver; the malicious capability never appears as a malware file (slide 17's BYOVD case inside a full chain).</li><li>Two minutes in pairs with the empty matrix, then reveal the eight steps; reward arguments about the mechanism.</li><li>Three network crossings (driver, implant, upload) and many host events; "no malware file" does not mean no evidence.</li><li>Close the vote in speech: all five are malware; the room answered four different questions; Part 2 asks the fifth.</li></ul>
+<p>This is situation 2 from the opening ladder written out and taken further: the standard tradecraft of 2017–2022 on slide 12 with the BYOVD and defense-impairment moves of 2022–2026 folded in. The only file written to disk is a legitimate, signed driver; the malicious capability, disabling the defenses and the memory-only implant, never appears as a malware file, which is slide 17's benign-driver case inside a full chain. Do not say that no evidence or representation exists: the command is text, the driver load and the kernel tampering raise system events, two downloads and the upload cross the network, and the in-memory implant leaves memory and injection evidence.</p>
+<p>The eight steps on the slide are one defensible mapping, not the only one: the driver abuse could also be tagged under Hijack Execution Flow or a service technique, both downloads are Ingress Tool Transfer (the slide lights it once, at the implant), Process Injection lights in two columns because the same behavior serves two goals, and an upload to a cloud service rather than to the C2 server would be Exfiltration to Cloud Storage instead of Exfiltration Over C2 Channel. Reward pairs who argue about the mechanism; that is the exercise working.</p>
+<p><strong>Close the vote, spoken, nothing on the slide.</strong> After the sixth step, name the five situations from slide 3 from memory. By the working definition from slide 5 all five are malware, because each is a malicious capability in use. What the room disagreed about were four different questions asked with one word: a malware analyst classifies an object, the artifact, what it is; an incident responder cares about the capability, what it can do; a platform engineer cares about control, who holds it and who authorized it; a legal definition needs the objective, whose purpose it serves. The five situations differ in the carrier and the evidence, a file on disk, a command line, bytes in memory, a session under the wrong control, an instruction in data, and the four questions are the vocabulary Part 1 has been using without naming it: the artifact carried the malicious meaning in the executable era, objective was added when the adversary became a campaign, control when access, tokens and vendor channels became the target, and control and objective together once a program acts under delegated authority. Part 2 asks the fifth question, what a sensor can see of any of this, which is the question the vote was really about.</p>
+<h4>Interaction</h4><p>Give pairs two minutes with the empty matrix, then reveal the eight steps with Next and let the room compare. During the debrief, separate “PowerShell” as software from “an inline command retrieved and executed content” as a procedure.</p>
+<p class="transition">“That is Part 1: how malware and malicious capabilities evolved. Part 2 asks how the pipelines that detect them were built, and how they had to change.”</p></aside>
+</section>
+<section class="slide slide--diagram slide--cont" id="s18b" data-id="s18b" data-part="1" data-steps="4" data-number="18">
+<h2 class="slide-title">Map an attack with no malware file <span class="cont">continued</span></h2><blockquote class="callout"><p>The same scenario, continued: the memory-only implant is downloaded and injected into explorer.exe; it enumerates documents, compresses selected content, and uploads it over HTTPS.</p></blockquote>
+<figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 534" role="img" aria-label="The Enterprise ATT&CK matrix, second half, Stealth to Impact, with the scenario continuing: ingress tool transfer, process injection and reflective code loading, discovery and collection, web protocols and exfiltration over the C2 channel" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<defs>
+  <marker id="arrow-attack-fileless-2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
+  <marker id="arrow-bad-attack-fileless-2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
+  <marker id="arrow-good-attack-fileless-2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
+</defs>
+<g data-build="0">
+<text x="20" y="18" class="t2" font-size="17" font-weight="500" text-anchor="start" dominant-baseline="central">Enterprise v20.0 (13 October 2026): 15 tactics, 227 techniques, 479 sub-techniques · hover a cell for its name</text>
+<rect x="20.0" y="44" width="186.7" height="50" rx="6" class="colhead" data-tip="Stealth (Defense Evasion until April 2026) (TA0005): 31 techniques"/>
+<text x="113.33333333333333" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Stealth</text>
+<rect x="20.0" y="100" width="186.7" height="38" rx="5" class="cell" data-tip="T1620 Reflective Code Loading"/>
+<text x="28.0" y="113" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1620 Reflective Code</text>
+<text x="28.0" y="129" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Loading</text>
+<rect x="20.0" y="142" width="186.7" height="38" rx="5" class="cell" data-tip="T1027 Obfuscated Files or Information"/>
+<text x="28.0" y="155" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1027 Obfuscated</text>
+<text x="28.0" y="171" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Files or Information</text>
+<rect x="32.0" y="184" width="174.7" height="38" rx="5" class="cell--sub" data-tip="T1027.010 Command Obfuscation"/>
+<text x="40.0" y="197" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1027.010 Command</text>
+<text x="40.0" y="213" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">Obfuscation</text>
+<rect x="32.0" y="226" width="174.7" height="38" rx="5" class="cell--sub" data-tip="T1027.002 Software Packing"/>
+<text x="40.0" y="239" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1027.002 Software</text>
+<text x="40.0" y="255" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">Packing</text>
+<rect x="20.0" y="268" width="186.7" height="38" rx="5" class="cell" data-tip="T1218 System Binary Proxy Execution"/>
+<text x="28.0" y="281" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1218 System Binary</text>
+<text x="28.0" y="297" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Proxy Execution</text>
+<rect x="20.0" y="310" width="186.7" height="38" rx="5" class="cell" data-tip="T1055 Process Injection"/>
+<text x="28.0" y="323" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1055 Process</text>
+<text x="28.0" y="339" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Injection</text>
+<rect x="20.0" y="352" width="186.7" height="38" rx="5" class="cell" data-tip="T1574 Hijack Execution Flow"/>
+<text x="28.0" y="365" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1574 Hijack</text>
+<text x="28.0" y="381" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Execution Flow</text>
+<rect x="32.0" y="394" width="174.7" height="38" rx="5" class="cell--sub" data-tip="T1574.001 DLL"/>
+<text x="40.0" y="413.0" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1574.001 DLL</text>
+<rect x="20.0" y="436" width="186.7" height="38" rx="5" class="cell" data-tip="T1497 Virtualization/Sandbox Evasion"/>
+<text x="28.0" y="449" class="t" font-size="12.5" font-weight="600" text-anchor="start" dominant-baseline="central">Virtualization/Sandbox</text>
+<text x="28.0" y="465" class="t" font-size="12.5" font-weight="600" text-anchor="start" dominant-baseline="central">Evasion</text>
+<text x="113.33333333333333" y="490" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+25 more</text>
+<rect x="216.7" y="44" width="186.7" height="50" rx="6" class="colhead" data-tip="Defense Impairment (new in April 2026) (TA0112): 18 techniques"/>
+<text x="310.0333333333333" y="61" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Defense Impairment</text>
+<text x="310.0333333333333" y="79" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">(new in April 2026)</text>
+<rect x="216.7" y="100" width="186.7" height="38" rx="5" class="cell" data-tip="T1685 Disable or Modify Tools"/>
+<text x="224.7" y="113" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1685 Disable or</text>
+<text x="224.7" y="129" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Modify Tools</text>
+<rect x="228.7" y="142" width="174.7" height="38" rx="5" class="cell--sub" data-tip="T1685.001 Disable or Modify Windows Event Log"/>
+<text x="236.7" y="155" class="t2" font-size="12.5" font-weight="500" text-anchor="start" dominant-baseline="central">Disable or Modify</text>
+<text x="236.7" y="171" class="t2" font-size="12.5" font-weight="500" text-anchor="start" dominant-baseline="central">Windows Event Log</text>
+<rect x="228.7" y="184" width="174.7" height="38" rx="5" class="cell--sub" data-tip="T1685.007 Impair Autonomous Defenses"/>
+<text x="236.7" y="197" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1685.007 Impair</text>
+<text x="236.7" y="213" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">Autonomous Defenses</text>
+<rect x="216.7" y="226" width="186.7" height="38" rx="5" class="cell" data-tip="T1686 Disable or Modify System Firewall"/>
+<text x="224.7" y="239" class="t" font-size="12.5" font-weight="600" text-anchor="start" dominant-baseline="central">T1686 Disable or Modify</text>
+<text x="224.7" y="255" class="t" font-size="12.5" font-weight="600" text-anchor="start" dominant-baseline="central">System Firewall</text>
+<rect x="216.7" y="268" width="186.7" height="38" rx="5" class="cell" data-tip="T1688 Safe Mode Boot"/>
+<text x="224.7" y="287.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1688 Safe Mode Boot</text>
+<rect x="216.7" y="310" width="186.7" height="38" rx="5" class="cell" data-tip="T1689 Downgrade Attack"/>
+<text x="224.7" y="323" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1689 Downgrade</text>
+<text x="224.7" y="339" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Attack</text>
+<rect x="216.7" y="352" width="186.7" height="38" rx="5" class="cell" data-tip="T1690 Prevent Command History Logging"/>
+<text x="224.7" y="365" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1690 Prevent Command</text>
+<text x="224.7" y="381" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">History Logging</text>
+<text x="310.0333333333333" y="406" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+13 more</text>
+<rect x="413.3" y="44" width="186.7" height="50" rx="6" class="colhead" data-tip="Credential Access (TA0006): 18 techniques"/>
+<text x="506.6333333333333" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Credential Access</text>
+<rect x="413.3" y="100" width="186.7" height="38" rx="5" class="cell" data-tip="T1003 OS Credential Dumping"/>
+<text x="421.3" y="113" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1003 OS Credential</text>
+<text x="421.3" y="129" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Dumping</text>
+<rect x="413.3" y="142" width="186.7" height="38" rx="5" class="cell" data-tip="T1110 Brute Force"/>
+<text x="421.3" y="161.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1110 Brute Force</text>
+<rect x="413.3" y="184" width="186.7" height="38" rx="5" class="cell" data-tip="T1555 Credentials from Password Stores"/>
+<text x="421.3" y="197" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1555 Credentials</text>
+<text x="421.3" y="213" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">from Password Stores</text>
+<rect x="413.3" y="226" width="186.7" height="38" rx="5" class="cell" data-tip="T1539 Steal Web Session Cookie"/>
+<text x="421.3" y="239" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1539 Steal Web</text>
+<text x="421.3" y="255" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Session Cookie</text>
+<rect x="413.3" y="268" width="186.7" height="38" rx="5" class="cell" data-tip="T1621 Multi-Factor Authentication Request Generation"/>
+<text x="421.3" y="281" class="t" font-size="12.5" font-weight="600" text-anchor="start" dominant-baseline="central">Multi-Factor</text>
+<text x="421.3" y="297" class="t" font-size="12.5" font-weight="600" text-anchor="start" dominant-baseline="central">Authentication Request</text>
+<rect x="413.3" y="310" width="186.7" height="38" rx="5" class="cell" data-tip="T1528 Steal Application Access Token"/>
+<text x="421.3" y="323" class="t" font-size="12.5" font-weight="600" text-anchor="start" dominant-baseline="central">T1528 Steal Application</text>
+<text x="421.3" y="339" class="t" font-size="12.5" font-weight="600" text-anchor="start" dominant-baseline="central">Access Token</text>
+<text x="506.6333333333333" y="364" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+12 more</text>
+<rect x="610.0" y="44" width="186.7" height="50" rx="6" class="colhead" data-tip="Discovery (TA0007): 34 techniques"/>
+<text x="703.3333333333334" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Discovery</text>
+<rect x="610.0" y="100" width="186.7" height="38" rx="5" class="cell" data-tip="T1082 System Information Discovery"/>
+<text x="618.0" y="113" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1082 System</text>
+<text x="618.0" y="129" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Information Discovery</text>
+<rect x="610.0" y="142" width="186.7" height="38" rx="5" class="cell" data-tip="T1083 File and Directory Discovery"/>
+<text x="618.0" y="155" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1083 File and</text>
+<text x="618.0" y="171" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Directory Discovery</text>
+<rect x="610.0" y="184" width="186.7" height="38" rx="5" class="cell" data-tip="T1087 Account Discovery"/>
+<text x="618.0" y="197" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1087 Account</text>
+<text x="618.0" y="213" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Discovery</text>
+<rect x="610.0" y="226" width="186.7" height="38" rx="5" class="cell" data-tip="T1018 Remote System Discovery"/>
+<text x="618.0" y="239" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1018 Remote System</text>
+<text x="618.0" y="255" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Discovery</text>
+<rect x="610.0" y="268" width="186.7" height="38" rx="5" class="cell" data-tip="T1046 Network Service Discovery"/>
+<text x="618.0" y="281" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1046 Network Service</text>
+<text x="618.0" y="297" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Discovery</text>
+<text x="703.3333333333334" y="322" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+29 more</text>
+<rect x="806.7" y="44" width="186.7" height="50" rx="6" class="colhead" data-tip="Lateral Movement (TA0008): 9 techniques"/>
+<text x="900.0333333333334" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Lateral Movement</text>
+<rect x="806.7" y="100" width="186.7" height="38" rx="5" class="cell" data-tip="T1021 Remote Services"/>
+<text x="814.7" y="119.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1021 Remote Services</text>
+<rect x="818.7" y="142" width="174.7" height="38" rx="5" class="cell--sub" data-tip="T1021.001 Remote Desktop Protocol"/>
+<text x="826.7" y="155" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1021.001 Remote</text>
+<text x="826.7" y="171" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">Desktop Protocol</text>
+<rect x="818.7" y="184" width="174.7" height="38" rx="5" class="cell--sub" data-tip="T1021.002 SMB/Windows Admin Shares"/>
+<text x="826.7" y="197" class="t2" font-size="12.5" font-weight="500" text-anchor="start" dominant-baseline="central">T1021.002 SMB/Windows</text>
+<text x="826.7" y="213" class="t2" font-size="12.5" font-weight="500" text-anchor="start" dominant-baseline="central">Admin Shares</text>
+<rect x="818.7" y="226" width="174.7" height="38" rx="5" class="cell--sub" data-tip="T1021.006 Windows Remote Management"/>
+<text x="826.7" y="239" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1021.006 Windows</text>
+<text x="826.7" y="255" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">Remote Management</text>
+<rect x="806.7" y="268" width="186.7" height="38" rx="5" class="cell" data-tip="T1570 Lateral Tool Transfer"/>
+<text x="814.7" y="281" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1570 Lateral Tool</text>
+<text x="814.7" y="297" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Transfer</text>
+<rect x="806.7" y="310" width="186.7" height="38" rx="5" class="cell" data-tip="T1550 Use Alternate Authentication Material"/>
+<text x="814.7" y="323" class="t" font-size="12.5" font-weight="600" text-anchor="start" dominant-baseline="central">T1550 Use Alternate</text>
+<text x="814.7" y="339" class="t" font-size="12.5" font-weight="600" text-anchor="start" dominant-baseline="central">Authentication Material</text>
+<rect x="806.7" y="352" width="186.7" height="38" rx="5" class="cell" data-tip="T1080 Taint Shared Content"/>
+<text x="814.7" y="365" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1080 Taint Shared</text>
+<text x="814.7" y="381" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Content</text>
+<text x="900.0333333333334" y="406" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+5 more</text>
+<rect x="1003.3" y="44" width="186.7" height="50" rx="6" class="colhead" data-tip="Collection (TA0009): 17 techniques"/>
+<text x="1096.6333333333332" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Collection</text>
+<rect x="1003.3" y="100" width="186.7" height="38" rx="5" class="cell" data-tip="T1005 Data from Local System"/>
+<text x="1011.3" y="113" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1005 Data from Local</text>
+<text x="1011.3" y="129" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">System</text>
+<rect x="1003.3" y="142" width="186.7" height="38" rx="5" class="cell" data-tip="T1560 Archive Collected Data"/>
+<text x="1011.3" y="155" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1560 Archive</text>
+<text x="1011.3" y="171" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Collected Data</text>
+<rect x="1003.3" y="184" width="186.7" height="38" rx="5" class="cell" data-tip="T1114 Email Collection"/>
+<text x="1011.3" y="197" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1114 Email</text>
+<text x="1011.3" y="213" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Collection</text>
+<rect x="1003.3" y="226" width="186.7" height="38" rx="5" class="cell" data-tip="T1074 Data Staged"/>
+<text x="1011.3" y="245.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1074 Data Staged</text>
+<rect x="1003.3" y="268" width="186.7" height="38" rx="5" class="cell" data-tip="T1113 Screen Capture"/>
+<text x="1011.3" y="287.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1113 Screen Capture</text>
+<rect x="1003.3" y="310" width="186.7" height="38" rx="5" class="cell" data-tip="T1039 Data from Network Shared Drive"/>
+<text x="1011.3" y="323" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1039 Data from</text>
+<text x="1011.3" y="339" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Network Shared Drive</text>
+<text x="1096.6333333333332" y="364" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+11 more</text>
+<rect x="1200.0" y="44" width="186.7" height="50" rx="6" class="colhead" data-tip="Command and Control (TA0011): 18 techniques"/>
+<text x="1293.3333333333333" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Command and Control</text>
+<rect x="1200.0" y="100" width="186.7" height="38" rx="5" class="cell" data-tip="T1071 Application Layer Protocol"/>
+<text x="1208.0" y="113" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1071 Application</text>
+<text x="1208.0" y="129" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Layer Protocol</text>
+<rect x="1212.0" y="142" width="174.7" height="38" rx="5" class="cell--sub" data-tip="T1071.001 Web Protocols"/>
+<text x="1220.0" y="155" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">T1071.001 Web</text>
+<text x="1220.0" y="171" class="t2" font-size="14" font-weight="500" text-anchor="start" dominant-baseline="central">Protocols</text>
+<rect x="1200.0" y="184" width="186.7" height="38" rx="5" class="cell" data-tip="T1573 Encrypted Channel"/>
+<text x="1208.0" y="197" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1573 Encrypted</text>
+<text x="1208.0" y="213" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Channel</text>
+<rect x="1200.0" y="226" width="186.7" height="38" rx="5" class="cell" data-tip="T1105 Ingress Tool Transfer"/>
+<text x="1208.0" y="239" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1105 Ingress Tool</text>
+<text x="1208.0" y="255" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Transfer</text>
+<rect x="1200.0" y="268" width="186.7" height="38" rx="5" class="cell" data-tip="T1219 Remote Access Tools"/>
+<text x="1208.0" y="281" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1219 Remote Access</text>
+<text x="1208.0" y="297" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Tools</text>
+<rect x="1200.0" y="310" width="186.7" height="38" rx="5" class="cell" data-tip="T1572 Protocol Tunneling"/>
+<text x="1208.0" y="323" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1572 Protocol</text>
+<text x="1208.0" y="339" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Tunneling</text>
+<rect x="1200.0" y="352" width="186.7" height="38" rx="5" class="cell" data-tip="T1090 Proxy"/>
+<text x="1208.0" y="371.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1090 Proxy</text>
+<text x="1293.3333333333333" y="406" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+12 more</text>
+<rect x="1396.7" y="44" width="186.7" height="50" rx="6" class="colhead" data-tip="Exfiltration (TA0010): 10 techniques"/>
+<text x="1490.0333333333333" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Exfiltration</text>
+<rect x="1396.7" y="100" width="186.7" height="38" rx="5" class="cell" data-tip="T1041 Exfiltration Over C2 Channel"/>
+<text x="1404.7" y="113" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1041 Exfiltration</text>
+<text x="1404.7" y="129" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Over C2 Channel</text>
+<rect x="1396.7" y="142" width="186.7" height="38" rx="5" class="cell" data-tip="T1567 Exfiltration Over Web Service"/>
+<text x="1404.7" y="155" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1567 Exfiltration</text>
+<text x="1404.7" y="171" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Over Web Service</text>
+<rect x="1408.7" y="184" width="174.7" height="38" rx="5" class="cell--sub" data-tip="T1567.002 Exfiltration to Cloud Storage"/>
+<text x="1416.7" y="197" class="t2" font-size="12.5" font-weight="500" text-anchor="start" dominant-baseline="central">T1567.002 Exfiltration</text>
+<text x="1416.7" y="213" class="t2" font-size="12.5" font-weight="500" text-anchor="start" dominant-baseline="central">to Cloud Storage</text>
+<rect x="1396.7" y="226" width="186.7" height="38" rx="5" class="cell" data-tip="T1048 Exfiltration Over Alternative Protocol"/>
+<text x="1404.7" y="239" class="t" font-size="12.5" font-weight="600" text-anchor="start" dominant-baseline="central">T1048 Exfiltration Over</text>
+<text x="1404.7" y="255" class="t" font-size="12.5" font-weight="600" text-anchor="start" dominant-baseline="central">Alternative Protocol</text>
+<rect x="1396.7" y="268" width="186.7" height="38" rx="5" class="cell" data-tip="T1030 Data Transfer Size Limits"/>
+<text x="1404.7" y="281" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1030 Data Transfer</text>
+<text x="1404.7" y="297" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Size Limits</text>
+<rect x="1396.7" y="310" width="186.7" height="38" rx="5" class="cell" data-tip="T1029 Scheduled Transfer"/>
+<text x="1404.7" y="323" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1029 Scheduled</text>
+<text x="1404.7" y="339" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Transfer</text>
+<text x="1490.0333333333333" y="364" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+5 more</text>
+<rect x="1593.3" y="44" width="186.7" height="50" rx="6" class="colhead" data-tip="Impact (TA0040): 15 techniques"/>
+<text x="1686.6333333333332" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Impact</text>
+<rect x="1593.3" y="100" width="186.7" height="38" rx="5" class="cell" data-tip="T1486 Data Encrypted for Impact"/>
+<text x="1601.3" y="113" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1486 Data Encrypted</text>
+<text x="1601.3" y="129" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">for Impact</text>
+<rect x="1593.3" y="142" width="186.7" height="38" rx="5" class="cell" data-tip="T1490 Inhibit System Recovery"/>
+<text x="1601.3" y="155" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1490 Inhibit System</text>
+<text x="1601.3" y="171" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Recovery</text>
+<rect x="1593.3" y="184" width="186.7" height="38" rx="5" class="cell" data-tip="T1489 Service Stop"/>
+<text x="1601.3" y="203.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1489 Service Stop</text>
+<rect x="1593.3" y="226" width="186.7" height="38" rx="5" class="cell" data-tip="T1485 Data Destruction"/>
+<text x="1601.3" y="239" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1485 Data</text>
+<text x="1601.3" y="255" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">Destruction</text>
+<rect x="1593.3" y="268" width="186.7" height="38" rx="5" class="cell" data-tip="T1657 Financial Theft"/>
+<text x="1601.3" y="287.0" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1657 Financial Theft</text>
+<rect x="1593.3" y="310" width="186.7" height="38" rx="5" class="cell" data-tip="T1498 Network Denial of Service"/>
+<text x="1601.3" y="323" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">T1498 Network Denial</text>
+<text x="1601.3" y="339" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">of Service</text>
+<text x="1686.6333333333332" y="364" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+9 more</text>
 </g>
-<g data-build="6">
-<path d="M1474.0 201.0L778.0 261.0" class="edge edge--bad draw" pathLength="1"/>
-<rect x="724" y="248" width="108" height="26" rx="4" class="cell--lit" data-tip="step 6: T1055"/>
-<text x="730" y="261.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1055</text>
-<rect x="608" y="158" width="108" height="26" rx="4" class="cell--lit" data-tip="step 6: T1055"/>
-<text x="614" y="171.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1055</text>
-<rect x="724" y="98" width="108" height="26" rx="4" class="cell--lit" data-tip="step 6: T1620"/>
-<text x="730" y="111.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1620</text>
-<circle cx="726" cy="250" r="11" class="badge--bad"/>
-<text x="726" y="251" class="t-badge" font-size="13" font-weight="700" text-anchor="middle" dominant-baseline="central">6</text>
+<g data-build="1">
+<rect x="1200.0" y="226" width="186.7" height="38" rx="5" class="cell--lit" data-tip="step 5: T1105"/>
+<text x="1208.0" y="239" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1105 Ingress Tool</text>
+<text x="1208.0" y="255" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">Transfer</text>
+<circle cx="1202.0" cy="228" r="13" class="badge--bad"/>
+<text x="1202.0" y="229" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">5</text>
 </g>
-<g data-build="7">
-<path d="M778.0 261.0L1126.0 141.0" class="edge edge--bad draw" pathLength="1"/>
-<rect x="1072" y="128" width="108" height="26" rx="4" class="cell--lit" data-tip="step 7: T1083"/>
-<text x="1078" y="141.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1083</text>
-<rect x="1304" y="98" width="108" height="26" rx="4" class="cell--lit" data-tip="step 7: T1005"/>
-<text x="1310" y="111.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1005</text>
-<rect x="1304" y="128" width="108" height="26" rx="4" class="cell--lit" data-tip="step 7: T1560"/>
-<text x="1310" y="141.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1560</text>
-<circle cx="1074" cy="130" r="11" class="badge--bad"/>
-<text x="1074" y="131" class="t-badge" font-size="13" font-weight="700" text-anchor="middle" dominant-baseline="central">7</text>
+<g data-build="2">
+<path d="M1293.35 245.0L113.35 329.0" class="edge edge--bad draw" pathLength="1"/>
+<rect x="20.0" y="310" width="186.7" height="38" rx="5" class="cell--lit" data-tip="step 6: T1055"/>
+<text x="28.0" y="323" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1055 Process</text>
+<text x="28.0" y="339" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">Injection</text>
+<rect x="20.0" y="100" width="186.7" height="38" rx="5" class="cell--lit" data-tip="step 6: T1620"/>
+<text x="28.0" y="113" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1620 Reflective Code</text>
+<text x="28.0" y="129" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">Loading</text>
+<circle cx="22.0" cy="312" r="13" class="badge--bad"/>
+<text x="22.0" y="313" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">6</text>
 </g>
-<g data-build="8">
-<path d="M1126.0 141.0L1479.0 141.0" class="edge edge--bad draw" pathLength="1"/>
-<rect x="1430" y="128" width="98" height="26" rx="4" class="cell--lit" data-tip="step 8: T1071.001"/>
-<text x="1436" y="141.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1071.001</text>
-<rect x="1536" y="98" width="108" height="26" rx="4" class="cell--lit" data-tip="step 8: T1041"/>
-<text x="1542" y="111.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1041</text>
-<circle cx="1432" cy="130" r="11" class="badge--bad"/>
-<text x="1432" y="131" class="t-badge" font-size="13" font-weight="700" text-anchor="middle" dominant-baseline="central">8</text>
+<g data-build="3">
+<path d="M113.35 329.0L703.35 161.0" class="edge edge--bad draw" pathLength="1"/>
+<rect x="610.0" y="142" width="186.7" height="38" rx="5" class="cell--lit" data-tip="step 7: T1083"/>
+<text x="618.0" y="155" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1083 File and</text>
+<text x="618.0" y="171" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">Directory Discovery</text>
+<rect x="1003.3" y="100" width="186.7" height="38" rx="5" class="cell--lit" data-tip="step 7: T1005"/>
+<text x="1011.3" y="113" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1005 Data from Local</text>
+<text x="1011.3" y="129" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">System</text>
+<rect x="1003.3" y="142" width="186.7" height="38" rx="5" class="cell--lit" data-tip="step 7: T1560"/>
+<text x="1011.3" y="155" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1560 Archive</text>
+<text x="1011.3" y="171" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">Collected Data</text>
+<circle cx="612.0" cy="144" r="13" class="badge--bad"/>
+<text x="612.0" y="145" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">7</text>
 </g>
-</svg></figure><div class="step-captions"><p data-build="0">The matrix, empty. Map in pairs: artifacts, tools, techniques and procedures, objective, relevant sensors. Then the mapping lights up one step at a time.</p><p data-build="1">Valid Accounts (T1078): the stolen administrator account.</p><p data-build="2">PowerShell (T1059.001) with Command Obfuscation (T1027.010).</p><p data-build="3">Exploitation for Privilege Escalation (T1068): a legitimate, signed but vulnerable driver loaded, then exploited (BYOVD).</p><p data-build="4">Disable or Modify Tools (T1685): endpoint protection and antivirus disabled from the kernel.</p><p data-build="5">Ingress Tool Transfer (T1105): the memory-only implant downloaded, visible to a network sensor.</p><p data-build="6">Process Injection (T1055), lit in two columns because the same behavior serves two goals, and Reflective Code Loading (T1620): into explorer.exe, in memory.</p><p data-build="7">File and Directory Discovery (T1083), Data from Local System (T1005), Archive Collected Data (T1560).</p><p data-build="8">Web Protocols (T1071.001), Exfiltration Over C2 Channel (T1041): the upload, visible to a network sensor.</p></div>
+<g data-build="4">
+<path d="M703.35 161.0L1299.35 161.0" class="edge edge--bad draw" pathLength="1"/>
+<rect x="1212.0" y="142" width="174.7" height="38" rx="5" class="cell--lit" data-tip="step 8: T1071.001"/>
+<text x="1220.0" y="155" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1071.001 Web</text>
+<text x="1220.0" y="171" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">Protocols</text>
+<rect x="1396.7" y="100" width="186.7" height="38" rx="5" class="cell--lit" data-tip="step 8: T1041"/>
+<text x="1404.7" y="113" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1041 Exfiltration</text>
+<text x="1404.7" y="129" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">Over C2 Channel</text>
+<circle cx="1214.0" cy="144" r="13" class="badge--bad"/>
+<text x="1214.0" y="145" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">8</text>
+</g>
+</svg></figure><div class="step-captions"><p data-build="0">The second half, Stealth to Impact. The chain continues from the kernel.</p><p data-build="1">Step 5 — Ingress Tool Transfer (T1105): the memory-only implant downloaded, visible to a network sensor.</p><p data-build="2">Step 6 — Process Injection (T1055) and Reflective Code Loading (T1620): into explorer.exe, in memory. ATT&amp;CK lists injection under Privilege Escalation too; the same behavior serves two goals.</p><p data-build="3">Step 7 — File and Directory Discovery (T1083), Data from Local System (T1005), Archive Collected Data (T1560).</p><p data-build="4">Step 8 — Web Protocols (T1071.001), Exfiltration Over C2 Channel (T1041): the upload, visible to a network sensor.</p></div>
 
 <footer class="slide-foot"><span class="eyebrow">ATT&amp;CK as a language for behavior</span><span class="count">18 / 27 · 40–45 minutes</span></footer>
 <aside class="notes"><p class="meta"><b>Slide 18</b> · 40–45 minutes · ATT&amp;CK as a language for behavior</p>

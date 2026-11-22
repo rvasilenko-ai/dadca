@@ -6,18 +6,26 @@
 ## On-slide content
 Tactic: why the adversary acts. Technique: what behavior achieves it. Sub-technique: a specific form. Procedure: how a given actor or tool did it.
 
-![The Enterprise ATT&CK matrix, schematic: 15 tactic columns in attack order with a few real techniques each and the true per-tactic counts, the Execution column expanded to the sub-technique level; then a classic trojan lit as a path of seven techniques across seven tactics](../figures/attack-matrix.svg)
+![The Enterprise ATT&CK matrix, schematic, first half: Reconnaissance to Defense Impairment, a few real techniques per column with their names and the true per-tactic counts, Execution expanded to the sub-technique level; a classic trojan lit as a path, steps one to five](../figures/attack-matrix-1.svg)
 
 Build, one step per click:
 
-0. The Enterprise matrix, schematic: 15 tactics as columns in attack order (Defense Evasion became Stealth and Defense Impairment in April 2026), a few real techniques per column with the true per-tactic counts; hover a cell for its name. Execution is expanded under Command and Scripting Interpreter to the sub-technique level: PowerShell, Windows Command Shell, Visual Basic, JavaScript.
-1. A classic trojan of the first two periods, as a path. Initial Access: Spearphishing Attachment (T1566.001).
-2. Execution: User Execution, Malicious File (T1204.002).
-3. Stealth: Software Packing (T1027.002).
-4. Stealth: Process Injection (T1055).
-5. Persistence: Registry Run Keys (T1547.001).
-6. Command and Control: Web Protocols (T1071.001).
-7. Impact: Data Encrypted for Impact (T1486).
+0. The Enterprise matrix, schematic, in two halves. First, Reconnaissance to Defense Impairment: a few real techniques per column with the true per-tactic counts (Defense Evasion became Stealth and Defense Impairment in April 2026); Execution is expanded under Command and Scripting Interpreter to the sub-technique level. Hover a cell for its full name.
+1. A classic trojan of the first two periods, as a path. Step 1 — Initial Access: Spearphishing Attachment (T1566.001).
+2. Step 2 — Execution: User Execution, Malicious File (T1204.002).
+3. Step 3 — Stealth: Software Packing (T1027.002).
+4. Step 4 — Stealth: Process Injection (T1055).
+5. Step 5 — Persistence: Registry Run Keys (T1547.001).
+
+---
+
+![The Enterprise ATT&CK matrix, schematic, second half: Credential Access to Impact; the trojan path continues with steps six and seven](../figures/attack-matrix-2.svg)
+
+Build, one step per click:
+
+0. The second half: Credential Access to Impact. The trojan's path continues here.
+1. Step 6 — Command and Control: Web Protocols (T1071.001).
+2. Step 7 — Impact: Data Encrypted for Impact (T1486).
 
 > “Trojan” says less than this path: seven techniques across seven tactics, no family name, and every lit cell is a place a sensor could look.
 

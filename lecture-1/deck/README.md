@@ -34,7 +34,7 @@ Every figure is an SVG with `data-build` groups that the runtime reveals one cli
 - **Slide 9:** the 2000–2026 timeline, five lanes, every event a dot with its date and detail on hover, the anchors labelled; the four period bands light one at a time, and clicking a period name jumps to its slide.
 - **Slides 10–13:** one period zoomed, key events labelled; the five tracks light in turn with their headlines; the detail table follows as a continuation page.
 - **Slide 14:** the six breaks as bars on the axis, one per click, then the malware-free share inset; the table follows as a continuation page.
-- **Slides 16 and 18:** a schematic Enterprise ATT&CK matrix built from `tools/data.py` (15 tactic columns, v20.0 counts, a few real techniques each, the sub-technique level under Execution; hover a cell for its name). On 16 a classic trojan lights as a numbered path; on 18 the recurring scenario, step by step.
+- **Slides 16 and 18:** a schematic Enterprise ATT&CK matrix built from `tools/data.py` (v20.0 counts, a few real techniques each with their names, the sub-technique level under Execution; hover a cell for its full name), shown in two halves so the cells read from the back of the room: each slide is two pages, Reconnaissance to Defense Impairment, then the rest. On 16 a classic trojan lights as a numbered path across both pages; on 18 the recurring scenario, steps 1–4 on the first page and 5–8 on the second.
 - **Slide 17:** the two benign-file cards, then the verdict.
 - **Slides 20, 21, 23, 24:** the eight-stage pipeline strip; each click lights a stage (or, on 24, the stage a change broke) with its caption; the full tables follow as continuation pages.
 - **Slide 25:** the strip again; each click lights a stage and lists its options, one per line with what each captures; the full menu with what each misses is in the presenter notes.
@@ -56,7 +56,7 @@ Open `index.html` in Chrome and print to PDF (landscape, no margins). Every buil
 Each slide is one markdown file, `slides/NN-slug.md`, numbered in presentation order:
 
 - `# Slide N — Title` as its first line, then `**Timing:** a–b minutes` and `**Module:** …`;
-- `## On-slide content`: a markdown subset (paragraphs, lists, tables, `>` callouts), a figure as `![alt](../figures/name.svg)`, and a `Build, one step per click:` numbered list whose items are the captions, one per build step (item 0 shows before the first click). A callout written before a table stays on the slide; the table and anything after it move to continuation pages;
+- `## On-slide content`: a markdown subset (paragraphs, lists, tables, `>` callouts), a figure as `![alt](../figures/name.svg)`, and a `Build, one step per click:` numbered list whose items are the captions, one per build step (item 0 shows before the first click; an indented `- ` line under an item is a sub-item on its own line). A callout written before a table stays on the slide; the table and anything after it move to continuation pages. A line with only `---` is a page break: what follows renders as a second page of the same slide (`#/s18b`), with its own figure and captions;
 - `## Talking points`, `## Speaker notes`, optionally `## Interaction`, then `## Transition` and `## Sources`.
 
 Slides 5 and 19 are the part dividers: their `##` heading is the title, the first `>` line the lead, the Minutes | Module table the chips.

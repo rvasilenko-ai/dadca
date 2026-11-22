@@ -204,59 +204,78 @@ def breaks_timeline():
 
 
 # ---------------------------------------------------------------- slides 16 and 18: the ATT&CK matrix
-def attack_matrix(aria, path, lead):
-    """The schematic Enterprise matrix; `path` is a list of steps, each a list of (technique id, tactic id)
-    cells that light together, in order."""
-    tactics = ATTACK["tactics"]
-    W = 1800
-    col_w, x0, top, head_h, row_h = 116, 24, 44, 50, 30
-    cols = []
+def cell_lines(tid, name, inner_w):
+    """The text for a matrix cell, at most two lines: id and name at 14px, smaller if needed, name alone if still long."""
+    for size in (14, 12.5):
+        lines = wrap(f"{tid} {name}", int(inner_w / (size * 0.58)))
+        if len(lines) <= 2:
+            return lines, size
+    lines = wrap(name, int(inner_w / (12.5 * 0.58)))
+    return lines[:2], 12.5
+
+
+def attack_matrix(aria, path, lead, cols, steps):
+    """The schematic Enterprise matrix for the tactic columns cols[0]:cols[1], with technique names in the cells.
+    `path` is the whole lit path, a list of steps, each a list of (technique id, tactic id) cells; `steps` are the
+    1-based step numbers lit on this half, each as its own build, numbered as in the whole path."""
+    tactics = ATTACK["tactics"][cols[0]:cols[1]]
+    W, n, x0, gap = 1800, len(tactics), 20, 10
+    col_w = (W - 2 * x0 - (n - 1) * gap) / n
+    top, head_h, row_h = 44, 50, 42
+    cols_rows = []
     for t in tactics:
         rows = []
         for tech in t["techniques"]:
             rows.append((tech["id"], tech["name"], False))
             for sub in tech.get("subs", []):
                 rows.append((sub["id"], sub["name"], True))
-        cols.append(rows)
-    max_rows = max(len(r) for r in cols)
-    H = top + head_h + max_rows * row_h + 56
+        cols_rows.append(rows)
+    max_rows = max(len(r) for r in cols_rows)
+    H = top + head_h + 6 + max_rows * row_h + 56
     s = head(W, H, aria)
     s += '<g data-build="0">\n' + text(x0, 18, esc(lead), 17, 500, "t2")
     centers = {}
-    for c, (t, rows) in enumerate(zip(tactics, cols)):
-        x = x0 + c * col_w + 4
-        s += rect(x, top, col_w - 8, head_h, "colhead", rx=6, tip=f'{t["name"]} ({t["id"]}): {t["count"]} techniques')
-        short = t["short"].split(" ")
-        if len(t["short"]) > 12 and len(short) > 1:
-            cut = len(short) // 2
-            s += text(x + (col_w - 8) / 2, top + 16, esc(" ".join(short[:cut])), 14, 700, "t", "middle")
-            s += text(x + (col_w - 8) / 2, top + 34, esc(" ".join(short[cut:])), 14, 700, "t", "middle")
+
+    def cell_text(x, y, lines, size, cls, weight):
+        if len(lines) == 1:
+            return text(x + 8, y + (row_h - 4) / 2, esc(lines[0]), size, weight, cls)
+        return text(x + 8, y + 13, esc(lines[0]), size, weight, cls) + text(x + 8, y + 29, esc(lines[1]), size, weight, cls)
+
+    for c, (t, rows) in enumerate(zip(tactics, cols_rows)):
+        x = round(x0 + c * (col_w + gap), 1)
+        s += rect(x, top, round(col_w, 1), head_h, "colhead", rx=6, tip=f'{t["name"]} ({t["id"]}): {t["count"]} techniques')
+        hl = wrap(t["name"], int((col_w - 16) / (15 * 0.56)))
+        if len(hl) > 2:
+            hl = wrap(t["short"], 40)
+        if len(hl) == 1:
+            s += text(x + col_w / 2, top + head_h / 2, esc(hl[0]), 15, 700, "t", "middle")
         else:
-            s += text(x + (col_w - 8) / 2, top + head_h / 2, esc(t["short"]), 14, 700, "t", "middle")
+            s += text(x + col_w / 2, top + 17, esc(hl[0]), 15, 700, "t", "middle") + text(x + col_w / 2, top + 35, esc(hl[1]), 15, 700, "t", "middle")
         for r, (tid, name, is_sub) in enumerate(rows):
-            y = top + head_h + 4 + r * row_h
-            cx = x + (10 if is_sub else 0)
-            s += rect(cx, y, col_w - 8 - (10 if is_sub else 0), row_h - 4, "cell--sub" if is_sub else "cell", rx=4, tip=f"{tid} {name}")
-            s += text(cx + 6, y + (row_h - 4) / 2, tid, 13 if is_sub else 14, 600 if not is_sub else 500, "t" if not is_sub else "t2")
-            centers[(tid, t["id"])] = (cx + (col_w - 8 - (10 if is_sub else 0)) / 2, y + (row_h - 4) / 2, cx, y, col_w - 8 - (10 if is_sub else 0))
+            y = top + head_h + 6 + r * row_h
+            cx, cw = x + (12 if is_sub else 0), round(col_w - (12 if is_sub else 0), 1)
+            s += rect(cx, y, cw, row_h - 4, "cell--sub" if is_sub else "cell", rx=5, tip=f"{tid} {name}")
+            lines, size = cell_lines(tid, name, cw - 14)
+            s += cell_text(cx, y, lines, size, "t2" if is_sub else "t", 500 if is_sub else 600)
+            centers[(tid, t["id"])] = (cx + cw / 2, y + (row_h - 4) / 2, cx, y, cw, lines, size)
         more = t["count"] - len(t["techniques"])
-        s += text(x + (col_w - 8) / 2, top + head_h + 4 + len(rows) * row_h + 12, f"+{more} more", 13, 500, "t2", "middle")
+        s += text(x + col_w / 2, top + head_h + 6 + len(rows) * row_h + 12, f"+{more} more", 13, 500, "t2", "middle")
     s += '</g>\n'
     prev = None
-    for k, step in enumerate(path, start=1):
-        body = ""
-        first = None
-        for tid, tac in step:
-            if (tid, tac) not in centers:
-                sys.exit(f"path cell {tid} in {tac} is not in the curated matrix")
-            cx, cy, x, y, w = centers[(tid, tac)]
-            body += rect(x, y, w, row_h - 4, "cell--lit", rx=4, tip=f"step {k}: {tid}") + text(x + 6, cy, tid, 14, 700, "t-bad")
+    for b, k in enumerate(steps, start=1):
+        cells = [(tid, tac) for tid, tac in path[k - 1] if (tid, tac) in centers]
+        if not cells:
+            sys.exit(f"step {k} has no cell in columns {cols}")
+        body, first = "", None
+        for tid, tac in cells:
+            cx, cy, x, y, w, lines, size = centers[(tid, tac)]
+            body += rect(x, y, w, row_h - 4, "cell--lit", rx=5, tip=f"step {k}: {tid}") + cell_text(x, y, lines, size, "t-bad", 700)
             if first is None:
                 first = (cx, cy, x, y)
         if prev is not None:
             body = edge(f"M{prev[0]} {prev[1]}L{first[0]} {first[1]}", red=True) + body
-        body += small_badge(first[2] + 2, first[3] + 2, k, r=11, size=13)
-        s += f'<g data-build="{k}">\n{body}</g>\n'
+        body += small_badge(first[2] + 2, first[3] + 2, k, r=13, size=14)
+        s += f'<g data-build="{b}">\n{body}</g>\n'
         prev = first
     return s + "</svg>\n"
 
@@ -445,15 +464,21 @@ def https_chart():
 for k in range(4):
     (OUT / f"period-{k + 1}.svg").write_text(period_timeline(k))
 (OUT / "breaks.svg").write_text(breaks_timeline())
-(OUT / "attack-matrix.svg").write_text(attack_matrix(
-    "The Enterprise ATT&CK matrix, schematic: 15 tactic columns with a few real techniques each and the true per-tactic counts; "
-    "a classic trojan lit as a path of seven techniques across seven tactics", TROJAN_PATH,
-    ATTACK["version"] + " · hover a cell for its name"))
-(OUT / "attack-fileless.svg").write_text(attack_matrix(
-    "The Enterprise ATT&CK matrix with the recurring scenario lit step by step: valid accounts, PowerShell with command obfuscation, "
-    "exploitation for privilege escalation, disable or modify tools, ingress tool transfer, process injection and reflective code "
-    "loading, discovery and collection, web protocols and exfiltration over the C2 channel", FILELESS_PATH,
-    ATTACK["version"] + " · hover a cell for its name"))
+VERSION_LINE = ATTACK["version"] + " · hover a cell for its name"
+(OUT / "attack-matrix-1.svg").write_text(attack_matrix(
+    "The Enterprise ATT&CK matrix, schematic, first half: Reconnaissance to Defense Impairment, with technique names and the "
+    "true per-tactic counts; a classic trojan lit as a path, steps one to five", TROJAN_PATH, VERSION_LINE, (0, 8), [1, 2, 3, 4, 5]))
+(OUT / "attack-matrix-2.svg").write_text(attack_matrix(
+    "The Enterprise ATT&CK matrix, schematic, second half: Credential Access to Impact; the trojan path continues with "
+    "steps six and seven", TROJAN_PATH, VERSION_LINE, (8, 15), [6, 7]))
+(OUT / "attack-fileless-1.svg").write_text(attack_matrix(
+    "The Enterprise ATT&CK matrix, first half, Reconnaissance to Defense Impairment, with the recurring scenario lit step by "
+    "step: valid accounts, PowerShell with command obfuscation, exploitation for privilege escalation, disable or modify tools",
+    FILELESS_PATH, VERSION_LINE, (0, 8), [1, 2, 3, 4]))
+(OUT / "attack-fileless-2.svg").write_text(attack_matrix(
+    "The Enterprise ATT&CK matrix, second half, Stealth to Impact, with the scenario continuing: ingress tool transfer, process "
+    "injection and reflective code loading, discovery and collection, web protocols and exfiltration over the C2 channel",
+    FILELESS_PATH, VERSION_LINE, (6, 15), [5, 6, 7, 8]))
 (OUT / "benign-files.svg").write_text(benign_files())
 (OUT / "pipeline.svg").write_text(pipeline())
 (OUT / "pipeline-host.svg").write_text(pipeline_host())

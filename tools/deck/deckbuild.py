@@ -334,10 +334,23 @@ def split_table(table_html: str, rows_per_page: int) -> list[str]:
 
 
 def render_slide(slide: dict, total: int) -> str:
-    body_md, captions, figures = split_content(slide["on-slide_content"])
+    """A slide file renders as one stage section, plus continuation pages for a diagram slide's table and one page
+    per `---` page break in the on-slide content (each break starts a new section with the same title)."""
+    pages = re.split(r"^---\s*$", slide["on-slide_content"], flags=re.M)
+    suffixes = iter("bcdefghijklmnopqrstuvwxyz")
+    out: list[str] = []
+    for k, md in enumerate(pages):
+        out.extend(render_part(slide, md, total, suffixes, cont=k > 0))
+    return "\n".join(out)
+
+
+def render_part(slide: dict, md: str, total: int, suffixes, cont: bool) -> list[str]:
+    body_md, captions, figures = split_content(md)
     pngs = [f for f in figures if not f["src"].endswith(".svg")]
     body_html = md_to_html(body_md)
-    h2 = f'<h2 class="slide-title">{inline(slide["title"])}</h2>'
+    sid = slide["id"] if not cont else slide["id"] + next(suffixes)
+    extra = "slide--cont" if cont else ""
+    h2 = f'<h2 class="slide-title">{inline(slide["title"])}' + (' <span class="cont">continued</span>' if cont else "") + "</h2>"
     has_diagram = 'class="flow-diagram"' in body_html
     if has_diagram:
         # a text schematic in the same slide is redundant once the diagram is present
@@ -357,19 +370,19 @@ def render_slide(slide: dict, total: int) -> str:
                 callouts = re.findall(r"<blockquote.*?</blockquote>", after, flags=re.S)
                 rest = re.sub(r"<blockquote.*?</blockquote>", "", re.sub(r"<table.*?</table>", "", after, flags=re.S), flags=re.S)
                 inner = h2 + before + rest + captions_html(captions, static_caps)
-                out = [section(slide, slide["id"], "diagram", inner, steps, total)]
+                out = [section(slide, sid, "diagram", inner, steps, total, extra)]
                 pages = split_table(tables[0], CFG.table_rows_per_page)
                 for k, page in enumerate(pages):
-                    suffix = chr(ord("b") + k)
                     label = "continued" if len(pages) == 1 else f"continued {k + 1} / {len(pages)}"
-                    inner2 = h2.replace("</h2>", f' <span class="cont">{label}</span></h2>') + page + ("".join(callouts) if k == len(pages) - 1 else "")
-                    out.append(section(slide, slide["id"] + suffix, "text", inner2, 0, total, "slide--cont " + density_class(estimate_height(page, False))))
-                return "\n".join(out)
+                    h2c = f'<h2 class="slide-title">{inline(slide["title"])} <span class="cont">{label}</span></h2>'
+                    inner2 = h2c + page + ("".join(callouts) if k == len(pages) - 1 else "")
+                    out.append(section(slide, slide["id"] + next(suffixes), "text", inner2, 0, total, "slide--cont " + density_class(estimate_height(page, False))))
+                return out
             inner = h2 + body_html + captions_html(captions, static_caps)
-            return section(slide, slide["id"], "diagram", inner, steps, total)
+            return [section(slide, sid, "diagram", inner, steps, total, extra)]
         # inline diagram among lists or several tables: everything stays in the flow, the diagram is smaller
         inner = h2 + f'<div class="body">{body_html}</div>' + captions_html(captions, static_caps)
-        return section(slide, slide["id"], "has-diagram", inner, steps, total, density_class(estimate_height(body_html, bool(captions))))
+        return [section(slide, sid, "has-diagram", inner, steps, total, (extra + " " + density_class(estimate_height(body_html, bool(captions)))).strip())]
 
     if pngs:
         # the paper figures are the real diagram on these slides; drop a redundant text schematic
@@ -379,10 +392,10 @@ def render_slide(slide: dict, total: int) -> str:
         inner = (h2 + f'<div class="cols"><div class="col-text">{rest}</div><div class="col-fig{" one" if len(pngs) == 1 else ""}">{figs}</div></div>'
                  + captions_html(captions, static_caps))
         est = 100 + max(estimate_height(rest, False) - 100, len(pngs) * 320) + (38 * len(captions) if static_caps else 80)
-        return section(slide, slide["id"], "figure", inner, steps, total, density_class(est))
+        return [section(slide, sid, "figure", inner, steps, total, (extra + " " + density_class(est)).strip())]
 
     inner = h2 + f'<div class="body">{body_html}</div>' + captions_html(captions, static_caps)
-    return section(slide, slide["id"], "text", inner, steps, total, density_class(estimate_height(body_html, bool(captions)) + (38 * len(captions) if static_caps else 0)))
+    return [section(slide, sid, "text", inner, steps, total, (extra + " " + density_class(estimate_height(body_html, bool(captions)) + (38 * len(captions) if static_caps else 0))).strip())]
 
 
 def estimate_height(body_html: str, has_captions: bool) -> int:
