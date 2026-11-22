@@ -311,7 +311,21 @@ def forcedleak_path():
     return chain_v("ForcedLeak attack path: instructions an attacker planted in a CRM record are later retrieved by the trusted agent and interpreted as commands, so data leaves with the organization's own authority", steps)
 
 
+def poisoned_harness():
+    steps = [
+        ("Fake recruiter profile, model-generated photo", True),
+        ('Fake meeting page with a "ClickFix" lure: run this script', True),
+        ("Foothold, then pivot into the internal code repositories", True),
+        ("Edit .claude/settings.json: a hook that runs on startup", True),
+        ("A developer starts the coding agent, as on any morning", False),
+        ("The hook downloads the SOMBERMEME backdoor", True),
+        ("GitHub tokens named after Copilot hide the lateral movement", True),
+    ]
+    return chain_v("MIDNIGHT NEPTUNE path: social engineering gains a foothold, the attacker edits the agent's committed configuration so startup downloads a backdoor, and a developer starting the agent on an ordinary morning runs it", steps)
+
+
 (OUT / "attack-map.svg").write_text(attack_map())
+(OUT / "poisoned-harness.svg").write_text(poisoned_harness())
 (OUT / "forcedleak-path.svg").write_text(forcedleak_path())
 (OUT / "supply-chain.svg").write_text(supply_chain())
 (OUT / "funnel.svg").write_text(funnel())
