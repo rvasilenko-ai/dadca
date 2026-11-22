@@ -79,6 +79,8 @@ table.data th { font-weight: 700; color: var(--ink-2); background: var(--surface
 table.data th:first-child, table.data td:first-child { font-weight: 600; }
 blockquote.callout { margin: 14px 0 0; padding: 14px 24px; background: var(--surface); border-left: 6px solid var(--accent); border-radius: 10px; font-size: var(--fs-body); line-height: 1.32; box-shadow: 0 1px 0 var(--rule); }
 blockquote.callout p { margin: 0; } blockquote.callout p + p { margin-top: 8px; }
+mark { background: none; color: var(--ink); font-weight: 600; }
+.fade { color: var(--ink-3); opacity: .6; }
 .cols { display: grid; grid-template-columns: minmax(0, 1fr) 760px; column-gap: 48px; align-items: start; overflow: hidden; }
 .col-text { font-size: var(--fs-small); min-width: 0; }
 .col-text table.data { font-size: calc(var(--fs-small) - 2px); }

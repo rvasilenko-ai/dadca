@@ -50,6 +50,9 @@ def inline(text: str) -> str:
     s = re.sub(r"`([^`]+)`", r"<code>\1</code>", s)
     s = re.sub(r"\[([^\]]+)\]\((https?://[^)\s]+)\)", r'<a href="\2" target="_blank" rel="noopener">\1</a>', s)
     s = re.sub(r"(?<![\w*])\*([^*]+?)\*(?![\w*])", r"<em>\1</em>", s)
+    # ==text== is the part to read now; ~~text~~ the part to fade (a scenario shown twice, each half in turn)
+    s = re.sub(r"==(.+?)==", r"<mark>\1</mark>", s)
+    s = re.sub(r"~~(.+?)~~", r'<span class="fade">\1</span>', s)
     return s
 
 

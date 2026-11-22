@@ -4,7 +4,7 @@
 **Module:** ATT&CK as a language for behavior
 
 ## On-slide content
-> Using a stolen administrator account, an attacker runs PowerShell. A script downloads a legitimate, signed but vulnerable kernel driver, loads it, and uses it to disable the endpoint protection and antivirus from the kernel. It then downloads a memory-only implant and injects it into explorer.exe. The implant enumerates documents, compresses selected content, and uploads it over HTTPS.
+> ==Using a stolen administrator account, an attacker runs PowerShell. A script downloads a legitimate, signed but vulnerable kernel driver, loads it, and uses it to disable the endpoint protection and antivirus from the kernel.== ~~It then downloads a memory-only implant and injects it into explorer.exe. The implant enumerates documents, compresses selected content, and uploads it over HTTPS.~~
 
 ![The Enterprise ATT&CK matrix, first half, Reconnaissance to Defense Impairment, with technique names in the cells; the recurring scenario lit step by step: valid accounts, PowerShell with command obfuscation, exploitation for privilege escalation, disable or modify tools](../figures/attack-fileless-1.svg)
 
@@ -18,7 +18,7 @@ Build, one step per click:
 
 ---
 
-> The same scenario, continued: the memory-only implant is downloaded and injected into explorer.exe; it enumerates documents, compresses selected content, and uploads it over HTTPS.
+> ~~Using a stolen administrator account, an attacker runs PowerShell. A script downloads a legitimate, signed but vulnerable kernel driver, loads it, and uses it to disable the endpoint protection and antivirus from the kernel.~~ ==It then downloads a memory-only implant and injects it into explorer.exe. The implant enumerates documents, compresses selected content, and uploads it over HTTPS.==
 
 ![The Enterprise ATT&CK matrix, second half, Stealth to Impact, with the scenario continuing: ingress tool transfer, process injection and reflective code loading, discovery and collection, web protocols and exfiltration over the C2 channel](../figures/attack-fileless-2.svg)
 
