@@ -1121,17 +1121,44 @@
 <p>Contrast with ForcedLeak in one sentence: there, nothing was a file and the agent leaked data; here, a file arrived and the agent ran it. Both are the victim's own agent, run by the victim, serving the attacker. That is the pair to carry into the comparison.</p>
 <p class="transition">“Two cases, three incidents. Before naming the difference, compare them as defenders.”</p></aside>
 </section>
-<section class="slide slide--text" id="s27" data-id="s27" data-part="3" data-steps="0" data-number="27">
-<h2 class="slide-title">Audience question: what is different?</h2><div class="body"><p>Both agents performed actions useful to an attacker.</p>
-<blockquote class="callout"><p>What is fundamentally different about the attacks—and about our opportunities to defend?</p></blockquote>
-<p>Prompts:</p>
-<ul><li>Where does each agent run?</li><li>Who owns its model, harness, identity, and logs?</li><li>Where does attacker-controlled input enter?</li><li>What can the defender observe?</li><li>Where can the defender enforce policy?</li><li>What must be detected only from resulting behavior?</li></ul></div>
+<section class="slide slide--has-diagram" id="s27" data-id="s27" data-part="3" data-steps="0" data-number="27">
+<h2 class="slide-title">Case A versus Case B: what is different?</h2><div class="body"><figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 236" role="img" aria-label="Two reminder cards. Case A, the attacker's own agent, runs outside the organization: AI pentesting frameworks seen in intrusions, and the Hugging Face evaluation escape. Case B, the victim's own agent hijacked inside the trusted workflow: ForcedLeak through injected context, MIDNIGHT NEPTUNE through a poisoned harness" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<title>Two reminder cards. Case A, the attacker's own agent, runs outside the organization: AI pentesting frameworks seen in intrusions, and the Hugging Face evaluation escape. Case B, the victim's own agent hijacked inside the trusted workflow: ForcedLeak through injected context, MIDNIGHT NEPTUNE through a poisoned harness</title>
+<defs>
+  <marker id="arrow-case-reminder" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
+  <marker id="arrow-bad-case-reminder" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
+  <marker id="arrow-good-case-reminder" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
+</defs>
+<rect x="0" y="10" width="870" height="216" rx="22" class="env"/>
+<text x="28" y="44" class="t" font-size="26" font-weight="700" text-anchor="start" dominant-baseline="central">CASE A — the attacker's own agent</text>
+<text x="28" y="76" class="t2" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">outside the organization: the attacker's objective, model and harness;</text>
+<text x="28" y="100" class="t2" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">the victim sees only the effects</text>
+<rect x="28" y="118" width="395" height="92" rx="14" class="node"/>
+<text x="48" y="150" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">AI pentesting frameworks</text>
+<text x="48" y="180" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">CAIRN, PentAGI — seen in intrusions</text>
+<rect x="448" y="118" width="395" height="92" rx="14" class="node"/>
+<text x="468" y="150" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">Hugging Face, July 2026</text>
+<text x="468" y="180" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">the evaluation escape, ~17,600 actions</text>
+<rect x="930" y="10" width="870" height="216" rx="22" class="frame"/>
+<text x="958" y="44" class="t" font-size="26" font-weight="700" text-anchor="start" dominant-baseline="central">CASE B — the victim's own agent, hijacked</text>
+<text x="958" y="76" class="t2" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">inside the trusted workflow: the victim's own model and harness;</text>
+<text x="958" y="100" class="t2" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">the attacker changes what it reads, or what it runs</text>
+<rect x="958" y="118" width="395" height="92" rx="14" class="node"/>
+<text x="978" y="150" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">ForcedLeak</text>
+<text x="978" y="180" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">injected context: a CRM record</text>
+<rect x="1378" y="118" width="395" height="92" rx="14" class="node"/>
+<text x="1398" y="150" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">MIDNIGHT NEPTUNE</text>
+<text x="1398" y="180" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">poisoned harness: a committed hook</text>
+</svg></figure>
+<p>In all four, an agent did work for an attacker. Answer each question once for Case A and once for Case B:</p>
+<ul><li>Where does the agent run, and who owns its model, harness, identity and logs?</li><li>Where does attacker-controlled input enter?</li><li>What can the defender observe?</li><li>Where can the defender enforce policy?</li><li>What can only be detected from the resulting behaviour?</li></ul>
+<blockquote class="callout"><p>What is fundamentally different about the attacks — and about our opportunities to defend?</p></blockquote></div>
 
 <footer class="slide-foot"><span class="eyebrow">The two cases compared</span><span class="count">27 / 33 · 68–71 minutes</span></footer>
 <aside class="notes"><p class="meta"><b>Slide 27</b> · 68–71 minutes · The two cases compared</p>
-<p>Give students two or three minutes to discuss in pairs, then collect answers without immediately grading them.</p>
-<p>Push beyond “one is external and one is internal.” The deeper distinction is control over the decision-and-execution system. In the Hugging Face case, the defender faces an adversary-operated agent and observes only interactions with defended systems. In ForcedLeak, the organization or its SaaS provider operates the agent and therefore has additional instrumentation and enforcement points.</p>
-<p>Ask whether greater visibility automatically means easier defense. It does not: trusted identity, high-volume legitimate activity, vendor telemetry limitations, and ambiguous natural-language inputs complicate the problem.</p>
+<p>Give students two or three minutes to discuss in pairs, then collect answers without immediately grading them. The cards are there so nobody has to reconstruct the cases from memory: Case A is the attacker's own agent — the frameworks seen in intrusions and the Hugging Face escape — and it runs outside the organization; Case B is the victim's own agent, hijacked through what it reads (ForcedLeak) or what it runs (MIDNIGHT NEPTUNE), and it runs inside the trusted workflow.</p>
+<p>Push beyond "one is external and one is internal." The deeper distinction is control over the decision-and-execution system. In Case A the defender faces an adversary-operated agent and observes only its interactions with defended systems — hosts, identities, network flows. In Case B the organization or its SaaS provider operates the agent and therefore has additional instrumentation and enforcement points: the context it reads, the tools it calls, the identity it acts with, the egress it uses.</p>
+<p>Ask whether greater visibility automatically means easier defense. It does not: trusted identity, high-volume legitimate activity, vendor telemetry limitations, and ambiguous natural-language inputs complicate the problem. The next slide gives the answer as a table.</p>
 <p class="transition">“The location and ownership of the agent determine which defensive controls are even possible.”</p></aside>
 </section>
 <section class="slide slide--text" id="s28" data-id="s28" data-part="3" data-steps="0" data-number="28">

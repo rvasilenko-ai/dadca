@@ -508,6 +508,32 @@ def equation_huggingface():
          ["Detection worked;", "the decision failed"]])
 
 
+def case_reminder():
+    """Two reminder cards for the comparison: Case A (dashed, outside the organization) and Case B (inside),
+    each with the incidents the lecture used for it."""
+    W, H = 1800, 236
+    s = head(W, H, "Two reminder cards. Case A, the attacker's own agent, runs outside the organization: AI pentesting "
+                   "frameworks seen in intrusions, and the Hugging Face evaluation escape. Case B, the victim's own agent "
+                   "hijacked inside the trusted workflow: ForcedLeak through injected context, MIDNIGHT NEPTUNE through a "
+                   "poisoned harness")
+    cards = [
+        (0, "CASE A — the attacker's own agent", True,
+         ["outside the organization: the attacker's objective, model and harness;", "the victim sees only the effects"],
+         [("AI pentesting frameworks", "CAIRN, PentAGI — seen in intrusions"), ("Hugging Face, July 2026", "the evaluation escape, ~17,600 actions")]),
+        (930, "CASE B — the victim's own agent, hijacked", False,
+         ["inside the trusted workflow: the victim's own model and harness;", "the attacker changes what it reads, or what it runs"],
+         [("ForcedLeak", "injected context: a CRM record"), ("MIDNIGHT NEPTUNE", "poisoned harness: a committed hook")]),
+    ]
+    for x, label, dashed, blurb, chips in cards:
+        s += f'<rect x="{x}" y="10" width="870" height="216" rx="22" class="{"env" if dashed else "frame"}"/>\n'
+        s += text(x + 28, 44, label, 26, 700, "t")
+        for i, line in enumerate(blurb):
+            s += text(x + 28, 76 + i * 24, line, 19, 400, "t2")
+        for i, (t, sub) in enumerate(chips):
+            s += tile(x + 28 + i * 420, 118, 395, 92, t, [sub], title_size=22, sub_size=18)
+    return s + "</svg>\n"
+
+
 def dual_use():
     """Research tools that diffused: published research, released open source, then reported in intrusions."""
     W, H = 1800, 300
@@ -583,6 +609,7 @@ def weak_monitor():
 (OUT / "equation.svg").write_text(equation())
 (OUT / "equation-neptune.svg").write_text(equation_neptune())
 (OUT / "equation-huggingface.svg").write_text(equation_huggingface())
+(OUT / "case-reminder.svg").write_text(case_reminder())
 (OUT / "poisoned-harness.svg").write_text(poisoned_harness())
 (OUT / "forcedleak-path.svg").write_text(forcedleak_path())
 (OUT / "incident-chain.svg").write_text(incident_chain())
