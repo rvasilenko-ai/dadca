@@ -7,13 +7,7 @@
 
 The weaponized agent is reported in the wild, at every level of autonomy.
 
-```text
- 5  the agent on your bill        LLMjacking: stolen cloud LLM credentials run the attacker's agent
- 4  the agent runs alone          exploit_agent: diff the patch, write the exploit, fire it — no human
- 3  the agent runs the campaign   ~80–90% of a thirty-target intrusion; the human sets objectives
- 2  the model inside an implant   NIK C2 relays prompts to a model; VOLTA asks it to rank the loot
- 1  the model as assistant        a commercial model for reconnaissance, lures, translating loot
-```
+![Case A is a ladder of autonomy: each rung hands the model more of the loop, from the model as assistant, to the model inside an implant, to the agent running the campaign, running alone, and running on stolen model capacity](../figures/ladder.svg)
 
 Build, one step per click:
 

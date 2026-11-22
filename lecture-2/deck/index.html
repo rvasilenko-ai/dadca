@@ -538,14 +538,49 @@
 <p>Cut cue: if running slow, fold this slide into slide 17 — the counts become one spoken sentence after the callout.</p>
 <p class="transition">“This was one incident. It is already not the only one.”</p></aside>
 </section>
-<section class="slide slide--text" id="s19" data-id="s19" data-part="3" data-steps="5" data-number="19">
-<h2 class="slide-title">Case A is a ladder of autonomy</h2><div class="body"><p>The weaponized agent is reported in the wild, at every level of autonomy.</p>
-<pre class="schematic" style="--cols:102"><code> 5  the agent on your bill        LLMjacking: stolen cloud LLM credentials run the attacker's agent
- 4  the agent runs alone          exploit_agent: diff the patch, write the exploit, fire it — no human
- 3  the agent runs the campaign   ~80–90% of a thirty-target intrusion; the human sets objectives
- 2  the model inside an implant   NIK C2 relays prompts to a model; VOLTA asks it to rank the loot
- 1  the model as assistant        a commercial model for reconnaissance, lures, translating loot</code></pre>
-<blockquote class="callout"><p>November 2026, Google's threat-intelligence group: actors "fully automate vulnerability discovery and exploitation without a human in the loop for the first time." It lowers the skill floor — and, for now, trades stealth for velocity.</p></blockquote></div><div class="step-captions"><p data-build="0">Rungs, bottom up. Each rung hands the model more of the loop from slide 13.</p><p data-build="1">The model answers questions; a human does everything else. State actors use commercial models for reconnaissance, lures and translating exfiltrated data.</p><p data-build="2">Ordinary file-based implants embed one LLM call: NIK C2 relays the operator's prompts to a model from the victim's host, on the victim's own API key if it finds one; VOLTA sends the stolen bundle to a model to rank the victim's assets.</p><p data-build="3">The agent chooses and executes most steps; the human sets objectives and unblocks. In November 2025 an agent did an estimated 80–90% of a campaign across about thirty targets.</p><p data-build="4">No human in the loop. exploit_agent compares code before and after a patch, drafts an exploit and runs it. Open-source multi-agent pentesting frameworks are picked up as attack platforms — the next slide looks at where they came from.</p><p data-build="5">The attacker's agent, the victim's model. Stolen cloud LLM credentials: single-day bills above $100,000, $1 million cumulative; a key-escalation bug in LiteLLM; "LLM Mixers" resell the stolen access.</p></div>
+<section class="slide slide--diagram" id="s19" data-id="s19" data-part="3" data-steps="5" data-number="19">
+<h2 class="slide-title">Case A is a ladder of autonomy</h2><p class="lead">The weaponized agent is reported in the wild, at every level of autonomy.</p><figure class="diagram-wrap"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 600" role="img" aria-label="Case A is a ladder of autonomy: each rung hands the model more of the loop, from assistant up to the attacker's agent running on stolen model capacity" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<title>Case A is a ladder of autonomy: each rung hands the model more of the loop, from assistant up to the attacker's agent running on stolen model capacity</title>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
+  <marker id="arrow-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
+  <marker id="arrow-good" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
+</defs>
+<g data-build="0">
+<text x="40" y="40" class="t2" font-size="20" font-weight="700" text-anchor="start" dominant-baseline="central">MORE AUTONOMY</text>
+<path d="M150 70V560" class="edge edge--strong draw" pathLength="1"/>
+</g>
+<g data-build="1">
+<text x="100" y="526" class="t-acc" font-size="44" font-weight="800" text-anchor="middle" dominant-baseline="central">1</text>
+<rect x="180" y="480" width="1580" height="92" rx="14" class="node"/>
+<text x="200" y="512" class="t" font-size="27" font-weight="700" text-anchor="start" dominant-baseline="central">the model as assistant</text>
+<text x="200" y="542" class="t2" font-size="22" font-weight="400" text-anchor="start" dominant-baseline="central">a commercial model for reconnaissance, lures, translating loot</text>
+</g>
+<g data-build="2">
+<text x="100" y="418" class="t-acc" font-size="44" font-weight="800" text-anchor="middle" dominant-baseline="central">2</text>
+<rect x="180" y="372" width="1580" height="92" rx="14" class="node"/>
+<text x="200" y="404" class="t" font-size="27" font-weight="700" text-anchor="start" dominant-baseline="central">the model inside an implant</text>
+<text x="200" y="434" class="t2" font-size="22" font-weight="400" text-anchor="start" dominant-baseline="central">NIK C2 relays prompts to a model; VOLTA asks it to rank the loot</text>
+</g>
+<g data-build="3">
+<text x="100" y="310" class="t-acc" font-size="44" font-weight="800" text-anchor="middle" dominant-baseline="central">3</text>
+<rect x="180" y="264" width="1580" height="92" rx="14" class="node"/>
+<text x="200" y="296" class="t" font-size="27" font-weight="700" text-anchor="start" dominant-baseline="central">the agent runs the campaign</text>
+<text x="200" y="326" class="t2" font-size="22" font-weight="400" text-anchor="start" dominant-baseline="central">~80–90% of a thirty-target intrusion; the human sets objectives</text>
+</g>
+<g data-build="4">
+<text x="100" y="202" class="t-bad" font-size="44" font-weight="800" text-anchor="middle" dominant-baseline="central">4</text>
+<rect x="180" y="156" width="1580" height="92" rx="14" class="node node--bad"/>
+<text x="200" y="188" class="t" font-size="27" font-weight="700" text-anchor="start" dominant-baseline="central">the agent runs alone</text>
+<text x="200" y="218" class="t-bad" font-size="22" font-weight="500" text-anchor="start" dominant-baseline="central">exploit_agent: diff the patch, write the exploit, fire it — no human</text>
+</g>
+<g data-build="5">
+<text x="100" y="94" class="t-bad" font-size="44" font-weight="800" text-anchor="middle" dominant-baseline="central">5</text>
+<rect x="180" y="48" width="1580" height="92" rx="14" class="node node--bad"/>
+<text x="200" y="80" class="t" font-size="27" font-weight="700" text-anchor="start" dominant-baseline="central">the agent on your bill</text>
+<text x="200" y="110" class="t-bad" font-size="22" font-weight="500" text-anchor="start" dominant-baseline="central">LLMjacking: stolen cloud model credentials run the attacker's agent</text>
+</g>
+</svg></figure><div class="step-captions"><p data-build="0">Rungs, bottom up. Each rung hands the model more of the loop from slide 13.</p><p data-build="1">The model answers questions; a human does everything else. State actors use commercial models for reconnaissance, lures and translating exfiltrated data.</p><p data-build="2">Ordinary file-based implants embed one LLM call: NIK C2 relays the operator's prompts to a model from the victim's host, on the victim's own API key if it finds one; VOLTA sends the stolen bundle to a model to rank the victim's assets.</p><p data-build="3">The agent chooses and executes most steps; the human sets objectives and unblocks. In November 2025 an agent did an estimated 80–90% of a campaign across about thirty targets.</p><p data-build="4">No human in the loop. exploit_agent compares code before and after a patch, drafts an exploit and runs it. Open-source multi-agent pentesting frameworks are picked up as attack platforms — the next slide looks at where they came from.</p><p data-build="5">The attacker's agent, the victim's model. Stolen cloud LLM credentials: single-day bills above $100,000, $1 million cumulative; a key-escalation bug in LiteLLM; "LLM Mixers" resell the stolen access.</p></div><blockquote class="callout"><p>November 2026, Google's threat-intelligence group: actors "fully automate vulnerability discovery and exploitation without a human in the loop for the first time." It lowers the skill floor — and, for now, trades stealth for velocity.</p></blockquote>
 <details class="srcs"><summary>Sources (6)</summary><div class="panel"><ul><li><a href="https://www.anthropic.com/news/disrupting-AI-espionage" target="_blank" rel="noopener">Anthropic: disrupting the first reported AI-orchestrated cyber espionage campaign (13 November 2025)</a></li><li><a href="https://www.anthropic.com/news/detecting-countering-misuse-aug-2025" target="_blank" rel="noopener">Anthropic: detecting and countering misuse of AI, agent-assisted extortion (27 August 2025)</a></li><li><a href="https://blog.talosintelligence.com/nik-c2-new-ai-enabled-framework/" target="_blank" rel="noopener">Cisco Talos: NIK C2, an AI-enabled framework (29 October 2026)</a></li><li><a href="https://blog.talosintelligence.com/appraisal-by-ai-model-driven-victim-prioritization-in-the-volta-infostealer/" target="_blank" rel="noopener">Cisco Talos: model-driven victim prioritization in the VOLTA infostealer (31 October 2026)</a></li><li><a href="https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold" target="_blank" rel="noopener">Google Threat Intelligence Group, GTIG AI Threat Tracker: Agentic Threat Activity Crosses a Significant Threshold (16 November 2026)</a></li><li><a href="https://cloud.google.com/blog/topics/threat-intelligence/llmjacking-monetizing-compromised-cloud-models" target="_blank" rel="noopener">Google Threat Intelligence Group, LLMjacking: Monetizing Compromised Cloud Models (2026)</a></li></ul></div></details>
 <footer class="slide-foot"><span class="eyebrow">Case A: an agent the attacker owns</span><span class="count">19 / 31 · 49–52 minutes</span></footer>
 <aside class="notes"><p class="meta"><b>Slide 19</b> · 49–52 minutes · Case A: an agent the attacker owns</p>

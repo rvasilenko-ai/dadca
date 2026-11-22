@@ -212,7 +212,34 @@ def attack_map():
     return s + '</svg>\n'
 
 
+def arrow(x1, y1, x2, y2, red=False, green=False, strong=True):
+    return edge(f"M{x1} {y1}L{x2} {y2}", strong=strong, arrow=True, red=red, green=green)
+
+
+def ladder():
+    """Case A rungs of autonomy, bottom (assistant) to top (the attacker's agent on stolen model capacity).
+    build 0 draws the axis; builds 1-5 reveal the rungs bottom-up, matching the slide's captions."""
+    W, H = 1800, 600
+    s = head(W, H, "Case A is a ladder of autonomy: each rung hands the model more of the loop, from assistant up to the attacker's agent running on stolen model capacity")
+    rungs = [
+        ("the model as assistant", "a commercial model for reconnaissance, lures, translating loot"),
+        ("the model inside an implant", "NIK C2 relays prompts to a model; VOLTA asks it to rank the loot"),
+        ("the agent runs the campaign", "~80–90% of a thirty-target intrusion; the human sets objectives"),
+        ("the agent runs alone", "exploit_agent: diff the patch, write the exploit, fire it — no human"),
+        ("the agent on your bill", "LLMjacking: stolen cloud model credentials run the attacker's agent"),
+    ]
+    s += '<g data-build="0">\n' + text(40, 40, "MORE AUTONOMY", 20, 700, "t2") + edge("M150 70V560", strong=True) + '</g>\n'
+    for i, (t, sub) in enumerate(rungs):
+        y = 480 - i * 108
+        bad = i >= 3
+        body = text(100, y + 46, str(i + 1), 44, 800, "t-bad" if bad else "t-acc", "middle")
+        body += tile(180, y, 1580, 92, t, [sub], bad=bad, title_size=27, sub_size=22)
+        s += f'<g data-build="{i + 1}">\n{body}</g>\n'
+    return s + '</svg>\n'
+
+
 (OUT / "attack-map.svg").write_text(attack_map())
+(OUT / "ladder.svg").write_text(ladder())
 (OUT / "harness.svg").write_text(harness("plain"))
 (OUT / "harness-attack-surface.svg").write_text(harness("attack"))
 (OUT / "harness-guardrails.svg").write_text(harness("guard"))
