@@ -107,8 +107,13 @@ pre.schematic, .slide-title, .lead, .step-captions { flex: none; }
 html.is-still * { transition: none !important; }
 
 /* ---- diagram slides: the SVG sits on the stage and takes the theme's tokens ---- */
-.slide--diagram .diagram-wrap { margin: 0; flex: 0 1 auto; min-height: 0; display: flex; justify-content: center; }
-.slide--diagram .diagram { display: block; width: auto; max-width: 1700px; max-height: 690px; height: auto; overflow: visible; }
+.flow-diagram { margin: 0 0 16px; display: flex; justify-content: center; min-height: 0; }
+.slide--diagram .flow-diagram { margin: 0; flex: 0 1 auto; }
+.slide--diagram .flow-diagram .diagram { display: block; width: auto; max-width: 1700px; max-height: 670px; height: auto; overflow: visible; }
+.slide--has-diagram .flow-diagram { justify-content: flex-start; }
+.slide--has-diagram .flow-diagram .diagram { display: block; width: auto; max-width: 100%; max-height: 300px; height: auto; overflow: visible; }
+.slide--has-diagram.slide--dense .flow-diagram .diagram { max-height: 270px; }
+.slide--has-diagram.slide--denser .flow-diagram .diagram { max-height: 240px; }
 /* builds: a group appears at its step, rising slightly; its edges draw themselves and the arrowhead waits for the line */
 .diagram g[data-build] { opacity: 0; translate: 0 18px; visibility: hidden; transition: none; }
 .diagram g[data-build].is-shown { opacity: 1; translate: 0 0; visibility: visible; transition: opacity var(--d) ease-out, translate var(--d) ease-out; }

@@ -81,6 +81,12 @@ def md_to_html(md: str) -> str:
     while i < len(lines):
         line = lines[i]
         s = line.strip()
+        msvg = re.match(r"^!\[(.*?)\]\((\.\./figures/[^)]+\.svg)\)$", s)
+        if msvg:
+            flush()
+            out.append(f'<figure class="flow-diagram">{inline_svg(msvg.group(2))}</figure>')
+            i += 1
+            continue
         if s.startswith("```"):
             flush(); i += 1; buf = []
             while i < len(lines) and not lines[i].strip().startswith("```"):
@@ -163,6 +169,15 @@ def split_content(md: str) -> tuple[str, list[str], list[dict]]:
                 i += 1
             continue
         m = re.match(r"^!\[(.*?)\]\(([^)]+)\)$", s)
+        if m and m.group(2).endswith(".svg"):
+            # an SVG renders inline in the body flow; its following *caption* line is dropped (the diagram carries its own label)
+            body.append(lines[i]); i += 1
+            j = i
+            while j < len(lines) and not lines[j].strip():
+                j += 1
+            if j < len(lines) and re.fullmatch(r"\*(.+)\*", lines[j].strip()):
+                i = j + 1
+            continue
         if m:
             fig = {"alt": m.group(1), "src": m.group(2), "caption": ""}
             j = i + 1
@@ -176,19 +191,13 @@ def split_content(md: str) -> tuple[str, list[str], list[dict]]:
     return "\n".join(body), captions, figures
 
 
-def inline_svg(src: str, n_captions: int) -> str:
-    path = (FIGURES / Path(src).name)
-    svg = path.read_text(encoding="utf-8")
+def inline_svg(src: str) -> str:
+    svg = (FIGURES / Path(src).name).read_text(encoding="utf-8")
     svg = re.sub(r"<\?xml[^>]*\?>", "", svg).strip()
     svg = re.sub(r'<svg([^>]*?)\swidth="\d+"\sheight="\d+"', r"<svg\1", svg, count=1)
     svg = svg.replace("<svg ", '<svg class="diagram" ', 1)
     # the file's own <style> is for standalone viewing; in the deck the classes take the deck's tokens
-    svg = re.sub(r"<style>.*?</style>\s*", "", svg, count=1, flags=re.S)
-    builds = [int(x) for x in re.findall(r'data-build="(\d+)"', svg)]
-    if builds and n_captions and max(builds) == n_captions:
-        # one more group than captions: the last group arrives with the last caption
-        svg = svg.replace(f'data-build="{max(builds)}"', f'data-build="{max(builds) - 1}"')
-    return svg
+    return re.sub(r"<style>.*?</style>\s*", "", svg, count=1, flags=re.S)
 
 
 def max_build(svg: str) -> int:
@@ -262,32 +271,33 @@ def render_divider(part: int, slides_in: list[dict], total: int) -> str:
 
 def render_slide(slide: dict, total: int) -> str:
     body_md, captions, figures = split_content(slide["on-slide_content"])
-    svgs = [f for f in figures if f["src"].endswith(".svg")]
     pngs = [f for f in figures if not f["src"].endswith(".svg")]
     body_html = md_to_html(body_md)
     h2 = f'<h2 class="slide-title">{inline(slide["title"])}</h2>'
-    out: list[str] = []
+    has_diagram = 'class="flow-diagram"' in body_html
+    if has_diagram:
+        # a text schematic in the same slide is redundant once the diagram is present
+        body_html = re.sub(r'<pre class="schematic".*?</pre>\s*', "", body_html, flags=re.S)
+    steps = max(len(captions) - 1, max_build(body_html))
 
-    if svgs:
-        svg = inline_svg(svgs[0]["src"], len(captions))
-        steps = max(len(captions) - 1, max_build(svg))
-        # diagram slide: the SVG, the stepped captions, and the callout; code blocks (text schematics) are redundant here
-        rest = re.sub(r'<pre class="schematic".*?</pre>', "", body_html, flags=re.S)
-        tables = re.findall(r"<table.*?</table>", rest, flags=re.S)
-        rest_no_tables = re.sub(r"<table.*?</table>", "", rest, flags=re.S)
-        before, _, after_q = rest_no_tables.partition("<blockquote")
-        lead = re.findall(r"<p>.*?</p>", before, flags=re.S)
-        callouts = re.findall(r"<blockquote.*?</blockquote>", rest_no_tables, flags=re.S)
-        trailing = re.findall(r"<p>(.*?)</p>", after_q.split("</blockquote>", 1)[-1] if after_q else "", flags=re.S)
-        inner = (h2 + (f'<p class="lead">{lead[0][3:-4]}</p>' if lead else "")
-                 + f'<figure class="diagram-wrap">{svg}</figure>' + captions_html(captions)
-                 + ("".join(callouts) if not tables else "")
-                 + "".join(f'<p class="after">{t}</p>' for t in trailing))
-        out.append(section(slide, slide["id"], "diagram", inner, steps, total))
-        if tables:
-            inner2 = h2.replace("</h2>", ' <span class="cont">continued</span></h2>') + "".join(tables) + "".join(callouts)
-            out.append(section(slide, slide["id"] + "b", "text", inner2, 0, total, "slide--cont"))
-        return "\n".join(out)
+    if has_diagram and not pngs:
+        tables = re.findall(r"<table.*?</table>", body_html, flags=re.S)
+        has_list = "<ul>" in body_html or "<ol>" in body_html
+        if not has_list and len(tables) <= 1:
+            # centerpiece diagram: a big diagram, then captions; a table (if any) moves to a continuation slide
+            if tables:
+                callouts = re.findall(r"<blockquote.*?</blockquote>", body_html, flags=re.S)
+                main = re.sub(r"<blockquote.*?</blockquote>", "", re.sub(r"<table.*?</table>", "", body_html, flags=re.S), flags=re.S)
+                inner = h2 + main + captions_html(captions)
+                out = [section(slide, slide["id"], "diagram", inner, steps, total)]
+                inner2 = h2.replace("</h2>", ' <span class="cont">continued</span></h2>') + "".join(tables) + "".join(callouts)
+                out.append(section(slide, slide["id"] + "b", "text", inner2, 0, total, "slide--cont"))
+                return "\n".join(out)
+            inner = h2 + body_html + captions_html(captions)
+            return section(slide, slide["id"], "diagram", inner, steps, total)
+        # inline diagram among lists or several tables: everything stays in the flow, the diagram is smaller
+        inner = h2 + f'<div class="body">{body_html}</div>' + captions_html(captions)
+        return section(slide, slide["id"], "has-diagram", inner, steps, total, density_class(estimate_height(body_html, bool(captions))))
 
     if pngs:
         figs = "".join(f'<figure><img src="../figures/{html.escape(Path(f["src"]).name)}" alt="{html.escape(f["alt"])}">'
@@ -319,6 +329,7 @@ def estimate_height(body_html: str, has_captions: bool) -> int:
     for m in re.finditer(r"<li>(.*?)</li>", body_html, flags=re.S):
         h += (text_only(m.group(1)) // 135 + 1) * 38
     h += 46 * body_html.count("<h3")
+    h += 400 * body_html.count('class="flow-diagram"')
     if has_captions:
         h += 80
     return h
