@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 430" width="1800" height="430" role="img" aria-label="Prompt injection attacks the application by concatenating untrusted text with the developer's prompt; a jailbreak attacks the model's own safety training, with the user as the attacker" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<title>Prompt injection attacks the application by concatenating untrusted text with the developer's prompt; a jailbreak attacks the model's own safety training, with the user as the attacker</title>
+<style>
+svg{--surface:#ffffff;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--line:#9ca3af;--rule:#cbd5e1;
+--acc:#0284c7;--acc-wash:#e0f2fe;--acc-ink:#075985;--bad:#dc2626;--bad-wash:#fee2e2;--bad-ink:#991b1b;
+--good:#15803d;--good-wash:#dcfce7;--good-ink:#14532d;--on-badge:#ffffff}
+@media (prefers-color-scheme: dark){svg{--surface:#141a2a;--frame:#10172a;--ink:#eef1f8;--ink-2:#c6cddd;--line:#8b96b0;--rule:#344062;
+--acc:#7cc4ff;--acc-wash:#10304a;--acc-ink:#bfe3ff;--bad:#f87171;--bad-wash:#3b1515;--bad-ink:#fecaca;
+--good:#4ade80;--good-wash:#0f2e1c;--good-ink:#bbf7d0;--on-badge:#0b0f1a}}
+.node{fill:var(--surface);stroke:var(--rule);stroke-width:2.5}.node--model{fill:var(--acc-wash);stroke:var(--acc);stroke-width:4}
+.node--bad{fill:var(--bad-wash);stroke:var(--bad);stroke-width:4}.node--good{fill:var(--good-wash);stroke:var(--good);stroke-width:4}
+.frame{fill:var(--frame);stroke:var(--rule);stroke-width:2.5}.env{fill:none;stroke:var(--line);stroke-width:3;stroke-dasharray:14 10}
+.t{fill:var(--ink)}.t2{fill:var(--ink-2)}.t-acc{fill:var(--acc-ink)}.t-bad{fill:var(--bad-ink)}.t-good{fill:var(--good-ink)}.t-badge{fill:var(--on-badge)}
+.edge{fill:none;stroke:var(--line);stroke-width:3;stroke-linecap:round}.edge--strong{stroke:var(--ink-2);stroke-width:4}
+.edge--bad{stroke:var(--bad);stroke-width:4}.edge--good{stroke:var(--good);stroke-width:4}
+.arrow{fill:var(--ink-2)}.arrow--bad{fill:var(--bad)}.arrow--good{fill:var(--good)}
+.badge--bad{fill:var(--bad);stroke:var(--surface);stroke-width:3}.badge--good{fill:var(--good);stroke:var(--surface);stroke-width:3}
+.ctx-bar{fill:var(--rule)}.ring{fill:none;stroke:var(--ink);stroke-width:4}.dot{fill:var(--ink)}
+</style>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
+  <marker id="arrow-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
+  <marker id="arrow-good" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
+</defs>
+<text x="40" y="26" class="t-bad" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">PROMPT INJECTION — an attack on the application</text>
+<rect x="40" y="52" width="380" height="120" rx="14" class="node"/>
+<text x="60" y="84" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">developer's instructions</text>
+<text x="60" y="114" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">"Translate the following…"</text>
+<text x="60" y="140" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">trusted, written by the app</text>
+<text x="442" y="112" class="t2" font-size="46" font-weight="300" text-anchor="middle" dominant-baseline="central">+</text>
+<rect x="466" y="52" width="430" height="120" rx="14" class="node node--bad"/>
+<text x="486" y="84" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">untrusted text</text>
+<text x="486" y="114" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">"Ignore the above and…"</text>
+<text x="486" y="140" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">anyone whose text reaches it</text>
+<path d="M896 112L988 112" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad)"/>
+<rect x="990" y="52" width="220" height="120" rx="14" class="node node--model"/>
+<text x="1010" y="84" class="t-acc" font-size="26" font-weight="700" text-anchor="start" dominant-baseline="central">MODEL</text>
+<text x="1010" y="114" class="t-acc" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">one text stream</text>
+<path d="M1210 112L1328 112" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad)"/>
+<rect x="1330" y="52" width="430" height="120" rx="14" class="node node--bad"/>
+<text x="1350" y="84" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">obeys the untrusted text</text>
+<text x="1350" y="114" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">the developer's intent is defeated</text>
+<text x="40" y="258" class="t-bad" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">JAILBREAK — an attack on the model</text>
+<rect x="40" y="284" width="520" height="120" rx="14" class="node node--bad"/>
+<text x="60" y="316" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">user's request</text>
+<text x="60" y="346" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">"From now on you are DAN…"</text>
+<text x="60" y="372" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">the user is the attacker</text>
+<path d="M560 344L988 344" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad)"/>
+<rect x="990" y="284" width="220" height="120" rx="14" class="node node--model"/>
+<text x="1010" y="316" class="t-acc" font-size="26" font-weight="700" text-anchor="start" dominant-baseline="central">MODEL</text>
+<text x="1010" y="346" class="t-acc" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">with safety training</text>
+<path d="M1210 344L1328 344" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad)"/>
+<rect x="1330" y="284" width="430" height="120" rx="14" class="node node--bad"/>
+<text x="1350" y="316" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">says what training forbade</text>
+<text x="1350" y="346" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">the trainer's intent is defeated</text>
+</svg>

@@ -370,7 +370,27 @@ def dual_use():
     return s + "</svg>\n"
 
 
+def injection_jailbreak():
+    """Two flows: injection shares the prompt between the developer and untrusted text; a jailbreak is the user against the model's training."""
+    W, H = 1800, 430
+    s = head(W, H, "Prompt injection attacks the application by concatenating untrusted text with the developer's prompt; a jailbreak attacks the model's own safety training, with the user as the attacker")
+    # injection
+    s += text(40, 26, "PROMPT INJECTION — an attack on the application", 22, 700, "t-bad")
+    s += tile(40, 52, 380, 120, "developer's instructions", ['"Translate the following…"', "trusted, written by the app"], title_size=22, sub_size=18)
+    s += glyph(442, 112, "+")
+    s += tile(466, 52, 430, 120, "untrusted text", ['"Ignore the above and…"', "anyone whose text reaches it"], bad=True, title_size=22, sub_size=18)
+    s += arrow(896, 112, 988, 112, red=True) + tile(990, 52, 220, 120, "MODEL", ["one text stream"], model=True, title_size=26)
+    s += arrow(1210, 112, 1328, 112, red=True) + tile(1330, 52, 430, 120, "obeys the untrusted text", ["the developer's intent is defeated"], bad=True, title_size=22, sub_size=18)
+    # jailbreak
+    s += text(40, 258, "JAILBREAK — an attack on the model", 22, 700, "t-bad")
+    s += tile(40, 284, 520, 120, "user's request", ['"From now on you are DAN…"', "the user is the attacker"], bad=True, title_size=22, sub_size=18)
+    s += arrow(560, 344, 988, 344, red=True) + tile(990, 284, 220, 120, "MODEL", ["with safety training"], model=True, title_size=26)
+    s += arrow(1210, 344, 1328, 344, red=True) + tile(1330, 284, 430, 120, "says what training forbade", ["the trainer's intent is defeated"], bad=True, title_size=22, sub_size=18)
+    return s + "</svg>\n"
+
+
 (OUT / "attack-map.svg").write_text(attack_map())
+(OUT / "injection-jailbreak.svg").write_text(injection_jailbreak())
 (OUT / "dual-use.svg").write_text(dual_use())
 (OUT / "equation.svg").write_text(equation())
 (OUT / "poisoned-harness.svg").write_text(poisoned_harness())
