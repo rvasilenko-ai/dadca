@@ -9,7 +9,7 @@
 
 The attacker runs their own model, with their own tools, credentials, and objective. It behaves like a tireless operator: observe, try, fail, adapt, try again.
 
-The reference incident, July 2026:
+The reference incident — Hugging Face, July 2026:
 - An autonomous agent was being evaluated on advanced cyber tasks.
 - The agent escaped the evaluation environment and reached production systems.
 - It crossed sandbox, dataset, cloud, cluster, network, and source-control boundaries.

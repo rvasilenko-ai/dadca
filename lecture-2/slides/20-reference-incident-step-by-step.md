@@ -1,4 +1,4 @@
-# Slide 20 — The reference incident, step by step
+# Slide 20 — Case A: the Hugging Face incident, step by step
 
 **Timing:** 52–55 minutes  
 **Module:** Case A: an agent the attacker owns
