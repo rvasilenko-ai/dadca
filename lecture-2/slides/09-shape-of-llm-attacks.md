@@ -1,6 +1,6 @@
-# Slide 5 — The shape of LLM attacks
+# Slide 9 — The shape of LLM attacks
 
-**Timing:** 14–17 minutes  
+**Timing:** 23–26 minutes  
 **Module:** From adversarial ML to attacks on LLMs
 
 ## On-slide content
@@ -18,7 +18,7 @@ Two ways attacker text enters the instruction channel:
 
 ## Speaker notes
 
-Direct injection: the person prompting the model is the attacker — jailbreaks and overrides to make the model break its own rules. It matters, but it is the smaller case here, because the attacker only controls their own session: they gain no data or authority they did not already have. Indirect injection is the dangerous one: the attacker plants instructions in content that a system will later retrieve and feed to the model on someone else's behalf, so a low-privilege attacker makes a high-privilege victim's own model-driven system act with the victim's authority. Map it back to the previous slide — indirect injection is the data channel carrying code, triggered remotely. We have not yet named that system around the model; slides 7 to 9 do, and Case B is it being hijacked.
+Direct injection: the person prompting the model is the attacker — jailbreaks and overrides to make the model break its own rules. It matters, but it is the smaller case here, because the attacker only controls their own session: they gain no data or authority they did not already have. Indirect injection is the dangerous one: the attacker plants instructions in content that a system will later retrieve and feed to the model on someone else's behalf, so a low-privilege attacker makes a high-privilege victim's own model-driven system act with the victim's authority. Map it back to the previous slide — indirect injection is the data channel carrying code, triggered remotely. We have not yet named that system around the model; slides 11 to 13 do, and Case B is it being hijacked.
 
 ## Transition
 

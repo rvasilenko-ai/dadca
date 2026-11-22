@@ -1,6 +1,6 @@
-# Slide 10 — The model becomes an attacker, two ways
+# Slide 14 — The model becomes an attacker, two ways
 
-**Timing:** 29–32 minutes  
+**Timing:** 38–41 minutes  
 **Module:** The model becomes an attacker
 
 ## On-slide content

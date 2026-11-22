@@ -1,6 +1,6 @@
-# Slide 4 — Code and data, instructions and context
+# Slide 8 — Code and data, instructions and context
 
-**Timing:** 9–14 minutes  
+**Timing:** 18–23 minutes  
 **Module:** From adversarial ML to attacks on LLMs
 
 ## On-slide content

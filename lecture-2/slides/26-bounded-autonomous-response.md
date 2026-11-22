@@ -1,6 +1,6 @@
-# Slide 22 — Bounded autonomous response
+# Slide 26 — Bounded autonomous response
 
-**Timing:** 76–81 minutes  
+**Timing:** 78–82 minutes  
 **Module:** Defense and research
 
 ## On-slide content

@@ -1,6 +1,6 @@
-# Slide 8 — From model to agent: the loop
+# Slide 12 — From model to agent: the loop
 
-**Timing:** 22–25 minutes  
+**Timing:** 31–34 minutes  
 **Module:** From model to agent
 
 ## On-slide content

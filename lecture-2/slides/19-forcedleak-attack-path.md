@@ -1,6 +1,6 @@
-# Slide 15 — ForcedLeak: the attack path
+# Slide 19 — ForcedLeak: the attack path
 
-**Timing:** 48–52 minutes  
+**Timing:** 55–58 minutes  
 **Module:** Case B: a compromised trusted model
 
 ## On-slide content

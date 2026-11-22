@@ -1,6 +1,6 @@
-# Slide 6 — Why there is no NX bit for text
+# Slide 10 — Why there is no NX bit for text
 
-**Timing:** 17–19 minutes  
+**Timing:** 26–28 minutes  
 **Module:** From adversarial ML to attacks on LLMs
 
 ## On-slide content

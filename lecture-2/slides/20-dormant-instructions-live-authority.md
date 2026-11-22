@@ -1,6 +1,6 @@
-# Slide 16 — Dormant instructions, live authority
+# Slide 20 — Dormant instructions, live authority
 
-**Timing:** 52–55 minutes  
+**Timing:** 58–61 minutes  
 **Module:** Case B: a compromised trusted model
 
 ## On-slide content

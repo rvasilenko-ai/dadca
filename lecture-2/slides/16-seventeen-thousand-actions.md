@@ -1,6 +1,6 @@
-# Slide 12 — Approximately 17,600 recovered actions
+# Slide 16 — Approximately 17,600 recovered actions
 
-**Timing:** 36–41 minutes  
+**Timing:** 45–49 minutes  
 **Module:** Case A: a malicious model the attacker owns
 
 ## On-slide content
