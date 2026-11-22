@@ -48,9 +48,9 @@
 <rect x="1400" y="240" width="300" height="110" rx="14" class="node"/>
 <text x="1550" y="280" class="t" font-size="28" font-weight="700" text-anchor="middle" dominant-baseline="central">predictions</text>
 <text x="1550" y="318" class="t2" font-size="20" font-weight="400" text-anchor="middle" dominant-baseline="central">its answers</text>
-<path d="M380 295H518" class="edge edge--strong" marker-end="url(#arrow)"/>
-<path d="M820 295H958" class="edge edge--strong" marker-end="url(#arrow)"/>
-<path d="M1260 295H1398" class="edge edge--strong" marker-end="url(#arrow)"/>
+<path d="M380 295H518" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
+<path d="M820 295H958" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
+<path d="M1260 295H1398" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
 </g>
 <g data-build="1">
 <text x="80" y="24" class="t-bad" font-size="20" font-weight="600" text-anchor="start" dominant-baseline="central">ATTACKER WRITES: into the data it learns from, or into the input it reads</text>
@@ -59,7 +59,7 @@
 <text x="980" y="106" class="t-bad" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">perturb the input</text>
 <text x="980" y="132" class="t-bad" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">2004 → 2014</text>
 <text x="980" y="158" class="t-bad" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">malware detectors 2013 → 2018</text>
-<path d="M1130 180V236" class="edge edge--bad" marker-end="url(#arrow-bad)"/>
+<path d="M1130 180V236" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad)"/>
 </g>
 <g data-build="2">
 <text x="80" y="578" class="t-bad" font-size="20" font-weight="600" text-anchor="start" dominant-baseline="central">ATTACKER READS: what the model answers, and learns the model or its data from it</text>
@@ -67,21 +67,21 @@
 <text x="1060" y="452" class="t" font-size="26" font-weight="700" text-anchor="start" dominant-baseline="central">Extraction</text>
 <text x="1060" y="482" class="t-bad" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">copy the model from its answers</text>
 <text x="1060" y="508" class="t-bad" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">2005 → 2016</text>
-<path d="M1500 350L1240 416" class="edge edge--bad" marker-end="url(#arrow-bad)"/>
+<path d="M1500 350L1240 416" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad)"/>
 </g>
 <g data-build="3">
 <rect x="80" y="44" width="340" height="136" rx="14" class="node node--bad"/>
 <text x="100" y="76" class="t" font-size="26" font-weight="700" text-anchor="start" dominant-baseline="central">Poisoning, backdoors</text>
 <text x="100" y="106" class="t-bad" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">corrupt what it learns</text>
 <text x="100" y="132" class="t-bad" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">2008 → 2017</text>
-<path d="M250 180V236" class="edge edge--bad" marker-end="url(#arrow-bad)"/>
+<path d="M250 180V236" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad)"/>
 </g>
 <g data-build="4">
 <rect x="1420" y="420" width="340" height="136" rx="14" class="node node--bad"/>
 <text x="1440" y="452" class="t" font-size="26" font-weight="700" text-anchor="start" dominant-baseline="central">Inference, inversion</text>
 <text x="1440" y="482" class="t-bad" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">learn the training data</text>
 <text x="1440" y="508" class="t-bad" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">from its answers · 2014 → 2017</text>
-<path d="M1600 350V416" class="edge edge--bad" marker-end="url(#arrow-bad)"/>
+<path d="M1600 350V416" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad)"/>
 </g>
 </svg></figure><div class="step-captions"><p data-build="0">A learned model is a pipeline: data in, training, a model, predictions out.</p><p data-build="1">Perturb the input, and the model answers wrong at test time (2004).</p><p data-build="2">Read enough predictions, and you can copy the model (2005).</p><p data-build="3">Poison the data, and the model learns a blind spot or a backdoor (2008).</p><p data-build="4">Read the predictions differently, and you learn what it was trained on (2014).</p></div><blockquote class="callout"><p>The model was always manipulable — through its data, its inputs, and its outputs.</p></blockquote>
 <details class="srcs"><summary>Sources (4)</summary><div class="panel"><ul><li><a href="https://doi.org/10.1145/1014052.1014066" target="_blank" rel="noopener">Dalvi et al., Adversarial classification, KDD (2004)</a></li><li><a href="https://doi.org/10.1145/1081870.1081950" target="_blank" rel="noopener">Lowd and Meek, Adversarial learning, KDD (2005)</a></li><li><a href="https://doi.org/10.1145/1128817.1128824" target="_blank" rel="noopener">Barreno et al., Can machine learning be secure?, ASIACCS (2006)</a></li><li><a href="https://doi.org/10.1145/2046684.2046692" target="_blank" rel="noopener">Huang et al., Adversarial machine learning, AISec (2011)</a></li></ul></div></details>
@@ -243,29 +243,29 @@
 <text x="830" y="382" class="t-acc" font-size="20" font-weight="400" text-anchor="middle" dominant-baseline="central">chooses the next action</text>
 </g>
 <g data-build="1">
-<path d="M985 140L945 290" class="edge"/>
+<path d="M985 140L945 290" class="edge draw" pathLength="1"/>
 <rect x="985" y="85" width="320" height="110" rx="14" class="node"/>
 <text x="1005" y="117" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">Objective and instructions</text>
 <text x="1005" y="147" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">the task and its rules</text>
 </g>
 <g data-build="2">
-<path d="M660 140L715 290" class="edge"/>
-<path d="M260 140H328" class="edge" marker-end="url(#arrow)"/>
+<path d="M660 140L715 290" class="edge draw" pathLength="1"/>
 <rect x="330" y="85" width="330" height="110" rx="14" class="node"/>
 <text x="350" y="117" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">Tools, skills, plugins</text>
 <text x="350" y="147" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">how it acts; its config and hooks</text>
+</g>
+<g data-build="2">
+<path d="M260 140H328" class="edge draw" pathLength="1" marker-end="url(#arrow)"/>
 <rect x="40" y="85" width="220" height="110" rx="14" class="node"/>
 <text x="60" y="117" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">Tool servers</text>
 <text x="60" y="147" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">MCP, marketplaces</text>
 </g>
 <g data-build="3">
-<path d="M985 570L945 420" class="edge"/>
+<path d="M985 570L945 420" class="edge draw" pathLength="1"/>
 <rect x="985" y="515" width="320" height="110" rx="14" class="node"/>
 <text x="1005" y="547" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">Shell and network</text>
 <text x="1005" y="577" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">where its actions land</text>
-<path d="M1330 245H1418" class="edge edge--strong" marker-end="url(#arrow)"/>
-<text x="1374" y="222" class="t" font-size="22" font-weight="600" text-anchor="middle" dominant-baseline="central">actions</text>
-<path d="M1420 465H1332" class="edge edge--strong" marker-end="url(#arrow)"/>
+<path d="M1420 465H1332" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
 <text x="1374" y="490" class="t" font-size="22" font-weight="600" text-anchor="middle" dominant-baseline="central">output</text>
 <rect x="1420" y="240" width="360" height="230" rx="18" class="env"/>
 <text x="1450" y="280" class="t" font-size="28" font-weight="700" text-anchor="start" dominant-baseline="central">Environment</text>
@@ -273,26 +273,32 @@
 <text x="1450" y="352" class="t" font-size="22" font-weight="400" text-anchor="start" dominant-baseline="central">the target</text>
 <text x="1600" y="430" class="t2" font-size="22" font-weight="500" text-anchor="middle" dominant-baseline="central" font-style="italic">real-world consequences</text>
 </g>
+<g data-build="3">
+<path d="M1330 245H1418" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
+<text x="1374" y="222" class="t" font-size="22" font-weight="600" text-anchor="middle" dominant-baseline="central">actions</text>
+</g>
 <g data-build="4">
-<path d="M660 355H698" class="edge"/>
-<path d="M260 355H328" class="edge" marker-end="url(#arrow)"/>
+<path d="M660 355H698" class="edge draw" pathLength="1"/>
 <rect x="330" y="300" width="330" height="110" rx="14" class="node"/>
 <text x="350" y="332" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">Retrieval</text>
 <text x="350" y="362" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">what it is fed: documents,</text>
 <text x="350" y="388" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">mail, records, web pages</text>
+</g>
+<g data-build="4">
+<path d="M260 355H328" class="edge draw" pathLength="1" marker-end="url(#arrow)"/>
 <rect x="40" y="300" width="220" height="110" rx="14" class="node"/>
 <text x="60" y="332" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">Documents</text>
 <text x="60" y="362" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">web, mail, CRM,</text>
 <text x="60" y="388" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">tickets, files</text>
 </g>
 <g data-build="5">
-<path d="M660 570L715 420" class="edge"/>
+<path d="M660 570L715 420" class="edge draw" pathLength="1"/>
 <rect x="330" y="515" width="330" height="110" rx="14" class="node"/>
 <text x="350" y="547" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">Memory and context</text>
 <text x="350" y="577" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">what persists between turns</text>
 </g>
 <g data-build="6">
-<path d="M985 355H962" class="edge"/>
+<path d="M985 355H962" class="edge draw" pathLength="1"/>
 <rect x="985" y="300" width="320" height="110" rx="14" class="node"/>
 <text x="1005" y="332" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">Credentials and authority</text>
 <text x="1005" y="362" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">whose identity it acts with</text>
@@ -323,7 +329,7 @@
 <rect x="0" y="130" width="270" height="130" rx="14" class="node"/>
 <text x="20" y="162" class="t" font-size="28" font-weight="700" text-anchor="start" dominant-baseline="central">Objective</text>
 <text x="20" y="192" class="t2" font-size="22" font-weight="400" text-anchor="start" dominant-baseline="central">the task it was given</text>
-<path d="M270 195H380" class="edge" marker-end="url(#arrow)"/>
+<path d="M270 195H380" class="edge draw" pathLength="1" marker-end="url(#arrow)"/>
 </g>
 <g data-build="2">
 <rect x="1110" y="60" width="570" height="530" rx="22" class="env"/>
@@ -335,16 +341,16 @@
 <rect x="1150" y="350" width="490" height="130" rx="14" class="node"/>
 <text x="1170" y="382" class="t" font-size="28" font-weight="700" text-anchor="start" dominant-baseline="central">The target</text>
 <text x="1170" y="412" class="t2" font-size="22" font-weight="400" text-anchor="start" dominant-baseline="central">files, systems, network</text>
-<path d="M750 195H1100" class="edge edge--strong" marker-end="url(#arrow)"/>
+<path d="M750 195H1100" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
 <text x="925" y="160" class="t" font-size="26" font-weight="600" text-anchor="middle" dominant-baseline="central">Action: a tool call</text>
 </g>
 <g data-build="3">
-<path d="M1110 490H760" class="edge edge--strong" marker-end="url(#arrow)"/>
+<path d="M1110 490H760" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
 <text x="935" y="530" class="t" font-size="26" font-weight="600" text-anchor="middle" dominant-baseline="central">Observation: the output</text>
 <rect x="390" y="390" width="360" height="200" rx="18" class="node"/>
 <text x="420" y="426" class="t" font-size="28" font-weight="700" text-anchor="start" dominant-baseline="central">Context</text>
 <rect x="420" y="466" width="300" height="20" rx="4" class="ctx-bar"/>
-<path d="M570 390V300" class="edge" marker-end="url(#arrow)"/>
+<path d="M570 390V300" class="edge draw" pathLength="1" marker-end="url(#arrow)"/>
 </g>
 <g data-build="4">
 <rect x="420" y="496" width="300" height="20" rx="4" class="ctx-bar"/>
@@ -353,7 +359,7 @@
 <text x="575" y="566" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">grows every turn</text>
 </g>
 <g data-build="5">
-<path d="M390 270L225 415" class="edge" marker-end="url(#arrow)"/>
+<path d="M390 270L225 415" class="edge draw" pathLength="1" marker-end="url(#arrow)"/>
 <circle cx="185" cy="455" r="34" class="ring"/><circle cx="185" cy="455" r="20" class="dot"/>
 <text x="185" y="525" class="t" font-size="22" font-weight="600" text-anchor="middle" dominant-baseline="central">Stop when the objective is met</text>
 <text x="185" y="555" class="t" font-size="22" font-weight="600" text-anchor="middle" dominant-baseline="central">or the budget runs out</text>
@@ -381,36 +387,36 @@
 <text x="830" y="336" class="t-acc" font-size="36" font-weight="700" text-anchor="middle" dominant-baseline="central">Model</text>
 <text x="830" y="382" class="t-acc" font-size="20" font-weight="500" text-anchor="middle" dominant-baseline="central">unchanged, still subverted</text>
 </g>
-<g data-build="1">
-<path d="M985 140L945 290" class="edge"/>
+<g data-build="0">
+<path d="M985 140L945 290" class="edge draw" pathLength="1"/>
 <rect x="985" y="85" width="320" height="110" rx="14" class="node"/>
 <text x="1005" y="117" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">Objective and instructions</text>
 <text x="1005" y="147" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">the task and its rules</text>
 </g>
-<g data-build="2">
-<path d="M660 140L715 290" class="edge"/>
-<path d="M260 140H328" class="edge edge--bad" marker-end="url(#arrow-bad)"/>
+<g data-build="1">
+<path d="M660 140L715 290" class="edge draw" pathLength="1"/>
 <rect x="330" y="85" width="330" height="110" rx="14" class="node node--bad"/>
 <text x="350" y="117" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">Tools, skills, plugins</text>
 <text x="350" y="147" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">poisoned skill or hook,</text>
 <text x="350" y="173" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">injected tool description</text>
+<circle cx="330" cy="85" r="22" class="badge--bad"/>
+<text x="330" y="86" class="t-badge" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="central">1</text>
+</g>
+<g data-build="4">
+<path d="M260 140H328" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad)"/>
 <rect x="40" y="85" width="220" height="110" rx="14" class="node node--bad"/>
 <text x="60" y="117" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">Tool servers</text>
 <text x="60" y="147" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">compromised server,</text>
 <text x="60" y="173" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">supply chain</text>
-<circle cx="330" cy="85" r="22" class="badge--bad"/>
-<text x="330" y="86" class="t-badge" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="central">1</text>
 <circle cx="40" cy="85" r="22" class="badge--bad"/>
 <text x="40" y="86" class="t-badge" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="central">4</text>
 </g>
-<g data-build="3">
-<path d="M985 570L945 420" class="edge"/>
+<g data-build="0">
+<path d="M985 570L945 420" class="edge draw" pathLength="1"/>
 <rect x="985" y="515" width="320" height="110" rx="14" class="node"/>
 <text x="1005" y="547" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">Shell and network</text>
 <text x="1005" y="577" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">where its actions land</text>
-<path d="M1330 245H1418" class="edge edge--strong" marker-end="url(#arrow)"/>
-<text x="1374" y="222" class="t" font-size="22" font-weight="600" text-anchor="middle" dominant-baseline="central">actions</text>
-<path d="M1420 465H1332" class="edge edge--strong" marker-end="url(#arrow)"/>
+<path d="M1420 465H1332" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
 <text x="1374" y="490" class="t" font-size="22" font-weight="600" text-anchor="middle" dominant-baseline="central">output</text>
 <rect x="1420" y="240" width="360" height="230" rx="18" class="env"/>
 <text x="1450" y="280" class="t" font-size="28" font-weight="700" text-anchor="start" dominant-baseline="central">Environment</text>
@@ -418,22 +424,28 @@
 <text x="1450" y="352" class="t" font-size="22" font-weight="400" text-anchor="start" dominant-baseline="central">the target</text>
 <text x="1600" y="430" class="t2" font-size="22" font-weight="500" text-anchor="middle" dominant-baseline="central" font-style="italic">real-world consequences</text>
 </g>
-<g data-build="4">
-<path d="M660 355H698" class="edge"/>
-<path d="M260 355H328" class="edge edge--bad" marker-end="url(#arrow-bad)"/>
+<g data-build="0">
+<path d="M1330 245H1418" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
+<text x="1374" y="222" class="t" font-size="22" font-weight="600" text-anchor="middle" dominant-baseline="central">actions</text>
+</g>
+<g data-build="2">
+<path d="M660 355H698" class="edge draw" pathLength="1"/>
 <rect x="330" y="300" width="330" height="110" rx="14" class="node node--bad"/>
 <text x="350" y="332" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">Retrieval</text>
 <text x="350" y="362" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">instructions planted</text>
 <text x="350" y="388" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">in what it reads</text>
+<circle cx="330" cy="300" r="22" class="badge--bad"/>
+<text x="330" y="301" class="t-badge" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="central">2</text>
+</g>
+<g data-build="2">
+<path d="M260 355H328" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad)"/>
 <rect x="40" y="300" width="220" height="110" rx="14" class="node node--bad"/>
 <text x="60" y="332" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">Documents</text>
 <text x="60" y="362" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">attacker-written</text>
 <text x="60" y="388" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">content</text>
-<circle cx="330" cy="300" r="22" class="badge--bad"/>
-<text x="330" y="301" class="t-badge" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="central">2</text>
 </g>
-<g data-build="5">
-<path d="M660 570L715 420" class="edge"/>
+<g data-build="3">
+<path d="M660 570L715 420" class="edge draw" pathLength="1"/>
 <rect x="330" y="515" width="330" height="110" rx="14" class="node node--bad"/>
 <text x="350" y="547" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">Memory and context</text>
 <text x="350" y="577" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">malicious context persisted,</text>
@@ -441,8 +453,8 @@
 <circle cx="330" cy="515" r="22" class="badge--bad"/>
 <text x="330" y="516" class="t-badge" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="central">3</text>
 </g>
-<g data-build="6">
-<path d="M985 355H962" class="edge"/>
+<g data-build="5">
+<path d="M985 355H962" class="edge draw" pathLength="1"/>
 <rect x="985" y="300" width="320" height="110" rx="14" class="node node--bad"/>
 <text x="1005" y="332" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">Credentials and authority</text>
 <text x="1005" y="362" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">confused or excessive</text>
@@ -455,8 +467,8 @@
 <text x="60" y="492" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">Attacker</text>
 <text x="60" y="522" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">never talks</text>
 <text x="60" y="548" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">to the model</text>
-<path d="M150 458V412" class="edge edge--bad" marker-end="url(#arrow-bad)"/>
-<path d="M40 510H22V140H38" class="edge edge--bad" marker-end="url(#arrow-bad)"/>
+<path d="M150 458V412" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad)"/>
+<path d="M40 510H22V140H38" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad)"/>
 <text x="1065" y="662" class="t-bad" font-size="21" font-weight="500" text-anchor="middle" dominant-baseline="central">red: a component the attacker can write to — every arrow ends in the model's context</text>
 </g>
 </svg></figure><div class="step-captions"><p data-build="0">The same picture as two slides ago. The model stays unchanged throughout.</p><p data-build="1">① Tools, skills, plugins, hooks: a poisoned skill, a tool description carrying injection, or a settings hook that runs when the agent starts — invoked in good faith.</p><p data-build="2">② Retrieval: instructions planted in a document, mail or record the agent will fetch.</p><p data-build="3">③ Memory and context: malicious context persisted, then replayed on a later, unrelated task.</p><p data-build="4">④ Tool servers: a compromised server in the agent's supply chain.</p><p data-build="5">⑤ Credentials and authority: confused or excessive delegation turns an injection into consequences.</p><p data-build="6">The attacker never talks to the model. Every red arrow ends in the model's context — the indirect injection of slide 10, now with a map.</p></div>
@@ -695,36 +707,36 @@ attacker-desired capability</code></pre>
 <text x="830" y="336" class="t-acc" font-size="36" font-weight="700" text-anchor="middle" dominant-baseline="central">Model</text>
 <text x="830" y="382" class="t-acc" font-size="20" font-weight="500" text-anchor="middle" dominant-baseline="central">still untrusted by design</text>
 </g>
-<g data-build="1">
-<path d="M985 140L945 290" class="edge"/>
+<g data-build="0">
+<path d="M985 140L945 290" class="edge draw" pathLength="1"/>
 <rect x="985" y="85" width="320" height="110" rx="14" class="node"/>
 <text x="1005" y="117" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">Objective and instructions</text>
 <text x="1005" y="147" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">the task and its rules</text>
 </g>
-<g data-build="2">
-<path d="M660 140L715 290" class="edge"/>
-<path d="M260 140H328" class="edge edge--good" marker-end="url(#arrow-good)"/>
+<g data-build="1">
+<path d="M660 140L715 290" class="edge draw" pathLength="1"/>
 <rect x="330" y="85" width="330" height="110" rx="14" class="node node--good"/>
 <text x="350" y="117" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">Tools, skills, plugins</text>
 <text x="350" y="147" class="t-good" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">allowlist, least privilege,</text>
 <text x="350" y="173" class="t-good" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">approval for consequential acts</text>
+<circle cx="330" cy="85" r="22" class="badge--good"/>
+<text x="330" y="86" class="t-badge" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="central">1</text>
+</g>
+<g data-build="4">
+<path d="M260 140H328" class="edge edge--good draw" pathLength="1" marker-end="url(#arrow-good)"/>
 <rect x="40" y="85" width="220" height="110" rx="14" class="node node--good"/>
 <text x="60" y="117" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">Tool servers</text>
 <text x="60" y="147" class="t-good" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">pinned, signed,</text>
 <text x="60" y="173" class="t-good" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">reviewed like code</text>
-<circle cx="330" cy="85" r="22" class="badge--good"/>
-<text x="330" y="86" class="t-badge" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="central">1</text>
 <circle cx="40" cy="85" r="22" class="badge--good"/>
 <text x="40" y="86" class="t-badge" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="central">4</text>
 </g>
-<g data-build="3">
-<path d="M985 570L945 420" class="edge"/>
+<g data-build="0">
+<path d="M985 570L945 420" class="edge draw" pathLength="1"/>
 <rect x="985" y="515" width="320" height="110" rx="14" class="node"/>
 <text x="1005" y="547" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">Shell and network</text>
 <text x="1005" y="577" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">where its actions land</text>
-<path d="M1330 245H1418" class="edge edge--good" marker-end="url(#arrow-good)"/>
-<text x="1600" y="205" class="t-good" font-size="19" font-weight="600" text-anchor="middle" dominant-baseline="central">actions — egress: trusted destinations only</text>
-<path d="M1420 465H1332" class="edge edge--strong" marker-end="url(#arrow)"/>
+<path d="M1420 465H1332" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
 <text x="1374" y="490" class="t" font-size="22" font-weight="600" text-anchor="middle" dominant-baseline="central">output</text>
 <rect x="1420" y="240" width="360" height="230" rx="18" class="env"/>
 <text x="1450" y="280" class="t" font-size="28" font-weight="700" text-anchor="start" dominant-baseline="central">Environment</text>
@@ -732,22 +744,30 @@ attacker-desired capability</code></pre>
 <text x="1450" y="352" class="t" font-size="22" font-weight="400" text-anchor="start" dominant-baseline="central">the target</text>
 <text x="1600" y="430" class="t2" font-size="22" font-weight="500" text-anchor="middle" dominant-baseline="central" font-style="italic">real-world consequences</text>
 </g>
-<g data-build="4">
-<path d="M660 355H698" class="edge"/>
-<path d="M260 355H328" class="edge edge--good" marker-end="url(#arrow-good)"/>
+<g data-build="6">
+<path d="M1330 245H1418" class="edge edge--good draw" pathLength="1" marker-end="url(#arrow-good)"/>
+<text x="1600" y="205" class="t-good" font-size="19" font-weight="600" text-anchor="middle" dominant-baseline="central">actions — egress: trusted destinations only</text>
+<circle cx="1374" cy="245" r="22" class="badge--good"/>
+<text x="1374" y="246" class="t-badge" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="central">E</text>
+</g>
+<g data-build="2">
+<path d="M660 355H698" class="edge draw" pathLength="1"/>
 <rect x="330" y="300" width="330" height="110" rx="14" class="node node--good"/>
 <text x="350" y="332" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">Retrieval</text>
 <text x="350" y="362" class="t-good" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">untrusted text labelled,</text>
 <text x="350" y="388" class="t-good" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">quarantined from authority</text>
+<circle cx="330" cy="300" r="22" class="badge--good"/>
+<text x="330" y="301" class="t-badge" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="central">2</text>
+</g>
+<g data-build="2">
+<path d="M260 355H328" class="edge edge--good draw" pathLength="1" marker-end="url(#arrow-good)"/>
 <rect x="40" y="300" width="220" height="110" rx="14" class="node node--good"/>
 <text x="60" y="332" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">Documents</text>
 <text x="60" y="362" class="t-good" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">provenance kept;</text>
 <text x="60" y="388" class="t-good" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">treated as data</text>
-<circle cx="330" cy="300" r="22" class="badge--good"/>
-<text x="330" y="301" class="t-badge" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="central">2</text>
 </g>
-<g data-build="5">
-<path d="M660 570L715 420" class="edge"/>
+<g data-build="3">
+<path d="M660 570L715 420" class="edge draw" pathLength="1"/>
 <rect x="330" y="515" width="330" height="110" rx="14" class="node node--good"/>
 <text x="350" y="547" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">Memory and context</text>
 <text x="350" y="577" class="t-good" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">provenance travels with it;</text>
@@ -755,8 +775,8 @@ attacker-desired capability</code></pre>
 <circle cx="330" cy="515" r="22" class="badge--good"/>
 <text x="330" y="516" class="t-badge" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="central">3</text>
 </g>
-<g data-build="6">
-<path d="M985 355H962" class="edge"/>
+<g data-build="5">
+<path d="M985 355H962" class="edge draw" pathLength="1"/>
 <rect x="985" y="300" width="320" height="110" rx="14" class="node node--good"/>
 <text x="1005" y="332" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">Credentials and authority</text>
 <text x="1005" y="362" class="t-good" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">per-agent identity, short-lived,</text>
@@ -765,8 +785,6 @@ attacker-desired capability</code></pre>
 <text x="985" y="301" class="t-badge" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="central">5</text>
 </g>
 <g data-build="7">
-<circle cx="1374" cy="245" r="22" class="badge--good"/>
-<text x="1374" y="246" class="t-badge" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="central">E</text>
 <circle cx="830" cy="252" r="22" class="badge--good"/>
 <text x="830" y="253" class="t-badge" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="central">M</text>
 <text x="830" y="46" class="t-good" font-size="22" font-weight="600" text-anchor="middle" dominant-baseline="central">M — every transition logged and classified</text>

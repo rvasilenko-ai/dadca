@@ -31,7 +31,7 @@ svg{--surface:#ffffff;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--line:#9ca3
 <rect x="0" y="130" width="270" height="130" rx="14" class="node"/>
 <text x="20" y="162" class="t" font-size="28" font-weight="700" text-anchor="start" dominant-baseline="central">Objective</text>
 <text x="20" y="192" class="t2" font-size="22" font-weight="400" text-anchor="start" dominant-baseline="central">the task it was given</text>
-<path d="M270 195H380" class="edge" marker-end="url(#arrow)"/>
+<path d="M270 195H380" class="edge draw" pathLength="1" marker-end="url(#arrow)"/>
 </g>
 <g data-build="2">
 <rect x="1110" y="60" width="570" height="530" rx="22" class="env"/>
@@ -43,16 +43,16 @@ svg{--surface:#ffffff;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--line:#9ca3
 <rect x="1150" y="350" width="490" height="130" rx="14" class="node"/>
 <text x="1170" y="382" class="t" font-size="28" font-weight="700" text-anchor="start" dominant-baseline="central">The target</text>
 <text x="1170" y="412" class="t2" font-size="22" font-weight="400" text-anchor="start" dominant-baseline="central">files, systems, network</text>
-<path d="M750 195H1100" class="edge edge--strong" marker-end="url(#arrow)"/>
+<path d="M750 195H1100" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
 <text x="925" y="160" class="t" font-size="26" font-weight="600" text-anchor="middle" dominant-baseline="central">Action: a tool call</text>
 </g>
 <g data-build="3">
-<path d="M1110 490H760" class="edge edge--strong" marker-end="url(#arrow)"/>
+<path d="M1110 490H760" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
 <text x="935" y="530" class="t" font-size="26" font-weight="600" text-anchor="middle" dominant-baseline="central">Observation: the output</text>
 <rect x="390" y="390" width="360" height="200" rx="18" class="node"/>
 <text x="420" y="426" class="t" font-size="28" font-weight="700" text-anchor="start" dominant-baseline="central">Context</text>
 <rect x="420" y="466" width="300" height="20" rx="4" class="ctx-bar"/>
-<path d="M570 390V300" class="edge" marker-end="url(#arrow)"/>
+<path d="M570 390V300" class="edge draw" pathLength="1" marker-end="url(#arrow)"/>
 </g>
 <g data-build="4">
 <rect x="420" y="496" width="300" height="20" rx="4" class="ctx-bar"/>
@@ -61,7 +61,7 @@ svg{--surface:#ffffff;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--line:#9ca3
 <text x="575" y="566" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">grows every turn</text>
 </g>
 <g data-build="5">
-<path d="M390 270L225 415" class="edge" marker-end="url(#arrow)"/>
+<path d="M390 270L225 415" class="edge draw" pathLength="1" marker-end="url(#arrow)"/>
 <circle cx="185" cy="455" r="34" class="ring"/><circle cx="185" cy="455" r="20" class="dot"/>
 <text x="185" y="525" class="t" font-size="22" font-weight="600" text-anchor="middle" dominant-baseline="central">Stop when the objective is met</text>
 <text x="185" y="555" class="t" font-size="22" font-weight="600" text-anchor="middle" dominant-baseline="central">or the budget runs out</text>

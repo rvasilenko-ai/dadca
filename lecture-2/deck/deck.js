@@ -11,6 +11,11 @@
   var i = 0, step = 0;
 
   function stepsOf(s) { return parseInt(s.dataset.steps || '0', 10) || 0; }
+  // an appearing build's self-drawing edges keep their arrowheads hidden until the line has drawn (760ms, see deck.css)
+  function holdArrowheads(group) {
+    var edges = group.querySelectorAll('.draw[marker-end]');
+    for (var k = 0; k < edges.length; k++) (function (d) { d.classList.add('marker-wait'); setTimeout(function () { d.classList.remove('marker-wait'); }, 760); })(edges[k]);
+  }
 
   function fit() {
     var w = window.innerWidth - (notes.hidden ? 0 : notes.offsetWidth), h = window.innerHeight;
@@ -24,10 +29,13 @@
     var s = slides[i];
     slides.forEach(function (el, k) { el.classList.toggle('is-current', k === i); });
     var builds = s.querySelectorAll('[data-build]');
+    var still = document.documentElement.classList.contains('is-still');
     for (var b = 0; b < builds.length; b++) {
       var n = parseInt(builds[b].dataset.build, 10);
-      builds[b].classList.toggle('is-shown', n <= step);
-      builds[b].classList.toggle('is-current', n === step);
+      var shown = n <= step, appearing = shown && !builds[b].classList.contains('is-shown');
+      builds[b].classList.toggle('is-shown', shown);
+      builds[b].classList.toggle('is-current', n === step && step > 0);
+      if (appearing && !still && pushHash !== false) holdArrowheads(builds[b]);
     }
     var caps = s.querySelectorAll('.step-captions > p');
     if (caps.length) {

@@ -109,8 +109,19 @@ html.is-still * { transition: none !important; }
 /* ---- diagram slides: the SVG sits on the stage and takes the theme's tokens ---- */
 .slide--diagram .diagram-wrap { margin: 0; flex: 0 1 auto; min-height: 0; display: flex; justify-content: center; }
 .slide--diagram .diagram { display: block; width: auto; max-width: 1700px; max-height: 690px; height: auto; overflow: visible; }
-.diagram g[data-build] { opacity: 0; transition: opacity var(--d) ease-out; }
-.diagram g[data-build].is-shown { opacity: 1; }
+/* builds: a group appears at its step, rising slightly; its edges draw themselves and the arrowhead waits for the line */
+.diagram g[data-build] { opacity: 0; translate: 0 18px; visibility: hidden; transition: none; }
+.diagram g[data-build].is-shown { opacity: 1; translate: 0 0; visibility: visible; transition: opacity var(--d) ease-out, translate var(--d) ease-out; }
+.diagram .draw { stroke-dasharray: 1 1; stroke-dashoffset: 0; transition: stroke-dashoffset 760ms cubic-bezier(.65, 0, .35, 1); }
+.diagram g[data-build]:not(.is-shown) .draw { stroke-dashoffset: 1; transition: none; }
+.diagram g[data-build]:not(.is-shown) .draw, .diagram .draw.marker-wait { marker-end: none; }
+/* the current build is lit: accent for neutral tiles and edges, a glow for red and green ones so their colour keeps its meaning */
+.diagram .node, .diagram .edge { transition: stroke var(--d) ease-out, stroke-width var(--d) ease-out; }
+.diagram g[data-build].is-current .node:not(.node--model):not(.node--bad):not(.node--good) { stroke: var(--accent); stroke-width: 4; }
+.diagram g[data-build].is-current .edge:not(.edge--bad):not(.edge--good) { stroke: var(--accent); stroke-width: 5; }
+.diagram g[data-build].is-current .node--bad { filter: drop-shadow(0 0 14px var(--bad)); }
+.diagram g[data-build].is-current .node--good { filter: drop-shadow(0 0 14px var(--good)); }
+html.is-still .diagram g[data-build], html.is-still .diagram .draw { transition: none !important; }
 .diagram .node { fill: var(--surface); stroke: var(--rule-2); stroke-width: 2.5; }
 .diagram .node--model { fill: var(--accent-wash); stroke: var(--accent); stroke-width: 4; }
 .diagram .node--bad { fill: var(--bad-wash); stroke: var(--bad); stroke-width: 4; }

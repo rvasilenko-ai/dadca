@@ -35,9 +35,9 @@ svg{--surface:#ffffff;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--line:#9ca3
 <rect x="1400" y="240" width="300" height="110" rx="14" class="node"/>
 <text x="1550" y="280" class="t" font-size="28" font-weight="700" text-anchor="middle" dominant-baseline="central">predictions</text>
 <text x="1550" y="318" class="t2" font-size="20" font-weight="400" text-anchor="middle" dominant-baseline="central">its answers</text>
-<path d="M380 295H518" class="edge edge--strong" marker-end="url(#arrow)"/>
-<path d="M820 295H958" class="edge edge--strong" marker-end="url(#arrow)"/>
-<path d="M1260 295H1398" class="edge edge--strong" marker-end="url(#arrow)"/>
+<path d="M380 295H518" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
+<path d="M820 295H958" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
+<path d="M1260 295H1398" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
 </g>
 <g data-build="1">
 <text x="80" y="24" class="t-bad" font-size="20" font-weight="600" text-anchor="start" dominant-baseline="central">ATTACKER WRITES: into the data it learns from, or into the input it reads</text>
@@ -46,7 +46,7 @@ svg{--surface:#ffffff;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--line:#9ca3
 <text x="980" y="106" class="t-bad" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">perturb the input</text>
 <text x="980" y="132" class="t-bad" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">2004 → 2014</text>
 <text x="980" y="158" class="t-bad" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">malware detectors 2013 → 2018</text>
-<path d="M1130 180V236" class="edge edge--bad" marker-end="url(#arrow-bad)"/>
+<path d="M1130 180V236" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad)"/>
 </g>
 <g data-build="2">
 <text x="80" y="578" class="t-bad" font-size="20" font-weight="600" text-anchor="start" dominant-baseline="central">ATTACKER READS: what the model answers, and learns the model or its data from it</text>
@@ -54,20 +54,20 @@ svg{--surface:#ffffff;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--line:#9ca3
 <text x="1060" y="452" class="t" font-size="26" font-weight="700" text-anchor="start" dominant-baseline="central">Extraction</text>
 <text x="1060" y="482" class="t-bad" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">copy the model from its answers</text>
 <text x="1060" y="508" class="t-bad" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">2005 → 2016</text>
-<path d="M1500 350L1240 416" class="edge edge--bad" marker-end="url(#arrow-bad)"/>
+<path d="M1500 350L1240 416" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad)"/>
 </g>
 <g data-build="3">
 <rect x="80" y="44" width="340" height="136" rx="14" class="node node--bad"/>
 <text x="100" y="76" class="t" font-size="26" font-weight="700" text-anchor="start" dominant-baseline="central">Poisoning, backdoors</text>
 <text x="100" y="106" class="t-bad" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">corrupt what it learns</text>
 <text x="100" y="132" class="t-bad" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">2008 → 2017</text>
-<path d="M250 180V236" class="edge edge--bad" marker-end="url(#arrow-bad)"/>
+<path d="M250 180V236" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad)"/>
 </g>
 <g data-build="4">
 <rect x="1420" y="420" width="340" height="136" rx="14" class="node node--bad"/>
 <text x="1440" y="452" class="t" font-size="26" font-weight="700" text-anchor="start" dominant-baseline="central">Inference, inversion</text>
 <text x="1440" y="482" class="t-bad" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">learn the training data</text>
 <text x="1440" y="508" class="t-bad" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">from its answers · 2014 → 2017</text>
-<path d="M1600 350V416" class="edge edge--bad" marker-end="url(#arrow-bad)"/>
+<path d="M1600 350V416" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad)"/>
 </g>
 </svg>
