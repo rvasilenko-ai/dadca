@@ -214,10 +214,11 @@ def cell_lines(tid, name, inner_w):
     return lines[:2], 12.5
 
 
-def attack_matrix(aria, path, lead, cols, steps):
+def attack_matrix(aria, path, lead, cols, steps, zoom=False):
     """The schematic Enterprise matrix for the tactic columns cols[0]:cols[1], with technique names in the cells.
     `path` is the whole lit path, a list of steps, each a list of (technique id, tactic id) cells; `steps` are the
-    1-based step numbers lit on this half, each as its own build, numbered as in the whole path."""
+    1-based step numbers lit on this half, each as its own build, numbered as in the whole path. With `zoom`, one
+    more build replaces the matrix with a large view of only the lit columns and cells, for the back of the room."""
     tactics = ATTACK["tactics"][cols[0]:cols[1]]
     W, n, x0, gap = 1800, len(tactics), 20, 10
     col_w = (W - 2 * x0 - (n - 1) * gap) / n
@@ -233,7 +234,9 @@ def attack_matrix(aria, path, lead, cols, steps):
     max_rows = max(len(r) for r in cols_rows)
     H = top + head_h + 6 + max_rows * row_h + 56
     s = head(W, H, aria)
-    s += '<g data-build="0">\n' + text(x0, 18, esc(lead), 17, 500, "t2")
+    zb = len(steps) + 1
+    until = f' data-build-until="{zb}"' if zoom else ""
+    s += f'<g data-build="0"{until}>\n' + text(x0, 18, esc(lead), 17, 500, "t2")
     centers = {}
 
     def cell_text(x, y, lines, size, cls, weight):
@@ -275,9 +278,58 @@ def attack_matrix(aria, path, lead, cols, steps):
         if prev is not None:
             body = edge(f"M{prev[0]} {prev[1]}L{first[0]} {first[1]}", red=True) + body
         body += small_badge(first[2] + 2, first[3] + 2, k, r=13, size=14)
-        s += f'<g data-build="{b}">\n{body}</g>\n'
+        s += f'<g data-build="{b}"{until}>\n{body}</g>\n'
         prev = first
+    if zoom:
+        s += zoomed_path(path, steps, {k: v[:2] for k, v in centers.items()}, W, H, zb)
     return s + "</svg>\n"
+
+
+def zoomed_path(path, steps, on_half, W, H, build):
+    """Only the lit columns and cells of this half, large: one column per tactic touched, in matrix order, the lit
+    techniques as big cells with their step badges, and the path line between consecutive steps."""
+    names = {}
+    for t in ATTACK["tactics"]:
+        for tech in t["techniques"]:
+            names[tech["id"]] = tech["name"]
+            for sub in tech.get("subs", []):
+                names[sub["id"]] = sub["name"]
+    order = [t["id"] for t in ATTACK["tactics"]]
+    tname = {t["id"]: t["name"] for t in ATTACK["tactics"]}
+    lit = {}
+    for k in steps:
+        for tid, tac in path[k - 1]:
+            if (tid, tac) in on_half and (tid, k) not in [(c, s) for c, s in lit.get(tac, [])]:
+                lit.setdefault(tac, []).append((tid, k))
+    tacs = sorted(lit, key=order.index)
+    n, x0, gap, top, head_h, cell_h, cgap = len(tacs), 24, 26, 64, 84, 156, 18
+    col_w = (W - 2 * x0 - (n - 1) * gap) / n
+    s = f'<g data-build="{build}" data-build-zoom="1">\n'
+    s += text(x0, 24, f"Zoomed in: only the columns and techniques of steps {min(steps)} to {max(steps)}", 20, 600, "t2")
+    centers = {}
+    for c, tac in enumerate(tacs):
+        x = round(x0 + c * (col_w + gap), 1)
+        name = tname[tac].replace(" (new in April 2026)", "").replace(" (Defense Evasion until April 2026)", "")
+        s += rect(x, top, round(col_w, 1), head_h, "colhead", rx=10)
+        hl = wrap(name, int(col_w / (28 * 0.56)))
+        if len(hl) == 1:
+            s += text(x + col_w / 2, top + head_h / 2, esc(hl[0]), 28, 700, "t", "middle")
+        else:
+            s += text(x + col_w / 2, top + 28, esc(hl[0]), 25, 700, "t", "middle") + text(x + col_w / 2, top + 56, esc(hl[1]), 25, 700, "t", "middle")
+        for r, (tid, k) in enumerate(lit[tac]):
+            y = top + head_h + 16 + r * (cell_h + cgap)
+            s += rect(x, y, round(col_w, 1), cell_h, "cell--lit", rx=12)
+            for size in (30, 27, 24):   # a long name steps down a size rather than losing its last word
+                lines = wrap(f"{tid} {names[tid]}", int((col_w - 44) / (size * 0.56)))
+                if len(lines) <= 3:
+                    break
+            step = round(size * 1.27)
+            ly = y + cell_h / 2 - (len(lines) - 1) * step / 2
+            for j, ln in enumerate(lines):
+                s += text(x + 24, ly + j * step, esc(ln), size, 700, "t-bad")
+            s += small_badge(x + 2, y + 2, k, r=19, size=20)
+    # no path line here: the step badges carry the order, and a line through 30px labels would strike them out
+    return s + "</g>\n"
 
 
 TROJAN_PATH = [[("T1566.001", "TA0001")], [("T1204.002", "TA0002")], [("T1027.002", "TA0005")], [("T1055", "TA0005")],
@@ -474,11 +526,11 @@ VERSION_LINE = ATTACK["version"] + " · hover a cell for its name"
 (OUT / "attack-fileless-1.svg").write_text(attack_matrix(
     "The Enterprise ATT&CK matrix, first half, Reconnaissance to Defense Impairment, with the recurring scenario lit step by "
     "step: valid accounts, PowerShell with command obfuscation, exploitation for privilege escalation, disable or modify tools",
-    FILELESS_PATH, VERSION_LINE, (0, 8), [1, 2, 3, 4]))
+    FILELESS_PATH, VERSION_LINE, (0, 8), [1, 2, 3, 4], zoom=True))
 (OUT / "attack-fileless-2.svg").write_text(attack_matrix(
     "The Enterprise ATT&CK matrix, second half, Stealth to Impact, with the scenario continuing: ingress tool transfer, process "
     "injection and reflective code loading, discovery and collection, web protocols and exfiltration over the C2 channel",
-    FILELESS_PATH, VERSION_LINE, (6, 15), [5, 6, 7, 8]))
+    FILELESS_PATH, VERSION_LINE, (6, 15), [5, 6, 7, 8], zoom=True))
 (OUT / "benign-files.svg").write_text(benign_files())
 (OUT / "pipeline.svg").write_text(pipeline())
 (OUT / "pipeline-host.svg").write_text(pipeline_host())

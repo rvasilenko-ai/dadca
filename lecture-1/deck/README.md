@@ -28,13 +28,13 @@ Links address a slide and a step: `#/s16/4` is slide 16 at step 4, `#/s10b` the 
 
 ## What steps
 
-Every figure is an SVG with `data-build` groups that the runtime reveals one click at a time, with a caption per step under it. Hover any dot or cell for its tooltip (the runtime shows it instantly, in the theme).
+Every figure is an SVG with `data-build` groups that the runtime reveals one click at a time, with a caption per step under it; a group with `data-build-until` hides again at that step, which is how a zoomed view can replace a figure (the print keeps the figure). Hover any dot or cell for its tooltip (the runtime shows it instantly, in the theme).
 
 - **Slide 3:** the ladder of five situations, one rung per click.
 - **Slide 9:** the 2000–2026 timeline, five lanes, every event a dot with its date and detail on hover, the anchors labelled; the four period bands light one at a time, and clicking a period name jumps to its slide.
 - **Slides 10–13:** one period zoomed, key events labelled; the five tracks light in turn with their headlines; the detail table follows as a continuation page.
 - **Slide 14:** the six breaks as bars on the axis, one per click, then the malware-free share inset; the table follows as a continuation page.
-- **Slides 16 and 18:** a schematic Enterprise ATT&CK matrix built from `tools/data.py` (v20.0 counts, a few real techniques each with their names, the sub-technique level under Execution; hover a cell for its full name), shown in two halves so the cells read from the back of the room: each slide is two pages, Reconnaissance to Defense Impairment, then the rest. On 16 a classic trojan lights as a numbered path across both pages; on 18 the recurring scenario, steps 1–4 on the first page and 5–8 on the second.
+- **Slides 16 and 18:** a schematic Enterprise ATT&CK matrix built from `tools/data.py` (v20.0 counts, a few real techniques each with their names, the sub-technique level under Execution; hover a cell for its full name), shown in two halves so the cells read from the back of the room: each slide is two pages, Reconnaissance to Defense Impairment, then the rest. On 16 a classic trojan lights as a numbered path across both pages; on 18 the recurring scenario, steps 1–4 on the first page and 5–8 on the second, each page ending with one more click that replaces the matrix by a zoomed view of only the lit columns and cells (`#/s18/5`, `#/s18b/5`), for the back of the room. The full scenario sits above both pages, the half being mapped in weight and the rest faded.
 - **Slide 17:** the two benign-file cards, then the verdict.
 - **Slides 20, 21, 23, 24:** the eight-stage pipeline strip; each click lights a stage (or, on 24, the stage a change broke) with its caption; the full tables follow as continuation pages.
 - **Slide 25:** the strip again; each click lights a stage and lists its options, one per line with what each captures; the full menu with what each misses is in the presenter notes.

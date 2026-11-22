@@ -35,7 +35,7 @@ svg{--surface:#ffffff;--surface-2:#eceff6;--frame:#f8fafc;--ink:#1f2937;--ink-2:
   <marker id="arrow-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
   <marker id="arrow-good" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
 </defs>
-<g data-build="0">
+<g data-build="0" data-build-until="5">
 <text x="20" y="18" class="t2" font-size="17" font-weight="500" text-anchor="start" dominant-baseline="central">Enterprise v20.0 (13 October 2026): 15 tactics, 227 techniques, 479 sub-techniques · hover a cell for its name</text>
 <rect x="20.0" y="44" width="211.2" height="50" rx="6" class="colhead"><title>Reconnaissance (TA0043): 12 techniques</title></rect>
 <text x="125.625" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Reconnaissance</text>
@@ -205,13 +205,13 @@ svg{--surface:#ffffff;--surface-2:#eceff6;--frame:#f8fafc;--ink:#1f2937;--ink-2:
 <text x="1576.8" y="381" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">History Logging</text>
 <text x="1674.425" y="406" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+13 more</text>
 </g>
-<g data-build="1">
+<g data-build="1" data-build-until="5">
 <rect x="462.5" y="226" width="211.2" height="38" rx="5" class="cell--lit"><title>step 1: T1078</title></rect>
 <text x="470.5" y="245.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1078 Valid Accounts</text>
 <circle cx="464.5" cy="228" r="13" class="badge--bad"/>
 <text x="464.5" y="229" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">1</text>
 </g>
-<g data-build="2">
+<g data-build="2" data-build-until="5">
 <path d="M568.1 245.0L795.4 161.0" class="edge edge--bad draw" pathLength="1"/>
 <rect x="695.8" y="142" width="199.2" height="38" rx="5" class="cell--lit"><title>step 2: T1059.001</title></rect>
 <text x="703.8" y="161.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1059.001 PowerShell</text>
@@ -221,7 +221,7 @@ svg{--surface:#ffffff;--surface-2:#eceff6;--frame:#f8fafc;--ink:#1f2937;--ink-2:
 <circle cx="697.8" cy="144" r="13" class="badge--bad"/>
 <text x="697.8" y="145" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">2</text>
 </g>
-<g data-build="3">
+<g data-build="3" data-build-until="5">
 <path d="M795.4 161.0L1231.8 119.0" class="edge edge--bad draw" pathLength="1"/>
 <rect x="1126.2" y="100" width="211.2" height="38" rx="5" class="cell--lit"><title>step 3: T1068</title></rect>
 <text x="1134.2" y="113" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1068 Exploitation for</text>
@@ -229,12 +229,51 @@ svg{--surface:#ffffff;--surface-2:#eceff6;--frame:#f8fafc;--ink:#1f2937;--ink-2:
 <circle cx="1128.2" cy="102" r="13" class="badge--bad"/>
 <text x="1128.2" y="103" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">3</text>
 </g>
-<g data-build="4">
+<g data-build="4" data-build-until="5">
 <path d="M1231.8 119.0L1674.3999999999999 119.0" class="edge edge--bad draw" pathLength="1"/>
 <rect x="1568.8" y="100" width="211.2" height="38" rx="5" class="cell--lit"><title>step 4: T1685</title></rect>
 <text x="1576.8" y="113" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1685 Disable or Modify</text>
 <text x="1576.8" y="129" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">Tools</text>
 <circle cx="1570.8" cy="102" r="13" class="badge--bad"/>
 <text x="1570.8" y="103" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">4</text>
+</g>
+<g data-build="5" data-build-zoom="1">
+<text x="24" y="24" class="t2" font-size="20" font-weight="600" text-anchor="start" dominant-baseline="central">Zoomed in: only the columns and techniques of steps 1 to 4</text>
+<rect x="24.0" y="64" width="329.6" height="84" rx="10" class="colhead"></rect>
+<text x="188.8" y="106.0" class="t" font-size="28" font-weight="700" text-anchor="middle" dominant-baseline="central">Initial Access</text>
+<rect x="24.0" y="164" width="329.6" height="156" rx="12" class="cell--lit"></rect>
+<text x="48.0" y="223.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">T1078 Valid</text>
+<text x="48.0" y="261.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">Accounts</text>
+<circle cx="26.0" cy="166" r="19" class="badge--bad"/>
+<text x="26.0" y="167" class="t-badge" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="central">1</text>
+<rect x="379.6" y="64" width="329.6" height="84" rx="10" class="colhead"></rect>
+<text x="544.4000000000001" y="106.0" class="t" font-size="28" font-weight="700" text-anchor="middle" dominant-baseline="central">Execution</text>
+<rect x="379.6" y="164" width="329.6" height="156" rx="12" class="cell--lit"></rect>
+<text x="403.6" y="223.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">T1059.001</text>
+<text x="403.6" y="261.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">PowerShell</text>
+<circle cx="381.6" cy="166" r="19" class="badge--bad"/>
+<text x="381.6" y="167" class="t-badge" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="central">2</text>
+<rect x="735.2" y="64" width="329.6" height="84" rx="10" class="colhead"></rect>
+<text x="900.0" y="106.0" class="t" font-size="28" font-weight="700" text-anchor="middle" dominant-baseline="central">Privilege Escalation</text>
+<rect x="735.2" y="164" width="329.6" height="156" rx="12" class="cell--lit"></rect>
+<text x="759.2" y="208.0" class="t-bad" font-size="27" font-weight="700" text-anchor="start" dominant-baseline="central">T1068 Exploitation</text>
+<text x="759.2" y="242.0" class="t-bad" font-size="27" font-weight="700" text-anchor="start" dominant-baseline="central">for Privilege</text>
+<text x="759.2" y="276.0" class="t-bad" font-size="27" font-weight="700" text-anchor="start" dominant-baseline="central">Escalation</text>
+<circle cx="737.2" cy="166" r="19" class="badge--bad"/>
+<text x="737.2" y="167" class="t-badge" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="central">3</text>
+<rect x="1090.8" y="64" width="329.6" height="84" rx="10" class="colhead"></rect>
+<text x="1255.6" y="106.0" class="t" font-size="28" font-weight="700" text-anchor="middle" dominant-baseline="central">Stealth</text>
+<rect x="1090.8" y="164" width="329.6" height="156" rx="12" class="cell--lit"></rect>
+<text x="1114.8" y="223.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">T1027.010 Command</text>
+<text x="1114.8" y="261.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">Obfuscation</text>
+<circle cx="1092.8" cy="166" r="19" class="badge--bad"/>
+<text x="1092.8" y="167" class="t-badge" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="central">2</text>
+<rect x="1446.4" y="64" width="329.6" height="84" rx="10" class="colhead"></rect>
+<text x="1611.2" y="106.0" class="t" font-size="28" font-weight="700" text-anchor="middle" dominant-baseline="central">Defense Impairment</text>
+<rect x="1446.4" y="164" width="329.6" height="156" rx="12" class="cell--lit"></rect>
+<text x="1470.4" y="223.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">T1685 Disable or</text>
+<text x="1470.4" y="261.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">Modify Tools</text>
+<circle cx="1448.4" cy="166" r="19" class="badge--bad"/>
+<text x="1448.4" y="167" class="t-badge" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="central">4</text>
 </g>
 </svg>

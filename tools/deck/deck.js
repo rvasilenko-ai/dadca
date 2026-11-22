@@ -32,7 +32,9 @@
     var still = document.documentElement.classList.contains('is-still');
     for (var b = 0; b < builds.length; b++) {
       var n = parseInt(builds[b].dataset.build, 10);
-      var shown = n <= step, appearing = shown && !builds[b].classList.contains('is-shown');
+      // a group shows from its build on; with data-build-until it hides again at that build (a zoom that replaces a figure)
+      var until = builds[b].dataset.buildUntil ? parseInt(builds[b].dataset.buildUntil, 10) : Infinity;
+      var shown = n <= step && step < until, appearing = shown && !builds[b].classList.contains('is-shown');
       builds[b].classList.toggle('is-shown', shown);
       builds[b].classList.toggle('is-current', n === step && step > 0);
       if (appearing && !still && pushHash !== false) holdArrowheads(builds[b]);

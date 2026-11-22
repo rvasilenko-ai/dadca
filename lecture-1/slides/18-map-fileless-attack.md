@@ -6,7 +6,7 @@
 ## On-slide content
 > ==Using a stolen administrator account, an attacker runs PowerShell. A script downloads a legitimate, signed but vulnerable kernel driver, loads it, and uses it to disable the endpoint protection and antivirus from the kernel.== ~~It then downloads a memory-only implant and injects it into explorer.exe. The implant enumerates documents, compresses selected content, and uploads it over HTTPS.~~
 
-![The Enterprise ATT&CK matrix, first half, Reconnaissance to Defense Impairment, with technique names in the cells; the recurring scenario lit step by step: valid accounts, PowerShell with command obfuscation, exploitation for privilege escalation, disable or modify tools](../figures/attack-fileless-1.svg)
+![The Enterprise ATT&CK matrix, first half, Reconnaissance to Defense Impairment, with technique names in the cells; the recurring scenario lit step by step: valid accounts, PowerShell with command obfuscation, exploitation for privilege escalation, disable or modify tools; then a zoomed view of only the lit columns and cells](../figures/attack-fileless-1.svg)
 
 Build, one step per click:
 
@@ -15,12 +15,13 @@ Build, one step per click:
 2. Step 2 — PowerShell (T1059.001) with Command Obfuscation (T1027.010).
 3. Step 3 — Exploitation for Privilege Escalation (T1068): a legitimate, signed but vulnerable driver loaded, then exploited (BYOVD).
 4. Step 4 — Disable or Modify Tools (T1685): endpoint protection and antivirus disabled from the kernel.
+5. Zoomed in: only the columns and techniques the attack touched, steps 1 to 4, large enough to read from anywhere in the room.
 
 ---
 
 > ~~Using a stolen administrator account, an attacker runs PowerShell. A script downloads a legitimate, signed but vulnerable kernel driver, loads it, and uses it to disable the endpoint protection and antivirus from the kernel.~~ ==It then downloads a memory-only implant and injects it into explorer.exe. The implant enumerates documents, compresses selected content, and uploads it over HTTPS.==
 
-![The Enterprise ATT&CK matrix, second half, Stealth to Impact, with the scenario continuing: ingress tool transfer, process injection and reflective code loading, discovery and collection, web protocols and exfiltration over the C2 channel](../figures/attack-fileless-2.svg)
+![The Enterprise ATT&CK matrix, second half, Stealth to Impact, with the scenario continuing: ingress tool transfer, process injection and reflective code loading, discovery and collection, web protocols and exfiltration over the C2 channel; then a zoomed view of only the lit columns and cells](../figures/attack-fileless-2.svg)
 
 Build, one step per click:
 
@@ -29,6 +30,7 @@ Build, one step per click:
 2. Step 6 — Process Injection (T1055) and Reflective Code Loading (T1620): into explorer.exe, in memory. ATT&CK lists injection under Privilege Escalation too; the same behavior serves two goals.
 3. Step 7 — File and Directory Discovery (T1083), Data from Local System (T1005), Archive Collected Data (T1560).
 4. Step 8 — Web Protocols (T1071.001), Exfiltration Over C2 Channel (T1041): the upload, visible to a network sensor.
+5. Zoomed in: the columns and techniques of steps 5 to 8.
 
 ## Talking points
 

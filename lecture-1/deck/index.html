@@ -1888,7 +1888,7 @@ legitimate artifact + exploited capability + adversarial controller</code></pre>
 <h4>Interaction</h4><p>Ask whether a file-only classifier can determine who controls the remote-access session, or whether a driver will be exploited after loading. Then ask which question each answer depended on: what it is, what it can do, who controls it, or whose objective it serves.</p>
 <p class="transition">“Now apply this vocabulary to an attack that never produces a malware executable file.”</p></aside>
 </section>
-<section class="slide slide--diagram" id="s18" data-id="s18" data-part="1" data-steps="4" data-number="18">
+<section class="slide slide--diagram" id="s18" data-id="s18" data-part="1" data-steps="5" data-number="18">
 <h2 class="slide-title">Map an attack with no malware file</h2><blockquote class="callout"><p><mark>Using a stolen administrator account, an attacker runs PowerShell. A script downloads a legitimate, signed but vulnerable kernel driver, loads it, and uses it to disable the endpoint protection and antivirus from the kernel.</mark> <span class="fade">It then downloads a memory-only implant and injects it into explorer.exe. The implant enumerates documents, compresses selected content, and uploads it over HTTPS.</span></p></blockquote>
 <figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 576" role="img" aria-label="The Enterprise ATT&CK matrix, first half, Reconnaissance to Defense Impairment, with the recurring scenario lit step by step: valid accounts, PowerShell with command obfuscation, exploitation for privilege escalation, disable or modify tools" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
 <defs>
@@ -1896,7 +1896,7 @@ legitimate artifact + exploited capability + adversarial controller</code></pre>
   <marker id="arrow-bad-attack-fileless-1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
   <marker id="arrow-good-attack-fileless-1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
 </defs>
-<g data-build="0">
+<g data-build="0" data-build-until="5">
 <text x="20" y="18" class="t2" font-size="17" font-weight="500" text-anchor="start" dominant-baseline="central">Enterprise v20.0 (13 October 2026): 15 tactics, 227 techniques, 479 sub-techniques · hover a cell for its name</text>
 <rect x="20.0" y="44" width="211.2" height="50" rx="6" class="colhead" data-tip="Reconnaissance (TA0043): 12 techniques"/>
 <text x="125.625" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Reconnaissance</text>
@@ -2066,13 +2066,13 @@ legitimate artifact + exploited capability + adversarial controller</code></pre>
 <text x="1576.8" y="381" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">History Logging</text>
 <text x="1674.425" y="406" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+13 more</text>
 </g>
-<g data-build="1">
+<g data-build="1" data-build-until="5">
 <rect x="462.5" y="226" width="211.2" height="38" rx="5" class="cell--lit" data-tip="step 1: T1078"/>
 <text x="470.5" y="245.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1078 Valid Accounts</text>
 <circle cx="464.5" cy="228" r="13" class="badge--bad"/>
 <text x="464.5" y="229" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">1</text>
 </g>
-<g data-build="2">
+<g data-build="2" data-build-until="5">
 <path d="M568.1 245.0L795.4 161.0" class="edge edge--bad draw" pathLength="1"/>
 <rect x="695.8" y="142" width="199.2" height="38" rx="5" class="cell--lit" data-tip="step 2: T1059.001"/>
 <text x="703.8" y="161.0" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1059.001 PowerShell</text>
@@ -2082,7 +2082,7 @@ legitimate artifact + exploited capability + adversarial controller</code></pre>
 <circle cx="697.8" cy="144" r="13" class="badge--bad"/>
 <text x="697.8" y="145" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">2</text>
 </g>
-<g data-build="3">
+<g data-build="3" data-build-until="5">
 <path d="M795.4 161.0L1231.8 119.0" class="edge edge--bad draw" pathLength="1"/>
 <rect x="1126.2" y="100" width="211.2" height="38" rx="5" class="cell--lit" data-tip="step 3: T1068"/>
 <text x="1134.2" y="113" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1068 Exploitation for</text>
@@ -2090,7 +2090,7 @@ legitimate artifact + exploited capability + adversarial controller</code></pre>
 <circle cx="1128.2" cy="102" r="13" class="badge--bad"/>
 <text x="1128.2" y="103" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">3</text>
 </g>
-<g data-build="4">
+<g data-build="4" data-build-until="5">
 <path d="M1231.8 119.0L1674.3999999999999 119.0" class="edge edge--bad draw" pathLength="1"/>
 <rect x="1568.8" y="100" width="211.2" height="38" rx="5" class="cell--lit" data-tip="step 4: T1685"/>
 <text x="1576.8" y="113" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1685 Disable or Modify</text>
@@ -2098,7 +2098,46 @@ legitimate artifact + exploited capability + adversarial controller</code></pre>
 <circle cx="1570.8" cy="102" r="13" class="badge--bad"/>
 <text x="1570.8" y="103" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">4</text>
 </g>
-</svg></figure><div class="step-captions"><p data-build="0">The matrix, empty — Reconnaissance to Defense Impairment first. Map in pairs: artifacts, tools, techniques and procedures, objective, relevant sensors. Then the mapping lights up one step at a time.</p><p data-build="1">Step 1 — Valid Accounts (T1078): the stolen administrator account.</p><p data-build="2">Step 2 — PowerShell (T1059.001) with Command Obfuscation (T1027.010).</p><p data-build="3">Step 3 — Exploitation for Privilege Escalation (T1068): a legitimate, signed but vulnerable driver loaded, then exploited (BYOVD).</p><p data-build="4">Step 4 — Disable or Modify Tools (T1685): endpoint protection and antivirus disabled from the kernel.</p></div>
+<g data-build="5" data-build-zoom="1">
+<text x="24" y="24" class="t2" font-size="20" font-weight="600" text-anchor="start" dominant-baseline="central">Zoomed in: only the columns and techniques of steps 1 to 4</text>
+<rect x="24.0" y="64" width="329.6" height="84" rx="10" class="colhead"></rect>
+<text x="188.8" y="106.0" class="t" font-size="28" font-weight="700" text-anchor="middle" dominant-baseline="central">Initial Access</text>
+<rect x="24.0" y="164" width="329.6" height="156" rx="12" class="cell--lit"></rect>
+<text x="48.0" y="223.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">T1078 Valid</text>
+<text x="48.0" y="261.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">Accounts</text>
+<circle cx="26.0" cy="166" r="19" class="badge--bad"/>
+<text x="26.0" y="167" class="t-badge" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="central">1</text>
+<rect x="379.6" y="64" width="329.6" height="84" rx="10" class="colhead"></rect>
+<text x="544.4000000000001" y="106.0" class="t" font-size="28" font-weight="700" text-anchor="middle" dominant-baseline="central">Execution</text>
+<rect x="379.6" y="164" width="329.6" height="156" rx="12" class="cell--lit"></rect>
+<text x="403.6" y="223.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">T1059.001</text>
+<text x="403.6" y="261.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">PowerShell</text>
+<circle cx="381.6" cy="166" r="19" class="badge--bad"/>
+<text x="381.6" y="167" class="t-badge" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="central">2</text>
+<rect x="735.2" y="64" width="329.6" height="84" rx="10" class="colhead"></rect>
+<text x="900.0" y="106.0" class="t" font-size="28" font-weight="700" text-anchor="middle" dominant-baseline="central">Privilege Escalation</text>
+<rect x="735.2" y="164" width="329.6" height="156" rx="12" class="cell--lit"></rect>
+<text x="759.2" y="208.0" class="t-bad" font-size="27" font-weight="700" text-anchor="start" dominant-baseline="central">T1068 Exploitation</text>
+<text x="759.2" y="242.0" class="t-bad" font-size="27" font-weight="700" text-anchor="start" dominant-baseline="central">for Privilege</text>
+<text x="759.2" y="276.0" class="t-bad" font-size="27" font-weight="700" text-anchor="start" dominant-baseline="central">Escalation</text>
+<circle cx="737.2" cy="166" r="19" class="badge--bad"/>
+<text x="737.2" y="167" class="t-badge" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="central">3</text>
+<rect x="1090.8" y="64" width="329.6" height="84" rx="10" class="colhead"></rect>
+<text x="1255.6" y="106.0" class="t" font-size="28" font-weight="700" text-anchor="middle" dominant-baseline="central">Stealth</text>
+<rect x="1090.8" y="164" width="329.6" height="156" rx="12" class="cell--lit"></rect>
+<text x="1114.8" y="223.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">T1027.010 Command</text>
+<text x="1114.8" y="261.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">Obfuscation</text>
+<circle cx="1092.8" cy="166" r="19" class="badge--bad"/>
+<text x="1092.8" y="167" class="t-badge" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="central">2</text>
+<rect x="1446.4" y="64" width="329.6" height="84" rx="10" class="colhead"></rect>
+<text x="1611.2" y="106.0" class="t" font-size="28" font-weight="700" text-anchor="middle" dominant-baseline="central">Defense Impairment</text>
+<rect x="1446.4" y="164" width="329.6" height="156" rx="12" class="cell--lit"></rect>
+<text x="1470.4" y="223.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">T1685 Disable or</text>
+<text x="1470.4" y="261.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">Modify Tools</text>
+<circle cx="1448.4" cy="166" r="19" class="badge--bad"/>
+<text x="1448.4" y="167" class="t-badge" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="central">4</text>
+</g>
+</svg></figure><div class="step-captions"><p data-build="0">The matrix, empty — Reconnaissance to Defense Impairment first. Map in pairs: artifacts, tools, techniques and procedures, objective, relevant sensors. Then the mapping lights up one step at a time.</p><p data-build="1">Step 1 — Valid Accounts (T1078): the stolen administrator account.</p><p data-build="2">Step 2 — PowerShell (T1059.001) with Command Obfuscation (T1027.010).</p><p data-build="3">Step 3 — Exploitation for Privilege Escalation (T1068): a legitimate, signed but vulnerable driver loaded, then exploited (BYOVD).</p><p data-build="4">Step 4 — Disable or Modify Tools (T1685): endpoint protection and antivirus disabled from the kernel.</p><p data-build="5">Zoomed in: only the columns and techniques the attack touched, steps 1 to 4, large enough to read from anywhere in the room.</p></div>
 
 <footer class="slide-foot"><span class="eyebrow">ATT&amp;CK as a language for behavior</span><span class="count">18 / 27 · 40–45 minutes</span></footer>
 <aside class="notes"><p class="meta"><b>Slide 18</b> · 40–45 minutes · ATT&amp;CK as a language for behavior</p>
@@ -2109,7 +2148,7 @@ legitimate artifact + exploited capability + adversarial controller</code></pre>
 <h4>Interaction</h4><p>Give pairs two minutes with the empty matrix, then reveal the eight steps with Next and let the room compare. During the debrief, separate “PowerShell” as software from “an inline command retrieved and executed content” as a procedure.</p>
 <p class="transition">“That is Part 1: how malware and malicious capabilities evolved. Part 2 asks how the pipelines that detect them were built, and how they had to change.”</p></aside>
 </section>
-<section class="slide slide--diagram slide--cont" id="s18b" data-id="s18b" data-part="1" data-steps="4" data-number="18">
+<section class="slide slide--diagram slide--cont" id="s18b" data-id="s18b" data-part="1" data-steps="5" data-number="18">
 <h2 class="slide-title">Map an attack with no malware file <span class="cont">continued</span></h2><blockquote class="callout"><p><span class="fade">Using a stolen administrator account, an attacker runs PowerShell. A script downloads a legitimate, signed but vulnerable kernel driver, loads it, and uses it to disable the endpoint protection and antivirus from the kernel.</span> <mark>It then downloads a memory-only implant and injects it into explorer.exe. The implant enumerates documents, compresses selected content, and uploads it over HTTPS.</mark></p></blockquote>
 <figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 534" role="img" aria-label="The Enterprise ATT&CK matrix, second half, Stealth to Impact, with the scenario continuing: ingress tool transfer, process injection and reflective code loading, discovery and collection, web protocols and exfiltration over the C2 channel" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
 <defs>
@@ -2117,7 +2156,7 @@ legitimate artifact + exploited capability + adversarial controller</code></pre>
   <marker id="arrow-bad-attack-fileless-2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
   <marker id="arrow-good-attack-fileless-2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
 </defs>
-<g data-build="0">
+<g data-build="0" data-build-until="5">
 <text x="20" y="18" class="t2" font-size="17" font-weight="500" text-anchor="start" dominant-baseline="central">Enterprise v20.0 (13 October 2026): 15 tactics, 227 techniques, 479 sub-techniques · hover a cell for its name</text>
 <rect x="20.0" y="44" width="186.7" height="50" rx="6" class="colhead" data-tip="Stealth (Defense Evasion until April 2026) (TA0005): 31 techniques"/>
 <text x="113.33333333333333" y="69.0" class="t" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">Stealth</text>
@@ -2316,14 +2355,14 @@ legitimate artifact + exploited capability + adversarial controller</code></pre>
 <text x="1601.3" y="339" class="t" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="central">of Service</text>
 <text x="1686.6333333333332" y="364" class="t2" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="central">+9 more</text>
 </g>
-<g data-build="1">
+<g data-build="1" data-build-until="5">
 <rect x="1200.0" y="226" width="186.7" height="38" rx="5" class="cell--lit" data-tip="step 5: T1105"/>
 <text x="1208.0" y="239" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1105 Ingress Tool</text>
 <text x="1208.0" y="255" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">Transfer</text>
 <circle cx="1202.0" cy="228" r="13" class="badge--bad"/>
 <text x="1202.0" y="229" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">5</text>
 </g>
-<g data-build="2">
+<g data-build="2" data-build-until="5">
 <path d="M1293.35 245.0L113.35 329.0" class="edge edge--bad draw" pathLength="1"/>
 <rect x="20.0" y="310" width="186.7" height="38" rx="5" class="cell--lit" data-tip="step 6: T1055"/>
 <text x="28.0" y="323" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1055 Process</text>
@@ -2334,7 +2373,7 @@ legitimate artifact + exploited capability + adversarial controller</code></pre>
 <circle cx="22.0" cy="312" r="13" class="badge--bad"/>
 <text x="22.0" y="313" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">6</text>
 </g>
-<g data-build="3">
+<g data-build="3" data-build-until="5">
 <path d="M113.35 329.0L703.35 161.0" class="edge edge--bad draw" pathLength="1"/>
 <rect x="610.0" y="142" width="186.7" height="38" rx="5" class="cell--lit" data-tip="step 7: T1083"/>
 <text x="618.0" y="155" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1083 File and</text>
@@ -2348,7 +2387,7 @@ legitimate artifact + exploited capability + adversarial controller</code></pre>
 <circle cx="612.0" cy="144" r="13" class="badge--bad"/>
 <text x="612.0" y="145" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">7</text>
 </g>
-<g data-build="4">
+<g data-build="4" data-build-until="5">
 <path d="M703.35 161.0L1299.35 161.0" class="edge edge--bad draw" pathLength="1"/>
 <rect x="1212.0" y="142" width="174.7" height="38" rx="5" class="cell--lit" data-tip="step 8: T1071.001"/>
 <text x="1220.0" y="155" class="t-bad" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="central">T1071.001 Web</text>
@@ -2359,7 +2398,62 @@ legitimate artifact + exploited capability + adversarial controller</code></pre>
 <circle cx="1214.0" cy="144" r="13" class="badge--bad"/>
 <text x="1214.0" y="145" class="t-badge" font-size="14" font-weight="700" text-anchor="middle" dominant-baseline="central">8</text>
 </g>
-</svg></figure><div class="step-captions"><p data-build="0">The second half, Stealth to Impact. The chain continues from the kernel.</p><p data-build="1">Step 5 — Ingress Tool Transfer (T1105): the memory-only implant downloaded, visible to a network sensor.</p><p data-build="2">Step 6 — Process Injection (T1055) and Reflective Code Loading (T1620): into explorer.exe, in memory. ATT&amp;CK lists injection under Privilege Escalation too; the same behavior serves two goals.</p><p data-build="3">Step 7 — File and Directory Discovery (T1083), Data from Local System (T1005), Archive Collected Data (T1560).</p><p data-build="4">Step 8 — Web Protocols (T1071.001), Exfiltration Over C2 Channel (T1041): the upload, visible to a network sensor.</p></div>
+<g data-build="5" data-build-zoom="1">
+<text x="24" y="24" class="t2" font-size="20" font-weight="600" text-anchor="start" dominant-baseline="central">Zoomed in: only the columns and techniques of steps 5 to 8</text>
+<rect x="24.0" y="64" width="329.6" height="84" rx="10" class="colhead"></rect>
+<text x="188.8" y="106.0" class="t" font-size="28" font-weight="700" text-anchor="middle" dominant-baseline="central">Stealth</text>
+<rect x="24.0" y="164" width="329.6" height="156" rx="12" class="cell--lit"></rect>
+<text x="48.0" y="223.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">T1055 Process</text>
+<text x="48.0" y="261.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">Injection</text>
+<circle cx="26.0" cy="166" r="19" class="badge--bad"/>
+<text x="26.0" y="167" class="t-badge" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="central">6</text>
+<rect x="24.0" y="338" width="329.6" height="156" rx="12" class="cell--lit"></rect>
+<text x="48.0" y="397.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">T1620 Reflective</text>
+<text x="48.0" y="435.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">Code Loading</text>
+<circle cx="26.0" cy="340" r="19" class="badge--bad"/>
+<text x="26.0" y="341" class="t-badge" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="central">6</text>
+<rect x="379.6" y="64" width="329.6" height="84" rx="10" class="colhead"></rect>
+<text x="544.4000000000001" y="106.0" class="t" font-size="28" font-weight="700" text-anchor="middle" dominant-baseline="central">Discovery</text>
+<rect x="379.6" y="164" width="329.6" height="156" rx="12" class="cell--lit"></rect>
+<text x="403.6" y="204.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">T1083 File and</text>
+<text x="403.6" y="242.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">Directory</text>
+<text x="403.6" y="280.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">Discovery</text>
+<circle cx="381.6" cy="166" r="19" class="badge--bad"/>
+<text x="381.6" y="167" class="t-badge" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="central">7</text>
+<rect x="735.2" y="64" width="329.6" height="84" rx="10" class="colhead"></rect>
+<text x="900.0" y="106.0" class="t" font-size="28" font-weight="700" text-anchor="middle" dominant-baseline="central">Collection</text>
+<rect x="735.2" y="164" width="329.6" height="156" rx="12" class="cell--lit"></rect>
+<text x="759.2" y="223.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">T1005 Data from</text>
+<text x="759.2" y="261.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">Local System</text>
+<circle cx="737.2" cy="166" r="19" class="badge--bad"/>
+<text x="737.2" y="167" class="t-badge" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="central">7</text>
+<rect x="735.2" y="338" width="329.6" height="156" rx="12" class="cell--lit"></rect>
+<text x="759.2" y="397.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">T1560 Archive</text>
+<text x="759.2" y="435.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">Collected Data</text>
+<circle cx="737.2" cy="340" r="19" class="badge--bad"/>
+<text x="737.2" y="341" class="t-badge" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="central">7</text>
+<rect x="1090.8" y="64" width="329.6" height="84" rx="10" class="colhead"></rect>
+<text x="1255.6" y="106.0" class="t" font-size="28" font-weight="700" text-anchor="middle" dominant-baseline="central">Command and Control</text>
+<rect x="1090.8" y="164" width="329.6" height="156" rx="12" class="cell--lit"></rect>
+<text x="1114.8" y="223.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">T1105 Ingress</text>
+<text x="1114.8" y="261.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">Tool Transfer</text>
+<circle cx="1092.8" cy="166" r="19" class="badge--bad"/>
+<text x="1092.8" y="167" class="t-badge" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="central">5</text>
+<rect x="1090.8" y="338" width="329.6" height="156" rx="12" class="cell--lit"></rect>
+<text x="1114.8" y="397.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">T1071.001 Web</text>
+<text x="1114.8" y="435.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">Protocols</text>
+<circle cx="1092.8" cy="340" r="19" class="badge--bad"/>
+<text x="1092.8" y="341" class="t-badge" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="central">8</text>
+<rect x="1446.4" y="64" width="329.6" height="84" rx="10" class="colhead"></rect>
+<text x="1611.2" y="106.0" class="t" font-size="28" font-weight="700" text-anchor="middle" dominant-baseline="central">Exfiltration</text>
+<rect x="1446.4" y="164" width="329.6" height="156" rx="12" class="cell--lit"></rect>
+<text x="1470.4" y="204.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">T1041</text>
+<text x="1470.4" y="242.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">Exfiltration Over</text>
+<text x="1470.4" y="280.0" class="t-bad" font-size="30" font-weight="700" text-anchor="start" dominant-baseline="central">C2 Channel</text>
+<circle cx="1448.4" cy="166" r="19" class="badge--bad"/>
+<text x="1448.4" y="167" class="t-badge" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="central">8</text>
+</g>
+</svg></figure><div class="step-captions"><p data-build="0">The second half, Stealth to Impact. The chain continues from the kernel.</p><p data-build="1">Step 5 — Ingress Tool Transfer (T1105): the memory-only implant downloaded, visible to a network sensor.</p><p data-build="2">Step 6 — Process Injection (T1055) and Reflective Code Loading (T1620): into explorer.exe, in memory. ATT&amp;CK lists injection under Privilege Escalation too; the same behavior serves two goals.</p><p data-build="3">Step 7 — File and Directory Discovery (T1083), Data from Local System (T1005), Archive Collected Data (T1560).</p><p data-build="4">Step 8 — Web Protocols (T1071.001), Exfiltration Over C2 Channel (T1041): the upload, visible to a network sensor.</p><p data-build="5">Zoomed in: the columns and techniques of steps 5 to 8.</p></div>
 
 <footer class="slide-foot"><span class="eyebrow">ATT&amp;CK as a language for behavior</span><span class="count">18 / 27 · 40–45 minutes</span></footer>
 <aside class="notes"><p class="meta"><b>Slide 18</b> · 40–45 minutes · ATT&amp;CK as a language for behavior</p>

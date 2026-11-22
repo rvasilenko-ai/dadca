@@ -233,6 +233,7 @@ details.srcs .panel a:hover { text-decoration: underline; }
   .deck-stage { position: static; transform: none; height: auto; }
   .slide { position: relative; inset: auto; width: 1920px; height: 1080px; visibility: visible; opacity: 1; break-after: page; overflow: hidden; }
   .diagram g[data-build], .step-captions > * { opacity: 1; }
+  .diagram g[data-build-zoom] { display: none; }   /* the zoom replaces the figure on screen; on paper the figure stays */
   .step-captions { display: block; } .step-captions > * { margin-bottom: 6px; }
   details.srcs, .deck-progress, .deck-notes, .deck-help { display: none !important; }
 }
