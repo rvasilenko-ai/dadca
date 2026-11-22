@@ -32,9 +32,7 @@ Build, one step per click:
 7. Challenge
    + **Plaintext IDS** — Encryption removed the payload (HTTPS by default, 2015 onward), the certificate (TLS 1.3, 2018), the lookup (DoH, 2018 onward) and the server name (ECH, browsers 2023).
    + **After encryption** — Lower specificity; east-west SMB, Kerberos, LDAP and scanning still visible; plaintext survives on the endpoint.
-
-> The sensor stayed where it was. Extraction failed, and everything below it was rebuilt on metadata or moved to the endpoint.
-> Scenario check: three moments cross the network, the driver download, the implant download and the document upload. All inside TLS, and with DNS over HTTPS even the lookups are hidden, so a content signature matches nothing. What remains: the connections to unfamiliar hosts, their timing and reputation, and, behind a decryption proxy, the payloads. The endpoint sees the plaintext before encryption.
+8. Scenario check — the attack from the exercise: three moments cross the network, the driver download, the implant download and the document upload. All inside TLS, and with DNS over HTTPS even the lookups are hidden, so a content signature matches nothing. What remains: the connections to unfamiliar hosts, their timing and reputation, and, behind a decryption proxy, the payloads. The endpoint sees the plaintext before encryption.
 
 | Stage | IDS/IPS on the plaintext web (2000s) | After HTTPS, TLS 1.3, DoH and ECH |
 | --- | --- | --- |
@@ -55,6 +53,8 @@ Build, one step per click:
 - Ask what the network sees of the scenario, then the endpoint; the last Next shows it.
 
 ## Speaker notes
+
+Say it once before the stages: The sensor stayed where it was. Extraction failed, and everything below it was rebuilt on metadata or moved to the endpoint.
 
 Read the table as the twin of the host and file table, with one difference: the sensor row stayed where it was. What failed was extraction. The appliance still sees every packet and can no longer open them, so everything below extraction had to be rebuilt on metadata, and the content-level questions moved to the endpoint and the identity provider. What encryption hides from payload inspection (strings, transferred code and documents, application commands, content signatures, archive contents) remains observable somewhere else: endpoints and DNS activity, timing and volume, TLS properties, the process-to-connection relationship, and the plaintext on the endpoint itself. Next and Previous step through the stages one at a time, with the two eras side by side; clicking a stage on the strip jumps to it, and the table button shows the whole matrix.
 

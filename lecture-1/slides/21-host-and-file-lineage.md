@@ -48,9 +48,7 @@ Build, one step per click:
    + **Antivirus** — Packing, polymorphism, scripts, memory.
    + **Sandbox** — Inline commands, staged payloads, side-loaded DLLs, memory-only implants, evasion.
    + **EDR** — Legitimate tools, identity abuse, off-host activity, tampering from the kernel (BYOVD).
-
-> Each generation judges one unit of evidence: an object before it runs, an object in detonation, activity on the host.
-> Scenario check, the attack from the exercise: antivirus and the sandbox see only a legitimate signed driver; EDR would record the whole chain and fire on the sequence, so the attacker's first move is to disable it from the kernel. The kernel tampering is now the thing to detect.
+10. Scenario check — the attack from the exercise: antivirus and the sandbox see only a legitimate signed driver; EDR would record the whole chain and fire on the sequence, so the attacker's first move is to disable it from the kernel. The kernel tampering is now the thing to detect.
 
 | Stage | Antivirus (since the late 1980s) | Sandbox (since the late 2000s) | EDR (since c. 2011) |
 | --- | --- | --- | --- |
@@ -73,6 +71,8 @@ Build, one step per click:
 - Starved by is each generation's exit; the scenario check on the last step shows EDR would catch the chain, so the attacker disables it first (BYOVD); say that EDR is a different control, not a next-generation antivirus.
 
 ## Speaker notes
+
+Say it once before the stages: Each generation judges one unit of evidence: an object before it runs, an object in detonation, activity on the host.
 
 **Script.** The slide is called host and file, not endpoint, because the sandbox was a network and mail product that sat at the gateway; what the three share is the file-centric evidence they were built around, until EDR moved the unit of evidence to activity on the host. The years in the column headers are when each generation was added to the stack, and nothing was removed: today's endpoint agent is an EDR with the antivirus engine inside it, sold as one product, and the sandbox is a commodity component that both call. Antivirus still matters: it is the prevention layer of that agent, and it still stops most commodity malware before anything else sees it.
 
