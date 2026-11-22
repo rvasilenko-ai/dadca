@@ -281,7 +281,38 @@ def funnel():
     return s + '</svg>\n'
 
 
+def chain_v(aria, steps, tw=1240, th=64, gap=26):
+    """A vertical sequence of tiles joined by down-arrows; steps = [(text, bad)], revealed one per build."""
+    n = len(steps)
+    W, H = 1800, 20 + n * th + (n - 1) * gap + 20
+    x = (W - tw) // 2
+    s = head(W, H, aria)
+    y = 20
+    for i, (t, bad) in enumerate(steps):
+        body = ""
+        if i > 0:
+            body += edge(f"M{W // 2} {y - gap}V{y - 2}", strong=True, arrow=True)
+        body += tile(x, y, tw, th, t, [], bad=bad, title_size=23, sub_size=1)
+        s += f'<g data-build="{i}">\n{body}</g>\n'
+        y += th + gap
+    return s + "</svg>\n"
+
+
+def forcedleak_path():
+    steps = [
+        ("Attacker submits a public Web-to-Lead form", True),
+        ("Concealed instructions persist in the CRM record", True),
+        ("An employee later asks Agentforce about the lead", False),
+        ("The agent retrieves the attacker-controlled record", False),
+        ("The record's data is interpreted as instructions", True),
+        ("The agent reaches more CRM data with its authority", False),
+        ("Sensitive data leaves through crafted image requests", True),
+    ]
+    return chain_v("ForcedLeak attack path: instructions an attacker planted in a CRM record are later retrieved by the trusted agent and interpreted as commands, so data leaves with the organization's own authority", steps)
+
+
 (OUT / "attack-map.svg").write_text(attack_map())
+(OUT / "forcedleak-path.svg").write_text(forcedleak_path())
 (OUT / "supply-chain.svg").write_text(supply_chain())
 (OUT / "funnel.svg").write_text(funnel())
 (OUT / "ladder.svg").write_text(ladder())

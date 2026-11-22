@@ -5,15 +5,7 @@
 
 ## On-slide content
 
-```text
-attacker submits Web-to-Lead form
-  -> concealed instructions persist in CRM record
-  -> employee later asks Agentforce about the lead
-  -> agent retrieves attacker-controlled record
-  -> data is interpreted as instructions
-  -> agent accesses additional CRM information
-  -> sensitive data leaves through crafted image requests
-```
+![ForcedLeak attack path, step by step: an attacker submits a public Web-to-Lead form; concealed instructions persist in the CRM record; an employee later asks Agentforce about the lead; the agent retrieves the attacker-controlled record; the data is interpreted as instructions; the agent reaches more CRM data with its authority; sensitive data leaves through crafted image requests](../figures/forcedleak-path.svg)
 
 The employee’s request is legitimate.  
 The agent’s identity is legitimate.  
