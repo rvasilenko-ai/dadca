@@ -28,7 +28,7 @@ svg{--surface:#ffffff;--surface-2:#eceff6;--frame:#f8fafc;--ink:#1f2937;--ink-2:
 .pt-1{fill:var(--part-1)}.pt-2{fill:var(--part-2)}.pt-3{fill:var(--part-0)}.pt-4{fill:var(--part-4)}
 .cell{fill:var(--surface);stroke:var(--rule);stroke-width:1.5}.cell--sub{fill:var(--surface-2);stroke:var(--rule);stroke-width:1.5}
 .cell--lit{fill:var(--bad-wash);stroke:var(--bad);stroke-width:3}.colhead{fill:var(--surface-2);stroke:var(--rule);stroke-width:1.5}
-.marker{stroke:var(--ink-3);stroke-width:2;stroke-dasharray:6 6}
+.marker{stroke:var(--ink-3);stroke-width:2;stroke-dasharray:6 6}.hit{fill:transparent}
 </style>
 <defs>
   <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
@@ -66,65 +66,109 @@ svg{--surface:#ffffff;--surface-2:#eceff6;--frame:#f8fafc;--ink:#1f2937;--ink-2:
 <path d="M1780.0 480V488" class="axis"/>
 <text x="1780.0" y="506" class="t2" font-size="17" font-weight="500" text-anchor="middle" dominant-baseline="central">2017</text>
 <path d="M250 480H1780" class="axis"/>
-<circle cx="250.0" cy="111" r="5" class="dot--muted"><title>2010 · State espionage and sabotage — A payoff that is strategic, not financial.</title></circle>
-<circle cx="258.7" cy="193" r="8" class="dot--key"><title>2010 · Operation Aurora — Disclosed by Google, 12 January 2010.</title></circle>
+<circle cx="250.0" cy="111" r="5" class="dot--muted"/>
+<circle cx="250.0" cy="111" r="12" class="hit"><title>2010 · State espionage and sabotage — A payoff that is strategic, not financial.</title></circle>
+<circle cx="258.7" cy="193" r="8" class="dot--key"/>
+<circle cx="258.7" cy="193" r="14" class="hit"><title>2010 · Operation Aurora — Disclosed by Google, 12 January 2010.</title></circle>
 <text x="258.7" y="173" class="t" font-size="16" font-weight="600" text-anchor="start" dominant-baseline="central">Operation Aurora</text>
-<circle cx="350.5" cy="193" r="8" class="dot--key"><title>2010 · Stuxnet — Identified 17 June 2010.</title></circle>
+<circle cx="350.5" cy="193" r="8" class="dot--key"/>
+<circle cx="350.5" cy="193" r="14" class="hit"><title>2010 · Stuxnet — Identified 17 June 2010.</title></circle>
 <text x="350.5" y="217" class="t" font-size="16" font-weight="600" text-anchor="start" dominant-baseline="central">Stuxnet</text>
-<circle cx="424.9" cy="111" r="5" class="dot--muted"><title>2010 · Exploit-kit rental — Blackhole licensed by the year or rented by the day.</title></circle>
-<circle cx="424.9" cy="193" r="5" class="dot--muted"><title>2010 · Blackhole exploit kit — Active roughly 2010–2013.</title></circle>
-<circle cx="442.3" cy="357" r="5" class="dot--muted"><title>2010 · Facebook Messages: attachments, executables blocked — Launched 15 November 2010 with executables and batch files excluded; a renaming bypass published 27 October 2011, answered with antivirus scanning. Koobface had spread by link since 2008.</title></circle>
-<circle cx="468.6" cy="439" r="8" class="dot--key"><title>2011 · Kill chain paper — Hutchins, Cloppert and Amin, 2011.</title></circle>
+<circle cx="424.9" cy="111" r="5" class="dot--muted"/>
+<circle cx="424.9" cy="111" r="12" class="hit"><title>2010 · Exploit-kit rental — Blackhole licensed by the year or rented by the day.</title></circle>
+<circle cx="424.9" cy="193" r="5" class="dot--muted"/>
+<circle cx="424.9" cy="193" r="12" class="hit"><title>2010 · Blackhole exploit kit — Active roughly 2010–2013.</title></circle>
+<circle cx="442.3" cy="357" r="5" class="dot--muted"/>
+<circle cx="442.3" cy="357" r="12" class="hit"><title>2010 · Facebook Messages: attachments, executables blocked — Launched 15 November 2010 with executables and batch files excluded; a renaming bypass published 27 October 2011, answered with antivirus scanning. Koobface had spread by link since 2008.</title></circle>
+<circle cx="468.6" cy="439" r="8" class="dot--key"/>
+<circle cx="468.6" cy="439" r="14" class="hit"><title>2011 · Kill chain paper — Hutchins, Cloppert and Amin, 2011.</title></circle>
 <text x="468.6" y="419" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">Kill chain paper</text>
-<circle cx="490.4" cy="439" r="5" class="dot--muted"><title>2011 · Cuckoo Sandbox — First public beta 5 February 2011.</title></circle>
-<circle cx="556.0" cy="193" r="5" class="dot--muted"><title>2011 · Mimikatz — First public release May 2011.</title></circle>
-<circle cx="577.9" cy="357" r="5" class="dot--muted"><title>2011 · Office 365 — Launched 28 June 2011.</title></circle>
-<circle cx="621.6" cy="193" r="5" class="dot--muted"><title>2011 · GameOver Zeus — Peer-to-peer Zeus variant from September 2011, after the Zeus source leak that May; banking fraud at scale until June 2014.</title></circle>
-<circle cx="654.4" cy="439" r="5" class="dot--muted"><title>2011 · WildFire sandbox — Palo Alto Networks, November 2011.</title></circle>
-<circle cx="687.1" cy="439" r="5" class="dot--muted"><title>2012 · Incident-response agents before the name — Mandiant's and Carbon Black's host agents recorded process and connection history for investigators; Gartner names the category in 2013 by listing them.</title></circle>
-<circle cx="752.7" cy="111" r="5" class="dot--muted"><title>2012 · Police lockers (Reveton) — 2012: the screen is locked in the name of the police and a $100 fine is paid by prepaid money card; the extortion model before Bitcoin.</title></circle>
-<circle cx="774.6" cy="193" r="5" class="dot--muted"><title>2012 · PowerSploit — May 2012.</title></circle>
-<circle cx="807.4" cy="193" r="5" class="dot--muted"><title>2012 · Cobalt Strike — First release summer 2012.</title></circle>
-<circle cx="866.4" cy="275" r="5" class="dot--muted"><title>2012 · Windows 8: Secure Boot, Defender antivirus built in — 26 October 2012: UEFI Secure Boot, and Windows Defender becomes a full antivirus on every machine.</title></circle>
-<circle cx="934.1" cy="193" r="8" class="dot--key"><title>2013 · APT1 report — Mandiant, 18 February 2013.</title></circle>
+<circle cx="490.4" cy="439" r="5" class="dot--muted"/>
+<circle cx="490.4" cy="439" r="12" class="hit"><title>2011 · Cuckoo Sandbox — First public beta 5 February 2011.</title></circle>
+<circle cx="556.0" cy="193" r="5" class="dot--muted"/>
+<circle cx="556.0" cy="193" r="12" class="hit"><title>2011 · Mimikatz — First public release May 2011.</title></circle>
+<circle cx="577.9" cy="357" r="5" class="dot--muted"/>
+<circle cx="577.9" cy="357" r="12" class="hit"><title>2011 · Office 365 — Launched 28 June 2011.</title></circle>
+<circle cx="621.6" cy="193" r="5" class="dot--muted"/>
+<circle cx="621.6" cy="193" r="12" class="hit"><title>2011 · GameOver Zeus — Peer-to-peer Zeus variant from September 2011, after the Zeus source leak that May; banking fraud at scale until June 2014.</title></circle>
+<circle cx="654.4" cy="439" r="5" class="dot--muted"/>
+<circle cx="654.4" cy="439" r="12" class="hit"><title>2011 · WildFire sandbox — Palo Alto Networks, November 2011.</title></circle>
+<circle cx="687.1" cy="439" r="5" class="dot--muted"/>
+<circle cx="687.1" cy="439" r="12" class="hit"><title>2012 · Incident-response agents before the name — Mandiant's and Carbon Black's host agents recorded process and connection history for investigators; Gartner names the category in 2013 by listing them.</title></circle>
+<circle cx="752.7" cy="111" r="5" class="dot--muted"/>
+<circle cx="752.7" cy="111" r="12" class="hit"><title>2012 · Police lockers (Reveton) — 2012: the screen is locked in the name of the police and a $100 fine is paid by prepaid money card; the extortion model before Bitcoin.</title></circle>
+<circle cx="774.6" cy="193" r="5" class="dot--muted"/>
+<circle cx="774.6" cy="193" r="12" class="hit"><title>2012 · PowerSploit — May 2012.</title></circle>
+<circle cx="807.4" cy="193" r="5" class="dot--muted"/>
+<circle cx="807.4" cy="193" r="12" class="hit"><title>2012 · Cobalt Strike — First release summer 2012.</title></circle>
+<circle cx="866.4" cy="275" r="5" class="dot--muted"/>
+<circle cx="866.4" cy="275" r="12" class="hit"><title>2012 · Windows 8: Secure Boot, Defender antivirus built in — 26 October 2012: UEFI Secure Boot, and Windows Defender becomes a full antivirus on every machine.</title></circle>
+<circle cx="934.1" cy="193" r="8" class="dot--key"/>
+<circle cx="934.1" cy="193" r="14" class="hit"><title>2013 · APT1 report — Mandiant, 18 February 2013.</title></circle>
 <text x="934.1" y="173" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">APT1 report</text>
-<circle cx="999.7" cy="357" r="5" class="dot--muted"><title>2013 · Snowden disclosures — From 6 June 2013. Encryption by default becomes the industry's answer and the IETF declares pervasive monitoring an attack (RFC 7258, May 2014): the cause of the HTTPS curve.</title></circle>
-<circle cx="1028.1" cy="439" r="8" class="dot--key"><title>2013 · EDR named — Anton Chuvakin, Gartner, 26 July 2013: 'endpoint threat detection and response'.</title></circle>
+<circle cx="999.7" cy="357" r="5" class="dot--muted"/>
+<circle cx="999.7" cy="357" r="12" class="hit"><title>2013 · Snowden disclosures — From 6 June 2013. Encryption by default becomes the industry's answer and the IETF declares pervasive monitoring an attack (RFC 7258, May 2014): the cause of the HTTPS curve.</title></circle>
+<circle cx="1028.1" cy="439" r="8" class="dot--key"/>
+<circle cx="1028.1" cy="439" r="14" class="hit"><title>2013 · EDR named — Anton Chuvakin, Gartner, 26 July 2013: 'endpoint threat detection and response'.</title></circle>
 <text x="1028.1" y="419" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">EDR named</text>
-<circle cx="1058.7" cy="111" r="8" class="dot--key"><title>2013 · Bitcoin ransom (CryptoLocker) — The victim pays the attacker directly, September 2013.</title></circle>
+<circle cx="1058.7" cy="111" r="8" class="dot--key"/>
+<circle cx="1058.7" cy="111" r="14" class="hit"><title>2013 · Bitcoin ransom (CryptoLocker) — The victim pays the attacker directly, September 2013.</title></circle>
 <text x="1058.7" y="91" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">Bitcoin ransom (CryptoLocker)</text>
-<circle cx="1058.7" cy="193" r="5" class="dot--muted"><title>2013 · CryptoLocker — First seen about 5 September 2013.</title></circle>
-<circle cx="1063.1" cy="439" r="8" class="dot--key"><title>2013 · FireEye IPO: sandbox peak — 20 September 2013.</title></circle>
+<circle cx="1058.7" cy="193" r="5" class="dot--muted"/>
+<circle cx="1058.7" cy="193" r="12" class="hit"><title>2013 · CryptoLocker — First seen about 5 September 2013.</title></circle>
+<circle cx="1063.1" cy="439" r="8" class="dot--key"/>
+<circle cx="1063.1" cy="439" r="14" class="hit"><title>2013 · FireEye IPO: sandbox peak — 20 September 2013.</title></circle>
 <text x="1063.1" y="463" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">FireEye IPO: sandbox peak</text>
-<circle cx="1102.4" cy="193" r="5" class="dot--muted"><title>2013 · Angler exploit kit — Late 2013 to June 2016.</title></circle>
-<circle cx="1106.8" cy="111" r="5" class="dot--muted"><title>2013 · Target POS breach — 27 November to 15 December 2013; about 40 million cards.</title></circle>
-<circle cx="1152.7" cy="439" r="5" class="dot--muted"><title>2014 · CylancePROTECT (ML on PE features) — 18 February 2014.</title></circle>
-<circle cx="1183.3" cy="275" r="8" class="dot--key"><title>2014 · XP end of support — 8 April 2014.</title></circle>
+<circle cx="1102.4" cy="193" r="5" class="dot--muted"/>
+<circle cx="1102.4" cy="193" r="12" class="hit"><title>2013 · Angler exploit kit — Late 2013 to June 2016.</title></circle>
+<circle cx="1106.8" cy="111" r="5" class="dot--muted"/>
+<circle cx="1106.8" cy="111" r="12" class="hit"><title>2013 · Target POS breach — 27 November to 15 December 2013; about 40 million cards.</title></circle>
+<circle cx="1152.7" cy="439" r="5" class="dot--muted"/>
+<circle cx="1152.7" cy="439" r="12" class="hit"><title>2014 · CylancePROTECT (ML on PE features) — 18 February 2014.</title></circle>
+<circle cx="1183.3" cy="275" r="8" class="dot--key"/>
+<circle cx="1183.3" cy="275" r="14" class="hit"><title>2014 · XP end of support — 8 April 2014.</title></circle>
 <text x="1183.3" y="255" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">XP end of support</text>
-<circle cx="1216.1" cy="111" r="5" class="dot--muted"><title>2014 · GameOver Zeus takedown (Operation Tovar) — 2 June 2014: the leading banking-fraud botnet and the CryptoLocker infrastructure disrupted together.</title></circle>
-<circle cx="1251.1" cy="193" r="5" class="dot--muted"><title>2014 · Poweliks (registry-resident) — Disclosed 31 July 2014.</title></circle>
-<circle cx="1255.4" cy="439" r="5" class="dot--muted"><title>2014 · Sysmon — Sysinternals Sysmon 1.0, 5 August 2014.</title></circle>
-<circle cx="1305.7" cy="193" r="8" class="dot--key"><title>2014 · Macros return (Dridex) — Word-macro delivery from late October 2014.</title></circle>
+<circle cx="1216.1" cy="111" r="5" class="dot--muted"/>
+<circle cx="1216.1" cy="111" r="12" class="hit"><title>2014 · GameOver Zeus takedown (Operation Tovar) — 2 June 2014: the leading banking-fraud botnet and the CryptoLocker infrastructure disrupted together.</title></circle>
+<circle cx="1251.1" cy="193" r="5" class="dot--muted"/>
+<circle cx="1251.1" cy="193" r="12" class="hit"><title>2014 · Poweliks (registry-resident) — Disclosed 31 July 2014.</title></circle>
+<circle cx="1255.4" cy="439" r="5" class="dot--muted"/>
+<circle cx="1255.4" cy="439" r="12" class="hit"><title>2014 · Sysmon — Sysinternals Sysmon 1.0, 5 August 2014.</title></circle>
+<circle cx="1305.7" cy="193" r="8" class="dot--key"/>
+<circle cx="1305.7" cy="193" r="14" class="hit"><title>2014 · Macros return (Dridex) — Word-macro delivery from late October 2014.</title></circle>
 <text x="1305.7" y="173" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">Macros return (Dridex)</text>
-<circle cx="1408.4" cy="357" r="5" class="dot--muted"><title>2015 · Chrome drops NPAPI plug-ins — Java plug-in disabled April 2015, removed September 2015.</title></circle>
-<circle cx="1423.7" cy="439" r="8" class="dot--key"><title>2015 · ATT&amp;CK public — May 2015; 96 techniques, 9 tactics.</title></circle>
+<circle cx="1408.4" cy="357" r="5" class="dot--muted"/>
+<circle cx="1408.4" cy="357" r="12" class="hit"><title>2015 · Chrome drops NPAPI plug-ins — Java plug-in disabled April 2015, removed September 2015.</title></circle>
+<circle cx="1423.7" cy="439" r="8" class="dot--key"/>
+<circle cx="1423.7" cy="439" r="14" class="hit"><title>2015 · ATT&amp;CK public — May 2015; 96 techniques, 9 tactics.</title></circle>
 <text x="1423.7" y="419" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">ATT&amp;CK public</text>
-<circle cx="1430.3" cy="193" r="5" class="dot--muted"><title>2015 · Kovter goes fileless — Registry-resident variant, May 2015.</title></circle>
-<circle cx="1467.4" cy="275" r="8" class="dot--key"><title>2015 · Windows 10: AMSI, script block logging — 29 July 2015; Device Guard and Credential Guard in Enterprise editions.</title></circle>
+<circle cx="1430.3" cy="193" r="5" class="dot--muted"/>
+<circle cx="1430.3" cy="193" r="12" class="hit"><title>2015 · Kovter goes fileless — Registry-resident variant, May 2015.</title></circle>
+<circle cx="1467.4" cy="275" r="8" class="dot--key"/>
+<circle cx="1467.4" cy="275" r="14" class="hit"><title>2015 · Windows 10: AMSI, script block logging — 29 July 2015; Device Guard and Credential Guard in Enterprise editions.</title></circle>
 <text x="1467.4" y="255" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">Windows 10: AMSI, script block logging</text>
-<circle cx="1474.0" cy="193" r="8" class="dot--key"><title>2015 · PowerShell Empire — BSides Las Vegas, 5 August 2015.</title></circle>
+<circle cx="1474.0" cy="193" r="8" class="dot--key"/>
+<circle cx="1474.0" cy="193" r="14" class="hit"><title>2015 · PowerShell Empire — BSides Las Vegas, 5 August 2015.</title></circle>
 <text x="1474.0" y="217" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">PowerShell Empire</text>
-<circle cx="1543.9" cy="357" r="8" class="dot--key"><title>2015 · Let's Encrypt public beta — 3 December 2015; about 40 percent of Firefox page loads were HTTPS.</title></circle>
+<circle cx="1543.9" cy="357" r="8" class="dot--key"/>
+<circle cx="1543.9" cy="357" r="14" class="hit"><title>2015 · Let's Encrypt public beta — 3 December 2015; about 40 percent of Firefox page loads were HTTPS.</title></circle>
 <text x="1543.9" y="337" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">Let's Encrypt public beta</text>
-<circle cx="1557.1" cy="193" r="5" class="dot--muted"><title>2015 · Ukraine grid attack — 23 December 2015: BlackEnergy for access, then operators by hand opening breakers at three utilities; the first confirmed cyber-induced outage.</title></circle>
-<circle cx="1576.7" cy="357" r="5" class="dot--muted"><title>2016 · Oracle deprecates Java plug-in — 27 January 2016.</title></circle>
-<circle cx="1583.3" cy="111" r="8" class="dot--key"><title>2016 · Bangladesh Bank heist — 4–5 February 2016; attributed to North Korea.</title></circle>
+<circle cx="1557.1" cy="193" r="5" class="dot--muted"/>
+<circle cx="1557.1" cy="193" r="12" class="hit"><title>2015 · Ukraine grid attack — 23 December 2015: BlackEnergy for access, then operators by hand opening breakers at three utilities; the first confirmed cyber-induced outage.</title></circle>
+<circle cx="1576.7" cy="357" r="5" class="dot--muted"/>
+<circle cx="1576.7" cy="357" r="12" class="hit"><title>2016 · Oracle deprecates Java plug-in — 27 January 2016.</title></circle>
+<circle cx="1583.3" cy="111" r="8" class="dot--key"/>
+<circle cx="1583.3" cy="111" r="14" class="hit"><title>2016 · Bangladesh Bank heist — 4–5 February 2016; attributed to North Korea.</title></circle>
 <text x="1583.3" y="91" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">Bangladesh Bank heist</text>
-<circle cx="1589.8" cy="193" r="5" class="dot--muted"><title>2016 · Locky — First seen 16 February 2016.</title></circle>
-<circle cx="1692.6" cy="439" r="5" class="dot--muted"><title>2016 · Windows Defender ATP: EDR built into Windows 10 — Announced 1 March 2016, shipped with the Anniversary Update on 2 August 2016: post-breach detection as an operating-system feature.</title></circle>
-<circle cx="1731.9" cy="193" r="8" class="dot--key"><title>2016 · Mirai botnet — Source published at the end of September 2016; the Dyn attack on 21 October 2016. Cameras and routers that can never run an agent: the edge arrives as a botnet.</title></circle>
+<circle cx="1589.8" cy="193" r="5" class="dot--muted"/>
+<circle cx="1589.8" cy="193" r="12" class="hit"><title>2016 · Locky — First seen 16 February 2016.</title></circle>
+<circle cx="1692.6" cy="439" r="5" class="dot--muted"/>
+<circle cx="1692.6" cy="439" r="12" class="hit"><title>2016 · Windows Defender ATP: EDR built into Windows 10 — Announced 1 March 2016, shipped with the Anniversary Update on 2 August 2016: post-breach detection as an operating-system feature.</title></circle>
+<circle cx="1731.9" cy="193" r="8" class="dot--key"/>
+<circle cx="1731.9" cy="193" r="14" class="hit"><title>2016 · Mirai botnet — Source published at the end of September 2016; the Dyn attack on 21 October 2016. Cameras and routers that can never run an agent: the edge arrives as a botnet.</title></circle>
 <text x="1731.9" y="173" class="t" font-size="16" font-weight="600" text-anchor="end" dominant-baseline="central">Mirai botnet</text>
-<circle cx="1736.3" cy="357" r="8" class="dot--key"><title>2016 · HTTPS passes half of page loads — Firefox 50 percent on 13 October 2016; Chrome on Windows about 51 percent.</title></circle>
+<circle cx="1736.3" cy="357" r="8" class="dot--key"/>
+<circle cx="1736.3" cy="357" r="14" class="hit"><title>2016 · HTTPS passes half of page loads — Firefox 50 percent on 13 October 2016; Chrome on Windows about 51 percent.</title></circle>
 <text x="1736.3" y="381" class="t" font-size="16" font-weight="600" text-anchor="end" dominant-baseline="central">HTTPS passes half of page loads</text>
 </g>
 <g data-build="1">

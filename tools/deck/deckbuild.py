@@ -157,10 +157,14 @@ def split_content(md: str) -> tuple[str, list[str], list[dict]]:
     while i < len(lines):
         s = lines[i].strip()
         if s.startswith("Build, one step per click"):
+            # numbered items are the captions; an indented "- " line under an item is a sub-item shown on its own line
             i += 1
-            while i < len(lines) and (not lines[i].strip() or re.match(r"^\d+\. ", lines[i].strip())):
-                if lines[i].strip():
-                    captions.append(re.sub(r"^\d+\. ", "", lines[i].strip()))
+            while i < len(lines) and (not lines[i].strip() or re.match(r"^\d+\. ", lines[i].strip()) or re.match(r"^\s+- ", lines[i])):
+                st = lines[i].strip()
+                if re.match(r"^\d+\. ", st):
+                    captions.append(re.sub(r"^\d+\. ", "", st))
+                elif st.startswith("- ") and captions:
+                    captions[-1] += "\n" + st[2:]
                 i += 1
             continue
         m = re.match(r"^!\[(.*?)\]\(([^)]+)\)$", s)
@@ -193,6 +197,10 @@ def inline_svg(src: str) -> str:
     svg = svg.replace("<svg ", '<svg class="diagram" ', 1)
     # the file's own <style> is for standalone viewing; in the deck the classes take the deck's tokens
     svg = re.sub(r"<style>.*?</style>\s*", "", svg, count=1, flags=re.S)
+    # the figure's own <title> would pop up as a browser tooltip over the whole drawing; the aria-label keeps the text
+    svg = re.sub(r"(<svg[^>]*>)\s*<title>.*?</title>", r"\1", svg, count=1, flags=re.S)
+    # a shape's <title> becomes data-tip, which the runtime shows as an instant, themed tooltip
+    svg = re.sub(r"<(circle|rect)([^>]*)><title>(.*?)</title></\1>", r'<\1\2 data-tip="\3"/>', svg, flags=re.S)
     # every figure defines the same marker ids; inlined into one document, url(#arrow) would resolve to
     # the first figure's copy, which is hidden on every other slide, so suffix the ids per figure
     stem = re.sub(r"[^a-z0-9]+", "-", Path(src).stem.lower())
@@ -206,13 +214,21 @@ def max_build(svg: str) -> int:
 
 
 # --------------------------------------------------------------------------- rendering
+def caption_html(c: str, attrs: str = "") -> str:
+    """One caption: a paragraph, or a paragraph with a list when the caption carries sub-items."""
+    main, *subs = c.split("\n")
+    if not subs:
+        return f"<p{attrs}>{inline(main)}</p>"
+    return f"<div{attrs}><p>{inline(main)}</p><ul>" + "".join(f"<li>{inline(x)}</li>" for x in subs) + "</ul></div>"
+
+
 def captions_html(captions: list[str], static: bool = False) -> str:
     if not captions:
         return ""
     if static:
         # nothing else on the slide steps, so clicking through one line at a time is friction: show the list at once
-        return '<div class="step-captions step-captions--static">' + "".join(f"<p>{inline(c)}</p>" for c in captions) + "</div>"
-    return '<div class="step-captions">' + "".join(f'<p data-build="{k}">{inline(c)}</p>' for k, c in enumerate(captions)) + "</div>"
+        return '<div class="step-captions step-captions--static">' + "".join(caption_html(c) for c in captions) + "</div>"
+    return '<div class="step-captions">' + "".join(caption_html(c, f' data-build="{k}"') for k, c in enumerate(captions)) + "</div>"
 
 
 def sources_html(md: str | None) -> str:

@@ -4,20 +4,88 @@
 **Module:** Detection pipelines: design and evolution
 
 ## On-slide content
-![Options at each stage: the pipeline strip with each stage lit in turn and its menu of options; the full menu, with what each option captures and misses, follows as a table](../figures/pipeline-options.svg)
+![Options at each stage: the pipeline strip with each stage lit in turn, and under it that stage's options, one per line, with what each captures](../figures/pipeline-options.svg)
 
 Build, one step per click:
 
-0. Sensor — File system and on-write hooks · Process and script telemetry · Memory scanning · Network tap, proxy, NDR · Identity and SaaS audit logs · Cloud control-plane logs · Mail and web gateways · Agent harness logs.
-1. Acquisition — Capture the artifact on write or on execute · Triggered memory capture · Full packet capture · Metadata-only flow records · Log retention windows and sampling · Central forwarding.
-2. Extraction — File parsing (PE, Office, PDF, archives) · Unpacking and emulation · Script and macro deobfuscation · Disassembly and decompilation · TLS decryption at a proxy · Process-tree and session reconstruction.
-3. Representation — Hashes and byte patterns · Engineered features · Sequences (API calls, events, bytes) · Graphs · Similarity sketches · Text (decompiled code, logs, reports).
-4. Detection — Signatures and indicators · Expert rules (YARA, Sigma, Snort) · Supervised classifiers · Anomaly detection and baselining · Similarity and clustering · Reputation and prevalence.
-5. Investigation — Triage and enrichment · Timeline reconstruction across sources · Sandbox detonation · Memory and disk forensics · Reverse engineering · LLM-assisted analysis.
-6. Decision — Automatic block above a threshold · Human approval playbooks · Risk-based policy by asset criticality · Pre-authorized containment · Escalation and deferral.
-7. Response — Isolate, kill, quarantine · Revoke tokens, reset credentials · Block destinations and domains · Restore from backup, roll back changes · Patch and reconfigure · Revoke an agent's tools or authority.
+0. Sensor — can the system observe the event or state?
+   - File system and on-write hooks — files written, opened, executed
+   - Process and script telemetry — process trees, command lines, script content (ETW, Sysmon, AMSI, script block logging)
+   - Memory scanning — injected or reflectively loaded code, hooks
+   - Network tap, proxy, NDR — flows, DNS, TLS metadata; payload only with decryption
+   - Identity and SaaS audit logs — sign-ins, tokens, consent, data access
+   - Cloud control-plane logs — API calls, role assumptions, configuration changes
+   - Mail and web gateways — attachments, URLs, downloads at delivery
+   - Agent harness logs — context assembled, tool calls, actions, identity used
+1. Acquisition — is the evidence collected and retained?
+   - Capture the artifact on write or on execute — the file as delivered
+   - Triggered memory capture — the process or region at alert time
+   - Full packet capture — everything on the wire
+   - Metadata-only flow records — long, cheap retention
+   - Log retention windows and sampling — what is kept, for how long
+   - Central forwarding — correlation across hosts
+2. Extraction — can usable artifacts or fields be recovered?
+   - File parsing (PE, Office, PDF, archives) — structure, imports, embedded objects
+   - Unpacking and emulation — code hidden behind packers
+   - Script and macro deobfuscation — the command that actually runs
+   - Disassembly and decompilation — functions, control flow; .NET, Go and Rust each need their own tooling
+   - TLS decryption at a proxy — payload content
+   - Process-tree and session reconstruction — who started what, under which identity
+3. Representation — what information is supplied to analysis?
+   - Hashes and byte patterns — exact identity
+   - Engineered features — headers, imports, strings, entropy: fast, interpretable
+   - Sequences (API calls, events, bytes) — order
+   - Graphs — process trees, call graphs, identity graphs: relationships
+   - Similarity sketches — neighbors and families
+   - Text (decompiled code, logs, reports) — semantics an LLM can read
+4. Detection — is a score, rule, or verdict produced?
+   - Signatures and indicators — known threats, cheaply
+   - Expert rules (YARA, Sigma, Snort) — capability patterns across hosts and traffic
+   - Supervised classifiers — generalization inside the training distribution
+   - Anomaly detection and baselining — deviations without a label
+   - Similarity and clustering — campaign grouping, novelty
+   - Reputation and prevalence — rare or new objects
+5. Investigation — can evidence be connected and explained?
+   - Triage and enrichment — context from intelligence, asset and identity data
+   - Timeline reconstruction across sources — the sequence of events
+   - Sandbox detonation — a captured artifact's behavior
+   - Memory and disk forensics — what actually ran
+   - Reverse engineering — the capability in full
+   - LLM-assisted analysis — summaries, hypotheses, tool orchestration
+6. Decision — can an appropriate action be selected?
+   - Automatic block above a threshold — speed
+   - Human approval playbooks — accountability
+   - Risk-based policy by asset criticality — proportional response
+   - Pre-authorized containment — speed with accountability, for defined scenarios
+   - Escalation and deferral — expert judgment
+7. Response — can the action be executed in time?
+   - Isolate, kill, quarantine — stops host activity: isolate the host, kill the process, quarantine the file
+   - Revoke tokens, reset credentials — stops identity-led activity: revoke sessions, reset credentials, disable accounts
+   - Block destinations and domains — cuts the channel
+   - Restore from backup, roll back changes — recovery
+   - Patch and reconfigure — closes the entry
+   - Revoke an agent's tools or authority — stops a hijacked agent
 
 > Every stage has options, and every line here came from that history; the sensor and extraction rows changed most.
+
+## Talking points
+
+- Do not read every card; step to two stages, sensor and response, and name one trade-off for each of the others.
+- Each product class in the lineages is one or two lines here; the history is the industry adding lines.
+- Signatures and machine learning are not file-only methods; the public evidence base is.
+- Use the panel to answer "why not just do X": X is a row, with its blind spot in the last column.
+
+## Speaker notes
+
+Next and Previous step through the eight stages (clicking a stage works too); do not read every card. Spend the time on two of them. The sensor row is the one the lineages were about: each product class in the host-and-file and network lineages is one or two lines here, and the history you have just seen is the industry adding lines as the capability moved. The response row is the one students rarely think about: isolating a host does nothing against a stolen token, and revoking a token does nothing against a hijacked agent unless the harness lets you take its tools away.
+
+For the other stages, name the trade-off in one sentence each. Acquisition trades cost against retention; extraction turns raw evidence into something analyzable and introduces its own failures; representation decides what a model can learn; detection is the only place this lecture names the detector families, each with its blind spot, and Lecture 3 covers them in depth; investigation is where expensive methods live; decision is where authority is designed.
+
+If someone asks whether signatures or machine learning are file-only methods, the answer is no, and the detection panel is where to say it. The signature engine that matches byte patterns in files is the same engine that matches YARA rules over process memory in an EDR and content rules over packets in an IDS, and AMSI exists so that it can see script content before the interpreter runs it. Boosted trees over engineered features run over process trees, command lines, memory-region properties and flow and TLS metadata as readily as over PE headers; byte and sequence models have been applied to memory dumps and network payloads; function similarity finds code reuse in a dumped implant as readily as in a dropped file. Each family is tied to what the sensor hands it, not to the file. What is file-centric is the public evidence base: EMBER, SOREL-20M and most of the literature use files because files are what could be collected, labeled and shared at scale. Lecture 3 makes that gap explicit.
+
+This slide sits after the history on purpose: slide 20 gave the questions, the lineages showed the menu being built twice, once on the endpoint and once on the network, and this is the menu as it stands today. The exercise comes next, and every answer is a row here: a miss is a stage whose chosen option could not see the evidence. Use the panel to answer "why not just do X" questions: almost every X is a row here, with its blind spot in the last column.
+
+**The full menu**, with what each option misses, for questions:
 
 | Stage | Option | What it captures | What it misses |
 | --- | --- | --- | --- |
@@ -70,23 +138,6 @@ Build, one step per click:
 | response | Restore from backup, roll back changes | Recovery | Time; data since the last backup |
 | response | Patch and reconfigure | Closes the entry | Change windows |
 | response | Revoke an agent's tools or authority | Stops a hijacked agent | Depends on harness support |
-
-## Talking points
-
-- Do not read every card; step to two stages, sensor and response, and name one trade-off for each of the others.
-- Each product class in the lineages is one or two lines here; the history is the industry adding lines.
-- Signatures and machine learning are not file-only methods; the public evidence base is.
-- Use the panel to answer "why not just do X": X is a row, with its blind spot in the last column.
-
-## Speaker notes
-
-Next and Previous step through the eight stages (clicking a stage works too); do not read every card. Spend the time on two of them. The sensor row is the one the lineages were about: each product class in the host-and-file and network lineages is one or two lines here, and the history you have just seen is the industry adding lines as the capability moved. The response row is the one students rarely think about: isolating a host does nothing against a stolen token, and revoking a token does nothing against a hijacked agent unless the harness lets you take its tools away.
-
-For the other stages, name the trade-off in one sentence each. Acquisition trades cost against retention; extraction turns raw evidence into something analyzable and introduces its own failures; representation decides what a model can learn; detection is the only place this lecture names the detector families, each with its blind spot, and Lecture 3 covers them in depth; investigation is where expensive methods live; decision is where authority is designed.
-
-If someone asks whether signatures or machine learning are file-only methods, the answer is no, and the detection panel is where to say it. The signature engine that matches byte patterns in files is the same engine that matches YARA rules over process memory in an EDR and content rules over packets in an IDS, and AMSI exists so that it can see script content before the interpreter runs it. Boosted trees over engineered features run over process trees, command lines, memory-region properties and flow and TLS metadata as readily as over PE headers; byte and sequence models have been applied to memory dumps and network payloads; function similarity finds code reuse in a dumped implant as readily as in a dropped file. Each family is tied to what the sensor hands it, not to the file. What is file-centric is the public evidence base: EMBER, SOREL-20M and most of the literature use files because files are what could be collected, labeled and shared at scale. Lecture 3 makes that gap explicit.
-
-This slide sits after the history on purpose: slide 20 gave the questions, the lineages showed the menu being built twice, once on the endpoint and once on the network, and this is the menu as it stands today. The exercise comes next, and every answer is a row here: a miss is a stage whose chosen option could not see the evidence. Use the panel to answer "why not just do X" questions: almost every X is a row here, with its blind spot in the last column.
 
 ## Transition
 

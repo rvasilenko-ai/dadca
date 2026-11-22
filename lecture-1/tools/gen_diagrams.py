@@ -124,8 +124,9 @@ def timeline_overview():
         xa, xb = X(p["from"]), X(min(p["to"], 2027))
         label = f'{p["label"].split(" · ")[0]} · {p["short"]}'
         last = k == len(PERIODS) - 1   # the narrow last band: its label hangs from the right edge, one line up
+        label_svg = text(xb - 6 if last else (xa + xb) / 2, top - (48 if last else 24), esc(label), 21, 700, f"t-part-{k + 1}", "end" if last else "middle")
         s += (f'<g data-build="{k + 1}">\n' + rect(xa, top, xb - xa, 5 * lane_h, f"band-{k + 1}")
-              + text(xb - 6 if last else (xa + xb) / 2, top - (48 if last else 24), esc(label), 21, 700, f"t-part-{k + 1}", "end" if last else "middle") + '</g>\n')
+              + f'<a href="#/s{10 + k}">{label_svg}</a>\n' + '</g>\n')   # the period name jumps to its slide
     return s + "</svg>\n"
 
 

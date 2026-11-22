@@ -28,7 +28,7 @@ svg{--surface:#ffffff;--surface-2:#eceff6;--frame:#f8fafc;--ink:#1f2937;--ink-2:
 .pt-1{fill:var(--part-1)}.pt-2{fill:var(--part-2)}.pt-3{fill:var(--part-0)}.pt-4{fill:var(--part-4)}
 .cell{fill:var(--surface);stroke:var(--rule);stroke-width:1.5}.cell--sub{fill:var(--surface-2);stroke:var(--rule);stroke-width:1.5}
 .cell--lit{fill:var(--bad-wash);stroke:var(--bad);stroke-width:3}.colhead{fill:var(--surface-2);stroke:var(--rule);stroke-width:1.5}
-.marker{stroke:var(--ink-3);stroke-width:2;stroke-dasharray:6 6}
+.marker{stroke:var(--ink-3);stroke-width:2;stroke-dasharray:6 6}.hit{fill:transparent}
 </style>
 <defs>
   <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>

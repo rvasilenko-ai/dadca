@@ -37,7 +37,7 @@
       builds[b].classList.toggle('is-current', n === step && step > 0);
       if (appearing && !still && pushHash !== false) holdArrowheads(builds[b]);
     }
-    var caps = s.querySelectorAll('.step-captions > p');
+    var caps = s.querySelectorAll('.step-captions > *');
     if (caps.length) {
       var idx = Math.min(step, caps.length - 1);
       for (var c = 0; c < caps.length; c++) caps[c].classList.toggle('is-shown', c === idx);
@@ -115,6 +115,19 @@
     var x = e.clientX;
     if (x < window.innerWidth * 0.18) prev(); else next();
   });
+  // tooltips: any element with data-tip (shapes in the figures) shows it next to the pointer, instantly and in the theme
+  var tip = document.createElement('div');
+  tip.className = 'deck-tip'; tip.hidden = true; document.body.appendChild(tip);
+  stage.addEventListener('mousemove', function (e) {
+    var t = e.target && e.target.closest ? e.target.closest('[data-tip]') : null;
+    if (!t) { tip.hidden = true; return; }
+    tip.textContent = t.getAttribute('data-tip'); tip.hidden = false;
+    var x = e.clientX + 16, y = e.clientY + 18;
+    if (x + tip.offsetWidth > window.innerWidth - 8) x = e.clientX - tip.offsetWidth - 12;
+    if (y + tip.offsetHeight > window.innerHeight - 8) y = e.clientY - tip.offsetHeight - 12;
+    tip.style.left = x + 'px'; tip.style.top = y + 'px';
+  });
+  stage.addEventListener('mouseleave', function () { tip.hidden = true; });
   var tx = null;
   stage.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
   stage.addEventListener('touchend', function (e) { if (tx === null) return; var dx = e.changedTouches[0].clientX - tx; tx = null; if (dx < -40) next(); else if (dx > 40) prev(); }, { passive: true });

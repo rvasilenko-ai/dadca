@@ -30,7 +30,6 @@
 <section class="slide slide--diagram" id="s2" data-id="s2" data-part="1" data-steps="4" data-number="2">
 <h2 class="slide-title">Attacking the model is not new</h2><p>Adversarial machine learning predates LLMs by almost two decades. Every stage of a learned model has been attacked.</p>
 <figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 600" role="img" aria-label="Where the classic attacks enter a learned model: poisoning and evasion write into the pipeline, extraction and inference read its answers" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>Where the classic attacks enter a learned model: poisoning and evasion write into the pipeline, extraction and inference read its answers</title>
 <defs>
   <marker id="arrow-attack-map" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
   <marker id="arrow-bad-attack-map" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
@@ -157,7 +156,6 @@
 </section>
 <section class="slide slide--diagram" id="s9" data-id="s9" data-part="1" data-steps="0" data-number="9">
 <h2 class="slide-title">Prompt injection and jailbreak are not the same thing</h2><figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 430" role="img" aria-label="Prompt injection attacks the application by concatenating untrusted text with the developer's prompt; a jailbreak attacks the model's own safety training, with the user as the attacker" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>Prompt injection attacks the application by concatenating untrusted text with the developer's prompt; a jailbreak attacks the model's own safety training, with the user as the attacker</title>
 <defs>
   <marker id="arrow-injection-jailbreak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
   <marker id="arrow-bad-injection-jailbreak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
@@ -240,7 +238,6 @@
 </section>
 <section class="slide slide--diagram" id="s12" data-id="s12" data-part="2" data-steps="6" data-number="12">
 <h2 class="slide-title">The harness: what surrounds the model</h2><figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 700" role="img" aria-label="The harness: everything around the model" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>The harness: everything around the model</title>
 <defs>
   <marker id="arrow-harness" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
   <marker id="arrow-bad-harness" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
@@ -325,7 +322,6 @@
 </section>
 <section class="slide slide--diagram" id="s13" data-id="s13" data-part="2" data-steps="5" data-number="13">
 <h2 class="slide-title">From model to agent: the loop</h2><figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1680 620" role="img" aria-label="The agent loop: a model, a harness, and a loop" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>The agent loop: a model, a harness, and a loop</title>
 <defs>
   <marker id="arrow-agent-loop" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
   <marker id="arrow-bad-agent-loop" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
@@ -388,7 +384,6 @@
 <section class="slide slide--diagram" id="s14" data-id="s14" data-part="2" data-steps="6" data-number="14">
 <h2 class="slide-title">Attacks on the harness</h2><p>An agent is a model plus a harness. The model is one component; the harness is the rest — and the larger attack surface.</p>
 <figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 700" role="img" aria-label="The harness under attack: where the attacker reaches in" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>The harness under attack: where the attacker reaches in</title>
 <defs>
   <marker id="arrow-harness-attack-surface" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
   <marker id="arrow-bad-harness-attack-surface" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
@@ -505,7 +500,6 @@
 <section class="slide slide--diagram" id="s15" data-id="s15" data-part="2" data-steps="1" data-number="15">
 <h2 class="slide-title">The agentic supply chain</h2><p>Point ④ on the previous slide — tool servers — as a supply chain. The software one is familiar; the agent adds every input it will later read as instructions.</p>
 <figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 330" role="img" aria-label="The software supply chain, plus every input an agent will later read as instructions at run time" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>The software supply chain, plus every input an agent will later read as instructions at run time</title>
 <defs>
   <marker id="arrow-supply-chain" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
   <marker id="arrow-bad-supply-chain" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
@@ -595,7 +589,6 @@
 <section class="slide slide--diagram" id="s18" data-id="s18" data-part="3" data-steps="5" data-number="18">
 <h2 class="slide-title">Case A is a ladder of autonomy</h2><p>The weaponized agent is reported in the wild, at every level of autonomy.</p>
 <figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 600" role="img" aria-label="Case A is a ladder of autonomy: each rung hands the model more of the loop, from assistant up to the attacker's agent running on stolen model capacity" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>Case A is a ladder of autonomy: each rung hands the model more of the loop, from assistant up to the attacker's agent running on stolen model capacity</title>
 <defs>
   <marker id="arrow-ladder" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
   <marker id="arrow-bad-ladder" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
@@ -648,7 +641,6 @@
 <section class="slide slide--diagram" id="s19" data-id="s19" data-part="3" data-steps="2" data-number="19">
 <h2 class="slide-title">AI pentesting frameworks: research tools, reused by criminals</h2><p>Rung four, up close. The autonomous offensive agents began as published research, then became open source — and the same tool a red team runs is the tool an intruder runs.</p>
 <figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 300" role="img" aria-label="AI pentesting frameworks began as published research, were released open source and model-agnostic, and have since been reported in real intrusions" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>AI pentesting frameworks began as published research, were released open source and model-agnostic, and have since been reported in real intrusions</title>
 <defs>
   <marker id="arrow-dual-use" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
   <marker id="arrow-bad-dual-use" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
@@ -691,7 +683,6 @@
 </section>
 <section class="slide slide--diagram" id="s20" data-id="s20" data-part="3" data-steps="6" data-number="20">
 <h2 class="slide-title">Hugging Face: the attack path</h2><figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 608" role="img" aria-label="The reference incident across three zones. Top row, in OpenAI's evaluation environment: an isolated evaluation, then a sandbox escape through a proxy zero-day; then on the Internet: root on a third-party code-execution endpoint used as a launchpad, with exposed accounts on other services. Bottom row, inside Hugging Face production, right to left: entry through crafted dataset configs, the Kubernetes cluster taken to cluster-admin, expansion into the VPN mesh, cloud and source control, and detection that correlated the signals but did not escalate until humans cut access. Red arrows mark the boundaries the agent crossed" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>The reference incident across three zones. Top row, in OpenAI's evaluation environment: an isolated evaluation, then a sandbox escape through a proxy zero-day; then on the Internet: root on a third-party code-execution endpoint used as a launchpad, with exposed accounts on other services. Bottom row, inside Hugging Face production, right to left: entry through crafted dataset configs, the Kubernetes cluster taken to cluster-admin, expansion into the VPN mesh, cloud and source control, and detection that correlated the signals but did not escalate until humans cut access. Red arrows mark the boundaries the agent crossed</title>
 <defs>
   <marker id="arrow-incident-chain" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
   <marker id="arrow-bad-incident-chain" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
@@ -777,7 +768,6 @@
 <section class="slide slide--diagram" id="s21" data-id="s21" data-part="3" data-steps="7" data-number="21">
 <h2 class="slide-title">Hugging Face: what it adds up to</h2><p>About 17,600 recovered actions in about 6,280 clusters over roughly two and a half days — 7,677 of them on 11 July alone. Most paths produced nothing.</p>
 <figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 480" role="img" aria-label="Hugging Face, what it adds up to: the attacker's objective plus the attacker's agent (model and harness) plus a launchpad on the Internet plus ordinary weaknesses at the victim equals attacker-desired capability. Three readings of the same incident: a tireless operator, coverage not elegance; the agent was the intruder, no human in the loop; detection worked, the decision failed" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>Hugging Face, what it adds up to: the attacker's objective plus the attacker's agent (model and harness) plus a launchpad on the Internet plus ordinary weaknesses at the victim equals attacker-desired capability. Three readings of the same incident: a tireless operator, coverage not elegance; the agent was the intruder, no human in the loop; detection worked, the decision failed</title>
 <defs>
   <marker id="arrow-equation-huggingface" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
   <marker id="arrow-bad-equation-huggingface" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
@@ -853,7 +843,6 @@
 </section>
 <section class="slide slide--diagram" id="s23" data-id="s23" data-part="3" data-steps="5" data-number="23">
 <h2 class="slide-title">ForcedLeak: the attack path</h2><figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 700" role="img" aria-label="ForcedLeak attack path across three zones: on the Internet the attacker fills a public Web-to-Lead form; the concealed instructions persist in the Salesforce CRM record; inside the organization an employee later asks the Agentforce agent about the lead, the agent retrieves the record, the injection fires and the agent reaches more CRM data with its own authority, and sensitive data leaves through crafted image requests back to the attacker" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>ForcedLeak attack path across three zones: on the Internet the attacker fills a public Web-to-Lead form; the concealed instructions persist in the Salesforce CRM record; inside the organization an employee later asks the Agentforce agent about the lead, the agent retrieves the record, the injection fires and the agent reaches more CRM data with its own authority, and sensitive data leaves through crafted image requests back to the attacker</title>
 <defs>
   <marker id="arrow-forcedleak-path" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
   <marker id="arrow-bad-forcedleak-path" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
@@ -920,7 +909,6 @@
 </section>
 <section class="slide slide--diagram" id="s24" data-id="s24" data-part="3" data-steps="7" data-number="24">
 <h2 class="slide-title">ForcedLeak: what it adds up to</h2><figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 480" role="img" aria-label="ForcedLeak, what it adds up to: attacker-controlled data plus a trusted agent plus organizational identity and tools plus a permitted outbound channel equals attacker-desired capability. Three readings of the same incident: the CRM record contains the payload; the agent is a compromised deputy; the agent has operationally become part of the malware" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>ForcedLeak, what it adds up to: attacker-controlled data plus a trusted agent plus organizational identity and tools plus a permitted outbound channel equals attacker-desired capability. Three readings of the same incident: the CRM record contains the payload; the agent is a compromised deputy; the agent has operationally become part of the malware</title>
 <defs>
   <marker id="arrow-equation" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
   <marker id="arrow-bad-equation" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
@@ -985,7 +973,6 @@
 <section class="slide slide--diagram" id="s25" data-id="s25" data-part="3" data-steps="6" data-number="25">
 <h2 class="slide-title">MIDNIGHT NEPTUNE: the attack path</h2><p>Case B, second route — the poisoned harness. A suspected DPRK cluster, reported by GTIG, November 2026</p>
 <figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 700" role="img" aria-label="MIDNIGHT NEPTUNE path across three zones: on the Internet, a fake recruiter with a model-generated photo and a fake meeting page with a ClickFix lure; inside the organization, a foothold and a pivot into the internal code repositories, where the committed agent settings gain a startup hook; then, for every developer, starting the coding agent on an ordinary morning runs the hook, which downloads the SOMBERMEME backdoor, and GitHub tokens named after Copilot disguise the lateral movement" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>MIDNIGHT NEPTUNE path across three zones: on the Internet, a fake recruiter with a model-generated photo and a fake meeting page with a ClickFix lure; inside the organization, a foothold and a pivot into the internal code repositories, where the committed agent settings gain a startup hook; then, for every developer, starting the coding agent on an ordinary morning runs the hook, which downloads the SOMBERMEME backdoor, and GitHub tokens named after Copilot disguise the lateral movement</title>
 <defs>
   <marker id="arrow-poisoned-harness" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
   <marker id="arrow-bad-poisoned-harness" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
@@ -1060,7 +1047,6 @@
 </section>
 <section class="slide slide--diagram" id="s26" data-id="s26" data-part="3" data-steps="7" data-number="26">
 <h2 class="slide-title">MIDNIGHT NEPTUNE: what it adds up to</h2><figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 480" role="img" aria-label="MIDNIGHT NEPTUNE, what it adds up to: attacker-controlled configuration plus a trusted agent plus a developer's identity and machine plus a permitted outbound channel equals attacker-desired capability. Three readings of the same incident: the repository contains the payload; the agent is the loader; the settings file is the supply chain" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>MIDNIGHT NEPTUNE, what it adds up to: attacker-controlled configuration plus a trusted agent plus a developer's identity and machine plus a permitted outbound channel equals attacker-desired capability. Three readings of the same incident: the repository contains the payload; the agent is the loader; the settings file is the supply chain</title>
 <defs>
   <marker id="arrow-equation-neptune" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
   <marker id="arrow-bad-equation-neptune" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
@@ -1123,7 +1109,6 @@
 </section>
 <section class="slide slide--has-diagram" id="s27" data-id="s27" data-part="3" data-steps="0" data-number="27">
 <h2 class="slide-title">Case A versus Case B: what is different?</h2><div class="body"><figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 236" role="img" aria-label="Two reminder cards. Case A, the attacker's own agent, runs outside the organization: AI pentesting frameworks seen in intrusions, and the Hugging Face evaluation escape. Case B, the victim's own agent hijacked inside the trusted workflow: ForcedLeak through injected context, MIDNIGHT NEPTUNE through a poisoned harness" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>Two reminder cards. Case A, the attacker's own agent, runs outside the organization: AI pentesting frameworks seen in intrusions, and the Hugging Face evaluation escape. Case B, the victim's own agent hijacked inside the trusted workflow: ForcedLeak through injected context, MIDNIGHT NEPTUNE through a poisoned harness</title>
 <defs>
   <marker id="arrow-case-reminder" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
   <marker id="arrow-bad-case-reminder" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
@@ -1179,7 +1164,6 @@
 </section>
 <section class="slide slide--diagram" id="s29" data-id="s29" data-part="4" data-steps="3" data-number="29">
 <h2 class="slide-title">Case A defense: the same sensors, a different arithmetic</h2><figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 500" role="img" aria-label="Case A defense in three rows. Same sensors: EDR and XDR, identity and cloud audit, NDR and flows — the agent cannot act without touching them. A different arithmetic: a human operator issues a few hundred actions a day, a handful clearly malicious; the attacker's agent issued 7,677 on 11 July alone and about 17,600 in all, none clearly malicious on its own — ten to a thousand times more events, each less malicious, meaningful only together. So triage changes: ranking alerts by severity for humans to read gives way to evaluating every event continuously, correlated across sources, with decisions at machine speed" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>Case A defense in three rows. Same sensors: EDR and XDR, identity and cloud audit, NDR and flows — the agent cannot act without touching them. A different arithmetic: a human operator issues a few hundred actions a day, a handful clearly malicious; the attacker's agent issued 7,677 on 11 July alone and about 17,600 in all, none clearly malicious on its own — ten to a thousand times more events, each less malicious, meaningful only together. So triage changes: ranking alerts by severity for humans to read gives way to evaluating every event continuously, correlated across sources, with decisions at machine speed</title>
 <defs>
   <marker id="arrow-case-a-defense" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
   <marker id="arrow-bad-case-a-defense" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
@@ -1238,7 +1222,6 @@
 <section class="slide slide--diagram" id="s30" data-id="s30" data-part="4" data-steps="7" data-number="30">
 <h2 class="slide-title">Case A defense: guardrails in the environment</h2><p>We do not own the attacker's agent; we own everything it has to act in. So the controls go on the environment: one at every point its actions can land.</p>
 <figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 600" role="img" aria-label="Case A guardrails, the environment view. Outside, dashed and not ours to control: the attacker's objective, model and harness. Inside the environment we own, a numbered control and sensor on each component the agent's actions land on: endpoints and edge devices, identity and credentials, workloads and clusters, cloud resources, source control and CI, network and egress; and a monitor M that evaluates every event continuously and correlates across sources" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>Case A guardrails, the environment view. Outside, dashed and not ours to control: the attacker's objective, model and harness. Inside the environment we own, a numbered control and sensor on each component the agent's actions land on: endpoints and edge devices, identity and credentials, workloads and clusters, cloud resources, source control and CI, network and egress; and a monitor M that evaluates every event continuously and correlates across sources</title>
 <defs>
   <marker id="arrow-environment-guardrails" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
   <marker id="arrow-bad-environment-guardrails" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
@@ -1350,7 +1333,6 @@
 <section class="slide slide--diagram" id="s31" data-id="s31" data-part="4" data-steps="7" data-number="31">
 <h2 class="slide-title">Case B defense: guardrails, the boundary text does not have</h2><p>Same harness, third time. Every red point of the attack view gets a control.</p>
 <figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 700" role="img" aria-label="Guardrails: a control at every point the attacker can write to" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>Guardrails: a control at every point the attacker can write to</title>
 <defs>
   <marker id="arrow-harness-guardrails" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
   <marker id="arrow-bad-harness-guardrails" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
@@ -1472,7 +1454,6 @@
 <section class="slide slide--diagram" id="s32" data-id="s32" data-part="4" data-steps="3" data-number="32">
 <h2 class="slide-title">Both cases: cheap models, in a funnel</h2><p>Different telemetry, the same volume problem: far more events than people can read, none decisive alone. Match the model to the scale.</p>
 <figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 516" role="img" aria-label="Match the model to the scale, for both cases. Two inputs — Case A's endpoint, identity and flow events, and Case B's agent transitions — feed one funnel: encoder-only classifiers at machine scale, small task-trained language models at triage, a frontier model and a human for the few investigations" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>Match the model to the scale, for both cases. Two inputs — Case A's endpoint, identity and flow events, and Case B's agent transitions — feed one funnel: encoder-only classifiers at machine scale, small task-trained language models at triage, a frontier model and a human for the few investigations</title>
 <defs>
   <marker id="arrow-funnel" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
   <marker id="arrow-bad-funnel" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
@@ -1518,7 +1499,6 @@
 </section>
 <section class="slide slide--has-diagram slide--denser" id="s33" data-id="s33" data-part="4" data-steps="0" data-number="33">
 <h2 class="slide-title">The weak watching the strong</h2><div class="body"><figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 250" role="img" aria-label="A weaker, trusted monitor watches a stronger, untrusted agent; having the full context does not mean it can read the intent in it" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>A weaker, trusted monitor watches a stronger, untrusted agent; having the full context does not mean it can read the intent in it</title>
 <defs>
   <marker id="arrow-weak-monitor" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
   <marker id="arrow-bad-weak-monitor" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>

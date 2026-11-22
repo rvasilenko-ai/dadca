@@ -50,7 +50,7 @@ svg{--surface:#ffffff;--surface-2:#eceff6;--frame:#f8fafc;--ink:#1f2937;--ink-2:
 .pt-1{fill:var(--part-1)}.pt-2{fill:var(--part-2)}.pt-3{fill:var(--part-0)}.pt-4{fill:var(--part-4)}
 .cell{fill:var(--surface);stroke:var(--rule);stroke-width:1.5}.cell--sub{fill:var(--surface-2);stroke:var(--rule);stroke-width:1.5}
 .cell--lit{fill:var(--bad-wash);stroke:var(--bad);stroke-width:3}.colhead{fill:var(--surface-2);stroke:var(--rule);stroke-width:1.5}
-.marker{stroke:var(--ink-3);stroke-width:2;stroke-dasharray:6 6}
+.marker{stroke:var(--ink-3);stroke-width:2;stroke-dasharray:6 6}.hit{fill:transparent}
 </style>"""
 
 
@@ -73,9 +73,11 @@ def wrap(s, width):
 
 
 def circle(cx, cy, r, cls, tip=None):
-    """A circle, with a native hover tooltip when `tip` is given."""
-    inner = f"<title>{esc(tip)}</title>" if tip else ""
-    return f'<circle cx="{cx}" cy="{cy}" r="{r}" class="{cls}">{inner}</circle>\n'
+    """A circle; with `tip`, a larger transparent hit circle on top carries the tooltip, so small dots are easy to hover."""
+    s = f'<circle cx="{cx}" cy="{cy}" r="{r}" class="{cls}"/>\n'
+    if tip:
+        s += f'<circle cx="{cx}" cy="{cy}" r="{max(r + 6, 12)}" class="hit"><title>{esc(tip)}</title></circle>\n'
+    return s
 
 
 def rect(x, y, w, h, cls, rx=0, tip=None):

@@ -29,5 +29,5 @@ build(DeckConfig(
         2: ("How detection pipelines are built, and how they had to change", "The pipeline, two lineages, the stage each change broke, the options, six misses"),
     },
     divider_slides={5: 1, 19: 2},
-    table_rows_per_page=9,
+    table_rows_per_page=10,
 ))
