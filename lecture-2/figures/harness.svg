@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 720" width="1800" height="720" role="img" aria-label="The harness: everything around the model" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+<title>The harness: everything around the model</title>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4b5563"/></marker>
+  <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#dc2626"/></marker>
+</defs>
+<rect x="0" y="0" width="1800" height="720" fill="#ffffff"/>
+<g data-build="0">
+<rect x="300" y="20" width="1030" height="680" rx="26" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2.5"/>
+<text x="330" y="56" font-size="28" font-weight="700" fill="#4b5563" text-anchor="start" dominant-baseline="central">Harness</text>
+<rect x="700" y="300" width="260" height="130" rx="18" fill="#e0f2fe" stroke="#0284c7" stroke-width="4"/>
+<text x="830" y="346" font-size="36" font-weight="700" fill="#075985" text-anchor="middle" dominant-baseline="central">Model</text>
+<text x="830" y="392" font-size="20" font-weight="400" fill="#075985" text-anchor="middle" dominant-baseline="central">chooses the next action</text>
+</g>
+<g data-build="1">
+<path d="M985 150L945 300" fill="none" stroke="#9ca3af" stroke-width="3" stroke-linecap="round"/>
+<rect x="985" y="95" width="320" height="110" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2.5"/>
+<text x="1005" y="127" font-size="25" font-weight="700" fill="#1f2937" text-anchor="start" dominant-baseline="central">Objective and instructions</text>
+<text x="1005" y="157" font-size="20" font-weight="400" fill="#4b5563" text-anchor="start" dominant-baseline="central">the task and its rules</text>
+</g>
+<g data-build="2">
+<path d="M660 150L715 300" fill="none" stroke="#9ca3af" stroke-width="3" stroke-linecap="round"/>
+<path d="M260 150H328" fill="none" stroke="#9ca3af" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="330" y="95" width="330" height="110" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2.5"/>
+<text x="350" y="127" font-size="25" font-weight="700" fill="#1f2937" text-anchor="start" dominant-baseline="central">Tools, skills, plugins</text>
+<text x="350" y="157" font-size="20" font-weight="400" fill="#4b5563" text-anchor="start" dominant-baseline="central">how it acts</text>
+<rect x="40" y="95" width="220" height="110" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2.5"/>
+<text x="60" y="127" font-size="24" font-weight="700" fill="#1f2937" text-anchor="start" dominant-baseline="central">Tool servers</text>
+<text x="60" y="157" font-size="18" font-weight="400" fill="#4b5563" text-anchor="start" dominant-baseline="central">MCP, marketplaces</text>
+</g>
+<g data-build="3">
+<path d="M985 580L945 430" fill="none" stroke="#9ca3af" stroke-width="3" stroke-linecap="round"/>
+<rect x="985" y="525" width="320" height="110" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2.5"/>
+<text x="1005" y="557" font-size="25" font-weight="700" fill="#1f2937" text-anchor="start" dominant-baseline="central">Shell and network</text>
+<text x="1005" y="587" font-size="20" font-weight="400" fill="#4b5563" text-anchor="start" dominant-baseline="central">where its actions land</text>
+<path d="M1330 255H1418" fill="none" stroke="#4b5563" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow)"/>
+<text x="1374" y="232" font-size="22" font-weight="600" fill="#1f2937" text-anchor="middle" dominant-baseline="central">actions</text>
+<path d="M1420 475H1332" fill="none" stroke="#4b5563" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow)"/>
+<text x="1374" y="500" font-size="22" font-weight="600" fill="#1f2937" text-anchor="middle" dominant-baseline="central">output</text>
+<rect x="1420" y="250" width="360" height="230" rx="18" fill="none" stroke="#9ca3af" stroke-width="3" stroke-dasharray="14 10"/>
+<text x="1450" y="290" font-size="28" font-weight="700" fill="#1f2937" text-anchor="start" dominant-baseline="central">Environment</text>
+<text x="1450" y="332" font-size="22" font-weight="400" fill="#1f2937" text-anchor="start" dominant-baseline="central">files, systems, network:</text>
+<text x="1450" y="362" font-size="22" font-weight="400" fill="#1f2937" text-anchor="start" dominant-baseline="central">the target</text>
+<text x="1600" y="440" font-size="22" font-weight="500" fill="#4b5563" text-anchor="middle" dominant-baseline="central" font-style="italic">real-world consequences</text>
+</g>
+<g data-build="4">
+<path d="M660 365H698" fill="none" stroke="#9ca3af" stroke-width="3" stroke-linecap="round"/>
+<path d="M260 365H328" fill="none" stroke="#9ca3af" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="330" y="310" width="330" height="110" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2.5"/>
+<text x="350" y="342" font-size="25" font-weight="700" fill="#1f2937" text-anchor="start" dominant-baseline="central">Retrieval</text>
+<text x="350" y="372" font-size="20" font-weight="400" fill="#4b5563" text-anchor="start" dominant-baseline="central">what it is fed: documents,</text>
+<text x="350" y="398" font-size="20" font-weight="400" fill="#4b5563" text-anchor="start" dominant-baseline="central">mail, records, web pages</text>
+<rect x="40" y="310" width="220" height="110" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2.5"/>
+<text x="60" y="342" font-size="24" font-weight="700" fill="#1f2937" text-anchor="start" dominant-baseline="central">Documents</text>
+<text x="60" y="372" font-size="18" font-weight="400" fill="#4b5563" text-anchor="start" dominant-baseline="central">web, mail, CRM,</text>
+<text x="60" y="398" font-size="18" font-weight="400" fill="#4b5563" text-anchor="start" dominant-baseline="central">tickets, files</text>
+</g>
+<g data-build="5">
+<path d="M660 580L715 430" fill="none" stroke="#9ca3af" stroke-width="3" stroke-linecap="round"/>
+<rect x="330" y="525" width="330" height="110" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2.5"/>
+<text x="350" y="557" font-size="25" font-weight="700" fill="#1f2937" text-anchor="start" dominant-baseline="central">Memory and context</text>
+<text x="350" y="587" font-size="20" font-weight="400" fill="#4b5563" text-anchor="start" dominant-baseline="central">what persists between turns</text>
+</g>
+<g data-build="6">
+<path d="M985 365H962" fill="none" stroke="#9ca3af" stroke-width="3" stroke-linecap="round"/>
+<rect x="985" y="310" width="320" height="110" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2.5"/>
+<text x="1005" y="342" font-size="25" font-weight="700" fill="#1f2937" text-anchor="start" dominant-baseline="central">Credentials and authority</text>
+<text x="1005" y="372" font-size="20" font-weight="400" fill="#4b5563" text-anchor="start" dominant-baseline="central">whose identity it acts with</text>
+</g>
+</svg>

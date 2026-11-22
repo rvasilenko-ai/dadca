@@ -7,6 +7,20 @@
 
 An agent is a model plus a harness. The model is one component; the harness is the rest — and the larger attack surface.
 
+![The same harness, with the components the attacker can write to in red. The model is unchanged; the attacker never talks to it.](../figures/harness-attack-surface.svg)
+
+*The same harness, with the components the attacker can write to in red. The model is unchanged; the attacker never talks to it.*
+
+Build, one step per click:
+
+0. The same picture as two slides ago. The model stays unchanged throughout.
+1. ① Tools, skills, plugins: a poisoned skill, or a tool description carrying injection, invoked in good faith.
+2. ② Retrieval: instructions planted in a document, mail or record the agent will fetch.
+3. ③ Memory and context: malicious context persisted, then replayed on a later, unrelated task.
+4. ④ Tool servers: a compromised server in the agent's supply chain.
+5. ⑤ Credentials and authority: confused or excessive delegation turns an injection into consequences.
+6. The attacker never talks to the model. Every red arrow ends in the model's context — the indirect injection of slide 10, now with a map.
+
 | Harness component | How it is attacked |
 | --- | --- |
 | Tools, skills, plugins | A poisoned or hijacked skill; a tool whose description carries injection |

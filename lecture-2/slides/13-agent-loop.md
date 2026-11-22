@@ -16,6 +16,19 @@ objective
    -> repeat
 ```
 
+![The loop: the model reads the objective and the context, acts through a tool in the environment, and the output returns to the context for the next turn.](../figures/agent-loop.svg)
+
+*The loop: the model reads the objective and the context, acts through a tool in the environment, and the output returns to the context for the next turn.*
+
+Build, one step per click:
+
+0. The model reads and decides; everything else is around it.
+1. It receives an objective.
+2. It acts by calling a tool in the environment — shell, browser, code, an API — against the target.
+3. The tool's output returns as an observation and joins the context.
+4. Every turn adds to the context; the next choice depends on everything so far.
+5. The loop ends when the objective is met or a budget runs out. Failure along the way is new information, not termination.
+
 Failure is often new information, not termination.
 
 > A model answers once. A model plus a harness, run in this loop, acts in the world — that is an agent.
