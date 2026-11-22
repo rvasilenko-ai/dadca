@@ -1,6 +1,6 @@
-# Slide 17 — Approximately 17,600 recovered actions
+# Slide 18 — Approximately 17,600 recovered actions
 
-**Timing:** 46–48 minutes  
+**Timing:** 47–49 minutes  
 **Module:** Case A: an agent the attacker owns
 
 ## On-slide content

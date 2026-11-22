@@ -1,6 +1,6 @@
-# Slide 30 — A map of work still to be done
+# Slide 31 — A map of work still to be done
 
-**Timing:** 83–90 minutes  
+**Timing:** 85–90 minutes  
 **Module:** Defense and research
 
 ## On-slide content
@@ -13,6 +13,7 @@
 | Evaluation | How do we verify reverse engineering, stealth, and containment? |
 | Trust | How should instructions, identities, and delegated authority be scoped? |
 | Response | How can action be timely, bounded, reversible, and auditable? |
+| Monitoring | How weak can a monitor be and still catch a stronger agent — and how do we measure its evasion rate? |
 
 > If offense can repeatedly explore until one path works, defense must do more than generate alerts: it must correlate, decide, and contain at comparable speed.
 
@@ -41,3 +42,4 @@ End of the lecture.
 - [OpenAI incident account](https://openai.com/index/hugging-face-model-evaluation-security-incident/)
 - [Noma Security: ForcedLeak](https://noma.security/noma-labs/forcedleak/)
 - [Varonis Threat Labs: SearchLeak](https://www.varonis.com/blog/searchleak)
+- [Greenblatt et al., AI Control: Improving Safety Despite Intentional Subversion (2023)](https://arxiv.org/abs/2312.06942)

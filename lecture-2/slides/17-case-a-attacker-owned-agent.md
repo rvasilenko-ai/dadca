@@ -1,6 +1,6 @@
-# Slide 16 — Case A: an agent the attacker owns
+# Slide 17 — Case A: an agent the attacker owns
 
-**Timing:** 42–46 minutes  
+**Timing:** 44–47 minutes  
 **Module:** Case A: an agent the attacker owns
 
 ## On-slide content

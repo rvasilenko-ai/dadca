@@ -1,6 +1,6 @@
-# Slide 23 — Case B, second route: the poisoned harness
+# Slide 24 — Case B, second route: the poisoned harness
 
-**Timing:** 62–65 minutes  
+**Timing:** 63–66 minutes  
 **Module:** Case B: a trusted agent hijacked
 
 ## On-slide content

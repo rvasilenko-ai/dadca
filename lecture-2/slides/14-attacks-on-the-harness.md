@@ -37,4 +37,4 @@ Make "poisoned skill" concrete: a skill or plugin the agent is given — install
 
 ## Transition
 
-“That is the surface. Now the two ways an agent actually turns into an attacker.”
+“One of those arrows deserves an example before we go on: the supply chain, where a harness is poisoned without anyone talking to the model.”

@@ -1,6 +1,6 @@
-# Slide 25 — Defense depends on who controls the agent
+# Slide 26 — Defense depends on who controls the agent
 
-**Timing:** 67–70 minutes  
+**Timing:** 68–71 minutes  
 **Module:** The two cases compared
 
 ## On-slide content
@@ -28,7 +28,7 @@ Mention SearchLeak briefly as corroborating evidence: Microsoft 365 Copilot Ente
 
 ## Transition
 
-“This comparison changes how we answer the apparently simple question: is a compromised agent malware?”
+“Take the two cases in turn, starting with the one where we own nothing but our sensors.”
 
 ## Sources
 

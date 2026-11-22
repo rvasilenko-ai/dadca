@@ -1,9 +1,11 @@
-# Slide 28 — The agentic supply chain
+# Slide 15 — The agentic supply chain
 
-**Timing:** 77–80 minutes  
-**Module:** Defense and research
+**Timing:** 39–41 minutes  
+**Module:** From model to agent
 
 ## On-slide content
+
+Arrow ④ on the previous slide, as a supply chain. The software one is familiar; the agent adds every input it will later read as instructions.
 
 Traditional focus:
 
@@ -31,5 +33,5 @@ Ask students which inputs in their current development workflow are treated as d
 
 ## Transition
 
-“If attacks adapt at machine speed, detection alone is insufficient—but unconstrained automated response is also dangerous.”
+“That is the surface. Now the two ways an agent actually turns into an attacker.”
 

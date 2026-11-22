@@ -4,7 +4,7 @@
 **Audience:** Master's and PhD cybersecurity students  
 **Central question:** What changes when reasoning, tool use, and persistent trial-and-error become cheap?
 
-**Framing beat:** offensive capability diffuses from the few to the many; the 2017 Shadow Brokers spill-over (EternalBlue, then NotPetya) is the reference case. This lecture is that pattern's current instance: frontier AI capability, released commercially and as open weights, reaching everyone and lowering the skill floor, with the caveat that the diffusion is gradual and the offensive economy is not yet settled. The lecture stands alone and no slide refers to another lecture. If the same audience attended the malware lecture, the presenter can call back to its closing pattern at slide 18; if not, the one sentence above is enough.
+**Framing beat:** offensive capability diffuses from the few to the many; the 2017 Shadow Brokers spill-over (EternalBlue, then NotPetya) is the reference case. This lecture is that pattern's current instance: frontier AI capability, released commercially and as open weights, reaching everyone and lowering the skill floor, with the caveat that the diffusion is gradual and the offensive economy is not yet settled. The lecture stands alone and no slide refers to another lecture. If the same audience attended the malware lecture, the presenter can call back to its closing pattern at slide 19; if not, the one sentence above is enough.
 
 ## The spine
 
@@ -26,7 +26,8 @@ Students should be able to:
 3. Distinguish attacks on the model from attacks on the harness: tools, skills, memory, retrieval, and tool servers.
 4. Contrast the two ways an agent becomes an attacker — an agent the attacker owns, and a trusted agent hijacked through untrusted context — by location, authority, observability, and where guardrails can live.
 5. Map the real cases — the autonomous intrusion, AI-orchestrated campaigns, agent-built malware, autonomous exploitation frameworks, LLMjacking, ForcedLeak, the poisoned coding-agent harness — onto that framework.
-6. Identify research problems in agent-trajectory observability, authorization, incident correlation, supply-chain security, and bounded response.
+6. Propose defenses by case — existing EDR/XDR/NDR sensors with a faster, bounded defender's loop against an attacker-owned agent; structural guardrails (dual-LLM, CaMeL, capability checks, egress control) for a trusted agent — and explain the detection funnel of encoder classifiers, small task-trained models and a frontier model, with its central risk: a weak monitor cannot always read a stronger agent's intent.
+7. Identify research problems in agent-trajectory observability, authorization, incident correlation, supply-chain security, bounded response, and monitoring strong agents with weaker models.
 
 ## Module schedule
 
@@ -34,12 +35,12 @@ Students should be able to:
 | --- | --- | --- |
 | 0–2 | Opening | 1 |
 | 2–30 | From adversarial ML to attacks on LLMs | 2–11 |
-| 30–39 | From model to agent: the harness, the loop, the attack surface | 12–14 |
-| 39–42 | The agent becomes an attacker: two cases | 15 |
-| 42–54 | Case A: an agent the attacker owns | 16–19 |
-| 54–65 | Case B: a trusted agent hijacked | 20–23 |
-| 65–73 | The two cases compared | 24–26 |
-| 73–90 | Defense and research | 27–30 |
+| 30–41 | From model to agent: the harness, the loop, the attack surface, the supply chain | 12–15 |
+| 41–44 | The agent becomes an attacker: two cases | 16 |
+| 44–55 | Case A: an agent the attacker owns | 17–20 |
+| 55–66 | Case B: a trusted agent hijacked | 21–24 |
+| 66–71 | The two cases compared | 25–26 |
+| 71–90 | Defense and research: Case A defense, Case B guardrails, the cheap-model funnel, the weak watching the strong, research map | 27–31 |
 
 ## Primary cases
 
@@ -77,19 +78,20 @@ ForcedLeak was a disclosed and demonstrated vulnerability chain in Salesforce Ag
 12. [The harness: what surrounds the model](slides/12-harness-and-authority.md)
 13. [From model to agent: the loop](slides/13-agent-loop.md)
 14. [Attacks on the harness](slides/14-attacks-on-the-harness.md)
-15. [The agent becomes an attacker, two ways](slides/15-agent-becomes-attacker-two-ways.md)
-16. [Case A: an agent the attacker owns](slides/16-case-a-attacker-owned-agent.md)
-17. [Approximately 17,600 recovered actions](slides/17-seventeen-thousand-actions.md)
-18. [Case A is a ladder of autonomy](slides/18-case-a-ladder-of-autonomy.md)
-19. [AI pentesting frameworks: research tools, reused by criminals](slides/19-pentest-frameworks-dual-use.md)
-20. [Case B: The trusted enterprise agent](slides/20-forcedleak-enterprise-agent.md)
-21. [ForcedLeak: the attack path](slides/21-forcedleak-attack-path.md)
-22. [Dormant instructions, live authority](slides/22-dormant-instructions-live-authority.md)
-23. [Case B, second route: the poisoned harness](slides/23-case-b-poisoned-harness.md)
-24. [Audience question: what is different?](slides/24-compare-before-reveal.md)
-25. [Defense depends on who controls the agent](slides/25-defense-depends-on-agent-location.md)
-26. [Is a compromised agent malware?](slides/26-is-agent-malware.md)
-27. [Success hidden inside noise](slides/27-success-hidden-in-noise.md)
-28. [The agentic supply chain](slides/28-agentic-supply-chain.md)
-29. [Bounded autonomous response](slides/29-bounded-autonomous-response.md)
-30. [A map of work still to be done](slides/30-research-map-and-close.md)
+15. [The agentic supply chain](slides/15-agentic-supply-chain.md)
+16. [The agent becomes an attacker, two ways](slides/16-agent-becomes-attacker-two-ways.md)
+17. [Case A: an agent the attacker owns](slides/17-case-a-attacker-owned-agent.md)
+18. [Approximately 17,600 recovered actions](slides/18-seventeen-thousand-actions.md)
+19. [Case A is a ladder of autonomy](slides/19-case-a-ladder-of-autonomy.md)
+20. [AI pentesting frameworks: research tools, reused by criminals](slides/20-pentest-frameworks-dual-use.md)
+21. [Case B: The trusted enterprise agent](slides/21-forcedleak-enterprise-agent.md)
+22. [ForcedLeak: the attack path](slides/22-forcedleak-attack-path.md)
+23. [Dormant instructions, live authority](slides/23-dormant-instructions-live-authority.md)
+24. [Case B, second route: the poisoned harness](slides/24-case-b-poisoned-harness.md)
+25. [Audience question: what is different?](slides/25-compare-before-reveal.md)
+26. [Defense depends on who controls the agent](slides/26-defense-depends-on-agent-location.md)
+27. [Case A defense: the sensors we have, decisions at machine speed](slides/27-defending-against-the-attackers-agent.md)
+28. [Case B defense: guardrails, the boundary text does not have](slides/28-guardrails-for-the-trusted-agent.md)
+29. [Who watches the agent: cheap models, in a funnel](slides/29-cheap-models-for-detection-and-response.md)
+30. [The weak watching the strong](slides/30-the-weak-watching-the-strong.md)
+31. [A map of work still to be done](slides/31-research-map-and-close.md)

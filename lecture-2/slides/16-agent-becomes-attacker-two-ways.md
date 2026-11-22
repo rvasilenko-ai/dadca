@@ -1,6 +1,6 @@
-# Slide 15 — The agent becomes an attacker, two ways
+# Slide 16 — The agent becomes an attacker, two ways
 
-**Timing:** 39–42 minutes  
+**Timing:** 41–44 minutes  
 **Module:** The agent becomes an attacker
 
 ## On-slide content
