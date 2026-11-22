@@ -150,6 +150,10 @@ html.is-still .diagram g[data-build], html.is-still .diagram .draw { transition:
 .step-captions > p { grid-area: 1 / 1; margin: 0; padding-left: 44px; font: 500 var(--fs-body)/1.3 var(--font-sans); color: var(--ink); opacity: 0; transition: opacity var(--d) ease-out; }
 .step-captions > p::before { content: ""; position: absolute; left: 0; top: .6em; width: 26px; height: 4px; border-radius: 2px; background: var(--part); }
 .step-captions > p.is-shown { opacity: 1; }
+.step-captions--static { display: block; margin-top: 16px; min-height: 0; }
+.step-captions--static > p { position: relative; opacity: 1; margin: 0 0 8px; }
+.slide--figure .step-captions--static > p, .slide--text .step-captions--static > p { font-size: var(--fs-small); line-height: 1.3; }
+.slide--denser .step-captions--static > p { margin-bottom: 5px; }
 .slide--figure .step-captions, .slide--text .step-captions { margin-top: auto; padding-top: 10px; font-size: var(--fs-small); }
 .slide--figure .step-captions > p, .slide--text .step-captions > p { font-size: var(--fs-small); }
 

@@ -206,9 +206,12 @@ def max_build(svg: str) -> int:
 
 
 # --------------------------------------------------------------------------- rendering
-def captions_html(captions: list[str]) -> str:
+def captions_html(captions: list[str], static: bool = False) -> str:
     if not captions:
         return ""
+    if static:
+        # nothing else on the slide steps, so clicking through one line at a time is friction: show the list at once
+        return '<div class="step-captions step-captions--static">' + "".join(f"<p>{inline(c)}</p>" for c in captions) + "</div>"
     return '<div class="step-captions">' + "".join(f'<p data-build="{k}">{inline(c)}</p>' for k, c in enumerate(captions)) + "</div>"
 
 
@@ -278,7 +281,8 @@ def render_slide(slide: dict, total: int) -> str:
     if has_diagram:
         # a text schematic in the same slide is redundant once the diagram is present
         body_html = re.sub(r'<pre class="schematic".*?</pre>\s*', "", body_html, flags=re.S)
-    steps = max(len(captions) - 1, max_build(body_html))
+    static_caps = bool(captions) and max_build(body_html) == 0
+    steps = 0 if static_caps else max(len(captions) - 1, max_build(body_html))
 
     if has_diagram and not pngs:
         tables = re.findall(r"<table.*?</table>", body_html, flags=re.S)
@@ -288,15 +292,15 @@ def render_slide(slide: dict, total: int) -> str:
             if tables:
                 callouts = re.findall(r"<blockquote.*?</blockquote>", body_html, flags=re.S)
                 main = re.sub(r"<blockquote.*?</blockquote>", "", re.sub(r"<table.*?</table>", "", body_html, flags=re.S), flags=re.S)
-                inner = h2 + main + captions_html(captions)
+                inner = h2 + main + captions_html(captions, static_caps)
                 out = [section(slide, slide["id"], "diagram", inner, steps, total)]
                 inner2 = h2.replace("</h2>", ' <span class="cont">continued</span></h2>') + "".join(tables) + "".join(callouts)
                 out.append(section(slide, slide["id"] + "b", "text", inner2, 0, total, "slide--cont"))
                 return "\n".join(out)
-            inner = h2 + body_html + captions_html(captions)
+            inner = h2 + body_html + captions_html(captions, static_caps)
             return section(slide, slide["id"], "diagram", inner, steps, total)
         # inline diagram among lists or several tables: everything stays in the flow, the diagram is smaller
-        inner = h2 + f'<div class="body">{body_html}</div>' + captions_html(captions)
+        inner = h2 + f'<div class="body">{body_html}</div>' + captions_html(captions, static_caps)
         return section(slide, slide["id"], "has-diagram", inner, steps, total, density_class(estimate_height(body_html, bool(captions))))
 
     if pngs:
@@ -305,12 +309,12 @@ def render_slide(slide: dict, total: int) -> str:
                        f'<figcaption>{inline(f["caption"] or f["alt"])}</figcaption></figure>' for f in pngs)
         rest = re.sub(r'<pre class="schematic".*?</pre>\s*', "", body_html, flags=re.S)
         inner = (h2 + f'<div class="cols"><div class="col-text">{rest}</div><div class="col-fig{" one" if len(pngs) == 1 else ""}">{figs}</div></div>'
-                 + captions_html(captions))
-        est = max(estimate_height(rest, bool(captions)), len(pngs) * 320)
-        return section(slide, slide["id"], "figure", inner, max(len(captions) - 1, 0), total, density_class(est))
+                 + captions_html(captions, static_caps))
+        est = 100 + max(estimate_height(rest, False) - 100, len(pngs) * 320) + (38 * len(captions) if static_caps else 80)
+        return section(slide, slide["id"], "figure", inner, steps, total, density_class(est))
 
-    inner = h2 + f'<div class="body">{body_html}</div>' + captions_html(captions)
-    return section(slide, slide["id"], "text", inner, max(len(captions) - 1, 0), total, density_class(estimate_height(body_html, bool(captions))))
+    inner = h2 + f'<div class="body">{body_html}</div>' + captions_html(captions, static_caps)
+    return section(slide, slide["id"], "text", inner, steps, total, density_class(estimate_height(body_html, bool(captions)) + (38 * len(captions) if static_caps else 0)))
 
 
 def estimate_height(body_html: str, has_captions: bool) -> int:
