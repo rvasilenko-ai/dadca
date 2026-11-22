@@ -1,11 +1,11 @@
-# Slide 25 — Case B, second route: the poisoned harness
+# Slide 25 — MIDNIGHT NEPTUNE: the attack path
 
 **Timing:** 64–67 minutes  
 **Module:** Case B: a trusted agent hijacked
 
 ## On-slide content
 
-MIDNIGHT NEPTUNE, a suspected DPRK cluster — reported by GTIG, November 2026
+Case B, second route — the poisoned harness. A suspected DPRK cluster, reported by GTIG, November 2026
 
 ![MIDNIGHT NEPTUNE path across three zones. On the Internet: a fake recruiter with a model-generated photo, then a fake meeting page with a ClickFix lure. Inside the organization: a foothold and a pivot into the internal code repositories, where the committed agent settings gain a startup hook. For every developer: starting the coding agent on an ordinary morning runs the hook, which downloads the SOMBERMEME backdoor, and GitHub tokens named after Copilot disguise the lateral movement. Red arrows mark the trust boundaries crossed](../figures/poisoned-harness.svg)
 
