@@ -43,6 +43,8 @@ Nelson and colleagues poisoned SpamBayes in 2008 with a dictionary attack: spam 
 
 Gu, Dolan-Gavitt and Garg in 2017 built BadNets: a street-sign classifier with state-of-the-art accuracy that reads a stop sign as a speed limit when a small sticker is present, and showed the backdoor survived retraining for a new task. Their title is the point: the model supply chain. Training is outsourced, pre-trained models are downloaded and fine-tuned, and the person deploying the model did not see its data.
 
+The LLM version exists too. Carlini and colleagues showed in 2023 that poisoning web-scale training datasets is practical — buying expired domains the datasets still point to — and Hubinger and colleagues in 2024 trained backdoored language models whose trigger behaviour survived safety training.
+
 Hold two threads. Poisoning the training data has a cousin we meet later: poisoning the text a model reads at run time. And "the model you downloaded" returns as the supply chain of tools and models.
 
 ## Transition
@@ -54,3 +56,5 @@ Hold two threads. Poisoning the training data has a cousin we meet later: poison
 - [Nelson et al., Exploiting Machine Learning to Subvert Your Spam Filter, LEET (2008)](https://www.usenix.org/legacy/event/leet08/tech/full_papers/nelson/nelson.pdf)
 - [Biggio, Nelson and Laskov, Poisoning Attacks against Support Vector Machines, ICML (2012)](https://arxiv.org/abs/1206.6389)
 - [Gu, Dolan-Gavitt and Garg, BadNets: Identifying Vulnerabilities in the Machine Learning Model Supply Chain (2017)](https://arxiv.org/abs/1708.06733)
+- [Carlini et al., Poisoning Web-Scale Training Datasets is Practical (2023)](https://arxiv.org/abs/2302.10149)
+- [Hubinger et al., Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training (2024)](https://arxiv.org/abs/2401.05566)

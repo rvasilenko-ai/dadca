@@ -14,7 +14,7 @@ Two ways attacker text enters the instruction channel:
 | Example surface | A chat the attacker controls | A document, web page, CRM record, email, tool output: anything the model is wired to read |
 | Software analogy | Local exploitation | Remote exploitation |
 
-> Indirect injection is the dangerous one: the attacker never talks to the model. The system around the model feeds it their words — and that system is what we build next.
+> Indirect injection is the dangerous one: the attacker never talks to the model. The system around the model feeds it their words — and that system is where we go, after one more comparison with software.
 
 ## Speaker notes
 

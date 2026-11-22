@@ -30,7 +30,7 @@ Build, one step per click:
 
 Tramèr and colleagues in 2016 extracted models from commercial machine-learning-as-a-service APIs — BigML and Amazon — using the fact that those APIs return confidence values and accept partial inputs. For simple model classes the attack is equation solving; for others it is retraining on the victim's labels. The precursor is Lowd and Meek in 2005, who reverse-engineered linear spam classifiers with membership queries.
 
-Why it matters for detection: a stolen copy of a detector lets the attacker test evasions offline, without the query volume that might alert the defender. The malware evasion on slide 6 assumes black-box access to the detector; extraction removes even that constraint. There is also the plain commercial loss: a model is expensive to train and free to copy once it answers questions.
+Why it matters for detection: a stolen copy of a detector lets the attacker test evasions offline, without the query volume that might alert the defender. The malware evasion on slide 6 assumes black-box access to the detector; extraction removes even that constraint. There is also the plain commercial loss: a model is expensive to train and free to copy once it answers questions. The LLM version exists: in 2024 Carlini and colleagues recovered the embedding projection layer of production language models through their public APIs.
 
 ## Transition
 
@@ -40,3 +40,4 @@ Why it matters for detection: a stolen copy of a detector lets the attacker test
 
 - [Tramèr et al., Stealing Machine Learning Models via Prediction APIs, USENIX Security (2016)](https://arxiv.org/abs/1609.02943)
 - [Lowd and Meek, Adversarial learning, KDD (2005)](https://doi.org/10.1145/1081870.1081950)
+- [Carlini et al., Stealing Part of a Production Language Model (2024)](https://arxiv.org/abs/2403.06634)

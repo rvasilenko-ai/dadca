@@ -29,8 +29,6 @@ Build, one step per click:
 4. Every turn adds to the context; the next choice depends on everything so far.
 5. The loop ends when the objective is met or a budget runs out. Failure along the way is new information, not termination.
 
-Failure is often new information, not termination.
-
 > A model answers once. A model plus a harness, run in this loop, acts in the world — that is an agent.
 
 What the agent adds to a bare model: tools to misuse, memory to poison, documents to be fed — and a loop that keeps reading.

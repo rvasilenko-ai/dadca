@@ -39,7 +39,7 @@ Shokri, Stronati, Song and Shmatikov in 2017 showed membership inference against
 
 Carlini and colleagues in 2021 carried this into language models: hundreds of verbatim training sequences extracted from GPT-2, including personally identifiable information, with larger models more vulnerable than smaller ones. This is the first point where the history touches LLMs, and it is the same lesson: the outputs carry the data.
 
-Hold for the bridge: none of these attacks needs anything but the model's answers.
+Hold for the bridge: none of these attacks needs anything but the model's answers. And every arrow on the map now has an LLM version — extraction on slide 4, poisoning on slide 5, inference here, and evasion two slides on, as jailbreak suffixes.
 
 ## Transition
 

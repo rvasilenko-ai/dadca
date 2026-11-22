@@ -18,7 +18,7 @@ Question to hold:
 
 ## Speaker notes
 
-Introduce this as a second mystery. Do not yet reveal the conceptual distinction from the Hugging Face case.
+The distinction from Case A was named on slide 16; the job here is the mechanism. Walk it as a chain and let the question on the slide stand until the next slide answers it.
 
 ForcedLeak was a real vulnerability chain demonstrated against a production enterprise-agent product and subsequently mitigated. It was not a publicly confirmed customer compromise. Use “disclosed and demonstrated attack path,” not “observed breach.”
 

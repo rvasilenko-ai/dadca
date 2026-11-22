@@ -35,3 +35,7 @@ Ask students which inputs in their current development workflow are treated as d
 
 “That is the surface. Now the two ways an agent actually turns into an attacker.”
 
+## Sources
+
+- [OWASP, Agentic AI Threats and Mitigations](https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/)
+- [Beurer-Kellner et al., Design Patterns for Securing LLM Agents against Prompt Injections (2025)](https://arxiv.org/abs/2506.08837)

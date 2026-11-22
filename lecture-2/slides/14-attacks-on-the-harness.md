@@ -33,8 +33,14 @@ Build, one step per click:
 
 ## Speaker notes
 
-Make "poisoned skill" concrete: a skill or plugin the agent is given — installed from a marketplace, or a tool definition it loads — that carries hidden instructions or malicious behavior, which the model then invokes in good faith. Tool poisoning: the tool's metadata or output is attacker-controlled and carries injection. Memory poisoning: injected context persists and fires on a later, unrelated request. MCP supply chain: a tool server the agent connects to is malicious or compromised. The through-line from the code/data slide is that every one of these feeds the data channel into the instruction channel. This is why "fix the model" is not enough — the harness is where most real attacks land.
+Make "poisoned skill" concrete: a skill or plugin the agent is given — installed from a marketplace, or a tool definition it loads — that carries hidden instructions or malicious behavior, which the model then invokes in good faith. Tool poisoning: the tool's metadata or output is attacker-controlled and carries injection. Memory poisoning: injected context persists and fires on a later, unrelated request. MCP supply chain: a tool server the agent connects to is malicious or compromised. The through-line from the code/data slide is that every one of these feeds the data channel into the instruction channel. This is why "fix the model" is not enough — the harness is where most real attacks land. Memory and knowledge-base poisoning of agents is demonstrated in AgentPoison (2024); injection against LLM-integrated applications in Liu et al. (2023); OWASP's agentic threat list covers the rest of the table.
 
 ## Transition
 
 “One of those arrows deserves an example before we go on: the supply chain, where a harness is poisoned without anyone talking to the model.”
+
+## Sources
+
+- [Chen et al., AgentPoison: Red-teaming LLM Agents via Poisoning Memory or Knowledge Bases (2024)](https://arxiv.org/abs/2407.12784)
+- [Liu et al., Prompt Injection attack against LLM-integrated Applications (2023)](https://arxiv.org/abs/2306.05499)
+- [OWASP, Agentic AI Threats and Mitigations](https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/)

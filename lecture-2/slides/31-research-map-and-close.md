@@ -10,7 +10,7 @@
 | Observability | Which agent, identity, tool, and kernel events must be linked? |
 | Representation | How do we preserve provenance and uncertainty across tools? |
 | Prioritization | Which events and artifacts deserve expensive reasoning? |
-| Evaluation | How do we verify reverse engineering, stealth, and containment? |
+| Evaluation | How do we evaluate an agent's capability, stealth, and containment — ours and the attacker's? |
 | Trust | How should instructions, identities, and delegated authority be scoped? |
 | Response | How can action be timely, bounded, reversible, and auditable? |
 | Monitoring | How weak can a monitor be and still catch a stronger agent — and how do we measure its evasion rate? |
