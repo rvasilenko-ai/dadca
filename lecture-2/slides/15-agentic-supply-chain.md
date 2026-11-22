@@ -5,7 +5,7 @@
 
 ## On-slide content
 
-Arrow ④ on the previous slide, as a supply chain. The software one is familiar; the agent adds every input it will later read as instructions.
+Point ④ on the previous slide — tool servers — as a supply chain. The software one is familiar; the agent adds every input it will later read as instructions.
 
 ![The software supply chain — source, dependencies, build, artifact, deployment — with the inputs an agent also reads as instructions at run time: repository instructions and Markdown, issues and retrieved documents, skills and tool descriptions, model and policy configuration, memory and retrieved context, credentials, and approval interfaces](../figures/supply-chain.svg)
 
