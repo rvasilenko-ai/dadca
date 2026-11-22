@@ -443,20 +443,11 @@ def centered_tile(x, y, w, h, lines, size, bad=False, weight=700):
     return s
 
 
-def equation():
-    """ForcedLeak, what it adds up to: four ingredients summed, left to right, into attacker-desired
+def equation_figure(aria, terms, heading, readings):
+    """What an incident adds up to: four ingredients summed, left to right, into attacker-desired
     capability; below, three readings of the same incident, revealed one at a time."""
     W, H = 1800, 480
-    terms = [
-        (["attacker-controlled", "data"], True),
-        (["trusted agent:", "model and harness"], False),
-        (["organizational", "identity and tools"], False),
-        (["permitted", "outbound channel"], False),
-    ]
-    s = head(W, H, "ForcedLeak, what it adds up to: attacker-controlled data plus a trusted agent plus organizational identity "
-                   "and tools plus a permitted outbound channel equals attacker-desired capability. Three readings of the same "
-                   "incident: the CRM record contains the payload; the agent is a compromised deputy; the agent has "
-                   "operationally become part of the malware")
+    s = head(W, H, aria)
     tw, th, gap, y = 290, 150, 70, 16
     x = 35
     for i, (lines, bad) in enumerate(terms):
@@ -468,12 +459,7 @@ def equation():
     s += f'<g data-build="{len(terms)}">\n{body}</g>\n'
     # three readings of the same incident
     ry = y + th + 130
-    s += '<g data-build="5">\n' + text(W // 2, ry - 50, "Three readings of the same incident — each true, each useful for something different", 24, 600, "t2", "middle")
-    readings = [
-        ["The CRM record", "contains the payload"],
-        ["The agent is", "a compromised deputy"],
-        ["The agent has operationally", "become part of the malware"],
-    ]
+    s += '<g data-build="5">\n' + text(W // 2, ry - 50, heading, 24, 600, "t2", "middle")
     rw, rgap = 540, 60
     rx = (W - 3 * rw - 2 * rgap) // 2
     for i, lines in enumerate(readings):
@@ -482,6 +468,31 @@ def equation():
         s += centered_tile(rx + i * (rw + rgap), ry, rw, 140, lines, 26, weight=600)
     s += '</g>\n'
     return s + "</svg>\n"
+
+
+def equation():
+    return equation_figure(
+        "ForcedLeak, what it adds up to: attacker-controlled data plus a trusted agent plus organizational identity "
+        "and tools plus a permitted outbound channel equals attacker-desired capability. Three readings of the same "
+        "incident: the CRM record contains the payload; the agent is a compromised deputy; the agent has "
+        "operationally become part of the malware",
+        [(["attacker-controlled", "data"], True), (["trusted agent:", "model and harness"], False),
+         (["organizational", "identity and tools"], False), (["permitted", "outbound channel"], False)],
+        "Three readings of the same incident — each true, each useful for something different",
+        [["The CRM record", "contains the payload"], ["The agent is", "a compromised deputy"],
+         ["The agent has operationally", "become part of the malware"]])
+
+
+def equation_neptune():
+    return equation_figure(
+        "MIDNIGHT NEPTUNE, what it adds up to: attacker-controlled configuration plus a trusted agent plus a developer's "
+        "identity and machine plus a permitted outbound channel equals attacker-desired capability. Three readings of the "
+        "same incident: the repository contains the payload; the agent is the loader; the settings file is the supply chain",
+        [(["attacker-controlled", "configuration"], True), (["trusted agent:", "model and harness"], False),
+         (["developer identity", "and machine"], False), (["permitted", "outbound channel"], False)],
+        "Three readings — this time there is a file, and the agent fetched it",
+        [["The repository", "contains the payload"], ["The agent is", "the loader"],
+         ["The settings file", "is the supply chain"]])
 
 
 def dual_use():
@@ -557,6 +568,7 @@ def weak_monitor():
 (OUT / "injection-jailbreak.svg").write_text(injection_jailbreak())
 (OUT / "dual-use.svg").write_text(dual_use())
 (OUT / "equation.svg").write_text(equation())
+(OUT / "equation-neptune.svg").write_text(equation_neptune())
 (OUT / "poisoned-harness.svg").write_text(poisoned_harness())
 (OUT / "forcedleak-path.svg").write_text(forcedleak_path())
 (OUT / "incident-chain.svg").write_text(incident_chain())

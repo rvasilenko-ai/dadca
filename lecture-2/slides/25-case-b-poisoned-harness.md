@@ -1,6 +1,6 @@
 # Slide 25 — MIDNIGHT NEPTUNE: the attack path
 
-**Timing:** 64–67 minutes  
+**Timing:** 63–66 minutes  
 **Module:** Case B: a trusted agent hijacked
 
 ## On-slide content
@@ -10,15 +10,6 @@ Case B, second route — the poisoned harness. A suspected DPRK cluster, reporte
 ![MIDNIGHT NEPTUNE path across three zones. On the Internet: a fake recruiter with a model-generated photo, then a fake meeting page with a ClickFix lure. Inside the organization: a foothold and a pivot into the internal code repositories, where the committed agent settings gain a startup hook. For every developer: starting the coding agent on an ordinary morning runs the hook, which downloads the SOMBERMEME backdoor, and GitHub tokens named after Copilot disguise the lateral movement. Red arrows mark the trust boundaries crossed](../figures/poisoned-harness.svg)
 
 Nothing was injected into the agent's context. Its harness was edited — and the settings file is meant to be committed, so one commit reached every developer who opened those repositories.
-
-| | ForcedLeak | MIDNIGHT NEPTUNE |
-| --- | --- | --- |
-| Route in | Injected context: a CRM record | Poisoned harness: a configuration hook |
-| Who triggers it | An employee asking the agent a question | A developer starting the agent |
-| What the agent does for the attacker | Leaks CRM data with its authority | Fetches and runs a backdoor with the developer's identity |
-| Malicious file | None | Yes — after the agent fetched it |
-
-> Same case, two doors: the context the agent reads, and the harness it runs in. Slide 14's ① and ②, each now with a real incident.
 
 ## Speaker notes
 
@@ -30,7 +21,7 @@ Two more GTIG observations belong here as footnotes, not slides: PRC-linked acto
 
 ## Transition
 
-“Two cases, three incidents. Before naming the difference, compare them as defenders.”
+“No injection this time, and a real file at the end. What does this route add up to?”
 
 ## Sources
 

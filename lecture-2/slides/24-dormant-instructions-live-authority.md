@@ -1,6 +1,6 @@
 # Slide 24 — ForcedLeak: what it adds up to
 
-**Timing:** 62–64 minutes  
+**Timing:** 61–63 minutes  
 **Module:** Case B: a trusted agent hijacked
 
 ## On-slide content

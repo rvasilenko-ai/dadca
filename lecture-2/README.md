@@ -39,9 +39,9 @@ Students should be able to:
 | 30–41 | From model to agent: the harness, the loop, the attack surface, the supply chain | 12–15 |
 | 41–44 | The agent becomes an attacker: two cases | 16 |
 | 44–56 | Case A: an agent the attacker owns | 17–21 |
-| 56–67 | Case B: a trusted agent hijacked | 22–25 |
-| 67–74 | The two cases compared | 26–27 |
-| 73–90 | Defense and research: Case A defense, Case B guardrails, the cheap-model funnel, the weak watching the strong, research map | 28–32 |
+| 56–68 | Case B: a trusted agent hijacked | 22–26 |
+| 68–74 | The two cases compared | 27–28 |
+| 73–90 | Defense and research: Case A defense, Case B guardrails, the cheap-model funnel, the weak watching the strong, research map | 29–33 |
 
 ## Primary cases
 

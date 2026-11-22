@@ -42,8 +42,8 @@ cd lectures && python3 -m http.server 8765
 | `F` | full screen |
 | `?` | help |
 
-Links address a slide and a step: `#/s12/3` is slide 12 at step 3, `#/s29b` the continuation of
-slide 29, `#/p2` the divider of part 2. Query switches: `?theme=light` or `?theme=dark` forces a
+Links address a slide and a step: `#/s12/3` is slide 12 at step 3, `#/s30b` the continuation of
+slide 30, `#/p2` the divider of part 2. Query switches: `?theme=light` or `?theme=dark` forces a
 theme without storing it; `?still` turns motion off (used for screenshots).
 
 ## How the markdown maps to the stage

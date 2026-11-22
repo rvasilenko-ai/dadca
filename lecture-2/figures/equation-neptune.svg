@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 480" width="1800" height="480" role="img" aria-label="MIDNIGHT NEPTUNE, what it adds up to: attacker-controlled configuration plus a trusted agent plus a developer's identity and machine plus a permitted outbound channel equals attacker-desired capability. Three readings of the same incident: the repository contains the payload; the agent is the loader; the settings file is the supply chain" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<title>MIDNIGHT NEPTUNE, what it adds up to: attacker-controlled configuration plus a trusted agent plus a developer's identity and machine plus a permitted outbound channel equals attacker-desired capability. Three readings of the same incident: the repository contains the payload; the agent is the loader; the settings file is the supply chain</title>
+<style>
+svg{--surface:#ffffff;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--line:#9ca3af;--rule:#cbd5e1;
+--acc:#0284c7;--acc-wash:#e0f2fe;--acc-ink:#075985;--bad:#dc2626;--bad-wash:#fee2e2;--bad-ink:#991b1b;
+--good:#15803d;--good-wash:#dcfce7;--good-ink:#14532d;--on-badge:#ffffff}
+@media (prefers-color-scheme: dark){svg{--surface:#141a2a;--frame:#10172a;--ink:#eef1f8;--ink-2:#c6cddd;--line:#8b96b0;--rule:#344062;
+--acc:#7cc4ff;--acc-wash:#10304a;--acc-ink:#bfe3ff;--bad:#f87171;--bad-wash:#3b1515;--bad-ink:#fecaca;
+--good:#4ade80;--good-wash:#0f2e1c;--good-ink:#bbf7d0;--on-badge:#0b0f1a}}
+.node{fill:var(--surface);stroke:var(--rule);stroke-width:2.5}.node--model{fill:var(--acc-wash);stroke:var(--acc);stroke-width:4}
+.node--bad{fill:var(--bad-wash);stroke:var(--bad);stroke-width:4}.node--good{fill:var(--good-wash);stroke:var(--good);stroke-width:4}
+.frame{fill:var(--frame);stroke:var(--rule);stroke-width:2.5}.env{fill:none;stroke:var(--line);stroke-width:3;stroke-dasharray:14 10}
+.t{fill:var(--ink)}.t2{fill:var(--ink-2)}.t-acc{fill:var(--acc-ink)}.t-bad{fill:var(--bad-ink)}.t-good{fill:var(--good-ink)}.t-badge{fill:var(--on-badge)}
+.edge{fill:none;stroke:var(--line);stroke-width:3;stroke-linecap:round}.edge--strong{stroke:var(--ink-2);stroke-width:4}
+.edge--bad{stroke:var(--bad);stroke-width:4}.edge--good{stroke:var(--good);stroke-width:4}
+.arrow{fill:var(--ink-2)}.arrow--bad{fill:var(--bad)}.arrow--good{fill:var(--good)}
+.badge--bad{fill:var(--bad);stroke:var(--surface);stroke-width:3}.badge--good{fill:var(--good);stroke:var(--surface);stroke-width:3}
+.ctx-bar{fill:var(--rule)}.ring{fill:none;stroke:var(--ink);stroke-width:4}.dot{fill:var(--ink)}
+</style>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
+  <marker id="arrow-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
+  <marker id="arrow-good" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
+</defs>
+<g data-build="0">
+<rect x="35" y="16" width="290" height="150" rx="16" class="node node--bad"/>
+<text x="180" y="73" class="t-bad" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">attacker-controlled</text>
+<text x="180" y="109" class="t-bad" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">configuration</text>
+</g>
+<g data-build="1">
+<text x="360" y="91" class="t2" font-size="46" font-weight="300" text-anchor="middle" dominant-baseline="central">+</text>
+<rect x="395" y="16" width="290" height="150" rx="16" class="node"/>
+<text x="540" y="73" class="t" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">trusted agent:</text>
+<text x="540" y="109" class="t" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">model and harness</text>
+</g>
+<g data-build="2">
+<text x="720" y="91" class="t2" font-size="46" font-weight="300" text-anchor="middle" dominant-baseline="central">+</text>
+<rect x="755" y="16" width="290" height="150" rx="16" class="node"/>
+<text x="900" y="73" class="t" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">developer identity</text>
+<text x="900" y="109" class="t" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">and machine</text>
+</g>
+<g data-build="3">
+<text x="1080" y="91" class="t2" font-size="46" font-weight="300" text-anchor="middle" dominant-baseline="central">+</text>
+<rect x="1115" y="16" width="290" height="150" rx="16" class="node"/>
+<text x="1260" y="73" class="t" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">permitted</text>
+<text x="1260" y="109" class="t" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">outbound channel</text>
+</g>
+<g data-build="4">
+<text x="1440" y="91" class="t2" font-size="46" font-weight="300" text-anchor="middle" dominant-baseline="central">=</text>
+<rect x="1475" y="16" width="290" height="150" rx="16" class="node node--bad"/>
+<text x="1620" y="73" class="t-bad" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">attacker-desired</text>
+<text x="1620" y="109" class="t-bad" font-size="27" font-weight="700" text-anchor="middle" dominant-baseline="central">capability</text>
+</g>
+<g data-build="5">
+<text x="900" y="246" class="t2" font-size="24" font-weight="600" text-anchor="middle" dominant-baseline="central">Three readings — this time there is a file, and the agent fetched it</text>
+<rect x="30" y="296" width="540" height="140" rx="16" class="node"/>
+<text x="300" y="349" class="t" font-size="26" font-weight="600" text-anchor="middle" dominant-baseline="central">The repository</text>
+<text x="300" y="383" class="t" font-size="26" font-weight="600" text-anchor="middle" dominant-baseline="central">contains the payload</text>
+</g>
+<g data-build="6">
+<rect x="630" y="296" width="540" height="140" rx="16" class="node"/>
+<text x="900" y="349" class="t" font-size="26" font-weight="600" text-anchor="middle" dominant-baseline="central">The agent is</text>
+<text x="900" y="383" class="t" font-size="26" font-weight="600" text-anchor="middle" dominant-baseline="central">the loader</text>
+</g>
+<g data-build="7">
+<rect x="1230" y="296" width="540" height="140" rx="16" class="node"/>
+<text x="1500" y="349" class="t" font-size="26" font-weight="600" text-anchor="middle" dominant-baseline="central">The settings file</text>
+<text x="1500" y="383" class="t" font-size="26" font-weight="600" text-anchor="middle" dominant-baseline="central">is the supply chain</text>
+</g>
+</svg>
