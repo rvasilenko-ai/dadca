@@ -1,6 +1,6 @@
 # Slide 17 — Case A: an agent the attacker owns
 
-**Timing:** 44–47 minutes  
+**Timing:** 44–46 minutes  
 **Module:** Case A: an agent the attacker owns
 
 ## On-slide content
@@ -18,11 +18,11 @@ The reference incident, July 2026:
 
 ## Speaker notes
 
-Frame the incident as the canonical Case A: the attacker owns the model and its harness. Fold the "objective and intent" caution here. Avoid two simplistic claims — "the model wanted to attack" and "the model cannot tell good from bad." Prefer: program semantics do not encode organizational authorization; the agent pursued a narrow success signal through an unintended real-world path; the same technical capability serves offense or defense; external controls decide which actions are permitted to execute. Next slide: what made it effective — and why volume is also noise.
+Frame the incident as the canonical Case A: the attacker owns the model and its harness. Fold the "objective and intent" caution here. Avoid two simplistic claims — "the model wanted to attack" and "the model cannot tell good from bad." Prefer: program semantics do not encode organizational authorization; the agent pursued a narrow success signal through an unintended real-world path; the same technical capability serves offense or defense; external controls decide which actions are permitted to execute. The ladder and the frameworks come next; Case A then closes with this incident in detail — the step-by-step chain, then the action counts.
 
 ## Transition
 
-“It worked not through elegance, but through volume.”
+“That was one agent, under evaluation conditions. In the wild, the weaponized agent is reported at every level of autonomy.”
 
 ## Sources
 

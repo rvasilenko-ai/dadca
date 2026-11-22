@@ -5,7 +5,7 @@
 **Central question:** What changes when reasoning, tool use, and persistent trial-and-error become cheap?  
 **Deck:** https://rvasilenko-ai.github.io/malware-and-ai/lecture-2/deck/ — built from these slides by `deck/build.py` (see [deck/README.md](deck/README.md))
 
-**Framing beat:** offensive capability diffuses from the few to the many; the 2017 Shadow Brokers spill-over (EternalBlue, then NotPetya) is the reference case. This lecture is that pattern's current instance: frontier AI capability, released commercially and as open weights, reaching everyone and lowering the skill floor, with the caveat that the diffusion is gradual and the offensive economy is not yet settled. The lecture stands alone and no slide refers to another lecture. If the same audience attended the malware lecture, the presenter can call back to its closing pattern at slide 19; if not, the one sentence above is enough.
+**Framing beat:** offensive capability diffuses from the few to the many; the 2017 Shadow Brokers spill-over (EternalBlue, then NotPetya) is the reference case. This lecture is that pattern's current instance: frontier AI capability, released commercially and as open weights, reaching everyone and lowering the skill floor, with the caveat that the diffusion is gradual and the offensive economy is not yet settled. The lecture stands alone and no slide refers to another lecture. If the same audience attended the malware lecture, the presenter can call back to its closing pattern at slide 18; if not, the one sentence above is enough.
 
 ## The spine
 
@@ -38,10 +38,10 @@ Students should be able to:
 | 2–30 | From adversarial ML to attacks on LLMs | 2–11 |
 | 30–41 | From model to agent: the harness, the loop, the attack surface, the supply chain | 12–15 |
 | 41–44 | The agent becomes an attacker: two cases | 16 |
-| 44–55 | Case A: an agent the attacker owns | 17–20 |
-| 55–66 | Case B: a trusted agent hijacked | 21–24 |
-| 66–73 | The two cases compared | 25–26 |
-| 73–90 | Defense and research: Case A defense, Case B guardrails, the cheap-model funnel, the weak watching the strong, research map | 27–31 |
+| 44–56 | Case A: an agent the attacker owns | 17–21 |
+| 56–67 | Case B: a trusted agent hijacked | 22–25 |
+| 67–74 | The two cases compared | 26–27 |
+| 73–90 | Defense and research: Case A defense, Case B guardrails, the cheap-model funnel, the weak watching the strong, research map | 28–32 |
 
 ## Primary cases
 

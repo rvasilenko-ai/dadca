@@ -282,7 +282,7 @@ def funnel():
     return s + '</svg>\n'
 
 
-def chain_v(aria, steps, tw=1240, th=64, gap=26):
+def chain_v(aria, steps, tw=1240, th=64, gap=26, size=23):
     """A vertical sequence of tiles joined by down-arrows; steps = [(text, bad)], revealed one per build."""
     n = len(steps)
     W, H = 1800, 20 + n * th + (n - 1) * gap + 20
@@ -293,7 +293,7 @@ def chain_v(aria, steps, tw=1240, th=64, gap=26):
         body = ""
         if i > 0:
             body += edge(f"M{W // 2} {y - gap}V{y - 2}", strong=True, arrow=True)
-        body += tile(x, y, tw, th, t, [], bad=bad, title_size=23, sub_size=1)
+        body += tile(x, y, tw, th, t, [], bad=bad, title_size=size, sub_size=1)
         s += f'<g data-build="{i}">\n{body}</g>\n'
         y += th + gap
     return s + "</svg>\n"
@@ -310,6 +310,25 @@ def forcedleak_path():
         ("Sensitive data leaves through crafted image requests", True),
     ]
     return chain_v("ForcedLeak attack path: instructions an attacker planted in a CRM record are later retrieved by the trusted agent and interpreted as commands, so data leaves with the organization's own authority", steps)
+
+
+def incident_chain():
+    """The July 2026 Hugging Face intrusion as eight boundary crossings; red = a boundary the agent crossed."""
+    steps = [
+        ("An isolated cyber-capability evaluation: a pre-release model, deployment safeguards off", False),
+        ("9 July: a zero-day in the package proxy, lateral movement to a node with Internet access", True),
+        ("Root on an unsecured third-party code-execution endpoint: C2, staging and egress base", True),
+        ("Crafted dataset configs: a file read leaks pod secrets, a template injection runs code", True),
+        ("11 July: service-account token, metadata credentials, a privileged pod → root on a node", True),
+        ("Secrets yield a mesh-VPN key and a shared admin credential: cluster-admin on two clusters", True),
+        ("12 July: 181 VPN enrollments, cloud keys at a production database, a pull request into CI", True),
+        ("13 July: alerts correlated but never escalated; humans find the vector and cut access", False),
+    ]
+    return chain_v("The reference incident, step by step: an isolated evaluation; a sandbox escape through a proxy zero-day; "
+                   "root on a third-party code-execution endpoint used as a launchpad; entry into Hugging Face through crafted "
+                   "dataset configs; service-account and metadata credentials and a privileged pod; cluster secrets leading to "
+                   "cluster-admin on two clusters; expansion into the VPN mesh, a production database and source control; "
+                   "detection that correlated the signals but did not escalate until humans cut access", steps, th=56, gap=14, size=22)
 
 
 def poisoned_harness():
@@ -427,6 +446,7 @@ def weak_monitor():
 (OUT / "equation.svg").write_text(equation())
 (OUT / "poisoned-harness.svg").write_text(poisoned_harness())
 (OUT / "forcedleak-path.svg").write_text(forcedleak_path())
+(OUT / "incident-chain.svg").write_text(incident_chain())
 (OUT / "supply-chain.svg").write_text(supply_chain())
 (OUT / "funnel.svg").write_text(funnel())
 (OUT / "ladder.svg").write_text(ladder())

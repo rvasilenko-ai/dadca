@@ -1,6 +1,6 @@
-# Slide 19 — Case A is a ladder of autonomy
+# Slide 18 — Case A is a ladder of autonomy
 
-**Timing:** 49–52 minutes  
+**Timing:** 46–49 minutes  
 **Module:** Case A: an agent the attacker owns
 
 ## On-slide content

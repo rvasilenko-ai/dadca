@@ -1,6 +1,6 @@
-# Slide 22 — ForcedLeak: the attack path
+# Slide 23 — ForcedLeak: the attack path
 
-**Timing:** 58–61 minutes  
+**Timing:** 59–62 minutes  
 **Module:** Case B: a trusted agent hijacked
 
 ## On-slide content

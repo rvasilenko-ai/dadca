@@ -1,6 +1,6 @@
-# Slide 29 — Who watches the agent: cheap models, in a funnel
+# Slide 30 — Who watches the agent: cheap models, in a funnel
 
-**Timing:** 81–83 minutes  
+**Timing:** 82–84 minutes  
 **Module:** Defense and research
 
 ## On-slide content
@@ -25,13 +25,13 @@ Why encoders at the bottom:
 
 ## Speaker notes
 
-This is the economics behind both defense slides. The defender's loop of slide 27 and the monitor M of slide 28 have to run on every transition, and the arithmetic of a frontier model per event does not close. The answer is the funnel the field has always used, with new tiers.
+This is the economics behind both defense slides. The defender's loop of slide 28 and the monitor M of slide 29 have to run on every transition, and the arithmetic of a frontier model per event does not close. The answer is the funnel the field has always used, with new tiers.
 
-At machine scale, encoder-only transformers: bidirectional models that read a whole input and emit a class. They are cheap, their latency is fixed, and because they do not generate text there is no output channel to inject through. They learn from the labelled telemetry a product already produces, and they can learn the transition checks we listed on slide 26 — imperative text in a retrieval, an implausible tool call for the task, an unexpected destination. LogBERT and SecureBERT show the approach on logs and security text; Prompt Guard 2 is an 86-million-parameter classifier for injected and jailbreak text, small enough to run on every input.
+At machine scale, encoder-only transformers: bidirectional models that read a whole input and emit a class. They are cheap, their latency is fixed, and because they do not generate text there is no output channel to inject through. They learn from the labelled telemetry a product already produces, and they can learn the transition checks we listed on slide 27 — imperative text in a retrieval, an implausible tool call for the task, an unexpected destination. LogBERT and SecureBERT show the approach on logs and security text; Prompt Guard 2 is an 86-million-parameter classifier for injected and jailbreak text, small enough to run on every input.
 
 At triage scale, small language models fine-tuned for detection and response tasks: summarize a cluster of events, correlate across sources, propose an action with its evidence. Foundation-Sec-8B is a security-specialized base at that size. At investigation scale, the frontier model and the human — who also label the data that trains the tiers below, which is how the funnel improves.
 
-Say what the funnel does not do: it does not replace the structural guardrails of slide 28, which need no comprehension at all. And it introduces a risk of its own, which is the next slide.
+Say what the funnel does not do: it does not replace the structural guardrails of slide 29, which need no comprehension at all. And it introduces a risk of its own, which is the next slide.
 
 ## Transition
 

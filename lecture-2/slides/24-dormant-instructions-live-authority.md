@@ -1,6 +1,6 @@
-# Slide 23 — Dormant instructions, live authority
+# Slide 24 — Dormant instructions, live authority
 
-**Timing:** 61–63 minutes  
+**Timing:** 62–64 minutes  
 **Module:** Case B: a trusted agent hijacked
 
 ## On-slide content
@@ -21,7 +21,7 @@ This is why malware is better defined by capability than by file. There may be n
 
 Avoid insisting on one label. Ask what each label helps defenders observe, prevent, or regulate.
 
-Cut cue: if running slow, fold this slide into slide 22 — the equation becomes the closing line of the attack path.
+Cut cue: if running slow, fold this slide into slide 23 — the equation becomes the closing line of the attack path.
 
 ## Transition
 

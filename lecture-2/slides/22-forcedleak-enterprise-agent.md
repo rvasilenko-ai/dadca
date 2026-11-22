@@ -1,6 +1,6 @@
-# Slide 21 — Case B: The trusted enterprise agent
+# Slide 22 — Case B: The trusted enterprise agent
 
-**Timing:** 55–58 minutes  
+**Timing:** 56–59 minutes  
 **Module:** Case B: a trusted agent hijacked
 
 ## On-slide content
