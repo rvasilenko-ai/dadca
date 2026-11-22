@@ -27,20 +27,64 @@
 <div class="divider-num">1</div><div class="divider-body"><p class="eyebrow">Part 1</p><h2 class="divider-title">Attacking the model</h2><p class="lead">Adversarial machine learning, then the failure that LLMs add</p><ul class="divider-list"><li>From adversarial ML to attacks on LLMs</li></ul></div>
 <footer class="slide-foot"><span class="eyebrow">Part 1</span><span class="count">slides 2–11</span></footer>
 </section>
-<section class="slide slide--text" id="s2" data-id="s2" data-part="1" data-steps="4" data-number="2">
-<h2 class="slide-title">Attacking the model is not new</h2><div class="body"><p>Adversarial machine learning predates LLMs by almost two decades. Every stage of a learned model has been attacked.</p>
-<pre class="schematic" style="--cols:97"><code> training data ───────&gt; TRAINING ───────&gt; MODEL ───────&gt; predictions
-       ^                                    ^                 |
-       |                                    |                 v
-  POISONING, BACKDOORS                  EVASION         EXTRACTION
-  corrupt what it learns          perturb the input      copy the model from its answers
-  2008 -&gt; 2017                    2004 -&gt; 2014           2005 -&gt; 2016
-                                  incl. malware detectors
-                                  2013 -&gt; 2018
-                                                        INFERENCE, INVERSION
-                                                         learn the training data from its answers
-                                                         2014 -&gt; 2017</code></pre>
-<blockquote class="callout"><p>The model was always manipulable — through its data, its inputs, and its outputs.</p></blockquote></div><div class="step-captions"><p data-build="0">A learned model is a pipeline: data in, training, a model, predictions out.</p><p data-build="1">Perturb the input, and the model answers wrong at test time (2004).</p><p data-build="2">Read enough predictions, and you can copy the model (2005).</p><p data-build="3">Poison the data, and the model learns a blind spot or a backdoor (2008).</p><p data-build="4">Read the predictions differently, and you learn what it was trained on (2014).</p></div>
+<section class="slide slide--diagram" id="s2" data-id="s2" data-part="1" data-steps="4" data-number="2">
+<h2 class="slide-title">Attacking the model is not new</h2><p class="lead">Adversarial machine learning predates LLMs by almost two decades. Every stage of a learned model has been attacked.</p><figure class="diagram-wrap"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 600" role="img" aria-label="Where the classic attacks enter a learned model: poisoning and evasion write into the pipeline, extraction and inference read its answers" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+<title>Where the classic attacks enter a learned model: poisoning and evasion write into the pipeline, extraction and inference read its answers</title>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4b5563"/></marker>
+  <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#dc2626"/></marker>
+  <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#15803d"/></marker>
+</defs>
+<rect x="0" y="0" width="1800" height="600" class="svg-bg"/>
+<g data-build="0">
+<rect x="80" y="240" width="300" height="110" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2.5"/>
+<text x="230" y="280" font-size="28" font-weight="700" fill="#1f2937" text-anchor="middle" dominant-baseline="central">training data</text>
+<text x="230" y="318" font-size="20" font-weight="400" fill="#4b5563" text-anchor="middle" dominant-baseline="central">what it learns from</text>
+<rect x="520" y="240" width="300" height="110" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2.5"/>
+<text x="670" y="280" font-size="28" font-weight="700" fill="#1f2937" text-anchor="middle" dominant-baseline="central">TRAINING</text>
+<text x="670" y="318" font-size="20" font-weight="400" fill="#4b5563" text-anchor="middle" dominant-baseline="central">fits the function</text>
+<rect x="960" y="240" width="300" height="110" rx="18" fill="#e0f2fe" stroke="#0284c7" stroke-width="4"/>
+<text x="1110" y="280" font-size="30" font-weight="700" fill="#075985" text-anchor="middle" dominant-baseline="central">MODEL</text>
+<text x="1110" y="318" font-size="20" font-weight="400" fill="#075985" text-anchor="middle" dominant-baseline="central">the learned function</text>
+<rect x="1400" y="240" width="300" height="110" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2.5"/>
+<text x="1550" y="280" font-size="28" font-weight="700" fill="#1f2937" text-anchor="middle" dominant-baseline="central">predictions</text>
+<text x="1550" y="318" font-size="20" font-weight="400" fill="#4b5563" text-anchor="middle" dominant-baseline="central">its answers</text>
+<path d="M380 295H518" fill="none" stroke="#4b5563" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M820 295H958" fill="none" stroke="#4b5563" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M1260 295H1398" fill="none" stroke="#4b5563" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow)"/>
+<text x="80" y="24" font-size="20" font-weight="600" fill="#991b1b" text-anchor="start" dominant-baseline="central">ATTACKER WRITES: into the data it learns from, or into the input it reads</text>
+<text x="80" y="578" font-size="20" font-weight="600" fill="#991b1b" text-anchor="start" dominant-baseline="central">ATTACKER READS: what the model answers, and learns the model or its data from it</text>
+</g>
+<g data-build="1">
+<rect x="960" y="44" width="340" height="136" rx="14" fill="#fee2e2" stroke="#dc2626" stroke-width="4"/>
+<text x="980" y="76" font-size="26" font-weight="700" fill="#1f2937" text-anchor="start" dominant-baseline="central">Evasion</text>
+<text x="980" y="106" font-size="19" font-weight="500" fill="#991b1b" text-anchor="start" dominant-baseline="central">perturb the input</text>
+<text x="980" y="132" font-size="19" font-weight="500" fill="#991b1b" text-anchor="start" dominant-baseline="central">2004 → 2014</text>
+<text x="980" y="158" font-size="19" font-weight="500" fill="#991b1b" text-anchor="start" dominant-baseline="central">malware detectors 2013 → 2018</text>
+<path d="M1130 180V236" fill="none" stroke="#dc2626" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow-red)"/>
+</g>
+<g data-build="2">
+<rect x="1040" y="420" width="340" height="136" rx="14" fill="#fee2e2" stroke="#dc2626" stroke-width="4"/>
+<text x="1060" y="452" font-size="26" font-weight="700" fill="#1f2937" text-anchor="start" dominant-baseline="central">Extraction</text>
+<text x="1060" y="482" font-size="19" font-weight="500" fill="#991b1b" text-anchor="start" dominant-baseline="central">copy the model from its answers</text>
+<text x="1060" y="508" font-size="19" font-weight="500" fill="#991b1b" text-anchor="start" dominant-baseline="central">2005 → 2016</text>
+<path d="M1500 350L1240 416" fill="none" stroke="#dc2626" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow-red)"/>
+</g>
+<g data-build="3">
+<rect x="80" y="44" width="340" height="136" rx="14" fill="#fee2e2" stroke="#dc2626" stroke-width="4"/>
+<text x="100" y="76" font-size="26" font-weight="700" fill="#1f2937" text-anchor="start" dominant-baseline="central">Poisoning, backdoors</text>
+<text x="100" y="106" font-size="19" font-weight="500" fill="#991b1b" text-anchor="start" dominant-baseline="central">corrupt what it learns</text>
+<text x="100" y="132" font-size="19" font-weight="500" fill="#991b1b" text-anchor="start" dominant-baseline="central">2008 → 2017</text>
+<path d="M250 180V236" fill="none" stroke="#dc2626" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow-red)"/>
+</g>
+<g data-build="4">
+<rect x="1420" y="420" width="340" height="136" rx="14" fill="#fee2e2" stroke="#dc2626" stroke-width="4"/>
+<text x="1440" y="452" font-size="26" font-weight="700" fill="#1f2937" text-anchor="start" dominant-baseline="central">Inference, inversion</text>
+<text x="1440" y="482" font-size="19" font-weight="500" fill="#991b1b" text-anchor="start" dominant-baseline="central">learn the training data</text>
+<text x="1440" y="508" font-size="19" font-weight="500" fill="#991b1b" text-anchor="start" dominant-baseline="central">from its answers · 2014 → 2017</text>
+<path d="M1600 350V416" fill="none" stroke="#dc2626" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow-red)"/>
+</g>
+</svg></figure><div class="step-captions"><p data-build="0">A learned model is a pipeline: data in, training, a model, predictions out.</p><p data-build="1">Perturb the input, and the model answers wrong at test time (2004).</p><p data-build="2">Read enough predictions, and you can copy the model (2005).</p><p data-build="3">Poison the data, and the model learns a blind spot or a backdoor (2008).</p><p data-build="4">Read the predictions differently, and you learn what it was trained on (2014).</p></div><blockquote class="callout"><p>The model was always manipulable — through its data, its inputs, and its outputs.</p></blockquote>
 <details class="srcs"><summary>Sources (4)</summary><div class="panel"><ul><li><a href="https://doi.org/10.1145/1014052.1014066" target="_blank" rel="noopener">Dalvi et al., Adversarial classification, KDD (2004)</a></li><li><a href="https://doi.org/10.1145/1081870.1081950" target="_blank" rel="noopener">Lowd and Meek, Adversarial learning, KDD (2005)</a></li><li><a href="https://doi.org/10.1145/1128817.1128824" target="_blank" rel="noopener">Barreno et al., Can machine learning be secure?, ASIACCS (2006)</a></li><li><a href="https://doi.org/10.1145/2046684.2046692" target="_blank" rel="noopener">Huang et al., Adversarial machine learning, AISec (2011)</a></li></ul></div></details>
 <footer class="slide-foot"><span class="eyebrow">From adversarial ML to attacks on LLMs</span><span class="count">2 / 31 · 2–5 minutes</span></footer>
 <aside class="notes"><p class="meta"><b>Slide 2</b> · 2–5 minutes · From adversarial ML to attacks on LLMs</p>

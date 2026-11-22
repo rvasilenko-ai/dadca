@@ -173,6 +173,44 @@ def loop():
     s += text(185, 535, "Stop when the objective is met", 22, 600, INK, "middle") + text(185, 565, "or the budget runs out", 22, 600, INK, "middle") + '</g>\n'
     return s + '</svg>\n'
 
+# ---------------------------------------------------------------- the attack map (slide 2)
+def attack_map():
+    """The learned-model pipeline with the four classic attacks: write attacks above it, read attacks below.
+    data-build follows the slide's chronological order: 1 evasion, 2 extraction, 3 poisoning, 4 inference."""
+    W, H = 1800, 600
+    s = head(W, H, "Where the classic attacks enter a learned model: poisoning and evasion write into the pipeline, extraction and inference read its answers")
+    # 0: the pipeline
+    s += '<g data-build="0">\n'
+    nodes = [(80, "training data", "what it learns from", False), (520, "TRAINING", "fits the function", False),
+             (960, "MODEL", "the learned function", True), (1400, "predictions", "its answers", False)]
+    for x, title, sub, model in nodes:
+        if model:
+            s += f'<rect x="{x}" y="240" width="300" height="110" rx="18" fill="{ACC_WASH}" stroke="{ACC}" stroke-width="4"/>\n'
+            s += text(x + 150, 280, title, 30, 700, ACC_INK, "middle") + text(x + 150, 318, sub, 20, 400, ACC_INK, "middle")
+        else:
+            s += f'<rect x="{x}" y="240" width="300" height="110" rx="14" fill="{SURF}" stroke="{RULE}" stroke-width="2.5"/>\n'
+            s += text(x + 150, 280, title, 28, 700, INK, "middle") + text(x + 150, 318, sub, 20, 400, INK2, "middle")
+    for x1, x2 in [(380, 518), (820, 958), (1260, 1398)]:
+        s += edge(f"M{x1} 295H{x2}", strong=True, arrow=True)
+    s += text(80, 24, "ATTACKER WRITES: into the data it learns from, or into the input it reads", 20, 600, BAD_INK)
+    s += text(80, 578, "ATTACKER READS: what the model answers, and learns the model or its data from it", 20, 600, BAD_INK)
+    s += '</g>\n'
+    TH = 136
+    # 1: evasion, above the model
+    s += '<g data-build="1">\n' + tile(960, 44, 340, TH, "Evasion", ["perturb the input", "2004 → 2014", "malware detectors 2013 → 2018"], bad=True, title_size=26, sub_size=19)
+    s += edge("M1130 180V236", red=True, arrow=True) + '</g>\n'
+    # 2: extraction, below predictions
+    s += '<g data-build="2">\n' + tile(1040, 420, 340, TH, "Extraction", ["copy the model from its answers", "2005 → 2016"], bad=True, title_size=26, sub_size=19)
+    s += edge("M1500 350L1240 416", red=True, arrow=True) + '</g>\n'
+    # 3: poisoning, above the training data
+    s += '<g data-build="3">\n' + tile(80, 44, 340, TH, "Poisoning, backdoors", ["corrupt what it learns", "2008 → 2017"], bad=True, title_size=26, sub_size=19)
+    s += edge("M250 180V236", red=True, arrow=True) + '</g>\n'
+    # 4: inference and inversion, below predictions
+    s += '<g data-build="4">\n' + tile(1420, 420, 340, TH, "Inference, inversion", ["learn the training data", "from its answers · 2014 → 2017"], bad=True, title_size=26, sub_size=19)
+    s += edge("M1600 350V416", red=True, arrow=True) + '</g>\n'
+    return s + '</svg>\n'
+
+(OUT / "attack-map.svg").write_text(attack_map())
 (OUT / "harness.svg").write_text(harness("plain"))
 (OUT / "harness-attack-surface.svg").write_text(harness("attack"))
 (OUT / "harness-guardrails.svg").write_text(harness("guard"))

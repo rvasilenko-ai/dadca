@@ -7,19 +7,9 @@
 
 Adversarial machine learning predates LLMs by almost two decades. Every stage of a learned model has been attacked.
 
-```text
- training data ───────> TRAINING ───────> MODEL ───────> predictions
-       ^                                    ^                 |
-       |                                    |                 v
-  POISONING, BACKDOORS                  EVASION         EXTRACTION
-  corrupt what it learns          perturb the input      copy the model from its answers
-  2008 -> 2017                    2004 -> 2014           2005 -> 2016
-                                  incl. malware detectors
-                                  2013 -> 2018
-                                                        INFERENCE, INVERSION
-                                                         learn the training data from its answers
-                                                         2014 -> 2017
-```
+![Where the classic attacks enter a learned model: poisoning and evasion write into the pipeline, extraction and inference read its answers](../figures/attack-map.svg)
+
+*Where the classic attacks enter a learned model: poisoning and evasion write into the pipeline; extraction and inference read its answers*
 
 Build, one step per click:
 
