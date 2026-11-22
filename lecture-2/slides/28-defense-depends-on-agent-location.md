@@ -1,6 +1,6 @@
 # Slide 28 — Defense depends on who controls the agent
 
-**Timing:** 71–74 minutes  
+**Timing:** 70–73 minutes  
 **Module:** The two cases compared
 
 ## On-slide content

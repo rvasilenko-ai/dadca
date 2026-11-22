@@ -1,4 +1,4 @@
-# Slide 32 — The weak watching the strong
+# Slide 33 — The weak watching the strong
 
 **Timing:** 84–87 minutes  
 **Module:** Defense and research
@@ -18,7 +18,7 @@ The framing that fits is AI control (2023): a trusted, weaker model monitors an 
 Design rules that follow:
 
 - Monitor transitions — tool, arguments, destination — not prose; the cheapest checks need no comprehension.
-- Make the floor structural (slide 30) and the classifier an extra layer, never the only one.
+- Make the floor structural (slide 31) and the classifier an extra layer, never the only one.
 - Spend the human audit budget at the top of the funnel; red-team the monitor and measure its evasion rate; ensemble or rotate monitors so the attacker cannot optimize against one.
 
 > A guard that must understand the agent to stop it loses to an agent smarter than the guard. A guard that only has to check authority and destination does not.

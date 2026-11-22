@@ -1,4 +1,4 @@
-# Slide 31 — Both cases: cheap models, in a funnel
+# Slide 32 — Both cases: cheap models, in a funnel
 
 **Timing:** 82–84 minutes  
 **Module:** Defense and research
@@ -20,13 +20,13 @@ Build, one step per click:
 
 ## Speaker notes
 
-This is the economics behind both defense slides, and it is the same for both cases even though the telemetry is not. In Case A the stream is the sensors' — endpoint, identity, flow — and slide 29 showed why it has to be evaluated continuously: the attack is a pattern across thousands of individually ordinary events. In Case B the stream is the agent's own transitions — what it retrieved, what it called, with which arguments, to which destination — and the monitor M of slide 30 has to see every one of them. Either way, the arithmetic of a frontier model per event does not close. The answer is the funnel the field has always used, with new tiers.
+This is the economics behind both defense slides, and it is the same for both cases even though the telemetry is not. In Case A the stream is the sensors' — endpoint, identity, flow — and slide 29 showed why it has to be evaluated continuously: the attack is a pattern across thousands of individually ordinary events. In Case B the stream is the agent's own transitions — what it retrieved, what it called, with which arguments, to which destination — and the monitor M of slide 31 has to see every one of them. Either way, the arithmetic of a frontier model per event does not close. The answer is the funnel the field has always used, with new tiers.
 
-At machine scale, encoder-only transformers: bidirectional models that read a whole input and emit a class. They are cheap, their latency is fixed, and because they do not generate text there is no output channel to inject through. They learn from the labelled telemetry a product already produces, and they can learn the transition checks we listed on slide 30 — imperative text in a retrieval, an implausible tool call for the task, an unexpected destination. LogBERT and SecureBERT show the approach on logs and security text; Prompt Guard 2 is an 86-million-parameter classifier for injected and jailbreak text, small enough to run on every input.
+At machine scale, encoder-only transformers: bidirectional models that read a whole input and emit a class. They are cheap, their latency is fixed, and because they do not generate text there is no output channel to inject through. They learn from the labelled telemetry a product already produces, and they can learn the transition checks we listed on slide 31 — imperative text in a retrieval, an implausible tool call for the task, an unexpected destination. LogBERT and SecureBERT show the approach on logs and security text; Prompt Guard 2 is an 86-million-parameter classifier for injected and jailbreak text, small enough to run on every input.
 
 At triage scale, small language models fine-tuned for detection and response tasks: summarize a cluster of events, correlate across sources, propose an action with its evidence. Foundation-Sec-8B is a security-specialized base at that size. At investigation scale, the frontier model and the human — who also label the data that trains the tiers below, which is how the funnel improves.
 
-Say what the funnel does not do: it does not replace the structural guardrails of slide 30, which need no comprehension at all. And it introduces a risk of its own, which is the next slide.
+Say what the funnel does not do: it does not replace the structural guardrails of slide 31, which need no comprehension at all. And it introduces a risk of its own, which is the next slide.
 
 ## Transition
 

@@ -1,6 +1,6 @@
 # Slide 29 — Case A defense: the same sensors, a different arithmetic
 
-**Timing:** 74–78 minutes  
+**Timing:** 73–76 minutes  
 **Module:** Defense and research
 
 ## On-slide content
@@ -26,11 +26,11 @@ The arithmetic is the new part, and the numbers are the incident's: about 17,600
 
 What must change is tempo, and tempo means a loop on the defender's side too: observe, correlate evidence, propose an action, verify authority and scope, execute a bounded response, verify the effect, roll back or escalate. Bounded is the operative word. Autonomous response must not mean a defensive model with administrator rights; separate reasoning from authority through an enforcement boundary that checks identity, scope, policy and action risk. Response tiers run from gathering more evidence, to restricting a token or workload, to disruptive containment that needs explicit approval — and the system must verify whether the action worked and whether the campaign continued by another path.
 
-Leave the open question for two slides on: which model evaluates every event, and at what cost — the funnel, and it serves both cases.
+Leave the open question for the funnel slide: which model evaluates every event, and at what cost — it serves both cases. First, the structural half of Case A: where the controls go.
 
 ## Transition
 
-“Case B is the opposite situation: we own the agent, so we can build the controls in.”
+“And since we own the environment, that is where the controls go.”
 
 ## Sources
 

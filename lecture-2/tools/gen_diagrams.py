@@ -604,6 +604,51 @@ def case_a_defense():
     return s + "</svg>\n"
 
 
+def env_guardrails():
+    """Case A guardrails: slide 30's geometry reversed. The attacker's agent is a small dashed block outside,
+    not ours to control; the environment we own is the large block, with a numbered control and sensor on every
+    component the agent's actions can land on, and a monitor over all of it."""
+    W, H = 1800, 600
+    s = head(W, H, "Case A guardrails, the environment view. Outside, dashed and not ours to control: the attacker's objective, "
+                   "model and harness. Inside the environment we own, a numbered control and sensor on each component the "
+                   "agent's actions land on: endpoints and edge devices, identity and credentials, workloads and clusters, "
+                   "cloud resources, source control and CI, network and egress; and a monitor M that evaluates every event "
+                   "continuously and correlates across sources")
+    comps = [
+        ("Endpoints and edge devices", ["EDR, XDR as the sensor; least privilege, patched —", "the CAIRN intrusions used dated CVEs, default credentials"]),
+        ("Identity and credentials", ["short-lived, scoped, tied to origin; no shared admin —", "one superuser connector credential was a root cause"]),
+        ("Workloads and clusters", ["no privileged pods (admission policy); metadata blocked;", "secrets out of environment variables — three root causes"]),
+        ("Cloud resources", ["every API call audited; deny by default; private links —", "the denied mutating calls were the controls that held"]),
+        ("Source control and CI", ["protected branches; scoped, short-lived app tokens;", "configuration reviewed as code — the PR that did not ship"]),
+        ("Network and egress", ["NDR, flow logs; egress allowlists; device identity", "before the mesh admits a node — not 181 enrollments"]),
+    ]
+    cols, rows, cw, ch = (544, 1180), (66, 206, 346), 596, 120
+    pos = [(cols[i % 2], rows[i // 2]) for i in range(6)]
+    # build 0: the two blocks, the agent outside, the bare components inside, and the actions reaching in
+    s += '<g data-build="0">\n'
+    s += '<rect x="0" y="10" width="440" height="520" rx="24" class="env"/>\n' + text(24, 44, "Outside — the attacker's", 24, 700, "t2")
+    s += tile(24, 70, 392, 100, "Objective", ["the attacker's success signal"], bad=True, title_size=23, sub_size=18)
+    s += tile(24, 190, 392, 100, "Model", ["any model: commercial, open, stolen"], bad=True, title_size=23, sub_size=18)
+    s += tile(24, 310, 392, 100, "Harness", ["tools, launchpad, C2 — the loop"], bad=True, title_size=23, sub_size=18)
+    s += text(220, 440, "not ours to control;", 20, 500, "t-bad", "middle") + text(220, 466, "only its actions reach us", 20, 500, "t-bad", "middle")
+    s += '<rect x="520" y="10" width="1280" height="520" rx="24" class="frame"/>\n' + text(544, 44, "The environment — ours to instrument and constrain", 24, 700, "t2")
+    for (t, _), (x, y) in zip(comps, pos):
+        s += tile(x, y, cw, ch, t, ["every action lands here"], title_size=23, sub_size=18)
+    for y in rows:
+        s += edge(f"M440 {y + ch // 2}H516", arrow=True, red=True)
+    s += text(478, 104, "actions", 18, 600, "t-bad", "middle")
+    s += '</g>\n'
+    # builds 1-6: each component gets its control and sensor
+    for i, ((t, subs), (x, y)) in enumerate(zip(comps, pos)):
+        s += f'<g data-build="{i + 1}">\n' + tile(x, y, cw, ch, t, subs, good=True, title_size=23, sub_size=18) + badge(x, y, i + 1, True) + '</g>\n'
+    # build 7: the monitor over everything, and the legend
+    s += '<g data-build="7">\n' + badge(570, 500, "M", True)
+    s += text(606, 500, "M — every event evaluated continuously, correlated across sources: slide 29's loop, over all six", 22, 600, "t-good")
+    s += text(900, 570, "green: a control and a sensor at every point the attacker's agent can reach — structure first, correlation second", 21, 500, "t-good", "middle")
+    s += '</g>\n'
+    return s + "</svg>\n"
+
+
 def weak_monitor():
     """A weaker, trusted monitor watches a stronger, untrusted agent; full context does not guarantee a correct verdict."""
     W, H = 1800, 250
@@ -625,6 +670,7 @@ def weak_monitor():
 (OUT / "equation-neptune.svg").write_text(equation_neptune())
 (OUT / "equation-huggingface.svg").write_text(equation_huggingface())
 (OUT / "case-reminder.svg").write_text(case_reminder())
+(OUT / "environment-guardrails.svg").write_text(env_guardrails())
 (OUT / "poisoned-harness.svg").write_text(poisoned_harness())
 (OUT / "forcedleak-path.svg").write_text(forcedleak_path())
 (OUT / "incident-chain.svg").write_text(incident_chain())

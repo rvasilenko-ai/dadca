@@ -1,6 +1,6 @@
 # Slide 27 — Case A versus Case B: what is different?
 
-**Timing:** 68–71 minutes  
+**Timing:** 68–70 minutes  
 **Module:** The two cases compared
 
 ## On-slide content

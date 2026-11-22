@@ -1,6 +1,6 @@
-# Slide 30 — Case B defense: guardrails, the boundary text does not have
+# Slide 31 — Case B defense: guardrails, the boundary text does not have
 
-**Timing:** 78–82 minutes  
+**Timing:** 79–82 minutes  
 **Module:** Defense and research
 
 ## On-slide content
@@ -35,7 +35,7 @@ Build, one step per click:
 
 ## Speaker notes
 
-Walk the diagram against slide 14: every control sits exactly where an attack arrow ended. Then give the architecture view, because this is where the research is. Willison's dual-LLM pattern (2023) and lethal-trifecta rule (2025) are the simplest statements: a model that reads untrusted content must not also hold tools and an exfiltration channel. CaMeL (Debenedetti et al., 2025) makes it systematic — a privileged model produces a program from the user's request, a quarantined model parses untrusted data, and capabilities attached to data are checked by policy before any tool call, which gives provable protection for a class of injections at a utility cost — measured on AgentDojo, the benchmark of injection attacks and defenses for agents, which is the measurable artifact to point students at. Beurer-Kellner et al. (2025) catalogue six design patterns that make the same trade in different places. The instruction hierarchy (Wallace et al., 2024) and spotlighting (Hines et al., 2024) are training- and marking-based: they raise the bar but remain probabilistic, which is why they sit above the structural rows, not instead of them. Detection classifiers for injected text are the cheap outer layer — and models, so attackable; hold that for slide 32.
+Walk the diagram against slide 14: every control sits exactly where an attack arrow ended. Then give the architecture view, because this is where the research is. Willison's dual-LLM pattern (2023) and lethal-trifecta rule (2025) are the simplest statements: a model that reads untrusted content must not also hold tools and an exfiltration channel. CaMeL (Debenedetti et al., 2025) makes it systematic — a privileged model produces a program from the user's request, a quarantined model parses untrusted data, and capabilities attached to data are checked by policy before any tool call, which gives provable protection for a class of injections at a utility cost — measured on AgentDojo, the benchmark of injection attacks and defenses for agents, which is the measurable artifact to point students at. Beurer-Kellner et al. (2025) catalogue six design patterns that make the same trade in different places. The instruction hierarchy (Wallace et al., 2024) and spotlighting (Hines et al., 2024) are training- and marking-based: they raise the bar but remain probabilistic, which is why they sit above the structural rows, not instead of them. Detection classifiers for injected text are the cheap outer layer — and models, so attackable; hold that for slide 33.
 
 Map ForcedLeak onto the diagram: the record entered at ②, became instruction in context, inherited ⑤, and left through the actions arrow — the fix at E closed the last step, and a control at ② or ⑤ would have closed it earlier. Map MIDNIGHT NEPTUNE: ① and ④, and the fix is review of agent configuration as code. The OWASP agentic threats-and-mitigations guide is the practitioner's checklist for the same points.
 
