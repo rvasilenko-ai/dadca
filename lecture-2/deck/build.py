@@ -197,7 +197,12 @@ def inline_svg(src: str) -> str:
     svg = re.sub(r'<svg([^>]*?)\swidth="\d+"\sheight="\d+"', r"<svg\1", svg, count=1)
     svg = svg.replace("<svg ", '<svg class="diagram" ', 1)
     # the file's own <style> is for standalone viewing; in the deck the classes take the deck's tokens
-    return re.sub(r"<style>.*?</style>\s*", "", svg, count=1, flags=re.S)
+    svg = re.sub(r"<style>.*?</style>\s*", "", svg, count=1, flags=re.S)
+    # every figure defines the same marker ids; inlined into one document, url(#arrow) would resolve to
+    # the first figure's copy, which is hidden on every other slide, so suffix the ids per figure
+    stem = re.sub(r"[^a-z0-9]+", "-", Path(src).stem.lower())
+    svg = re.sub(r'\bid="(arrow(?:-bad|-good)?)"', lambda m: f'id="{m.group(1)}-{stem}"', svg)
+    return re.sub(r"url\(#(arrow(?:-bad|-good)?)\)", lambda m: f"url(#{m.group(1)}-{stem})", svg)
 
 
 def max_build(svg: str) -> int:
