@@ -19,7 +19,7 @@ Build, one step per click:
 3. ③ Memory and context: malicious context persisted, then replayed on a later, unrelated task.
 4. ④ Tool servers: a compromised server in the agent's supply chain.
 5. ⑤ Credentials and authority: confused or excessive delegation turns an injection into consequences.
-6. The attacker never talks to the model. Every red arrow ends in the model's context — the indirect injection of slide 10, now with a map.
+6. The attacker never talks to the model. Every red arrow ends in the model's context — indirect prompt injection, now with a map.
 
 | Harness component | How it is attacked |
 | --- | --- |

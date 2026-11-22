@@ -13,11 +13,11 @@ Same harness, third time. Every red point of the attack view gets a control.
 
 Build, one step per click:
 
-0. The harness of slide 12 with the attack points of slide 14. The model stays untrusted by design.
+0. The same harness, with the attack points of the attack view. The model stays untrusted by design.
 1. ① Tools, skills, plugins, hooks: allowlists, least privilege, human approval for consequential actions; skills and hooks signed and reviewed like code.
 2. ② Retrieval: untrusted text is labelled and spotlighted, and in the strongest designs never reaches the model that holds authority.
 3. ③ Memory: provenance travels with what is stored; nothing imperative persists without review.
-4. ④ Tool servers: pinned, signed, allowlisted — the supply chain of slide 15.
+4. ④ Tool servers: pinned, signed, allowlisted — the agentic supply chain.
 5. ⑤ Credentials: a per-agent identity with short-lived, scoped tokens, never more than the user has.
 6. E — Egress: trusted destinations only and output filtering; Salesforce's own ForcedLeak fix was a trusted-URL allowlist.
 7. M — Monitor: the trajectory is logged and every transition classified. That is the next slide.

@@ -112,7 +112,7 @@ svg{--surface:#ffffff;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--line:#9ca3
 <g data-build="7">
 <circle cx="570" cy="500" r="22" class="badge--good"/>
 <text x="570" y="501" class="t-badge" font-size="24" font-weight="700" text-anchor="middle" dominant-baseline="central">M</text>
-<text x="606" y="500" class="t-good" font-size="22" font-weight="600" text-anchor="start" dominant-baseline="central">M — every event evaluated continuously, correlated across sources: slide 29's loop, over all six</text>
+<text x="606" y="500" class="t-good" font-size="22" font-weight="600" text-anchor="start" dominant-baseline="central">M — every event evaluated continuously, correlated across sources: the defender's loop, over all six</text>
 <text x="900" y="570" class="t-good" font-size="21" font-weight="500" text-anchor="middle" dominant-baseline="central">green: a control and a sensor at every point the attacker's agent can reach — structure first, correlation second</text>
 </g>
 </svg>

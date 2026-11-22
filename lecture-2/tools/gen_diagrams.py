@@ -643,7 +643,7 @@ def env_guardrails():
         s += f'<g data-build="{i + 1}">\n' + tile(x, y, cw, ch, t, subs, good=True, title_size=23, sub_size=18) + badge(x, y, i + 1, True) + '</g>\n'
     # build 7: the monitor over everything, and the legend
     s += '<g data-build="7">\n' + badge(570, 500, "M", True)
-    s += text(606, 500, "M — every event evaluated continuously, correlated across sources: slide 29's loop, over all six", 22, 600, "t-good")
+    s += text(606, 500, "M — every event evaluated continuously, correlated across sources: the defender's loop, over all six", 22, 600, "t-good")
     s += text(900, 570, "green: a control and a sensor at every point the attacker's agent can reach — structure first, correlation second", 21, 500, "t-good", "middle")
     s += '</g>\n'
     return s + "</svg>\n"

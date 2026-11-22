@@ -11,7 +11,7 @@ The weaponized agent is reported in the wild, at every level of autonomy.
 
 Build, one step per click:
 
-0. Rungs, bottom up. Each rung hands the model more of the loop from slide 13.
+0. Rungs, bottom up. Each rung hands the model more of the agent loop — choose an action, run it, read the result, repeat.
 1. The model answers questions; a human does everything else. State actors use commercial models for reconnaissance, lures and translating exfiltrated data.
 2. Ordinary file-based implants embed one LLM call: NIK C2 relays the operator's prompts to a model from the victim's host, on the victim's own API key if it finds one; VOLTA sends the stolen bundle to a model to rank the victim's assets.
 3. The agent chooses and executes most steps; the human sets objectives and unblocks. In November 2025 an agent did an estimated 80–90% of a campaign across about thirty targets.
