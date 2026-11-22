@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" role="img" aria-label="Dormant instructions, live authority: attacker-controlled data plus a trusted agent plus organizational identity plus a permitted outbound channel equals attacker-desired capability" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<title>Dormant instructions, live authority: attacker-controlled data plus a trusted agent plus organizational identity plus a permitted outbound channel equals attacker-desired capability</title>
+<style>
+svg{--surface:#ffffff;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--line:#9ca3af;--rule:#cbd5e1;
+--acc:#0284c7;--acc-wash:#e0f2fe;--acc-ink:#075985;--bad:#dc2626;--bad-wash:#fee2e2;--bad-ink:#991b1b;
+--good:#15803d;--good-wash:#dcfce7;--good-ink:#14532d;--on-badge:#ffffff}
+@media (prefers-color-scheme: dark){svg{--surface:#141a2a;--frame:#10172a;--ink:#eef1f8;--ink-2:#c6cddd;--line:#8b96b0;--rule:#344062;
+--acc:#7cc4ff;--acc-wash:#10304a;--acc-ink:#bfe3ff;--bad:#f87171;--bad-wash:#3b1515;--bad-ink:#fecaca;
+--good:#4ade80;--good-wash:#0f2e1c;--good-ink:#bbf7d0;--on-badge:#0b0f1a}}
+.node{fill:var(--surface);stroke:var(--rule);stroke-width:2.5}.node--model{fill:var(--acc-wash);stroke:var(--acc);stroke-width:4}
+.node--bad{fill:var(--bad-wash);stroke:var(--bad);stroke-width:4}.node--good{fill:var(--good-wash);stroke:var(--good);stroke-width:4}
+.frame{fill:var(--frame);stroke:var(--rule);stroke-width:2.5}.env{fill:none;stroke:var(--line);stroke-width:3;stroke-dasharray:14 10}
+.t{fill:var(--ink)}.t2{fill:var(--ink-2)}.t-acc{fill:var(--acc-ink)}.t-bad{fill:var(--bad-ink)}.t-good{fill:var(--good-ink)}.t-badge{fill:var(--on-badge)}
+.edge{fill:none;stroke:var(--line);stroke-width:3;stroke-linecap:round}.edge--strong{stroke:var(--ink-2);stroke-width:4}
+.edge--bad{stroke:var(--bad);stroke-width:4}.edge--good{stroke:var(--good);stroke-width:4}
+.arrow{fill:var(--ink-2)}.arrow--bad{fill:var(--bad)}.arrow--good{fill:var(--good)}
+.badge--bad{fill:var(--bad);stroke:var(--surface);stroke-width:3}.badge--good{fill:var(--good);stroke:var(--surface);stroke-width:3}
+.ctx-bar{fill:var(--rule)}.ring{fill:none;stroke:var(--ink);stroke-width:4}.dot{fill:var(--ink)}
+</style>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
+  <marker id="arrow-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
+  <marker id="arrow-good" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
+</defs>
+<g data-build="0">
+<rect x="110" y="10" width="980" height="66" rx="14" class="node node--bad"/>
+<text x="130" y="42" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">attacker-controlled data</text>
+</g>
+<g data-build="1">
+<text x="600" y="104" class="t2" font-size="46" font-weight="300" text-anchor="middle" dominant-baseline="central">+</text>
+<rect x="110" y="132" width="980" height="66" rx="14" class="node"/>
+<text x="130" y="164" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">trusted agent: model and harness</text>
+</g>
+<g data-build="2">
+<text x="600" y="226" class="t2" font-size="46" font-weight="300" text-anchor="middle" dominant-baseline="central">+</text>
+<rect x="110" y="254" width="980" height="66" rx="14" class="node"/>
+<text x="130" y="286" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">organizational identity and tools</text>
+</g>
+<g data-build="3">
+<text x="600" y="348" class="t2" font-size="46" font-weight="300" text-anchor="middle" dominant-baseline="central">+</text>
+<rect x="110" y="376" width="980" height="66" rx="14" class="node"/>
+<text x="130" y="408" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">permitted outbound channel</text>
+</g>
+<g data-build="4">
+<text x="600" y="470" class="t2" font-size="46" font-weight="300" text-anchor="middle" dominant-baseline="central">=</text>
+<rect x="110" y="498" width="980" height="70" rx="14" class="node node--bad"/>
+<text x="130" y="530" class="t" font-size="27" font-weight="700" text-anchor="start" dominant-baseline="central">attacker-desired capability</text>
+</g>
+</svg>

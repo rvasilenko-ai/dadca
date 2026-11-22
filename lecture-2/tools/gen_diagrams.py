@@ -324,7 +324,35 @@ def poisoned_harness():
     return chain_v("MIDNIGHT NEPTUNE path: social engineering gains a foothold, the attacker edits the agent's committed configuration so startup downloads a backdoor, and a developer starting the agent on an ordinary morning runs it", steps)
 
 
+def glyph(x, y, ch, cls="t2"):
+    return text(x, y, ch, 46, 300, cls, "middle")
+
+
+def equation():
+    """Dormant instructions, live authority: four ingredients summed into attacker-desired capability."""
+    W, H = 1200, 560
+    terms = [
+        ("attacker-controlled data", True),
+        ("trusted agent: model and harness", False),
+        ("organizational identity and tools", False),
+        ("permitted outbound channel", False),
+    ]
+    s = head(W, H, "Dormant instructions, live authority: attacker-controlled data plus a trusted agent plus organizational identity plus a permitted outbound channel equals attacker-desired capability")
+    tw, th, gap = 980, 66, 56
+    x = (W - tw) // 2
+    y = 10
+    for i, (t, bad) in enumerate(terms):
+        body = glyph(W // 2, y - gap // 2, "+") if i > 0 else ""
+        body += tile(x, y, tw, th, t, [], bad=bad, title_size=25, sub_size=1)
+        s += f'<g data-build="{i}">\n{body}</g>\n'
+        y += th + gap
+    body = glyph(W // 2, y - gap // 2, "=") + tile(x, y, tw, th + 4, "attacker-desired capability", [], bad=True, title_size=27, sub_size=1)
+    s += f'<g data-build="{len(terms)}">\n{body}</g>\n'
+    return s + "</svg>\n"
+
+
 (OUT / "attack-map.svg").write_text(attack_map())
+(OUT / "equation.svg").write_text(equation())
 (OUT / "poisoned-harness.svg").write_text(poisoned_harness())
 (OUT / "forcedleak-path.svg").write_text(forcedleak_path())
 (OUT / "supply-chain.svg").write_text(supply_chain())

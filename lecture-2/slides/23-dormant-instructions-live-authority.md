@@ -5,17 +5,7 @@
 
 ## On-slide content
 
-```text
-attacker-controlled data
-        +
-trusted agent: model and harness
-        +
-organizational identity and tools
-        +
-permitted outbound channel
-        =
-attacker-desired capability
-```
+![Dormant instructions, live authority, as a sum: attacker-controlled data, plus a trusted agent (model and harness), plus organizational identity and tools, plus a permitted outbound channel, equals attacker-desired capability](../figures/equation.svg)
 
 Possible interpretations:
 
