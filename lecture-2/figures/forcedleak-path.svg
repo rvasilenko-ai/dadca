@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 644" width="1800" height="644" role="img" aria-label="ForcedLeak attack path: instructions an attacker planted in a CRM record are later retrieved by the trusted agent and interpreted as commands, so data leaves with the organization's own authority" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>ForcedLeak attack path: instructions an attacker planted in a CRM record are later retrieved by the trusted agent and interpreted as commands, so data leaves with the organization's own authority</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 700" width="1800" height="700" role="img" aria-label="ForcedLeak attack path across three zones: on the Internet the attacker fills a public Web-to-Lead form; the concealed instructions persist in the Salesforce CRM record; inside the organization an employee later asks the Agentforce agent about the lead, the agent retrieves the record, the data is interpreted as instructions, the agent reaches more CRM data with its own authority, and sensitive data leaves through crafted image requests back to the attacker" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<title>ForcedLeak attack path across three zones: on the Internet the attacker fills a public Web-to-Lead form; the concealed instructions persist in the Salesforce CRM record; inside the organization an employee later asks the Agentforce agent about the lead, the agent retrieves the record, the data is interpreted as instructions, the agent reaches more CRM data with its own authority, and sensitive data leaves through crafted image requests back to the attacker</title>
 <style>
 svg{--surface:#ffffff;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--line:#9ca3af;--rule:#cbd5e1;
 --acc:#0284c7;--acc-wash:#e0f2fe;--acc-ink:#075985;--bad:#dc2626;--bad-wash:#fee2e2;--bad-ink:#991b1b;
@@ -23,37 +23,58 @@ svg{--surface:#ffffff;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--line:#9ca3
   <marker id="arrow-good" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
 </defs>
 <g data-build="0">
-<rect x="280" y="20" width="1240" height="64" rx="14" class="node node--bad"/>
-<text x="300" y="52" class="t" font-size="23" font-weight="700" text-anchor="start" dominant-baseline="central">Attacker submits a public Web-to-Lead form</text>
+<rect x="0" y="10" width="560" height="670" rx="22" class="env"/>
+<text x="24" y="40" class="t2" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">The Internet — the attacker</text>
+<rect x="620" y="10" width="560" height="166" rx="22" class="frame"/>
+<text x="644" y="40" class="t2" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">Salesforce CRM — the record</text>
+<rect x="1240" y="136" width="560" height="544" rx="22" class="frame"/>
+<text x="1264" y="166" class="t2" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">The organization — Agentforce</text>
+<text x="280" y="350" class="t-bad" font-size="20" font-weight="500" text-anchor="middle" dominant-baseline="central">red arrow: a trust boundary crossed</text>
+<rect x="20" y="60" width="520" height="100" rx="14" class="node node--bad"/>
+<text x="40" y="92" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">A public Web-to-Lead form</text>
+<text x="40" y="122" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">the attacker submits a lead;</text>
+<text x="40" y="148" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">every field is attacker-written text</text>
 </g>
 <g data-build="1">
-<path d="M900 84V108" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
-<rect x="280" y="110" width="1240" height="64" rx="14" class="node node--bad"/>
-<text x="300" y="142" class="t" font-size="23" font-weight="700" text-anchor="start" dominant-baseline="central">Concealed instructions persist in the CRM record</text>
+<path d="M540 110H636" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad)"/>
+<rect x="640" y="60" width="520" height="100" rx="14" class="node node--bad"/>
+<text x="660" y="92" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">Concealed instructions persist</text>
+<text x="660" y="122" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">stored in the CRM record,</text>
+<text x="660" y="148" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">waiting to be read</text>
 </g>
 <g data-build="2">
-<path d="M900 174V198" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
-<rect x="280" y="200" width="1240" height="64" rx="14" class="node"/>
-<text x="300" y="232" class="t" font-size="23" font-weight="700" text-anchor="start" dominant-baseline="central">An employee later asks Agentforce about the lead</text>
+<rect x="1260" y="186" width="520" height="100" rx="14" class="node"/>
+<text x="1280" y="218" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">An employee asks about the lead</text>
+<text x="1280" y="248" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">later, in the normal course of work:</text>
+<text x="1280" y="274" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">a legitimate request, a legitimate identity</text>
 </g>
 <g data-build="3">
-<path d="M900 264V288" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
-<rect x="280" y="290" width="1240" height="64" rx="14" class="node"/>
-<text x="300" y="322" class="t" font-size="23" font-weight="700" text-anchor="start" dominant-baseline="central">The agent retrieves the attacker-controlled record</text>
+<path d="M1520 286V308" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
+<path d="M1160 110H1210V362H1256" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad)"/>
+<rect x="1260" y="312" width="520" height="100" rx="14" class="node"/>
+<text x="1280" y="344" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">The agent retrieves the record</text>
+<text x="1280" y="374" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">attacker-written text enters</text>
+<text x="1280" y="400" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">the model's context</text>
 </g>
 <g data-build="4">
-<path d="M900 354V378" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
-<rect x="280" y="380" width="1240" height="64" rx="14" class="node node--bad"/>
-<text x="300" y="412" class="t" font-size="23" font-weight="700" text-anchor="start" dominant-baseline="central">The record's data is interpreted as instructions</text>
+<path d="M1520 412V434" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad)"/>
+<rect x="1260" y="438" width="520" height="100" rx="14" class="node node--bad"/>
+<text x="1280" y="470" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">Data is interpreted as instructions</text>
+<text x="1280" y="500" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">the injection fires inside</text>
+<text x="1280" y="526" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">the trusted agent</text>
 </g>
 <g data-build="5">
-<path d="M900 444V468" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
-<rect x="280" y="470" width="1240" height="64" rx="14" class="node"/>
-<text x="300" y="502" class="t" font-size="23" font-weight="700" text-anchor="start" dominant-baseline="central">The agent reaches more CRM data with its authority</text>
+<path d="M1520 538V560" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
+<rect x="1260" y="564" width="520" height="100" rx="14" class="node"/>
+<text x="1280" y="596" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">The agent reaches more CRM data</text>
+<text x="1280" y="626" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">with the organization's</text>
+<text x="1280" y="652" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">own authority</text>
 </g>
 <g data-build="6">
-<path d="M900 534V558" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
-<rect x="280" y="560" width="1240" height="64" rx="14" class="node node--bad"/>
-<text x="300" y="592" class="t" font-size="23" font-weight="700" text-anchor="start" dominant-baseline="central">Sensitive data leaves through crafted image requests</text>
+<path d="M1260 614H544" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad)"/>
+<rect x="20" y="564" width="520" height="100" rx="14" class="node node--bad"/>
+<text x="40" y="596" class="t" font-size="22" font-weight="700" text-anchor="start" dominant-baseline="central">Sensitive data leaves</text>
+<text x="40" y="626" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">through crafted image requests</text>
+<text x="40" y="652" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">to an attacker-controlled domain</text>
 </g>
 </svg>

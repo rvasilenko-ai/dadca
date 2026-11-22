@@ -299,36 +299,91 @@ def chain_v(aria, steps, tw=1240, th=64, gap=26, size=23):
     return s + "</svg>\n"
 
 
+# ---------------------------------------------------------------- zoned chains
+# Three zones as columns; tiles sit in the zone where the step happens, rows run top to bottom,
+# and an arrow that crosses the gap between zones is a boundary crossing.
+ZW, ZX = 560, (0, 620, 1240)        # zone width and the three zone columns
+TH, TW, PITCH = 100, 520, 126       # tile height and width, row pitch
+
+
+def zy(r):
+    """Top edge of a tile in row r."""
+    return 60 + r * PITCH
+
+
+def zone(col, r0, r1, label, dashed=False):
+    x, y = ZX[col], zy(r0) - 50
+    h = zy(r1) + TH + 16 - y
+    return (f'<rect x="{x}" y="{y}" width="{ZW}" height="{h}" rx="22" class="{"env" if dashed else "frame"}"/>\n'
+            + text(x + 24, y + 30, label, 24, 700, "t2"))
+
+
+def ztile(col, r, title, subs, bad=False, good=False):
+    return tile(ZX[col] + 20, zy(r), TW, TH, title, subs, bad=bad, good=good, title_size=22, sub_size=18)
+
+
+def zcx(col):
+    return ZX[col] + ZW // 2
+
+
+def zdown(col, r, red=False, arrow=True):
+    """Arrow from the tile in row r to the tile in row r + 1 of the same zone."""
+    return edge(f"M{zcx(col)} {zy(r) + TH}V{zy(r + 1) - 4}", strong=not red, arrow=arrow, red=red)
+
+
+def zright(col, r):
+    """Red arrow across the gap from zone col to zone col + 1, in row r: a boundary crossing."""
+    y = zy(r) + TH // 2
+    return edge(f"M{ZX[col] + ZW - 20} {y}H{ZX[col + 1] + 16}", arrow=True, red=True)
+
+
 def forcedleak_path():
-    steps = [
-        ("Attacker submits a public Web-to-Lead form", True),
-        ("Concealed instructions persist in the CRM record", True),
-        ("An employee later asks Agentforce about the lead", False),
-        ("The agent retrieves the attacker-controlled record", False),
-        ("The record's data is interpreted as instructions", True),
-        ("The agent reaches more CRM data with its authority", False),
-        ("Sensitive data leaves through crafted image requests", True),
-    ]
-    return chain_v("ForcedLeak attack path: instructions an attacker planted in a CRM record are later retrieved by the trusted agent and interpreted as commands, so data leaves with the organization's own authority", steps)
+    H = zy(4) + TH + 36
+    s = head(1800, H, "ForcedLeak attack path across three zones: on the Internet the attacker fills a public Web-to-Lead form; "
+                      "the concealed instructions persist in the Salesforce CRM record; inside the organization an employee later "
+                      "asks the Agentforce agent about the lead, the agent retrieves the record, the data is interpreted as "
+                      "instructions, the agent reaches more CRM data with its own authority, and sensitive data leaves through "
+                      "crafted image requests back to the attacker")
+    s += '<g data-build="0">\n' + zone(0, 0, 4, "The Internet — the attacker", dashed=True)
+    s += zone(1, 0, 0, "Salesforce CRM — the record") + zone(2, 1, 4, "The organization — Agentforce")
+    s += text(280, 350, "red arrow: a trust boundary crossed", 20, 500, "t-bad", "middle")
+    s += ztile(0, 0, "A public Web-to-Lead form", ["the attacker submits a lead;", "every field is attacker-written text"], bad=True) + '</g>\n'
+    s += '<g data-build="1">\n' + zright(0, 0) + ztile(1, 0, "Concealed instructions persist", ["stored in the CRM record,", "waiting to be read"], bad=True) + '</g>\n'
+    s += '<g data-build="2">\n' + ztile(2, 1, "An employee asks about the lead", ["later, in the normal course of work:", "a legitimate request, a legitimate identity"]) + '</g>\n'
+    # retrieval: the record crosses from the CRM into the agent's context
+    s += '<g data-build="3">\n' + zdown(2, 1)
+    s += edge(f"M{ZX[1] + ZW - 20} {zy(0) + TH // 2}H{ZX[2] - 30}V{zy(2) + TH // 2}H{ZX[2] + 16}", arrow=True, red=True)
+    s += ztile(2, 2, "The agent retrieves the record", ["attacker-written text enters", "the model's context"]) + '</g>\n'
+    s += '<g data-build="4">\n' + zdown(2, 2, red=True) + ztile(2, 3, "Data is interpreted as instructions", ["the injection fires inside", "the trusted agent"], bad=True) + '</g>\n'
+    s += '<g data-build="5">\n' + zdown(2, 3) + ztile(2, 4, "The agent reaches more CRM data", ["with the organization's", "own authority"]) + '</g>\n'
+    # egress: back across both gaps, under the CRM zone, to the attacker
+    s += '<g data-build="6">\n' + edge(f"M{ZX[2] + 20} {zy(4) + TH // 2}H{ZX[0] + ZW - 16}", arrow=True, red=True)
+    s += ztile(0, 4, "Sensitive data leaves", ["through crafted image requests", "to an attacker-controlled domain"], bad=True) + '</g>\n'
+    return s + '</svg>\n'
 
 
 def incident_chain():
-    """The July 2026 Hugging Face intrusion as eight boundary crossings; red = a boundary the agent crossed."""
-    steps = [
-        ("An isolated cyber-capability evaluation: a pre-release model, deployment safeguards off", False),
-        ("9 July: a zero-day in the package proxy, lateral movement to a node with Internet access", True),
-        ("Root on an unsecured third-party code-execution endpoint: C2, staging and egress base", True),
-        ("Crafted dataset configs: a file read leaks pod secrets, a template injection runs code", True),
-        ("11 July: service-account token, metadata credentials, a privileged pod → root on a node", True),
-        ("Secrets yield a mesh-VPN key and a shared admin credential: cluster-admin on two clusters", True),
-        ("12 July: 181 VPN enrollments, cloud keys at a production database, a pull request into CI", True),
-        ("13 July: alerts correlated but never escalated; humans find the vector and cut access", False),
-    ]
-    return chain_v("The reference incident, step by step: an isolated evaluation; a sandbox escape through a proxy zero-day; "
-                   "root on a third-party code-execution endpoint used as a launchpad; entry into Hugging Face through crafted "
-                   "dataset configs; service-account and metadata credentials and a privileged pod; cluster secrets leading to "
-                   "cluster-admin on two clusters; expansion into the VPN mesh, a production database and source control; "
-                   "detection that correlated the signals but did not escalate until humans cut access", steps, th=56, gap=14, size=22)
+    """The July 2026 Hugging Face intrusion across three zones; red = a boundary the agent crossed."""
+    H = zy(4) + TH + 36
+    s = head(1800, H, "The reference incident across three zones. In OpenAI's evaluation environment: an isolated evaluation, then a "
+                      "sandbox escape through a proxy zero-day. On the Internet: root on a third-party code-execution endpoint used "
+                      "as a launchpad, plus exposed accounts on other services. Inside Hugging Face production: entry through crafted "
+                      "dataset configs, the Kubernetes cluster taken to cluster-admin, expansion into the VPN mesh, cloud and source "
+                      "control, and detection that correlated the signals but did not escalate until humans cut access")
+    s += '<g data-build="0">\n' + zone(0, 0, 1, "OpenAI — the evaluation environment")
+    s += zone(1, 1, 2, "The Internet — third-party sandbox", dashed=True) + zone(2, 1, 4, "Hugging Face — production")
+    s += text(280, 330, "red arrow: a boundary the agent crossed", 20, 500, "t-bad", "middle")
+    s += ztile(0, 0, "The evaluation", ["pre-release model on a cyber benchmark,", "deployment safeguards deliberately off"]) + '</g>\n'
+    s += '<g data-build="1">\n' + zdown(0, 0) + ztile(0, 1, "Escape, 9 July", ["a zero-day in the package proxy, then", "lateral movement to a node with Internet"], bad=True) + '</g>\n'
+    s += '<g data-build="2">\n' + zright(0, 1) + ztile(1, 1, "Launchpad: root at 04:01 UTC", ["an unsecured, user-hosted code-execution", "endpoint: C2, staging and egress base"], bad=True)
+    s += zdown(1, 1, arrow=False) + ztile(1, 2, "Exposed accounts", ["four accounts on four other services:", "a relay, a store, two read-only"]) + '</g>\n'
+    s += '<g data-build="3">\n' + zright(1, 1) + ztile(2, 1, "Entry: a dataset worker pod", ["crafted configs: a file read leaks secrets,", "a template injection runs code"], bad=True) + '</g>\n'
+    s += '<g data-build="4">\n' + zdown(2, 1, red=True) + ztile(2, 2, "The Kubernetes cluster, 11 July", ["service-account token, metadata credentials,", "privileged pod → root; secrets → cluster-admin"], bad=True) + '</g>\n'
+    s += '<g data-build="5">\n' + zdown(2, 2, red=True) + ztile(2, 3, "Mesh, cloud, source control, 12 July", ["181 VPN enrollments, keys at a production", "database, a pull request into CI"], bad=True) + '</g>\n'
+    s += '<g data-build="6">\n' + zdown(2, 3) + ztile(2, 4, "Detection and cut-off, 13 July", ["alerts correlated but never escalated;", "humans find the vector and cut access"])
+    s += text(590, 500, "Every link is an ordinary weakness we already know how to fix.", 22, 500, "t2", "middle", italic=True)
+    s += text(590, 542, "The agent supplied the search.", 24, 700, "t", "middle") + '</g>\n'
+    return s + '</svg>\n'
 
 
 def poisoned_harness():

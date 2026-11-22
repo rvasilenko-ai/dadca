@@ -5,7 +5,7 @@
 
 ## On-slide content
 
-![ForcedLeak attack path, step by step: an attacker submits a public Web-to-Lead form; concealed instructions persist in the CRM record; an employee later asks Agentforce about the lead; the agent retrieves the attacker-controlled record; the data is interpreted as instructions; the agent reaches more CRM data with its authority; sensitive data leaves through crafted image requests](../figures/forcedleak-path.svg)
+![ForcedLeak attack path across three zones. On the Internet, the attacker submits a public Web-to-Lead form; the concealed instructions persist in the Salesforce CRM record; inside the organization an employee later asks Agentforce about the lead, the agent retrieves the attacker-controlled record, the data is interpreted as instructions, the agent reaches more CRM data with its own authority, and sensitive data leaves through crafted image requests back to the attacker. Red arrows mark the trust boundaries crossed](../figures/forcedleak-path.svg)
 
 The employee’s request is legitimate.  
 The agent’s identity is legitimate.  
