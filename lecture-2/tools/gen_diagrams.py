@@ -238,7 +238,52 @@ def ladder():
     return s + '</svg>\n'
 
 
+def supply_chain():
+    """The software supply chain across the top; below it, the inputs an agent reads as instructions at run time."""
+    W, H = 1800, 330
+    s = head(W, H, "The software supply chain, plus every input an agent will later read as instructions at run time")
+    s += '<g data-build="0">\n' + text(40, 28, "SOFTWARE SUPPLY CHAIN", 20, 700, "t2")
+    xs = [40, 388, 736, 1084, 1432]
+    for k, (x, name) in enumerate(zip(xs, ["source", "dependencies", "build", "artifact", "deployment"])):
+        s += tile(x, 50, 300, 72, name, ["​"], title_size=25, sub_size=1)
+        if k < 4:
+            s += arrow(x + 300, 86, x + 386, 86)
+    s += '</g>\n'
+    s += '<g data-build="1">\n' + text(40, 172, "WHAT THE AGENT ALSO READS — and may treat as instructions", 20, 700, "t-bad")
+    s += edge("M900 192V124", red=True, arrow=True)
+    items = [("Repository", "instructions, Markdown"), ("Issues, comments,", "retrieved documents"),
+             ("Skills, plugins,", "tool descriptions"), ("Model and policy", "configuration"),
+             ("Memory,", "retrieved context"), ("Credentials,", "delegated permissions"), ("Approval UIs,", "generated diffs")]
+    for i, (a, b) in enumerate(items):
+        s += tile(40 + i * 250, 202, 244, 102, a, [b], bad=True, title_size=20, sub_size=18)
+    return s + '</g>\n</svg>\n'
+
+
+def funnel():
+    """Match the model to the scale: a static funnel of three tiers, each band narrower, with the model that can afford it."""
+    W, H = 1800, 350
+    s = head(W, H, "Match the model to the scale: cheap encoder classifiers at machine scale, small task-trained models at triage, a frontier model and a human for the few investigations")
+    cx = 560
+    rows = [
+        ("machine", "millions of events, flows, tool calls, retrieved texts", "encoder-only classifiers (BERT family)", "fine-tuned on telemetry; line rate; a label, not a sentence", 1040),
+        ("triage", "thousands of candidates", "small language models, 1–8B", "trained for the task: summarize, correlate, propose", 760),
+        ("investigation", "a few consequential cases", "a frontier model — and a human", "for the few cases the funnel selects", 480),
+    ]
+    y, prev = 10, None
+    for i, (name, vol, mt, ms, w) in enumerate(rows):
+        x = cx - w // 2
+        s += tile(x, y, w, 96, name, [vol], title_size=25, sub_size=19)
+        s += tile(1240, y, 520, 96, mt, [ms], model=(i == 2), title_size=21, sub_size=18)
+        if prev is not None:
+            s += edge(f"M{cx} {prev}V{y}", strong=True, arrow=True)
+        prev = y + 96
+        y += 116
+    return s + '</svg>\n'
+
+
 (OUT / "attack-map.svg").write_text(attack_map())
+(OUT / "supply-chain.svg").write_text(supply_chain())
+(OUT / "funnel.svg").write_text(funnel())
 (OUT / "ladder.svg").write_text(ladder())
 (OUT / "harness.svg").write_text(harness("plain"))
 (OUT / "harness-attack-surface.svg").write_text(harness("attack"))

@@ -493,12 +493,63 @@
 <p>Make "poisoned skill" concrete: a skill or plugin the agent is given — installed from a marketplace, or a tool definition it loads — that carries hidden instructions or malicious behavior, which the model then invokes in good faith. Tool poisoning: the tool's metadata or output is attacker-controlled and carries injection. Memory poisoning: injected context persists and fires on a later, unrelated request. MCP supply chain: a tool server the agent connects to is malicious or compromised. The through-line from the code/data slide is that every one of these feeds the data channel into the instruction channel. This is why "fix the model" is not enough — the harness is where most real attacks land. Memory and knowledge-base poisoning of agents is demonstrated in AgentPoison (2024); injection against LLM-integrated applications in Liu et al. (2023); OWASP's agentic threat list covers the rest of the table.</p>
 <p class="transition">“One of those arrows deserves an example before we go on: the supply chain, where a harness is poisoned without anyone talking to the model.”</p></aside>
 </section>
-<section class="slide slide--text" id="s15" data-id="s15" data-part="2" data-steps="0" data-number="15">
-<h2 class="slide-title">The agentic supply chain</h2><div class="body"><p>Arrow ④ on the previous slide, as a supply chain. The software one is familiar; the agent adds every input it will later read as instructions.</p>
-<p>Traditional focus:</p>
-<p><code>source -&gt; dependencies -&gt; build -&gt; artifact -&gt; deployment</code></p>
-<p>Agentic additions:</p>
-<ul><li>Repository instructions and Markdown</li><li>Issues, comments, and retrieved documents</li><li>Agent skills, plugins, and tool descriptions</li><li>Model and policy configuration</li><li>Memory and retrieved context</li><li>Credentials and delegated permissions</li><li>Approval interfaces and generated diffs</li></ul></div>
+<section class="slide slide--diagram" id="s15" data-id="s15" data-part="2" data-steps="1" data-number="15">
+<h2 class="slide-title">The agentic supply chain</h2><p>Arrow ④ on the previous slide, as a supply chain. The software one is familiar; the agent adds every input it will later read as instructions.</p>
+<figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 330" role="img" aria-label="The software supply chain, plus every input an agent will later read as instructions at run time" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<title>The software supply chain, plus every input an agent will later read as instructions at run time</title>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
+  <marker id="arrow-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
+  <marker id="arrow-good" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
+</defs>
+<g data-build="0">
+<text x="40" y="28" class="t2" font-size="20" font-weight="700" text-anchor="start" dominant-baseline="central">SOFTWARE SUPPLY CHAIN</text>
+<rect x="40" y="50" width="300" height="72" rx="14" class="node"/>
+<text x="60" y="82" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">source</text>
+<text x="60" y="112" class="t2" font-size="1" font-weight="400" text-anchor="start" dominant-baseline="central">​</text>
+<path d="M340 86L426 86" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
+<rect x="388" y="50" width="300" height="72" rx="14" class="node"/>
+<text x="408" y="82" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">dependencies</text>
+<text x="408" y="112" class="t2" font-size="1" font-weight="400" text-anchor="start" dominant-baseline="central">​</text>
+<path d="M688 86L774 86" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
+<rect x="736" y="50" width="300" height="72" rx="14" class="node"/>
+<text x="756" y="82" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">build</text>
+<text x="756" y="112" class="t2" font-size="1" font-weight="400" text-anchor="start" dominant-baseline="central">​</text>
+<path d="M1036 86L1122 86" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
+<rect x="1084" y="50" width="300" height="72" rx="14" class="node"/>
+<text x="1104" y="82" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">artifact</text>
+<text x="1104" y="112" class="t2" font-size="1" font-weight="400" text-anchor="start" dominant-baseline="central">​</text>
+<path d="M1384 86L1470 86" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
+<rect x="1432" y="50" width="300" height="72" rx="14" class="node"/>
+<text x="1452" y="82" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">deployment</text>
+<text x="1452" y="112" class="t2" font-size="1" font-weight="400" text-anchor="start" dominant-baseline="central">​</text>
+</g>
+<g data-build="1">
+<text x="40" y="172" class="t-bad" font-size="20" font-weight="700" text-anchor="start" dominant-baseline="central">WHAT THE AGENT ALSO READS — and may treat as instructions</text>
+<path d="M900 192V124" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad)"/>
+<rect x="40" y="202" width="244" height="102" rx="14" class="node node--bad"/>
+<text x="60" y="234" class="t" font-size="20" font-weight="700" text-anchor="start" dominant-baseline="central">Repository</text>
+<text x="60" y="264" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">instructions, Markdown</text>
+<rect x="290" y="202" width="244" height="102" rx="14" class="node node--bad"/>
+<text x="310" y="234" class="t" font-size="20" font-weight="700" text-anchor="start" dominant-baseline="central">Issues, comments,</text>
+<text x="310" y="264" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">retrieved documents</text>
+<rect x="540" y="202" width="244" height="102" rx="14" class="node node--bad"/>
+<text x="560" y="234" class="t" font-size="20" font-weight="700" text-anchor="start" dominant-baseline="central">Skills, plugins,</text>
+<text x="560" y="264" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">tool descriptions</text>
+<rect x="790" y="202" width="244" height="102" rx="14" class="node node--bad"/>
+<text x="810" y="234" class="t" font-size="20" font-weight="700" text-anchor="start" dominant-baseline="central">Model and policy</text>
+<text x="810" y="264" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">configuration</text>
+<rect x="1040" y="202" width="244" height="102" rx="14" class="node node--bad"/>
+<text x="1060" y="234" class="t" font-size="20" font-weight="700" text-anchor="start" dominant-baseline="central">Memory,</text>
+<text x="1060" y="264" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">retrieved context</text>
+<rect x="1290" y="202" width="244" height="102" rx="14" class="node node--bad"/>
+<text x="1310" y="234" class="t" font-size="20" font-weight="700" text-anchor="start" dominant-baseline="central">Credentials,</text>
+<text x="1310" y="264" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">delegated permissions</text>
+<rect x="1540" y="202" width="244" height="102" rx="14" class="node node--bad"/>
+<text x="1560" y="234" class="t" font-size="20" font-weight="700" text-anchor="start" dominant-baseline="central">Approval UIs,</text>
+<text x="1560" y="264" class="t-bad" font-size="18" font-weight="500" text-anchor="start" dominant-baseline="central">generated diffs</text>
+</g>
+</svg></figure>
 <details class="srcs"><summary>Sources (2)</summary><div class="panel"><ul><li><a href="https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/" target="_blank" rel="noopener">OWASP, Agentic AI Threats and Mitigations</a></li><li><a href="https://arxiv.org/abs/2506.08837" target="_blank" rel="noopener">Beurer-Kellner et al., Design Patterns for Securing LLM Agents against Prompt Injections (2025)</a></li></ul></div></details>
 <footer class="slide-foot"><span class="eyebrow">From model to agent</span><span class="count">15 / 31 · 39–41 minutes</span></footer>
 <aside class="notes"><p class="meta"><b>Slide 15</b> · 39–41 minutes · From model to agent</p>
@@ -858,14 +909,36 @@ attacker-desired capability</code></pre>
 <p>Map ForcedLeak onto the diagram: the record entered at ②, became instruction in context, inherited ⑤, and left through the actions arrow — the fix at E closed the last step, and a control at ② or ⑤ would have closed it earlier. Map MIDNIGHT NEPTUNE: ① and ④, and the fix is review of agent configuration as code. The OWASP agentic threats-and-mitigations guide is the practitioner's checklist for the same points.</p>
 <p class="transition">“Both cases end at the same question: something has to watch every transition — and a frontier model on every event is not affordable.”</p></aside>
 </section>
-<section class="slide slide--text slide--denser" id="s29" data-id="s29" data-part="4" data-steps="0" data-number="29">
+<section class="slide slide--has-diagram slide--denser" id="s29" data-id="s29" data-part="4" data-steps="0" data-number="29">
 <h2 class="slide-title">Who watches the agent: cheap models, in a funnel</h2><div class="body"><p>A frontier model on every event is not affordable, and not needed. Match the model to the scale.</p>
-<pre class="schematic" style="--cols:118"><code> scale          volume per day                     the model that can afford it
- machine        millions of events, flows,         encoder-only classifiers (BERT family):
-                tool calls, retrieved texts        fine-tuned on product telemetry; line rate; a label, not a sentence
- triage         thousands of candidates            small language models, 1–8B, trained for the task:
-                                                   summarize, correlate, propose a bounded action
- investigation  a few consequential cases          a frontier model — and a human</code></pre>
+<figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 350" role="img" aria-label="Match the model to the scale: cheap encoder classifiers at machine scale, small task-trained models at triage, a frontier model and a human for the few investigations" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<title>Match the model to the scale: cheap encoder classifiers at machine scale, small task-trained models at triage, a frontier model and a human for the few investigations</title>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
+  <marker id="arrow-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
+  <marker id="arrow-good" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
+</defs>
+<rect x="40" y="10" width="1040" height="96" rx="14" class="node"/>
+<text x="60" y="42" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">machine</text>
+<text x="60" y="72" class="t2" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">millions of events, flows, tool calls, retrieved texts</text>
+<rect x="1240" y="10" width="520" height="96" rx="14" class="node"/>
+<text x="1260" y="42" class="t" font-size="21" font-weight="700" text-anchor="start" dominant-baseline="central">encoder-only classifiers (BERT family)</text>
+<text x="1260" y="72" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">fine-tuned on telemetry; line rate; a label, not a sentence</text>
+<rect x="180" y="126" width="760" height="96" rx="14" class="node"/>
+<text x="200" y="158" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">triage</text>
+<text x="200" y="188" class="t2" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">thousands of candidates</text>
+<rect x="1240" y="126" width="520" height="96" rx="14" class="node"/>
+<text x="1260" y="158" class="t" font-size="21" font-weight="700" text-anchor="start" dominant-baseline="central">small language models, 1–8B</text>
+<text x="1260" y="188" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">trained for the task: summarize, correlate, propose</text>
+<path d="M560 106V126" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
+<rect x="320" y="242" width="480" height="96" rx="14" class="node"/>
+<text x="340" y="274" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">investigation</text>
+<text x="340" y="304" class="t2" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">a few consequential cases</text>
+<rect x="1240" y="242" width="520" height="96" rx="14" class="node node--model"/>
+<text x="1260" y="274" class="t-acc" font-size="21" font-weight="700" text-anchor="start" dominant-baseline="central">a frontier model — and a human</text>
+<text x="1260" y="304" class="t-acc" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">for the few cases the funnel selects</text>
+<path d="M560 222V242" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
+</svg></figure>
 <p>Why encoders at the bottom:</p>
 <ul><li>Cheap and fixed-latency, so they can run inside EDR, NDR and the agent harness at line rate.</li><li>They emit a label, not text, so there is nothing to inject through their output.</li><li>They train on labelled telemetry we already have, and on agent transitions: is this retrieved text imperative? Is this tool call plausible for this task? Is this destination appropriate?</li></ul>
 <table class="data"><thead><tr><th>Tier</th><th>Published examples</th></tr></thead><tbody><tr><td>Encoder classifiers</td><td>LogBERT (log anomaly detection, 2021); SecureBERT (security-domain encoder, 2022); Prompt Guard 2 (86M-parameter injection and jailbreak classifier, 2025)</td></tr><tr><td>Small language models</td><td>Foundation-Sec-8B (a security-specialized 8B model, 2025) as the base for triage and response tasks</td></tr><tr><td>Frontier model</td><td>Investigation of the few cases the funnel selects; labelling data for the tiers below</td></tr></tbody></table>

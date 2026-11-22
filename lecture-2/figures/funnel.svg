@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 350" width="1800" height="350" role="img" aria-label="Match the model to the scale: cheap encoder classifiers at machine scale, small task-trained models at triage, a frontier model and a human for the few investigations" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<title>Match the model to the scale: cheap encoder classifiers at machine scale, small task-trained models at triage, a frontier model and a human for the few investigations</title>
+<style>
+svg{--surface:#ffffff;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--line:#9ca3af;--rule:#cbd5e1;
+--acc:#0284c7;--acc-wash:#e0f2fe;--acc-ink:#075985;--bad:#dc2626;--bad-wash:#fee2e2;--bad-ink:#991b1b;
+--good:#15803d;--good-wash:#dcfce7;--good-ink:#14532d;--on-badge:#ffffff}
+@media (prefers-color-scheme: dark){svg{--surface:#141a2a;--frame:#10172a;--ink:#eef1f8;--ink-2:#c6cddd;--line:#8b96b0;--rule:#344062;
+--acc:#7cc4ff;--acc-wash:#10304a;--acc-ink:#bfe3ff;--bad:#f87171;--bad-wash:#3b1515;--bad-ink:#fecaca;
+--good:#4ade80;--good-wash:#0f2e1c;--good-ink:#bbf7d0;--on-badge:#0b0f1a}}
+.node{fill:var(--surface);stroke:var(--rule);stroke-width:2.5}.node--model{fill:var(--acc-wash);stroke:var(--acc);stroke-width:4}
+.node--bad{fill:var(--bad-wash);stroke:var(--bad);stroke-width:4}.node--good{fill:var(--good-wash);stroke:var(--good);stroke-width:4}
+.frame{fill:var(--frame);stroke:var(--rule);stroke-width:2.5}.env{fill:none;stroke:var(--line);stroke-width:3;stroke-dasharray:14 10}
+.t{fill:var(--ink)}.t2{fill:var(--ink-2)}.t-acc{fill:var(--acc-ink)}.t-bad{fill:var(--bad-ink)}.t-good{fill:var(--good-ink)}.t-badge{fill:var(--on-badge)}
+.edge{fill:none;stroke:var(--line);stroke-width:3;stroke-linecap:round}.edge--strong{stroke:var(--ink-2);stroke-width:4}
+.edge--bad{stroke:var(--bad);stroke-width:4}.edge--good{stroke:var(--good);stroke-width:4}
+.arrow{fill:var(--ink-2)}.arrow--bad{fill:var(--bad)}.arrow--good{fill:var(--good)}
+.badge--bad{fill:var(--bad);stroke:var(--surface);stroke-width:3}.badge--good{fill:var(--good);stroke:var(--surface);stroke-width:3}
+.ctx-bar{fill:var(--rule)}.ring{fill:none;stroke:var(--ink);stroke-width:4}.dot{fill:var(--ink)}
+</style>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
+  <marker id="arrow-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
+  <marker id="arrow-good" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
+</defs>
+<rect x="40" y="10" width="1040" height="96" rx="14" class="node"/>
+<text x="60" y="42" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">machine</text>
+<text x="60" y="72" class="t2" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">millions of events, flows, tool calls, retrieved texts</text>
+<rect x="1240" y="10" width="520" height="96" rx="14" class="node"/>
+<text x="1260" y="42" class="t" font-size="21" font-weight="700" text-anchor="start" dominant-baseline="central">encoder-only classifiers (BERT family)</text>
+<text x="1260" y="72" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">fine-tuned on telemetry; line rate; a label, not a sentence</text>
+<rect x="180" y="126" width="760" height="96" rx="14" class="node"/>
+<text x="200" y="158" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">triage</text>
+<text x="200" y="188" class="t2" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">thousands of candidates</text>
+<rect x="1240" y="126" width="520" height="96" rx="14" class="node"/>
+<text x="1260" y="158" class="t" font-size="21" font-weight="700" text-anchor="start" dominant-baseline="central">small language models, 1–8B</text>
+<text x="1260" y="188" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">trained for the task: summarize, correlate, propose</text>
+<path d="M560 106V126" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
+<rect x="320" y="242" width="480" height="96" rx="14" class="node"/>
+<text x="340" y="274" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">investigation</text>
+<text x="340" y="304" class="t2" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">a few consequential cases</text>
+<rect x="1240" y="242" width="520" height="96" rx="14" class="node node--model"/>
+<text x="1260" y="274" class="t-acc" font-size="21" font-weight="700" text-anchor="start" dominant-baseline="central">a frontier model — and a human</text>
+<text x="1260" y="304" class="t-acc" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">for the few cases the funnel selects</text>
+<path d="M560 222V242" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
+</svg>

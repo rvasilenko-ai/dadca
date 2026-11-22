@@ -7,14 +7,7 @@
 
 A frontier model on every event is not affordable, and not needed. Match the model to the scale.
 
-```text
- scale          volume per day                     the model that can afford it
- machine        millions of events, flows,         encoder-only classifiers (BERT family):
-                tool calls, retrieved texts        fine-tuned on product telemetry; line rate; a label, not a sentence
- triage         thousands of candidates            small language models, 1–8B, trained for the task:
-                                                   summarize, correlate, propose a bounded action
- investigation  a few consequential cases          a frontier model — and a human
-```
+![Match the model to the scale, as a funnel: encoder-only classifiers at machine scale (millions of events, flows, tool calls, retrieved texts), small 1–8B language models trained for the task at triage (thousands of candidates), and a frontier model with a human for the few consequential investigations](../figures/funnel.svg)
 
 Why encoders at the bottom:
 

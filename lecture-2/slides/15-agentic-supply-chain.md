@@ -7,19 +7,7 @@
 
 Arrow ④ on the previous slide, as a supply chain. The software one is familiar; the agent adds every input it will later read as instructions.
 
-Traditional focus:
-
-`source -> dependencies -> build -> artifact -> deployment`
-
-Agentic additions:
-
-- Repository instructions and Markdown
-- Issues, comments, and retrieved documents
-- Agent skills, plugins, and tool descriptions
-- Model and policy configuration
-- Memory and retrieved context
-- Credentials and delegated permissions
-- Approval interfaces and generated diffs
+![The software supply chain — source, dependencies, build, artifact, deployment — with the inputs an agent also reads as instructions at run time: repository instructions and Markdown, issues and retrieved documents, skills and tool descriptions, model and policy configuration, memory and retrieved context, credentials, and approval interfaces](../figures/supply-chain.svg)
 
 ## Speaker notes
 
