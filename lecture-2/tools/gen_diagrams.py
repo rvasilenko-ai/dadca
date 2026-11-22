@@ -70,7 +70,7 @@ def harness(attack: bool):
     s += tile(R, rows[1], RW, TH, "Objective and instructions", ["the task and its rules"]) + '</g>\n'
     # 2 tools + tool servers
     s += '<g data-build="2">\n' + edge("M660 150L715 300") + edge("M260 150H328", arrow=True, red=attack)
-    s += tile(L, rows[1], LW, TH, "Tools, skills, plugins", ["poisoned skill,", "injected tool description"] if attack else ["how it acts"], bad=attack)
+    s += tile(L, rows[1], LW, TH, "Tools, skills, plugins", ["poisoned skill or hook,", "injected tool description"] if attack else ["how it acts; its config and hooks"], bad=attack)
     s += tile(40, rows[1], 220, TH, "Tool servers", ["compromised server,", "supply chain"] if attack else ["MCP, marketplaces"], bad=attack, title_size=24, sub_size=18)
     if attack: s += badge(L, rows[1], 1) + badge(40, rows[1], 4)
     s += '</g>\n'

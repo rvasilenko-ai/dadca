@@ -1,6 +1,6 @@
-# Slide 28 — A map of work still to be done
+# Slide 29 — A map of work still to be done
 
-**Timing:** 82–90 minutes  
+**Timing:** 83–90 minutes  
 **Module:** Defense and research
 
 ## On-slide content

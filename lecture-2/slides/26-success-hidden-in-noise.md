@@ -1,6 +1,6 @@
-# Slide 25 — Success hidden inside noise
+# Slide 26 — Success hidden inside noise
 
-**Timing:** 70–74 minutes  
+**Timing:** 73–77 minutes  
 **Module:** Defense and research
 
 ## On-slide content
@@ -19,6 +19,8 @@ Detection questions:
 - Which boundary crossing changes severity?
 - When is confidence high enough to interrupt?
 
+> The attacker's side of the same coin, GTIG, November 2026: autonomous frameworks currently "trade stealth for velocity" — unrestricted autonomous execution "generates forensic traffic, relies on recognizable identifiers, and leaves behind distinct code-level traces." The noise is there. The question is whether the defender connects it.
+
 ## Speaker notes
 
 Hugging Face reports that several security layers produced initial signals and that an AI-based security stack correlated them, but the system did not assign sufficient criticality to trigger the on-call team promptly.
@@ -32,4 +34,5 @@ This separates detection from decision and response. The organization may observ
 ## Sources
 
 - [Hugging Face technical timeline](https://huggingface.co/blog/agent-intrusion-technical-timeline)
+- [Google Threat Intelligence Group, GTIG AI Threat Tracker: Agentic Threat Activity Crosses a Significant Threshold (16 November 2026)](https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold)
 

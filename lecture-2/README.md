@@ -25,7 +25,7 @@ Students should be able to:
 2. Define prompt injection and jailbreaking and keep them apart; explain injection as the code/data confusion of classic software reborn in text, and why it has no clean structural fix.
 3. Distinguish attacks on the model from attacks on the harness: tools, skills, memory, retrieval, and tool servers.
 4. Contrast the two ways an agent becomes an attacker — an agent the attacker owns, and a trusted agent hijacked through untrusted context — by location, authority, observability, and where guardrails can live.
-5. Map the real cases (the autonomous intrusion, AI-orchestrated campaigns, agent-built malware, ForcedLeak) onto that framework.
+5. Map the real cases — the autonomous intrusion, AI-orchestrated campaigns, agent-built malware, autonomous exploitation frameworks, LLMjacking, ForcedLeak, the poisoned coding-agent harness — onto that framework.
 6. Identify research problems in agent-trajectory observability, authorization, incident correlation, supply-chain security, and bounded response.
 
 ## Module schedule
@@ -37,25 +37,26 @@ Students should be able to:
 | 30–39 | From model to agent: the harness, the loop, the attack surface | 12–14 |
 | 39–42 | The agent becomes an attacker: two cases | 15 |
 | 42–53 | Case A: an agent the attacker owns | 16–18 |
-| 53–62 | Case B: a trusted agent hijacked | 19–21 |
-| 62–70 | The two cases compared | 22–24 |
-| 70–90 | Defense and research | 25–28 |
+| 53–65 | Case B: a trusted agent hijacked | 19–22 |
+| 65–73 | The two cases compared | 23–25 |
+| 73–90 | Defense and research | 26–29 |
 
 ## Primary cases
 
 ### Case A — an agent the attacker owns
 
-The July 2026 Hugging Face technical timeline describes an autonomous agent operating during an OpenAI cyber-capability evaluation. The reconstructed campaign crossed several trust boundaries, generated roughly 17,600 recovered actions, and required AI-assisted defensive reconstruction. Supporting cases, kept short: the Anthropic AI-orchestrated espionage campaign (November 2025), agent-assisted extortion (August 2025), and the file-based implants NIK C2 and VOLTA that embed an LLM call (Talos, October 2026).
+The July 2026 Hugging Face technical timeline describes an autonomous agent operating during an OpenAI cyber-capability evaluation. The reconstructed campaign crossed several trust boundaries, generated roughly 17,600 recovered actions, and required AI-assisted defensive reconstruction. Supporting cases, kept short: the Anthropic AI-orchestrated espionage campaign (November 2025), agent-assisted extortion (August 2025), and the file-based implants NIK C2 and VOLTA that embed an LLM call (Talos, October 2026). Google's threat-intelligence tracker of 16 November 2026 adds the top and bottom of the ladder: attacker-operated autonomous exploitation (exploit_agent), open-source multi-agent frameworks adopted for intrusions (CAIRN, PentAGI), and LLMjacking as the economy around stolen model access.
 
 ### Case B — a trusted agent hijacked
 
-ForcedLeak was a disclosed and demonstrated vulnerability chain in Salesforce Agentforce. Attacker-controlled instructions persisted in a CRM lead, were later retrieved during an employee's legitimate interaction with the agent, and could cause sensitive CRM data to leave through crafted image requests. A real production vulnerability and attack demonstration, not a publicly confirmed customer breach. SearchLeak (Microsoft 365 Copilot) is cited briefly as the same pattern.
+ForcedLeak was a disclosed and demonstrated vulnerability chain in Salesforce Agentforce. Attacker-controlled instructions persisted in a CRM lead, were later retrieved during an employee's legitimate interaction with the agent, and could cause sensitive CRM data to leave through crafted image requests. A real production vulnerability and attack demonstration, not a publicly confirmed customer breach. SearchLeak (Microsoft 365 Copilot) is cited briefly as the same pattern. MIDNIGHT NEPTUNE (GTIG, November 2026) is the second route into Case B: a suspected DPRK cluster edited `.claude/settings.json` in internal repositories so that starting Claude Code downloaded the SOMBERMEME backdoor — the trusted coding agent's harness poisoned, with a classic artifact at the end.
 
 ## Source boundaries
 
 - Slides label facts attributed to the Hugging Face, OpenAI, Anthropic, Talos, and ForcedLeak reports.
 - The adversarial-ML history slides (2–7) cite at least one primary paper per attack; every citation was checked against the arXiv API or Crossref on 2026-11-22, and the quoted figures (1% of SpamBayes training mail, the stop-sign sticker, the GPT-2 extraction) come from the papers' own abstracts or text.
 - Interpretations about the code/data parallel, optimization, noise, stealth, and future malware definitions are presented as lecture arguments or research hypotheses.
+- GTIG's November 2026 findings (the first fully automated exploitation, the LLMjacking figures, MIDNIGHT NEPTUNE) are a vendor's own observations; slides attribute them and keep the attribution "suspected."
 - Incident mechanics remain conceptual; slides do not reproduce payloads or exploit code.
 - `figures/` holds figures reproduced from the cited papers (arXiv sources and the authors' PDFs) for teaching, each captioned with its paper; they stay under the papers' copyright and are not relicensed with this repository.
 - `figures/*.svg` are the lecture's own diagrams (harness, agent loop, attack surface), generated by `tools/gen_diagrams.py`; their groups carry `data-build` steps for a stepped deck build.
@@ -79,14 +80,15 @@ ForcedLeak was a disclosed and demonstrated vulnerability chain in Salesforce Ag
 15. [The agent becomes an attacker, two ways](slides/15-agent-becomes-attacker-two-ways.md)
 16. [Case A: an agent the attacker owns](slides/16-case-a-attacker-owned-agent.md)
 17. [Approximately 17,600 recovered actions](slides/17-seventeen-thousand-actions.md)
-18. [Case A beyond one incident](slides/18-case-a-beyond-one-incident.md)
+18. [Case A is a ladder of autonomy](slides/18-case-a-ladder-of-autonomy.md)
 19. [Case B: The trusted enterprise agent](slides/19-forcedleak-enterprise-agent.md)
 20. [ForcedLeak: the attack path](slides/20-forcedleak-attack-path.md)
 21. [Dormant instructions, live authority](slides/21-dormant-instructions-live-authority.md)
-22. [Audience question: what is different?](slides/22-compare-before-reveal.md)
-23. [Defense depends on who controls the agent](slides/23-defense-depends-on-agent-location.md)
-24. [Is a compromised agent malware?](slides/24-is-agent-malware.md)
-25. [Success hidden inside noise](slides/25-success-hidden-in-noise.md)
-26. [The agentic supply chain](slides/26-agentic-supply-chain.md)
-27. [Bounded autonomous response](slides/27-bounded-autonomous-response.md)
-28. [A map of work still to be done](slides/28-research-map-and-close.md)
+22. [Case B, second route: the poisoned harness](slides/22-case-b-poisoned-harness.md)
+23. [Audience question: what is different?](slides/23-compare-before-reveal.md)
+24. [Defense depends on who controls the agent](slides/24-defense-depends-on-agent-location.md)
+25. [Is a compromised agent malware?](slides/25-is-agent-malware.md)
+26. [Success hidden inside noise](slides/26-success-hidden-in-noise.md)
+27. [The agentic supply chain](slides/27-agentic-supply-chain.md)
+28. [Bounded autonomous response](slides/28-bounded-autonomous-response.md)
+29. [A map of work still to be done](slides/29-research-map-and-close.md)

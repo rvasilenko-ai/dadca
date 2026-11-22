@@ -14,7 +14,7 @@ An agent is a model plus a harness. The model is one component; the harness is t
 Build, one step per click:
 
 0. The same picture as two slides ago. The model stays unchanged throughout.
-1. ① Tools, skills, plugins: a poisoned skill, or a tool description carrying injection, invoked in good faith.
+1. ① Tools, skills, plugins, hooks: a poisoned skill, a tool description carrying injection, or a settings hook that runs when the agent starts — invoked in good faith.
 2. ② Retrieval: instructions planted in a document, mail or record the agent will fetch.
 3. ③ Memory and context: malicious context persisted, then replayed on a later, unrelated task.
 4. ④ Tool servers: a compromised server in the agent's supply chain.
@@ -23,7 +23,7 @@ Build, one step per click:
 
 | Harness component | How it is attacked |
 | --- | --- |
-| Tools, skills, plugins | A poisoned or hijacked skill; a tool whose description carries injection |
+| Tools, skills, plugins, hooks | A poisoned or hijacked skill; a tool whose description carries injection; a configuration hook that runs a command when the agent starts |
 | Retrieval (RAG) | Instructions planted in the documents the agent will fetch |
 | Memory and context | Malicious context persisted and replayed later |
 | Tool servers (MCP) | A compromised server in the agent's supply chain |

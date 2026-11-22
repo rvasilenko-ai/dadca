@@ -33,7 +33,7 @@ Avoid insisting on one label. Ask what each label helps defenders observe, preve
 
 ## Transition
 
-“We have now seen two agents produce attacker-desired effects. Before naming the difference, compare them as defenders.”
+“ForcedLeak needed no file. The second way into Case B ends with a very familiar one.”
 
 ## Sources
 
