@@ -1,6 +1,6 @@
-# Slide 21 — Audience question: what is different?
+# Slide 22 — Audience question: what is different?
 
-**Timing:** 61–63 minutes  
+**Timing:** 62–64 minutes  
 **Module:** The two cases compared
 
 ## On-slide content

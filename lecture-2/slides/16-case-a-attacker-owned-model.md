@@ -1,6 +1,6 @@
-# Slide 15 — Case A: a malicious model the attacker owns
+# Slide 16 — Case A: a malicious model the attacker owns
 
-**Timing:** 41–45 minutes  
+**Timing:** 42–46 minutes  
 **Module:** Case A: a malicious model the attacker owns
 
 ## On-slide content

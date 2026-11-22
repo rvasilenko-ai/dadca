@@ -1,4 +1,4 @@
-# Slide 25 — The agentic supply chain
+# Slide 26 — The agentic supply chain
 
 **Timing:** 74–78 minutes  
 **Module:** Defense and research

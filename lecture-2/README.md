@@ -4,7 +4,7 @@
 **Audience:** Master's and PhD cybersecurity students  
 **Central question:** What changes when reasoning, tool use, and persistent trial-and-error become cheap?
 
-**Framing beat:** offensive capability diffuses from the few to the many; the 2017 Shadow Brokers spill-over (EternalBlue, then NotPetya) is the reference case. This lecture is that pattern's current instance: frontier AI capability, released commercially and as open weights, reaching everyone and lowering the skill floor, with the caveat that the diffusion is gradual and the offensive economy is not yet settled. The lecture stands alone and no slide refers to another lecture. If the same audience attended the malware lecture, the presenter can call back to its closing pattern at slide 17; if not, the one sentence above is enough.
+**Framing beat:** offensive capability diffuses from the few to the many; the 2017 Shadow Brokers spill-over (EternalBlue, then NotPetya) is the reference case. This lecture is that pattern's current instance: frontier AI capability, released commercially and as open weights, reaching everyone and lowering the skill floor, with the caveat that the diffusion is gradual and the offensive economy is not yet settled. The lecture stands alone and no slide refers to another lecture. If the same audience attended the malware lecture, the presenter can call back to its closing pattern at slide 18; if not, the one sentence above is enough.
 
 ## The spine
 
@@ -22,7 +22,7 @@ Standalone takeaway:
 Students should be able to:
 
 1. Trace adversarial machine learning as one lineage — evasion, poisoning and backdoors, model extraction, membership inference and inversion — from spam-filter attacks in 2004 to prompt injection of LLMs, and sketch how each attack works.
-2. Explain prompt injection as the code/data confusion of classic software reborn in text, and why it has no clean structural fix.
+2. Define prompt injection and jailbreaking and keep them apart; explain injection as the code/data confusion of classic software reborn in text, and why it has no clean structural fix.
 3. Distinguish attacks on the model from attacks on the harness: tools, skills, memory, retrieval, and tool servers.
 4. Contrast the two ways a model becomes an attacker — a malicious model the attacker owns, and a trusted model hijacked through untrusted context — by location, authority, observability, and where guardrails can live.
 5. Map the real cases (the autonomous intrusion, AI-orchestrated campaigns, agent-built malware, ForcedLeak) onto that framework.
@@ -33,13 +33,13 @@ Students should be able to:
 | Time | Module | Slides |
 | --- | --- | --- |
 | 0–2 | Opening | 1 |
-| 2–28 | From adversarial ML to attacks on LLMs | 2–10 |
-| 28–38 | From model to agent: the harness, the loop, the attack surface | 11–13 |
-| 38–41 | The model becomes an attacker: two cases | 14 |
-| 41–52 | Case A: a malicious model the attacker owns | 15–17 |
-| 52–61 | Case B: a compromised trusted model | 18–20 |
-| 61–70 | The two cases compared | 21–23 |
-| 70–90 | Defense and research | 24–27 |
+| 2–30 | From adversarial ML to attacks on LLMs | 2–11 |
+| 30–39 | From model to agent: the harness, the loop, the attack surface | 12–14 |
+| 39–42 | The model becomes an attacker: two cases | 15 |
+| 42–53 | Case A: a malicious model the attacker owns | 16–18 |
+| 53–62 | Case B: a compromised trusted model | 19–21 |
+| 62–70 | The two cases compared | 22–24 |
+| 70–90 | Defense and research | 25–28 |
 
 ## Primary cases
 
@@ -69,22 +69,23 @@ ForcedLeak was a disclosed and demonstrated vulnerability chain in Salesforce Ag
 6. [...and it reached malware detection](slides/06-adversarial-ml-reaches-malware.md)
 7. [Membership inference and inversion: what the model remembers](slides/07-membership-inference-and-inversion.md)
 8. [Code and data, instructions and context](slides/08-code-data-instructions-context.md)
-9. [The shape of LLM attacks](slides/09-shape-of-llm-attacks.md)
-10. [Why there is no NX bit for text](slides/10-no-nx-bit-for-text.md)
-11. [The harness: what surrounds the model](slides/11-harness-and-authority.md)
-12. [From model to agent: the loop](slides/12-agent-loop.md)
-13. [Attacks on the harness](slides/13-attacks-on-the-harness.md)
-14. [The model becomes an attacker, two ways](slides/14-model-becomes-attacker-two-ways.md)
-15. [Case A: a malicious model the attacker owns](slides/15-case-a-attacker-owned-model.md)
-16. [Approximately 17,600 recovered actions](slides/16-seventeen-thousand-actions.md)
-17. [Case A beyond one incident](slides/17-case-a-beyond-one-incident.md)
-18. [Case B: The trusted enterprise agent](slides/18-forcedleak-enterprise-agent.md)
-19. [ForcedLeak: the attack path](slides/19-forcedleak-attack-path.md)
-20. [Dormant instructions, live authority](slides/20-dormant-instructions-live-authority.md)
-21. [Audience question: what is different?](slides/21-compare-before-reveal.md)
-22. [Defense depends on who controls the agent](slides/22-defense-depends-on-agent-location.md)
-23. [Is a compromised agent malware?](slides/23-is-agent-malware.md)
-24. [Success hidden inside noise](slides/24-success-hidden-in-noise.md)
-25. [The agentic supply chain](slides/25-agentic-supply-chain.md)
-26. [Bounded autonomous response](slides/26-bounded-autonomous-response.md)
-27. [A map of work still to be done](slides/27-research-map-and-close.md)
+9. [Prompt injection and jailbreak are not the same thing](slides/09-prompt-injection-vs-jailbreak.md)
+10. [The shape of LLM attacks](slides/10-shape-of-llm-attacks.md)
+11. [Why there is no NX bit for text](slides/11-no-nx-bit-for-text.md)
+12. [The harness: what surrounds the model](slides/12-harness-and-authority.md)
+13. [From model to agent: the loop](slides/13-agent-loop.md)
+14. [Attacks on the harness](slides/14-attacks-on-the-harness.md)
+15. [The model becomes an attacker, two ways](slides/15-model-becomes-attacker-two-ways.md)
+16. [Case A: a malicious model the attacker owns](slides/16-case-a-attacker-owned-model.md)
+17. [Approximately 17,600 recovered actions](slides/17-seventeen-thousand-actions.md)
+18. [Case A beyond one incident](slides/18-case-a-beyond-one-incident.md)
+19. [Case B: The trusted enterprise agent](slides/19-forcedleak-enterprise-agent.md)
+20. [ForcedLeak: the attack path](slides/20-forcedleak-attack-path.md)
+21. [Dormant instructions, live authority](slides/21-dormant-instructions-live-authority.md)
+22. [Audience question: what is different?](slides/22-compare-before-reveal.md)
+23. [Defense depends on who controls the agent](slides/23-defense-depends-on-agent-location.md)
+24. [Is a compromised agent malware?](slides/24-is-agent-malware.md)
+25. [Success hidden inside noise](slides/25-success-hidden-in-noise.md)
+26. [The agentic supply chain](slides/26-agentic-supply-chain.md)
+27. [Bounded autonomous response](slides/27-bounded-autonomous-response.md)
+28. [A map of work still to be done](slides/28-research-map-and-close.md)

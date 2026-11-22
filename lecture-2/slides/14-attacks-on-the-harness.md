@@ -1,6 +1,6 @@
-# Slide 13 — Attacks on the harness
+# Slide 14 — Attacks on the harness
 
-**Timing:** 34–38 minutes  
+**Timing:** 36–39 minutes  
 **Module:** From model to agent
 
 ## On-slide content

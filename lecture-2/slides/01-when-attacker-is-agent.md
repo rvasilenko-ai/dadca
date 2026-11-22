@@ -13,9 +13,9 @@
 
 Introduce the lecture as an investigation of systems, not merely models. The case is unusual, but the individual weaknesses and defensive problems are familiar.
 
-No prior lecture is assumed. The lecture opens with history: attacking learned models is a decade-old discipline, LLMs are its newest target, and agents are what turn a manipulated model into consequences. The subtitle's question is answered twice — structurally at slide 12, when the loop is defined, and empirically at slide 16, where volume substitutes for elegance.
+No prior lecture is assumed. The lecture opens with history: attacking learned models is a decade-old discipline, LLMs are its newest target, and agents are what turn a manipulated model into consequences. The subtitle's question is answered twice — structurally at slide 13, when the loop is defined, and empirically at slide 17, where volume substitutes for elegance.
 
-The title says "agent." Hold the word. Slides 11 to 13 build its precise meaning — a model, plus a harness, run in a loop — and keep it distinct from a bare model; until then the lecture says "model."
+The title says "agent." Hold the word. Slides 12 to 14 build its precise meaning — a model, plus a harness, run in a loop — and keep it distinct from a bare model; until then the lecture says "model."
 
 ## Transition
 

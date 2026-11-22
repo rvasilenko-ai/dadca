@@ -1,6 +1,6 @@
 # Slide 8 — Code and data, instructions and context
 
-**Timing:** 18–23 minutes  
+**Timing:** 18–22 minutes  
 **Module:** From adversarial ML to attacks on LLMs
 
 ## On-slide content
@@ -22,4 +22,4 @@ Be precise, because students will push on it: this is an analogy, not an identit
 
 ## Transition
 
-“If the channel is ambiguous, the attack arrives in two forms.”
+“If the channel is ambiguous, what exactly is the failure? Two words get used for it, and they are not the same thing.”

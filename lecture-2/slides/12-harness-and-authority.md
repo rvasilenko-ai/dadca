@@ -1,6 +1,6 @@
-# Slide 11 — The harness: what surrounds the model
+# Slide 12 — The harness: what surrounds the model
 
-**Timing:** 28–31 minutes  
+**Timing:** 30–33 minutes  
 **Module:** From model to agent
 
 ## On-slide content

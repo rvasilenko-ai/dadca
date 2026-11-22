@@ -1,6 +1,6 @@
-# Slide 18 — Case B: The trusted enterprise agent
+# Slide 19 — Case B: The trusted enterprise agent
 
-**Timing:** 52–55 minutes  
+**Timing:** 53–56 minutes  
 **Module:** Case B: a compromised trusted model
 
 ## On-slide content
