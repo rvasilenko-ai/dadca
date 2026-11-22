@@ -1,4 +1,4 @@
-/* Lecture 2 deck runtime: scales the stage, steps builds, routes #/s12/3, and shows presenter notes.
+/* Shared deck runtime for the lectures: scales the stage, steps builds, routes #/s12/3, and shows presenter notes.
    No dependencies. Sections are read from the DOM in order; each carries data-id, data-steps and data-part. */
 (function () {
   'use strict';
@@ -55,7 +55,7 @@
       var id = s.dataset.id + (step ? '/' + step : '');
       if (location.hash !== '#/' + id) history.replaceState(null, '', '#/' + id);
     }
-    document.title = (s.dataset.number ? s.dataset.number + ' · ' : '') + (s.querySelector('.slide-title, .display, .divider-title') || {}).textContent || 'When the Attacker Is an Agent';
+    document.title = (s.dataset.number ? s.dataset.number + ' · ' : '') + ((s.querySelector('.slide-title, .display, .divider-title') || {}).textContent || stage.dataset.title || '');
   }
 
   function next() {
@@ -81,13 +81,13 @@
     i = idx; step = Math.min(stepsOf(slides[i]), st); apply(false);
   }
 
-  function toggleNotes() { notes.hidden = !notes.hidden; try { localStorage.setItem('deck2-notes', notes.hidden ? '0' : '1'); } catch (e) {} fit(); }
+  function toggleNotes() { notes.hidden = !notes.hidden; try { localStorage.setItem('deck-notes', notes.hidden ? '0' : '1'); } catch (e) {} fit(); }
   function toggleTheme() {
     var cur = document.documentElement.getAttribute('data-theme');
     var dark = cur ? cur === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
     var nextTheme = dark ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', nextTheme);
-    try { localStorage.setItem('deck2-theme', nextTheme); } catch (e) {}
+    try { localStorage.setItem('deck-theme', nextTheme); } catch (e) {}
     apply(false);
   }
   function toggleSources() { var d = slides[i].querySelector('details.srcs'); if (d) d.open = !d.open; }
@@ -122,7 +122,7 @@
   window.addEventListener('resize', fit);
   window.addEventListener('hashchange', fromHash);
 
-  try { if (localStorage.getItem('deck2-notes') === '1') notes.hidden = false; } catch (e) {}
+  try { if (localStorage.getItem('deck-notes') === '1') notes.hidden = false; } catch (e) {}
   // ?still turns motion off (screenshots); ?theme=light|dark forces a theme without storing it
   var q = new URLSearchParams(location.search);
   if (q.has('still')) document.documentElement.classList.add('is-still');

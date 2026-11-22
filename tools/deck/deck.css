@@ -1,5 +1,5 @@
-/* Lecture 2 deck. A 1920 x 1080 stage scaled to the window; light by default, dark under [data-theme="dark"].
-   Tokens first, then stage and slide anatomy, then components, then the presenter chrome. */
+/* Shared deck theme for the lectures. A 1920 x 1080 stage scaled to the window; light by default, dark under
+   [data-theme="dark"]. Tokens first, then stage and slide anatomy, then components, then the presenter chrome. */
 
 :root {
   --bg: #f6f7fb; --bg-deep: #e4e8f1; --surface: #ffffff; --surface-2: #eceff6;
@@ -144,6 +144,21 @@ html.is-still .diagram g[data-build], html.is-still .diagram .draw { transition:
 .diagram g[data-build].is-current .node:not(.node--model) { stroke-width: 4.5; }
 .slide--diagram .lead { font-size: var(--fs-small); margin-bottom: 14px; }
 .slide--diagram blockquote.callout { font-size: var(--fs-small); margin-top: 10px; }
+/* figures shared by the lectures: timelines, charts, matrices and strips take the same tokens */
+.diagram .axis { stroke: var(--rule-3); stroke-width: 2; } .diagram .grid { stroke: var(--rule); stroke-width: 1.5; }
+.diagram .lane { fill: var(--surface); stroke: var(--rule); stroke-width: 1; }
+.diagram .band-1 { fill: var(--part-1); fill-opacity: .11; } .diagram .band-2 { fill: var(--part-2); fill-opacity: .11; }
+.diagram .band-3 { fill: var(--part-3); fill-opacity: .11; } .diagram .band-4 { fill: var(--part-4); fill-opacity: .11; }
+.diagram g[data-build].is-current .band-1, .diagram g[data-build].is-current .band-2, .diagram g[data-build].is-current .band-3, .diagram g[data-build].is-current .band-4 { fill-opacity: .3; }
+.diagram .t-part-1 { fill: var(--part-1); } .diagram .t-part-2 { fill: var(--part-2); } .diagram .t-part-3 { fill: var(--part-3); } .diagram .t-part-4 { fill: var(--part-4); }
+.diagram .dot--muted { fill: var(--rule-3); } .diagram .dot--key { fill: var(--accent); } .diagram .dot--anchor { fill: var(--bad); }
+.diagram .bar { fill: var(--accent); fill-opacity: .85; } .diagram .bar--muted { fill: var(--rule-2); } .diagram .bar--bad { fill: var(--bad); fill-opacity: .85; }
+.diagram .line-1 { stroke: var(--part-1); } .diagram .line-2 { stroke: var(--part-2); } .diagram .line-3 { stroke: var(--part-0); } .diagram .line-4 { stroke: var(--part-4); }
+.diagram .line-1, .diagram .line-2, .diagram .line-3, .diagram .line-4 { fill: none; stroke-width: 4; stroke-linejoin: round; stroke-linecap: round; }
+.diagram .pt-1 { fill: var(--part-1); } .diagram .pt-2 { fill: var(--part-2); } .diagram .pt-3 { fill: var(--part-0); } .diagram .pt-4 { fill: var(--part-4); }
+.diagram .cell { fill: var(--surface); stroke: var(--rule-2); stroke-width: 1.5; } .diagram .cell--sub { fill: var(--surface-2); stroke: var(--rule-2); stroke-width: 1.5; }
+.diagram .cell--lit { fill: var(--bad-wash); stroke: var(--bad); stroke-width: 3; } .diagram .colhead { fill: var(--surface-2); stroke: var(--rule-2); stroke-width: 1.5; }
+.diagram .marker { stroke: var(--ink-3); stroke-width: 2; stroke-dasharray: 6 6; }
 
 /* ---- step captions: stacked, one visible ---- */
 .step-captions { position: relative; display: grid; margin-top: 22px; min-height: 2.6em; }
