@@ -394,16 +394,37 @@ def incident_chain():
 
 
 def poisoned_harness():
-    steps = [
-        ("Fake recruiter profile, model-generated photo", True),
-        ('Fake meeting page with a "ClickFix" lure: run this script', True),
-        ("Foothold, then pivot into the internal code repositories", True),
-        ("Edit .claude/settings.json: a hook that runs on startup", True),
-        ("A developer starts the coding agent, as on any morning", False),
-        ("The hook downloads the SOMBERMEME backdoor", True),
-        ("GitHub tokens named after Copilot hide the lateral movement", True),
-    ]
-    return chain_v("MIDNIGHT NEPTUNE path: social engineering gains a foothold, the attacker edits the agent's committed configuration so startup downloads a backdoor, and a developer starting the agent on an ordinary morning runs it", steps)
+    # three columns (the Internet, the organization's repositories, every developer's agent) by three rows
+    cx, tw = (24, 640, 1256), 520
+    fx, fw = (0, 616, 1232), 568
+    ry = (76, 288, 500)
+    mid = [y + ZTH // 2 for y in ry]
+    H = ry[2] + ZTH + 40
+    s = head(1800, H, "MIDNIGHT NEPTUNE path across three zones: on the Internet, a fake recruiter with a model-generated photo "
+                      "and a fake meeting page with a ClickFix lure; inside the organization, a foothold and a pivot into the "
+                      "internal code repositories, where the committed agent settings gain a startup hook; then, for every "
+                      "developer, starting the coding agent on an ordinary morning runs the hook, which downloads the SOMBERMEME "
+                      "backdoor, and GitHub tokens named after Copilot disguise the lateral movement")
+    s += '<g data-build="0">\n' + zframe(fx[0], 12, fw, H - 28, "The Internet — the attacker", dashed=True)
+    s += zframe(fx[1], ry[1] - 64, fw, H - 16 - (ry[1] - 64), "The organization — its repositories")
+    s += zframe(fx[2], 12, fw, H - 28, "Every developer — the coding agent")
+    s += text(fx[0] + fw // 2, mid[2], "red arrow: a trust boundary crossed", 20, 500, "t-bad", "middle")
+    s += ztile(cx[0], ry[0], tw, "A fake recruiter", ["a persona with a model-generated", "photo approaches an employee"], bad=True) + '</g>\n'
+    s += '<g data-build="1">\n' + zarrow(cx[0] + tw // 2, ry[0] + ZTH, cx[0] + tw // 2, ry[1] - 4)
+    s += ztile(cx[0], ry[1], tw, "A fake meeting page", ['a "ClickFix" lure: run this script', "to fix your call"], bad=True) + '</g>\n'
+    s += '<g data-build="2">\n' + zarrow(cx[0] + tw, mid[1], cx[1] - 4, mid[1], red=True)
+    s += ztile(cx[1], ry[1], tw, "Foothold, then pivot", ["the lure runs on an employee's machine;", "the attacker reaches the internal", "code repositories"], bad=True) + '</g>\n'
+    s += '<g data-build="3">\n' + zarrow(cx[1] + tw // 2, ry[1] + ZTH, cx[1] + tw // 2, ry[2] - 4, red=True)
+    s += ztile(cx[1], ry[2], tw, "Edit .claude/settings.json", ["a hook that runs when the coding", "agent starts — committed, so it", "travels with the code"], bad=True) + '</g>\n'
+    s += '<g data-build="4">\n' + ztile(cx[2], ry[0], tw, "A developer starts the agent", ["as on any morning; the project", "settings file configures it"]) + '</g>\n'
+    # the committed hook crosses from the repository into the developer's running agent
+    gap = (fx[1] + fw + fx[2]) // 2
+    s += '<g data-build="5">\n' + zarrow(cx[2] + tw // 2, ry[0] + ZTH, cx[2] + tw // 2, ry[1] - 4)
+    s += edge(f"M{cx[1] + tw} {mid[2]}H{gap}V{mid[1]}H{cx[2] - 4}", arrow=True, red=True)
+    s += ztile(cx[2], ry[1], tw, "The hook runs first", ["it downloads the SOMBERMEME backdoor;", "the agent is the loader"], bad=True) + '</g>\n'
+    s += '<g data-build="6">\n' + zarrow(cx[2] + tw // 2, ry[1] + ZTH, cx[2] + tw // 2, ry[2] - 4, red=True)
+    s += ztile(cx[2], ry[2], tw, "Lateral movement, disguised", ["GitHub tokens named after Copilot", "make it look like tooling"], bad=True) + '</g>\n'
+    return s + '</svg>\n'
 
 
 def glyph(x, y, ch, cls="t2"):

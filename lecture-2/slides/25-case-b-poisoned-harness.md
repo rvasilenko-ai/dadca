@@ -7,7 +7,7 @@
 
 MIDNIGHT NEPTUNE, a suspected DPRK cluster — reported by GTIG, November 2026
 
-![MIDNIGHT NEPTUNE path, step by step: a fake recruiter profile with a model-generated photo; a fake meeting page with a ClickFix lure; a foothold and pivot into the internal code repositories; an edit to .claude/settings.json adding a startup hook; a developer starting the coding agent on an ordinary morning; the hook downloading the SOMBERMEME backdoor; GitHub tokens named after Copilot hiding the lateral movement](../figures/poisoned-harness.svg)
+![MIDNIGHT NEPTUNE path across three zones. On the Internet: a fake recruiter with a model-generated photo, then a fake meeting page with a ClickFix lure. Inside the organization: a foothold and a pivot into the internal code repositories, where the committed agent settings gain a startup hook. For every developer: starting the coding agent on an ordinary morning runs the hook, which downloads the SOMBERMEME backdoor, and GitHub tokens named after Copilot disguise the lateral movement. Red arrows mark the trust boundaries crossed](../figures/poisoned-harness.svg)
 
 Nothing was injected into the agent's context. Its harness was edited — and the settings file is meant to be committed, so one commit reached every developer who opened those repositories.
 
