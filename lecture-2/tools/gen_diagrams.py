@@ -261,24 +261,27 @@ def supply_chain():
 
 
 def funnel():
-    """Match the model to the scale: a static funnel of three tiers, each band narrower, with the model that can afford it."""
-    W, H = 1800, 350
-    s = head(W, H, "Match the model to the scale: cheap encoder classifiers at machine scale, small task-trained models at triage, a frontier model and a human for the few investigations")
-    cx = 560
-    rows = [
-        ("machine", "millions of events, flows, tool calls, retrieved texts", "encoder-only classifiers (BERT family)", "fine-tuned on telemetry; line rate; a label, not a sentence", 1040),
-        ("triage", "thousands of candidates", "small language models, 1–8B", "trained for the task: summarize, correlate, propose", 760),
-        ("investigation", "a few consequential cases", "a frontier model — and a human", "for the few cases the funnel selects", 480),
+    """Match the model to the scale, for both cases: two telemetry inputs feed one funnel of three tiers."""
+    W, H = 1800, 516
+    s = head(W, H, "Match the model to the scale, for both cases. Two inputs — Case A's endpoint, identity and flow events, and "
+                   "Case B's agent transitions — feed one funnel: encoder-only classifiers at machine scale, small task-trained "
+                   "language models at triage, a frontier model and a human for the few investigations")
+    s += '<g data-build="0">\n'
+    s += tile(100, 10, 780, 96, "Case A telemetry", ["endpoint, identity and flow events — hosts, tokens, API calls, connections"], title_size=23, sub_size=19)
+    s += tile(920, 10, 780, 96, "Case B telemetry", ["agent transitions — retrieved texts, tool calls, arguments, destinations"], title_size=23, sub_size=19)
+    s += edge("M490 106V136", strong=True, arrow=True) + edge("M1310 106V136", strong=True, arrow=True) + '</g>\n'
+    bands = [
+        (100, 1600, "machine scale — millions of events, flows, tool calls, retrieved texts",
+         "encoder-only classifiers (BERT family): fine-tuned on telemetry, line rate, a label — not a sentence", False),
+        (350, 1100, "triage — thousands of candidates", "small language models, 1–8B, trained for the task: summarize, correlate, propose", False),
+        (600, 600, "investigation — a few cases", "a frontier model — and a human", True),
     ]
-    y, prev = 10, None
-    for i, (name, vol, mt, ms, w) in enumerate(rows):
-        x = cx - w // 2
-        s += tile(x, y, w, 96, name, [vol], title_size=25, sub_size=19)
-        s += tile(1240, y, 520, 96, mt, [ms], model=(i == 2), title_size=21, sub_size=18)
-        if prev is not None:
-            s += edge(f"M{cx} {prev}V{y}", strong=True, arrow=True)
-        prev = y + 96
-        y += 116
+    y = 140
+    for i, (x, w, t, sub, model) in enumerate(bands):
+        body = edge(f"M900 {y - 30}V{y - 4}", strong=True, arrow=True) if i > 0 else ""
+        body += tile(x, y, w, 100, t, [sub], model=model, title_size=25, sub_size=19)
+        s += f'<g data-build="{i + 1}">\n{body}</g>\n'
+        y += 130
     return s + '</svg>\n'
 
 
@@ -573,19 +576,31 @@ def injection_jailbreak():
 
 
 def case_a_defense():
-    """The attacker's agent acts only through tools, so existing sensors already see it; what must change is the tempo."""
-    W, H = 1800, 340
-    s = head(W, H, "The attacker's agent acts only through tools, so every action lands on an endpoint, an identity or a network flow that EDR, XDR, NDR and identity logs already record; what must change is the tempo, not the sensor")
-    s += '<g data-build="0">\n'
-    s += tile(40, 50, 380, 130, "The attacker's agent", ["acts only through tools"], bad=True, title_size=24, sub_size=20)
-    s += arrow(420, 115, 518, 115)
-    s += tile(520, 50, 470, 130, "Endpoint · identity · flow", ["every action lands here"], title_size=23, sub_size=20)
-    s += arrow(990, 115, 1088, 115, green=True)
-    s += tile(1090, 50, 670, 130, "EDR / XDR / NDR", ["identity logs, flow metadata —", "the sensors we already deploy"], good=True, title_size=26, sub_size=20)
+    """Same sensors, a different arithmetic, so triage changes: three rows, revealed in four builds."""
+    W, H = 1800, 500
+    s = head(W, H, "Case A defense in three rows. Same sensors: EDR and XDR, identity and cloud audit, NDR and flows — the agent "
+                   "cannot act without touching them. A different arithmetic: a human operator issues a few hundred actions a "
+                   "day, a handful clearly malicious; the attacker's agent issued 7,677 on 11 July alone and about 17,600 in "
+                   "all, none clearly malicious on its own — ten to a thousand times more events, each less malicious, "
+                   "meaningful only together. So triage changes: ranking alerts by severity for humans to read gives way to "
+                   "evaluating every event continuously, correlated across sources, with decisions at machine speed")
+    # row A: the sensors we already have
+    s += '<g data-build="0">\n' + text(20, 22, "SAME SENSORS — the agent cannot act without touching them", 21, 700, "t-good")
+    sensors = [("EDR / XDR", "hosts and processes"), ("Identity and cloud audit", "tokens, roles, API calls"), ("NDR and flows", "connections, DNS, egress")]
+    for i, (t, sub) in enumerate(sensors):
+        s += tile(20 + i * 600, 44, 560, 96, t, [sub], good=True, title_size=24, sub_size=19)
     s += '</g>\n'
-    s += '<g data-build="1">\n'
-    s += tile(40, 220, 1720, 96, "What changes is the tempo, not the sensor", ["thousands of ambiguous events · several telemetry systems · changing identities · a few consequential transitions   →   a correlation problem, at machine speed"], title_size=24, sub_size=20)
-    s += '</g>\n'
+    # row B: the arithmetic, then the multiplier between the two tiles
+    s += '<g data-build="1">\n' + text(20, 184, "A DIFFERENT ARITHMETIC", 21, 700, "t-bad")
+    s += tile(20, 204, 700, 122, "A human operator", ["a few hundred actions a day (an estimate);", "a handful of them clearly malicious"], title_size=24, sub_size=19)
+    s += tile(1080, 204, 700, 122, "The attacker's agent", ["7,677 actions on 11 July; ~17,600 in all;", "none clearly malicious on its own"], bad=True, title_size=24, sub_size=19) + '</g>\n'
+    s += '<g data-build="2">\n' + text(900, 246, "×10 to ×1000", 40, 800, "t-bad", "middle")
+    s += text(900, 286, "more events, each less malicious,", 19, 500, "t2", "middle") + text(900, 310, "meaningful only together", 19, 500, "t2", "middle") + '</g>\n'
+    # row C: so triage changes
+    s += '<g data-build="3">\n' + text(20, 370, "SO TRIAGE CHANGES", 21, 700, "t")
+    s += tile(20, 390, 840, 100, "Rank alerts by severity; humans read the top", ["there is no most-malicious event: the attack is the pattern"], bad=True, title_size=23, sub_size=19)
+    s += arrow(860, 440, 938, 440, green=True)
+    s += tile(940, 390, 840, 100, "Evaluate every event, continuously", ["correlate across sources, decide at machine speed — the defender's loop"], good=True, title_size=23, sub_size=19) + '</g>\n'
     return s + "</svg>\n"
 
 

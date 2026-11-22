@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 340" width="1800" height="340" role="img" aria-label="The attacker's agent acts only through tools, so every action lands on an endpoint, an identity or a network flow that EDR, XDR, NDR and identity logs already record; what must change is the tempo, not the sensor" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>The attacker's agent acts only through tools, so every action lands on an endpoint, an identity or a network flow that EDR, XDR, NDR and identity logs already record; what must change is the tempo, not the sensor</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 500" width="1800" height="500" role="img" aria-label="Case A defense in three rows. Same sensors: EDR and XDR, identity and cloud audit, NDR and flows — the agent cannot act without touching them. A different arithmetic: a human operator issues a few hundred actions a day, a handful clearly malicious; the attacker's agent issued 7,677 on 11 July alone and about 17,600 in all, none clearly malicious on its own — ten to a thousand times more events, each less malicious, meaningful only together. So triage changes: ranking alerts by severity for humans to read gives way to evaluating every event continuously, correlated across sources, with decisions at machine speed" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<title>Case A defense in three rows. Same sensors: EDR and XDR, identity and cloud audit, NDR and flows — the agent cannot act without touching them. A different arithmetic: a human operator issues a few hundred actions a day, a handful clearly malicious; the attacker's agent issued 7,677 on 11 July alone and about 17,600 in all, none clearly malicious on its own — ten to a thousand times more events, each less malicious, meaningful only together. So triage changes: ranking alerts by severity for humans to read gives way to evaluating every event continuously, correlated across sources, with decisions at machine speed</title>
 <style>
 svg{--surface:#ffffff;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--line:#9ca3af;--rule:#cbd5e1;
 --acc:#0284c7;--acc-wash:#e0f2fe;--acc-ink:#075985;--bad:#dc2626;--bad-wash:#fee2e2;--bad-ink:#991b1b;
@@ -23,22 +23,41 @@ svg{--surface:#ffffff;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--line:#9ca3
   <marker id="arrow-good" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
 </defs>
 <g data-build="0">
-<rect x="40" y="50" width="380" height="130" rx="14" class="node node--bad"/>
-<text x="60" y="82" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">The attacker's agent</text>
-<text x="60" y="112" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">acts only through tools</text>
-<path d="M420 115L518 115" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
-<rect x="520" y="50" width="470" height="130" rx="14" class="node"/>
-<text x="540" y="82" class="t" font-size="23" font-weight="700" text-anchor="start" dominant-baseline="central">Endpoint · identity · flow</text>
-<text x="540" y="112" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">every action lands here</text>
-<path d="M990 115L1088 115" class="edge edge--good draw" pathLength="1" marker-end="url(#arrow-good)"/>
-<rect x="1090" y="50" width="670" height="130" rx="14" class="node node--good"/>
-<text x="1110" y="82" class="t" font-size="26" font-weight="700" text-anchor="start" dominant-baseline="central">EDR / XDR / NDR</text>
-<text x="1110" y="112" class="t-good" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">identity logs, flow metadata —</text>
-<text x="1110" y="138" class="t-good" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">the sensors we already deploy</text>
+<text x="20" y="22" class="t-good" font-size="21" font-weight="700" text-anchor="start" dominant-baseline="central">SAME SENSORS — the agent cannot act without touching them</text>
+<rect x="20" y="44" width="560" height="96" rx="14" class="node node--good"/>
+<text x="40" y="76" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">EDR / XDR</text>
+<text x="40" y="106" class="t-good" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">hosts and processes</text>
+<rect x="620" y="44" width="560" height="96" rx="14" class="node node--good"/>
+<text x="640" y="76" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">Identity and cloud audit</text>
+<text x="640" y="106" class="t-good" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">tokens, roles, API calls</text>
+<rect x="1220" y="44" width="560" height="96" rx="14" class="node node--good"/>
+<text x="1240" y="76" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">NDR and flows</text>
+<text x="1240" y="106" class="t-good" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">connections, DNS, egress</text>
 </g>
 <g data-build="1">
-<rect x="40" y="220" width="1720" height="96" rx="14" class="node"/>
-<text x="60" y="252" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">What changes is the tempo, not the sensor</text>
-<text x="60" y="282" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">thousands of ambiguous events · several telemetry systems · changing identities · a few consequential transitions   →   a correlation problem, at machine speed</text>
+<text x="20" y="184" class="t-bad" font-size="21" font-weight="700" text-anchor="start" dominant-baseline="central">A DIFFERENT ARITHMETIC</text>
+<rect x="20" y="204" width="700" height="122" rx="14" class="node"/>
+<text x="40" y="236" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">A human operator</text>
+<text x="40" y="266" class="t2" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">a few hundred actions a day (an estimate);</text>
+<text x="40" y="292" class="t2" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">a handful of them clearly malicious</text>
+<rect x="1080" y="204" width="700" height="122" rx="14" class="node node--bad"/>
+<text x="1100" y="236" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">The attacker's agent</text>
+<text x="1100" y="266" class="t-bad" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">7,677 actions on 11 July; ~17,600 in all;</text>
+<text x="1100" y="292" class="t-bad" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">none clearly malicious on its own</text>
+</g>
+<g data-build="2">
+<text x="900" y="246" class="t-bad" font-size="40" font-weight="800" text-anchor="middle" dominant-baseline="central">×10 to ×1000</text>
+<text x="900" y="286" class="t2" font-size="19" font-weight="500" text-anchor="middle" dominant-baseline="central">more events, each less malicious,</text>
+<text x="900" y="310" class="t2" font-size="19" font-weight="500" text-anchor="middle" dominant-baseline="central">meaningful only together</text>
+</g>
+<g data-build="3">
+<text x="20" y="370" class="t" font-size="21" font-weight="700" text-anchor="start" dominant-baseline="central">SO TRIAGE CHANGES</text>
+<rect x="20" y="390" width="840" height="100" rx="14" class="node node--bad"/>
+<text x="40" y="422" class="t" font-size="23" font-weight="700" text-anchor="start" dominant-baseline="central">Rank alerts by severity; humans read the top</text>
+<text x="40" y="452" class="t-bad" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">there is no most-malicious event: the attack is the pattern</text>
+<path d="M860 440L938 440" class="edge edge--good draw" pathLength="1" marker-end="url(#arrow-good)"/>
+<rect x="940" y="390" width="840" height="100" rx="14" class="node node--good"/>
+<text x="960" y="422" class="t" font-size="23" font-weight="700" text-anchor="start" dominant-baseline="central">Evaluate every event, continuously</text>
+<text x="960" y="452" class="t-good" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">correlate across sources, decide at machine speed — the defender's loop</text>
 </g>
 </svg>

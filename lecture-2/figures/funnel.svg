@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 350" width="1800" height="350" role="img" aria-label="Match the model to the scale: cheap encoder classifiers at machine scale, small task-trained models at triage, a frontier model and a human for the few investigations" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>Match the model to the scale: cheap encoder classifiers at machine scale, small task-trained models at triage, a frontier model and a human for the few investigations</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 516" width="1800" height="516" role="img" aria-label="Match the model to the scale, for both cases. Two inputs — Case A's endpoint, identity and flow events, and Case B's agent transitions — feed one funnel: encoder-only classifiers at machine scale, small task-trained language models at triage, a frontier model and a human for the few investigations" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<title>Match the model to the scale, for both cases. Two inputs — Case A's endpoint, identity and flow events, and Case B's agent transitions — feed one funnel: encoder-only classifiers at machine scale, small task-trained language models at triage, a frontier model and a human for the few investigations</title>
 <style>
 svg{--surface:#ffffff;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--line:#9ca3af;--rule:#cbd5e1;
 --acc:#0284c7;--acc-wash:#e0f2fe;--acc-ink:#075985;--bad:#dc2626;--bad-wash:#fee2e2;--bad-ink:#991b1b;
@@ -22,24 +22,31 @@ svg{--surface:#ffffff;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--line:#9ca3
   <marker id="arrow-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
   <marker id="arrow-good" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
 </defs>
-<rect x="40" y="10" width="1040" height="96" rx="14" class="node"/>
-<text x="60" y="42" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">machine</text>
-<text x="60" y="72" class="t2" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">millions of events, flows, tool calls, retrieved texts</text>
-<rect x="1240" y="10" width="520" height="96" rx="14" class="node"/>
-<text x="1260" y="42" class="t" font-size="21" font-weight="700" text-anchor="start" dominant-baseline="central">encoder-only classifiers (BERT family)</text>
-<text x="1260" y="72" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">fine-tuned on telemetry; line rate; a label, not a sentence</text>
-<rect x="180" y="126" width="760" height="96" rx="14" class="node"/>
-<text x="200" y="158" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">triage</text>
-<text x="200" y="188" class="t2" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">thousands of candidates</text>
-<rect x="1240" y="126" width="520" height="96" rx="14" class="node"/>
-<text x="1260" y="158" class="t" font-size="21" font-weight="700" text-anchor="start" dominant-baseline="central">small language models, 1–8B</text>
-<text x="1260" y="188" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">trained for the task: summarize, correlate, propose</text>
-<path d="M560 106V126" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
-<rect x="320" y="242" width="480" height="96" rx="14" class="node"/>
-<text x="340" y="274" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">investigation</text>
-<text x="340" y="304" class="t2" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">a few consequential cases</text>
-<rect x="1240" y="242" width="520" height="96" rx="14" class="node node--model"/>
-<text x="1260" y="274" class="t-acc" font-size="21" font-weight="700" text-anchor="start" dominant-baseline="central">a frontier model — and a human</text>
-<text x="1260" y="304" class="t-acc" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">for the few cases the funnel selects</text>
-<path d="M560 222V242" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
+<g data-build="0">
+<rect x="100" y="10" width="780" height="96" rx="14" class="node"/>
+<text x="120" y="42" class="t" font-size="23" font-weight="700" text-anchor="start" dominant-baseline="central">Case A telemetry</text>
+<text x="120" y="72" class="t2" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">endpoint, identity and flow events — hosts, tokens, API calls, connections</text>
+<rect x="920" y="10" width="780" height="96" rx="14" class="node"/>
+<text x="940" y="42" class="t" font-size="23" font-weight="700" text-anchor="start" dominant-baseline="central">Case B telemetry</text>
+<text x="940" y="72" class="t2" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">agent transitions — retrieved texts, tool calls, arguments, destinations</text>
+<path d="M490 106V136" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
+<path d="M1310 106V136" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
+</g>
+<g data-build="1">
+<rect x="100" y="140" width="1600" height="100" rx="14" class="node"/>
+<text x="120" y="172" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">machine scale — millions of events, flows, tool calls, retrieved texts</text>
+<text x="120" y="202" class="t2" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">encoder-only classifiers (BERT family): fine-tuned on telemetry, line rate, a label — not a sentence</text>
+</g>
+<g data-build="2">
+<path d="M900 240V266" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
+<rect x="350" y="270" width="1100" height="100" rx="14" class="node"/>
+<text x="370" y="302" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">triage — thousands of candidates</text>
+<text x="370" y="332" class="t2" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">small language models, 1–8B, trained for the task: summarize, correlate, propose</text>
+</g>
+<g data-build="3">
+<path d="M900 370V396" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
+<rect x="600" y="400" width="600" height="100" rx="14" class="node node--model"/>
+<text x="620" y="432" class="t-acc" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">investigation — a few cases</text>
+<text x="620" y="462" class="t-acc" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">a frontier model — and a human</text>
+</g>
 </svg>

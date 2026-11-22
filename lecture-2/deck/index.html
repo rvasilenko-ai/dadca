@@ -1177,54 +1177,62 @@
 <div class="divider-num">4</div><div class="divider-body"><p class="eyebrow">Part 4</p><h2 class="divider-title">Defense and research</h2><p class="lead">Case A and Case B defenses, the cheap-model funnel, the weak watching the strong</p><ul class="divider-list"><li>Defense and research</li></ul></div>
 <footer class="slide-foot"><span class="eyebrow">Part 4</span><span class="count">slides 29–33</span></footer>
 </section>
-<section class="slide slide--diagram" id="s29" data-id="s29" data-part="4" data-steps="1" data-number="29">
-<h2 class="slide-title">Case A defense: the sensors we have, decisions at machine speed</h2><figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 340" role="img" aria-label="The attacker's agent acts only through tools, so every action lands on an endpoint, an identity or a network flow that EDR, XDR, NDR and identity logs already record; what must change is the tempo, not the sensor" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>The attacker's agent acts only through tools, so every action lands on an endpoint, an identity or a network flow that EDR, XDR, NDR and identity logs already record; what must change is the tempo, not the sensor</title>
+<section class="slide slide--diagram" id="s29" data-id="s29" data-part="4" data-steps="3" data-number="29">
+<h2 class="slide-title">Case A defense: the same sensors, a different arithmetic</h2><figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 500" role="img" aria-label="Case A defense in three rows. Same sensors: EDR and XDR, identity and cloud audit, NDR and flows — the agent cannot act without touching them. A different arithmetic: a human operator issues a few hundred actions a day, a handful clearly malicious; the attacker's agent issued 7,677 on 11 July alone and about 17,600 in all, none clearly malicious on its own — ten to a thousand times more events, each less malicious, meaningful only together. So triage changes: ranking alerts by severity for humans to read gives way to evaluating every event continuously, correlated across sources, with decisions at machine speed" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<title>Case A defense in three rows. Same sensors: EDR and XDR, identity and cloud audit, NDR and flows — the agent cannot act without touching them. A different arithmetic: a human operator issues a few hundred actions a day, a handful clearly malicious; the attacker's agent issued 7,677 on 11 July alone and about 17,600 in all, none clearly malicious on its own — ten to a thousand times more events, each less malicious, meaningful only together. So triage changes: ranking alerts by severity for humans to read gives way to evaluating every event continuously, correlated across sources, with decisions at machine speed</title>
 <defs>
   <marker id="arrow-case-a-defense" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
   <marker id="arrow-bad-case-a-defense" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
   <marker id="arrow-good-case-a-defense" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
 </defs>
 <g data-build="0">
-<rect x="40" y="50" width="380" height="130" rx="14" class="node node--bad"/>
-<text x="60" y="82" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">The attacker's agent</text>
-<text x="60" y="112" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">acts only through tools</text>
-<path d="M420 115L518 115" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow-case-a-defense)"/>
-<rect x="520" y="50" width="470" height="130" rx="14" class="node"/>
-<text x="540" y="82" class="t" font-size="23" font-weight="700" text-anchor="start" dominant-baseline="central">Endpoint · identity · flow</text>
-<text x="540" y="112" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">every action lands here</text>
-<path d="M990 115L1088 115" class="edge edge--good draw" pathLength="1" marker-end="url(#arrow-good-case-a-defense)"/>
-<rect x="1090" y="50" width="670" height="130" rx="14" class="node node--good"/>
-<text x="1110" y="82" class="t" font-size="26" font-weight="700" text-anchor="start" dominant-baseline="central">EDR / XDR / NDR</text>
-<text x="1110" y="112" class="t-good" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">identity logs, flow metadata —</text>
-<text x="1110" y="138" class="t-good" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">the sensors we already deploy</text>
+<text x="20" y="22" class="t-good" font-size="21" font-weight="700" text-anchor="start" dominant-baseline="central">SAME SENSORS — the agent cannot act without touching them</text>
+<rect x="20" y="44" width="560" height="96" rx="14" class="node node--good"/>
+<text x="40" y="76" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">EDR / XDR</text>
+<text x="40" y="106" class="t-good" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">hosts and processes</text>
+<rect x="620" y="44" width="560" height="96" rx="14" class="node node--good"/>
+<text x="640" y="76" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">Identity and cloud audit</text>
+<text x="640" y="106" class="t-good" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">tokens, roles, API calls</text>
+<rect x="1220" y="44" width="560" height="96" rx="14" class="node node--good"/>
+<text x="1240" y="76" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">NDR and flows</text>
+<text x="1240" y="106" class="t-good" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">connections, DNS, egress</text>
 </g>
 <g data-build="1">
-<rect x="40" y="220" width="1720" height="96" rx="14" class="node"/>
-<text x="60" y="252" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">What changes is the tempo, not the sensor</text>
-<text x="60" y="282" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">thousands of ambiguous events · several telemetry systems · changing identities · a few consequential transitions   →   a correlation problem, at machine speed</text>
+<text x="20" y="184" class="t-bad" font-size="21" font-weight="700" text-anchor="start" dominant-baseline="central">A DIFFERENT ARITHMETIC</text>
+<rect x="20" y="204" width="700" height="122" rx="14" class="node"/>
+<text x="40" y="236" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">A human operator</text>
+<text x="40" y="266" class="t2" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">a few hundred actions a day (an estimate);</text>
+<text x="40" y="292" class="t2" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">a handful of them clearly malicious</text>
+<rect x="1080" y="204" width="700" height="122" rx="14" class="node node--bad"/>
+<text x="1100" y="236" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">The attacker's agent</text>
+<text x="1100" y="266" class="t-bad" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">7,677 actions on 11 July; ~17,600 in all;</text>
+<text x="1100" y="292" class="t-bad" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">none clearly malicious on its own</text>
+</g>
+<g data-build="2">
+<text x="900" y="246" class="t-bad" font-size="40" font-weight="800" text-anchor="middle" dominant-baseline="central">×10 to ×1000</text>
+<text x="900" y="286" class="t2" font-size="19" font-weight="500" text-anchor="middle" dominant-baseline="central">more events, each less malicious,</text>
+<text x="900" y="310" class="t2" font-size="19" font-weight="500" text-anchor="middle" dominant-baseline="central">meaningful only together</text>
+</g>
+<g data-build="3">
+<text x="20" y="370" class="t" font-size="21" font-weight="700" text-anchor="start" dominant-baseline="central">SO TRIAGE CHANGES</text>
+<rect x="20" y="390" width="840" height="100" rx="14" class="node node--bad"/>
+<text x="40" y="422" class="t" font-size="23" font-weight="700" text-anchor="start" dominant-baseline="central">Rank alerts by severity; humans read the top</text>
+<text x="40" y="452" class="t-bad" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">there is no most-malicious event: the attack is the pattern</text>
+<path d="M860 440L938 440" class="edge edge--good draw" pathLength="1" marker-end="url(#arrow-good-case-a-defense)"/>
+<rect x="940" y="390" width="840" height="100" rx="14" class="node node--good"/>
+<text x="960" y="422" class="t" font-size="23" font-weight="700" text-anchor="start" dominant-baseline="central">Evaluate every event, continuously</text>
+<text x="960" y="452" class="t-good" font-size="19" font-weight="500" text-anchor="start" dominant-baseline="central">correlate across sources, decide at machine speed — the defender's loop</text>
 </g>
 </svg></figure>
-
-
+<blockquote class="callout"><p>No new sensor; a new tempo. Evaluate every event, continuously, because the attack is only visible as a pattern — and run the defender's loop at the attacker's speed: bounded, reversible, audited.</p></blockquote><div class="step-captions"><p data-build="0">Same sensors. The attacker's agent has no way to act except through tools, and every tool action lands on a host, an identity or a network flow — EDR and XDR, identity providers and cloud audit logs, NDR and flow metadata. Case A needs no new sensor.</p><p data-build="1">A different arithmetic. Back to the Hugging Face numbers: about 17,600 recovered actions, 7,677 of them on 11 July — one every eleven seconds, around the clock. A human operator issues a few hundred a day. One to three orders of magnitude more events, and parallel agents multiply it again.</p><p data-build="2">Each event is less malicious on its own: a valid token enumerating a cluster, a denied cloud call, a VPN enrollment, a clone with a leaked token, a pull request. In Hugging Face's own words, each signal was ambiguous alone; only correlated did they form a coherent attack.</p><p data-build="3">So triage has to change. Ranking alerts by severity and having humans read the top assumes a few events carry the attack; here none does — the attack is the pattern. What replaces it is continuous evaluation of every event, correlated across sources, with decisions at machine speed: the defender's loop.</p></div>
 <details class="srcs"><summary>Sources (3)</summary><div class="panel"><ul><li><a href="https://huggingface.co/blog/agent-intrusion-technical-timeline" target="_blank" rel="noopener">Hugging Face technical timeline</a></li><li><a href="https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold" target="_blank" rel="noopener">Google Threat Intelligence Group, GTIG AI Threat Tracker: Agentic Threat Activity Crosses a Significant Threshold (16 November 2026)</a></li><li><a href="https://unit42.paloaltonetworks.com/cairn-framework-ai-autonomous-attacks/" target="_blank" rel="noopener">Palo Alto Unit 42: Attackers Use Autonomous AI to Target Semiconductor, Defense and Civil Society Sectors (12 November 2026)</a></li></ul></div></details>
 <footer class="slide-foot"><span class="eyebrow">Defense and research</span><span class="count">29 / 33 · 74–78 minutes</span></footer>
 <aside class="notes"><p class="meta"><b>Slide 29</b> · 74–78 minutes · Defense and research</p>
-<p>Start from what the reference incident proved. Hugging Face reports that several security layers produced initial signals and that an AI-based security stack correlated them, but the system did not assign enough criticality to page the on-call team promptly. Detection succeeded; decision failed. That separates three problems — observe, connect, act in time — and Case A is mostly the second and third.</p>
+<p>Start from what the reference incident proved. Hugging Face reports that several security layers produced initial signals, that each was ambiguous alone, that an AI-based security stack correlated them into a coherent attack signal, and that the system did not assign enough criticality to page the on-call team promptly. Detection succeeded; decision failed. That separates three problems — observe, connect, act in time — and Case A is mostly the second and third.</p>
 <p>The sensors are the ones we already deploy. The attacker's agent has no way to act except through tools, and every tool action lands on a host, an identity or a network flow — the territory of EDR, XDR, NDR, identity providers and cloud audit logs. GTIG adds that autonomous frameworks currently trade stealth for velocity: forensic traffic, recognizable identifiers and code-level traces. And Unit 42's CAIRN campaign exploited known weaknesses — credentials, authentication bypasses, exposed APIs, old CVEs — so hygiene remains the floor.</p>
+<p>The arithmetic is the new part, and the numbers are the incident's: about 17,600 recovered actions, 7,677 on 11 July — one every eleven seconds, around the clock. The human baseline is an estimate from hands-on-keyboard intrusions, where an operator's active session is a few hundred commands a day with long gaps; say that it is an estimate. The ratio is one to three orders of magnitude, and parallel agents — the frameworks run several — multiply it. The quality changes with the quantity: the agent's actions are individually ordinary — a valid service-account token enumerating a cluster, a denied mutating call, one of 181 VPN enrollments, a clone with a leaked token, a pull request — and most of them led nowhere. A severity-ranked queue has nothing to put at the top, which is why the classic SOC model of triaging the most malicious alerts by hand does not transfer. What is needed is continuous evaluation of the whole stream, so that the pattern becomes visible while it is forming.</p>
 <p>What must change is tempo, and tempo means a loop on the defender's side too: observe, correlate evidence, propose an action, verify authority and scope, execute a bounded response, verify the effect, roll back or escalate. Bounded is the operative word. Autonomous response must not mean a defensive model with administrator rights; separate reasoning from authority through an enforcement boundary that checks identity, scope, policy and action risk. Response tiers run from gathering more evidence, to restricting a token or workload, to disruptive containment that needs explicit approval — and the system must verify whether the action worked and whether the campaign continued by another path.</p>
-<p>Leave the open question for two slides on: which model runs that loop, and at what cost per event.</p>
-<p class="transition">“Case B is the opposite situation: we own the agent, so we can build the controls in.”</p></aside>
-</section>
-<section class="slide slide--text slide--cont" id="s29b" data-id="s29b" data-part="4" data-steps="0" data-number="29">
-<h2 class="slide-title">Case A defense: the sensors we have, decisions at machine speed <span class="cont">continued</span></h2><table class="data"><thead><tr><th>What we have</th><th>What must change</th></tr></thead><tbody><tr><td>EDR, XDR, NDR, identity and cloud audit logs: the agent cannot act without touching them</td><td>Correlate across them continuously, not alert by alert</td></tr><tr><td>The harness leaves traces: forensic traffic, recognizable identifiers, code-level artifacts (GTIG)</td><td>Detect the harness and the tempo, not the model</td></tr><tr><td>Human-paced triage and response</td><td>A defender's loop: observe → correlate → propose → verify authority and scope → act, bounded and reversible → verify effect → escalate</td></tr></tbody></table><blockquote class="callout"><p>Case A needs no new sensor. It needs the defender's loop to run as fast as the attacker's — with explicit authorization, evidence thresholds, limited blast radius, reversibility and an audit trail.</p></blockquote>
-<details class="srcs"><summary>Sources (3)</summary><div class="panel"><ul><li><a href="https://huggingface.co/blog/agent-intrusion-technical-timeline" target="_blank" rel="noopener">Hugging Face technical timeline</a></li><li><a href="https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold" target="_blank" rel="noopener">Google Threat Intelligence Group, GTIG AI Threat Tracker: Agentic Threat Activity Crosses a Significant Threshold (16 November 2026)</a></li><li><a href="https://unit42.paloaltonetworks.com/cairn-framework-ai-autonomous-attacks/" target="_blank" rel="noopener">Palo Alto Unit 42: Attackers Use Autonomous AI to Target Semiconductor, Defense and Civil Society Sectors (12 November 2026)</a></li></ul></div></details>
-<footer class="slide-foot"><span class="eyebrow">Defense and research</span><span class="count">29 / 33 · 74–78 minutes</span></footer>
-<aside class="notes"><p class="meta"><b>Slide 29</b> · 74–78 minutes · Defense and research</p>
-<p>Start from what the reference incident proved. Hugging Face reports that several security layers produced initial signals and that an AI-based security stack correlated them, but the system did not assign enough criticality to page the on-call team promptly. Detection succeeded; decision failed. That separates three problems — observe, connect, act in time — and Case A is mostly the second and third.</p>
-<p>The sensors are the ones we already deploy. The attacker's agent has no way to act except through tools, and every tool action lands on a host, an identity or a network flow — the territory of EDR, XDR, NDR, identity providers and cloud audit logs. GTIG adds that autonomous frameworks currently trade stealth for velocity: forensic traffic, recognizable identifiers and code-level traces. And Unit 42's CAIRN campaign exploited known weaknesses — credentials, authentication bypasses, exposed APIs, old CVEs — so hygiene remains the floor.</p>
-<p>What must change is tempo, and tempo means a loop on the defender's side too: observe, correlate evidence, propose an action, verify authority and scope, execute a bounded response, verify the effect, roll back or escalate. Bounded is the operative word. Autonomous response must not mean a defensive model with administrator rights; separate reasoning from authority through an enforcement boundary that checks identity, scope, policy and action risk. Response tiers run from gathering more evidence, to restricting a token or workload, to disruptive containment that needs explicit approval — and the system must verify whether the action worked and whether the campaign continued by another path.</p>
-<p>Leave the open question for two slides on: which model runs that loop, and at what cost per event.</p>
+<p>Leave the open question for two slides on: which model evaluates every event, and at what cost — the funnel, and it serves both cases.</p>
 <p class="transition">“Case B is the opposite situation: we own the agent, so we can build the controls in.”</p></aside>
 </section>
 <section class="slide slide--diagram" id="s30" data-id="s30" data-part="4" data-steps="7" data-number="30">
@@ -1349,45 +1357,49 @@
 <p>Map ForcedLeak onto the diagram: the record entered at ②, became instruction in context, inherited ⑤, and left through the actions arrow — the fix at E closed the last step, and a control at ② or ⑤ would have closed it earlier. Map MIDNIGHT NEPTUNE: ① and ④, and the fix is review of agent configuration as code. The OWASP agentic threats-and-mitigations guide is the practitioner's checklist for the same points.</p>
 <p class="transition">“Both cases end at the same question: something has to watch every transition — and a frontier model on every event is not affordable.”</p></aside>
 </section>
-<section class="slide slide--has-diagram slide--denser" id="s31" data-id="s31" data-part="4" data-steps="0" data-number="31">
-<h2 class="slide-title">Who watches the agent: cheap models, in a funnel</h2><div class="body"><p>A frontier model on every event is not affordable, and not needed. Match the model to the scale.</p>
-<figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 350" role="img" aria-label="Match the model to the scale: cheap encoder classifiers at machine scale, small task-trained models at triage, a frontier model and a human for the few investigations" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>Match the model to the scale: cheap encoder classifiers at machine scale, small task-trained models at triage, a frontier model and a human for the few investigations</title>
+<section class="slide slide--diagram" id="s31" data-id="s31" data-part="4" data-steps="3" data-number="31">
+<h2 class="slide-title">Both cases: cheap models, in a funnel</h2><p>Different telemetry, the same volume problem: far more events than people can read, none decisive alone. Match the model to the scale.</p>
+<figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 516" role="img" aria-label="Match the model to the scale, for both cases. Two inputs — Case A's endpoint, identity and flow events, and Case B's agent transitions — feed one funnel: encoder-only classifiers at machine scale, small task-trained language models at triage, a frontier model and a human for the few investigations" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<title>Match the model to the scale, for both cases. Two inputs — Case A's endpoint, identity and flow events, and Case B's agent transitions — feed one funnel: encoder-only classifiers at machine scale, small task-trained language models at triage, a frontier model and a human for the few investigations</title>
 <defs>
   <marker id="arrow-funnel" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
   <marker id="arrow-bad-funnel" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
   <marker id="arrow-good-funnel" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
 </defs>
-<rect x="40" y="10" width="1040" height="96" rx="14" class="node"/>
-<text x="60" y="42" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">machine</text>
-<text x="60" y="72" class="t2" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">millions of events, flows, tool calls, retrieved texts</text>
-<rect x="1240" y="10" width="520" height="96" rx="14" class="node"/>
-<text x="1260" y="42" class="t" font-size="21" font-weight="700" text-anchor="start" dominant-baseline="central">encoder-only classifiers (BERT family)</text>
-<text x="1260" y="72" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">fine-tuned on telemetry; line rate; a label, not a sentence</text>
-<rect x="180" y="126" width="760" height="96" rx="14" class="node"/>
-<text x="200" y="158" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">triage</text>
-<text x="200" y="188" class="t2" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">thousands of candidates</text>
-<rect x="1240" y="126" width="520" height="96" rx="14" class="node"/>
-<text x="1260" y="158" class="t" font-size="21" font-weight="700" text-anchor="start" dominant-baseline="central">small language models, 1–8B</text>
-<text x="1260" y="188" class="t2" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">trained for the task: summarize, correlate, propose</text>
-<path d="M560 106V126" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow-funnel)"/>
-<rect x="320" y="242" width="480" height="96" rx="14" class="node"/>
-<text x="340" y="274" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">investigation</text>
-<text x="340" y="304" class="t2" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">a few consequential cases</text>
-<rect x="1240" y="242" width="520" height="96" rx="14" class="node node--model"/>
-<text x="1260" y="274" class="t-acc" font-size="21" font-weight="700" text-anchor="start" dominant-baseline="central">a frontier model — and a human</text>
-<text x="1260" y="304" class="t-acc" font-size="18" font-weight="400" text-anchor="start" dominant-baseline="central">for the few cases the funnel selects</text>
-<path d="M560 222V242" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow-funnel)"/>
+<g data-build="0">
+<rect x="100" y="10" width="780" height="96" rx="14" class="node"/>
+<text x="120" y="42" class="t" font-size="23" font-weight="700" text-anchor="start" dominant-baseline="central">Case A telemetry</text>
+<text x="120" y="72" class="t2" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">endpoint, identity and flow events — hosts, tokens, API calls, connections</text>
+<rect x="920" y="10" width="780" height="96" rx="14" class="node"/>
+<text x="940" y="42" class="t" font-size="23" font-weight="700" text-anchor="start" dominant-baseline="central">Case B telemetry</text>
+<text x="940" y="72" class="t2" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">agent transitions — retrieved texts, tool calls, arguments, destinations</text>
+<path d="M490 106V136" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow-funnel)"/>
+<path d="M1310 106V136" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow-funnel)"/>
+</g>
+<g data-build="1">
+<rect x="100" y="140" width="1600" height="100" rx="14" class="node"/>
+<text x="120" y="172" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">machine scale — millions of events, flows, tool calls, retrieved texts</text>
+<text x="120" y="202" class="t2" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">encoder-only classifiers (BERT family): fine-tuned on telemetry, line rate, a label — not a sentence</text>
+</g>
+<g data-build="2">
+<path d="M900 240V266" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow-funnel)"/>
+<rect x="350" y="270" width="1100" height="100" rx="14" class="node"/>
+<text x="370" y="302" class="t" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">triage — thousands of candidates</text>
+<text x="370" y="332" class="t2" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">small language models, 1–8B, trained for the task: summarize, correlate, propose</text>
+</g>
+<g data-build="3">
+<path d="M900 370V396" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow-funnel)"/>
+<rect x="600" y="400" width="600" height="100" rx="14" class="node node--model"/>
+<text x="620" y="432" class="t-acc" font-size="25" font-weight="700" text-anchor="start" dominant-baseline="central">investigation — a few cases</text>
+<text x="620" y="462" class="t-acc" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="central">a frontier model — and a human</text>
+</g>
 </svg></figure>
-<p>Why encoders at the bottom:</p>
-<ul><li>Cheap and fixed-latency, so they can run inside EDR, NDR and the agent harness at line rate.</li><li>They emit a label, not text, so there is nothing to inject through their output.</li><li>They train on labelled telemetry we already have, and on agent transitions: is this retrieved text imperative? Is this tool call plausible for this task? Is this destination appropriate?</li></ul>
-<table class="data"><thead><tr><th>Tier</th><th>Published examples</th></tr></thead><tbody><tr><td>Encoder classifiers</td><td>LogBERT (log anomaly detection, 2021); SecureBERT (security-domain encoder, 2022); Prompt Guard 2 (86M-parameter injection and jailbreak classifier, 2025)</td></tr><tr><td>Small language models</td><td>Foundation-Sec-8B (a security-specialized 8B model, 2025) as the base for triage and response tasks</td></tr><tr><td>Frontier model</td><td>Investigation of the few cases the funnel selects; labelling data for the tiers below</td></tr></tbody></table>
-<blockquote class="callout"><p>Put the expensive model where the few decisions are and the cheap one where the millions of events are. The funnel is the architecture.</p></blockquote></div>
+<blockquote class="callout"><p>The expensive model where the few decisions are, the cheap one where the millions of events are — in both cases.</p></blockquote><div class="step-captions"><p data-build="0">Two inputs, one problem. Case A: endpoint, identity and flow events from the sensors we have. Case B: the agent's own transitions — retrievals, tool calls, arguments, destinations. Millions of events either way, meaningful only together.</p><p data-build="1">Machine scale: encoder-only classifiers — LogBERT (2021), SecureBERT (2022), Prompt Guard 2 (86M, 2025). Cheap, fixed latency, so they run at line rate inside EDR, NDR and the harness; a label, not text, so nothing to inject through; trained on the telemetry and transitions we already label.</p><p data-build="2">Triage scale: small language models, 1–8B, trained for the task — summarize a cluster of events, correlate across sources, propose an action with its evidence. Foundation-Sec-8B (2025) is a security-specialized base at that size.</p><p data-build="3">Investigation scale: a frontier model and a human, for the few cases the funnel selects — who also label the data that trains the tiers below, which is how the funnel improves.</p></div>
 <details class="srcs"><summary>Sources (4)</summary><div class="panel"><ul><li><a href="https://arxiv.org/abs/2103.04475" target="_blank" rel="noopener">Guo, Yuan and Wu, LogBERT: Log Anomaly Detection via BERT (2021)</a></li><li><a href="https://arxiv.org/abs/2204.02685" target="_blank" rel="noopener">Aghaei et al., SecureBERT: A Domain-Specific Language Model for Cybersecurity (2022)</a></li><li><a href="https://huggingface.co/meta-llama/Llama-Prompt-Guard-2-86M" target="_blank" rel="noopener">Meta, Llama Prompt Guard 2 (86M) model card (2025)</a></li><li><a href="https://arxiv.org/abs/2504.21039" target="_blank" rel="noopener">Kassianik et al., Llama-3.1-FoundationAI-SecurityLLM-Base-8B Technical Report (2025)</a></li></ul></div></details>
 <footer class="slide-foot"><span class="eyebrow">Defense and research</span><span class="count">31 / 33 · 82–84 minutes</span></footer>
 <aside class="notes"><p class="meta"><b>Slide 31</b> · 82–84 minutes · Defense and research</p>
-<p>This is the economics behind both defense slides. The defender's loop of slide 29 and the monitor M of slide 30 have to run on every transition, and the arithmetic of a frontier model per event does not close. The answer is the funnel the field has always used, with new tiers.</p>
-<p>At machine scale, encoder-only transformers: bidirectional models that read a whole input and emit a class. They are cheap, their latency is fixed, and because they do not generate text there is no output channel to inject through. They learn from the labelled telemetry a product already produces, and they can learn the transition checks we listed on slide 28 — imperative text in a retrieval, an implausible tool call for the task, an unexpected destination. LogBERT and SecureBERT show the approach on logs and security text; Prompt Guard 2 is an 86-million-parameter classifier for injected and jailbreak text, small enough to run on every input.</p>
+<p>This is the economics behind both defense slides, and it is the same for both cases even though the telemetry is not. In Case A the stream is the sensors' — endpoint, identity, flow — and slide 29 showed why it has to be evaluated continuously: the attack is a pattern across thousands of individually ordinary events. In Case B the stream is the agent's own transitions — what it retrieved, what it called, with which arguments, to which destination — and the monitor M of slide 30 has to see every one of them. Either way, the arithmetic of a frontier model per event does not close. The answer is the funnel the field has always used, with new tiers.</p>
+<p>At machine scale, encoder-only transformers: bidirectional models that read a whole input and emit a class. They are cheap, their latency is fixed, and because they do not generate text there is no output channel to inject through. They learn from the labelled telemetry a product already produces, and they can learn the transition checks we listed on slide 30 — imperative text in a retrieval, an implausible tool call for the task, an unexpected destination. LogBERT and SecureBERT show the approach on logs and security text; Prompt Guard 2 is an 86-million-parameter classifier for injected and jailbreak text, small enough to run on every input.</p>
 <p>At triage scale, small language models fine-tuned for detection and response tasks: summarize a cluster of events, correlate across sources, propose an action with its evidence. Foundation-Sec-8B is a security-specialized base at that size. At investigation scale, the frontier model and the human — who also label the data that trains the tiers below, which is how the funnel improves.</p>
 <p>Say what the funnel does not do: it does not replace the structural guardrails of slide 30, which need no comprehension at all. And it introduces a risk of its own, which is the next slide.</p>
 <p class="transition">“The cheap model is weaker than the agent it watches. That is the problem.”</p></aside>
