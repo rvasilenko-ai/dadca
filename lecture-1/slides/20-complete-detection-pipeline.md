@@ -4,10 +4,22 @@
 **Module:** Detection pipelines: design and evolution
 
 ## On-slide content
-
 > What can a sensor see, and what has to happen before a detector sees anything?
 
-Next and Previous step through the eight stages; each step lights the stage on the strip, shows one panel for that stage (the question, one line, two or three examples drawn from the menu on slide 25). Clicking a stage jumps to it. The thesis callout is the last step.
+![The complete detection pipeline as a strip of eight stages — sensor, acquisition, extraction, representation, detection, investigation, decision, response — each lit in turn with its question](../figures/pipeline.svg)
+
+Build, one step per click:
+
+0. Sensor — can the system observe the event or state? Where the pipeline touches reality: a hook, a tap, a log. For example file-system hooks, process and script telemetry, a network tap, identity and SaaS logs, the agent's harness.
+1. Acquisition — is the evidence collected and retained? Seeing is not keeping: what is captured, and for how long. For example capture the file on write, triggered memory capture, packets for hours, flow records for months, central forwarding.
+2. Extraction — can usable artifacts or fields be recovered? Raw evidence becomes something analyzable, and this stage has failures of its own. For example file parsing, unpacking and emulation, script deobfuscation, decompilation, TLS decryption, process-tree reconstruction.
+3. Representation — what information is supplied to analysis? What a model is allowed to learn from, and what was discarded before it arrived. For example hashes and byte patterns, engineered features, sequences, graphs, text.
+4. Detection — is a score, rule, or verdict produced? The only stage most people call detection. For example signatures, expert rules, classifiers, anomaly baselines, similarity, reputation.
+5. Investigation — can evidence be connected and explained? Where the expensive methods live. For example enrichment, timelines across sources, detonation, forensics, reverse engineering, LLM-assisted analysis.
+6. Decision — can an appropriate action be selected? Where authority is designed. For example automatic block above a threshold, approval playbooks, pre-authorized containment, escalation.
+7. Response — can the action be executed in time? A detection is not an outcome until this works. For example isolate and quarantine, revoke tokens, block destinations, restore, patch, revoke an agent's tools.
+
+> A detector cannot reason about evidence it never receives.
 
 | Stage | Question | One line | For example |
 | --- | --- | --- | --- |
@@ -19,8 +31,6 @@ Next and Previous step through the eight stages; each step lights the stage on t
 | Investigation | can evidence be connected and explained? | Where the expensive methods live. | enrichment, timelines across sources, detonation, forensics, reverse engineering, LLM-assisted analysis |
 | Decision | can an appropriate action be selected? | Where authority is designed. | automatic block above a threshold, approval playbooks, pre-authorized containment, escalation |
 | Response | can the action be executed in time? | A detection is not an outcome until this works. | isolate and quarantine, revoke tokens, block destinations, restore, patch, revoke an agent's tools |
-
-> A detector cannot reason about evidence it never receives.
 
 ## Talking points
 

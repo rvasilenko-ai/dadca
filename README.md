@@ -67,7 +67,8 @@ And three operational scales, as a way to discuss throughput, latency, cost, evi
 
 - `lecture-N/README.md`: the lecture's outline, learning outcomes, module schedule with minutes, slide index and delivery guidance.
 - `lecture-N/slides/NN-slug.md`: one file per slide, with on-slide content, talking points, speaker notes, interaction, transition and sources. The markdown is the source of truth.
-- `lecture-1/deck/`: the interactive HTML deck generated from the slides; see its [README](lecture-1/deck/README.md) for building, presenting, printing and the slide file format.
+- `lecture-1/deck/`: the HTML deck generated from the slides; see its [README](lecture-1/deck/README.md) for building, presenting, printing and the slide file format.
+- `tools/deck/`: the deck machinery every lecture shares — the builder (`deckbuild.py`), the runtime (`deck.js`), the theme (`deck.css`) and the SVG primitives the figure generators use (`svg.py`). Each lecture's `deck/build.py` is a short configuration over it.
 - `index.html`: the landing page of the hosted site.
 
 ## Reference set
@@ -86,4 +87,4 @@ And three operational scales, as a way to discuss throughput, latency, cost, evi
 
 ## Attribution
 
-The deck uses [reveal.js](https://revealjs.com/) (MIT, vendored under `lecture-1/deck/vendor/`). The schematic ATT&CK matrix uses content from MITRE ATT&CK, © The MITRE Corporation, under the [ATT&CK terms of use](https://attack.mitre.org/resources/legal-and-branding/terms-of-use/); ATT&CK is a registered trademark of The MITRE Corporation.
+The decks have no dependencies; their stepping and build mechanics follow Saastha Vasan's lecture deck (MIT). The schematic ATT&CK matrix uses content from MITRE ATT&CK, © The MITRE Corporation, under the [ATT&CK terms of use](https://attack.mitre.org/resources/legal-and-branding/terms-of-use/); ATT&CK is a registered trademark of The MITRE Corporation.

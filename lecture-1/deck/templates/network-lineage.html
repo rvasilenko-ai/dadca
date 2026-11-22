@@ -1,7 +1,0 @@
-<h2 class="title">Network lineage: what each stage lost</h2>
-<div data-stage-matrix data-view="panels">
-<div class="pipe" data-component="pipeline" data-caption=""></div>
-{{stage_matrix}}
-<blockquote class="callout fragment"><p>The sensor stayed where it was. Extraction failed, and everything below it was rebuilt on metadata or moved to the endpoint.</p></blockquote>
-<blockquote class="callout fragment scenario"><p><b>Scenario check:</b> three moments cross the network, the driver download, the implant download and the document upload. All inside TLS, and with DNS over HTTPS even the lookups are hidden, so a content signature matches nothing. What remains: the connections to unfamiliar hosts, their timing and reputation, and, behind a decryption proxy, the payloads. The endpoint sees the plaintext before encryption.</p></blockquote>
-</div>

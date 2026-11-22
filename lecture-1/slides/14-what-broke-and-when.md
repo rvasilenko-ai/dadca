@@ -4,6 +4,20 @@
 **Module:** From malicious programs to adversarial capabilities
 
 ## On-slide content
+![What broke the file-centric model, and when: six breaks as bars on the 2000 to 2027 axis — file and runtime diversity, memory-resident execution, living off the land, stolen identities and tokens, trusted vendor channels, agents and planted instructions — and, as an inset, the malware-free share of CrowdStrike detections rising from 40 percent in 2018 to 79 in 2024](../figures/breaks.svg)
+
+Build, one step per click:
+
+0. Diversification of file types and runtimes, from about 2010: each channel blocked executables (mail 2000 and 2004, messengers 2005, social networks 2010) and was answered within months by archives, exploit documents, exploit kits and links; Go and Rust from 2020. Lost: the executable as the one thing to scan.
+1. Process injection, reflective loading, memory-resident execution: the end of 2010–2016, standard from 2017. Lost: a file to detonate.
+2. Living-off-the-land tools: 2017–2022, the whole campaign by 2023. Lost: a malicious artifact at all.
+3. Stolen identities, tokens and cloud APIs, 2017 onward. Lost: the host as the place where the attack happens.
+4. Trusted vendor and update channels, 2017 onward: CCleaner, SolarWinds, then XZ Utils and XCPE. Lost: provenance as a proxy for safety.
+5. Tool-using agents and external instructions, 2025–2026. Lost: a program as the thing that executes intent.
+6. The malware-free share of CrowdStrike detections: 40 percent in 2018, 51 in 2019, 62 at the end of 2021, 79 in 2024.
+
+> In each period the attacker moved the capability to where the sensor was not looking; each break was partly a consequence of defensive success against the one before.
+> The money and motivation moved too: from the victim's machine, to the victim's credentials, to the victim's organization, to the victim's identity and data.
 
 | What broke the model | Became dominant | What the defender lost |
 | --- | --- | --- |
@@ -13,11 +27,6 @@
 | Stolen identities, tokens and cloud APIs | 2017–2022 onward | The host as the place where the attack happens |
 | Trusted vendor and update channels | 2017 onward: CCleaner, SolarWinds, then XZ Utils and XCPE | Provenance as a proxy for safety |
 | Tool-using agents and external instructions | 2025–2026 | A program as the thing that executes intent |
-
-> In each period the attacker moved the capability to where the sensor was not looking; each break was partly a consequence of defensive success against the one before.
-> The money and motivation moved too: from the victim's machine, to the victim's credentials, to the victim's organization, to the victim's identity and data.
-
-Beside the callout, a small figure: the malware-free share of CrowdStrike detections, 40 percent in 2018, 51 in 2019, 62 at the end of 2021, 79 in 2024.
 
 ## Talking points
 

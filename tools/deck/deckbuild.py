@@ -374,9 +374,13 @@ def estimate_height(body_html: str, has_captions: bool) -> int:
     h = 100
     for m in re.finditer(r'<pre class="schematic"[^>]*>(.*?)</pre>', body_html, flags=re.S):
         h += (m.group(1).count("\n") + 1) * 35 + 42
-    for m in re.finditer(r"<table.*?</table>", body_html, flags=re.S):
-        h += m.group(0).count("<tr") * 54 + 22
     text_only = lambda s: len(re.sub(r"<[^>]+>", "", s))
+    for m in re.finditer(r"<table.*?</table>", body_html, flags=re.S):
+        h += 22
+        for row in re.findall(r"<tr>.*?</tr>", m.group(0), flags=re.S):
+            cells = re.findall(r"<t[dh]>(.*?)</t[dh]>", row, flags=re.S)
+            per_line = max(18, 170 // max(1, len(cells)))     # characters a cell fits on one line at the small size
+            h += 50 + 34 * max((text_only(c) // per_line for c in cells), default=0)
     for m in re.finditer(r"<blockquote.*?</blockquote>", body_html, flags=re.S):
         h += (text_only(m.group(0)) // 115 + 1) * 40 + 36
     no_quotes = re.sub(r"<blockquote.*?</blockquote>", "", body_html, flags=re.S)

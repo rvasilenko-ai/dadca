@@ -4,14 +4,15 @@
 **Module:** From malicious programs to adversarial capabilities
 
 ## On-slide content
+![The original mental model: a malicious executable, executed by a user or the system, produces malicious behavior](../figures/original-model.svg)
 
-```text
-malicious executable
-    -> user or system executes it
-    -> malicious behavior occurs
-```
+Build, one step per click:
 
-The suspicious object is persistent, transferable, and available for analysis.
+0. A malicious executable: a file, written to disk.
+1. A user or the system executes it.
+2. The malicious behavior occurs, on that host, from that file.
+
+> The suspicious object is persistent, transferable, and available for analysis.
 
 ## Talking points
 

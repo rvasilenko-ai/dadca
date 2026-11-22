@@ -4,20 +4,18 @@
 **Module:** From malicious programs to adversarial capabilities
 
 ## On-slide content
+![2017–2022 across five tracks — motive and money, attackers, operating system, internet, security products — with the key events labelled and every event's date on hover; the tracks light up one at a time](../figures/period-3.svg)
 
-| Track | Headline |
-| --- | --- |
-| **Motive and money** | The organization pays directly: big-game ransomware, affiliates, double extortion and access brokers. |
-| **Attackers** | Living off the land is standard; access is bought, stolen through identities, injected via vendors. |
-| **Operating system** | Windows closes the easy paths: Defender as default antivirus and EDR, internet macros blocked, credentials isolated. |
-| **Internet** | HTTPS passes 90 percent; TLS 1.3 hides the certificate and encrypted DNS the lookup; identity is the perimeter. |
-| **Security products** | EDR goes mainstream, then XDR; the network falls back to metadata; the sandbox becomes a commodity. |
+Build, one step per click:
+
+0. Six years across five tracks: key events labelled, every dot with its date on hover.
+1. Motive and money: The organization pays directly: big-game ransomware, affiliates, double extortion and access brokers.
+2. Attackers: Living off the land is standard; access is bought, stolen through identities, injected via vendors.
+3. Operating system: Windows closes the easy paths: Defender as default antivirus and EDR, internet macros blocked, credentials isolated.
+4. Internet: HTTPS passes 90 percent; TLS 1.3 hides the certificate and encrypted DNS the lookup; identity is the perimeter.
+5. Security products: EDR goes mainstream, then XDR; the network falls back to metadata; the sandbox becomes a commodity.
 
 > Access itself became the traded commodity. The capability moved into identities, tokens and trusted vendor channels, and attackers began attacking the EDR.
-
-### Detail
-
-Behind the details button; the speaker notes pick from it.
 
 | Track | 2017–2022 |
 | --- | --- |

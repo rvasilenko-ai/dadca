@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 140" width="1800" height="140" role="img" aria-label="Where each change broke the pipeline: seven changes, each lighting the stage that broke — packing broke extraction and detection; file diversity the sensor and extraction; memory and living off the land the sensor and acquisition; encryption extraction; stolen identities the sensor; trusted channels representation and detection; instructions in data the sensor" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<title>Where each change broke the pipeline: seven changes, each lighting the stage that broke — packing broke extraction and detection; file diversity the sensor and extraction; memory and living off the land the sensor and acquisition; encryption extraction; stolen identities the sensor; trusted channels representation and detection; instructions in data the sensor</title>
+<style>
+svg{--surface:#ffffff;--surface-2:#eceff6;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--ink-3:#5b6580;--line:#9ca3af;--rule:#cbd5e1;--rule-3:#6c768e;
+--acc:#0284c7;--acc-wash:#e0f2fe;--acc-ink:#075985;--bad:#dc2626;--bad-wash:#fee2e2;--bad-ink:#991b1b;
+--good:#15803d;--good-wash:#dcfce7;--good-ink:#14532d;--on-badge:#ffffff;
+--part-0:#0369a1;--part-1:#b45309;--part-2:#5b3fd0;--part-3:#b91c1c;--part-4:#0f766e}
+@media (prefers-color-scheme: dark){svg{--surface:#141a2a;--surface-2:#1b2234;--frame:#10172a;--ink:#eef1f8;--ink-2:#c6cddd;--ink-3:#9aa4ba;--line:#8b96b0;--rule:#344062;--rule-3:#7f8aa6;
+--acc:#7cc4ff;--acc-wash:#10304a;--acc-ink:#bfe3ff;--bad:#f87171;--bad-wash:#3b1515;--bad-ink:#fecaca;
+--good:#4ade80;--good-wash:#0f2e1c;--good-ink:#bbf7d0;--on-badge:#0b0f1a;
+--part-0:#7cc4ff;--part-1:#f0a04b;--part-2:#a78bfa;--part-3:#f87171;--part-4:#2dd4bf}}
+.node{fill:var(--surface);stroke:var(--rule);stroke-width:2.5}.node--model{fill:var(--acc-wash);stroke:var(--acc);stroke-width:4}
+.node--bad{fill:var(--bad-wash);stroke:var(--bad);stroke-width:4}.node--good{fill:var(--good-wash);stroke:var(--good);stroke-width:4}
+.frame{fill:var(--frame);stroke:var(--rule);stroke-width:2.5}.env{fill:none;stroke:var(--line);stroke-width:3;stroke-dasharray:14 10}
+.t{fill:var(--ink)}.t2{fill:var(--ink-2)}.t-acc{fill:var(--acc-ink)}.t-bad{fill:var(--bad-ink)}.t-good{fill:var(--good-ink)}.t-badge{fill:var(--on-badge)}
+.edge{fill:none;stroke:var(--line);stroke-width:3;stroke-linecap:round}.edge--strong{stroke:var(--ink-2);stroke-width:4}
+.edge--bad{stroke:var(--bad);stroke-width:4}.edge--good{stroke:var(--good);stroke-width:4}
+.arrow{fill:var(--ink-2)}.arrow--bad{fill:var(--bad)}.arrow--good{fill:var(--good)}
+.badge--bad{fill:var(--bad);stroke:var(--surface);stroke-width:3}.badge--good{fill:var(--good);stroke:var(--surface);stroke-width:3}
+.ctx-bar{fill:var(--rule)}.ring{fill:none;stroke:var(--ink);stroke-width:4}.dot{fill:var(--ink)}
+.axis{stroke:var(--rule-3);stroke-width:2}.grid{stroke:var(--rule);stroke-width:1.5}.lane{fill:var(--surface);stroke:var(--rule);stroke-width:1}
+.band-1{fill:var(--part-1);fill-opacity:.11}.band-2{fill:var(--part-2);fill-opacity:.11}.band-3{fill:var(--part-3);fill-opacity:.11}.band-4{fill:var(--part-4);fill-opacity:.11}
+.t-part-1{fill:var(--part-1)}.t-part-2{fill:var(--part-2)}.t-part-3{fill:var(--part-3)}.t-part-4{fill:var(--part-4)}
+.dot--muted{fill:var(--rule-3)}.dot--key{fill:var(--acc)}.dot--anchor{fill:var(--bad)}
+.bar{fill:var(--acc);fill-opacity:.85}.bar--muted{fill:var(--rule)}.bar--bad{fill:var(--bad);fill-opacity:.85}
+.line-1{stroke:var(--part-1)}.line-2{stroke:var(--part-2)}.line-3{stroke:var(--part-0)}.line-4{stroke:var(--part-4)}
+.line-1,.line-2,.line-3,.line-4{fill:none;stroke-width:4;stroke-linejoin:round;stroke-linecap:round}
+.pt-1{fill:var(--part-1)}.pt-2{fill:var(--part-2)}.pt-3{fill:var(--part-0)}.pt-4{fill:var(--part-4)}
+.cell{fill:var(--surface);stroke:var(--rule);stroke-width:1.5}.cell--sub{fill:var(--surface-2);stroke:var(--rule);stroke-width:1.5}
+.cell--lit{fill:var(--bad-wash);stroke:var(--bad);stroke-width:3}.colhead{fill:var(--surface-2);stroke:var(--rule);stroke-width:1.5}
+.marker{stroke:var(--ink-3);stroke-width:2;stroke-dasharray:6 6}
+</style>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
+  <marker id="arrow-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
+  <marker id="arrow-good" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
+</defs>
+<g data-build="0">
+<rect x="16" y="24" width="200" height="92" rx="14" class="node"></rect>
+<text x="116" y="70" class="t" font-size="25" font-weight="700" text-anchor="middle" dominant-baseline="central">sensor</text>
+<rect x="240" y="24" width="200" height="92" rx="14" class="node"></rect>
+<text x="340" y="70" class="t" font-size="25" font-weight="700" text-anchor="middle" dominant-baseline="central">acquisition</text>
+<rect x="464" y="24" width="200" height="92" rx="14" class="node"></rect>
+<text x="564" y="70" class="t" font-size="25" font-weight="700" text-anchor="middle" dominant-baseline="central">extraction</text>
+<rect x="688" y="24" width="200" height="92" rx="14" class="node"></rect>
+<text x="788" y="70" class="t" font-size="25" font-weight="700" text-anchor="middle" dominant-baseline="central">representation</text>
+<rect x="912" y="24" width="200" height="92" rx="14" class="node"></rect>
+<text x="1012" y="70" class="t" font-size="25" font-weight="700" text-anchor="middle" dominant-baseline="central">detection</text>
+<rect x="1136" y="24" width="200" height="92" rx="14" class="node"></rect>
+<text x="1236" y="70" class="t" font-size="25" font-weight="700" text-anchor="middle" dominant-baseline="central">investigation</text>
+<rect x="1360" y="24" width="200" height="92" rx="14" class="node"></rect>
+<text x="1460" y="70" class="t" font-size="25" font-weight="700" text-anchor="middle" dominant-baseline="central">decision</text>
+<rect x="1584" y="24" width="200" height="92" rx="14" class="node"></rect>
+<text x="1684" y="70" class="t" font-size="25" font-weight="700" text-anchor="middle" dominant-baseline="central">response</text>
+<text x="228" y="70" class="t2" font-size="30" font-weight="400" text-anchor="middle" dominant-baseline="central">›</text>
+<text x="452" y="70" class="t2" font-size="30" font-weight="400" text-anchor="middle" dominant-baseline="central">›</text>
+<text x="676" y="70" class="t2" font-size="30" font-weight="400" text-anchor="middle" dominant-baseline="central">›</text>
+<text x="900" y="70" class="t2" font-size="30" font-weight="400" text-anchor="middle" dominant-baseline="central">›</text>
+<text x="1124" y="70" class="t2" font-size="30" font-weight="400" text-anchor="middle" dominant-baseline="central">›</text>
+<text x="1348" y="70" class="t2" font-size="30" font-weight="400" text-anchor="middle" dominant-baseline="central">›</text>
+<text x="1572" y="70" class="t2" font-size="30" font-weight="400" text-anchor="middle" dominant-baseline="central">›</text>
+<rect x="464" y="24" width="200" height="92" rx="14" class="node node--bad"></rect>
+<text x="564" y="70" class="t-bad" font-size="25" font-weight="700" text-anchor="middle" dominant-baseline="central">extraction</text>
+<rect x="912" y="24" width="200" height="92" rx="14" class="node node--bad"></rect>
+<text x="1012" y="70" class="t-bad" font-size="25" font-weight="700" text-anchor="middle" dominant-baseline="central">detection</text>
+<circle cx="468" cy="28" r="16" class="badge--bad"/>
+<text x="468" y="29" class="t-badge" font-size="17" font-weight="700" text-anchor="middle" dominant-baseline="central">1</text>
+</g>
+<g data-build="1">
+<rect x="16" y="24" width="200" height="92" rx="14" class="node node--bad"></rect>
+<text x="116" y="70" class="t-bad" font-size="25" font-weight="700" text-anchor="middle" dominant-baseline="central">sensor</text>
+<rect x="464" y="24" width="200" height="92" rx="14" class="node node--bad"></rect>
+<text x="564" y="70" class="t-bad" font-size="25" font-weight="700" text-anchor="middle" dominant-baseline="central">extraction</text>
+<circle cx="20" cy="28" r="16" class="badge--bad"/>
+<text x="20" y="29" class="t-badge" font-size="17" font-weight="700" text-anchor="middle" dominant-baseline="central">2</text>
+</g>
+<g data-build="2">
+<rect x="16" y="24" width="200" height="92" rx="14" class="node node--bad"></rect>
+<text x="116" y="70" class="t-bad" font-size="25" font-weight="700" text-anchor="middle" dominant-baseline="central">sensor</text>
+<rect x="240" y="24" width="200" height="92" rx="14" class="node node--bad"></rect>
+<text x="340" y="70" class="t-bad" font-size="25" font-weight="700" text-anchor="middle" dominant-baseline="central">acquisition</text>
+<circle cx="20" cy="28" r="16" class="badge--bad"/>
+<text x="20" y="29" class="t-badge" font-size="17" font-weight="700" text-anchor="middle" dominant-baseline="central">3</text>
+</g>
+<g data-build="3">
+<rect x="464" y="24" width="200" height="92" rx="14" class="node node--bad"></rect>
+<text x="564" y="70" class="t-bad" font-size="25" font-weight="700" text-anchor="middle" dominant-baseline="central">extraction</text>
+<circle cx="468" cy="28" r="16" class="badge--bad"/>
+<text x="468" y="29" class="t-badge" font-size="17" font-weight="700" text-anchor="middle" dominant-baseline="central">4</text>
+</g>
+<g data-build="4">
+<rect x="16" y="24" width="200" height="92" rx="14" class="node node--bad"></rect>
+<text x="116" y="70" class="t-bad" font-size="25" font-weight="700" text-anchor="middle" dominant-baseline="central">sensor</text>
+<circle cx="20" cy="28" r="16" class="badge--bad"/>
+<text x="20" y="29" class="t-badge" font-size="17" font-weight="700" text-anchor="middle" dominant-baseline="central">5</text>
+</g>
+<g data-build="5">
+<rect x="688" y="24" width="200" height="92" rx="14" class="node node--bad"></rect>
+<text x="788" y="70" class="t-bad" font-size="25" font-weight="700" text-anchor="middle" dominant-baseline="central">representation</text>
+<rect x="912" y="24" width="200" height="92" rx="14" class="node node--bad"></rect>
+<text x="1012" y="70" class="t-bad" font-size="25" font-weight="700" text-anchor="middle" dominant-baseline="central">detection</text>
+<circle cx="692" cy="28" r="16" class="badge--bad"/>
+<text x="692" y="29" class="t-badge" font-size="17" font-weight="700" text-anchor="middle" dominant-baseline="central">6</text>
+</g>
+<g data-build="6">
+<rect x="16" y="24" width="200" height="92" rx="14" class="node node--bad"></rect>
+<text x="116" y="70" class="t-bad" font-size="25" font-weight="700" text-anchor="middle" dominant-baseline="central">sensor</text>
+<circle cx="20" cy="28" r="16" class="badge--bad"/>
+<text x="20" y="29" class="t-badge" font-size="17" font-weight="700" text-anchor="middle" dominant-baseline="central">7</text>
+</g>
+</svg>

@@ -4,19 +4,21 @@
 **Module:** ATT&CK as a language for behavior
 
 ## On-slide content
-
 > Using a stolen administrator account, an attacker runs PowerShell. A script downloads a legitimate, signed but vulnerable kernel driver, loads it, and uses it to disable the endpoint protection and antivirus from the kernel. It then downloads a memory-only implant and injects it into explorer.exe. The implant enumerates documents, compresses selected content, and uploads it over HTTPS.
 
-Below the scenario, the ATT&CK matrix, empty. Map in pairs: artifacts, tools, techniques and procedures, objective, relevant sensors. Then the mapping lights up one step at a time:
+![The Enterprise ATT&CK matrix with the recurring scenario lit step by step: valid accounts; PowerShell with command obfuscation; exploitation for privilege escalation; disable or modify tools; ingress tool transfer; process injection and reflective code loading; discovery and collection; web protocols and exfiltration over the C2 channel](../figures/attack-fileless.svg)
 
-1. Valid Accounts (T1078)
-2. PowerShell (T1059.001) with Command Obfuscation (T1027.010)
-3. Exploitation for Privilege Escalation (T1068); a legitimate, signed but vulnerable driver loaded, then exploited (BYOVD)
-4. Disable or Modify Tools (T1685); endpoint protection and antivirus disabled from the kernel
-5. Ingress Tool Transfer (T1105); the memory-only implant downloaded, visible to a network sensor
-6. Process Injection (T1055), Reflective Code Loading (T1620); into explorer.exe, in memory
-7. File and Directory Discovery (T1083), Data from Local System (T1005), Archive Collected Data (T1560)
-8. Web Protocols (T1071.001), Exfiltration Over C2 Channel (T1041); the upload, visible to a network sensor
+Build, one step per click:
+
+0. The matrix, empty. Map in pairs: artifacts, tools, techniques and procedures, objective, relevant sensors. Then the mapping lights up one step at a time.
+1. Valid Accounts (T1078): the stolen administrator account.
+2. PowerShell (T1059.001) with Command Obfuscation (T1027.010).
+3. Exploitation for Privilege Escalation (T1068): a legitimate, signed but vulnerable driver loaded, then exploited (BYOVD).
+4. Disable or Modify Tools (T1685): endpoint protection and antivirus disabled from the kernel.
+5. Ingress Tool Transfer (T1105): the memory-only implant downloaded, visible to a network sensor.
+6. Process Injection (T1055), lit in two columns because the same behavior serves two goals, and Reflective Code Loading (T1620): into explorer.exe, in memory.
+7. File and Directory Discovery (T1083), Data from Local System (T1005), Archive Collected Data (T1560).
+8. Web Protocols (T1071.001), Exfiltration Over C2 Channel (T1041): the upload, visible to a network sensor.
 
 ## Talking points
 

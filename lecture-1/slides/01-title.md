@@ -4,14 +4,9 @@
 **Module:** Where is the malware?
 
 ## On-slide content
-
 # From Malware Files to Adversarial Capabilities
 
-How malware and malicious capabilities evolved, and how detection pipelines evolved with them
-
-Malware and AI, Lecture 1 of 3
-
-Follow along on your laptop or phone: rvasilenko-ai.github.io/malware-and-ai/lecture-1/deck (a QR on the slide links to the same place).
+> How malware and malicious capabilities evolved, and how detection pipelines evolved with them
 
 ## Talking points
 

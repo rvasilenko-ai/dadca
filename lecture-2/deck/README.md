@@ -16,8 +16,11 @@ dependencies. The sources button is the one from Lecture 1.
 python3 lecture-2/deck/build.py
 ```
 
-No dependencies. The script parses each slide file, converts the on-slide markdown, inlines the
-SVG diagrams from `../figures/` (so their `data-build` groups can be stepped), links the paper
+No dependencies. `build.py` is a short configuration (title, parts) over the builder every lecture
+shares, `tools/deck/deckbuild.py`; the runtime (`deck.js`), the theme (`deck.css`) and the SVG
+primitives the figure generator uses (`svg.py`) live there too, and `index.html` links them
+relatively. The builder parses each slide file, converts the on-slide markdown, inlines the SVG
+diagrams from `../figures/` (so their `data-build` groups can be stepped), links the paper
 figures, and emits one `<section>` per slide plus a divider per part.
 
 ## Run locally

@@ -4,16 +4,17 @@
 **Module:** Detection pipelines: design and evolution
 
 ## On-slide content
+![Share of page loads over HTTPS, late 2015 to 2026: Firefox globally and in the United States, Chrome on Windows and on Mac, from about 40 percent to above 90; the four protocol steps that removed fields from the network sensor marked one at a time](../figures/https-chart.svg)
 
-```text
-share of page loads over HTTPS
-  late 2015    ~40%   Firefox global          Chrome on Windows 43%
-  late 2016    ~50%   Firefox global          Chrome on Windows ~51%
-  early 2018   ~70%   Firefox global          Chrome on Windows 69%
-  2020         ~81%   Firefox global          Firefox US 91%; Chrome Mac 91%, Windows 84%
-  2021–2023           Chrome on Windows passes 90% (2021), 93% by 2023
-                      Firefox global plateaus near 80–84% (regional mix)
-```
+Build, one step per click:
+
+0. Share of page loads over HTTPS: Firefox globally and in the United States, Chrome on Windows and on Mac. About 40 percent in late 2015, half by late 2016, around 70 in early 2018, above 80 by 2020; Chrome on Windows passes 90 in 2021 while Firefox's global figure plateaus near 80–84, a regional mix.
+1. HTTPS by default (Let's Encrypt, 2015 onward) removed the payload content from the network sensor.
+2. TLS 1.3 (2018) removed the server certificate in the clear.
+3. DNS over HTTPS (2018 onward) removed the lookup before the connection.
+4. Encrypted Client Hello (browsers 2023, RFC 9849 in 2026, few servers) removed the server name in the handshake.
+
+> A payload signature cannot match content it never sees. The window has been closing one field at a time.
 
 | Step | What it removed from the network sensor |
 | --- | --- |
@@ -21,8 +22,6 @@ share of page loads over HTTPS
 | TLS 1.3 (2018) | Server certificate in the clear |
 | DNS over HTTPS (2018 onward) | The lookup before the connection |
 | Encrypted Client Hello (browsers 2023, RFC 9849 in 2026, few servers) | The server name in the handshake |
-
-> A payload signature cannot match content it never sees. The window has been closing one field at a time.
 
 ## Talking points
 

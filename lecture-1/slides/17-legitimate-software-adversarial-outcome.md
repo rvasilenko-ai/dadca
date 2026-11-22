@@ -4,10 +4,15 @@
 **Module:** ATT&CK as a language for behavior
 
 ## On-slide content
-
 > Same tool, different procedures; same technique, different tools. And when the artifact itself is legitimate and unchanged, where does “malicious” reside?
 
-Two case cards, revealed one at a time with Next, built from the same four lines:
+![Two case cards built from the same four lines — what it is, what differs from legitimate use, where malicious sits, what a file classifier sees — for a remote-management tool abused and for a vulnerable signed driver; then the answer: as files both are identical to their legitimate copies](../figures/benign-files.svg)
+
+Build, one step per click:
+
+0. A remote-management tool abused — T1219 Remote Access Tools, an ATT&CK *tool*, not malware. The same binary and hash as every other install; what differs is who operates the session and whose objective it serves.
+1. A vulnerable signed driver — T1068 Exploitation for Privilege Escalation. The same binary and hash the vendor shipped; what differs is who loads it, and that its flaw is used beyond the driver's intended design.
+2. As files, both are identical to their legitimate copies. What makes them malicious lives outside the file: who is in control and to what end, and, for the driver, what its flaw lets them do.
 
 | | Remote-management tool abused (T1219 Remote Access Tools, an ATT&CK *tool*, not malware) | Vulnerable signed driver (T1068 Exploitation for Privilege Escalation) |
 | --- | --- | --- |
@@ -15,8 +20,6 @@ Two case cards, revealed one at a time with Next, built from the same four lines
 | What differs from legitimate use | Who operates the session, and whose objective it serves | Who loads it, and that its flaw is used beyond the driver's intended design |
 | Where "malicious" sits | Control and objective; the software works exactly as designed | Control and objective, and also capability: what it can be made to do |
 | What a file classifier sees | A clean, signed, known program | A clean, signed, known driver |
-
-> As files, both are identical to their legitimate copies. What makes them malicious lives outside the file: who is in control and to what end, and, for the driver, what its flaw lets them do.
 
 ## Talking points
 

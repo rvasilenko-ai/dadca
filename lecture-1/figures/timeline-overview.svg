@@ -1,0 +1,265 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 580" width="1800" height="580" role="img" aria-label="Four periods, 2000 to 2026, across five tracks: motive and money, attackers, operating system, internet, security products. Every event is a dot with its date on hover; the anchor events are labelled; the four period bands light up one at a time" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<title>Four periods, 2000 to 2026, across five tracks: motive and money, attackers, operating system, internet, security products. Every event is a dot with its date on hover; the anchor events are labelled; the four period bands light up one at a time</title>
+<style>
+svg{--surface:#ffffff;--surface-2:#eceff6;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--ink-3:#5b6580;--line:#9ca3af;--rule:#cbd5e1;--rule-3:#6c768e;
+--acc:#0284c7;--acc-wash:#e0f2fe;--acc-ink:#075985;--bad:#dc2626;--bad-wash:#fee2e2;--bad-ink:#991b1b;
+--good:#15803d;--good-wash:#dcfce7;--good-ink:#14532d;--on-badge:#ffffff;
+--part-0:#0369a1;--part-1:#b45309;--part-2:#5b3fd0;--part-3:#b91c1c;--part-4:#0f766e}
+@media (prefers-color-scheme: dark){svg{--surface:#141a2a;--surface-2:#1b2234;--frame:#10172a;--ink:#eef1f8;--ink-2:#c6cddd;--ink-3:#9aa4ba;--line:#8b96b0;--rule:#344062;--rule-3:#7f8aa6;
+--acc:#7cc4ff;--acc-wash:#10304a;--acc-ink:#bfe3ff;--bad:#f87171;--bad-wash:#3b1515;--bad-ink:#fecaca;
+--good:#4ade80;--good-wash:#0f2e1c;--good-ink:#bbf7d0;--on-badge:#0b0f1a;
+--part-0:#7cc4ff;--part-1:#f0a04b;--part-2:#a78bfa;--part-3:#f87171;--part-4:#2dd4bf}}
+.node{fill:var(--surface);stroke:var(--rule);stroke-width:2.5}.node--model{fill:var(--acc-wash);stroke:var(--acc);stroke-width:4}
+.node--bad{fill:var(--bad-wash);stroke:var(--bad);stroke-width:4}.node--good{fill:var(--good-wash);stroke:var(--good);stroke-width:4}
+.frame{fill:var(--frame);stroke:var(--rule);stroke-width:2.5}.env{fill:none;stroke:var(--line);stroke-width:3;stroke-dasharray:14 10}
+.t{fill:var(--ink)}.t2{fill:var(--ink-2)}.t-acc{fill:var(--acc-ink)}.t-bad{fill:var(--bad-ink)}.t-good{fill:var(--good-ink)}.t-badge{fill:var(--on-badge)}
+.edge{fill:none;stroke:var(--line);stroke-width:3;stroke-linecap:round}.edge--strong{stroke:var(--ink-2);stroke-width:4}
+.edge--bad{stroke:var(--bad);stroke-width:4}.edge--good{stroke:var(--good);stroke-width:4}
+.arrow{fill:var(--ink-2)}.arrow--bad{fill:var(--bad)}.arrow--good{fill:var(--good)}
+.badge--bad{fill:var(--bad);stroke:var(--surface);stroke-width:3}.badge--good{fill:var(--good);stroke:var(--surface);stroke-width:3}
+.ctx-bar{fill:var(--rule)}.ring{fill:none;stroke:var(--ink);stroke-width:4}.dot{fill:var(--ink)}
+.axis{stroke:var(--rule-3);stroke-width:2}.grid{stroke:var(--rule);stroke-width:1.5}.lane{fill:var(--surface);stroke:var(--rule);stroke-width:1}
+.band-1{fill:var(--part-1);fill-opacity:.11}.band-2{fill:var(--part-2);fill-opacity:.11}.band-3{fill:var(--part-3);fill-opacity:.11}.band-4{fill:var(--part-4);fill-opacity:.11}
+.t-part-1{fill:var(--part-1)}.t-part-2{fill:var(--part-2)}.t-part-3{fill:var(--part-3)}.t-part-4{fill:var(--part-4)}
+.dot--muted{fill:var(--rule-3)}.dot--key{fill:var(--acc)}.dot--anchor{fill:var(--bad)}
+.bar{fill:var(--acc);fill-opacity:.85}.bar--muted{fill:var(--rule)}.bar--bad{fill:var(--bad);fill-opacity:.85}
+.line-1{stroke:var(--part-1)}.line-2{stroke:var(--part-2)}.line-3{stroke:var(--part-0)}.line-4{stroke:var(--part-4)}
+.line-1,.line-2,.line-3,.line-4{fill:none;stroke-width:4;stroke-linejoin:round;stroke-linecap:round}
+.pt-1{fill:var(--part-1)}.pt-2{fill:var(--part-2)}.pt-3{fill:var(--part-0)}.pt-4{fill:var(--part-4)}
+.cell{fill:var(--surface);stroke:var(--rule);stroke-width:1.5}.cell--sub{fill:var(--surface-2);stroke:var(--rule);stroke-width:1.5}
+.cell--lit{fill:var(--bad-wash);stroke:var(--bad);stroke-width:3}.colhead{fill:var(--surface-2);stroke:var(--rule);stroke-width:1.5}
+.marker{stroke:var(--ink-3);stroke-width:2;stroke-dasharray:6 6}
+</style>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
+  <marker id="arrow-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
+  <marker id="arrow-good" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
+</defs>
+<g data-build="0">
+<rect x="250" y="70" width="1530" height="86" rx="0" class="lane"></rect>
+<text x="234" y="113" class="t2" font-size="20" font-weight="700" text-anchor="end" dominant-baseline="central">Motive and money</text>
+<rect x="250" y="156" width="1530" height="86" rx="0" class="lane"></rect>
+<text x="234" y="199" class="t2" font-size="20" font-weight="700" text-anchor="end" dominant-baseline="central">Attackers</text>
+<rect x="250" y="242" width="1530" height="86" rx="0" class="lane"></rect>
+<text x="234" y="285" class="t2" font-size="20" font-weight="700" text-anchor="end" dominant-baseline="central">Operating system</text>
+<rect x="250" y="328" width="1530" height="86" rx="0" class="lane"></rect>
+<text x="234" y="371" class="t2" font-size="20" font-weight="700" text-anchor="end" dominant-baseline="central">Internet</text>
+<rect x="250" y="414" width="1530" height="86" rx="0" class="lane"></rect>
+<text x="234" y="457" class="t2" font-size="20" font-weight="700" text-anchor="end" dominant-baseline="central">Security products</text>
+<path d="M250.0 500V510" class="axis"/>
+<text x="250.0" y="528" class="t2" font-size="18" font-weight="500" text-anchor="middle" dominant-baseline="central">2000</text>
+<path d="M533.3 500V510" class="axis"/>
+<text x="533.3" y="528" class="t2" font-size="18" font-weight="500" text-anchor="middle" dominant-baseline="central">2005</text>
+<path d="M816.7 500V510" class="axis"/>
+<text x="816.7" y="528" class="t2" font-size="18" font-weight="500" text-anchor="middle" dominant-baseline="central">2010</text>
+<path d="M1100.0 500V510" class="axis"/>
+<text x="1100.0" y="528" class="t2" font-size="18" font-weight="500" text-anchor="middle" dominant-baseline="central">2015</text>
+<path d="M1383.3 500V510" class="axis"/>
+<text x="1383.3" y="528" class="t2" font-size="18" font-weight="500" text-anchor="middle" dominant-baseline="central">2020</text>
+<path d="M1666.7 500V510" class="axis"/>
+<text x="1666.7" y="528" class="t2" font-size="18" font-weight="500" text-anchor="middle" dominant-baseline="central">2025</text>
+<path d="M816.7 70V500" class="marker"/>
+<path d="M1213.3 70V500" class="marker"/>
+<path d="M1553.3 70V500" class="marker"/>
+<path d="M250 500H1780" class="axis"/>
+<circle cx="267.0" cy="113" r="4.5" class="dot--muted"><title>2000 · Notoriety — Early-2000s worm authors seek fame rather than money.</title></circle>
+<circle cx="269.8" cy="199" r="4.5" class="dot--muted"><title>2000 · VBScript worms (first script wave) — ILOVEYOU, May 2000; Anna Kournikova, February 2001. Macro viruses had led the way since 1995.</title></circle>
+<circle cx="275.5" cy="457" r="6" class="dot--key"><title>2000 · Outlook blocks executable attachments — Outlook E-mail Security Update, June 2000; mail gateways follow. Office 2000 macro security levels end the first script wave. Attackers answer by diversifying file types.</title></circle>
+<circle cx="284.0" cy="457" r="4.5" class="dot--muted"><title>2000 · Signature antivirus — File scanners and signature databases.</title></circle>
+<circle cx="295.3" cy="371" r="4.5" class="dot--muted"><title>2000 · Plaintext HTTP — HTTPS only for login and payment.</title></circle>
+<circle cx="301.0" cy="199" r="4.5" class="dot--muted"><title>2000 · Mass-mailing worms — Executable attachments and self-mailing worms.</title></circle>
+<circle cx="335.0" cy="371" r="4.5" class="dot--muted"><title>2001 · IE6 and ActiveX — Internet Explorer 6 dominance.</title></circle>
+<circle cx="337.8" cy="199" r="4.5" class="dot--muted"><title>2001 · Code Red, Nimda — Code Red, July 2001 (IIS, MS01-033); Nimda, 18 September 2001: worms that spread over the network with no email and no user action.</title></circle>
+<circle cx="352.0" cy="285" r="9" class="dot--anchor"><title>2001 · Windows XP — Released 25 October 2001: users run as administrator, autorun on, firewall off by default.</title></circle>
+<text x="352.0" y="263" class="t" font-size="16" font-weight="600" text-anchor="start" dominant-baseline="central">Windows XP</text>
+<circle cx="391.7" cy="199" r="4.5" class="dot--muted"><title>2002 · Packers and protectors — UPX (1998), ASPack, Armadillo; Themida 1.0 in December 2004.</title></circle>
+<circle cx="420.0" cy="457" r="4.5" class="dot--muted"><title>2003 · Heuristics and emulation — Scanners run the file a little to see through packers.</title></circle>
+<circle cx="424.0" cy="199" r="4.5" class="dot--muted"><title>2003 · Slammer — 25 January 2003: one UDP packet exploiting SQL Server (MS02-039), spreading worldwide in minutes.</title></circle>
+<circle cx="448.3" cy="113" r="4.5" class="dot--muted"><title>2003 · Adware, pay-per-install — Infected machines monetized through installs and ads.</title></circle>
+<circle cx="448.3" cy="371" r="4.5" class="dot--muted"><title>2003 · Broadband replaces dial-up — Always-on hosts; email as the delivery channel.</title></circle>
+<circle cx="454.6" cy="199" r="4.5" class="dot--muted"><title>2003 · Blaster — 11 August 2003: exploits the RPC DCOM flaw (MS03-026) on Windows 2000 and XP; Windows XP SP2 turns the firewall on the next year.</title></circle>
+<circle cx="468.2" cy="199" r="6" class="dot--key"><title>2003 · IRC botnets: Agobot, rxbot — 2002–2004: Agobot (Gaobot), SDBot and its rxbot derivatives make the compromised machine join an IRC channel and take orders. Infections become inventory, rented for spam, DDoS and installs.</title></circle>
+<circle cx="476.7" cy="199" r="4.5" class="dot--muted"><title>2004 · Hacker Defender — Windows user-mode rootkit; v1.00 released January 2004.</title></circle>
+<circle cx="482.3" cy="199" r="4.5" class="dot--muted"><title>2004 · Mass-mailers switch to zip (MyDoom, Bagle) — MyDoom, 26 January 2004, mails itself in zip archives; Bagle.F, 29 February 2004, in password-protected zips, the password shown as an image by mid-March. The answer to attachment blocking, within weeks.</title></circle>
+<circle cx="493.7" cy="457" r="4.5" class="dot--muted"><title>2004 · HIPS, anti-spam, VirusTotal — Host intrusion prevention; VirusTotal launched 2004.</title></circle>
+<circle cx="495.4" cy="199" r="4.5" class="dot--muted"><title>2004 · Sasser — 30 April 2004: exploits the Windows logon service, LSASS (MS04-011), with no user action; Windows XP SP2 ships with the firewall on that August.</title></circle>
+<circle cx="502.2" cy="457" r="4.5" class="dot--muted"><title>2004 · Gmail blocks executables, zips included — Documented by June 2004: messages with executable attachments, even inside zip archives, bounce to the sender. Gmail adds .js in February 2017.</title></circle>
+<circle cx="510.7" cy="113" r="4.5" class="dot--muted"><title>2004 · DDoS extortion, DDoS for hire — Botnets flood online businesses for ransom and are rented out for attacks; Ancheta indicted for selling botnet access for DDoS and spam, November 2005.</title></circle>
+<circle cx="510.7" cy="285" r="4.5" class="dot--muted"><title>2004 · XP SP2: firewall on, DEP — Service Pack 2, August 2004.</title></circle>
+<circle cx="541.8" cy="199" r="4.5" class="dot--muted"><title>2005 · IM worms: Bropia, Kelvir — Bropia (January 2005) sends itself as a .pif over MSN Messenger; Kelvir (March 2005) sends a link to it. MSN Messenger 7 blocks .pif and filters executable transfers on 7 April 2005; the links were not covered.</title></circle>
+<circle cx="548.6" cy="457" r="4.5" class="dot--muted"><title>2005 · MSN Messenger 7 filters unsafe transfers — 7 April 2005: .pif messages blocked and executable transfers filtered, after Bropia and Kelvir; links were not covered.</title></circle>
+<circle cx="550.3" cy="285" r="4.5" class="dot--muted"><title>2005 · Kernel Patch Protection (x64) — First shipped 2005 on XP x64 and Server 2003 SP1.</title></circle>
+<circle cx="561.7" cy="113" r="9" class="dot--anchor"><title>2005 · Botnets for hire: spam, DDoS, click fraud — Botnet capacity rented for spam and DDoS; browsers monetized by click fraud. The infected machine is inventory.</title></circle>
+<text x="561.7" y="91" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">Botnets for hire: spam, DDoS, click fraud</text>
+<circle cx="561.7" cy="457" r="4.5" class="dot--muted"><title>2005 · Network IDS/IPS — Payload signatures on plaintext traffic.</title></circle>
+<circle cx="580.4" cy="199" r="6" class="dot--key"><title>2005 · Sony BMG rootkit — Disclosed by Mark Russinovich, 31 October 2005.</title></circle>
+<circle cx="590.0" cy="371" r="4.5" class="dot--muted"><title>2006 · Flash, Java, Acrobat plug-ins — The browser exploitation surface of the decade.</title></circle>
+<circle cx="612.7" cy="199" r="4.5" class="dot--muted"><title>2006 · Exploit documents, then MPack (2006–08) — A Word zero-day in targeted attacks, May 2006 (MS06-027); MPack, the first exploit kit sold commercially, documented May–June 2007; a PDF exploit in the wild with zero antivirus detections, November 2008 (CVE-2008-2992).</title></circle>
+<circle cx="618.3" cy="199" r="4.5" class="dot--muted"><title>2006 · Rustock — Kernel rootkit and spam bot, first analysed June 2006.</title></circle>
+<circle cx="649.5" cy="199" r="9" class="dot--anchor"><title>2007 · Storm Worm — First large spam run 19 January 2007 (F-Secure; detection added 15 January); server-side polymorphism at scale.</title></circle>
+<text x="649.5" y="177" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">Storm Worm</text>
+<circle cx="651.2" cy="285" r="6" class="dot--key"><title>2007 · Vista: UAC, signed drivers, ASLR — Consumer release 30 January 2007; mandatory 64-bit driver signing.</title></circle>
+<circle cx="663.7" cy="199" r="4.5" class="dot--muted"><title>2007 · Server-side polymorphism — Thousands of unique variants per day; hashes become one-shot.</title></circle>
+<circle cx="669.3" cy="113" r="4.5" class="dot--muted"><title>2007 · Banking trojans, carding — Credentials and cards become the product.</title></circle>
+<circle cx="677.8" cy="199" r="4.5" class="dot--muted"><title>2007 · Zeus — Banking trojan first identified July 2007.</title></circle>
+<circle cx="697.7" cy="199" r="4.5" class="dot--muted"><title>2007 · Mebroot MBR bootkit — First traces November 2007; drive-by waves December 2007 to January 2008.</title></circle>
+<circle cx="731.7" cy="113" r="4.5" class="dot--muted"><title>2008 · Fake antivirus — Rogue AV scams peak 2008–2011.</title></circle>
+<circle cx="736.2" cy="199" r="4.5" class="dot--muted"><title>2008 · Koobface — Detected 31 July 2008 on MySpace and Facebook: a social-network worm whose botnet earned over US$2 million from pay-per-install and click fraud between June 2009 and June 2010.</title></circle>
+<circle cx="743.0" cy="457" r="9" class="dot--anchor"><title>2008 · McAfee Artemis — Cloud reputation, announced September 2008.</title></circle>
+<text x="743.0" y="435" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">McAfee Artemis</text>
+<circle cx="754.3" cy="199" r="6" class="dot--key"><title>2008 · Conficker — Conficker.A detected 21 November 2008.</title></circle>
+<circle cx="799.7" cy="457" r="4.5" class="dot--muted"><title>2009 · Symantec Quorum / Insight — File prevalence in Norton 2010, announced September 2009.</title></circle>
+<circle cx="805.3" cy="285" r="6" class="dot--key"><title>2009 · Windows 7 ships PowerShell 2.0 — 22 October 2009: an interpreter on every machine.</title></circle>
+<circle cx="816.7" cy="113" r="4.5" class="dot--muted"><title>2010 · State espionage and sabotage — A payoff that is strategic, not financial.</title></circle>
+<circle cx="818.9" cy="199" r="6" class="dot--key"><title>2010 · Operation Aurora — Disclosed by Google, 12 January 2010.</title></circle>
+<circle cx="842.7" cy="199" r="9" class="dot--anchor"><title>2010 · Stuxnet — Identified 17 June 2010.</title></circle>
+<text x="842.7" y="177" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">Stuxnet</text>
+<circle cx="862.0" cy="113" r="4.5" class="dot--muted"><title>2010 · Exploit-kit rental — Blackhole licensed by the year or rented by the day.</title></circle>
+<circle cx="862.0" cy="199" r="4.5" class="dot--muted"><title>2010 · Blackhole exploit kit — Active roughly 2010–2013.</title></circle>
+<circle cx="866.5" cy="371" r="4.5" class="dot--muted"><title>2010 · Facebook Messages: attachments, executables blocked — Launched 15 November 2010 with executables and batch files excluded; a renaming bypass published 27 October 2011, answered with antivirus scanning. Koobface had spread by link since 2008.</title></circle>
+<circle cx="873.3" cy="457" r="6" class="dot--key"><title>2011 · Kill chain paper — Hutchins, Cloppert and Amin, 2011.</title></circle>
+<circle cx="879.0" cy="457" r="4.5" class="dot--muted"><title>2011 · Cuckoo Sandbox — First public beta 5 February 2011.</title></circle>
+<circle cx="896.0" cy="199" r="4.5" class="dot--muted"><title>2011 · Mimikatz — First public release May 2011.</title></circle>
+<circle cx="901.7" cy="371" r="4.5" class="dot--muted"><title>2011 · Office 365 — Launched 28 June 2011.</title></circle>
+<circle cx="913.0" cy="199" r="4.5" class="dot--muted"><title>2011 · GameOver Zeus — Peer-to-peer Zeus variant from September 2011, after the Zeus source leak that May; banking fraud at scale until June 2014.</title></circle>
+<circle cx="921.5" cy="457" r="4.5" class="dot--muted"><title>2011 · WildFire sandbox — Palo Alto Networks, November 2011.</title></circle>
+<circle cx="930.0" cy="457" r="4.5" class="dot--muted"><title>2012 · Incident-response agents before the name — Mandiant's and Carbon Black's host agents recorded process and connection history for investigators; Gartner names the category in 2013 by listing them.</title></circle>
+<circle cx="947.0" cy="113" r="4.5" class="dot--muted"><title>2012 · Police lockers (Reveton) — 2012: the screen is locked in the name of the police and a $100 fine is paid by prepaid money card; the extortion model before Bitcoin.</title></circle>
+<circle cx="952.7" cy="199" r="4.5" class="dot--muted"><title>2012 · PowerSploit — May 2012.</title></circle>
+<circle cx="961.2" cy="199" r="4.5" class="dot--muted"><title>2012 · Cobalt Strike — First release summer 2012.</title></circle>
+<circle cx="976.5" cy="285" r="4.5" class="dot--muted"><title>2012 · Windows 8: Secure Boot, Defender antivirus built in — 26 October 2012: UEFI Secure Boot, and Windows Defender becomes a full antivirus on every machine.</title></circle>
+<circle cx="994.0" cy="199" r="6" class="dot--key"><title>2013 · APT1 report — Mandiant, 18 February 2013.</title></circle>
+<circle cx="1011.0" cy="371" r="4.5" class="dot--muted"><title>2013 · Snowden disclosures — From 6 June 2013. Encryption by default becomes the industry's answer and the IETF declares pervasive monitoring an attack (RFC 7258, May 2014): the cause of the HTTPS curve.</title></circle>
+<circle cx="1018.4" cy="457" r="9" class="dot--anchor"><title>2013 · EDR named — Anton Chuvakin, Gartner, 26 July 2013: 'endpoint threat detection and response'.</title></circle>
+<text x="1018.4" y="435" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">EDR named</text>
+<circle cx="1026.3" cy="113" r="9" class="dot--anchor"><title>2013 · Bitcoin ransom (CryptoLocker) — The victim pays the attacker directly, September 2013.</title></circle>
+<text x="1026.3" y="91" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">Bitcoin ransom (CryptoLocker)</text>
+<circle cx="1026.3" cy="199" r="4.5" class="dot--muted"><title>2013 · CryptoLocker — First seen about 5 September 2013.</title></circle>
+<circle cx="1027.5" cy="457" r="6" class="dot--key"><title>2013 · FireEye IPO: sandbox peak — 20 September 2013.</title></circle>
+<circle cx="1037.7" cy="199" r="4.5" class="dot--muted"><title>2013 · Angler exploit kit — Late 2013 to June 2016.</title></circle>
+<circle cx="1038.8" cy="113" r="4.5" class="dot--muted"><title>2013 · Target POS breach — 27 November to 15 December 2013; about 40 million cards.</title></circle>
+<circle cx="1050.7" cy="457" r="4.5" class="dot--muted"><title>2014 · CylancePROTECT (ML on PE features) — 18 February 2014.</title></circle>
+<circle cx="1058.6" cy="285" r="6" class="dot--key"><title>2014 · XP end of support — 8 April 2014.</title></circle>
+<circle cx="1067.1" cy="113" r="4.5" class="dot--muted"><title>2014 · GameOver Zeus takedown (Operation Tovar) — 2 June 2014: the leading banking-fraud botnet and the CryptoLocker infrastructure disrupted together.</title></circle>
+<circle cx="1076.2" cy="199" r="4.5" class="dot--muted"><title>2014 · Poweliks (registry-resident) — Disclosed 31 July 2014.</title></circle>
+<circle cx="1077.3" cy="457" r="4.5" class="dot--muted"><title>2014 · Sysmon — Sysinternals Sysmon 1.0, 5 August 2014.</title></circle>
+<circle cx="1090.4" cy="199" r="6" class="dot--key"><title>2014 · Macros return (Dridex) — Word-macro delivery from late October 2014.</title></circle>
+<circle cx="1117.0" cy="371" r="4.5" class="dot--muted"><title>2015 · Chrome drops NPAPI plug-ins — Java plug-in disabled April 2015, removed September 2015.</title></circle>
+<circle cx="1121.0" cy="457" r="6" class="dot--key"><title>2015 · ATT&amp;CK public — May 2015; 96 techniques, 9 tactics.</title></circle>
+<circle cx="1122.7" cy="199" r="4.5" class="dot--muted"><title>2015 · Kovter goes fileless — Registry-resident variant, May 2015.</title></circle>
+<circle cx="1132.3" cy="285" r="9" class="dot--anchor"><title>2015 · Windows 10: AMSI, script block logging — 29 July 2015; Device Guard and Credential Guard in Enterprise editions.</title></circle>
+<text x="1132.3" y="263" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">Windows 10: AMSI, script block logging</text>
+<circle cx="1134.0" cy="199" r="6" class="dot--key"><title>2015 · PowerShell Empire — BSides Las Vegas, 5 August 2015.</title></circle>
+<circle cx="1152.1" cy="371" r="6" class="dot--key"><title>2015 · Let's Encrypt public beta — 3 December 2015; about 40 percent of Firefox page loads were HTTPS.</title></circle>
+<circle cx="1155.5" cy="199" r="4.5" class="dot--muted"><title>2015 · Ukraine grid attack — 23 December 2015: BlackEnergy for access, then operators by hand opening breakers at three utilities; the first confirmed cyber-induced outage.</title></circle>
+<circle cx="1160.6" cy="371" r="4.5" class="dot--muted"><title>2016 · Oracle deprecates Java plug-in — 27 January 2016.</title></circle>
+<circle cx="1162.3" cy="113" r="6" class="dot--key"><title>2016 · Bangladesh Bank heist — 4–5 February 2016; attributed to North Korea.</title></circle>
+<circle cx="1164.0" cy="199" r="4.5" class="dot--muted"><title>2016 · Locky — First seen 16 February 2016.</title></circle>
+<circle cx="1190.7" cy="457" r="4.5" class="dot--muted"><title>2016 · Windows Defender ATP: EDR built into Windows 10 — Announced 1 March 2016, shipped with the Anniversary Update on 2 August 2016: post-breach detection as an operating-system feature.</title></circle>
+<circle cx="1200.9" cy="199" r="6" class="dot--key"><title>2016 · Mirai botnet — Source published at the end of September 2016; the Dyn attack on 21 October 2016. Cameras and routers that can never run an agent: the edge arrives as a botnet.</title></circle>
+<circle cx="1202.0" cy="371" r="6" class="dot--key"><title>2016 · HTTPS passes half of page loads — Firefox 50 percent on 13 October 2016; Chrome on Windows about 51 percent.</title></circle>
+<circle cx="1229.2" cy="199" r="6" class="dot--key"><title>2017 · Shadow Brokers leak — EternalBlue published 14 April 2017.</title></circle>
+<circle cx="1230.3" cy="113" r="4.5" class="dot--muted"><title>2017 · BEC top IC3 loss category — Largest reported loss category every year 2017–2021; overtaken by investment fraud in 2022.</title></circle>
+<circle cx="1233.7" cy="199" r="4.5" class="dot--muted"><title>2017 · WannaCry — 12 May 2017.</title></circle>
+<circle cx="1238.8" cy="457" r="4.5" class="dot--muted"><title>2017 · JA3 TLS fingerprinting — Salesforce, June 2017.</title></circle>
+<circle cx="1241.1" cy="199" r="9" class="dot--anchor"><title>2017 · NotPetya — 27 June 2017; attributed to the Russian military 15 February 2018.</title></circle>
+<text x="1241.1" y="177" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">NotPetya</text>
+<circle cx="1253.6" cy="199" r="4.5" class="dot--muted"><title>2017 · CCleaner supply chain — Disclosed 18 September 2017.</title></circle>
+<circle cx="1258.7" cy="285" r="4.5" class="dot--muted"><title>2017 · ASR rules (Windows 10 1709) — Exploit Guard, October 2017.</title></circle>
+<circle cx="1270.0" cy="113" r="4.5" class="dot--muted"><title>2018 · Cryptojacking — Monero mining in browsers and on servers.</title></circle>
+<circle cx="1298.3" cy="457" r="6" class="dot--key"><title>2018 · EDR mainstream; XDR — Detection moves to the host; managed detection and response. XDR as a product from Cortex XDR, February 2019.</title></circle>
+<circle cx="1301.2" cy="371" r="4.5" class="dot--muted"><title>2018 · Chrome marks HTTP 'Not secure' — Chrome 68, 24 July 2018.</title></circle>
+<circle cx="1304.0" cy="113" r="6" class="dot--key"><title>2018 · Big-game ransomware — Ryuk from August 2018: the organization pays directly.</title></circle>
+<circle cx="1304.0" cy="199" r="4.5" class="dot--muted"><title>2018 · Emotet, TrickBot, Ryuk — The 2018–2019 loader-to-ransomware chain.</title></circle>
+<circle cx="1305.1" cy="371" r="6" class="dot--key"><title>2018 · TLS 1.3 (RFC 8446) — August 2018: the server certificate is encrypted.</title></circle>
+<circle cx="1315.3" cy="371" r="4.5" class="dot--muted"><title>2018 · DNS over HTTPS (RFC 8484) — October 2018.</title></circle>
+<circle cx="1321.6" cy="457" r="4.5" class="dot--muted"><title>2018 · ATT&amp;CK Evaluations, round 1 (APT3) — Results published November 2018: EDR products measured technique by technique against one emulated adversary.</title></circle>
+<circle cx="1326.7" cy="199" r="6" class="dot--key"><title>2019 · Malware-free intrusions pass half — CrowdStrike's yearly reports: malware-free detections 40 percent in 2018, 51 percent in 2019, 62 percent at the end of 2021, 79 percent in 2024. PowerShell, WMI, living-off-the-land binaries, Cobalt Strike, DLL side-loading, memory-only implants.</title></circle>
+<circle cx="1372.0" cy="285" r="4.5" class="dot--muted"><title>2019 · Defender tamper protection — GA 14 October 2019.</title></circle>
+<circle cx="1376.5" cy="113" r="9" class="dot--anchor"><title>2019 · Double extortion (Maze) — Allied Universal leak threat, November 2019.</title></circle>
+<text x="1376.5" y="91" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">Double extortion (Maze)</text>
+<circle cx="1383.3" cy="199" r="4.5" class="dot--muted"><title>2020 · Citrix ADC and Pulse Secure VPN exploited — CVE-2019-19781 (disclosed December 2019) and CVE-2019-11510 (2019): edge appliances become an entry point before any host is touched.</title></circle>
+<circle cx="1385.6" cy="285" r="4.5" class="dot--muted"><title>2020 · Windows 7 end of support — 14 January 2020.</title></circle>
+<circle cx="1391.8" cy="371" r="4.5" class="dot--muted"><title>2020 · Firefox DoH default (US) — 25 February 2020.</title></circle>
+<circle cx="1400.3" cy="371" r="9" class="dot--anchor"><title>2020 · Remote work; identity is the perimeter — Cloud-first, OAuth tokens, SaaS everywhere.</title></circle>
+<text x="1400.3" y="349" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">Remote work; identity is the perimeter</text>
+<circle cx="1417.3" cy="113" r="4.5" class="dot--muted"><title>2020 · Initial-access brokers, infostealer logs — Access itself becomes the traded commodity.</title></circle>
+<circle cx="1417.3" cy="457" r="4.5" class="dot--muted"><title>2020 · NIST SP 800-207 zero trust — 11 August 2020.</title></circle>
+<circle cx="1437.2" cy="199" r="9" class="dot--anchor"><title>2020 · SolarWinds — SUNBURST disclosed 13 December 2020.</title></circle>
+<text x="1437.2" y="177" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">SolarWinds</text>
+<circle cx="1439.4" cy="371" r="4.5" class="dot--muted"><title>2020 · Flash end of life — 31 December 2020: the exploit kits' favourite target is gone.</title></circle>
+<circle cx="1449.6" cy="199" r="4.5" class="dot--muted"><title>2021 · ProxyLogon — 2 March 2021.</title></circle>
+<circle cx="1457.0" cy="371" r="4.5" class="dot--muted"><title>2021 · Chrome on Windows passes 90% HTTPS — April 2021.</title></circle>
+<circle cx="1459.8" cy="113" r="6" class="dot--key"><title>2021 · Colonial Pipeline (DarkSide) — 7 May 2021: the pipeline shut down for days; about 75 bitcoin paid, most of it seized by the DOJ in June.</title></circle>
+<circle cx="1463.8" cy="457" r="4.5" class="dot--muted"><title>2021 · FireEye sells its products business — 2 June 2021, to Symphony Technology Group for $1.2 billion; VMware had bought Lastline in June 2020. The bookend to the 2013 IPO: the sandbox is a bundled feature now.</title></circle>
+<circle cx="1468.3" cy="199" r="4.5" class="dot--muted"><title>2021 · Kaseya — 2 July 2021.</title></circle>
+<circle cx="1483.1" cy="285" r="6" class="dot--key"><title>2021 · Windows 11: TPM 2.0, VBS default — 5 October 2021; virtualization-based security (VBS) on by default for new installs.</title></circle>
+<circle cx="1489.9" cy="199" r="4.5" class="dot--muted"><title>2021 · Implants in Go and Rust (BlackCat) — BlackCat, the first major ransomware written in Rust, mid-November 2021; Go malware had multiplied through 2020. Still PE files, but each runtime needs its own unpacking, symbol recovery and decompilation.</title></circle>
+<circle cx="1493.3" cy="199" r="4.5" class="dot--muted"><title>2021 · Log4Shell — 9 December 2021.</title></circle>
+<circle cx="1496.7" cy="113" r="4.5" class="dot--muted"><title>2022 · State cryptocurrency heists — North Korean theft at scale.</title></circle>
+<circle cx="1504.0" cy="199" r="4.5" class="dot--muted"><title>2022 · Wipers in Ukraine; Viasat — HermeticWiper on 23 February 2022; KA-SAT modems bricked on 24 February: state sabotage at the start of the invasion.</title></circle>
+<circle cx="1506.9" cy="457" r="4.5" class="dot--muted"><title>2022 · ITDR named (Gartner) — 7 March 2022.</title></circle>
+<circle cx="1508.0" cy="199" r="6" class="dot--key"><title>2022 · LAPSUS$ — Okta, Microsoft, Nvidia, early 2022: help desks and MFA fatigue.</title></circle>
+<circle cx="1527.8" cy="285" r="6" class="dot--key"><title>2022 · Internet macros blocked — Announced February, rolled out July 2022.</title></circle>
+<circle cx="1537.5" cy="285" r="4.5" class="dot--muted"><title>2022 · Driver blocklist on by default — Windows 11 22H2, 20 September 2022.</title></circle>
+<circle cx="1538.0" cy="285" r="4.5" class="dot--muted"><title>2022 · Smart App Control — Windows 11 22H2, September 2022.</title></circle>
+<circle cx="1539.2" cy="199" r="6" class="dot--key"><title>2022 · BYOVD EDR killers — Bring your own vulnerable driver: a signed, exploitable driver loaded to switch the EDR off from the kernel. BlackByte, Lazarus, Cuba, 2022.</title></circle>
+<circle cx="1559.0" cy="371" r="9" class="dot--anchor"><title>2023 · AI assistants in browsers, IDEs, SaaS — Copilots everywhere.</title></circle>
+<text x="1559.0" y="397" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">AI assistants in browsers, IDEs, SaaS</text>
+<circle cx="1564.7" cy="285" r="4.5" class="dot--muted"><title>2023 · LSA protection default (enterprise) — New enterprise-joined installs, 22H2 and later.</title></circle>
+<circle cx="1575.4" cy="199" r="9" class="dot--anchor"><title>2023 · Volt Typhoon advisory — CISA AA23-144A, 24 May 2023: living off the land as the whole campaign.</title></circle>
+<text x="1575.4" y="225" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">Volt Typhoon advisory</text>
+<circle cx="1576.0" cy="113" r="9" class="dot--anchor"><title>2023 · Extortion without encryption — Cl0p and MOVEit, May–June 2023.</title></circle>
+<text x="1576.0" y="139" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">Extortion without encryption</text>
+<circle cx="1576.0" cy="113" r="4.5" class="dot--muted"><title>2023 · State prepositioning — Volt Typhoon: not paid at all.</title></circle>
+<circle cx="1577.1" cy="199" r="4.5" class="dot--muted"><title>2023 · Cl0p MOVEit — Exploitation from about 27 May 2023.</title></circle>
+<circle cx="1581.7" cy="457" r="4.5" class="dot--muted"><title>2023 · Identity threat detection and response — The sensor moves to the identity provider.</title></circle>
+<circle cx="1592.4" cy="199" r="6" class="dot--key"><title>2023 · Scattered Spider: MGM, Caesars — September 2023; help-desk calls and MFA resets.</title></circle>
+<circle cx="1593.0" cy="113" r="4.5" class="dot--muted"><title>2023 · Help-desk SE against casinos — Payout justifies live social engineering.</title></circle>
+<circle cx="1594.1" cy="371" r="4.5" class="dot--muted"><title>2023 · ECH in Chrome and Firefox — September–October 2023; Cloudflare default for free zones.</title></circle>
+<circle cx="1595.3" cy="285" r="6" class="dot--key"><title>2023 · Passkeys in Windows 11 — September 2023.</title></circle>
+<circle cx="1597.5" cy="199" r="4.5" class="dot--muted"><title>2023 · Citrix Bleed — CVE-2023-4966, October 2023.</title></circle>
+<circle cx="1601.5" cy="371" r="4.5" class="dot--muted"><title>2023 · Collaboration tools as the new mail — Storm-0324 phishes through Teams with SharePoint-hosted files (Microsoft, 12 September 2023); Black Basta's fake help-desk Teams calls from May 2024; Discord's content network hosted payloads until it moved to expiring links, November 2023.</title></circle>
+<circle cx="1611.7" cy="199" r="6" class="dot--key"><title>2024 · Edge devices: Citrix Bleed, Ivanti, Fortinet — Citrix Bleed October 2023, Ivanti Connect Secure zero-days January 2024, Fortinet SSL-VPN February 2024: appliances that run no EDR become the main entry point.</title></circle>
+<circle cx="1615.7" cy="457" r="4.5" class="dot--muted"><title>2024 · CISA LOTL guidance; baselining — 7 February 2024.</title></circle>
+<circle cx="1616.2" cy="199" r="4.5" class="dot--muted"><title>2024 · Fortinet SSL-VPN — CVE-2024-21762, February 2024.</title></circle>
+<circle cx="1621.3" cy="113" r="4.5" class="dot--muted"><title>2024 · Session tokens as the product — A token opens the SaaS tenant where the data lives.</title></circle>
+<circle cx="1623.6" cy="199" r="4.5" class="dot--muted"><title>2024 · XZ Utils backdoor — Found 29 March 2024: a maintainer identity built over two years to plant a backdoor in a Linux compression library on the path to SSH.</title></circle>
+<circle cx="1632.7" cy="199" r="6" class="dot--key"><title>2024 · ClickFix — The user pastes the command; first observed March 2024.</title></circle>
+<circle cx="1633.8" cy="199" r="4.5" class="dot--muted"><title>2024 · Snowflake customer breaches — May–June 2024: infostealer credentials with no MFA opened about 165 customer tenants; data stolen and extorted without touching a host.</title></circle>
+<circle cx="1641.2" cy="457" r="6" class="dot--key"><title>2024 · CrowdStrike outage; EDR out of the kernel — 19 July 2024: a faulty sensor update crashed about 8.5 million Windows hosts. Microsoft's Windows Resiliency Initiative (November 2024) moves endpoint security out of kernel mode.</title></circle>
+<circle cx="1644.0" cy="457" r="4.5" class="dot--muted"><title>2024 · LLM triage in the SOC — Reasoning applied on the defensive side.</title></circle>
+<circle cx="1655.3" cy="199" r="4.5" class="dot--muted"><title>2024 · Salt Typhoon (telecoms) — Disclosed September–November 2024: a state actor inside carrier networks, reaching call records and data held for court-ordered law-enforcement requests; in through edge equipment.</title></circle>
+<circle cx="1661.0" cy="371" r="4.5" class="dot--muted"><title>2024 · Agent protocols (MCP) — Tool-using agents become products.</title></circle>
+<circle cx="1674.6" cy="113" r="4.5" class="dot--muted"><title>2025 · Bybit heist (North Korea) — 21 February 2025: about $1.5 billion in cryptocurrency, the largest theft on record; FBI attribution on 26 February.</title></circle>
+<circle cx="1691.0" cy="199" r="4.5" class="dot--muted"><title>2025 · Firmware botnets in consumer devices — BADBOX (identified 2023) and BADBOX 2.0 (FBI warning, 5 June 2025): Android TV boxes and other devices backdoored before purchase. XCPE, disclosed 2 November 2026: the backdoor in the manufacturer's own firmware on more than 1.3 million set-top boxes.</title></circle>
+<circle cx="1700.7" cy="457" r="9" class="dot--anchor"><title>2025 · Project Ire — Microsoft, 5 August 2025: agentic malware analysis.</title></circle>
+<text x="1700.7" y="435" class="t" font-size="16" font-weight="600" text-anchor="end" dominant-baseline="central">Project Ire</text>
+<circle cx="1708.0" cy="199" r="6" class="dot--key"><title>2025 · ForcedLeak (hijacked agent) — Noma Security, 25 September 2025.</title></circle>
+<circle cx="1711.4" cy="285" r="4.5" class="dot--muted"><title>2025 · Windows 10 end of support — 14 October 2025.</title></circle>
+<circle cx="1716.0" cy="199" r="4.5" class="dot--muted"><title>2025 · AI-orchestrated espionage campaign reported — Anthropic, 13 November 2025: a state-linked operator had an agent run most of an intrusion campaign; agent-assisted extortion had been reported in August 2025.</title></circle>
+<circle cx="1717.7" cy="457" r="4.5" class="dot--muted"><title>2025 · Guardrails, agent observability — The sensor moves into the agent harness.</title></circle>
+<circle cx="1734.7" cy="371" r="4.5" class="dot--muted"><title>2026 · ECH standardized (RFC 9849) — March 2026; server-side adoption still narrow.</title></circle>
+<circle cx="1740.3" cy="457" r="4.5" class="dot--muted"><title>2026 · ATT&amp;CK adds Defense Impairment — ATT&amp;CK v19, 28 April 2026: Defense Evasion split into Stealth and Defense Impairment. v20, 13 October 2026, adds Impair Autonomous Defenses, including prompt injection against LLM-assisted analysis (slide 16).</title></circle>
+<circle cx="1754.5" cy="199" r="6" class="dot--key"><title>2026 · Autonomous agent intrusion — Hugging Face technical timeline of the July 2026 incident.</title></circle>
+<circle cx="1770.4" cy="199" r="4.5" class="dot--muted"><title>2026 · File-based implants persist: NIK C2, VOLTA — Talos, October 2026: NIK C2, a Go remote-access tool with an OpenAI client; VOLTA, a built-to-order infostealer that sends the stolen bundle to an LLM to rank the victim's assets. Still PE files for sale.</title></circle>
+<circle cx="1770.9" cy="113" r="6" class="dot--key"><title>2026 · Bandwidth as the product again — XCPE, disclosed 2 November 2026: a device manufacturer sells access to more than 1.3 million set-top boxes to affiliates for residential proxies and ad fraud. The botnet-for-hire model of 2005, on devices no one patches.</title></circle>
+<circle cx="1772.6" cy="199" r="4.5" class="dot--muted"><title>2026 · Browser-resident C2 (Falcon/XG) — Unit 42, 11 November 2026: the implant is JavaScript in a browser tab or a sideloaded extension, no host file; a tab injection is scoped to one site, an extension hijacks the whole browser. The same actor drops a native Rust implant (Antino) via a fake Adobe Flash update.</title></circle>
+</g>
+<g data-build="1">
+<rect x="250.0" y="70" width="566.7" height="430" rx="0" class="band-1"></rect>
+<text x="533.35" y="46" class="t-part-1" font-size="21" font-weight="700" text-anchor="middle" dominant-baseline="central">2000–2009 · Worms to botnets</text>
+</g>
+<g data-build="2">
+<rect x="816.7" y="70" width="396.5999999999999" height="430" rx="0" class="band-2"></rect>
+<text x="1015.0" y="46" class="t-part-2" font-size="21" font-weight="700" text-anchor="middle" dominant-baseline="central">2010–2016 · APT and exploit kits</text>
+</g>
+<g data-build="3">
+<rect x="1213.3" y="70" width="340.0" height="430" rx="0" class="band-3"></rect>
+<text x="1383.3" y="46" class="t-part-3" font-size="21" font-weight="700" text-anchor="middle" dominant-baseline="central">2017–2022 · Access economy</text>
+</g>
+<g data-build="4">
+<rect x="1553.3" y="70" width="226.70000000000005" height="430" rx="0" class="band-4"></rect>
+<text x="1774.0" y="22" class="t-part-4" font-size="21" font-weight="700" text-anchor="end" dominant-baseline="central">2023–2026 · Hands-on, edge devices, agents</text>
+</g>
+</svg>

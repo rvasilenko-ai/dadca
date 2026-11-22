@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 540" width="1800" height="540" role="img" aria-label="2000–2009 · the executable, from worms to botnets: the five tracks for these years, key events labelled, every dot with its date on hover; the tracks light up one at a time" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<title>2000–2009 · the executable, from worms to botnets: the five tracks for these years, key events labelled, every dot with its date on hover; the tracks light up one at a time</title>
+<style>
+svg{--surface:#ffffff;--surface-2:#eceff6;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--ink-3:#5b6580;--line:#9ca3af;--rule:#cbd5e1;--rule-3:#6c768e;
+--acc:#0284c7;--acc-wash:#e0f2fe;--acc-ink:#075985;--bad:#dc2626;--bad-wash:#fee2e2;--bad-ink:#991b1b;
+--good:#15803d;--good-wash:#dcfce7;--good-ink:#14532d;--on-badge:#ffffff;
+--part-0:#0369a1;--part-1:#b45309;--part-2:#5b3fd0;--part-3:#b91c1c;--part-4:#0f766e}
+@media (prefers-color-scheme: dark){svg{--surface:#141a2a;--surface-2:#1b2234;--frame:#10172a;--ink:#eef1f8;--ink-2:#c6cddd;--ink-3:#9aa4ba;--line:#8b96b0;--rule:#344062;--rule-3:#7f8aa6;
+--acc:#7cc4ff;--acc-wash:#10304a;--acc-ink:#bfe3ff;--bad:#f87171;--bad-wash:#3b1515;--bad-ink:#fecaca;
+--good:#4ade80;--good-wash:#0f2e1c;--good-ink:#bbf7d0;--on-badge:#0b0f1a;
+--part-0:#7cc4ff;--part-1:#f0a04b;--part-2:#a78bfa;--part-3:#f87171;--part-4:#2dd4bf}}
+.node{fill:var(--surface);stroke:var(--rule);stroke-width:2.5}.node--model{fill:var(--acc-wash);stroke:var(--acc);stroke-width:4}
+.node--bad{fill:var(--bad-wash);stroke:var(--bad);stroke-width:4}.node--good{fill:var(--good-wash);stroke:var(--good);stroke-width:4}
+.frame{fill:var(--frame);stroke:var(--rule);stroke-width:2.5}.env{fill:none;stroke:var(--line);stroke-width:3;stroke-dasharray:14 10}
+.t{fill:var(--ink)}.t2{fill:var(--ink-2)}.t-acc{fill:var(--acc-ink)}.t-bad{fill:var(--bad-ink)}.t-good{fill:var(--good-ink)}.t-badge{fill:var(--on-badge)}
+.edge{fill:none;stroke:var(--line);stroke-width:3;stroke-linecap:round}.edge--strong{stroke:var(--ink-2);stroke-width:4}
+.edge--bad{stroke:var(--bad);stroke-width:4}.edge--good{stroke:var(--good);stroke-width:4}
+.arrow{fill:var(--ink-2)}.arrow--bad{fill:var(--bad)}.arrow--good{fill:var(--good)}
+.badge--bad{fill:var(--bad);stroke:var(--surface);stroke-width:3}.badge--good{fill:var(--good);stroke:var(--surface);stroke-width:3}
+.ctx-bar{fill:var(--rule)}.ring{fill:none;stroke:var(--ink);stroke-width:4}.dot{fill:var(--ink)}
+.axis{stroke:var(--rule-3);stroke-width:2}.grid{stroke:var(--rule);stroke-width:1.5}.lane{fill:var(--surface);stroke:var(--rule);stroke-width:1}
+.band-1{fill:var(--part-1);fill-opacity:.11}.band-2{fill:var(--part-2);fill-opacity:.11}.band-3{fill:var(--part-3);fill-opacity:.11}.band-4{fill:var(--part-4);fill-opacity:.11}
+.t-part-1{fill:var(--part-1)}.t-part-2{fill:var(--part-2)}.t-part-3{fill:var(--part-3)}.t-part-4{fill:var(--part-4)}
+.dot--muted{fill:var(--rule-3)}.dot--key{fill:var(--acc)}.dot--anchor{fill:var(--bad)}
+.bar{fill:var(--acc);fill-opacity:.85}.bar--muted{fill:var(--rule)}.bar--bad{fill:var(--bad);fill-opacity:.85}
+.line-1{stroke:var(--part-1)}.line-2{stroke:var(--part-2)}.line-3{stroke:var(--part-0)}.line-4{stroke:var(--part-4)}
+.line-1,.line-2,.line-3,.line-4{fill:none;stroke-width:4;stroke-linejoin:round;stroke-linecap:round}
+.pt-1{fill:var(--part-1)}.pt-2{fill:var(--part-2)}.pt-3{fill:var(--part-0)}.pt-4{fill:var(--part-4)}
+.cell{fill:var(--surface);stroke:var(--rule);stroke-width:1.5}.cell--sub{fill:var(--surface-2);stroke:var(--rule);stroke-width:1.5}
+.cell--lit{fill:var(--bad-wash);stroke:var(--bad);stroke-width:3}.colhead{fill:var(--surface-2);stroke:var(--rule);stroke-width:1.5}
+.marker{stroke:var(--ink-3);stroke-width:2;stroke-dasharray:6 6}
+</style>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
+  <marker id="arrow-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
+  <marker id="arrow-good" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
+</defs>
+<g data-build="0">
+<rect x="250" y="18" width="1530" height="12" rx="6" class="lane"></rect>
+<rect x="250.0" y="16" width="566.7" height="16" rx="6" class="band-1"></rect>
+<text x="234" y="24" class="t2" font-size="15" font-weight="500" text-anchor="end" dominant-baseline="central">2000–2026</text>
+<rect x="250" y="70" width="1530" height="82" rx="0" class="lane"></rect>
+<text x="234" y="111" class="t2" font-size="20" font-weight="700" text-anchor="end" dominant-baseline="central">Motive and money</text>
+<rect x="250" y="152" width="1530" height="82" rx="0" class="lane"></rect>
+<text x="234" y="193" class="t2" font-size="20" font-weight="700" text-anchor="end" dominant-baseline="central">Attackers</text>
+<rect x="250" y="234" width="1530" height="82" rx="0" class="lane"></rect>
+<text x="234" y="275" class="t2" font-size="20" font-weight="700" text-anchor="end" dominant-baseline="central">Operating system</text>
+<rect x="250" y="316" width="1530" height="82" rx="0" class="lane"></rect>
+<text x="234" y="357" class="t2" font-size="20" font-weight="700" text-anchor="end" dominant-baseline="central">Internet</text>
+<rect x="250" y="398" width="1530" height="82" rx="0" class="lane"></rect>
+<text x="234" y="439" class="t2" font-size="20" font-weight="700" text-anchor="end" dominant-baseline="central">Security products</text>
+<path d="M250.0 480V488" class="axis"/>
+<text x="250.0" y="506" class="t2" font-size="17" font-weight="500" text-anchor="middle" dominant-baseline="central">2000</text>
+<path d="M403.0 480V488" class="axis"/>
+<text x="403.0" y="506" class="t2" font-size="17" font-weight="500" text-anchor="middle" dominant-baseline="central">2001</text>
+<path d="M556.0 480V488" class="axis"/>
+<text x="556.0" y="506" class="t2" font-size="17" font-weight="500" text-anchor="middle" dominant-baseline="central">2002</text>
+<path d="M709.0 480V488" class="axis"/>
+<text x="709.0" y="506" class="t2" font-size="17" font-weight="500" text-anchor="middle" dominant-baseline="central">2003</text>
+<path d="M862.0 480V488" class="axis"/>
+<text x="862.0" y="506" class="t2" font-size="17" font-weight="500" text-anchor="middle" dominant-baseline="central">2004</text>
+<path d="M1015.0 480V488" class="axis"/>
+<text x="1015.0" y="506" class="t2" font-size="17" font-weight="500" text-anchor="middle" dominant-baseline="central">2005</text>
+<path d="M1168.0 480V488" class="axis"/>
+<text x="1168.0" y="506" class="t2" font-size="17" font-weight="500" text-anchor="middle" dominant-baseline="central">2006</text>
+<path d="M1321.0 480V488" class="axis"/>
+<text x="1321.0" y="506" class="t2" font-size="17" font-weight="500" text-anchor="middle" dominant-baseline="central">2007</text>
+<path d="M1474.0 480V488" class="axis"/>
+<text x="1474.0" y="506" class="t2" font-size="17" font-weight="500" text-anchor="middle" dominant-baseline="central">2008</text>
+<path d="M1627.0 480V488" class="axis"/>
+<text x="1627.0" y="506" class="t2" font-size="17" font-weight="500" text-anchor="middle" dominant-baseline="central">2009</text>
+<path d="M1780.0 480V488" class="axis"/>
+<text x="1780.0" y="506" class="t2" font-size="17" font-weight="500" text-anchor="middle" dominant-baseline="central">2010</text>
+<path d="M250 480H1780" class="axis"/>
+<circle cx="295.9" cy="111" r="5" class="dot--muted"><title>2000 · Notoriety — Early-2000s worm authors seek fame rather than money.</title></circle>
+<circle cx="303.5" cy="193" r="5" class="dot--muted"><title>2000 · VBScript worms (first script wave) — ILOVEYOU, May 2000; Anna Kournikova, February 2001. Macro viruses had led the way since 1995.</title></circle>
+<circle cx="318.9" cy="439" r="8" class="dot--key"><title>2000 · Outlook blocks executable attachments — Outlook E-mail Security Update, June 2000; mail gateways follow. Office 2000 macro security levels end the first script wave. Attackers answer by diversifying file types.</title></circle>
+<text x="318.9" y="419" class="t" font-size="16" font-weight="600" text-anchor="start" dominant-baseline="central">Outlook blocks executable attachments</text>
+<circle cx="341.8" cy="439" r="5" class="dot--muted"><title>2000 · Signature antivirus — File scanners and signature databases.</title></circle>
+<circle cx="372.4" cy="357" r="5" class="dot--muted"><title>2000 · Plaintext HTTP — HTTPS only for login and payment.</title></circle>
+<circle cx="387.7" cy="193" r="5" class="dot--muted"><title>2000 · Mass-mailing worms — Executable attachments and self-mailing worms.</title></circle>
+<circle cx="479.5" cy="357" r="5" class="dot--muted"><title>2001 · IE6 and ActiveX — Internet Explorer 6 dominance.</title></circle>
+<circle cx="487.1" cy="193" r="5" class="dot--muted"><title>2001 · Code Red, Nimda — Code Red, July 2001 (IIS, MS01-033); Nimda, 18 September 2001: worms that spread over the network with no email and no user action.</title></circle>
+<circle cx="525.4" cy="275" r="8" class="dot--key"><title>2001 · Windows XP — Released 25 October 2001: users run as administrator, autorun on, firewall off by default.</title></circle>
+<text x="525.4" y="255" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">Windows XP</text>
+<circle cx="632.5" cy="193" r="5" class="dot--muted"><title>2002 · Packers and protectors — UPX (1998), ASPack, Armadillo; Themida 1.0 in December 2004.</title></circle>
+<circle cx="709.0" cy="439" r="5" class="dot--muted"><title>2003 · Heuristics and emulation — Scanners run the file a little to see through packers.</title></circle>
+<circle cx="719.7" cy="193" r="5" class="dot--muted"><title>2003 · Slammer — 25 January 2003: one UDP packet exploiting SQL Server (MS02-039), spreading worldwide in minutes.</title></circle>
+<circle cx="785.5" cy="111" r="5" class="dot--muted"><title>2003 · Adware, pay-per-install — Infected machines monetized through installs and ads.</title></circle>
+<circle cx="785.5" cy="357" r="5" class="dot--muted"><title>2003 · Broadband replaces dial-up — Always-on hosts; email as the delivery channel.</title></circle>
+<circle cx="802.3" cy="193" r="5" class="dot--muted"><title>2003 · Blaster — 11 August 2003: exploits the RPC DCOM flaw (MS03-026) on Windows 2000 and XP; Windows XP SP2 turns the firewall on the next year.</title></circle>
+<circle cx="839.0" cy="193" r="8" class="dot--key"><title>2003 · IRC botnets: Agobot, rxbot — 2002–2004: Agobot (Gaobot), SDBot and its rxbot derivatives make the compromised machine join an IRC channel and take orders. Infections become inventory, rented for spam, DDoS and installs.</title></circle>
+<text x="839.0" y="173" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">IRC botnets: Agobot, rxbot</text>
+<circle cx="862.0" cy="193" r="5" class="dot--muted"><title>2004 · Hacker Defender — Windows user-mode rootkit; v1.00 released January 2004.</title></circle>
+<circle cx="877.3" cy="193" r="5" class="dot--muted"><title>2004 · Mass-mailers switch to zip (MyDoom, Bagle) — MyDoom, 26 January 2004, mails itself in zip archives; Bagle.F, 29 February 2004, in password-protected zips, the password shown as an image by mid-March. The answer to attachment blocking, within weeks.</title></circle>
+<circle cx="907.9" cy="439" r="5" class="dot--muted"><title>2004 · HIPS, anti-spam, VirusTotal — Host intrusion prevention; VirusTotal launched 2004.</title></circle>
+<circle cx="912.5" cy="193" r="5" class="dot--muted"><title>2004 · Sasser — 30 April 2004: exploits the Windows logon service, LSASS (MS04-011), with no user action; Windows XP SP2 ships with the firewall on that August.</title></circle>
+<circle cx="930.9" cy="439" r="5" class="dot--muted"><title>2004 · Gmail blocks executables, zips included — Documented by June 2004: messages with executable attachments, even inside zip archives, bounce to the sender. Gmail adds .js in February 2017.</title></circle>
+<circle cx="953.8" cy="111" r="5" class="dot--muted"><title>2004 · DDoS extortion, DDoS for hire — Botnets flood online businesses for ransom and are rented out for attacks; Ancheta indicted for selling botnet access for DDoS and spam, November 2005.</title></circle>
+<circle cx="953.8" cy="275" r="5" class="dot--muted"><title>2004 · XP SP2: firewall on, DEP — Service Pack 2, August 2004.</title></circle>
+<circle cx="1038.0" cy="193" r="5" class="dot--muted"><title>2005 · IM worms: Bropia, Kelvir — Bropia (January 2005) sends itself as a .pif over MSN Messenger; Kelvir (March 2005) sends a link to it. MSN Messenger 7 blocks .pif and filters executable transfers on 7 April 2005; the links were not covered.</title></circle>
+<circle cx="1056.3" cy="439" r="5" class="dot--muted"><title>2005 · MSN Messenger 7 filters unsafe transfers — 7 April 2005: .pif messages blocked and executable transfers filtered, after Bropia and Kelvir; links were not covered.</title></circle>
+<circle cx="1060.9" cy="275" r="5" class="dot--muted"><title>2005 · Kernel Patch Protection (x64) — First shipped 2005 on XP x64 and Server 2003 SP1.</title></circle>
+<circle cx="1091.5" cy="111" r="8" class="dot--key"><title>2005 · Botnets for hire: spam, DDoS, click fraud — Botnet capacity rented for spam and DDoS; browsers monetized by click fraud. The infected machine is inventory.</title></circle>
+<text x="1091.5" y="91" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">Botnets for hire: spam, DDoS, click fraud</text>
+<circle cx="1091.5" cy="439" r="5" class="dot--muted"><title>2005 · Network IDS/IPS — Payload signatures on plaintext traffic.</title></circle>
+<circle cx="1142.0" cy="193" r="8" class="dot--key"><title>2005 · Sony BMG rootkit — Disclosed by Mark Russinovich, 31 October 2005.</title></circle>
+<text x="1142.0" y="173" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">Sony BMG rootkit</text>
+<circle cx="1168.0" cy="357" r="5" class="dot--muted"><title>2006 · Flash, Java, Acrobat plug-ins — The browser exploitation surface of the decade.</title></circle>
+<circle cx="1229.2" cy="193" r="5" class="dot--muted"><title>2006 · Exploit documents, then MPack (2006–08) — A Word zero-day in targeted attacks, May 2006 (MS06-027); MPack, the first exploit kit sold commercially, documented May–June 2007; a PDF exploit in the wild with zero antivirus detections, November 2008 (CVE-2008-2992).</title></circle>
+<circle cx="1244.5" cy="193" r="5" class="dot--muted"><title>2006 · Rustock — Kernel rootkit and spam bot, first analysed June 2006.</title></circle>
+<circle cx="1328.6" cy="193" r="8" class="dot--key"><title>2007 · Storm Worm — First large spam run 19 January 2007 (F-Secure; detection added 15 January); server-side polymorphism at scale.</title></circle>
+<text x="1328.6" y="173" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">Storm Worm</text>
+<circle cx="1333.2" cy="275" r="8" class="dot--key"><title>2007 · Vista: UAC, signed drivers, ASLR — Consumer release 30 January 2007; mandatory 64-bit driver signing.</title></circle>
+<text x="1333.2" y="255" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">Vista: UAC, signed drivers, ASLR</text>
+<circle cx="1366.9" cy="193" r="5" class="dot--muted"><title>2007 · Server-side polymorphism — Thousands of unique variants per day; hashes become one-shot.</title></circle>
+<circle cx="1382.2" cy="111" r="5" class="dot--muted"><title>2007 · Banking trojans, carding — Credentials and cards become the product.</title></circle>
+<circle cx="1405.1" cy="193" r="5" class="dot--muted"><title>2007 · Zeus — Banking trojan first identified July 2007.</title></circle>
+<circle cx="1458.7" cy="193" r="5" class="dot--muted"><title>2007 · Mebroot MBR bootkit — First traces November 2007; drive-by waves December 2007 to January 2008.</title></circle>
+<circle cx="1550.5" cy="111" r="5" class="dot--muted"><title>2008 · Fake antivirus — Rogue AV scams peak 2008–2011.</title></circle>
+<circle cx="1562.7" cy="193" r="5" class="dot--muted"><title>2008 · Koobface — Detected 31 July 2008 on MySpace and Facebook: a social-network worm whose botnet earned over US$2 million from pay-per-install and click fraud between June 2009 and June 2010.</title></circle>
+<circle cx="1581.1" cy="439" r="8" class="dot--key"><title>2008 · McAfee Artemis — Cloud reputation, announced September 2008.</title></circle>
+<text x="1581.1" y="419" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">McAfee Artemis</text>
+<circle cx="1611.7" cy="193" r="8" class="dot--key"><title>2008 · Conficker — Conficker.A detected 21 November 2008.</title></circle>
+<text x="1611.7" y="173" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">Conficker</text>
+<circle cx="1734.1" cy="439" r="5" class="dot--muted"><title>2009 · Symantec Quorum / Insight — File prevalence in Norton 2010, announced September 2009.</title></circle>
+<circle cx="1749.4" cy="275" r="8" class="dot--key"><title>2009 · Windows 7 ships PowerShell 2.0 — 22 October 2009: an interpreter on every machine.</title></circle>
+<text x="1749.4" y="299" class="t" font-size="16" font-weight="600" text-anchor="end" dominant-baseline="central">Windows 7 ships PowerShell 2.0</text>
+</g>
+<g data-build="1">
+<rect x="250" y="70" width="1530" height="82" rx="0" class="band-1"></rect>
+</g>
+<g data-build="2">
+<rect x="250" y="152" width="1530" height="82" rx="0" class="band-1"></rect>
+</g>
+<g data-build="3">
+<rect x="250" y="234" width="1530" height="82" rx="0" class="band-1"></rect>
+</g>
+<g data-build="4">
+<rect x="250" y="316" width="1530" height="82" rx="0" class="band-1"></rect>
+</g>
+<g data-build="5">
+<rect x="250" y="398" width="1530" height="82" rx="0" class="band-1"></rect>
+</g>
+</svg>

@@ -4,15 +4,15 @@
 **Module:** From malicious programs to adversarial capabilities
 
 ## On-slide content
+![Four periods, 2000 to 2026, across five tracks — motive and money, attackers, operating system, internet, security products — as one timeline: every event a dot with its date on hover, the anchor events labelled, the four period bands lit one at a time](../figures/timeline-overview.svg)
 
-```text
-2000–2009   the executable, from worms to botnets    an executable, downloaded, worm-spread or dropped by exploit over an unencrypted network; botnets make the machine the product
-2010–2016   APT, exploit kits, files of every kind    the file arrives as a document, script or exploit and still drops an executable; the sandbox peaks
-2017–2022   the access economy                        identities, tokens and trusted vendors; EDR mainstream, then attacked
-2023–2026   hands-on hacking, edge devices, agents      intrusion by hand through help desks, sessions and edge devices; then agents
-```
+Build, one step per click:
 
-Five tracks per period: motive and money, attackers, operating system, internet, security products. A few anchor events are labelled; every dot has a date on hover.
+0. Five tracks: motive and money, attackers, the operating system, the internet, security products. A few anchor events are labelled; every dot has its date on hover.
+1. 2000–2009, the executable, from worms to botnets: an executable, downloaded, worm-spread or dropped by exploit over an unencrypted network; botnets make the machine the product.
+2. 2010–2016, APT, exploit kits, files of every kind: the file arrives as a document, script or exploit and still drops an executable; the sandbox peaks.
+3. 2017–2022, the access economy: identities, tokens and trusted vendors; EDR mainstream, then attacked.
+4. 2023–2026, hands-on hacking, edge devices, agents: intrusion by hand through help desks, sessions and edge devices; then agents.
 
 > Four periods, one question for each: where did the capability go, and why did it move?
 

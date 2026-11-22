@@ -4,10 +4,7 @@
 **Module:** Where is the malware?
 
 ## On-slide content
-
-# Roman Vasilenko
-
-Principal Engineer, Cisco Talos
+**Roman Vasilenko** — Principal Engineer, Cisco Talos
 
 | Years | Where | What |
 | --- | --- | --- |
@@ -17,8 +14,7 @@ Principal Engineer, Cisco Talos
 | 2023–2025 | Google Cloud, Mandiant Security Validation | Attack simulation engine: does the control actually detect? |
 | 2025– | Cisco Talos | Applying current AI to threat detection and prevention |
 
-Publications: SCRUTINIZER (code reuse in malware via decompilation and machine learning), DEEPCAPA (malicious capabilities in Windows malware). Five patents in threat and malware detection technology.  
-ITMO University, Information Security, 2005–2011. Taught "Introduction to Malware Research" at Saint Petersburg State University, 2011–2012.
+Publications: SCRUTINIZER (code reuse in malware via decompilation and machine learning), DEEPCAPA (malicious capabilities in Windows malware). Five patents in threat and malware detection technology. ITMO University, Information Security, 2005–2011. Taught "Introduction to Malware Research" at Saint Petersburg State University, 2011–2012.
 
 ## Talking points
 

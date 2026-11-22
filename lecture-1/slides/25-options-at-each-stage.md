@@ -4,6 +4,20 @@
 **Module:** Detection pipelines: design and evolution
 
 ## On-slide content
+![Options at each stage: the pipeline strip with each stage lit in turn and its menu of options; the full menu, with what each option captures and misses, follows as a table](../figures/pipeline-options.svg)
+
+Build, one step per click:
+
+0. Sensor — File system and on-write hooks · Process and script telemetry · Memory scanning · Network tap, proxy, NDR · Identity and SaaS audit logs · Cloud control-plane logs · Mail and web gateways · Agent harness logs.
+1. Acquisition — Capture the artifact on write or on execute · Triggered memory capture · Full packet capture · Metadata-only flow records · Log retention windows and sampling · Central forwarding.
+2. Extraction — File parsing (PE, Office, PDF, archives) · Unpacking and emulation · Script and macro deobfuscation · Disassembly and decompilation · TLS decryption at a proxy · Process-tree and session reconstruction.
+3. Representation — Hashes and byte patterns · Engineered features · Sequences (API calls, events, bytes) · Graphs · Similarity sketches · Text (decompiled code, logs, reports).
+4. Detection — Signatures and indicators · Expert rules (YARA, Sigma, Snort) · Supervised classifiers · Anomaly detection and baselining · Similarity and clustering · Reputation and prevalence.
+5. Investigation — Triage and enrichment · Timeline reconstruction across sources · Sandbox detonation · Memory and disk forensics · Reverse engineering · LLM-assisted analysis.
+6. Decision — Automatic block above a threshold · Human approval playbooks · Risk-based policy by asset criticality · Pre-authorized containment · Escalation and deferral.
+7. Response — Isolate, kill, quarantine · Revoke tokens, reset credentials · Block destinations and domains · Restore from backup, roll back changes · Patch and reconfigure · Revoke an agent's tools or authority.
+
+> Every stage has options, and every line here came from that history; the sensor and extraction rows changed most.
 
 | Stage | Option | What it captures | What it misses |
 | --- | --- | --- | --- |
@@ -56,8 +70,6 @@
 | response | Restore from backup, roll back changes | Recovery | Time; data since the last backup |
 | response | Patch and reconfigure | Closes the entry | Change windows |
 | response | Revoke an agent's tools or authority | Stops a hijacked agent | Depends on harness support |
-
-> Every stage has options, and every line here came from that history; the sensor and extraction rows changed most.
 
 ## Talking points
 

@@ -4,20 +4,18 @@
 **Module:** From malicious programs to adversarial capabilities
 
 ## On-slide content
+![2023–2026 across five tracks — motive and money, attackers, operating system, internet, security products — with the key events labelled and every event's date on hover; the tracks light up one at a time](../figures/period-4.svg)
 
-| Track | Headline |
-| --- | --- |
-| **Motive and money** | Data theft without encryption; session tokens as the product; agent attacks have no business model yet. |
-| **Attackers** | Hands-on hacking via help desks and stolen sessions; edge devices as the main entry; instructions for agents. |
-| **Operating system** | The host hardens by default: driver blocklist, protected credentials, passkeys; the cloud host is Linux. |
-| **Internet** | Encrypted Client Hello hides the last plaintext field; AI assistants sit between the user and the data. |
-| **Security products** | Identity threat detection, baselining for living off the land, LLM triage; agent observability begins. |
+Build, one step per click:
+
+0. Four years across five tracks: key events labelled, every dot with its date on hover.
+1. Motive and money: Data theft without encryption; session tokens as the product; agent attacks have no business model yet.
+2. Attackers: Hands-on hacking via help desks and stolen sessions; edge devices as the main entry; instructions for agents.
+3. Operating system: The host hardens by default: driver blocklist, protected credentials, passkeys; the cloud host is Linux.
+4. Internet: Encrypted Client Hello hides the last plaintext field; AI assistants sit between the user and the data.
+5. Security products: Identity threat detection, baselining for living off the land, LLM triage; agent observability begins.
 
 > A whole campaign can now run without a malware file, while most still start with one. The newest executable is an instruction in data, and the sensor has to follow it into identity and into the agent's context.
-
-### Detail
-
-Behind the details button; the speaker notes pick from it.
 
 | Track | 2023–2026 |
 | --- | --- |

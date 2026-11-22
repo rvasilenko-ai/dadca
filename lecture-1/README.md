@@ -76,7 +76,7 @@ Part 1 (slides 5–18) traces the evolution of malware and malicious capabilitie
 ## Delivery guidance
 
 - Reuse the operational pipeline and recurring scenario instead of introducing disconnected examples.
-- Slide 9 is the overview: name the lanes and the four periods, two minutes. On the zoomed period slides (10–13), say the five headlines, then tell two or three of the labelled events as one story and name what the period removed from the previous defense's view. The detail chips are behind the details button, which swaps the timeline out for them; use them for questions, not for reading. The PDF prints the headline view and the markdown keeps the full table.
+- Slide 9 is the overview: name the lanes and the four periods, two minutes. On the zoomed period slides (10–13), step through the five tracks, say each headline, then tell two or three of the labelled events as one story and name what the period removed from the previous defense's view. The detail table is the continuation page after each period slide; use it for questions, not for reading.
 - The scope is deliberately Windows-centric and enterprise-centric. Mobile, macOS, Linux and cloud-native attacks appear only in passing; it is said once in the slide 9 notes.
 - Keep product claims qualified on the slide. Say "commodity and narrow" for sandboxes and "payload inspection without decryption" for IDS; use the stronger spoken form only in the room.
 - Use "remote-management tool" consistently for the abused legitimate remote-access software (slides 3, 17, 24).
@@ -94,7 +94,7 @@ Part 1 (slides 5–18) traces the evolution of malware and malicious capabilitie
 
 ## Slide deck
 
-The presentable deck is an offline HTML build in [deck/](deck/): open `deck/index.html` in a browser, press S for speaker notes with the planned minutes and a timer, T for the dark theme, and `?print-pdf` for a PDF. It is generated from the markdown slides by `deck/build.py`; edit the markdown, then rebuild. Interactive parts: the overview timeline on slide 9, the zoomed period timelines on slides 10–13 with a details toggle, the breaks timeline on 14, a collapsed Talking points button on every slide, the ladder of five situations on slide 3, the clickable pipeline on slides 20 to 26 (Next and Previous step through the panels on slides 20, 21, 23, 24 and 25; clicking jumps), the HTTPS adoption chart on slide 22, and a schematic ATT&CK matrix on slides 16 and 18 (hover a cell for its ID; on 16 Next lights a classic trojan as a path, on 18 the recurring scenario step by step). See [deck/README.md](deck/README.md).
+The presentable deck is an offline HTML build in [deck/](deck/), on the machinery shared with the other lectures (`tools/deck/`): open `deck/index.html` in a browser, press N for the presenter notes with the planned minutes and talking points, S for the slide's sources, T for the dark theme, and print to PDF from the browser. It is generated from the markdown slides by `deck/build.py`, and its figures by `tools/gen_diagrams.py`; edit the markdown, then rebuild. Every figure steps one click at a time with a caption per step: the ladder on slide 3, the overview timeline on slide 9 and the zoomed period timelines on 10–13 (hover any dot for its date), the breaks on 14, the schematic ATT&CK matrix on 16 and 18 (hover a cell for its name; a classic trojan, then the recurring scenario, light as numbered paths), the benign-file cards on 17, the pipeline strip on 20 to 25, the HTTPS chart on 22 and the exercise on 26. See [deck/README.md](deck/README.md).
 
 ## Related lectures
 

@@ -4,36 +4,17 @@
 **Module:** Detection pipelines: design and evolution
 
 ## On-slide content
+![Diagnostic exercise: six misses as cards above the pipeline strip — a memory-resident payload missed by an on-write scanner; an HTTPS transfer missed by a plaintext signature; a parsed PE file scored benign; three low-severity alerts closed as noise; a correct alert whose isolation needed an unreachable approval; an isolation order the EDR could not deliver — each answer lighting the stage that failed](../figures/exercise.svg)
 
-### Case A
+Build, one step per click:
 
-A memory-resident payload is missed by an on-write file scanner.
-
-### Case B
-
-An HTTPS transfer is missed by a plaintext content signature.
-
-### Case C
-
-A retained PE file is parsed successfully but receives a benign score.
-
-### Case D
-
-Three low-severity alerts fire on three systems over two days: an unusual sign-in, a PowerShell process, a proxy connection. Each is closed as noise.
-
-### Case E
-
-The alert is correct and investigated, but isolating the server requires an approval that is unreachable overnight. The upload completes.
-
-### Case F
-
-Isolation is ordered, but the laptop is off the VPN and the EDR cannot reach it for six hours.
-
-For each:
-
-- Which pipeline stage failed?
-- What additional evidence is needed?
-- Would retraining help?
+0. Six misses. For each: which pipeline stage failed, what additional evidence is needed, and would retraining help? Hands per case, in the pipeline's words.
+1. Case A — sensor and acquisition mismatch: memory or behavioral evidence is needed; the antivirus and sandbox column of the host lineage. Retraining does not help.
+2. Case B — payload visibility mismatch at the sensor: metadata or endpoint evidence may help; the network lineage. Retraining does not help.
+3. Case C — representation or classifier failure: retraining may be relevant, after checking labels and distribution shift.
+4. Case D — investigation failure: every alert was right; the evidence was never connected. Correlation, not a better classifier.
+5. Case E — decision failure: an appropriate action existed and was not authorized in time. Fix the authorization design, not the evidence.
+6. Case F — response failure: the decision was correct and could not be executed. Containment has to work where the host actually is.
 
 ## Talking points
 

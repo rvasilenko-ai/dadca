@@ -1,73 +1,72 @@
 # Lecture 1 deck
 
-Interactive HTML slides generated from the markdown sources in `../slides/`. The markdown remains the source of truth; do not edit `index.html` by hand.
+The HTML slides generated from the markdown sources in `../slides/`. The markdown remains the source of truth; do not edit `index.html` by hand. The deck runs on the machinery shared by every lecture in `tools/deck/` (the builder, the runtime, the theme and the SVG primitives), so the lectures stay visually in sync.
 
 ## Build
 
 ```bash
-python3 lecture-1/deck/build.py
+python3 lecture-1/tools/gen_diagrams.py lecture-1/figures   # the SVG figures, from tools/data.py
+python3 lecture-1/deck/build.py                              # the deck
 ```
 
-Then open `lecture-1/deck/index.html` in a browser. Everything is local: reveal.js 5.1.0 is vendored under `vendor/reveal/`, there are no web fonts, and no network is needed in the lecture hall.
+Then open `lecture-1/deck/index.html` in a browser, or serve the `lectures/` folder (`python3 -m http.server`) and open `/lecture-1/deck/`. Everything is local: no dependencies, no web fonts, no network needed in the lecture hall. `index.html` links `../../tools/deck/deck.css` and `deck.js`, so keep the checkout together.
 
 ## Present
 
 | Key | Action |
 | --- | --- |
-| → or Space | next step (fragments, then next slide) |
-| ← | previous step |
-| S | speaker view: notes, elapsed timer, next slide preview |
-| F | fullscreen |
-| Esc or O | overview of all slides |
-| T | toggle light and dark theme (light is the default for lit rooms) |
-| B | blank the screen |
+| → or Space | next step, then next slide |
+| ← | previous |
+| Home, End | first, last slide |
+| N | presenter notes (planned minutes, talking points, notes, interaction, transition) |
+| S | the slide's sources, in a panel |
+| T | light or dark theme |
+| F | full screen |
 | ? | keyboard help |
 
-Speaker notes carry the planned minutes for each slide at the top, then the talking points, speaker notes, interaction, transition and sources from the markdown. Every slide also has a collapsed Talking points button in its footer row, next to the Sources button where there is one.
+Links address a slide and a step: `#/s16/4` is slide 16 at step 4, `#/s10b` the continuation page of slide 10. `?theme=light` or `?theme=dark` forces a theme; `?still` turns motion off (screenshots).
 
-## Interactive parts
+## What steps
 
-- **Slide 9 (overview):** the whole 2000–2026 timeline, five lanes, four period bands, anchor events labelled; hover any dot for its date; click a period name to jump to its slide.
-- **Slides 10–13 (periods):** the timeline zoomed to one period, key events labelled, the rest on hover. One headline per track; the details button swaps the timeline and headlines for the full detail chips, and back (the PDF prints the headline view; the detail stays in the markdown and the notes).
-- **Slide 14 (recap):** the same timeline reduced to the six breaks as bars; the table shows at once and the callout, with the malware-free figure, reveals on Next.
-- **Slide 3 (ladder):** the five situations as a ladder from "the file" to "no file"; one show of hands, no controls.
-- **Slides 20, 21, 23, 24, 25 and 26 (pipeline):** click a stage for its question; on 20 Next and Previous step through the eight stages, each with its question, a one-line definition and examples, while the summary list fills in; on 21 and 23 Next and Previous step through the stages one panel at a time, the generations side by side, with a table button for the full matrix (clicking a stage jumps to it) and a scenario check as the last step; on 24 they step through the seven changes one panel at a time, lighting the stage that broke, with the product that answered as the fourth card; on 25 they step through the eight stages, each listing its options with what each captures and misses (all eight panels print in the PDF); on 26 Next reveals the six answers in turn, one per failing stage (the Reveal buttons jump to a case).
-- **Slides 16 and 18 (ATT&CK matrix):** a schematic Enterprise matrix built offline from `attack.js`: 15 tactic columns (v20.0) with the real per-tactic counts, a few real techniques each; hover a cell for its ID. On 16 Next lights a classic trojan as a numbered path; on 18 Next lights the recurring scenario one step at a time. Slide 17 has no matrix: two case cards and the answer reveal in turn.
-- **Slide 22 (HTTPS chart):** hover for a crosshair with all series; Table switches to the data table.
+Every figure is an SVG with `data-build` groups that the runtime reveals one click at a time, with a caption per step under it. Hover any dot or cell for its tooltip.
 
-## PDF
+- **Slide 3:** the ladder of five situations, one rung per click.
+- **Slide 9:** the 2000–2026 timeline, five lanes, every event a dot with its date on hover, the anchors labelled; the four period bands light one at a time.
+- **Slides 10–13:** one period zoomed, key events labelled; the five tracks light in turn with their headlines; the detail table follows as a continuation page.
+- **Slide 14:** the six breaks as bars on the axis, one per click, then the malware-free share inset; the table follows as a continuation page.
+- **Slides 16 and 18:** a schematic Enterprise ATT&CK matrix built from `tools/data.py` (15 tactic columns, v20.0 counts, a few real techniques each, the sub-technique level under Execution; hover a cell for its name). On 16 a classic trojan lights as a numbered path; on 18 the recurring scenario, step by step.
+- **Slide 17:** the two benign-file cards, then the verdict.
+- **Slides 20, 21, 23, 24, 25:** the eight-stage pipeline strip; each click lights a stage (or, on 24, the stage a change broke) with its caption; the full tables follow as continuation pages.
+- **Slide 22:** the HTTPS adoption chart, four series with hover values, then the four protocol steps as markers.
+- **Slide 26:** six case cards above the strip; each answer lights the card and the stage that failed.
 
-Open `index.html?print-pdf` in Chrome and print to PDF (landscape, no margins). Fragments are flattened and the expanded chips are shown.
+## Print
+
+Open `index.html` in Chrome and print to PDF (landscape, no margins). Every build and every caption is shown on the printed page.
 
 ## Layout
 
-- `build.py` — generator (markdown subset converter, period layout, notes).
-- `page.html` — page shell and reveal.js configuration.
-- `theme.css` — tokens (light and dark), slide chrome, component styles.
-- `attack.js` — the schematic ATT&CK matrix: tactics, curated techniques, per-tactic counts and the version they were checked against.
-- `data.js` — timeline events (k marks the key events labelled on the zoomed period slides, h the anchors labelled on the overview), breaks, pipeline stages, HTTPS series. Dates fact-checked 2026-10-11.
-- `components.js` — timeline, chips, pipeline, matrix, chart, theme toggle.
-- `templates/<slug>.html` — hand-designed bodies for slides that need more than the auto conversion, named after the slide file without its number so renumbering never touches them; `{{auto}}` injects the converted markdown.
-- `vendor/reveal/` — reveal.js 5.1.0 (MIT), reset and base CSS, notes plugin.
+- `build.py` — the lecture's configuration (title, parts, the two divider slides) over `tools/deck/deckbuild.py`.
+- `../tools/gen_diagrams.py` — the figure generator; `../tools/data.py` — timeline events (`k` marks the key events labelled on the period slides, `h` the anchors labelled on the overview), breaks, pipeline stages, HTTPS series and the ATT&CK subset. Dates fact-checked 2026-10-11; ATT&CK checked against v20.0 on 2026-10-13.
+- `../figures/*.svg` — the generated figures; they theme themselves when viewed alone and take the deck's tokens when inlined.
 
 ## Slide file format
 
-Each slide is one markdown file, `slides/NN-slug.md`, numbered in presentation order. The build keys templates and styles on the slug, so renumbering never touches them. A file has:
+Each slide is one markdown file, `slides/NN-slug.md`, numbered in presentation order:
 
-- `# Slide N — Title` as its first line;
-- `**Timing:** a–b minutes` and `**Module:** …` as the next two lines;
-- `## On-slide content` (a markdown subset: headings, lists, tables, `>` callouts, fenced text blocks);
-- `## Talking points` (three to five bullets the presenter can glance at; they open from a button on the slide and head the speaker notes), `## Speaker notes`, optionally `## Interaction`, then `## Transition` (the sentence that hands over to the next slide) and `## Sources` when the slide makes source-dependent claims.
+- `# Slide N — Title` as its first line, then `**Timing:** a–b minutes` and `**Module:** …`;
+- `## On-slide content`: a markdown subset (paragraphs, lists, tables, `>` callouts), a figure as `![alt](../figures/name.svg)`, and a `Build, one step per click:` numbered list whose items are the captions, one per build step (item 0 shows before the first click). A callout written before a table stays on the slide; the table and anything after it move to continuation pages;
+- `## Talking points`, `## Speaker notes`, optionally `## Interaction`, then `## Transition` and `## Sources`.
 
-The era slides use a `| Track | Headline |` table plus a `### Detail` table; the lineage slides a `| Stage | … |` table; the options slide a `| Stage | Option | What it captures | What it misses |` table. The build turns each into its interactive layout.
+Slides 5 and 19 are the part dividers: their `##` heading is the title, the first `>` line the lead, the Minutes | Module table the chips.
 
 ## Checks before a commit
 
 ```bash
-python3 lecture-1/deck/build.py                                  # numbering must be contiguous
+python3 lecture-1/tools/gen_diagrams.py lecture-1/figures && python3 lecture-1/deck/build.py   # numbering must be contiguous
 grep -c '^[0-9]*\. \[' lecture-1/README.md                        # index entries = slide files
 ! grep -rn 'TBD\|TODO\|FIXME\|PLACEHOLDER' lecture-1/slides       # no placeholders
 ! grep -rn 'Invoke-Shellcode\|VirtualAlloc(\|CreateThread(\|FromBase64String(' lecture-1   # no payloads
 ```
 
-Timings must be contiguous from minute 0 and end where the README's schedule says; the README's index links must resolve; `osascript -l JavaScript` or `node --check` should accept the deck scripts. Render a changed slide in both themes before committing (a headless Chrome driver lives in `tools/screenshot.py`).
+Timings must be contiguous from minute 0 and end where the README's schedule says. Render a changed slide in both themes before committing (headless Chrome with `?still&theme=dark#/s9/4` works).

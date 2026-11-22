@@ -4,16 +4,19 @@
 **Module:** Where is the malware?
 
 ## On-slide content
-
 > Where does malware stop?
 
-A ladder of five situations, ordered by distance from the file, "the file" at the top and "no file" at the bottom:
+Five situations, ordered by distance from the file. Which of them is malware?
 
-1. A trojan executable is written to disk.
-2. PowerShell downloads and runs code.
-3. A Portable Executable image exists only in process memory.
-4. An attacker controls a legitimate remote-management tool.
-5. Repository instructions cause a coding agent to exfiltrate secrets.
+![A ladder of five situations, from the file at the top to no file at the bottom: a trojan executable written to disk; PowerShell downloading and running code; a Portable Executable image that exists only in process memory; an attacker controlling a legitimate remote-management tool; repository instructions that make a coding agent exfiltrate secrets](../figures/ladder.svg)
+
+Build, one step per click:
+
+0. A trojan executable is written to disk — the file.
+1. PowerShell downloads and runs code — a command, and whatever it fetches.
+2. A Portable Executable image exists only in process memory — bytes that were never a file on disk.
+3. An attacker controls a legitimate remote-management tool — a session under the wrong control.
+4. Repository instructions cause a coding agent to exfiltrate secrets — an instruction in data; no file at all.
 
 ## Talking points
 

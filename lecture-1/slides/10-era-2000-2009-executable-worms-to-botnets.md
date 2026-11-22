@@ -4,20 +4,18 @@
 **Module:** From malicious programs to adversarial capabilities
 
 ## On-slide content
+![2000–2009 across five tracks — motive and money, attackers, operating system, internet, security products — with the key events labelled and every event's date on hover; the tracks light up one at a time](../figures/period-1.svg)
 
-| Track | Headline |
-| --- | --- |
-| **Motive and money** | Notoriety gives way to fraud and extortion: the victim's machine, its bandwidth and what it types become the product. |
-| **Attackers** | Executables arrive by download, worm, USB or exploit, then botnets; packers and rootkits hide them. |
-| **Operating system** | Windows XP runs everyone as administrator with autorun on; SP2 and Vista start closing the host. |
-| **Internet** | Broadband and plaintext HTTP; email is the delivery channel and the browser is full of plug-ins. |
-| **Security products** | Signature antivirus learns emulation and reputation, mail gateways block executables, IDS reads plaintext payloads. |
+Build, one step per click:
+
+0. Ten years across five tracks: key events labelled, every dot with its date on hover.
+1. Motive and money: Notoriety gives way to fraud and extortion: the victim's machine, its bandwidth and what it types become the product.
+2. Attackers: Executables arrive by download, worm, USB or exploit, then botnets; packers and rootkits hide them.
+3. Operating system: Windows XP runs everyone as administrator with autorun on; SP2 and Vista start closing the host.
+4. Internet: Broadband and plaintext HTTP; email is the delivery channel and the browser is full of plug-ins.
+5. Security products: Signature antivirus learns emulation and reputation, mail gateways block executables, IDS reads plaintext payloads.
 
 > The capability travelled as an executable, rarely a plain attachment: by download, worm, USB or browser exploit. The victim ran as administrator, the network was unencrypted, and the products of the decade inspected files and payloads.
-
-### Detail
-
-Behind the details button; the speaker notes pick from it.
 
 | Track | 2000–2009 |
 | --- | --- |

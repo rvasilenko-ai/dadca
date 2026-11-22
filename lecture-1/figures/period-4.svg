@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 540" width="1800" height="540" role="img" aria-label="2023–2026 · hands-on, edge devices, agents: the five tracks for these years, key events labelled, every dot with its date on hover; the tracks light up one at a time" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<title>2023–2026 · hands-on, edge devices, agents: the five tracks for these years, key events labelled, every dot with its date on hover; the tracks light up one at a time</title>
+<style>
+svg{--surface:#ffffff;--surface-2:#eceff6;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--ink-3:#5b6580;--line:#9ca3af;--rule:#cbd5e1;--rule-3:#6c768e;
+--acc:#0284c7;--acc-wash:#e0f2fe;--acc-ink:#075985;--bad:#dc2626;--bad-wash:#fee2e2;--bad-ink:#991b1b;
+--good:#15803d;--good-wash:#dcfce7;--good-ink:#14532d;--on-badge:#ffffff;
+--part-0:#0369a1;--part-1:#b45309;--part-2:#5b3fd0;--part-3:#b91c1c;--part-4:#0f766e}
+@media (prefers-color-scheme: dark){svg{--surface:#141a2a;--surface-2:#1b2234;--frame:#10172a;--ink:#eef1f8;--ink-2:#c6cddd;--ink-3:#9aa4ba;--line:#8b96b0;--rule:#344062;--rule-3:#7f8aa6;
+--acc:#7cc4ff;--acc-wash:#10304a;--acc-ink:#bfe3ff;--bad:#f87171;--bad-wash:#3b1515;--bad-ink:#fecaca;
+--good:#4ade80;--good-wash:#0f2e1c;--good-ink:#bbf7d0;--on-badge:#0b0f1a;
+--part-0:#7cc4ff;--part-1:#f0a04b;--part-2:#a78bfa;--part-3:#f87171;--part-4:#2dd4bf}}
+.node{fill:var(--surface);stroke:var(--rule);stroke-width:2.5}.node--model{fill:var(--acc-wash);stroke:var(--acc);stroke-width:4}
+.node--bad{fill:var(--bad-wash);stroke:var(--bad);stroke-width:4}.node--good{fill:var(--good-wash);stroke:var(--good);stroke-width:4}
+.frame{fill:var(--frame);stroke:var(--rule);stroke-width:2.5}.env{fill:none;stroke:var(--line);stroke-width:3;stroke-dasharray:14 10}
+.t{fill:var(--ink)}.t2{fill:var(--ink-2)}.t-acc{fill:var(--acc-ink)}.t-bad{fill:var(--bad-ink)}.t-good{fill:var(--good-ink)}.t-badge{fill:var(--on-badge)}
+.edge{fill:none;stroke:var(--line);stroke-width:3;stroke-linecap:round}.edge--strong{stroke:var(--ink-2);stroke-width:4}
+.edge--bad{stroke:var(--bad);stroke-width:4}.edge--good{stroke:var(--good);stroke-width:4}
+.arrow{fill:var(--ink-2)}.arrow--bad{fill:var(--bad)}.arrow--good{fill:var(--good)}
+.badge--bad{fill:var(--bad);stroke:var(--surface);stroke-width:3}.badge--good{fill:var(--good);stroke:var(--surface);stroke-width:3}
+.ctx-bar{fill:var(--rule)}.ring{fill:none;stroke:var(--ink);stroke-width:4}.dot{fill:var(--ink)}
+.axis{stroke:var(--rule-3);stroke-width:2}.grid{stroke:var(--rule);stroke-width:1.5}.lane{fill:var(--surface);stroke:var(--rule);stroke-width:1}
+.band-1{fill:var(--part-1);fill-opacity:.11}.band-2{fill:var(--part-2);fill-opacity:.11}.band-3{fill:var(--part-3);fill-opacity:.11}.band-4{fill:var(--part-4);fill-opacity:.11}
+.t-part-1{fill:var(--part-1)}.t-part-2{fill:var(--part-2)}.t-part-3{fill:var(--part-3)}.t-part-4{fill:var(--part-4)}
+.dot--muted{fill:var(--rule-3)}.dot--key{fill:var(--acc)}.dot--anchor{fill:var(--bad)}
+.bar{fill:var(--acc);fill-opacity:.85}.bar--muted{fill:var(--rule)}.bar--bad{fill:var(--bad);fill-opacity:.85}
+.line-1{stroke:var(--part-1)}.line-2{stroke:var(--part-2)}.line-3{stroke:var(--part-0)}.line-4{stroke:var(--part-4)}
+.line-1,.line-2,.line-3,.line-4{fill:none;stroke-width:4;stroke-linejoin:round;stroke-linecap:round}
+.pt-1{fill:var(--part-1)}.pt-2{fill:var(--part-2)}.pt-3{fill:var(--part-0)}.pt-4{fill:var(--part-4)}
+.cell{fill:var(--surface);stroke:var(--rule);stroke-width:1.5}.cell--sub{fill:var(--surface-2);stroke:var(--rule);stroke-width:1.5}
+.cell--lit{fill:var(--bad-wash);stroke:var(--bad);stroke-width:3}.colhead{fill:var(--surface-2);stroke:var(--rule);stroke-width:1.5}
+.marker{stroke:var(--ink-3);stroke-width:2;stroke-dasharray:6 6}
+</style>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
+  <marker id="arrow-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
+  <marker id="arrow-good" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
+</defs>
+<g data-build="0">
+<rect x="250" y="18" width="1530" height="12" rx="6" class="lane"></rect>
+<rect x="1553.3" y="16" width="226.70000000000005" height="16" rx="6" class="band-4"></rect>
+<text x="234" y="24" class="t2" font-size="15" font-weight="500" text-anchor="end" dominant-baseline="central">2000–2026</text>
+<rect x="250" y="70" width="1530" height="82" rx="0" class="lane"></rect>
+<text x="234" y="111" class="t2" font-size="20" font-weight="700" text-anchor="end" dominant-baseline="central">Motive and money</text>
+<rect x="250" y="152" width="1530" height="82" rx="0" class="lane"></rect>
+<text x="234" y="193" class="t2" font-size="20" font-weight="700" text-anchor="end" dominant-baseline="central">Attackers</text>
+<rect x="250" y="234" width="1530" height="82" rx="0" class="lane"></rect>
+<text x="234" y="275" class="t2" font-size="20" font-weight="700" text-anchor="end" dominant-baseline="central">Operating system</text>
+<rect x="250" y="316" width="1530" height="82" rx="0" class="lane"></rect>
+<text x="234" y="357" class="t2" font-size="20" font-weight="700" text-anchor="end" dominant-baseline="central">Internet</text>
+<rect x="250" y="398" width="1530" height="82" rx="0" class="lane"></rect>
+<text x="234" y="439" class="t2" font-size="20" font-weight="700" text-anchor="end" dominant-baseline="central">Security products</text>
+<path d="M250.0 480V488" class="axis"/>
+<text x="250.0" y="506" class="t2" font-size="17" font-weight="500" text-anchor="middle" dominant-baseline="central">2023</text>
+<path d="M632.5 480V488" class="axis"/>
+<text x="632.5" y="506" class="t2" font-size="17" font-weight="500" text-anchor="middle" dominant-baseline="central">2024</text>
+<path d="M1015.0 480V488" class="axis"/>
+<text x="1015.0" y="506" class="t2" font-size="17" font-weight="500" text-anchor="middle" dominant-baseline="central">2025</text>
+<path d="M1397.5 480V488" class="axis"/>
+<text x="1397.5" y="506" class="t2" font-size="17" font-weight="500" text-anchor="middle" dominant-baseline="central">2026</text>
+<path d="M250 480H1780" class="axis"/>
+<circle cx="288.2" cy="357" r="8" class="dot--key"><title>2023 · AI assistants in browsers, IDEs, SaaS — Copilots everywhere.</title></circle>
+<text x="288.2" y="337" class="t" font-size="16" font-weight="600" text-anchor="start" dominant-baseline="central">AI assistants in browsers, IDEs, SaaS</text>
+<circle cx="326.5" cy="275" r="5" class="dot--muted"><title>2023 · LSA protection default (enterprise) — New enterprise-joined installs, 22H2 and later.</title></circle>
+<circle cx="399.2" cy="193" r="8" class="dot--key"><title>2023 · Volt Typhoon advisory — CISA AA23-144A, 24 May 2023: living off the land as the whole campaign.</title></circle>
+<text x="399.2" y="173" class="t" font-size="16" font-weight="600" text-anchor="start" dominant-baseline="central">Volt Typhoon advisory</text>
+<circle cx="403.0" cy="111" r="8" class="dot--key"><title>2023 · Extortion without encryption — Cl0p and MOVEit, May–June 2023.</title></circle>
+<text x="403.0" y="91" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">Extortion without encryption</text>
+<circle cx="403.0" cy="111" r="5" class="dot--muted"><title>2023 · State prepositioning — Volt Typhoon: not paid at all.</title></circle>
+<circle cx="410.7" cy="193" r="5" class="dot--muted"><title>2023 · Cl0p MOVEit — Exploitation from about 27 May 2023.</title></circle>
+<circle cx="441.2" cy="439" r="5" class="dot--muted"><title>2023 · Identity threat detection and response — The sensor moves to the identity provider.</title></circle>
+<circle cx="513.9" cy="193" r="8" class="dot--key"><title>2023 · Scattered Spider: MGM, Caesars — September 2023; help-desk calls and MFA resets.</title></circle>
+<text x="513.9" y="217" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">Scattered Spider: MGM, Caesars</text>
+<circle cx="517.8" cy="111" r="5" class="dot--muted"><title>2023 · Help-desk SE against casinos — Payout justifies live social engineering.</title></circle>
+<circle cx="525.4" cy="357" r="5" class="dot--muted"><title>2023 · ECH in Chrome and Firefox — September–October 2023; Cloudflare default for free zones.</title></circle>
+<circle cx="533.1" cy="275" r="8" class="dot--key"><title>2023 · Passkeys in Windows 11 — September 2023.</title></circle>
+<text x="533.1" y="255" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">Passkeys in Windows 11</text>
+<circle cx="548.3" cy="193" r="5" class="dot--muted"><title>2023 · Citrix Bleed — CVE-2023-4966, October 2023.</title></circle>
+<circle cx="575.1" cy="357" r="5" class="dot--muted"><title>2023 · Collaboration tools as the new mail — Storm-0324 phishes through Teams with SharePoint-hosted files (Microsoft, 12 September 2023); Black Basta's fake help-desk Teams calls from May 2024; Discord's content network hosted payloads until it moved to expiring links, November 2023.</title></circle>
+<circle cx="644.0" cy="193" r="8" class="dot--key"><title>2024 · Edge devices: Citrix Bleed, Ivanti, Fortinet — Citrix Bleed October 2023, Ivanti Connect Secure zero-days January 2024, Fortinet SSL-VPN February 2024: appliances that run no EDR become the main entry point.</title></circle>
+<text x="644.0" y="155" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">Edge devices: Citrix Bleed, Ivanti, Fortinet</text>
+<circle cx="670.7" cy="439" r="5" class="dot--muted"><title>2024 · CISA LOTL guidance; baselining — 7 February 2024.</title></circle>
+<circle cx="674.6" cy="193" r="5" class="dot--muted"><title>2024 · Fortinet SSL-VPN — CVE-2024-21762, February 2024.</title></circle>
+<circle cx="709.0" cy="111" r="5" class="dot--muted"><title>2024 · Session tokens as the product — A token opens the SaaS tenant where the data lives.</title></circle>
+<circle cx="724.3" cy="193" r="5" class="dot--muted"><title>2024 · XZ Utils backdoor — Found 29 March 2024: a maintainer identity built over two years to plant a backdoor in a Linux compression library on the path to SSH.</title></circle>
+<circle cx="785.5" cy="193" r="8" class="dot--key"><title>2024 · ClickFix — The user pastes the command; first observed March 2024.</title></circle>
+<text x="785.5" y="173" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">ClickFix</text>
+<circle cx="793.2" cy="193" r="5" class="dot--muted"><title>2024 · Snowflake customer breaches — May–June 2024: infostealer credentials with no MFA opened about 165 customer tenants; data stolen and extorted without touching a host.</title></circle>
+<circle cx="842.9" cy="439" r="8" class="dot--key"><title>2024 · CrowdStrike outage; EDR out of the kernel — 19 July 2024: a faulty sensor update crashed about 8.5 million Windows hosts. Microsoft's Windows Resiliency Initiative (November 2024) moves endpoint security out of kernel mode.</title></circle>
+<text x="842.9" y="419" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">CrowdStrike outage; EDR out of the kernel</text>
+<circle cx="862.0" cy="439" r="5" class="dot--muted"><title>2024 · LLM triage in the SOC — Reasoning applied on the defensive side.</title></circle>
+<circle cx="938.5" cy="193" r="5" class="dot--muted"><title>2024 · Salt Typhoon (telecoms) — Disclosed September–November 2024: a state actor inside carrier networks, reaching call records and data held for court-ordered law-enforcement requests; in through edge equipment.</title></circle>
+<circle cx="976.8" cy="357" r="5" class="dot--muted"><title>2024 · Agent protocols (MCP) — Tool-using agents become products.</title></circle>
+<circle cx="1068.6" cy="111" r="5" class="dot--muted"><title>2025 · Bybit heist (North Korea) — 21 February 2025: about $1.5 billion in cryptocurrency, the largest theft on record; FBI attribution on 26 February.</title></circle>
+<circle cx="1179.5" cy="193" r="5" class="dot--muted"><title>2025 · Firmware botnets in consumer devices — BADBOX (identified 2023) and BADBOX 2.0 (FBI warning, 5 June 2025): Android TV boxes and other devices backdoored before purchase. XCPE, disclosed 2 November 2026: the backdoor in the manufacturer's own firmware on more than 1.3 million set-top boxes.</title></circle>
+<circle cx="1244.5" cy="439" r="8" class="dot--key"><title>2025 · Project Ire — Microsoft, 5 August 2025: agentic malware analysis.</title></circle>
+<text x="1244.5" y="419" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">Project Ire</text>
+<circle cx="1294.2" cy="193" r="8" class="dot--key"><title>2025 · ForcedLeak (hijacked agent) — Noma Security, 25 September 2025.</title></circle>
+<text x="1294.2" y="173" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">ForcedLeak (hijacked agent)</text>
+<circle cx="1317.2" cy="275" r="5" class="dot--muted"><title>2025 · Windows 10 end of support — 14 October 2025.</title></circle>
+<circle cx="1347.8" cy="193" r="5" class="dot--muted"><title>2025 · AI-orchestrated espionage campaign reported — Anthropic, 13 November 2025: a state-linked operator had an agent run most of an intrusion campaign; agent-assisted extortion had been reported in August 2025.</title></circle>
+<circle cx="1359.3" cy="439" r="5" class="dot--muted"><title>2025 · Guardrails, agent observability — The sensor moves into the agent harness.</title></circle>
+<circle cx="1474.0" cy="357" r="5" class="dot--muted"><title>2026 · ECH standardized (RFC 9849) — March 2026; server-side adoption still narrow.</title></circle>
+<circle cx="1512.2" cy="439" r="5" class="dot--muted"><title>2026 · ATT&amp;CK adds Defense Impairment — ATT&amp;CK v19, 28 April 2026: Defense Evasion split into Stealth and Defense Impairment. v20, 13 October 2026, adds Impair Autonomous Defenses, including prompt injection against LLM-assisted analysis (slide 16).</title></circle>
+<circle cx="1607.9" cy="193" r="8" class="dot--key"><title>2026 · Autonomous agent intrusion — Hugging Face technical timeline of the July 2026 incident.</title></circle>
+<text x="1607.9" y="173" class="t" font-size="16" font-weight="600" text-anchor="middle" dominant-baseline="central">Autonomous agent intrusion</text>
+<circle cx="1715.0" cy="193" r="5" class="dot--muted"><title>2026 · File-based implants persist: NIK C2, VOLTA — Talos, October 2026: NIK C2, a Go remote-access tool with an OpenAI client; VOLTA, a built-to-order infostealer that sends the stolen bundle to an LLM to rank the victim's assets. Still PE files for sale.</title></circle>
+<circle cx="1718.8" cy="111" r="8" class="dot--key"><title>2026 · Bandwidth as the product again — XCPE, disclosed 2 November 2026: a device manufacturer sells access to more than 1.3 million set-top boxes to affiliates for residential proxies and ad fraud. The botnet-for-hire model of 2005, on devices no one patches.</title></circle>
+<text x="1718.8" y="91" class="t" font-size="16" font-weight="600" text-anchor="end" dominant-baseline="central">Bandwidth as the product again</text>
+<circle cx="1730.3" cy="193" r="5" class="dot--muted"><title>2026 · Browser-resident C2 (Falcon/XG) — Unit 42, 11 November 2026: the implant is JavaScript in a browser tab or a sideloaded extension, no host file; a tab injection is scoped to one site, an extension hijacks the whole browser. The same actor drops a native Rust implant (Antino) via a fake Adobe Flash update.</title></circle>
+</g>
+<g data-build="1">
+<rect x="250" y="70" width="1530" height="82" rx="0" class="band-4"></rect>
+</g>
+<g data-build="2">
+<rect x="250" y="152" width="1530" height="82" rx="0" class="band-4"></rect>
+</g>
+<g data-build="3">
+<rect x="250" y="234" width="1530" height="82" rx="0" class="band-4"></rect>
+</g>
+<g data-build="4">
+<rect x="250" y="316" width="1530" height="82" rx="0" class="band-4"></rect>
+</g>
+<g data-build="5">
+<rect x="250" y="398" width="1530" height="82" rx="0" class="band-4"></rect>
+</g>
+</svg>

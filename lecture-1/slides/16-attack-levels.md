@@ -4,12 +4,20 @@
 **Module:** ATT&CK as a language for behavior
 
 ## On-slide content
-
 Tactic: why the adversary acts. Technique: what behavior achieves it. Sub-technique: a specific form. Procedure: how a given actor or tool did it.
 
-The Enterprise ATT&CK matrix, schematic: 15 tactics as columns in attack order (Defense Evasion became Stealth and Defense Impairment in April 2026), a few real techniques per column with the true per-tactic counts, and the Execution column expanded under Command and Scripting Interpreter to show the sub-technique level (PowerShell, Windows Command Shell, Visual Basic, JavaScript).
+![The Enterprise ATT&CK matrix, schematic: 15 tactic columns in attack order with a few real techniques each and the true per-tactic counts, the Execution column expanded to the sub-technique level; then a classic trojan lit as a path of seven techniques across seven tactics](../figures/attack-matrix.svg)
 
-Then a classic trojan of the first two periods lit as a path across it: Spearphishing Attachment (T1566.001), User Execution: Malicious File (T1204.002), Software Packing (T1027.002), Process Injection (T1055), Registry Run Keys (T1547.001), Web Protocols (T1071.001), Data Encrypted for Impact (T1486).
+Build, one step per click:
+
+0. The Enterprise matrix, schematic: 15 tactics as columns in attack order (Defense Evasion became Stealth and Defense Impairment in April 2026), a few real techniques per column with the true per-tactic counts; hover a cell for its name. Execution is expanded under Command and Scripting Interpreter to the sub-technique level: PowerShell, Windows Command Shell, Visual Basic, JavaScript.
+1. A classic trojan of the first two periods, as a path. Initial Access: Spearphishing Attachment (T1566.001).
+2. Execution: User Execution, Malicious File (T1204.002).
+3. Stealth: Software Packing (T1027.002).
+4. Stealth: Process Injection (T1055).
+5. Persistence: Registry Run Keys (T1547.001).
+6. Command and Control: Web Protocols (T1071.001).
+7. Impact: Data Encrypted for Impact (T1486).
 
 > “Trojan” says less than this path: seven techniques across seven tactics, no family name, and every lit cell is a place a sensor could look.
 
