@@ -389,7 +389,38 @@ def injection_jailbreak():
     return s + "</svg>\n"
 
 
+def case_a_defense():
+    """The attacker's agent acts only through tools, so existing sensors already see it; what must change is the tempo."""
+    W, H = 1800, 340
+    s = head(W, H, "The attacker's agent acts only through tools, so every action lands on an endpoint, an identity or a network flow that EDR, XDR, NDR and identity logs already record; what must change is the tempo, not the sensor")
+    s += '<g data-build="0">\n'
+    s += tile(40, 50, 380, 130, "The attacker's agent", ["acts only through tools"], bad=True, title_size=24, sub_size=20)
+    s += arrow(420, 115, 518, 115)
+    s += tile(520, 50, 470, 130, "Endpoint · identity · flow", ["every action lands here"], title_size=23, sub_size=20)
+    s += arrow(990, 115, 1088, 115, green=True)
+    s += tile(1090, 50, 670, 130, "EDR / XDR / NDR", ["identity logs, flow metadata —", "the sensors we already deploy"], good=True, title_size=26, sub_size=20)
+    s += '</g>\n'
+    s += '<g data-build="1">\n'
+    s += tile(40, 220, 1720, 96, "What changes is the tempo, not the sensor", ["thousands of ambiguous events · several telemetry systems · changing identities · a few consequential transitions   →   a correlation problem, at machine speed"], title_size=24, sub_size=20)
+    s += '</g>\n'
+    return s + "</svg>\n"
+
+
+def weak_monitor():
+    """A weaker, trusted monitor watches a stronger, untrusted agent; full context does not guarantee a correct verdict."""
+    W, H = 1800, 250
+    s = head(W, H, "A weaker, trusted monitor watches a stronger, untrusted agent; having the full context does not mean it can read the intent in it")
+    s += tile(40, 20, 620, 130, "Strong agent", ["untrusted; its intent lives in a", "plan the monitor may not follow"], bad=True, title_size=28, sub_size=21)
+    s += tile(1140, 20, 620, 130, "Weak monitor", ["trusted, cheaper; sees the trajectory", "— tools, arguments, destination"], good=True, title_size=28, sub_size=21)
+    s += arrow(1138, 85, 662, 85)
+    s += text(900, 56, "watches", 20, 600, "t2", "middle")
+    s += text(900, 196, "full context ≠ correct verdict", 28, 700, "t-bad", "middle")
+    return s + "</svg>\n"
+
+
 (OUT / "attack-map.svg").write_text(attack_map())
+(OUT / "case-a-defense.svg").write_text(case_a_defense())
+(OUT / "weak-monitor.svg").write_text(weak_monitor())
 (OUT / "injection-jailbreak.svg").write_text(injection_jailbreak())
 (OUT / "dual-use.svg").write_text(dual_use())
 (OUT / "equation.svg").write_text(equation())

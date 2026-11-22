@@ -5,15 +5,7 @@
 
 ## On-slide content
 
-```text
- the attacker's agent acts only through tools
-   -> every action lands on an endpoint, an identity, a network flow
-   -> which is what EDR / XDR / NDR, identity logs and flow metadata already record
-
- what changes is not the sensor — it is the tempo
-   thousands of ambiguous events  +  several telemetry systems  +  changing identities
-     +  a few consequential transitions  =  a correlation problem, at machine speed
-```
+![The attacker's agent acts only through tools, so every action lands on an endpoint, identity or network flow that EDR, XDR, NDR and identity and flow logs already record; what must change is not the sensor but the tempo — a correlation problem at machine speed](../figures/case-a-defense.svg)
 
 | What we have | What must change |
 | --- | --- |

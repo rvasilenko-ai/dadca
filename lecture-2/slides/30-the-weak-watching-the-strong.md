@@ -5,12 +5,7 @@
 
 ## On-slide content
 
-```text
- full context  ≠  correct verdict
-   the agent's intent lives in a plan the monitor may not be able to follow
-   a stronger model can make a harmful trajectory look benign to a weaker, known monitor
-   the monitor is itself a model — slides 3 to 7 apply to it
-```
+![A weaker, trusted monitor watches a stronger, untrusted agent. The agent's intent lives in a plan the monitor may not be able to follow, so full context does not guarantee a correct verdict](../figures/weak-monitor.svg)
 
 | Gap | What it means for the monitor |
 | --- | --- |

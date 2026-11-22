@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 340" width="1800" height="340" role="img" aria-label="The attacker's agent acts only through tools, so every action lands on an endpoint, an identity or a network flow that EDR, XDR, NDR and identity logs already record; what must change is the tempo, not the sensor" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<title>The attacker's agent acts only through tools, so every action lands on an endpoint, an identity or a network flow that EDR, XDR, NDR and identity logs already record; what must change is the tempo, not the sensor</title>
+<style>
+svg{--surface:#ffffff;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--line:#9ca3af;--rule:#cbd5e1;
+--acc:#0284c7;--acc-wash:#e0f2fe;--acc-ink:#075985;--bad:#dc2626;--bad-wash:#fee2e2;--bad-ink:#991b1b;
+--good:#15803d;--good-wash:#dcfce7;--good-ink:#14532d;--on-badge:#ffffff}
+@media (prefers-color-scheme: dark){svg{--surface:#141a2a;--frame:#10172a;--ink:#eef1f8;--ink-2:#c6cddd;--line:#8b96b0;--rule:#344062;
+--acc:#7cc4ff;--acc-wash:#10304a;--acc-ink:#bfe3ff;--bad:#f87171;--bad-wash:#3b1515;--bad-ink:#fecaca;
+--good:#4ade80;--good-wash:#0f2e1c;--good-ink:#bbf7d0;--on-badge:#0b0f1a}}
+.node{fill:var(--surface);stroke:var(--rule);stroke-width:2.5}.node--model{fill:var(--acc-wash);stroke:var(--acc);stroke-width:4}
+.node--bad{fill:var(--bad-wash);stroke:var(--bad);stroke-width:4}.node--good{fill:var(--good-wash);stroke:var(--good);stroke-width:4}
+.frame{fill:var(--frame);stroke:var(--rule);stroke-width:2.5}.env{fill:none;stroke:var(--line);stroke-width:3;stroke-dasharray:14 10}
+.t{fill:var(--ink)}.t2{fill:var(--ink-2)}.t-acc{fill:var(--acc-ink)}.t-bad{fill:var(--bad-ink)}.t-good{fill:var(--good-ink)}.t-badge{fill:var(--on-badge)}
+.edge{fill:none;stroke:var(--line);stroke-width:3;stroke-linecap:round}.edge--strong{stroke:var(--ink-2);stroke-width:4}
+.edge--bad{stroke:var(--bad);stroke-width:4}.edge--good{stroke:var(--good);stroke-width:4}
+.arrow{fill:var(--ink-2)}.arrow--bad{fill:var(--bad)}.arrow--good{fill:var(--good)}
+.badge--bad{fill:var(--bad);stroke:var(--surface);stroke-width:3}.badge--good{fill:var(--good);stroke:var(--surface);stroke-width:3}
+.ctx-bar{fill:var(--rule)}.ring{fill:none;stroke:var(--ink);stroke-width:4}.dot{fill:var(--ink)}
+</style>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
+  <marker id="arrow-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--bad"/></marker>
+  <marker id="arrow-good" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow arrow--good"/></marker>
+</defs>
+<g data-build="0">
+<rect x="40" y="50" width="380" height="130" rx="14" class="node node--bad"/>
+<text x="60" y="82" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">The attacker's agent</text>
+<text x="60" y="112" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">acts only through tools</text>
+<path d="M420 115L518 115" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
+<rect x="520" y="50" width="470" height="130" rx="14" class="node"/>
+<text x="540" y="82" class="t" font-size="23" font-weight="700" text-anchor="start" dominant-baseline="central">Endpoint · identity · flow</text>
+<text x="540" y="112" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">every action lands here</text>
+<path d="M990 115L1088 115" class="edge edge--good draw" pathLength="1" marker-end="url(#arrow-good)"/>
+<rect x="1090" y="50" width="670" height="130" rx="14" class="node node--good"/>
+<text x="1110" y="82" class="t" font-size="26" font-weight="700" text-anchor="start" dominant-baseline="central">EDR / XDR / NDR</text>
+<text x="1110" y="112" class="t-good" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">identity logs, flow metadata —</text>
+<text x="1110" y="138" class="t-good" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">the sensors we already deploy</text>
+</g>
+<g data-build="1">
+<rect x="40" y="220" width="1720" height="96" rx="14" class="node"/>
+<text x="60" y="252" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">What changes is the tempo, not the sensor</text>
+<text x="60" y="282" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">thousands of ambiguous events · several telemetry systems · changing identities · a few consequential transitions   →   a correlation problem, at machine speed</text>
+</g>
+</svg>
