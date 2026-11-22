@@ -39,8 +39,8 @@ Students should be able to:
 | 41–44 | The agent becomes an attacker: two cases | 16 |
 | 44–55 | Case A: an agent the attacker owns | 17–20 |
 | 55–66 | Case B: a trusted agent hijacked | 21–24 |
-| 66–71 | The two cases compared | 25–26 |
-| 71–90 | Defense and research: Case A defense, Case B guardrails, the cheap-model funnel, the weak watching the strong, research map | 27–31 |
+| 66–73 | The two cases compared | 25–26 |
+| 73–90 | Defense and research: Case A defense, Case B guardrails, the cheap-model funnel, the weak watching the strong, research map | 27–31 |
 
 ## Primary cases
 
