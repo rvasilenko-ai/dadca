@@ -50,6 +50,15 @@
   footer p { margin: 0 0 6px; }
   a { color: var(--accent); }
   .theme { position: fixed; top: 14px; right: 14px; font: 600 13px var(--sans); color: var(--accent); background: var(--bg); border: 1px dashed var(--accent); border-radius: 6px; padding: 4px 9px; cursor: pointer; }
+  .egg { background: var(--bg-2); border-radius: 12px; border-left: 5px solid var(--accent); padding: 18px 22px 16px 20px; margin: -14px 0 32px; animation: egg-in .35s ease-out; }
+  .egg[hidden] { display: none; }
+  .egg h2 { margin: 0 0 2px; font-size: 1.15em; }
+  .egg .sub { margin: 0 0 12px; color: var(--ink-3); font-size: 0.9em; font-style: italic; }
+  .egg ol { margin: 0; padding-left: 1.3em; }
+  .egg li { margin: 0 0 8px; color: var(--ink-2); }
+  .egg li b { color: var(--ink); font-style: italic; }
+  .egg .close { margin: 10px 0 0; color: var(--ink-3); font-size: 0.85em; }
+  @keyframes egg-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
 </style>
 </head>
 <body>
@@ -61,6 +70,17 @@
     <p class="lead">An advanced lecture series on malware, machine learning, and AI-powered threat detection: how malware and malicious capabilities evolved, how the pipelines that detect them had to evolve with them, and what changes when the attacker is an agent and the detector is a model.</p>
     <p class="by"><a href="about.html">Roman Vasilenko</a> · slides, speaker notes and sources · <a href="about.html">about the author</a> · <a href="https://github.com/rvasilenko-ai/dadca">source repository</a></p>
   </header>
+
+  <section class="egg" id="egg" hidden aria-label="The three unforgivable sins of a defender">
+    <h2>The Three Unforgivable Sins of a Defender</h2>
+    <p class="sub">Defense Against the Dark Cyber Arts, chapter zero. Each one is a lecture.</p>
+    <ol>
+      <li><b>Imperio.</b> Letting untrusted text give orders to the agent that holds the credentials.</li>
+      <li><b>Crucio.</b> Making one analyst triage the alert queue by hand, one severity at a time, 17,600 events a day.</li>
+      <li><b>Avada Kedavra.</b> A detection by the file hash you found on VirusTotal. Instant, painless, and the next build walks right past it.</li>
+    </ol>
+    <p class="close">Click the shield again to close.</p>
+  </section>
 
   <h2 class="group">Intro</h2>
   <section class="cards" aria-label="Intro lectures">
@@ -167,6 +187,13 @@
       root.setAttribute("data-theme", next);
       try { localStorage.setItem(key, next); } catch (e) {}
     });
+    var egg = document.getElementById("egg"), mark = document.querySelector(".mark"), taps = 0, last = 0;
+    mark.addEventListener("click", function () {
+      var now = Date.now();
+      taps = now - last < 1200 ? taps + 1 : 1; last = now;
+      if (egg.hidden ? taps >= 3 : true) { egg.hidden = !egg.hidden; taps = 0; }
+    });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") egg.hidden = true; });
   })();
 </script>
 </body>
