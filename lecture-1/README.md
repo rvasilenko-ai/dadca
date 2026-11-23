@@ -99,3 +99,4 @@ The presentable deck is an offline HTML build in [deck/](deck/), on the machiner
 
 - [Lecture 2: When the Attacker Is an Agent](../lecture-2/README.md) (Master's and PhD)
 - [Lecture 3: ML for Detection of Malicious Binary Files](../lecture-3/README.md) (Master's and PhD)
+- [Lecture 4: Polymorphic Engines and How to Detect Them](../lecture-4/README.md) (Master's and PhD)

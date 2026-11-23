@@ -13,8 +13,9 @@ The slides, notes and figures were produced with the help of AI tools. The autho
 | 1 | [From Malware Files to Adversarial Capabilities](lecture-1/README.md) | Undergraduate and Master's | Slides, notes and an interactive deck ([open](https://rvasilenko-ai.github.io/dadca/lecture-1/deck/)) |
 | 2 | [When the Attacker Is an Agent](lecture-2/README.md) | Master's and PhD | [Deck](https://rvasilenko-ai.github.io/dadca/lecture-2/deck/) · slides and notes in markdown |
 | 3 | [ML for Detection of Malicious Binary Files](lecture-3/README.md) | Master's and PhD | Seed: fourteen slides written, six outlined |
+| 4 | [Polymorphic Engines and How to Detect Them](lecture-4/README.md) | Master's and PhD | Planned: outline only |
 
-The lectures do not assume detailed prior knowledge of PE internals, reverse engineering, MITRE ATT&CK, machine-learning approaches to malware detection, or LLM agent architecture. Lectures 2 and 3 assume general graduate-level cybersecurity knowledge.
+The lectures do not assume detailed prior knowledge of PE internals, reverse engineering, MITRE ATT&CK, machine-learning approaches to malware detection, or LLM agent architecture. Lectures 2 to 4 assume general graduate-level cybersecurity knowledge.
 
 ## The series' message
 

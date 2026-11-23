@@ -71,3 +71,4 @@ Slides without a link do not exist yet.
 
 - [Lecture 1: From Malware Files to Adversarial Capabilities](../lecture-1/README.md) (undergraduate and Master's)
 - [Lecture 2: When the Attacker Is an Agent](../lecture-2/README.md) (Master's and PhD)
+- [Lecture 4: Polymorphic Engines and How to Detect Them](../lecture-4/README.md) (Master's and PhD)
