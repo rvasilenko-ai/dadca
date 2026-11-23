@@ -1,4 +1,4 @@
-# Lecture 3: Machine Learning for Malware Detection
+# Lecture 3: ML for Detection of Malicious Binary Files
 
 **Status:** seed. Fourteen slides were moved or copied from Lecture 1 on 2026-10-11; the remaining slides are outlined below and not yet written.  
 **Duration:** 90 minutes  
