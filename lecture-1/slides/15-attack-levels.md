@@ -1,4 +1,4 @@
-# Slide 16 — From names to behaviors: ATT&CK's levels
+# Slide 15 — From names to behaviors: ATT&CK's levels
 
 **Timing:** 33–37 minutes  
 **Module:** ATT&CK as a language for behavior

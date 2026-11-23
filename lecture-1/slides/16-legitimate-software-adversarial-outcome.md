@@ -1,4 +1,4 @@
-# Slide 17 — Capabilities delivered through benign files
+# Slide 16 — Capabilities delivered through benign files
 
 **Timing:** 37–40 minutes  
 **Module:** ATT&CK as a language for behavior
@@ -43,7 +43,7 @@ intended capability + unauthorized controller + adversarial objective
 legitimate artifact + exploited capability + adversarial controller
 ```
 
-Do not say the vulnerable driver automatically becomes malware. It is an attack-enabling component in an adversarial procedure, and a valid signature establishes provenance, not current safety or authorized use. In neither case can a file classifier see the property that matters: who controls it, whose objective it serves, what it can do. The close of Part 1 names these questions (slide 18), and Part 2 asks what a sensor can see of them.
+Do not say the vulnerable driver automatically becomes malware. It is an attack-enabling component in an adversarial procedure, and a valid signature establishes provenance, not current safety or authorized use. In neither case can a file classifier see the property that matters: who controls it, whose objective it serves, what it can do. The close of Part 1 names these questions (slide 17), and Part 2 asks what a sensor can see of them.
 
 ## Interaction
 

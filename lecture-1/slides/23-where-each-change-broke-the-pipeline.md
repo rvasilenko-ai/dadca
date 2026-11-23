@@ -1,4 +1,4 @@
-# Slide 24 — Where each change broke the pipeline
+# Slide 23 — Where each change broke the pipeline
 
 **Timing:** 60–64 minutes
 **Module:** Detection pipelines: design and evolution
@@ -58,14 +58,14 @@ Build, one step per click:
 
 ## Talking points
 
-- Slide 14's list from the defender's side, after the lineages, with packing and encryption added.
+- Slide 13's list from the defender's side, after the lineages, with packing and encryption added.
 - Four of seven rows broke at the sensor; the fix lands at whatever stage broke.
 - Products did fail, all the same way: the evidence left their field of view; nothing was retired.
 - The last rows are the pipeline being rebuilt now, around identity and the agent; there is no final round.
 
 ## Speaker notes
 
-This is slide 14's list read from the defender's side, after the two lineages, with two rows added: packing from the executable era, the first time a product's evidence moved out of its view, and the network row, because encryption was the internet changing rather than an attacker move. Each row names the stage of the pipeline that a change broke, the evidence that left that stage's view, where the sensor went, and the product generation that answered; the first four rows are the lineages you have just seen, row by row, and the last three are the pipeline being rebuilt now, around identity and the agent. It is the bridge from the history to the menu on the next slide. The second column maps each row to the pipeline: four of the seven rows broke at the sensor, packing and encryption broke extraction, and only the trusted-vendor row broke at detection, where the feature (provenance) was wrong rather than the model. Next and Previous step through the seven changes one at a time, each lighting the stage that broke; clicking a stage on the strip jumps to the first change that broke there, and the full table button shows all seven at once (the PDF prints the table). The dominant product class changed each time the attacker moved the capability to a place the current sensor did not observe.
+This is slide 13's list read from the defender's side, after the two lineages, with two rows added: packing from the executable era, the first time a product's evidence moved out of its view, and the network row, because encryption was the internet changing rather than an attacker move. Each row names the stage of the pipeline that a change broke, the evidence that left that stage's view, where the sensor went, and the product generation that answered; the first four rows are the lineages you have just seen, row by row, and the last three are the pipeline being rebuilt now, around identity and the agent. It is the bridge from the history to the menu on the next slide. The second column maps each row to the pipeline: four of the seven rows broke at the sensor, packing and encryption broke extraction, and only the trusted-vendor row broke at detection, where the feature (provenance) was wrong rather than the model. Next and Previous step through the seven changes one at a time, each lighting the stage that broke; clicking a stage on the strip jumps to the first change that broke there, and the full table button shows all seven at once (the PDF prints the table). The dominant product class changed each time the attacker moved the capability to a place the current sensor did not observe.
 
 Make three points explicit:
 

@@ -1,4 +1,4 @@
-# Slide 3 — Five suspicious situations
+# Slide 2 — Five suspicious situations
 
 **Timing:** 2–4 minutes
 **Module:** Where is the malware?
@@ -29,7 +29,7 @@ Build, one step per click:
 
 One show of hands, not five. Read the five rungs aloud, then ask the room to raise a hand at the last rung they would still call malware, and count down from five. Expect a spread: a cluster at 1 or 2, a cluster at 4 or 5, hesitation at 3. Do not resolve it. The purpose is to make visible that students are classifying different things, an artifact, a behavior, who is in control, or an outcome, and Part 1 spends its time earning the vocabulary for that.
 
-Pick one student from the top of the ladder and one from the bottom and ask what decided it, two sentences each. The answers are usually "there is a file" and "someone is doing harm", which are two of the four questions slide 18 names when it closes the vote.
+Pick one student from the top of the ladder and one from the bottom and ask what decided it, two sentences each. The answers are usually "there is a file" and "someone is doing harm", which are two of the four questions slide 17 names when it closes the vote.
 
 ## Interaction
 

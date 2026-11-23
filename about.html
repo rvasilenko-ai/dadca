@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About the author · DADCA</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%232a78d6%27/%3E%3Cpath d=%27M7 22V10h3l3.5 6 3.5-6h3v12h-3v-7l-3.5 6-3.5-6v7z%27 fill=%27%23fff%27/%3E%3C/svg%3E">
+<meta name="description" content="Roman Vasilenko, the author of DADCA: Defense Against the Dark Cyber Arts. Nearly twenty years on the detection side of malware, from antivirus engines to sandboxes, network detection, breach simulation and Cisco Talos.">
+<style>
+  :root {
+    --bg: #fcfcfb; --bg-2: #f1f0ec; --ink: #141414; --ink-2: #4a4a4a; --ink-3: #8a8a8a;
+    --line: #e4e2dc; --accent: #2a78d6; --focus: rgba(42, 120, 214, 0.14);
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg: #1b1b1b; --bg-2: #262626; --ink: #f0efea; --ink-2: #c3c1ba; --ink-3: #8c8a84; --line: #333; --accent: #3987e5; --focus: rgba(57, 135, 229, 0.22); }
+  }
+  :root[data-theme="dark"] { --bg: #1b1b1b; --bg-2: #262626; --ink: #f0efea; --ink-2: #c3c1ba; --ink-3: #8c8a84; --line: #333; --accent: #3987e5; --focus: rgba(57, 135, 229, 0.22); }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.55 var(--sans); }
+  main { max-width: 880px; margin: 0 auto; padding: 48px 16px 64px; }
+  nav.crumbs { font-size: 0.92em; color: var(--ink-3); margin-bottom: 28px; }
+  header h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.1; letter-spacing: -0.01em; margin: 0 0 6px; }
+  header p.role { font-size: 1.15em; color: var(--ink-2); margin: 0 0 18px; }
+  header p.lead { font-size: 1.05em; color: var(--ink-2); margin: 0 0 8px; max-width: 48em; }
+  h2 { font-size: 1.3em; margin: 42px 0 12px; }
+  h3 { font-size: 1.05em; margin: 0 0 4px; }
+  p { margin: 0 0 12px; }
+  .timeline { list-style: none; margin: 0; padding: 0; }
+  .timeline li { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 4px 22px; padding: 14px 0; border-top: 1px solid var(--line); }
+  .timeline li:last-child { border-bottom: 1px solid var(--line); }
+  .timeline .y { font: 600 0.92em var(--mono); color: var(--accent); padding-top: 3px; }
+  .timeline .where { color: var(--ink-3); font-size: 0.92em; margin: 0 0 6px; }
+  .timeline p { margin: 0 0 6px; color: var(--ink-2); font-size: 0.97em; }
+  .timeline p:last-child { margin-bottom: 0; }
+  .pubs, .plain { margin: 0; padding: 0; list-style: none; }
+  .pubs li { background: var(--bg-2); border-radius: 10px; border-left: 4px solid var(--accent); padding: 12px 16px; margin-bottom: 12px; }
+  .pubs b { display: block; margin-bottom: 2px; }
+  .pubs p { margin: 0; color: var(--ink-2); font-size: 0.97em; }
+  .plain li { padding: 6px 0; border-top: 1px solid var(--line); color: var(--ink-2); font-size: 0.97em; }
+  .plain li:last-child { border-bottom: 1px solid var(--line); }
+  .plain li .orig { color: var(--ink-3); font-size: 0.92em; }
+  blockquote { margin: 14px 0; padding: 10px 18px; border-left: 4px solid var(--accent); background: var(--bg-2); border-radius: 0 10px 10px 0; color: var(--ink); font-style: italic; }
+  .links { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 0; }
+  .links a { display: inline-block; padding: 7px 12px; border-radius: 8px; border: 1px solid var(--accent); color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.92em; }
+  .links a.primary { background: var(--accent); color: #fff; }
+  .links a:hover { background: var(--focus); }
+  .links a.primary:hover { filter: brightness(1.08); }
+  footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--ink-3); font-size: 0.88em; }
+  footer p { margin: 0 0 6px; }
+  a { color: var(--accent); }
+  .theme { position: fixed; top: 14px; right: 14px; font: 600 13px var(--sans); color: var(--accent); background: var(--bg); border: 1px dashed var(--accent); border-radius: 6px; padding: 4px 9px; cursor: pointer; }
+  @media (max-width: 560px) { .timeline li { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<button class="theme" type="button" id="theme" aria-label="Toggle light and dark theme">theme</button>
+<main>
+  <nav class="crumbs"><a href="./">DADCA: Defense Against the Dark Cyber Arts</a> · About the author</nav>
+  <header>
+    <h1>Roman Vasilenko</h1>
+    <p class="role">Principal Engineer, Cisco Talos · San Diego</p>
+    <p class="lead">Security engineer, researcher and inventor, with close to twenty years in malware research, detection and prevention: inside two antivirus engines, a sandbox company he helped grow from eight people to a hundred and fifty, the network-detection group of VMware, the attack-simulation product at Google's Mandiant, and now the threat-intelligence and detection group at Cisco. The lectures in this series are that history told from the defender's bench, with the claims about what worked and what stopped working made as a practitioner's claims.</p>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/romanvasilenko">LinkedIn</a>
+      <a href="https://www.youtube.com/channel/UCzVabvQF59Ei3IM1MmYtd7w">YouTube channel</a>
+      <a href="https://github.com/rvasilenko-ai/malware-and-ai">Source repository</a>
+    </div>
+  </header>
+
+  <h2>Where the lectures come from</h2>
+  <p>Lecture 1 divides the last twenty-five years into periods. Read as a career, the same periods look like this.</p>
+  <ul class="timeline">
+    <li><span class="y">2025–</span><div><h3>Cisco Talos — Principal Engineer</h3><p class="where">San Diego, since March 2025</p><p>Working out how to apply current AI to threat detection and prevention: models and agents as detectors, and as attackers. The subject of Lectures 2 and 3.</p></div></li>
+    <li><span class="y">2023–2025</span><div><h3>Google Cloud, Mandiant Security Validation — Engineering Manager</h3><p class="where">July 2023 to March 2025</p><p>Led the distributed team behind the attack simulation engine: run the attack against the deployed controls and check whether they actually detect it, so that customers can turn threat intelligence into a measured security posture. Assume-breach made into a product, and the origin of the "does the control actually see it?" question that runs through Lecture 1's second half.</p></div></li>
+    <li><span class="y">2020–2023</span><div><h3>VMware — Senior Manager, Engineering</h3><p class="where">June 2020 to July 2023, after VMware acquired Lastline</p><p>Led international teams of developers, machine-learning engineers and reverse engineers, fifteen and more people, responsible for threat research and detection systems in NSX. Led the design of the malware detection and threat-hunting pipelines for NSX Advanced Threat Prevention and NSX Network Detection and Response, static, dynamic and model-based analysis together, and the integration of the Lastline team and technology into a company of 34,000. The network side of the lecture's story: detection built for a world where payload inspection had stopped working.</p></div></li>
+    <li><span class="y">2012–2020</span><div><h3>Lastline — Tech Lead, then Engineering Manager, Anti-Malware Group</h3><p class="where">October 2012 to June 2020</p><p>Built and led the team, from one person to more than ten developers, data scientists and security researchers, that created Lastline's anti-malware sandbox: a hybrid of full-system emulation and hypervisor-based analysis covering Windows and macOS, and the threat-detection pipeline around it, with machine learning and binary-similarity analysis for malware and phishing prevention alongside. The company grew from eight employees to a hundred and fifty in those years; the team's average tenure passed five years and its engineers grew from intern to staff. The sandbox era from inside the sandbox: the product the lectures say peaked around 2016 and was starved of evidence by 2020.</p></div></li>
+    <li><span class="y">2011–2012</span><div><h3>Saint Petersburg State University — Senior Lecturer</h3><p class="where">Department of Mathematics and Mechanics, 2011–2012 academic year</p><p>Taught a special course, <em>Introduction to Malware Research</em>. This series is a return to teaching after a decade and a half of building the systems the lectures describe.</p></div></li>
+    <li><span class="y">2008–2012</span><div><h3>Kaspersky Lab — Developer, then Senior Research Developer</h3><p class="where">Saint Petersburg, December 2008 to November 2012</p><p>Invented a malware-detection algorithm based on pattern recognition, built automatic detection tools and wrote cure algorithms for new families; then led the project that designed a new reputation-based detection algorithm and researched emerging threats and malicious techniques. The executable era from inside a large antivirus engine, including the reputation-based detection that server-side polymorphism forced on the industry.</p></div></li>
+    <li><span class="y">2007–2008</span><div><h3>Doctor Web — Virus Analyst</h3><p class="where">Saint Petersburg, March 2007 to December 2008</p><p>Analysis of malicious code and its functionality, methods for extracting and unpacking malicious programs, and detection methods for polymorphic viruses. The first row of Lecture 1's timeline, seen from the analyst's desk.</p></div></li>
+  </ul>
+
+  <h2>Research and patents</h2>
+  <ul class="pubs">
+    <li><b><a href="https://doi.org/10.1007/978-3-030-80825-9_7">SCRUTINIZER: Detecting Code Reuse in Malware via Decompilation and Machine Learning</a></b><p>DIMVA 2021, with colleagues at Northeastern University. Code reuse between malware samples found at the function level, from decompiled code, with unsupervised learning to discard the functions that carry no signal; the system attributed previously unknown samples to known APT campaigns.</p></li>
+    <li><b><a href="https://dblp.org/rec/conf/acsac/VasanAOVGKV24.html">DEEPCAPA: Identifying Malicious Capabilities in Windows Malware</a></b><p>ACSAC 2024, with colleagues at UC Santa Barbara. A post-detection tool that reads the API call sequences of sandboxed malware from memory snapshots and maps them to MITRE ATT&amp;CK techniques, so that an analyst learns what a sample can do, not only that it is malicious.</p></li>
+  </ul>
+  <p>Five patents in threat and malware detection technology:</p>
+  <ul class="plain">
+    <li>System and method for detecting unknown malware</li>
+    <li>System and method for improving the detection of unknown malicious objects <span class="orig">(Система и способ повышения эффективности обнаружения неизвестных вредоносных объектов)</span></li>
+    <li>System and method of files comparison based on functionality patterns</li>
+    <li>Systems and methods for classifying malware based on feature reuse</li>
+    <li>Automatically recognizing malicious techniques in malware</li>
+  </ul>
+
+  <h2>Education</h2>
+  <p>ITMO University, Saint Petersburg: Specialist (Master's) in Information Security, 2005–2011.</p>
+  <p>Continuing study in machine learning: Stanford Online's <em>Natural Language Processing with Deep Learning</em> (XCS224N) and <em>Machine Learning with Graphs</em> (XCS224W), <em>End-to-End Machine Learning with TensorFlow on GCP</em>, <em>Artificial Intelligence</em>, and <em>Cryptography I</em>. Works in English and Russian.</p>
+
+  <h2>About this series</h2>
+  <p><strong>DADCA: Defense Against the Dark Cyber Arts</strong> is three related 90-minute lectures. Lecture 1, for undergraduate and Master's students, follows the malicious capability as it moved out of the executable file over twenty-five years, and the detection pipelines that had to move after it. Lecture 2, for Master's and PhD students, asks what changes when the attacker is an agent. Lecture 3, for the same audience, opens the detectors themselves: what each one actually receives, and what the extraction discarded before it arrived.</p>
+  <blockquote>AI changes where human expertise is valuable; it does not eliminate the need for expertise.</blockquote>
+  <p>The lectures show the gap between an academic prototype and an operational security system. Many operational problems occur before or after model inference: collection, extraction, representation, prioritization, tool integration, evidence preservation, authorization and response. Those gaps are where the research and engineering work is.</p>
+  <p>Everything is built in the open. Each slide is a markdown file with its speaker notes, its planned minutes and the sources behind every number; the decks are generated from those files, and dates and figures were checked against primary sources before publication. Offensive mechanics are kept conceptual throughout: the teaching objective is observability and system design.</p>
+  <div class="links">
+    <a class="primary" href="./">The lectures</a>
+    <a href="https://github.com/rvasilenko-ai/malware-and-ai">Source repository</a>
+  </div>
+
+  <h2>Corrections</h2>
+  <p>Errors are the author's. Corrections, disagreements and better sources are welcome through the repository, as an issue or a pull request against the slide in question.</p>
+
+  <footer>
+    <p>© Roman Vasilenko. Slides and notes are the author's; the views are the author's and not those of any employer, past or present.</p>
+  </footer>
+</main>
+<script>
+  (function () {
+    var root = document.documentElement, key = "deck-theme";
+    try { var saved = localStorage.getItem(key); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
+    document.getElementById("theme").addEventListener("click", function () {
+      var cur = root.getAttribute("data-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      var next = cur === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem(key, next); } catch (e) {}
+    });
+  })();
+</script>
+</body>
+</html>

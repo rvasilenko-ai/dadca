@@ -16,6 +16,7 @@ build(DeckConfig(
     description="Lecture 1 of DADCA: Defense Against the Dark Cyber Arts, an advanced lecture series on malware, machine learning and AI-powered threat detection: how malware and malicious capabilities evolved, and how detection pipelines evolved with them.",
     series_line="DADCA · Defense Against the Dark Cyber Arts · Lecture 1",
     series_tagline="Understanding the Threat. Mastering the Defense.",
+    byline="Roman Vasilenko · Principal Engineer, Cisco Talos",
     deck_url="rvasilenko-ai.github.io/malware-and-ai/lecture-1/deck",
     # module -> part number; slides 5 and 19 are the lecture's own part dividers
     part_of={
@@ -29,6 +30,6 @@ build(DeckConfig(
         1: ("How the malicious capability outgrew the file", "Four periods across five tracks, then ATT&CK as a vocabulary for behavior"),
         2: ("How detection pipelines are built, and how they had to change", "The pipeline, two lineages, the stage each change broke, the options, six misses"),
     },
-    divider_slides={5: 1, 19: 2},
+    divider_slides={4: 1, 18: 2},
     table_rows_per_page=10,
 ))

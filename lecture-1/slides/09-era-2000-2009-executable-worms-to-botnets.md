@@ -1,4 +1,4 @@
-# Slide 10 — 2000–2009: the executable, from worms to botnets
+# Slide 9 — 2000–2009: the executable, from worms to botnets
 
 **Timing:** 13–17 minutes  
 **Module:** From malicious programs to adversarial capabilities
@@ -44,7 +44,7 @@ Read the five tracks as one system, starting with the money. The attacker's unit
 
 **Worms, then botnets.** The first half of the decade belongs to the worms: Code Red and Nimda in 2001, Slammer and Blaster in 2003, Sasser in 2004, each exploiting an unpatched service on a machine with no firewall and spreading with no user action. XP SP2 turning the firewall on in August 2004 is the defender's answer, and the big network worms go quiet until Conficker finds MS08-067 in 2008. The second half belongs to the botnets. The IRC bot families (Agobot, SDBot, rxbot) made the compromised machine report to a channel and take orders, which is what turned infections into inventory that could be rented for spam, DDoS and installs; Ancheta was prosecuted for exactly that trade. Storm, Zeus, Conficker and Koobface are the mature form: the machine is the product and the binary is disposable.
 
-**Each block got an answer.** Outlook blocked executable attachments in 2000 and Gmail from 2004, zips included; the mass-mailers switched to zip within weeks (MyDoom, January 2004) and to password-protected zips with the password shown as an image (Bagle, February to March 2004). When the IM worms of 2005 made MSN Messenger filter .pif and executable transfers, Kelvir was already sending a link instead. Exploit documents (a Word zero-day in May 2006, PDF in November 2008) and MPack, the first exploit kit sold commercially (2007), are the same answer with a different container: the file diversified as soon as the executable was blocked, which is why slide 14's first bar starts in this period and not in 2010.
+**Each block got an answer.** Outlook blocked executable attachments in 2000 and Gmail from 2004, zips included; the mass-mailers switched to zip within weeks (MyDoom, January 2004) and to password-protected zips with the password shown as an image (Bagle, February to March 2004). When the IM worms of 2005 made MSN Messenger filter .pif and executable transfers, Kelvir was already sending a link instead. Exploit documents (a Word zero-day in May 2006, PDF in November 2008) and MPack, the first exploit kit sold commercially (2007), are the same answer with a different container: the file diversified as soon as the executable was blocked, which is why slide 13's first bar starts in this period and not in 2010.
 
 Within the decade the attacker moved three times inside the file:
 

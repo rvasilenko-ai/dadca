@@ -36,6 +36,7 @@ class DeckConfig:
     part_titles: dict[int, tuple[str, str]]     # part -> (title, subtitle) for the auto-generated dividers
     divider_slides: dict[int, int] = field(default_factory=dict)   # slide number -> part: that slide *is* the divider
     series_tagline: str = ""                    # one line under the follow-along address, e.g. the series' motto
+    byline: str = ""                            # the author line on the title slide
     assets: str = "../../tools/deck"            # path from deck/ to the shared deck.css and deck.js
     table_rows_per_page: int = 12               # a continuation page takes this many table rows
     section_names: tuple[str, ...] = ("On-slide content", "Talking points", "Speaker notes", "Interaction", "Transition", "Sources")
@@ -292,7 +293,8 @@ def render_title(slide: dict, total: int) -> str:
         lead = paras[0].strip() if paras else ""
     inner = (f'<div class="title-block"><p class="eyebrow">{html.escape(CFG.series_line)}</p>'
              f'<h1 class="display">{inline(display)}</h1><p class="lead">{inline(lead)}</p>'
-             f'<p class="follow">Follow along on your laptop or phone: <span class="url">{html.escape(CFG.deck_url)}</span></p>'
+             + (f'<p class="byline">{html.escape(CFG.byline)}</p>' if CFG.byline else "")
+             + f'<p class="follow">Follow along on your laptop or phone: <span class="url">{html.escape(CFG.deck_url)}</span></p>'
              + (f'<p class="series">{html.escape(CFG.series_tagline)}</p>' if CFG.series_tagline else "") + "</div>")
     return section(slide, "s1", "title", inner, 0, total)
 

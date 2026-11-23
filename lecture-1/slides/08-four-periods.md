@@ -1,4 +1,4 @@
-# Slide 9 — Four periods, 2000–2026
+# Slide 8 — Four periods, 2000–2026
 
 **Timing:** 11–13 minutes
 **Module:** From malicious programs to adversarial capabilities
@@ -31,7 +31,7 @@ Say explicitly that the next four slides zoom into one period each: the same fiv
 
 The periods are the periods of the attacker's dominant tradecraft, not of famous incidents, and the boundaries are soft by a year or two. 2010 opens with Aurora and Stuxnet; 2017 opens with the Shadow Brokers leak and the ransomware economy it fed; 2023 opens with the Volt Typhoon advisory and the casino intrusions, campaigns with no malware file at all. Say "no file", not "no malware": by this lecture's definition the hands-on intrusion, the built-in tools and the exploits are the malicious capability, so the malware is still there and only its carrier is gone.
 
-The callout is a question here and an answer on slide 14. Say once that the operating-system track follows the Windows enterprise endpoint, because that is where the detection industry was built and where the sensors in Part 2 live; mobile, macOS, Linux and cloud-native attacks have their own histories and appear here only when they change what a sensor can see (Mirai, XZ Utils, the Linux cloud host).
+The callout is a question here and an answer on slide 13. Say once that the operating-system track follows the Windows enterprise endpoint, because that is where the detection industry was built and where the sensors in Part 2 live; mobile, macOS, Linux and cloud-native attacks have their own histories and appear here only when they change what a sensor can see (Mirai, XZ Utils, the Linux cloud host).
 
 ## Transition
 

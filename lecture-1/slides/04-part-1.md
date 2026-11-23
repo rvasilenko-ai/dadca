@@ -1,4 +1,4 @@
-# Slide 5 — Part 1: how the malicious capability outgrew the file
+# Slide 4 — Part 1: how the malicious capability outgrew the file
 
 **Timing:** 5–6 minutes  
 **Module:** From malicious programs to adversarial capabilities

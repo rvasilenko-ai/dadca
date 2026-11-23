@@ -1,4 +1,4 @@
-# Slide 26 — Diagnostic exercise
+# Slide 25 — Diagnostic exercise
 
 **Timing:** 68–75 minutes  
 **Module:** Detection pipelines: design and evolution
@@ -27,8 +27,8 @@ Build, one step per click:
 
 Expected emphasis:
 
-- **A:** sensor/acquisition mismatch; memory or behavioral evidence is needed. This is the sandbox and antivirus column of slide 21.
-- **B:** payload visibility mismatch; metadata or endpoint evidence may help. This is the network lineage of slide 23.
+- **A:** sensor/acquisition mismatch; memory or behavioral evidence is needed. This is the sandbox and antivirus column of slide 20.
+- **B:** payload visibility mismatch; metadata or endpoint evidence may help. This is the network lineage of slide 22.
 - **C:** representation or classifier failure; retraining may be relevant after checking labels and distribution shift.
 - **D:** investigation failure. Every sensor worked and every alert was right; the evidence was never connected across sources. Correlation and timeline reconstruction are needed, not a better classifier. This is the pattern Lecture 2 shows at scale.
 - **E:** decision failure. An appropriate action existed and was not authorized in time. The fix is authorization design, such as pre-approved containment above a confidence threshold, not more evidence.

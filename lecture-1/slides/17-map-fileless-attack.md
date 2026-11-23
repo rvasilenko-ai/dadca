@@ -1,4 +1,4 @@
-# Slide 18 — Map an attack with no malware file
+# Slide 17 — Map an attack with no malware file
 
 **Timing:** 40–45 minutes  
 **Module:** ATT&CK as a language for behavior
@@ -35,18 +35,18 @@ Build, one step per click:
 ## Talking points
 
 - Situation 2 from the ladder, written out and taken further: a PowerShell script, a vulnerable driver, defenses off, a memory-only implant, documents out.
-- The only file on disk is a legitimate signed driver; the malicious capability never appears as a malware file (slide 17's BYOVD case inside a full chain).
+- The only file on disk is a legitimate signed driver; the malicious capability never appears as a malware file (slide 16's BYOVD case inside a full chain).
 - Two minutes in pairs with the empty matrix, then reveal the eight steps; reward arguments about the mechanism.
 - Three network crossings (driver, implant, upload) and many host events; "no malware file" does not mean no evidence.
 - Close the vote in speech: all five are malware; the room answered four different questions; Part 2 asks the fifth.
 
 ## Speaker notes
 
-This is situation 2 from the opening ladder written out and taken further: the standard tradecraft of 2017–2022 on slide 12 with the BYOVD and defense-impairment moves of 2022–2026 folded in. The only file written to disk is a legitimate, signed driver; the malicious capability, disabling the defenses and the memory-only implant, never appears as a malware file, which is slide 17's benign-driver case inside a full chain. Do not say that no evidence or representation exists: the command is text, the driver load and the kernel tampering raise system events, two downloads and the upload cross the network, and the in-memory implant leaves memory and injection evidence.
+This is situation 2 from the opening ladder written out and taken further: the standard tradecraft of 2017–2022 on slide 11 with the BYOVD and defense-impairment moves of 2022–2026 folded in. The only file written to disk is a legitimate, signed driver; the malicious capability, disabling the defenses and the memory-only implant, never appears as a malware file, which is slide 16's benign-driver case inside a full chain. Do not say that no evidence or representation exists: the command is text, the driver load and the kernel tampering raise system events, two downloads and the upload cross the network, and the in-memory implant leaves memory and injection evidence.
 
 The eight steps on the slide are one defensible mapping, not the only one: the driver abuse could also be tagged under Hijack Execution Flow or a service technique, both downloads are Ingress Tool Transfer (the slide lights it once, at the implant), Process Injection lights in two columns because the same behavior serves two goals, and an upload to a cloud service rather than to the C2 server would be Exfiltration to Cloud Storage instead of Exfiltration Over C2 Channel. Reward pairs who argue about the mechanism; that is the exercise working.
 
-**Close the vote, spoken, nothing on the slide.** After the sixth step, name the five situations from slide 3 from memory. By the working definition from slide 5 all five are malware, because each is a malicious capability in use. What the room disagreed about were four different questions asked with one word: a malware analyst classifies an object, the artifact, what it is; an incident responder cares about the capability, what it can do; a platform engineer cares about control, who holds it and who authorized it; a legal definition needs the objective, whose purpose it serves. The five situations differ in the carrier and the evidence, a file on disk, a command line, bytes in memory, a session under the wrong control, an instruction in data, and the four questions are the vocabulary Part 1 has been using without naming it: the artifact carried the malicious meaning in the executable era, objective was added when the adversary became a campaign, control when access, tokens and vendor channels became the target, and control and objective together once a program acts under delegated authority. Part 2 asks the fifth question, what a sensor can see of any of this, which is the question the vote was really about.
+**Close the vote, spoken, nothing on the slide.** After the sixth step, name the five situations from slide 2 from memory. By the working definition from slide 4 all five are malware, because each is a malicious capability in use. What the room disagreed about were four different questions asked with one word: a malware analyst classifies an object, the artifact, what it is; an incident responder cares about the capability, what it can do; a platform engineer cares about control, who holds it and who authorized it; a legal definition needs the objective, whose purpose it serves. The five situations differ in the carrier and the evidence, a file on disk, a command line, bytes in memory, a session under the wrong control, an instruction in data, and the four questions are the vocabulary Part 1 has been using without naming it: the artifact carried the malicious meaning in the executable era, objective was added when the adversary became a campaign, control when access, tokens and vendor channels became the target, and control and objective together once a program acts under delegated authority. Part 2 asks the fifth question, what a sensor can see of any of this, which is the question the vote was really about.
 
 ## Interaction
 

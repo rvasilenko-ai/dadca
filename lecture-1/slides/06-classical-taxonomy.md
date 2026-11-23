@@ -1,4 +1,4 @@
-# Slide 7 — The classical taxonomy
+# Slide 6 — The classical taxonomy
 
 **Timing:** 7–9 minutes  
 **Module:** From malicious programs to adversarial capabilities
