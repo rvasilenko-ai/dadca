@@ -3,7 +3,7 @@
 The HTML deck for *When the Attacker Is an Agent*, built from the markdown slides in `../slides/`.
 The markdown stays the source of truth; `index.html` is generated.
 
-Live: https://rvasilenko-ai.github.io/malware-and-ai/lecture-2/deck/
+Live: https://rvasilenko-ai.github.io/dadca/lecture-2/deck/
 
 The stage, the stepped captions, the themed class-based diagrams, the self-drawing edges and the lit
 current build follow the mechanics of Saastha Vasan's LLM security lecture deck

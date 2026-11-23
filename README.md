@@ -4,14 +4,14 @@
 
 An Advanced Lecture Series on Malware, Machine Learning, and AI-Powered Threat Detection. A growing series of 90-minute lectures: introductory lectures on how malware and malicious capabilities evolved, how the pipelines that detect them had to evolve with them, and what changes when the attacker is an agent, then advanced topics in malware and threat detection with machine learning and AI. Students may attend any lecture independently.
 
-Hosted at <https://rvasilenko-ai.github.io/malware-and-ai/>.
+Hosted at <https://rvasilenko-ai.github.io/dadca/>.
 
 The slides, notes and figures were produced with the help of AI tools. The author reviewed and adjusted every slide and checked the figures against primary sources; minor issues may remain, and feedback and corrections are welcome as issues or pull requests.
 
 | Lecture | Title | Audience | Status |
 | --- | --- | --- | --- |
-| 1 | [From Malware Files to Adversarial Capabilities](lecture-1/README.md) | Undergraduate and Master's | Slides, notes and an interactive deck ([open](https://rvasilenko-ai.github.io/malware-and-ai/lecture-1/deck/)) |
-| 2 | [When the Attacker Is an Agent](lecture-2/README.md) | Master's and PhD | [Deck](https://rvasilenko-ai.github.io/malware-and-ai/lecture-2/deck/) · slides and notes in markdown |
+| 1 | [From Malware Files to Adversarial Capabilities](lecture-1/README.md) | Undergraduate and Master's | Slides, notes and an interactive deck ([open](https://rvasilenko-ai.github.io/dadca/lecture-1/deck/)) |
+| 2 | [When the Attacker Is an Agent](lecture-2/README.md) | Master's and PhD | [Deck](https://rvasilenko-ai.github.io/dadca/lecture-2/deck/) · slides and notes in markdown |
 | 3 | [Machine Learning for Malware Detection](lecture-3/README.md) | Master's and PhD | Seed: fourteen slides written, six outlined |
 
 The lectures do not assume detailed prior knowledge of PE internals, reverse engineering, MITRE ATT&CK, machine-learning approaches to malware detection, or LLM agent architecture. Lectures 2 and 3 assume general graduate-level cybersecurity knowledge.

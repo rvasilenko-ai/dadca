@@ -17,7 +17,7 @@ build(DeckConfig(
     series_line="DADCA · Defense Against the Dark Cyber Arts · Lecture 2",
     series_tagline="Understanding the Threat. Mastering the Defense.",
     byline="Roman Vasilenko · Principal Engineer, Cisco Talos",
-    deck_url="rvasilenko-ai.github.io/malware-and-ai/lecture-2/deck",
+    deck_url="rvasilenko-ai.github.io/dadca/lecture-2/deck",
     # module -> part number; the first module of a part names its divider
     part_of={
         "Opening": 0,

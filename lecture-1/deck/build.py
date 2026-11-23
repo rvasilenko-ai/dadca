@@ -17,7 +17,7 @@ build(DeckConfig(
     series_line="DADCA · Defense Against the Dark Cyber Arts · Lecture 1",
     series_tagline="Understanding the Threat. Mastering the Defense.",
     byline="Roman Vasilenko · Principal Engineer, Cisco Talos",
-    deck_url="rvasilenko-ai.github.io/malware-and-ai/lecture-1/deck",
+    deck_url="rvasilenko-ai.github.io/dadca/lecture-1/deck",
     # module -> part number; slides 5 and 19 are the lecture's own part dividers
     part_of={
         "Where is the malware?": 0,
