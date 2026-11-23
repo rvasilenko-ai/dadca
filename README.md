@@ -6,6 +6,8 @@ An Advanced Lecture Series on Malware, Machine Learning, and AI-Powered Threat D
 
 Hosted at <https://rvasilenko-ai.github.io/malware-and-ai/>.
 
+The slides, notes and figures were produced with the help of AI tools. The author reviewed and adjusted every slide and checked the figures against primary sources; minor issues may remain, and feedback and corrections are welcome as issues or pull requests.
+
 | Lecture | Title | Audience | Status |
 | --- | --- | --- | --- |
 | 1 | [From Malware Files to Adversarial Capabilities](lecture-1/README.md) | Undergraduate and Master's | Slides, notes and an interactive deck ([open](https://rvasilenko-ai.github.io/malware-and-ai/lecture-1/deck/)) |
