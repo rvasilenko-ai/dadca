@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 480" width="1800" height="480" role="img" aria-label="Hugging Face, what it adds up to: the attacker's objective plus the attacker's agent (model and harness) plus a launchpad on the Internet plus ordinary weaknesses at the victim equals attacker-desired capability. Three readings of the same incident: a tireless operator, coverage not elegance; the agent was the intruder, no human in the loop; detection worked, the decision failed" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>Hugging Face, what it adds up to: the attacker's objective plus the attacker's agent (model and harness) plus a launchpad on the Internet plus ordinary weaknesses at the victim equals attacker-desired capability. Three readings of the same incident: a tireless operator, coverage not elegance; the agent was the intruder, no human in the loop; detection worked, the decision failed</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 480" width="1800" height="480" role="img" aria-label="Hugging Face, what it adds up to: the attacker's objective plus the attacker's agent (model and harness) plus a launchpad on the Internet plus ordinary weaknesses at the victim equals attacker-desired capability. Three readings of the same incident: not one operator but 700, coverage not elegance; the agents were the intruder, no human in the loop; detection worked, the decision failed" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<title>Hugging Face, what it adds up to: the attacker's objective plus the attacker's agent (model and harness) plus a launchpad on the Internet plus ordinary weaknesses at the victim equals attacker-desired capability. Three readings of the same incident: not one operator but 700, coverage not elegance; the agents were the intruder, no human in the loop; detection worked, the decision failed</title>
 <style>
 svg{--surface:#ffffff;--surface-2:#eceff6;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--ink-3:#5b6580;--line:#9ca3af;--rule:#cbd5e1;--rule-3:#6c768e;
 --acc:#0284c7;--acc-wash:#e0f2fe;--acc-ink:#075985;--bad:#dc2626;--bad-wash:#fee2e2;--bad-ink:#991b1b;
@@ -67,12 +67,12 @@ svg{--surface:#ffffff;--surface-2:#eceff6;--frame:#f8fafc;--ink:#1f2937;--ink-2:
 <g data-build="5">
 <text x="900" y="246" class="t2" font-size="24" font-weight="600" text-anchor="middle" dominant-baseline="central">Three readings — each true, each pointing at a different defense</text>
 <rect x="30" y="296" width="540" height="140" rx="16" class="node"/>
-<text x="300" y="349" class="t" font-size="26" font-weight="600" text-anchor="middle" dominant-baseline="central">A tireless operator:</text>
+<text x="300" y="349" class="t" font-size="26" font-weight="600" text-anchor="middle" dominant-baseline="central">Not one operator but 700:</text>
 <text x="300" y="383" class="t" font-size="26" font-weight="600" text-anchor="middle" dominant-baseline="central">coverage, not elegance</text>
 </g>
 <g data-build="6">
 <rect x="630" y="296" width="540" height="140" rx="16" class="node"/>
-<text x="900" y="349" class="t" font-size="26" font-weight="600" text-anchor="middle" dominant-baseline="central">The agent was the intruder:</text>
+<text x="900" y="349" class="t" font-size="26" font-weight="600" text-anchor="middle" dominant-baseline="central">The agents were the intruder:</text>
 <text x="900" y="383" class="t" font-size="26" font-weight="600" text-anchor="middle" dominant-baseline="central">no human in the loop</text>
 </g>
 <g data-build="7">

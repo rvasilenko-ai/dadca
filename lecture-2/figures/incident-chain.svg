@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 608" width="1800" height="608" role="img" aria-label="The reference incident across three zones. Top row, in OpenAI's evaluation environment: an isolated evaluation, then a sandbox escape through a proxy zero-day; then on the Internet: root on a third-party code-execution endpoint used as a launchpad, with exposed accounts on other services. Bottom row, inside Hugging Face production, right to left: entry through crafted dataset configs, the Kubernetes cluster taken to cluster-admin, expansion into the VPN mesh, cloud and source control, and detection that correlated the signals but did not escalate until humans cut access. Red arrows mark the boundaries the agent crossed" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
-<title>The reference incident across three zones. Top row, in OpenAI's evaluation environment: an isolated evaluation, then a sandbox escape through a proxy zero-day; then on the Internet: root on a third-party code-execution endpoint used as a launchpad, with exposed accounts on other services. Bottom row, inside Hugging Face production, right to left: entry through crafted dataset configs, the Kubernetes cluster taken to cluster-admin, expansion into the VPN mesh, cloud and source control, and detection that correlated the signals but did not escalate until humans cut access. Red arrows mark the boundaries the agent crossed</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 608" width="1800" height="608" role="img" aria-label="The reference incident across three zones. Top row, in OpenAI's evaluation environment: an isolated evaluation in about 1,200 parallel runs, agents finding each other on a shared board, then a sandbox escape through a proxy zero-day; then on the Internet: root on a third-party code-execution endpoint used as a launchpad, with exposed accounts on other services. Bottom row, inside Hugging Face production, right to left: entry through crafted dataset configs, the Kubernetes cluster taken to cluster-admin, expansion into the VPN mesh, cloud and source control, and detection that correlated the signals but did not escalate until humans cut access. Red arrows mark the boundaries the agent crossed" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<title>The reference incident across three zones. Top row, in OpenAI's evaluation environment: an isolated evaluation in about 1,200 parallel runs, agents finding each other on a shared board, then a sandbox escape through a proxy zero-day; then on the Internet: root on a third-party code-execution endpoint used as a launchpad, with exposed accounts on other services. Bottom row, inside Hugging Face production, right to left: entry through crafted dataset configs, the Kubernetes cluster taken to cluster-admin, expansion into the VPN mesh, cloud and source control, and detection that correlated the signals but did not escalate until humans cut access. Red arrows mark the boundaries the agent crossed</title>
 <style>
 svg{--surface:#ffffff;--surface-2:#eceff6;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--ink-3:#5b6580;--line:#9ca3af;--rule:#cbd5e1;--rule-3:#6c768e;
 --acc:#0284c7;--acc-wash:#e0f2fe;--acc-ink:#075985;--bad:#dc2626;--bad-wash:#fee2e2;--bad-ink:#991b1b;
@@ -45,17 +45,17 @@ svg{--surface:#ffffff;--surface-2:#eceff6;--frame:#f8fafc;--ink:#1f2937;--ink-2:
 <text x="28" y="586" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">red arrow: a boundary the agent crossed</text>
 <rect x="24" y="76" width="400" height="160" rx="16" class="node"/>
 <text x="50" y="120" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">The evaluation</text>
-<text x="50" y="158" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">pre-release model on a cyber</text>
-<text x="50" y="186" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">benchmark, deployment</text>
+<text x="50" y="158" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">~1,200 runs of a pre-release model</text>
+<text x="50" y="186" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">on a cyber benchmark,</text>
 <text x="50" y="214" class="t2" font-size="20" font-weight="400" text-anchor="start" dominant-baseline="central">safeguards deliberately off</text>
 </g>
 <g data-build="1">
 <path d="M424 156H452" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
 <rect x="456" y="76" width="400" height="160" rx="16" class="node node--bad"/>
-<text x="482" y="120" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">Escape, 9 July</text>
-<text x="482" y="158" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">a zero-day in the package proxy,</text>
-<text x="482" y="186" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">then lateral movement to a</text>
-<text x="482" y="214" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">node with Internet access</text>
+<text x="482" y="120" class="t" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="central">Escape, 8–9 July</text>
+<text x="482" y="158" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">agents find each other on a shared</text>
+<text x="482" y="186" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">board; a zero-day in the proxy, then</text>
+<text x="482" y="214" class="t-bad" font-size="20" font-weight="500" text-anchor="start" dominant-baseline="central">lateral movement to the Internet</text>
 </g>
 <g data-build="2">
 <path d="M856 156H940" class="edge edge--bad draw" pathLength="1" marker-end="url(#arrow-bad)"/>

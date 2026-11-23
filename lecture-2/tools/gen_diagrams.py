@@ -259,7 +259,7 @@ def incident_chain():
     y0, y1 = 76, 364                               # tile y, top and bottom rows
     H = y1 + ZTH + 24 + 60
     s = head(1800, H, "The reference incident across three zones. Top row, in OpenAI's evaluation environment: an isolated "
-                      "evaluation, then a sandbox escape through a proxy zero-day; then on the Internet: root on a third-party "
+                      "evaluation in about 1,200 parallel runs, agents finding each other on a shared board, then a sandbox escape through a proxy zero-day; then on the Internet: root on a third-party "
                       "code-execution endpoint used as a launchpad, with exposed accounts on other services. Bottom row, inside "
                       "Hugging Face production, right to left: entry through crafted dataset configs, the Kubernetes cluster taken "
                       "to cluster-admin, expansion into the VPN mesh, cloud and source control, and detection that correlated the "
@@ -268,9 +268,9 @@ def incident_chain():
     s += zframe(920, 12, 880, y0 + ZTH + 24 - 12, "The Internet — a third-party sandbox", dashed=True)
     s += zframe(0, y1 - 64, 1800, ZTH + 64 + 24, "Hugging Face — production")
     s += text(28, H - 22, "red arrow: a boundary the agent crossed", 20, 500, "t-bad")
-    s += ztile(cx[0], y0, tw, "The evaluation", ["pre-release model on a cyber", "benchmark, deployment", "safeguards deliberately off"]) + '</g>\n'
+    s += ztile(cx[0], y0, tw, "The evaluation", ["~1,200 runs of a pre-release model", "on a cyber benchmark,", "safeguards deliberately off"]) + '</g>\n'
     s += '<g data-build="1">\n' + zarrow(cx[0] + tw, y0 + ZTH // 2, cx[1] - 4, y0 + ZTH // 2)
-    s += ztile(cx[1], y0, tw, "Escape, 9 July", ["a zero-day in the package proxy,", "then lateral movement to a", "node with Internet access"], bad=True) + '</g>\n'
+    s += ztile(cx[1], y0, tw, "Escape, 8–9 July", ["agents find each other on a shared", "board; a zero-day in the proxy, then", "lateral movement to the Internet"], bad=True) + '</g>\n'
     s += '<g data-build="2">\n' + zarrow(cx[1] + tw, y0 + ZTH // 2, cx[2] - 4, y0 + ZTH // 2, red=True)
     s += ztile(cx[2], y0, 832, "Launchpad: root at 04:01 UTC", ["an unsecured, user-hosted code-execution endpoint on a third-party sandbox",
               "becomes the control, staging and egress base; four publicly exposed accounts",
@@ -349,12 +349,12 @@ def equation_huggingface():
     return equation_figure(
         "Hugging Face, what it adds up to: the attacker's objective plus the attacker's agent (model and harness) plus a "
         "launchpad on the Internet plus ordinary weaknesses at the victim equals attacker-desired capability. Three "
-        "readings of the same incident: a tireless operator, coverage not elegance; the agent was the intruder, no human "
+        "readings of the same incident: not one operator but 700, coverage not elegance; the agents were the intruder, no human "
         "in the loop; detection worked, the decision failed",
         [(["the attacker's", "objective"], True), (["attacker's agent:", "model and harness"], True),
          (["a launchpad on", "the Internet"], True), (["ordinary weaknesses", "at the victim"], False)],
         "Three readings — each true, each pointing at a different defense",
-        [["A tireless operator:", "coverage, not elegance"], ["The agent was the intruder:", "no human in the loop"],
+        [["Not one operator but 700:", "coverage, not elegance"], ["The agents were the intruder:", "no human in the loop"],
          ["Detection worked;", "the decision failed"]])
 
 
@@ -498,13 +498,13 @@ def env_guardrails():
 
 def weak_monitor():
     """A weaker, trusted monitor watches a stronger, untrusted agent; full context does not guarantee a correct verdict."""
-    W, H = 1800, 250
+    W, H = 1800, 212
     s = head(W, H, "A weaker, trusted monitor watches a stronger, untrusted agent; having the full context does not mean it can read the intent in it")
     s += tile(40, 20, 620, 130, "Strong agent", ["untrusted; its intent lives in a", "plan the monitor may not follow"], bad=True, title_size=28, sub_size=21)
     s += tile(1140, 20, 620, 130, "Weak monitor", ["trusted, cheaper; sees the trajectory", "— tools, arguments, destination"], good=True, title_size=28, sub_size=21)
     s += arrow(1138, 85, 662, 85)
     s += text(900, 56, "watches", 20, 600, "t2", "middle")
-    s += text(900, 196, "full context ≠ correct verdict", 28, 700, "t-bad", "middle")
+    s += text(900, 184, "full context ≠ correct verdict", 28, 700, "t-bad", "middle")
     return s + "</svg>\n"
 
 

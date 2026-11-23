@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 250" width="1800" height="250" role="img" aria-label="A weaker, trusted monitor watches a stronger, untrusted agent; having the full context does not mean it can read the intent in it" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 212" width="1800" height="212" role="img" aria-label="A weaker, trusted monitor watches a stronger, untrusted agent; having the full context does not mean it can read the intent in it" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
 <title>A weaker, trusted monitor watches a stronger, untrusted agent; having the full context does not mean it can read the intent in it</title>
 <style>
 svg{--surface:#ffffff;--surface-2:#eceff6;--frame:#f8fafc;--ink:#1f2937;--ink-2:#4b5563;--ink-3:#5b6580;--line:#9ca3af;--rule:#cbd5e1;--rule-3:#6c768e;
@@ -45,5 +45,5 @@ svg{--surface:#ffffff;--surface-2:#eceff6;--frame:#f8fafc;--ink:#1f2937;--ink-2:
 <text x="1160" y="108" class="t-good" font-size="21" font-weight="500" text-anchor="start" dominant-baseline="central">— tools, arguments, destination</text>
 <path d="M1138 85L662 85" class="edge edge--strong draw" pathLength="1" marker-end="url(#arrow)"/>
 <text x="900" y="56" class="t2" font-size="20" font-weight="600" text-anchor="middle" dominant-baseline="central">watches</text>
-<text x="900" y="196" class="t-bad" font-size="28" font-weight="700" text-anchor="middle" dominant-baseline="central">full context ≠ correct verdict</text>
+<text x="900" y="184" class="t-bad" font-size="28" font-weight="700" text-anchor="middle" dominant-baseline="central">full context ≠ correct verdict</text>
 </svg>
