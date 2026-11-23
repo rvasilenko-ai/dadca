@@ -236,12 +236,36 @@ details.srcs .panel a:hover { text-decoration: underline; }
 
 /* ---- print: every slide, every build shown ---- */
 @media print {
+  @page { size: 1920px 1080px; margin: 0; }
+  :root, :root[data-theme="dark"] {
+    --bg: #f6f7fb; --bg-deep: #e4e8f1; --surface: #ffffff; --surface-2: #eceff6;
+    --ink: #0b1020; --ink-2: #3a4360; --ink-3: #5b6580;
+    --rule: #d9dee9; --rule-2: #bfc7d8; --rule-3: #6c768e; --line: #5f6a85;
+    --accent: #0369a1; --accent-ink: #075985; --accent-wash: #e0f2fe;
+    --bad: #dc2626; --bad-ink: #991b1b; --bad-wash: #fee2e2; --good: #15803d; --good-ink: #14532d; --good-wash: #dcfce7; --on-badge: #ffffff;
+    --part-0: #0369a1; --part-1: #b45309; --part-2: #5b3fd0; --part-3: #b91c1c; --part-4: #0f766e;
+    --part: var(--part-0);
+    --shadow: 0 18px 50px -28px rgba(11,16,32,.45), 0 0 0 1px var(--rule-2);
+  }
   body { overflow: visible; background: #fff; }
   .deck-viewport { position: static; }
   .deck-stage { position: static; transform: none; height: auto; }
   .slide { position: relative; inset: auto; width: 1920px; height: 1080px; visibility: visible; opacity: 1; break-after: page; overflow: hidden; }
-  .diagram g[data-build], .step-captions > * { opacity: 1; }
+  .diagram g[data-build] { opacity: 1; visibility: visible; translate: none; }
   .diagram g[data-build-zoom] { display: none; }   /* the zoom replaces the figure on screen; on paper the figure stays */
-  .step-captions { display: block; } .step-captions > * { margin-bottom: 6px; }
-  details.srcs, .deck-progress, .deck-notes, .deck-help { display: none !important; }
+  .flow-diagram { flex: none; }                    /* the figure keeps its size; the captions compact instead */
+  .slide--diagram .flow-diagram .diagram { max-height: 460px; }
+  .slide--many-steps .flow-diagram .diagram { max-height: 330px; }
+  /* captions: all shown, small, in columns; cards become one line each with their colour as a left rule */
+  .step-captions { display: block; margin-top: 14px; min-height: 0; columns: 2; column-gap: 36px; }
+  .slide--many-steps .step-captions { columns: 3; column-gap: 28px; }
+  .step-captions > * { position: relative; opacity: 1; margin: 0 0 7px; padding-left: 24px; font-size: 18px; line-height: 1.28; break-inside: avoid; }
+  .slide--many-steps .step-captions > * { font-size: 16px; }
+  .step-captions > *::before { width: 14px; height: 3px; top: .55em; }
+  .step-captions > div > ul { margin-top: 2px; font-size: inherit; }
+  .step-captions > div > ul.cards { display: block; margin: 2px 0 0; padding: 0; }
+  .step-captions > div > ul.cards > li { display: block; margin: 2px 0 0; padding: 0 0 0 10px; background: none; border: 0; border-left: 3px solid var(--cat); border-radius: 0; box-shadow: none; font-size: inherit; line-height: 1.28; }
+  .step-captions > div > ul.cards > li > b { display: inline; margin: 0 6px 0 0; }
+  .step-captions > div > ul.cards > li > p { display: inline; }
+  details.srcs, .deck-progress, .deck-notes, .deck-help, .deck-tip { display: none !important; }
 }

@@ -144,5 +144,25 @@
   if (q.get('theme') === 'light' || q.get('theme') === 'dark') document.documentElement.setAttribute('data-theme', q.get('theme'));
   fit();
   fromHash();
+  // printing: every slide shows all its builds and captions (a zoom that replaces a figure stays hidden), then the
+  // current state comes back; ?print opens the print dialog (choose "Save as PDF") once the page has loaded
+  function showAll(on) {
+    document.documentElement.classList.toggle('is-print', on);
+    if (!on) { apply(false); return; }
+    slides.forEach(function (s) {
+      var gs = s.querySelectorAll('[data-build]');
+      for (var k = 0; k < gs.length; k++) { gs[k].classList.remove('is-current'); gs[k].classList.toggle('is-shown', !gs[k].hasAttribute('data-build-zoom')); }
+      var cs = s.querySelectorAll('.step-captions > *');
+      for (var c = 0; c < cs.length; c++) cs[c].classList.add('is-shown');
+    });
+  }
+  window.addEventListener('beforeprint', function () { showAll(true); });
+  window.addEventListener('afterprint', function () { showAll(false); });
+  if (q.has('print')) {
+    document.documentElement.classList.add('is-still');
+    showAll(true);
+    var doPrint = function () { setTimeout(function () { window.print(); }, 500); };
+    if (document.readyState === 'complete') doPrint(); else window.addEventListener('load', doPrint);
+  }
   window.deck = { go: go, next: next, prev: prev, slides: slides };
 })();

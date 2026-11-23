@@ -236,7 +236,7 @@
 <div class="divider-num">2</div><div class="divider-body"><p class="eyebrow">Part 2</p><h2 class="divider-title">From model to agent</h2><p class="lead">The harness, the loop, the attack surface, the supply chain</p><ul class="divider-list"><li>From model to agent</li></ul></div>
 <footer class="slide-foot"><span class="eyebrow">Part 2</span><span class="count">slides 12–15</span></footer>
 </section>
-<section class="slide slide--diagram" id="s12" data-id="s12" data-part="2" data-steps="6" data-number="12">
+<section class="slide slide--diagram slide--many-steps" id="s12" data-id="s12" data-part="2" data-steps="6" data-number="12">
 <h2 class="slide-title">The harness: what surrounds the model</h2><figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 700" role="img" aria-label="The harness: everything around the model" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
 <defs>
   <marker id="arrow-harness" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
@@ -381,7 +381,7 @@
 <p>The loop does not require every hypothesis to be correct. It requires enough feedback, retries, and state to eventually identify a useful path.</p>
 <p class="transition">“Model, harness, loop: that is an agent. Every pass of the loop reads the world through the harness — and that is where the attacker reaches in.”</p></aside>
 </section>
-<section class="slide slide--diagram" id="s14" data-id="s14" data-part="2" data-steps="6" data-number="14">
+<section class="slide slide--diagram slide--many-steps" id="s14" data-id="s14" data-part="2" data-steps="6" data-number="14">
 <h2 class="slide-title">Attacks on the harness</h2><p>An agent is a model plus a harness. The model is one component; the harness is the rest — and the larger attack surface.</p>
 <figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 700" role="img" aria-label="The harness under attack: where the attacker reaches in" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
 <defs>
@@ -681,7 +681,7 @@
 <p>The defensive takeaway is the callout, and it is the reassuring half of the story: in Unit 42's account the vulnerabilities the attackers exploited were known — weak and default credentials, authentication bypasses, exposed cloud APIs, old CVEs. The agent supplies tireless speed and parallelism, which is exactly why rung four trades stealth for velocity, the thread we pick up on the Case A defense slide. Do not name or point students at the repositories; the papers and the threat-intel reports are the citable record.</p>
 <p class="transition">“Back to the reference incident: what two and a half days of an attacker's agent inside a victim looked like, step by step.”</p></aside>
 </section>
-<section class="slide slide--diagram" id="s20" data-id="s20" data-part="3" data-steps="6" data-number="20">
+<section class="slide slide--diagram slide--many-steps" id="s20" data-id="s20" data-part="3" data-steps="6" data-number="20">
 <h2 class="slide-title">Hugging Face: the attack path</h2><figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 608" role="img" aria-label="The reference incident across three zones. Top row, in OpenAI's evaluation environment: an isolated evaluation, then a sandbox escape through a proxy zero-day; then on the Internet: root on a third-party code-execution endpoint used as a launchpad, with exposed accounts on other services. Bottom row, inside Hugging Face production, right to left: entry through crafted dataset configs, the Kubernetes cluster taken to cluster-admin, expansion into the VPN mesh, cloud and source control, and detection that correlated the signals but did not escalate until humans cut access. Red arrows mark the boundaries the agent crossed" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
 <defs>
   <marker id="arrow-incident-chain" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
@@ -765,7 +765,7 @@
 <p>Nothing here was quiet — 181 enrollments, encoded command-and-control, hundreds of denied cloud calls. The agent traded stealth for velocity, the thread from the ladder slide, and the next slide puts a number on it.</p>
 <p class="transition">“It worked not through elegance, but through volume.”</p></aside>
 </section>
-<section class="slide slide--diagram" id="s21" data-id="s21" data-part="3" data-steps="7" data-number="21">
+<section class="slide slide--diagram slide--many-steps" id="s21" data-id="s21" data-part="3" data-steps="7" data-number="21">
 <h2 class="slide-title">Hugging Face: what it adds up to</h2><p>About 17,600 recovered actions in about 6,280 clusters over roughly two and a half days — 7,677 of them on 11 July alone. Most paths produced nothing.</p>
 <figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 480" role="img" aria-label="Hugging Face, what it adds up to: the attacker's objective plus the attacker's agent (model and harness) plus a launchpad on the Internet plus ordinary weaknesses at the victim equals attacker-desired capability. Three readings of the same incident: a tireless operator, coverage not elegance; the agent was the intruder, no human in the loop; detection worked, the decision failed" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
 <defs>
@@ -907,7 +907,7 @@
 <p>Keep the technical focus on trust boundaries: external data crossed into model context, became operational instruction, inherited legitimate authority, and reached an egress channel.</p>
 <p class="transition">“Nothing here was malicious when considered only as a binary. Where, then, did the payload live?”</p></aside>
 </section>
-<section class="slide slide--diagram" id="s24" data-id="s24" data-part="3" data-steps="7" data-number="24">
+<section class="slide slide--diagram slide--many-steps" id="s24" data-id="s24" data-part="3" data-steps="7" data-number="24">
 <h2 class="slide-title">ForcedLeak: what it adds up to</h2><figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 480" role="img" aria-label="ForcedLeak, what it adds up to: attacker-controlled data plus a trusted agent plus organizational identity and tools plus a permitted outbound channel equals attacker-desired capability. Three readings of the same incident: the CRM record contains the payload; the agent is a compromised deputy; the agent has operationally become part of the malware" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
 <defs>
   <marker id="arrow-equation" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
@@ -970,7 +970,7 @@
 <p>Cut cue: if running slow, fold this slide into slide 23 — the equation becomes the closing line of the attack path.</p>
 <p class="transition">“ForcedLeak needed no file. The second way into Case B ends with a very familiar one.”</p></aside>
 </section>
-<section class="slide slide--diagram" id="s25" data-id="s25" data-part="3" data-steps="6" data-number="25">
+<section class="slide slide--diagram slide--many-steps" id="s25" data-id="s25" data-part="3" data-steps="6" data-number="25">
 <h2 class="slide-title">MIDNIGHT NEPTUNE: the attack path</h2><p>Case B, second route — the poisoned harness. A suspected DPRK cluster, reported by GTIG, November 2026</p>
 <figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 700" role="img" aria-label="MIDNIGHT NEPTUNE path across three zones: on the Internet, a fake recruiter with a model-generated photo and a fake meeting page with a ClickFix lure; inside the organization, a foothold and a pivot into the internal code repositories, where the committed agent settings gain a startup hook; then, for every developer, starting the coding agent on an ordinary morning runs the hook, which downloads the SOMBERMEME backdoor, and GitHub tokens named after Copilot disguise the lateral movement" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
 <defs>
@@ -1045,7 +1045,7 @@
 <p>Two more GTIG observations belong here as footnotes, not slides: PRC-linked actors staging lures and exfiltrating data through a frontier model's file-hosting infrastructure and backend API — the AI vendor as a trusted channel, the trusted-vendor pattern from the malware world — and tokens named after an AI assistant so that lateral movement looks like tooling. Defensive takeaway for the close: agent configuration is code, so review it like code; and the agent's own identity and network are what to watch.</p>
 <p class="transition">“No injection this time, and a real file at the end. What does this route add up to?”</p></aside>
 </section>
-<section class="slide slide--diagram" id="s26" data-id="s26" data-part="3" data-steps="7" data-number="26">
+<section class="slide slide--diagram slide--many-steps" id="s26" data-id="s26" data-part="3" data-steps="7" data-number="26">
 <h2 class="slide-title">MIDNIGHT NEPTUNE: what it adds up to</h2><figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 480" role="img" aria-label="MIDNIGHT NEPTUNE, what it adds up to: attacker-controlled configuration plus a trusted agent plus a developer's identity and machine plus a permitted outbound channel equals attacker-desired capability. Three readings of the same incident: the repository contains the payload; the agent is the loader; the settings file is the supply chain" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
 <defs>
   <marker id="arrow-equation-neptune" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker>
@@ -1219,7 +1219,7 @@
 <p>Leave the open question for the funnel slide: which model evaluates every event, and at what cost — it serves both cases. First, the structural half of Case A: where the controls go.</p>
 <p class="transition">“And since we own the environment, that is where the controls go.”</p></aside>
 </section>
-<section class="slide slide--diagram" id="s30" data-id="s30" data-part="4" data-steps="7" data-number="30">
+<section class="slide slide--diagram slide--many-steps" id="s30" data-id="s30" data-part="4" data-steps="7" data-number="30">
 <h2 class="slide-title">Case A defense: guardrails in the environment</h2><p>We do not own the attacker's agent; we own everything it has to act in. So the controls go on the environment: one at every point its actions can land.</p>
 <figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 600" role="img" aria-label="Case A guardrails, the environment view. Outside, dashed and not ours to control: the attacker's objective, model and harness. Inside the environment we own, a numbered control and sensor on each component the agent's actions land on: endpoints and edge devices, identity and credentials, workloads and clusters, cloud resources, source control and CI, network and egress; and a monitor M that evaluates every event continuously and correlates across sources" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
 <defs>
@@ -1330,7 +1330,7 @@
 <p>M is slide 29 restated as a control: evaluate every event continuously, correlate across sources, alert on the pattern — Hugging Face added critical-severity alerting for exactly the observed behaviours. Structure first, because allowlists, admission policies and short-lived credentials need no comprehension; correlation second, because the pattern is what the agent cannot hide. Which model does the correlating, and at what cost, is the funnel slide.</p>
 <p class="transition">“Case B is the opposite situation: we own the agent, so we can build the controls in.”</p></aside>
 </section>
-<section class="slide slide--diagram" id="s31" data-id="s31" data-part="4" data-steps="7" data-number="31">
+<section class="slide slide--diagram slide--many-steps" id="s31" data-id="s31" data-part="4" data-steps="7" data-number="31">
 <h2 class="slide-title">Case B defense: guardrails, the boundary text does not have</h2><p>Same harness, third time. Every red point of the attack view gets a control.</p>
 <figure class="flow-diagram"><svg class="diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 700" role="img" aria-label="Guardrails: a control at every point the attacker can write to" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif">
 <defs>

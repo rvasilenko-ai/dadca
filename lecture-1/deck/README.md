@@ -44,7 +44,7 @@ Every figure is an SVG with `data-build` groups that the runtime reveals one cli
 
 ## Print
 
-Open `index.html` in Chrome and print to PDF (landscape, no margins). Every build and every caption is shown on the printed page.
+Open `index.html?print` (the landing page's *Save as PDF* button) or print any open deck from the browser: the print stylesheet gives one slide per page at the stage size, always in the light theme, with every build and caption shown. Choose "Save as PDF" as the destination.
 
 ## Layout
 

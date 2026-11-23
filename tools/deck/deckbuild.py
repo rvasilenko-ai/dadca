@@ -276,7 +276,7 @@ def footer_html(slide: dict, total: int) -> str:
 
 
 def section(slide: dict, sid: str, kind: str, inner: str, steps: int, total: int, extra_cls: str = "") -> str:
-    cls = f"slide slide--{kind} {extra_cls}".strip()
+    cls = f"slide slide--{kind} {extra_cls}".strip() + (" slide--many-steps" if steps >= 6 else "")
     return (f'<section class="{cls}" id="{sid}" data-id="{sid}" data-part="{slide["part"]}" data-steps="{steps}" '
             f'data-number="{slide["number"]}">\n{inner}\n{sources_html(slide.get("sources"))}\n{footer_html(slide, total)}\n{notes_html(slide)}\n</section>')
 

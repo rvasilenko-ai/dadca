@@ -47,7 +47,7 @@ cd lectures && python3 -m http.server 8765
 
 Links address a slide and a step: `#/s12/3` is slide 12 at step 3, `#/s31b` the continuation of
 slide 31, `#/p2` the divider of part 2. Query switches: `?theme=light` or `?theme=dark` forces a
-theme without storing it; `?still` turns motion off (used for screenshots).
+theme without storing it; `?still` turns motion off (used for screenshots); `?print` opens the print dialog, one slide per page in the light theme, for *Save as PDF*.
 
 ## How the markdown maps to the stage
 
