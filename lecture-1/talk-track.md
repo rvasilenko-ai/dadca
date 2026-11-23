@@ -8,7 +8,7 @@ The voice is first person to a room of undergraduate and Master's students. Squa
 
 ## 1 — Title · 0–1 min
 
-Good morning. This is the first of three lectures on malware and AI. Today is about two things and how they fit together: how malware, and the malicious capabilities behind it, changed over twenty-five years, and how the systems we build to detect them had to change in step. The lecture has two halves — the attacker's side first, then the defender's — and one worked example runs through both, so you see the same attack from each direction. I won't assume you know Portable Executable internals, or MITRE ATT&CK, or machine learning; every term gets defined the first time it matters. First, who is talking.
+Good morning. This is the first of three lectures in DADCA, Defense Against the Dark Cyber Arts: a series on malware, machine learning and AI-powered threat detection. Today is about two things and how they fit together: how malware, and the malicious capabilities behind it, changed over twenty-five years, and how the systems we build to detect them had to change in step. The lecture has two halves — the attacker's side first, then the defender's — and one worked example runs through both, so you see the same attack from each direction. I won't assume you know Portable Executable internals, or MITRE ATT&CK, or machine learning; every term gets defined the first time it matters. First, who is talking.
 
 ## 2 — About me · 1–2 min
 

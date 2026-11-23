@@ -13,8 +13,9 @@ from deckbuild import DeckConfig, build  # noqa: E402
 build(DeckConfig(
     lecture_dir=HERE.parent,
     title="From Malware Files to Adversarial Capabilities",
-    description="Lecture 1 of the Malware and AI series: how malware and malicious capabilities evolved, and how detection pipelines evolved with them.",
-    series_line="Malware and AI · Lecture 1",
+    description="Lecture 1 of DADCA: Defense Against the Dark Cyber Arts, an advanced lecture series on malware, machine learning and AI-powered threat detection: how malware and malicious capabilities evolved, and how detection pipelines evolved with them.",
+    series_line="DADCA · Defense Against the Dark Cyber Arts · Lecture 1",
+    series_tagline="Understanding the Threat. Mastering the Defense.",
     deck_url="rvasilenko-ai.github.io/malware-and-ai/lecture-1/deck",
     # module -> part number; slides 5 and 19 are the lecture's own part dividers
     part_of={

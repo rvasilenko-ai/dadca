@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Malware and AI lectures</title>
+<title>DADCA: Defense Against the Dark Cyber Arts</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%232a78d6%27/%3E%3Cpath d=%27M7 22V10h3l3.5 6 3.5-6h3v12h-3v-7l-3.5 6-3.5-6v7z%27 fill=%27%23fff%27/%3E%3C/svg%3E">
-<meta name="description" content="A three-lecture series on malware, malicious capabilities and the detection pipelines built against them, by Roman Vasilenko. Slides, speaker notes and sources.">
+<meta name="description" content="DADCA: Defense Against the Dark Cyber Arts. Understanding the threat, mastering the defense: an advanced lecture series on malware, machine learning and AI-powered threat detection, by Roman Vasilenko. Slides, speaker notes and sources.">
 <style>
   :root {
     --bg: #fcfcfb; --bg-2: #f1f0ec; --ink: #141414; --ink-2: #4a4a4a; --ink-3: #8a8a8a;
@@ -21,6 +21,7 @@
   body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.5 var(--sans); }
   main { max-width: 980px; margin: 0 auto; padding: 48px 16px 64px; }
   header h1 { font-size: clamp(30px, 5vw, 46px); line-height: 1.1; letter-spacing: -0.01em; margin: 0 0 10px; }
+  header p.motto { font-size: 1.25em; font-style: italic; color: var(--ink); margin: 0 0 8px; }
   header p.lead { font-size: 1.15em; color: var(--ink-2); margin: 0 0 6px; max-width: 46em; }
   header p.by { color: var(--ink-3); margin: 0 0 36px; }
   h2 { font-size: 1.25em; margin: 40px 0 14px; }
@@ -49,8 +50,9 @@
 <button class="theme" type="button" id="theme" aria-label="Toggle light and dark theme">theme</button>
 <main>
   <header>
-    <h1>Malware and AI</h1>
-    <p class="lead">A three-lecture series on how malware and malicious capabilities evolved, how the pipelines that detect them had to evolve with them, and what changes when the attacker is an agent and the detector is a model.</p>
+    <h1>DADCA: Defense Against the Dark Cyber Arts</h1>
+    <p class="motto">Understanding the Threat. Mastering the Defense.</p>
+    <p class="lead">An advanced lecture series on malware, machine learning, and AI-powered threat detection: how malware and malicious capabilities evolved, how the pipelines that detect them had to evolve with them, and what changes when the attacker is an agent and the detector is a model.</p>
     <p class="by">Roman Vasilenko · slides, speaker notes and sources · <a href="https://github.com/rvasilenko-ai/malware-and-ai">source repository</a></p>
   </header>
 
@@ -62,10 +64,9 @@
       <p>Four periods from 2000 to 2026 across motive, attackers, operating system, internet and products; ATT&amp;CK as a language for behavior; the detection pipeline, the options at each stage, and the host and network lineages rebuilt generation by generation; six misses to diagnose.</p>
       <div class="links">
         <a class="primary" href="lecture-1/deck/">Open the slides</a>
-        <a href="lecture-1/deck/?print-pdf">Print to PDF</a>
         <a href="https://github.com/rvasilenko-ai/malware-and-ai/blob/main/lecture-1/README.md">Outline and notes</a>
       </div>
-      <div class="status">27 slides, 80 minutes plus questions. Interactive deck; works offline from a clone.</div>
+      <div class="status">27 slides, 80 minutes plus questions. Stepped figures with hover detail; works offline from a clone.</div>
     </article>
     <article class="card">
       <div class="k">Lecture 2 · Master's and PhD · 90 minutes</div>
@@ -73,9 +74,10 @@
       <p class="q">What changes when reasoning, tool use, and persistent trial-and-error become cheap?</p>
       <p>Agents as operators and as targets: tools, feedback, persistence and delegated authority in an adversarial environment, and what the defender's telemetry has to become.</p>
       <div class="links">
-        <a class="primary" href="https://github.com/rvasilenko-ai/malware-and-ai/blob/main/lecture-2/README.md">Outline and slides (markdown)</a>
+        <a class="primary" href="lecture-2/deck/">Open the slides</a>
+        <a href="https://github.com/rvasilenko-ai/malware-and-ai/blob/main/lecture-2/README.md">Outline and notes</a>
       </div>
-      <div class="status">33 slides in markdown with speaker notes. Deck not yet built.</div>
+      <div class="status">34 slides, 90 minutes. Stepped diagrams; works offline from a clone.</div>
     </article>
     <article class="card">
       <div class="k">Lecture 3 · Master's and PhD · 90 minutes</div>
@@ -89,22 +91,22 @@
     </article>
   </section>
 
-  <h2>Using the Lecture 1 deck</h2>
+  <h2>Using the decks</h2>
   <table>
-    <tr><td><kbd>→</kbd> <kbd>Space</kbd></td><td>next step, then next slide; <kbd>←</kbd> back. Many slides step through their content before moving on.</td></tr>
-    <tr><td><kbd>S</kbd></td><td>speaker view with notes, planned minutes and a timer</td></tr>
-    <tr><td><kbd>F</kbd></td><td>fullscreen; <kbd>Esc</kbd> overview of all slides</td></tr>
-    <tr><td><kbd>T</kbd></td><td>light or dark theme; <kbd>?</kbd> keyboard help</td></tr>
-    <tr><td>Print</td><td>open the deck with <code>?print-pdf</code> and print to PDF, landscape, no margins</td></tr>
+    <tr><td><kbd>→</kbd> <kbd>Space</kbd></td><td>next step, then next slide; <kbd>←</kbd> back. Most figures build up one click at a time, with a caption per step.</td></tr>
+    <tr><td><kbd>N</kbd></td><td>presenter notes: planned minutes, talking points, notes and the handover line</td></tr>
+    <tr><td><kbd>S</kbd></td><td>the sources behind the slide, in a panel</td></tr>
+    <tr><td><kbd>T</kbd></td><td>light or dark theme; <kbd>F</kbd> fullscreen; <kbd>?</kbd> keyboard help</td></tr>
+    <tr><td>Print</td><td>print the page to PDF from the browser, landscape, no margins; every build and caption is on the printed page</td></tr>
   </table>
-  <p>The deck is generated from the markdown slides in the repository; the markdown is the source of truth and carries the speaker notes, the timing of every slide and the sources behind each number. Dates and figures were checked against primary sources in October 2026.</p>
+  <p>Both decks are generated from the markdown slides in the repository by the same machinery, so they look and behave alike; the markdown is the source of truth and carries the speaker notes, the timing of every slide and the sources behind each number. Dates and figures were checked against primary sources in October and November 2026.</p>
 
   <h2>Series plan</h2>
   <p>The <a href="https://github.com/rvasilenko-ai/malware-and-ai#readme">series README</a> describes all three lectures, the shared operational model and the teaching approach, and links each lecture's outline.</p>
 
   <footer>
     <p>© Roman Vasilenko. Slides and notes are the author's; errors are the author's too, and corrections are welcome through the repository.</p>
-    <p>The deck uses <a href="https://revealjs.com/">reveal.js</a> (MIT License, vendored). The schematic ATT&amp;CK matrix uses content from <a href="https://attack.mitre.org/">MITRE ATT&amp;CK</a>, © The MITRE Corporation, used under the <a href="https://attack.mitre.org/resources/legal-and-branding/terms-of-use/">ATT&amp;CK terms of use</a>; ATT&amp;CK is a registered trademark of The MITRE Corporation. HTTPS adoption figures come from Mozilla telemetry and the Google Transparency Report.</p>
+    <p>The decks have no dependencies; their stepping and build mechanics follow <a href="https://github.com/saasthavasan/saasthavasan.github.io">Saastha Vasan's lecture deck</a> (MIT License). The schematic ATT&amp;CK matrix uses content from <a href="https://attack.mitre.org/">MITRE ATT&amp;CK</a>, © The MITRE Corporation, used under the <a href="https://attack.mitre.org/resources/legal-and-branding/terms-of-use/">ATT&amp;CK terms of use</a>; ATT&amp;CK is a registered trademark of The MITRE Corporation. HTTPS adoption figures come from Mozilla telemetry and the Google Transparency Report.</p>
   </footer>
 </main>
 <script>

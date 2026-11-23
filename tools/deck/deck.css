@@ -195,6 +195,7 @@ html.is-still .diagram g[data-build], html.is-still .diagram .draw { transition:
 .slide--title .lead { font-size: 42px; max-width: 1500px; margin-bottom: 56px; }
 .follow { font: 500 var(--fs-small)/1.3 var(--font-sans); color: var(--ink-3); }
 .follow .url { font-family: var(--font-mono); color: var(--accent); }
+.title-block .series { margin: 28px 0 0; font: 500 var(--fs-label)/1.3 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
 .slide--divider { display: grid; grid-template-columns: 460px 1fr; column-gap: 100px; align-items: center; padding-top: 60px; }
 .divider-num { font: 800 300px/1 var(--font-mono); letter-spacing: -.05em; color: var(--part); text-align: right; }
 .divider-title { margin: 18px 0 20px; font: 780 76px/1.04 var(--font-sans); letter-spacing: -.028em; text-wrap: balance; }

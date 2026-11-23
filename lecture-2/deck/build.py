@@ -13,8 +13,9 @@ from deckbuild import DeckConfig, build  # noqa: E402
 build(DeckConfig(
     lecture_dir=HERE.parent,
     title="When the Attacker Is an Agent",
-    description="Lecture 2 of the Malware and AI series: adversarial ML, attacks on LLMs, the agent as a system, and what happens when the agent is the attacker.",
-    series_line="Malware and AI · Lecture 2",
+    description="Lecture 2 of DADCA: Defense Against the Dark Cyber Arts, an advanced lecture series on malware, machine learning and AI-powered threat detection: adversarial ML, attacks on LLMs, the agent as a system, and what happens when the agent is the attacker.",
+    series_line="DADCA · Defense Against the Dark Cyber Arts · Lecture 2",
+    series_tagline="Understanding the Threat. Mastering the Defense.",
     deck_url="rvasilenko-ai.github.io/malware-and-ai/lecture-2/deck",
     # module -> part number; the first module of a part names its divider
     part_of={

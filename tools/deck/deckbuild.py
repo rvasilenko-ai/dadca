@@ -30,11 +30,12 @@ class DeckConfig:
     lecture_dir: Path
     title: str                                  # the page title
     description: str                            # the meta description
-    series_line: str                            # the eyebrow on the title slide, e.g. "Malware and AI · Lecture 2"
+    series_line: str                            # the eyebrow on the title slide, e.g. "DADCA · Defense Against the Dark Cyber Arts · Lecture 2"
     deck_url: str                               # the follow-along address shown on the title slide
     part_of: dict[str, int]                     # module -> part number (0 is the opening and gets no divider)
     part_titles: dict[int, tuple[str, str]]     # part -> (title, subtitle) for the auto-generated dividers
     divider_slides: dict[int, int] = field(default_factory=dict)   # slide number -> part: that slide *is* the divider
+    series_tagline: str = ""                    # one line under the follow-along address, e.g. the series' motto
     assets: str = "../../tools/deck"            # path from deck/ to the shared deck.css and deck.js
     table_rows_per_page: int = 12               # a continuation page takes this many table rows
     section_names: tuple[str, ...] = ("On-slide content", "Talking points", "Speaker notes", "Interaction", "Transition", "Sources")
@@ -291,7 +292,8 @@ def render_title(slide: dict, total: int) -> str:
         lead = paras[0].strip() if paras else ""
     inner = (f'<div class="title-block"><p class="eyebrow">{html.escape(CFG.series_line)}</p>'
              f'<h1 class="display">{inline(display)}</h1><p class="lead">{inline(lead)}</p>'
-             f'<p class="follow">Follow along on your laptop or phone: <span class="url">{html.escape(CFG.deck_url)}</span></p></div>')
+             f'<p class="follow">Follow along on your laptop or phone: <span class="url">{html.escape(CFG.deck_url)}</span></p>'
+             + (f'<p class="series">{html.escape(CFG.series_tagline)}</p>' if CFG.series_tagline else "") + "</div>")
     return section(slide, "s1", "title", inner, 0, total)
 
 
