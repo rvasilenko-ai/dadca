@@ -2,7 +2,7 @@
 
 *Understanding the Threat. Mastering the Defense.*
 
-An Advanced Lecture Series on Malware, Machine Learning, and AI-Powered Threat Detection. Three related 90-minute lectures on how malware and malicious capabilities evolved, how the pipelines that detect them had to evolve with them, and what changes when the attacker is an agent and the detector is a model. Students may attend any lecture independently.
+An Advanced Lecture Series on Malware, Machine Learning, and AI-Powered Threat Detection. A growing series of 90-minute lectures: introductory lectures on how malware and malicious capabilities evolved, how the pipelines that detect them had to evolve with them, and what changes when the attacker is an agent, then advanced topics in malware and threat detection with machine learning and AI. Students may attend any lecture independently.
 
 Hosted at <https://rvasilenko-ai.github.io/malware-and-ai/>.
 
@@ -35,7 +35,7 @@ After the series, students should be able to:
 
 ## The recurring operational model
 
-All three lectures use one pipeline:
+All lectures use one pipeline:
 
 ```text
 real-world activity

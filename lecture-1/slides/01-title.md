@@ -10,7 +10,7 @@
 
 ## Talking points
 
-- Lecture 1 of 3 in DADCA, Defense Against the Dark Cyber Arts: how malware and the capabilities behind it evolved, and how detection pipelines evolved with them.
+- Lecture 1 of DADCA, Defense Against the Dark Cyber Arts: how malware and the capabilities behind it evolved, and how detection pipelines evolved with them.
 - Two parts, the attacker's side then the defender's, with one recurring scenario running through both.
 - No prior knowledge of PE internals, ATT&CK or machine learning assumed; every term is defined at first use.
 - Who is talking, in one sentence: twenty years on the detection side, from antivirus engines to a sandbox company, network detection and breach simulation, now Talos. The rest is on the site's About page.
